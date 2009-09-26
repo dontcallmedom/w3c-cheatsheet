@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>W3C cheatsheet</title>
+<meta http-equiv='content-type' content='text/html;charset=utf-8' />
+<link rel="stylesheet" type="text/css" href="style/jquery.autocomplete.css" />
+<link rel="stylesheet" type="text/css" href="style/thickbox.css" />
+
+<!--<link rel="stylesheet" href="http://www.w3.org/2008/site/css/minimum.css" />-->
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/jquery-ui.css" />
+<link rel="stylesheet" href="style/mwbp_flip_cards_style.css" />
+
+</head>
+<body>
+<h1 class="logo"><a tabindex="2" accesskey="1" href="/"><img src="http://www.w3.org/2008/site/images/logo-w3c-mobile-lg" width="90" height="53" alt="W3C" /></a> Cheatsheet</h1>
+<div id="content">
+<ul>
+<li><a accesskey="1" href="#autocomplete"><span>Search</span></a></li>
+<li><a accesskey="2" href="#mwbp"><span>Mobile</span></a></li>
+<li><a accesskey="3" href="#i18n"><span>I18N</span></a></li>
+<li><a accesskey="4" href="#wcag2"><span>Accessibility</span></a></li>
+</ul>
+<div id="autocomplete">
+<p>Lookup properties / elements / attributes / functions in <label><input type="checkbox" class="source" value="HTML" checked="checked"/>HTML</label>
+<label><input type="checkbox" class="source" value="CSS"  checked="checked"/>CSS</label>
+<label><input type="checkbox" class="source" value="SVG"  checked="checked"/>SVG</label>
+<label><input type="checkbox" class="source" value="XPath"  checked="checked"/>XPath</label></p>
+
+<p><input id="search" name="query" tabindex="1"/></p>
+<div id="details">
+
+</div>
+</div>
+<div id="mwbp">
+<div class="cardgroup">
+<div class="presentation card" id="bptoc">
+<h2><span>Mobile Web Best Practices in 10 steps</span></h2>
+<div class="accordion">
+  <h3><a href="#design_for_one_web"><img src="images/mwbp_flip_cards_icon_design_th.png" alt="" /> <strong>Design</strong>
+    for One Web</a></h3>
+<div id="design_for_one_web">
+<p>Content designed with diverse devices in mind reduces cost, increases
+flexibility, and reaches the needs of more people.</p>
+<ul>
+<li>Ensure that content provided by accessing a URI
+yields a thematically coherent experience when accessed from different
+devices.</li>
+<li>Exploit device capabilities to provide an enhanced user experience.</li>
+<li>Take reasonable steps to work around deficient implementations.</li>
+<li>Carry out
+testing on actual devices as well as emulators.</li>
+</ul>
+</div>
+
+
+  <h3><a href="#rely_on_web_standards"><img src="images/mwbp_flip_cards_icon_standards_th.png" alt="" /> <strong>Rely</strong> on Web Standards</a></h3>
+<div id="rely_on_web_standards">
+<p>In the highly fragmented market of devices and browsers, standards are the
+best guarantee for interoperability.</p>
+<ul>
+<li>Create documents that validate to published formal grammars.</li>
+
+<li> Send content in a format known by the device.</li>
+
+<li>Where possible, send content in a preferred format.</li>
+
+<li>Ensure that content is encoded using a character
+encoding known to be supported by the target device.</li>
+
+<li>Indicate in the response the character encoding
+being used.</li>
+
+<li>Use style sheets to control layout and presentation, unless
+the device is known not to support them.</li>
+
+<li> Use
+features of the markup language to indicate logical document structure.</li>
+
+<li>Provide informative error messages and a means of
+navigating away from an error message back to useful information.</li>
+
+
+</ul>
+</div>
+  <h3><a href="#stay_away_from_known_hazards"><img src="images/mwbp_flip_cards_icon_hazards_th.png" alt="" /> <strong>Stay
+    away</strong> from known hazards</a></h3>
+<div id="stay_away_from_known_hazards">
+<p>Thoughtful design can help reduce usability problems due to small screens
+and keyboards, and other features of mobile devices.</p>
+
+<ul>
+<li> Do not
+cause pop ups or other windows to appear and do not change the current window
+without informing the user.</li>
+
+<li> Do not use nested tables.</li>
+
+<li> Do not use tables for layout.</li>
+
+<li> Do not use graphics for spacing.</li>
+
+<li> Do not
+use frames.</li>
+
+<li> Do
+not use image maps unless you know the device supports them effectively.</li>
+</ul>
+
+
+</div>
+  <h3><a href="#be_cautious_of_device_limitations"><img src="images/mwbp_flip_cards_icon_limitations_th.png" alt="" /> <strong>Be
+    cautious</strong> of device limitations</a></h3>
+<div id="be_cautious_of_device_limitations">
+<p>When choosing to use a particular Web technology, consider that mobile
+devices vary greatly in capability.</p>
+<ul>
+<li> Do not
+rely on cookies being available.</li>
+
+<li> Do not rely on embedded objects or script.</li>
+
+<li> Do not use tables unless the device is known to support
+them.</li>
+
+<li> Where possible, use an alternative to tabular
+presentation.</li>
+
+<li> Organize documents so that if necessary they may be read
+without style sheets.</li>
+
+<li> Do not rely on
+support of font related styling.</li>
+
+<li>
+Ensure that information conveyed with color is also available without color.</li>
+</ul>
+</div>
+  <h3><a
+    href="#optimize_navigation"><img src="images/mwbp_flip_cards_icon_navigation_th.png" alt="" /><strong>Optimize</strong> navigation</a></h3>
+<div id="optimize_navigation">
+<p>Simple navigation and typing become critical when using a small screen and
+keyboard, and limited bandwidth.</p>
+<ul>
+<li> Provide only
+minimal navigation at the top of the page.</li>
+
+<li>
+
+Provide consistent navigation mechanisms.</li>
+
+<li> Clearly identify the target of each link.</li>
+
+<li> Note the target file s format unless you know the device
+supports it.</li>
+
+<li>
+
+Assign access keys to links in navigational menus and frequently accessed
+functionality.</li>
+
+<li> Keep the URIs of
+site entry points short.</li>
+
+<li> Take into
+account the trade off between having too many links on a page and asking the
+user to follow too many links to reach what they are looking for.</li>
+</ul>
+</div>
+  <h3><a
+    href="#check_graphics_and_colors"><img src="images/mwbp_flip_cards_icon_graphics_th.png" alt="" /><strong>Check</strong> graphics &amp;
+    colors</a></h3>
+<div id="check_graphics_and_colors">
+<p>Images, colors, and style brighten content, but require care: devices may
+have low-contrast screens or may not support some formats.</p>
+<ul>
+<li> Resize images at the server, if they have an intrinsic
+size.</li>
+
+<li> Do not use images that cannot be rendered by the device.
+Avoid large or high resolution images except where critical information would
+otherwise be lost.</li>
+
+<li> Specify the size of images in markup, if they have an
+intrinsic size.</li>
+
+<li> Provide a text equivalent for every non-text
+element.</li>
+
+<li> Ensure that foreground and background color combinations
+provide sufficient contrast.</li>
+
+<li> When using background images make sure that
+content remains readable on the device.</li>
+
+<li> Do not
+use pixel measures and do not use absolute units in markup language attribute
+values and style sheet property values.</li>
+</ul>
+</div>
+  <h3><a href="#keep_it_small"><img src="images/mwbp_flip_cards_icon_small_th.png" alt="" /><strong>Keep</strong> it
+    small</a></h3>
+<div id="keep_it_small">
+<p>Smaller sites make users happier by costing less in time and money.</p>
+<ul>
+<li> Use
+terse, efficient markup.</li>
+
+<li> Ensure that the overall size of page is appropriate to the
+memory limitations of the device.</li>
+
+<li> Keep style sheets small.</li>
+
+<li> Limit
+scrolling to one direction, unless secondary scrolling cannot be avoided.</li>
+</ul>
+</div>
+  <h3><a href="#use_the_network_sparingly"><img src="images/mwbp_flip_cards_icon_network_th.png" alt="" /><strong>Use</strong>
+    the network sparingly</a></h3>
+<div id="use_the_network_sparingly">
+<p>Web protocol features can help improve the user experience by reducing the
+impact of network bottlenecks and latencies.</p>
+<ul>
+<li>
+
+Do not create periodically auto refreshing pages, unless you have informed the
+user and provided a means of stopping it.</li>
+
+<li> Do
+not use markup to redirect pages automatically. Instead, configure the server
+to perform redirects by means of HTTP 3xx codes.</li>
+
+<li> Keep the number of externally linked resources to a
+minimum.</li>
+
+<li> Provide
+caching information in HTTP responses</li>
+</ul>
+</div>
+
+  <h3><a href="#help_and_guide_user_input"><img src="images/mwbp_flip_cards_icon_input_th.png" alt="" /><strong>Help &amp;
+    guide</strong> user input</a></h3>
+<div id="help_and_guide_user_input">
+<p>Keyboards and other input methods on mobile devices can be tedious to use,
+so effective designs minimize the need for them.</p>
+<ul>
+<li> Keep the number of keystrokes to a minimum.</li>
+
+<li> Avoid free text entry where possible.</li>
+
+<li> Provide pre-selected default values where possible.</li>
+
+<li> Specify a default text entry mode, language and/or input
+format, if the target device is known to support it.</li>
+
+<li> Create
+a logical order through links, form controls and objects.</li>
+
+<li> Label all form controls appropriately and explicitly
+associate labels with form controls.</li>
+
+<li> Position labels so they lay out properly in relation to
+the form controls they refer to.</li>
+</ul>
+</div>
+  <h3><a
+    href="#think_of_users_on_the_go"><img src="images/mwbp_flip_cards_icon_users_go_th.png" alt="" /><strong>Think</strong> of users on the
+    go</a></h3>
+<div id="think_of_users_on_the_go">
+<p>Web users on the go want compact information when time is short and
+distractions many.</p>
+<ul>
+<li>
+
+Provide a short but descriptive page title.</li>
+
+<li> Use clear
+and simple language.</li>
+
+<li> Ensure that material that is central to the meaning of
+the page precedes material that is not.</li>
+
+<li> Limit
+content to what the user has requested.</li>
+
+<li> Ensure
+that content is suitable for use in a mobile context.</li>
+
+<li> Divide pages into usable but limited size portions.</li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+<div id="i18n">
+<h2>Internationalization Quicktips</h2>
+<ul class="show_items">
+<li>Use Unicode wherever possible for content, databases, etc. Always declare the encoding of content.</li>
+<li>Use characters rather than escapes (e.g. &amp;#xE1; &amp;#225; or &amp;aacute;) whenever you can. </li>
+<li>Declare the language of documents and indicate internal language changes.</li>
+<li>Use style sheets for presentational information. Restrict markup to semantics.</li>
+<li>Check for translatability and inappropriate cultural bias.</li>
+<li>Use an appropriate encoding on both form and server. Support local formats of names/addresses, times/dates, etc.</li>
+<li>Use simple, concise text. Use care when composing sentences from multiple strings.</li>
+<li>On each page include clearly visible navigation to localized pages or sites, using the target language.</li>
+<li>Right-to-left text: For XHTML, add <code>dir="rtl"</code> to the html tag. Only re-use it to change the base direction.</li>
+<li>Validate! Use techniques, tutorials, and articles at <code>http://www.w3.org/International/</code> </li>
+</ul>
+</div>
+<div id="wcag2">
+<h2>Accessibility: WCAG2 at a glance</h2>
+<p><strong>Perceivable</strong></p>
+<ul class="show_items">
+  <li>Provide <strong>text alternatives</strong> for non-text content.</li>
+
+  <li>Provide <strong>captions and </strong><strong>alternatives</strong> for
+    audio and video content.</li>
+  <li>Make content <strong>adaptable</strong>; and make it <strong>available</strong> to assistive
+    technologies.<br clear="none" />
+  </li>
+
+  <li>Use <strong>sufficient contrast</strong> to make things easy to see and
+    hear.</li>
+</ul>
+
+<p class="listintro"><strong>Operable</strong></p>
+<ul class="show_items">
+  <li>Make all functionality <strong>keyboard accessible</strong>.</li>
+  <li>Give users <strong>enough time</strong> to read and use content.</li>
+
+  <li>Do not use content that causes <strong>seizures</strong>.</li>
+  <li>Help users <strong>navigate and find</strong> content.</li>
+</ul>
+
+<p class="listintro"><strong>Understandable</strong></p>
+<ul class="show_items">
+  <li>Make text <strong>readable and understandable</strong>.</li>
+
+  <li>Make content appear and operate in <strong>predictable</strong>
+  ways.</li>
+  <li>Help users <strong>avoid and correct mistakes</strong>.</li>
+</ul>
+
+<p class="listintro"><strong>Robust</strong></p>
+<ul class="show_items">
+
+  <li>Maximize <strong>compatibility</strong> with current and future
+    technologies.</li>
+</ul>
+
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type='text/javascript' src='js/lib/jquery.bgiframe.min.js'></script>
+<script type='text/javascript' src='js/lib/jquery.ajaxQueue.js'></script>
+<script type='text/javascript' src='js/lib/thickbox-compressed.js'></script>
+<script type='text/javascript' src='js/lib/jquery.autocomplete.js'></script>
+<script type='text/javascript' src='data/css.json'></script>
+<script type='text/javascript' src='data/html.json'></script>
+<script type='text/javascript' src='data/svg.json'></script>
+<script type='text/javascript' src='data/xpath.json'></script>
+<script type="text/javascript" src="js/start.js"></script>
+
+</body>
+</html>

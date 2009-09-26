@@ -1,0 +1,1201 @@
+
+    cssProperties = [
+    'azimuth',
+    
+'background-attachment',
+    'background-color',
+    'background-image',
+    'background-position',
+    'background-repeat',
+    'background',
+    'border-collapse',
+    'border-color',
+    'border-spacing',
+    'border-style',
+    'border-top',
+    'border-right',
+    'border-bottom',
+    'border-left',
+    'border-top-color',
+    'border-right-color',
+    'border-bottom-color',
+    'border-left-color',
+    'border-top-style',
+    'border-right-style',
+    'border-bottom-style',
+    'border-left-style',
+    'border-top-width',
+    'border-right-width',
+    'border-bottom-width',
+    'border-left-width',
+    'border-width',
+    'border',
+    'bottom',
+    'caption-side',
+    'clear',
+    'clip',
+    'color',
+    'content',
+    'counter-increment',
+    'counter-reset',
+    'cue-after',
+    'cue-before',
+    'cue',
+    'cursor',
+    'direction',
+    'display',
+    'elevation',
+    'empty-cells',
+    'float',
+    'font-family',
+    'font-size',
+    'font-style',
+    'font-variant',
+    'font-weight',
+    'font',
+    'height',
+    'left',
+    'letter-spacing',
+    'line-height',
+    'list-style-image',
+    
+'list-style-position',
+    'list-style-type',
+    'list-style',
+    'margin-right',
+    'margin-left',
+    'margin-top',
+    'margin-bottom',
+    'margin',
+    'max-height',
+    'max-width',
+    'min-height',
+    'min-width',
+    'orphans',
+    'outline-color',
+    'outline-style',
+    'outline-width',
+    'outline',
+    'overflow',
+    'padding-top',
+    'padding-right',
+    'padding-bottom',
+    'padding-left',
+    'padding',
+    'page-break-after',
+    'page-break-before',
+    'page-break-inside',
+    'pause-after',
+    'pause-before',
+    'pause',
+    'pitch-range',
+    'pitch',
+    'play-during',
+    'position',
+    'quotes',
+    'richness',
+    'right',
+    'speak-header',
+    'speak-numeral',
+    'speak-punctuation',
+    'speak',
+    'speech-rate',
+    'stress',
+    'table-layout',
+    'text-align',
+    'text-decoration',
+    'text-indent',
+    'text-transform',
+    'top',
+    'unicode-bidi',
+    'vertical-align',
+    'visibility',
+    'voice-family',
+    'volume',
+    'white-space',
+    'widows',
+    'width',
+    'word-spacing',
+    'z-index',
+    
+    ];
+    cssPropertiesDetails = {
+    'azimuth':[{
+        "values":"<angle> | [[ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-azimuth"
+      }],
+    
+'background-attachment':[{
+        "values":"scroll | fixed | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-attachment"
+      }],
+    'background-color':[{
+        "values":"<color> | transparent | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-color"
+      }],
+    'background-image':[{
+        "values":"<uri> | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-image"
+      }],
+    'background-position':[{
+        "values":"[ [ <percentage> | <length> | left | center | right ] [ <percentage> | <length> | top | center | bottom ]? ] | [ [ left | center | right ] || [ top | center | bottom ] ] | inherit",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to the size of the box itself",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-position"
+      }],
+    'background-repeat':[{
+        "values":"repeat | repeat-x | repeat-y | no-repeat | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-repeat"
+      }],
+    'background':[{
+        "values":"['background-color' || 'background-image' || 'background-repeat' || 'background-attachment' || 'background-position'] | inherit",
+	
+	"inherited":"no",
+	
+	  "percentage":"allowed on 'background-position'",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background"
+      }],
+    'border-collapse':[{
+        "values":"collapse | separate | inherit",
+	
+	  "applies":"'table' and 'inline-table' elements",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-border-collapse"
+      }],
+    'border-color':[{
+        "values":"[ <color> | transparent ]{1,4} | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-color"
+      }],
+    'border-spacing':[{
+        "values":"<length> <length>? | inherit",
+	
+	  "applies":"'table' and 'inline-table' elements ",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-border-spacing"
+      }],
+    'border-style':[{
+        "values":"<border-style>{1,4} | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-style"
+      }],
+    'border-top':[{
+        "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top"
+      }],
+    'border-right':[{
+        "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right"
+      }],
+    'border-bottom':[{
+        "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom"
+      }],
+    'border-left':[{
+        "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left"
+      }],
+    'border-top-color':[{
+        "values":"<color> | transparent | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-color"
+      }],
+    'border-right-color':[{
+        "values":"<color> | transparent | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-color"
+      }],
+    'border-bottom-color':[{
+        "values":"<color> | transparent | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-color"
+      }],
+    'border-left-color':[{
+        "values":"<color> | transparent | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-color"
+      }],
+    'border-top-style':[{
+        "values":"<border-style> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-style"
+      }],
+    'border-right-style':[{
+        "values":"<border-style> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-style"
+      }],
+    'border-bottom-style':[{
+        "values":"<border-style> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-style"
+      }],
+    'border-left-style':[{
+        "values":"<border-style> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-style"
+      }],
+    'border-top-width':[{
+        "values":"<border-width> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-width"
+      }],
+    'border-right-width':[{
+        "values":"<border-width> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-width"
+      }],
+    'border-bottom-width':[{
+        "values":"<border-width> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-width"
+      }],
+    'border-left-width':[{
+        "values":"<border-width> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-width"
+      }],
+    'border-width':[{
+        "values":"<border-width>{1,4} | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-width"
+      }],
+    'border':[{
+        "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border"
+      }],
+    'bottom':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"positioned elements",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to height of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-bottom"
+      }],
+    'caption-side':[{
+        "values":"top | bottom | inherit",
+	
+	  "applies":"'table-caption' elements",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-caption-side"
+      }],
+    'clear':[{
+        "values":"none | left | right | both | inherit",
+	
+	  "applies":"block-level elements",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-clear"
+      }],
+    'clip':[{
+        "values":"<shape> | auto | inherit",
+	
+	  "applies":"absolutely positioned elements",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-clip"
+      }],
+    'color':[{
+        "values":"<color> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-color"
+      }],
+    'content':[{
+        "values":"normal | none | [ <string> | <uri> | <counter> | attr(<identifier>) | open-quote | close-quote | no-open-quote | no-close-quote ]+ | inherit",
+	
+	  "applies":":before and :after pseudo-elements",
+	
+	"inherited":"no",
+	
+	"media":"all",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-content"
+      }],
+    'counter-increment':[{
+        "values":"[ <identifier> <integer>? ]+ | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"all",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-counter-increment"
+      }],
+    'counter-reset':[{
+        "values":"[ <identifier> <integer>? ]+ | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"all",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-counter-reset"
+      }],
+    'cue-after':[{
+        "values":"<uri> | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue-after"
+      }],
+    'cue-before':[{
+        "values":"<uri> | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue-before"
+      }],
+    'cue':[{
+        "values":"[ 'cue-before' || 'cue-after' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue"
+      }],
+    'cursor':[{
+        "values":"[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] ] | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual, interactive",
+	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-cursor"
+      }],
+    'direction':[{
+        "values":"ltr | rtl | inherit",
+	
+	  "applies":"all elements, but see prose",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-direction"
+      }],
+    'display':[{
+        "values":"inline | block | list-item | run-in | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"all",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-display"
+      }],
+    'elevation':[{
+        "values":"<angle> | below | level | above | higher | lower | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-elevation"
+      }],
+    'empty-cells':[{
+        "values":"show | hide | inherit",
+	
+	  "applies":"'table-cell' elements",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-empty-cells"
+      }],
+    'float':[{
+        "values":"left | right | none | inherit",
+	
+	  "applies":"all, but see 9.7",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-float"
+      }],
+    'font-family':[{
+        "values":"[[ <family-name> | <generic-family> ] [, <family-name>| <generic-family>]* ] | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-family"
+      }],
+    'font-size':[{
+        "values":"<absolute-size> | <relative-size> | <length> | <percentage> | inherit",
+	
+	"inherited":"yes",
+	
+	  "percentage":"refer to parent element's font size",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-size"
+      }],
+    'font-style':[{
+        "values":"normal | italic | oblique | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-style"
+      }],
+    'font-variant':[{
+        "values":"normal | small-caps | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant"
+      }],
+    'font-weight':[{
+        "values":"normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight"
+      }],
+    'font':[{
+        "values":"[ [ 'font-style' || 'font-variant' || 'font-weight' ]? 'font-size' [ / 'line-height' ]? 'font-family' ] | caption | icon | menu | message-box | small-caption | status-bar | inherit",
+	
+	"inherited":"yes",
+	
+	  "percentage":"see individual properties",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font"
+      }],
+    'height':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"see prose",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-height"
+      }],
+    'left':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"positioned elements",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-left"
+      }],
+    'letter-spacing':[{
+        "values":"normal | <length> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-letter-spacing"
+      }],
+    'line-height':[{
+        "values":"normal | <number> | <length> | <percentage> | inherit",
+	
+	"inherited":"yes",
+	
+	  "percentage":"refer to the font size of the element itself",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height"
+      }],
+    'list-style-image':[{
+        "values":"<uri> | none | inherit",
+	
+	  "applies":"elements with 'display: list-item'",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image"
+      }],
+    
+'list-style-position':[{
+        "values":"inside | outside | inherit",
+	
+	  "applies":"elements with 'display: list-item'",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position"
+      }],
+    'list-style-type':[{
+        "values":"disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit",
+	
+	  "applies":"elements with 'display: list-item'",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type"
+      }],
+    'list-style':[{
+        "values":"[ 'list-style-type' || 'list-style-position' || 'list-style-image' ] | inherit",
+	
+	  "applies":"elements with 'display: list-item'",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style"
+      }],
+    'margin-right':[{
+        "values":"<margin-width> | inherit",
+	
+	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-right"
+      }],
+    'margin-left':[{
+        "values":"<margin-width> | inherit",
+	
+	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-left"
+      }],
+    'margin-top':[{
+        "values":"<margin-width> | inherit",
+	
+	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-top"
+      }],
+    'margin-bottom':[{
+        "values":"<margin-width> | inherit",
+	
+	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-bottom"
+      }],
+    'margin':[{
+        "values":"<margin-width>{1,4} | inherit",
+	
+	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin"
+      }],
+    'max-height':[{
+        "values":"<length> | <percentage> | none | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"see prose",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-max-height"
+      }],
+    'max-width':[{
+        "values":"<length> | <percentage> | none | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-max-width"
+      }],
+    'min-height':[{
+        "values":"<length> | <percentage> | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"see prose",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-min-height"
+      }],
+    'min-width':[{
+        "values":"<length> | <percentage> | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-min-width"
+      }],
+    'orphans':[{
+        "values":"<integer> | inherit",
+	
+	  "applies":"block-level elements",
+	
+	"inherited":"yes",
+	
+	"media":"visual, paged",
+	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-orphans"
+      }],
+    'outline-color':[{
+        "values":"<color> | invert | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual, interactive",
+	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-color"
+      }],
+    'outline-style':[{
+        "values":"<border-style> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual, interactive",
+	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-style"
+      }],
+    'outline-width':[{
+        "values":"<border-width> | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual, interactive",
+	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-width"
+      }],
+    'outline':[{
+        "values":"[ 'outline-color' || 'outline-style' || 'outline-width' ] | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual, interactive",
+	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline"
+      }],
+    'overflow':[{
+        "values":"visible | hidden | scroll | auto | inherit",
+	
+	  "applies":"non-replaced block-level elements, table cells, and inline-block elements",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-overflow"
+      }],
+    'padding-top':[{
+        "values":"<padding-width> | inherit",
+	
+	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-top"
+      }],
+    'padding-right':[{
+        "values":"<padding-width> | inherit",
+	
+	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-right"
+      }],
+    'padding-bottom':[{
+        "values":"<padding-width> | inherit",
+	
+	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-bottom"
+      }],
+    'padding-left':[{
+        "values":"<padding-width> | inherit",
+	
+	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-left"
+      }],
+    'padding':[{
+        "values":"<padding-width>{1,4} | inherit",
+	
+	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding"
+      }],
+    'page-break-after':[{
+        "values":"auto | always | avoid | left | right | inherit",
+	
+	  "applies":"block-level elements (but see text)",
+	
+	"inherited":"no",
+	
+	"media":"visual, paged",
+	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-after"
+      }],
+    'page-break-before':[{
+        "values":"auto | always | avoid | left | right | inherit",
+	
+	  "applies":"block-level elements (but see text)",
+	
+	"inherited":"no",
+	
+	"media":"visual, paged",
+	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-before"
+      }],
+    'page-break-inside':[{
+        "values":"avoid | auto | inherit",
+	
+	  "applies":"block-level elements (but see text)",
+	
+	"inherited":"no",
+	
+	"media":"visual, paged",
+	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-inside"
+      }],
+    'pause-after':[{
+        "values":"<time> | <percentage> | inherit",
+	
+	"inherited":"no",
+	
+	  "percentage":"see prose",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause-after"
+      }],
+    'pause-before':[{
+        "values":"<time> | <percentage> | inherit",
+	
+	"inherited":"no",
+	
+	  "percentage":"see prose",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause-before"
+      }],
+    'pause':[{
+        "values":"[ [<time> | <percentage>]{1,2} ] | inherit",
+	
+	"inherited":"no",
+	
+	  "percentage":"see descriptions of 'pause-before' and 'pause-after'",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause"
+      }],
+    'pitch-range':[{
+        "values":"<number> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pitch-range"
+      }],
+    'pitch':[{
+        "values":"<frequency> | x-low | low | medium | high | x-high | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pitch"
+      }],
+    'play-during':[{
+        "values":"<uri> [ mix || repeat ]? | auto | none | inherit",
+	
+	"inherited":"no",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-play-during"
+      }],
+    'position':[{
+        "values":"static | relative | absolute | fixed | inherit",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-position"
+      }],
+    'quotes':[{
+        "values":"[<string> <string>]+ | none | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-quotes"
+      }],
+    'richness':[{
+        "values":"<number> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-richness"
+      }],
+    'right':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"positioned elements",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-right"
+      }],
+    'speak-header':[{
+        "values":"once | always | inherit",
+	
+	  "applies":"elements that have table header information",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-header"
+      }],
+    'speak-numeral':[{
+        "values":"digits | continuous | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-numeral"
+      }],
+    'speak-punctuation':[{
+        "values":"code | none | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-punctuation"
+      }],
+    'speak':[{
+        "values":"normal | none | spell-out | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak"
+      }],
+    'speech-rate':[{
+        "values":"<number> | x-slow | slow | medium | fast | x-fast | faster | slower | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speech-rate"
+      }],
+    'stress':[{
+        "values":"<number> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-stress"
+      }],
+    'table-layout':[{
+        "values":"auto | fixed | inherit",
+	
+	  "applies":"'table' and 'inline-table' elements",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-table-layout"
+      }],
+    'text-align':[{
+        "values":"left | right | center | justify | inherit",
+	
+	  "applies":"block-level elements, table cells and inline blocks",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-align"
+      }],
+    'text-decoration':[{
+        "values":"none | [ underline || overline || line-through || blink ] | inherit",
+	
+	"inherited":"no (see prose)",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-decoration"
+      }],
+    'text-indent':[{
+        "values":"<length> | <percentage> | inherit",
+	
+	  "applies":"block-level elements, table cells and inline blocks",
+	
+	"inherited":"yes",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-indent"
+      }],
+    'text-transform':[{
+        "values":"capitalize | uppercase | lowercase | none | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-transform"
+      }],
+    'top':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"positioned elements",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to height of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-top"
+      }],
+    'unicode-bidi':[{
+        "values":"normal | embed | bidi-override | inherit",
+	
+	  "applies":"all elements, but see prose",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-unicode-bidi"
+      }],
+    'vertical-align':[{
+        "values":"baseline | sub | super | top | text-top | middle | bottom | text-bottom | <percentage> | <length> | inherit",
+	
+	  "applies":"inline-level and 'table-cell' elements",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to the 'line-height' of the element itself",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align"
+      }],
+    'visibility':[{
+        "values":"visible | hidden | collapse | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-visibility"
+      }],
+    'voice-family':[{
+        "values":"[[<specific-voice> | <generic-voice> ],]* [<specific-voice> | <generic-voice> ] | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-voice-family"
+      }],
+    'volume':[{
+        "values":"<number> | <percentage> | silent | x-soft | soft | medium | loud | x-loud | inherit",
+	
+	"inherited":"yes",
+	
+	  "percentage":"refer to inherited value",
+	
+	"media":"aural",
+	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-volume"
+      }],
+    'white-space':[{
+        "values":"normal | pre | nowrap | pre-wrap | pre-line | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-white-space"
+      }],
+    'widows':[{
+        "values":"<integer> | inherit",
+	
+	  "applies":"block-level elements",
+	
+	"inherited":"yes",
+	
+	"media":"visual, paged",
+	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-widows"
+      }],
+    'width':[{
+        "values":"<length> | <percentage> | auto | inherit",
+	
+	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
+	
+	"inherited":"no",
+	
+	  "percentage":"refer to width of containing block",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-width"
+      }],
+    'word-spacing':[{
+        "values":"normal | <length> | inherit",
+	
+	"inherited":"yes",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-word-spacing"
+      }],
+    'z-index':[{
+        "values":"auto | <integer> | inherit",
+	
+	  "applies":"positioned elements",
+	
+	"inherited":"no",
+	
+	"media":"visual",
+	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-z-index"
+      }],
+    
+    };
+  
