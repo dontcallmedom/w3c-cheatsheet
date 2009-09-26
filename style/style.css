@@ -6,3 +6,4 @@ h2 { color:#036;}
 h1 { color:#025A9A; }
 ul li { margin-left:0.5em;}
 body { font-size:0.6em !important;}
+a:link img, a:visited img { border:0;}
