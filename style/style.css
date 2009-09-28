@@ -2,9 +2,11 @@ dd { margin-left:1em;}
 dt { font-weight:bold;}
 dl { padding-bottom:0.5em;border-bottom: thin solid black;}
 html, body { background:#ddd;}
-h2 { color:#036;}
-h1 { color:#025A9A; }
+h2 { color:#036; font-size:120%;}
+h1 { color:#025A9A;  }
 ul li { margin-left:0.5em;}
 body { font-size:0.6em !important;}
 a:link img, a:visited img { border:0;}
-h1.logo img { vertical-align:bottom;} 
+h1.logo img { vertical-align:bottom; font-size:1.5em;} 
+.ui-tabs .ui-tabs-nav li a { padding:2px 2px;}
+#details h2 { padding-left:12px;}

@@ -41,29 +41,35 @@ for (var i in keywordSources[topic]) {
   }
 }
 }
+
+function makeReplacingAccordion(accordion) {
+  accordion.css("position","relative");
+  accordion.accordion('option','navigation', true);
+  accordion.accordion('option','autoHeight','false');
+  accordion.accordion('option','collapsible',true);
+  accordion.accordion('option','animated',false);
+  accordion.bind('accordionchangestart', function() {
+if ($(".ui-state-active",accordion).length) {
+   $(".ui-state-default",accordion).parent().css("z-index","-1");
+   $(".ui-state-default",accordion).parent().css("position","relative");
+   $(".ui-state-active",accordion).parent().css("z-index",1);
+   $(".ui-state-active",accordion).parent().css("position","absolute");
+   $(".ui-state-active",accordion).parent().animate({top:0})
+ } else {
+   $(".ui-state-default",accordion).parent().css("z-index","0")
+   $(".ui-state-default",accordion).parent().css("position","relative");
+   $(".ui-state-default",accordion).parent().animate({top:"auto"})
+ }
+});
+}
+
 jQuery(document).ready(function($) {
   // Tabs
   $('#content').css("overflow","hidden");
   $('#content').css("height","480px");
   $('#content').tabs();
-  $(".accordion").accordion({active:false,navigation: true,autoHeight:false,collapsible:true,header:'div >h3',animated:false});
-  $(".accordion").css("position","relative");
-  $(".accordion").css("overflow","hidden");
-  //$(".accordion .ui-accordion-header").each(function() { $(this).css("position","absolute").css("top","auto")});
-$('.accordion').bind('accordionchangestart', function(event, ui) {
- if ($(".accordion .ui-state-active").length) {
-   $(".accordion .ui-state-default").parent().css("z-index","-1");
-   $(".accordion .ui-state-default").parent().css("position","relative");
-   $(".accordion .ui-state-active").parent().css("z-index",1);
-   $(".accordion .ui-state-active").parent().css("position","absolute");
-   $(".accordion .ui-state-active").parent().animate({top:0})
- } else {
-   $(".accordion .ui-state-default").parent().css("z-index","0")
-   $(".accordion .ui-state-default").parent().css("position","relative");
-   $(".accordion .ui-state-default").parent().animate({top:"auto"})
- }
-});
-
+  $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
+  makeReplacingAccordion($(".accordion"));
 
 
   $("#search").autocomplete(keywords);
@@ -79,24 +85,31 @@ $('.accordion').bind('accordionchangestart', function(event, ui) {
   }).change();
   $("#search").result(function(e,d,f) {	
 	var details = keywordsMatch[d];
+	if ($("#details").accordion) {
+          $("#details").accordion("destroy");
+        }
 	$("#details").html("");
 	for (var i in details) {
-	  $("#details").append("<h2>" + i + " <code>" + d + "</code></h2>");
+	  div = $("<div></div>").appendTo($("#details"));
+	  div.append("<h2>" + i + " <code>" + d + "</code></h2>");
   	  for (var j in details[i]) {
-	   $("#details").append("<dl></dl>");
+	   var dl = $("<dl></dl>").appendTo(div);
 
 	   for (var k in details[i][j]) {
 	    if (k!="source") {
-	     var dt = $("<dt></dt>").appendTo($("#details dl:last"));
+	     var dt = $("<dt></dt>").appendTo(dl);
 	     dt.text(k);
-	     var dd = $("<dd></dd>").appendTo($("#details dl:last"));
+	     var dd = $("<dd></dd>").appendTo(dl);
              dd.text(details[i][j][k]);
             } else {
-	     $("#details dl:last").append("<dt><a href='" + details[i][j][k] + "'>source</a></dt>");
+	     dl.append("<dt><a href='" + details[i][j][k] + "'>source</a></dt>");
 	    }
 	   }
 	  }
         }
+	$("#details").accordion({header:'div>h2',autoHeight:false});
+	makeReplacingAccordion($("#details"));
+ 	
   });
 
 });

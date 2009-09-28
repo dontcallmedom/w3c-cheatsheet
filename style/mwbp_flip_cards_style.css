@@ -1,32 +1,41 @@
 /* $Id$ */
-.ui-tabs .ui-tabs-panel { padding: 0.5em ;}
-#mwbp .ui-state-active {background-color: #0B5B9D; background-image:url(images/ui-bg_glass_65_0B5B9D_1x400.png)}
-#mwbp .ui-state-default, #mwbp .ui-widget-content .ui-state-default {background-color: #0B5B9D; background-image:url(images/ui-bg_glass_65_0B5B9D_1x400.png)}
+.ui-tabs .ui-tabs-panel { padding: 0 ;}
+.ui-tabs .ui-tabs-nav { padding:0;}
+.ui-tabs { padding:0;}
 #mwbp { border: 1px #0B5B9D solid; display: block; margin-left: auto; margin-right: auto; 
-background-color: #0B5B9D; color: white; margin-bottom: 1em; -moz-border-radius: 20px;}
-#mwbp ul li { list-style:disc !important; margin-left:1em !important;}
+background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius: 10px;}
 
+.ui-accordion .ui-accordion-header a { padding: 2px; padding-left: 10px;}
+.ui-accordion .ui-accordion-header .ui-icon { left:-5px;}
+.ui-accordion .ui-accordion-content { padding: 2px; padding-left:12px}
 .mwi_logo { text-align: center; }
 .mwi_logo img { border: 0; vertical-align: top; }
 .mwi_logo .w3c>img { border-right: 2px #666 solid; margin-right: 2px }
-h1 { font-weight: bold; font-size: 26pt; }
 .card h2 { color: lightblue; font-weight: normal; text-align: center; font-size: 200%; }
 .card a:link, .card a:visited { color: white; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
-#design_for_one_web h2                { background: url(images/mwbp_flip_cards_icon_design.png) top center no-repeat; }
-#rely_on_web_standards h2             { background: url(images/mwbp_flip_cards_icon_standards.png) top center no-repeat; }
-#stay_away_from_known_hazards h2      { background: url(images/mwbp_flip_cards_icon_hazards.png) top center no-repeat; }
-#be_cautious_of_device_limitations h2 { background: url(images/mwbp_flip_cards_icon_limitations.png) top center no-repeat; }
-#optimize_navigation h2               { background: url(images/mwbp_flip_cards_icon_navigation.png) top center no-repeat; }
-#check_graphics_and_colors h2         { background: url(images/mwbp_flip_cards_icon_graphics.png) top center no-repeat; }
-#keep_it_small h2                     { background: url(images/mwbp_flip_cards_icon_small.png) top center no-repeat; }
-#use_the_network_sparingly h2         { background: url(images/mwbp_flip_cards_icon_network.png) top center no-repeat; }
-#help_and_guide_user_input h2         { background: url(images/mwbp_flip_cards_icon_input.png) top center no-repeat; }
-#think_of_users_on_the_go h2          { background: url(images/mwbp_flip_cards_icon_users_go.png) top center no-repeat; }
+#design h3                { background: url(../images/mwbp_flip_cards_icon_design_th.png) top right no-repeat; }
+#standards h3             { background: url(../images/mwbp_flip_cards_icon_standards_th.png) top right no-repeat; }
+#hazards h3      { background: url(../images/mwbp_flip_cards_icon_hazards_th.png) top right no-repeat; }
+#limitations h3 { background: url(../images/mwbp_flip_cards_icon_limitations_th.png) top right no-repeat; }
+#navigation h3               { background: url(../images/mwbp_flip_cards_icon_navigation_th.png) top right no-repeat; }
+#graphics h3         { background: url(../images/mwbp_flip_cards_icon_graphics_th.png) top right no-repeat; }
+#small h3                     { background: url(../images/mwbp_flip_cards_icon_small_th.png) top right no-repeat; }
+#network h3         { background: url(../images/mwbp_flip_cards_icon_network_th.png) top right no-repeat; }
+#input h3         { background: url(../images/mwbp_flip_cards_icon_input_th.png) top right no-repeat; }
+#users_go h3          { background: url(../images/mwbp_flip_cards_icon_users_go_th.png) top right no-repeat; }
 
-#mwbp ul li { background: url(images/mwbp_flip_cards_item.png) no-repeat top left; padding-left: 20px; margin-left: -20px; }
+#mwbp .card div { background: #0B5B9D; color:white;}
+
+#mwbp .card { width:100%;}
+
+#mwbp ul { list-style:none;}
+#mwbp ul li { background: url("../images/mwbp_flip_cards_item.png") no-repeat top left; padding-left: 20px; margin-left: -10px; }
 /* .card { background: url(images/mwbp_flip_cards_bg.png) no-repeat right bottom; background-color: red } */
 .detailed.card p { padding-left: 10px; }
 
 #front_card h1 { font-weight: bold; height: 380px; background: url(images/mwbp_flip_cards_icon_mwi.png) no-repeat bottom center; margin-bottom: 20px; }
 .presentation.card h2 { text-transform: lowercase; text-align: left; font-size: 120%; }
+
+.cardgroup img { display:none;}
+.cardgroup h3 { min-height:22px;}
