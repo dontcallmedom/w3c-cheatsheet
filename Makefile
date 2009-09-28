@@ -4,5 +4,5 @@ widget-opera.wgt: config-opera.xml index.html js/ style/ data/ images/
 JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 
-js/all.js: data/*.json js/[^sa]*.js 
+js/all.js: data/*.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/jquery.autocomplete.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
