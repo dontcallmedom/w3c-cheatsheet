@@ -10,3 +10,45 @@ a:link img, a:visited img { border:0;}
 h1.logo img { vertical-align:bottom; font-size:1.5em;} 
 .ui-tabs .ui-tabs-nav li a { padding:2px 2px;}
 #details h2 { padding-left:12px;}
+
+/* Originally from www.w3.org/2007/02/mwbp_flip_cards_style.css,v 1.3 2009/09/28 14:14:39 dom Exp $ */
+.ui-tabs .ui-tabs-panel { padding: 0 ;}
+.ui-tabs .ui-tabs-nav { padding:0;}
+.ui-tabs { padding:0;}
+#mwbp { border: 1px #0B5B9D solid; display: block; margin-left: auto; margin-right: auto; 
+background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius: 10px;}
+
+.ui-accordion .ui-accordion-header a { padding: 2px; padding-left: 10px;}
+.ui-accordion .ui-accordion-header .ui-icon { left:-5px;}
+.ui-accordion .ui-accordion-content { padding: 2px; padding-left:12px}
+.mwi_logo { text-align: center; }
+.mwi_logo img { border: 0; vertical-align: top; }
+.mwi_logo .w3c>img { border-right: 2px #666 solid; margin-right: 2px }
+.card h2 { color: lightblue; font-weight: normal; text-align: center; font-size: 200%; }
+.card a:link, .card a:visited { color: white; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+#design h3                { background: url(../images/mwbp_flip_cards_icon_design_th.png) top right no-repeat; }
+#standards h3             { background: url(../images/mwbp_flip_cards_icon_standards_th.png) top right no-repeat; }
+#hazards h3      { background: url(../images/mwbp_flip_cards_icon_hazards_th.png) top right no-repeat; }
+#limitations h3 { background: url(../images/mwbp_flip_cards_icon_limitations_th.png) top right no-repeat; }
+#navigation h3               { background: url(../images/mwbp_flip_cards_icon_navigation_th.png) top right no-repeat; }
+#graphics h3         { background: url(../images/mwbp_flip_cards_icon_graphics_th.png) top right no-repeat; }
+#small h3                     { background: url(../images/mwbp_flip_cards_icon_small_th.png) top right no-repeat; }
+#network h3         { background: url(../images/mwbp_flip_cards_icon_network_th.png) top right no-repeat; }
+#input h3         { background: url(../images/mwbp_flip_cards_icon_input_th.png) top right no-repeat; }
+#users_go h3          { background: url(../images/mwbp_flip_cards_icon_users_go_th.png) top right no-repeat; }
+
+#mwbp .card div { background: #0B5B9D; color:white;}
+
+#mwbp .card { width:100%;}
+
+#mwbp ul { list-style:none;}
+#mwbp ul li { background: url("../images/mwbp_flip_cards_item.png") no-repeat top left; padding-left: 20px; margin-left: -10px; }
+/* .card { background: url(images/mwbp_flip_cards_bg.png) no-repeat right bottom; background-color: red } */
+.detailed.card p { padding-left: 10px; }
+
+#front_card h1 { font-weight: bold; height: 380px; background: url(images/mwbp_flip_cards_icon_mwi.png) no-repeat bottom center; margin-bottom: 20px; }
+.presentation.card h2 { text-transform: lowercase; text-align: left; font-size: 120%; }
+
+.cardgroup img { display:none;}
+.cardgroup h3 { min-height:22px;}
