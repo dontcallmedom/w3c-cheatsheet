@@ -2443,8 +2443,7 @@ $(".ui-state-active",a).parent().animate({top:0})
 $(".ui-state-default",a).parent().css("position","relative");
 $(".ui-state-default",a).parent().animate({top:"auto"})
 }})
-}jQuery(document).ready(function(a){a("#content").css("overflow","hidden");
-a("#content").tabs();
+}jQuery(document).ready(function(a){a("#content").tabs();
 a(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
 makeReplacingAccordion(a(".accordion"));
 a("#search").autocomplete(keywords);
