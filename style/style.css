@@ -7,7 +7,7 @@ h1 { color:#025A9A;  }
 ul li { margin-left:0.5em;}
 a:link img, a:visited img { border:0;}
 h1.logo img { vertical-align:bottom; font-size:1.5em;} 
-.ui-tabs .ui-tabs-nav li a { padding:10px 7px;}
+.ui-tabs .ui-tabs-nav li a { padding:7px 4px;}
 #autocompelete input { width:100%; font-size:2em;}
 #details h2 { padding-left:12px;}
 
