@@ -1,4 +1,5 @@
 /* $Id$ */
+.ui-tabs .ui-tabs-panel { padding: 0.5em ;}
 #mwbp .ui-state-active {background-color: #0B5B9D; background-image:url(images/ui-bg_glass_65_0B5B9D_1x400.png)}
 #mwbp .ui-state-default, #mwbp .ui-widget-content .ui-state-default {background-color: #0B5B9D; background-image:url(images/ui-bg_glass_65_0B5B9D_1x400.png)}
 #mwbp { border: 1px #0B5B9D solid; display: block; margin-left: auto; margin-right: auto; 
@@ -10,22 +11,8 @@ background-color: #0B5B9D; color: white; margin-bottom: 1em; -moz-border-radius:
 .mwi_logo .w3c>img { border-right: 2px #666 solid; margin-right: 2px }
 h1 { font-weight: bold; font-size: 26pt; }
 .card h2 { color: lightblue; font-weight: normal; text-align: center; font-size: 200%; }
-.main.card h2 { padding-top: 100px; color: white;}
 .card a:link, .card a:visited { color: white; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
-.detailed.card { font-size: 75%; }
-.detailed.card h3 { font-weight: normal; font-size: 140%; margin: 0; padding: 0 0 .5em 0; }
-.detailed.card h3 span,.presentation.card h2 span { background: url(images/mwbp_flip_cards_white_underline.png) bottom right no-repeat; padding: 0 1em .5em 25px; margin: .4em 0 0 -25px; }
-.detailed .bp_title { display: block; font-weight: normal; }
-.busy_card .bp_title { display: inline; }
-.presentation.card h2 { text-transform: lowercase; text-align: left; font-size: 120%; }
-.main.card { font-size: 130%; text-align: center; }
-#front_card, #back_card { background-image: url(images/mwbp_flip_cards_white_bottom.png); background-repeat: no-repeat; background-position: 0px 310px;}
-#back_card { background-position: 0px 220px; }
-.detailed p { margin-bottom: 0; margin-top: .9em; }
-#sponsors { background-color: white; }
-#sponsors p { text-align: center; }
-.presentation.card li { padding-bottom: .9em; }
 #design_for_one_web h2                { background: url(images/mwbp_flip_cards_icon_design.png) top center no-repeat; }
 #rely_on_web_standards h2             { background: url(images/mwbp_flip_cards_icon_standards.png) top center no-repeat; }
 #stay_away_from_known_hazards h2      { background: url(images/mwbp_flip_cards_icon_hazards.png) top center no-repeat; }
@@ -40,24 +27,6 @@ h1 { font-weight: bold; font-size: 26pt; }
 #mwbp ul li { background: url(images/mwbp_flip_cards_item.png) no-repeat top left; padding-left: 20px; margin-left: -20px; }
 /* .card { background: url(images/mwbp_flip_cards_bg.png) no-repeat right bottom; background-color: red } */
 .detailed.card p { padding-left: 10px; }
-#design_for_one_web .detailed.card p strong { background-color: #F78E21; }
-#rely_on_web_standards .detailed.card p strong { background-color: #8CC742; }
-#stay_away_from_known_hazards .detailed.card p strong { background-color: #CE1418; }
-#be_cautious_of_device_limitations .detailed.card p strong { background-color: #212021; }
-#optimize_navigation .detailed.card p strong { background-color: #AD208C; }
-#check_graphics_and_colors .detailed.card p strong { background-color: #FFC310; }
-#keep_it_small .detailed.card p strong { background-color: #0093C3; }
-#use_the_network_sparingly .detailed.card p strong { background-color: #F05888; }
-#help_and_guide_user_input .detailed.card p strong { background-color: #588DC9; }
-#think_of_users_on_the_go .detailed.card p strong { background-color: #01B9AC; }
-
-small { font-size: .65em; }
 
 #front_card h1 { font-weight: bold; height: 380px; background: url(images/mwbp_flip_cards_icon_mwi.png) no-repeat bottom center; margin-bottom: 20px; }
-
-.ist_logo { color: black; font-size: .7em; }
-.ist_logo img { vertical-align: middle; }
-
-#back_card .spacing { min-height: 310px; }
-#sponsors { text-align: center; }
-
+.presentation.card h2 { text-transform: lowercase; text-align: left; font-size: 120%; }
