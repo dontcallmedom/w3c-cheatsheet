@@ -66,11 +66,10 @@ if ($(".ui-state-active",accordion).length) {
 jQuery(document).ready(function($) {
   // Tabs
   $('#content').css("overflow","hidden");
-  $('#content').css("height","480px");
+  //$('#content').css("height","480px");
   $('#content').tabs();
   $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
   makeReplacingAccordion($(".accordion"));
-
 
   $("#search").autocomplete(keywords);
   $("input.source").change(function() {
