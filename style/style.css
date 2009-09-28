@@ -27,17 +27,17 @@ background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius
 .card h2 { color: lightblue; font-weight: normal; text-align: center; font-size: 200%; }
 .card a:link, .card a:visited { color: white; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
-#design h3                { background: url(../images/mwbp_flip_cards_icon_design_th.png) top right no-repeat; }
-#standards h3             { background: url(../images/mwbp_flip_cards_icon_standards_th.png) top right no-repeat; }
-#hazards h3      { background: url(../images/mwbp_flip_cards_icon_hazards_th.png) top right no-repeat; }
-#limitations h3 { background: url(../images/mwbp_flip_cards_icon_limitations_th.png) top right no-repeat; }
-#navigation h3               { background: url(../images/mwbp_flip_cards_icon_navigation_th.png) top right no-repeat; }
-#graphics h3         { background: url(../images/mwbp_flip_cards_icon_graphics_th.png) top right no-repeat; }
-#small h3                     { background: url(../images/mwbp_flip_cards_icon_small_th.png) top right no-repeat; }
-#network h3         { background: url(../images/mwbp_flip_cards_icon_network_th.png) top right no-repeat; }
-#input h3         { background: url(../images/mwbp_flip_cards_icon_input_th.png) top right no-repeat; }
-#users_go h3          { background: url(../images/mwbp_flip_cards_icon_users_go_th.png) top right no-repeat; }
-
+.ui-accordion h3.ui-accordion-header { background:url(../images/mwbp_flip_cards_icons.png) no-repeat;}
+#design h3.ui-accordion-header { background-position:right -7px}
+#standards h3.ui-accordion-header { background-position:right -327px;}
+#hazards h3.ui-accordion-header { background-position:right -87px;}
+#limitations h3.ui-accordion-header { background-position:right -167px;}
+#navigation  h3.ui-accordion-header { background-position:right -207px;}
+#graphics  h3.ui-accordion-header { background-position:right -47px;}
+#small  h3.ui-accordion-header { background-position:right -287px;}
+#network h3.ui-accordion-header { background-position:right -247px;}
+#input h3.ui-accordion-header { background-position:right -127px;}
+#users_go h3.ui-accordion-header { background-position:right -367px;}
 #mwbp .card div { background: #0B5B9D; color:white;}
 
 #mwbp .card { width:100%;}
