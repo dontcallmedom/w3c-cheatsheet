@@ -43,8 +43,28 @@ for (var i in keywordSources[topic]) {
 }
 jQuery(document).ready(function($) {
   // Tabs
+  $('#content').css("overflow","hidden");
+  $('#content').css("height","480px");
   $('#content').tabs();
-  $(".accordion").accordion({active:false,navigation: true,autoHeight:false,collapsible:true});
+  $(".accordion").accordion({active:false,navigation: true,autoHeight:false,collapsible:true,header:'div >h3',animated:false});
+  $(".accordion").css("position","relative");
+  $(".accordion").css("overflow","hidden");
+  //$(".accordion .ui-accordion-header").each(function() { $(this).css("position","absolute").css("top","auto")});
+$('.accordion').bind('accordionchangestart', function(event, ui) {
+ if ($(".accordion .ui-state-active").length) {
+   $(".accordion .ui-state-default").parent().css("z-index","-1");
+   $(".accordion .ui-state-default").parent().css("position","relative");
+   $(".accordion .ui-state-active").parent().css("z-index",1);
+   $(".accordion .ui-state-active").parent().css("position","absolute");
+   $(".accordion .ui-state-active").parent().animate({top:0})
+ } else {
+   $(".accordion .ui-state-default").parent().css("z-index","0")
+   $(".accordion .ui-state-default").parent().css("position","relative");
+   $(".accordion .ui-state-default").parent().animate({top:"auto"})
+ }
+});
+
+
 
   $("#search").autocomplete(keywords);
   $("input.source").change(function() {
