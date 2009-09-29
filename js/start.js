@@ -14,21 +14,21 @@ make_unique = function(b)
  }
 
 keywordSources = {
-	"CSS":[{"list":cssProperties,"details":cssPropertiesDetails,"name":"CSS Property"}], 
+	"CSS":[{"list":[],"details":cssPropertiesDetails,"name":"CSS Property"}], 
 	"HTML":[
-	{"list":htmlElements,"details":htmlElementsDetails,"name":"HTML Element"},
-	{"list":htmlAttributes,"details":htmlAttributesDetails,"name":"HTML attribute"}],
-	"SVG":[{"list":svgAttributes,"details":svgAttributesDetails,"name":"SVG attribute"},	
-	{"list":svgElements,"details":svgElementsDetails,"name":"SVG Element"}],
-	"XPath":[{"list":xpathFunctions,"details":xpathFunctionsDetails,"name":"XPath functions"}]
+	{"list":[],"details":htmlElementsDetails,"name":"HTML Element"},
+	{"list":[],"details":htmlAttributesDetails,"name":"HTML attribute"}],
+	"SVG":[{"list":[],"details":svgAttributesDetails,"name":"SVG attribute"},	
+	{"list":[],"details":svgElementsDetails,"name":"SVG Element"}],
+	"XPath":[{"list":[],"details":xpathFunctionsDetails,"name":"XPath functions"}]
 };
 keywordsMatch = Array();
 keywords = Array();
 for (var topic in keywordSources) {
 for (var i in keywordSources[topic]) {
   source = keywordSources[topic][i];
-  for (var j in source["list"]) {
-	var keyword = source["list"][j];
+  for (var keyword in source["details"]) {
+	source["list"].push(keyword);
 	if (!keywordsMatch[keyword]) {
 	   keywordsMatch[keyword]={};
 	}
