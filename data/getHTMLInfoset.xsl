@@ -41,17 +41,6 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-    htmlElements = [
-    <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
-     '<xsl:value-of select="."/>',
-    </xsl:for-each>
-    ];
-    htmlAttributes = [
-    <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1]" group-by="normalize-space(html:td[1])">
-           '<xsl:value-of select="html:td[1]"/>',
-    </xsl:for-each-group>
-
-    ];
     htmlElementsDetails = {
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
       <xsl:variable name="attributes">

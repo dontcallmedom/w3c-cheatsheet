@@ -46,17 +46,6 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <!-- @@@ can this be extracted automatically from the spec? -->
     <xsl:variable name='mediaProperties' select="('audio-level', 'buffered-rendering', 'display', 'image-rendering', 'pointer-events', 'shape-rendering', 'text-rendering', 'viewport-fill', 'viewport-fill-opacity', 'visibility')"/>
 
-    svgElements = [
-    <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr/html:td[1]">
-     <xsl:value-of select="."/>,
-    </xsl:for-each>
-    ];
-    svgAttributes = [
-    <xsl:for-each-group select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/attributeTable.html')/html:html//html:table/html:tbody/html:tr" group-by="normalize-space(html:td[1])">
-           '<xsl:value-of select='replace(html:td[1],"&apos;","")'/>',
-    </xsl:for-each-group>
-
-    ];
     svgElementsDetails = {
     <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr">
       <xsl:value-of select="html:td[1]"/>:

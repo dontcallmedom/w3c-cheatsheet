@@ -41,11 +41,6 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-    xpathFunctions = [
-    <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]">
-     '<xsl:value-of select="substring-after(normalize-space(.),'fn:')"/>',
-    </xsl:for-each>
-    ];
     xpathFunctionsDetails = {
     <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]/following::html:div[@class='proto'][1]">
 
