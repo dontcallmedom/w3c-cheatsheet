@@ -7,7 +7,7 @@ JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 SAXON=~/bin/saxon
 
-js/all.js: data/packed.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/jquery.autocomplete.js js/start.js
+js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/jquery.autocomplete.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/thickbox.css style/style.css
