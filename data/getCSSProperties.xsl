@@ -47,11 +47,6 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   </xsl:template>
 
   <xsl:template match="/">
-    cssProperties = [
-    <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
-      <xsl:value-of select="."/>,
-    </xsl:for-each>
-    ];
     cssPropertiesDetails = {
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
       <xsl:value-of select="."/>:[{
