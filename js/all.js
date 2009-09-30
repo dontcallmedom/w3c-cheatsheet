@@ -2156,8 +2156,7 @@ if(f){clearTimeout(f)
 },S.delay);
 break
 }}).focus(function(){J=true
-}).blur(function(){J=false;
-C()
+}).blur(function(){J=false
 });
 T();
 function R(){if(A==46||(A>8&&A<32)){return H.hide()

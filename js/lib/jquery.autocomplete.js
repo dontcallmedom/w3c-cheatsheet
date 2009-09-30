@@ -107,7 +107,6 @@ jQuery.autocomplete = function(input, options) {
 	.blur(function() {
 		// track whether the field has focus
 		hasFocus = false;
-		hideResults();
 	});
 
 	hideResultsNow();
