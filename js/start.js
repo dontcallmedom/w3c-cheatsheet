@@ -114,6 +114,6 @@ jQuery(document).ready(function($) {
 	makeReplacingAccordion($("#details"));
  	
   }
-  $("#search").autocompleteArray(keywords,{onItemSelect:show_result,onFindValue:show_result,autoFill:false,mustMatch:true,selectFirst:true,delay:40,maxItemsToShow:10});
+  $("#search").autocompleteArray(keywords,{onItemSelect:show_result,onFindValue:show_result,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10});
 
 });
