@@ -2393,29 +2393,27 @@ $(".ui-state-active",A).parent().animate({top:0})
 $(".ui-state-default",A).parent().css("position","relative");
 $(".ui-state-default",A).parent().animate({top:"auto"})
 }})
-}jQuery(document).ready(function(B){B("#content").tabs();
-B(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
-makeReplacingAccordion(B(".accordion"));
-B("input.source").change(function(){keywords=[];
-B("input.source:checked").each(function(){for(var C in keywordSources[B(this).val()]){keywords=keywords.concat(keywordSources[B(this).val()][C]["list"])
-}});
-keywords=make_unique(keywords)
-}).change();
-function A(K){if(K==null){return 
-}var I=K.selectValue;
-var C=keywordsMatch[I];
-if(B("#details").accordion){B("#details").accordion("destroy")
-}B("#details").html("");
-for(var G in C){div=B("<div></div>").appendTo(B("#details"));
-div.append("<h2>"+G+" <code>"+I+"</code></h2><div></div>");
-div2=B("div",div);
-for(var F in C[G]){var H=B("<dl></dl>").appendTo(div2);
-for(var E in C[G][F]){if(E!="source"){var D=B("<dt></dt>").appendTo(H);
-D.text(E);
-var J=B("<dd></dd>").appendTo(H);
-J.text(C[G][F][E])
-}else{H.append("<dt><a href='"+C[G][F][E]+"'>source</a></dt>")
-}}}}B("#details").accordion({header:"div>h2",autoHeight:false});
-makeReplacingAccordion(B("#details"))
-}B("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
+}jQuery(document).ready(function(D){D("#content").tabs();
+D(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
+makeReplacingAccordion(D(".accordion"));
+keywords=[];
+for(var B in keywordSources){for(var C in keywordSources[B]){keywords=keywords.concat(keywordSources[B][C]["list"])
+}}keywords=make_unique(keywords);
+function A(M){if(M==null){return 
+}var K=M.selectValue;
+var E=keywordsMatch[K];
+if(D("#details").accordion){D("#details").accordion("destroy")
+}D("#details").html("");
+for(var I in E){div=D("<div></div>").appendTo(D("#details"));
+div.append("<h2>"+I+" <code>"+K+"</code></h2><div></div>");
+div2=D("div",div);
+for(var H in E[I]){var J=D("<dl></dl>").appendTo(div2);
+for(var G in E[I][H]){if(G!="source"){var F=D("<dt></dt>").appendTo(J);
+F.text(G);
+var L=D("<dd></dd>").appendTo(J);
+L.text(E[I][H][G])
+}else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
+}}}}D("#details").accordion({header:"div>h2",autoHeight:false});
+makeReplacingAccordion(D("#details"))
+}D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });

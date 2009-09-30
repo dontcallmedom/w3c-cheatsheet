@@ -71,16 +71,16 @@ jQuery(document).ready(function($) {
   $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
   makeReplacingAccordion($(".accordion"));
 
-  $("input.source").change(function() {
-	keywords = [];
-	$("input.source:checked").each(function() {
-	  for (var i in keywordSources[$(this).val()]) {
-	    keywords = keywords.concat(keywordSources[$(this).val()][i]["list"]);
-	  }
-	});
-	keywords = make_unique(keywords);
+  keywords = [];
+
+  for (var topic in keywordSources) {
+	for (var i  in keywordSources[topic]) {
+	  keywords = keywords.concat(keywordSources[topic][i]["list"]);
+	}
+  }
+  keywords = make_unique(keywords);
 	//$("#search").setOptions({"data":keywords});
-  }).change();
+
   function show_result(item) {
 	if (item==null) {
 	  return;
