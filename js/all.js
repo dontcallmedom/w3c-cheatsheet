@@ -2111,6 +2111,10 @@ if(S.inputClass){W.addClass(S.inputClass)
 }var O=document.createElement("div");
 var H=$(O);
 H.hide().addClass(S.resultsClass).css("position","absolute");
+H.focus(function(){J=true
+});
+H.blur(function(){J=false
+});
 if(S.width>0){H.css("width",S.width)
 }$("body").append(O);
 D.autocompleter=N;
