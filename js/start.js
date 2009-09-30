@@ -65,13 +65,12 @@ if ($(".ui-state-active",accordion).length) {
 
 jQuery(document).ready(function($) {
   // Tabs
-  $('#content').css("overflow","hidden");
+  //$('#content').css("overflow","hidden");
   //$('#content').css("height","480px");
   $('#content').tabs();
   $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
   makeReplacingAccordion($(".accordion"));
 
-  $("#search").autocomplete(keywords);
   $("input.source").change(function() {
 	keywords = [];
 	$("input.source:checked").each(function() {
@@ -80,9 +79,13 @@ jQuery(document).ready(function($) {
 	  }
 	});
 	keywords = make_unique(keywords);
-	$("#search").setOptions({"data":keywords});
+	//$("#search").setOptions({"data":keywords});
   }).change();
-  $("#search").result(function(e,d,f) {	
+  function show_result(item) {
+	if (item==null) {
+	  return;
+	}
+	var d = item.selectValue;
 	var details = keywordsMatch[d];
 	if ($("#details").accordion) {
           $("#details").accordion("destroy");
@@ -90,9 +93,10 @@ jQuery(document).ready(function($) {
 	$("#details").html("");
 	for (var i in details) {
 	  div = $("<div></div>").appendTo($("#details"));
-	  div.append("<h2>" + i + " <code>" + d + "</code></h2>");
+	  div.append("<h2>" + i + " <code>" + d + "</code></h2><div></div>");
+	  div2 = $("div",div);
   	  for (var j in details[i]) {
-	   var dl = $("<dl></dl>").appendTo(div);
+	   var dl = $("<dl></dl>").appendTo(div2);
 
 	   for (var k in details[i][j]) {
 	    if (k!="source") {
@@ -109,6 +113,7 @@ jQuery(document).ready(function($) {
 	$("#details").accordion({header:'div>h2',autoHeight:false});
 	makeReplacingAccordion($("#details"));
  	
-  });
+  }
+  $("#search").autocompleteArray(keywords,{onItemSelect:show_result,onFindValue:show_result,autoFill:true,mustMatch:true,selectFirst:true,delay:40,maxItemsToShow:10});
 
 });
