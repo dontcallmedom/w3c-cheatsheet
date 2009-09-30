@@ -14,7 +14,7 @@ jQuery.autocomplete = function(input, options) {
 	var $results = $(results);
 	$results.hide().addClass(options.resultsClass).css("position", "absolute");
 	$results.focus(function() { hasFocus = true;});
-	$results.blur(function() { hasFocus = false;});
+	$results.blur(function() { hasFocus = false; hideResults();});
 	if( options.width > 0 ) $results.css("width", options.width);
 
 	// Add to body element

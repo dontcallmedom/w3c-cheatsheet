@@ -2113,7 +2113,8 @@ var H=$(O);
 H.hide().addClass(S.resultsClass).css("position","absolute");
 H.focus(function(){J=true
 });
-H.blur(function(){J=false
+H.blur(function(){J=false;
+C()
 });
 if(S.width>0){H.css("width",S.width)
 }$("body").append(O);
