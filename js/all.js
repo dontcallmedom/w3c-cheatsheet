@@ -2413,5 +2413,5 @@ J.text(C[G][F][E])
 }else{H.append("<dt><a href='"+C[G][F][E]+"'>source</a></dt>")
 }}}}B("#details").accordion({header:"div>h2",autoHeight:false});
 makeReplacingAccordion(B("#details"))
-}B("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10})
+}B("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });
