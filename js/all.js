@@ -2376,9 +2376,10 @@ keywordsMatch=Array();
 keywords=Array();
 for(var topic in keywordSources){for(var i in keywordSources[topic]){source=keywordSources[topic][i];
 for(var keyword in source.details){source.list.push(keyword);
-if(!keywordsMatch[keyword]){keywordsMatch[keyword]={}
+if(!keywordsMatch[keyword]){keywordsMatch[keyword]={length:0}
 }if(!keywordsMatch[keyword][source.name]){keywordsMatch[keyword][source.name]=Array()
-}for(var k in source.details[keyword]){keywordsMatch[keyword][source.name].push(source.details[keyword][k])
+}keywordsMatch[keyword]["length"]=keywordsMatch[keyword]["length"]+1;
+for(var k in source.details[keyword]){keywordsMatch[keyword][source.name].push(source.details[keyword][k])
 }}}}function makeReplacingAccordion(A){A.css("position","relative");
 A.accordion("option","navigation",true);
 A.accordion("option","autoHeight","false");
@@ -2414,7 +2415,7 @@ var L=D("<dd></dd>").appendTo(J);
 L.text(E[I][H][G])
 }else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
 }}}}D("#details").accordion({header:"div>h2",autoHeight:false,active:false});
-if(E.length===1){accordion.accordion("option","active",true)
+if(E.length==1){accordion.accordion("option","active",true)
 }makeReplacingAccordion(D("#details"))
 }D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });

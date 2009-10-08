@@ -30,12 +30,11 @@ for (var i in keywordSources[topic]) {
   for (var keyword in source["details"]) {
 	source["list"].push(keyword);
 	if (!keywordsMatch[keyword]) {
-	   keywordsMatch[keyword]={"length":0};
+	   keywordsMatch[keyword]={};
 	}
 	if (!keywordsMatch[keyword][source["name"]]) {
 	   keywordsMatch[keyword][source["name"]] = Array();
 	}
-	keywordsMatch[keyword]["length"]=keywordsMatch[keyword]["length"] + 1;
 
 	for (var k in source["details"][keyword]) {
  	  keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
@@ -93,7 +92,9 @@ jQuery(document).ready(function($) {
           $("#details").accordion("destroy");
         }
 	$("#details").html("");
+	var detailsLength = 0;
 	for (var i in details) {
+	  detailsLength++;
 	  div = $("<div></div>").appendTo($("#details"));
 	  div.append("<h2>" + i + " <code>" + d + "</code></h2><div></div>");
 	  div2 = $("div",div);
@@ -113,8 +114,8 @@ jQuery(document).ready(function($) {
 	  }
         }
 	$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
-	if (details.length==1) {
-	   accordion.accordion('option','active', true);
+	if (detailsLength==1) {
+	   $("#details").accordion('option','active', true);
 	}
 	makeReplacingAccordion($("#details"));
  	
