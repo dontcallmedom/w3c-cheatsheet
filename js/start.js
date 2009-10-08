@@ -30,11 +30,13 @@ for (var i in keywordSources[topic]) {
   for (var keyword in source["details"]) {
 	source["list"].push(keyword);
 	if (!keywordsMatch[keyword]) {
-	   keywordsMatch[keyword]={};
+	   keywordsMatch[keyword]={"length":0};
 	}
 	if (!keywordsMatch[keyword][source["name"]]) {
 	   keywordsMatch[keyword][source["name"]] = Array();
 	}
+	keywordsMatch[keyword]["length"]=keywordsMatch[keyword]["length"] + 1;
+
 	for (var k in source["details"][keyword]) {
  	  keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
 	}
@@ -111,7 +113,7 @@ jQuery(document).ready(function($) {
 	  }
         }
 	$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
-	if (details.length===1) {
+	if (details.length==1) {
 	   accordion.accordion('option','active', true);
 	}
 	makeReplacingAccordion($("#details"));
