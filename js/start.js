@@ -115,7 +115,7 @@ jQuery(document).ready(function($) {
         }
 	$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
 	if (detailsLength==1) {
-	   $("#details").accordion('option','active', true);
+	   accordion.accordion('option','active', true);
 	}
 	makeReplacingAccordion($("#details"));
  	
