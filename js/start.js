@@ -113,10 +113,7 @@ jQuery(document).ready(function($) {
 	   }
 	  }
         }
-	$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
-	if (detailsLength==1) {
-	   accordion.accordion('option','active', true);
-	}
+	$("#details").accordion({header:'div>h2',autoHeight:false,active:(detailsLength==1)});
 	makeReplacingAccordion($("#details"));
  	
   }
