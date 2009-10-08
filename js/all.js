@@ -2413,7 +2413,8 @@ F.text(G);
 var L=D("<dd></dd>").appendTo(J);
 L.text(E[I][H][G])
 }else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
-}}}}D("#details").accordion({header:"div>h2",autoHeight:false});
-makeReplacingAccordion(D("#details"))
+}}}}D("#details").accordion({header:"div>h2",autoHeight:false,active:false});
+if(E.length===1){accordion.accordion("option","active",true)
+}makeReplacingAccordion(D("#details"))
 }D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });
