@@ -2371,6 +2371,7 @@ C<A.length;
 C++){if(A[C]!==A[C+1]){B[B.length]=A[C]
 }}return B
 };
+var detailsLength=0;
 keywordSources={CSS:[{list:[],details:cssPropertiesDetails,name:"CSS Property"}],HTML:[{list:[],details:htmlElementsDetails,name:"HTML Element"},{list:[],details:htmlAttributesDetails,name:"HTML attribute"}],SVG:[{list:[],details:svgAttributesDetails,name:"SVG attribute"},{list:[],details:svgElementsDetails,name:"SVG Element"}],XPath:[{list:[],details:xpathFunctionsDetails,name:"XPath functions"}]};
 keywordsMatch=Array();
 keywords=Array();
@@ -2404,8 +2405,7 @@ function A(M){if(M==null){return
 var E=keywordsMatch[K];
 if(D("#details").accordion){D("#details").accordion("destroy")
 }D("#details").html("");
-var N=0;
-for(var I in E){N++;
+for(var I in E){detailsLength++;
 div=D("<div></div>").appendTo(D("#details"));
 div.append("<h2>"+I+" <code>"+K+"</code></h2><div></div>");
 div2=D("div",div);
@@ -2415,7 +2415,7 @@ F.text(G);
 var L=D("<dd></dd>").appendTo(J);
 L.text(E[I][H][G])
 }else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
-}}}}D("#details").accordion({header:"div>h2",autoHeight:false,active:(N==1)});
+}}}}D("#details").accordion({header:"div>h2",autoHeight:false,active:(detailsLength==1)});
 makeReplacingAccordion(D("#details"))
 }D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });
