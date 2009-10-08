@@ -1,4 +1,4 @@
- /* Removes redundant elements from the array */
+/* Removes redundant elements from an array */
 make_unique = function(b)
  {
      var a=[],i;
@@ -110,7 +110,10 @@ jQuery(document).ready(function($) {
 	   }
 	  }
         }
-	$("#details").accordion({header:'div>h2',autoHeight:false});
+	$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
+	if (details.length===1) {
+	   accordion.accordion('option','active', true);
+	}
 	makeReplacingAccordion($("#details"));
  	
   }
