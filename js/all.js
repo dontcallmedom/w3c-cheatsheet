@@ -2364,7 +2364,6 @@ A<this.length;
 A++){if(this[A]==B){return A
 }}return -1
 };
-var activeOnStart=false;
 make_unique=function(A){var B=[],C;
 A.sort();
 for(C=0;
@@ -2416,8 +2415,8 @@ F.text(G);
 var L=D("<dd></dd>").appendTo(J);
 L.text(E[I][H][G])
 }else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
-}}}}activeOnStart=(N==1);
-D("#details").accordion({header:"div>h2",autoHeight:false,active:activeOnStart});
-makeReplacingAccordion(D("#details"))
+}}}}if(N==1){D("#details").accordion({header:"div>h2",autoHeight:false,active:true})
+}else{D("#details").accordion({header:"div>h2",autoHeight:false,active:false})
+}makeReplacingAccordion(D("#details"))
 }D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:false,delay:40,maxItemsToShow:10})
 });
