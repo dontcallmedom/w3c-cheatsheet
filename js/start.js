@@ -113,7 +113,11 @@ jQuery(document).ready(function($) {
 	   }
 	  }
         }
-	$("#details").accordion({header:'div>h2',autoHeight:false,active:(detailsLength==1)});
+	if (detailsLength==1) {
+		$("#details").accordion({header:'div>h2',autoHeight:false});
+	} else {
+		$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
+	}
 	makeReplacingAccordion($("#details"));
  	
   }
