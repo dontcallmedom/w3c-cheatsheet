@@ -10,20 +10,23 @@ SAXON=~/bin/saxon
 js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/jquery.autocomplete.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
-style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/thickbox.css style/style.css
+style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
 
 data/xpath.json: data/getXpathFunctions.xsl
-	saxon data/getXpathFunctions.xsl data/getXpathFunctions.xsl > $@
+	saxon $^ $^ > $@
 
 data/css.json: data/getCSSProperties.xsl
-	saxon data/getCSSProperties.xsl data/getCSSProperties.xsl > $@
+	saxon $^ $^ > $@
 
 data/svg.json: data/getSVGInfoset.xsl
-	saxon data/getSVGInfoset.xsl data/getSVGInfoset.xsl > $@
+	saxon $^ $^ > $@
 
 data/html.json: data/getHTMLInfoset.xsl
-	saxon data/getHTMLInfoset.xsl data/getHTMLInfoset.xsl > $@
+	saxon $^ $^ > $@
 
-data/all.json: data/html.json data/svg.json data/css.json data/xpath.json 
+data/wcag.json: data/getWCAGTechniques.xsl
+	saxon $^ $^ > $@
+
+data/all.json: data/html.json data/wcag.json data/svg.json data/css.json data/xpath.json 
 	cat $^ > $@
