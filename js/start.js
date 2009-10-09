@@ -106,7 +106,18 @@ jQuery(document).ready(function($) {
 	     var dt = $("<dt></dt>").appendTo(dl);
 	     dt.text(k);
 	     var dd = $("<dd></dd>").appendTo(dl);
-             dd.text(details[i][j][k]);
+	     if (details[i][j][k] instanceof Array) {
+		var ul = $("<ul></ul>").appendTo(dd);
+		for (l in details[i][j][k]) {
+		   link = details[i][j][k][l]
+		   var li = $("<li></li>").appendTo(ul);
+		   var a = $("<a></a>").appendTo(li);
+		   a.attr("href",link.link);
+		   a.text(link.title);
+		}
+	     } else {
+             	dd.text(details[i][j][k]);
+	     }
             } else {
 	     dl.append("<dt><a href='" + details[i][j][k] + "'>source</a></dt>");
 	    }
