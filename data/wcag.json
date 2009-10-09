@@ -1,0 +1,20 @@
+htmlElementsDetails['abbr'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H28.html','title':'Providing definitions for abbreviations by using the abbr and acronym elements'},];
+htmlElementsDetails['dfn'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H54.html','title':'Using the dfn element to identify the defining instance of a word'},];
+htmlElementsDetails['dl'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H40.html','title':'Using definition lists'},];
+htmlElementsDetails['img'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H37.html','title':'Using alt attributes on img elements'},];
+htmlElementsDetails['link'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H59.html','title':'Using the link element and navigation tools'},
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H60.html','title':'Using the link element to link to a glossary'},];
+htmlElementsDetails['map'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H50.html','title':'Using structural elements to group links'},];
+htmlElementsDetails['object'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H27.html','title':'Providing text and non-text alternatives for object'},
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H53.html','title':'Using the body of the object element'},];
+htmlElementsDetails['optgroup'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},];
+htmlElementsDetails['select'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},];
