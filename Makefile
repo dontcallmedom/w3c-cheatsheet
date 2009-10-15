@@ -28,5 +28,5 @@ data/html.json: data/getHTMLInfoset.xsl
 data/wcag.json: data/getWCAGTechniques.xsl
 	saxon $^ $^ > $@
 
-data/all.json: data/html.json data/wcag.json data/svg.json data/css.json data/xpath.json 
+data/all.json: data/cssselectors.json data/html.json data/wcag.json data/svg.json data/css.json data/xpath.json 
 	cat $^ > $@
