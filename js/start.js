@@ -14,7 +14,8 @@ make_unique = function(b)
  }
 
 keywordSources = {
-	"CSS":[{"list":[],"details":cssPropertiesDetails,"name":"CSS Property"}], 
+	"CSS":[{"list":[],"details":cssPropertiesDetails,"name":"CSS Property"},
+	       {"list":[],"details":cssSelectorsDetails,"name":"CSS Selector"}], 
 	"HTML":[
 	{"list":[],"details":htmlElementsDetails,"name":"HTML Element"},
 	{"list":[],"details":htmlAttributesDetails,"name":"HTML attribute"}],
