@@ -43,11 +43,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
 
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
-      <xsl:variable name="techniques" select="document('http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/complete.html')/html:html/html:body//html:div[@class='technique']"/>
-      <xsl:if test="$techniques//html:a[ends-with(@href,concat('#edef-',upper-case(current())))]">
+      <xsl:variable name="techniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
+      <xsl:if test="$techniques//el[normalize-space(.)=current()]">
 	<xsl:text>htmlElementsDetails['</xsl:text><xsl:value-of select="."/><xsl:text>'][0]['Accessibility techniques']=[</xsl:text>
-	<xsl:for-each select="$techniques/self::html:div[descendant::html:a[ends-with(@href,concat('#edef-',upper-case(current())))]]//html:h3">
-	  {<xsl:text>'link':'</xsl:text><xsl:value-of select="concat('http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/',html:a/@id,'.html')"/><xsl:text>','title':'</xsl:text><xsl:value-of select="normalize-space(substring-after(.,': '))"/><xsl:text>'},</xsl:text>
+	<xsl:for-each select="$techniques/self::technique[descendant::el[normalize-space()=current()]]">
+	  {<xsl:text>'link':'</xsl:text><xsl:value-of select="concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')"/><xsl:text>','title':'</xsl:text><xsl:value-of select="normalize-space(short-name)"/><xsl:text>'},</xsl:text>
 	</xsl:for-each>
 	<xsl:text>];&#x0A;</xsl:text>
       </xsl:if>
