@@ -51,3 +51,60 @@ htmlElementsDetails['th'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H63.html','title':'Using the scope attribute to associate header cells and data cells in data tables'},];
 htmlElementsDetails['ul'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H81.html','title':'Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested'},];
+
+           htmlAttributesDetails['alt'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H37.html','title':'Using alt attributes on img elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+
+           htmlAttributesDetails['for'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},];
+
+           htmlAttributesDetails['id'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},];
+
+           htmlAttributesDetails['label'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},];
+
+           htmlAttributesDetails['lang'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H57.html','title':'Using language attributes on the html element'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H58.html','title':'Using language attributes to identify changes in the human language'},];
+
+           htmlAttributesDetails['longdesc'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H45.html','title':'Using longdesc'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H64.html','title':'Using the title attribute of the frame and iframe elements'},];
+
+           htmlAttributesDetails['name'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},];
+
+           htmlAttributesDetails['scope'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H63.html','title':'Using the scope attribute to associate header cells and data cells in data tables'},];
+
+           htmlAttributesDetails['summary'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H39.html','title':'Using caption elements to associate data table captions with data tables'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H73.html','title':'Using the summary attribute of the table element to give an overview of data tables'},];
+
+           htmlAttributesDetails['target'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H83.html','title':'Using the target attribute to open a new window on user request and indicating this in link text'},];
+
+           htmlAttributesDetails['title'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H28.html','title':'Providing definitions for abbreviations by using the abbr and acronym elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H33.html','title':'Supplementing link text with the title attribute'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H86.html','title':'Providing text alternatives for ASCII art, emoticons, and leetspeak'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+
+           htmlAttributesDetails['type'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},];
