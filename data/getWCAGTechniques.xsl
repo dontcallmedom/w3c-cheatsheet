@@ -41,9 +41,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-
+    <xsl:variable name="techniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
-      <xsl:variable name="techniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
       <xsl:if test="$techniques//el[normalize-space(.)=current()]">
 	<xsl:text>htmlElementsDetails['</xsl:text><xsl:value-of select="."/><xsl:text>'][0]['Accessibility techniques']=[</xsl:text>
 	<xsl:for-each select="$techniques/self::technique[descendant::el[normalize-space()=current()]]">
@@ -52,6 +51,17 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<xsl:text>];&#x0A;</xsl:text>
       </xsl:if>
     </xsl:for-each>
+
+    <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1]" group-by="normalize-space(html:td[1])">
+      <!-- attributing the accessibility component to first attribute is purely conventional -->
+      <xsl:if test="$techniques//att[normalize-space(.)=current()/html:td[1]]">
+           htmlAttributesDetails['<xsl:value-of select="html:td[1]"/>'][0]['Accessibility techniques']=[
+	<xsl:for-each select="$techniques/self::technique[descendant::att[normalize-space()=current()/html:td[1]]]">
+	  {<xsl:text>'link':'</xsl:text><xsl:value-of select="concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')"/><xsl:text>','title':'</xsl:text><xsl:value-of select="normalize-space(short-name)"/><xsl:text>'},</xsl:text>
+	</xsl:for-each>
+	<xsl:text>];&#x0A;</xsl:text>
+      </xsl:if>
+    </xsl:for-each-group>
 
 
   </xsl:template>
