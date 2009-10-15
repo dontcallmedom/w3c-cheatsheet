@@ -1,0 +1,37 @@
+// Manually extracted from http://www.w3.org/TR/CSS2/selector.html
+// Is there any way to avoid redundancy?
+    cssSelectorsDetails = { 
+"selectors":[{'Pattern':'*','name':'Universal selector','meaning':'Matches any element'},
+	{'Pattern':'E','name':'Type selector','meaning':'Matches any E element (i.e., an element of type E)'},
+	{'Pattern':'E F','name':'Descendant selector','meaning':'Matches any F element that is a descendant of an E element'},
+	{'Pattern':'E > F','name':'Child selector','meaning':'Matches any F element that is a child of an E element'},
+	{'Pattern':'E:first-child','name':'first-child pseudo-class','meaning':'Matches element E when E is the first child of its parent'},
+	{'Pattern':'E:link','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited'},
+	{'Pattern':'E:visited','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is already visited'},
+	{'Pattern':'E:active | E:hover | E:focus','name':'dynamic pseudo-class','meaning':'Matches E during certain user actions'},
+	{'Pattern':'E:lang(c)','name':'lang() pseudo-class','meaning':'Matches element of type E if it is in (human) language c'},
+	{'Pattern':'E + F','name':'Adjacent selector','meaning':'Matches any F element immediately preceded by a sibling element E'},
+	{'Pattern':'E[foo]','name':'Attribute selector','meaning':'Matches any E element with the "foo" attribute set (whatever the value)'},
+	{'Pattern':'E[foo="warning"]','name':'Attribute selector','meaning':'Matches any E element whose "foo" attribute value is exactly equal to "warning"'},
+	{'Pattern':'E[foo~="warning"]','name':'Attribute selector','meaning':'Matches any E element whose "foo" attribute value is a list of space-separated values, one of which is exactly equal to "warning"'},
+	{'Pattern':'E[lang|=en]','name':'Attribute selector','meaning':'Matches any E element whose "lang" attribute has a hyphen-separated list of values beginning (from the left) with "en"'},
+	{'Pattern':'.warning','name':'Class selector','meaning':'In HTML, matches any element whose class attribute is a list of space-separated values, one of which is exactly equal to "warning"'},
+	{'Pattern':'#myid','name':'ID selector','meaning':'Matches any element with ID equal to "myid".'}],
+'*':[{"name":"Universal selector","description":"matches the name of any element type"}],
+'lang()':[{"Pattern":"E:lang(c)","name":"lang() pseudo-class","description":"Matches element E if it is in (human) language c (the document language specifies how language is determined)"}],
+"first-child":[{'Pattern':':first-child','name':'first-child pseudo-class','meaning':'Matches element  when E is the first child of its parent'}],
+"link":[	{'Pattern':'E:link','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited'}],
+"visited":[	{'Pattern':'E:visited','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is already visited'}],
+"active":[	{'Pattern':'E:active','name':'dynamic pseudo-class','meaning':'Matches E when E is activated by the user'}],
+"hover":[	{'Pattern':'E:hover','name':'dynamic pseudo-class','meaning':'Matches E while the user designates an element (with some pointing device), but does not activate it'}],
+"focus":[	{'Pattern':'E:focus','name':'dynamic pseudo-class','meaning':'Matches E while while it has the focus'}],
+':lang()':[{"Pattern":"E:lang(c)","name":"lang() pseudo-class","description":"Matches element E if it is in (human) language c (the document language specifies how language is determined)"}],
+":first-child":[{'Pattern':':first-child','name':'first-child pseudo-class','meaning':'Matches element  when E is the first child of its parent'}],
+":link":[	{'Pattern':'E:link','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited'}],
+":visited":[	{'Pattern':'E:visited','name':'link pseudo-class','meaning':'Matches element E if E is the source anchor of a hyperlink of which the target is already visited'}],
+":active":[	{'Pattern':'E:active','name':'dynamic pseudo-class','meaning':'Matches E when E is activated by the user'}],
+":hover":[	{'Pattern':'E:hover','name':'dynamic pseudo-class','meaning':'Matches E while the user designates an element (with some pointing device), but does not activate it'}],
+":focus":[	{'Pattern':'E:focus','name':'dynamic pseudo-class','meaning':'Matches E while while it has the focus'}],
+
+}
+	
