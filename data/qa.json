@@ -27,7 +27,7 @@ htmlElementsDetails['ul'][0]['QA Tip']=[
 	  {'link':'http://www.w3.org/QA/Tips/unordered-lists','title':'Unordered lists: more than just bullets'},];
 
            htmlAttributesDetails['http-equiv'][0]['QA Tip']=[
-	  {'link':'http://www.w3.org/QA/Tips/reback','title':'Use standard redirects: don't break the back button!'},];
+	  {'link':'http://www.w3.org/QA/Tips/reback','title':'Use standard redirects: donʼt break the back button!'},];
            htmlAttributesDetails['alt'][0]['QA Tip']=[
 	  {'link':'http://www.w3.org/QA/Tips/altAttribute','title':'Use the alt attribute to describe the function of each visual'},];
            htmlAttributesDetails['class'][0]['QA Tip']=[
