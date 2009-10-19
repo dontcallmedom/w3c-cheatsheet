@@ -1,5 +1,5 @@
 htmlAttributesDetails['lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}]
-htmlAttributesDetails['xml:lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}]
+//htmlAttributesDetails['xml:lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}]
 htmlAttributesDetails['dir'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}]
 htmlElementsDetails['bdo'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}]
 
