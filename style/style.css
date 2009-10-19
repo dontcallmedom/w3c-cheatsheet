@@ -1,4 +1,5 @@
-dd { margin-left:1em;}
+.ui-widget { font-size:1em;}
+dd { margin-left:0.7em;}
 dt { font-weight:bold;}
 dl { padding-bottom:0.5em;border-bottom: thin solid black;}
 html, body { background:#ddd;}
@@ -55,3 +56,6 @@ background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius
 .cardgroup h3 { min-height:22px;}
 
 ul { padding-left:0.5em;}
+
+dl.characters strong { padding:0 0.2em; background-color:#ccc;border:thin solid gray;}
+code { font-family:monospace;color:green;}
