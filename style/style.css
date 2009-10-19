@@ -53,3 +53,5 @@ background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius
 
 .cardgroup img { display:none;}
 .cardgroup h3 { min-height:22px;}
+
+ul { padding-left:0.5em;}
