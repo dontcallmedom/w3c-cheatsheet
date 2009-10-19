@@ -2177,6 +2177,93 @@ if(B.callback){B.callback.apply(this,arguments)
 })
 }
 })(jQuery);
+var initialized=false;
+$.extend($.ui.tabs.prototype,{paging:function(D){var L={tabsPerPage:0,nextButton:"&#187;",prevButton:"&#171;",follow:false,cycle:false};
+L=jQuery.extend(L,D);
+var N=this,F=false,Q,P,J,E,H,M,K,C=null,I=$(window).height(),U=$(window).width();
+function R(){E=0,Q=0,M=0,P=0,K=new Array(),H=new Array(),selectedTabWidths=new Array();
+J=$(N.element).width();
+$li=$("<li></li>").addClass("ui-tabs-paging-next");
+$a=$('<a href="#"></a>').click(function(){G("next");
+return false
+}).html(L.nextButton);
+$li.append($a);
+N.lis.eq(N.length()-1).after($li);
+P=$li.outerWidth({margin:true});
+$li=$("<li></li>").addClass("ui-tabs-paging-prev");
+$a=$('<a href="#"></a>').click(function(){G("prev");
+return false
+}).html(L.prevButton);
+$li.append($a);
+N.lis.eq(0).before($li);
+P+=$li.outerWidth({margin:true});
+N.lis.each(function(Z){if(Z==N.options.selected){selectedTabWidths[Z]=$(this).outerWidth({margin:true});
+H[Z]=N.lis.eq(Z).removeClass("ui-tabs-selected").outerWidth({margin:true});
+N.lis.eq(Z).addClass("ui-tabs-selected");
+E+=selectedTabWidths[Z]
+}else{H[Z]=$(this).outerWidth({margin:true});
+selectedTabWidths[Z]=N.lis.eq(Z).addClass("ui-tabs-selected").outerWidth({margin:true});
+N.lis.eq(Z).removeClass("ui-tabs-selected");
+E+=H[Z]
+}});
+if(E>J){var V=0,W=0,Y=0;
+for(var X=0;
+X<H.length;
+X++){if(W==0||selectedTabWidths[X]-H[X]>Y){Y=(selectedTabWidths[X]-H[X])
+}if(K[V]==null){K[V]={start:X}
+}else{if((X>0&&(X%L.tabsPerPage)==0)||(H[X]+W+P+12)>J){if((W+Y)>M){M=(W+Y)
+}V++;
+K[V]={start:X};
+W=0
+}}K[V].end=X+1;
+W+=H[X];
+if(X==N.options.selected){Q=V
+}}if((W+Y)>M){M=(W+Y)
+}N.lis.hide().slice(K[Q].start,K[Q].end).show();
+if(Q==(K.length-1)&&!L.cycle){A("next")
+}if(Q==0&&!L.cycle){A("prev")
+}buttonPadding=J-M-P-($.browser.msie?8:0)-10;
+if(buttonPadding>0){$(".ui-tabs-paging-next",N.element).css({paddingRight:buttonPadding+"px"})
+}F=true
+}else{S()
+}$(window).bind("resize",T)
+}function G(W){Q=Q+(W=="prev"?-1:1);
+if(W=="prev"&&Q<0&&L.cycle){Q=K.length-1
+}else{if((W=="prev"&&Q<0)||(W=="next"&&Q>=K.length)){Q=0
+}}var X=K[Q].start;
+var V=K[Q].end;
+N.lis.hide().slice(K[Q].start,K[Q].end).show();
+if(W=="prev"){O("next");
+if(L.follow&&(N.options.selected<X||N.options.selected>(V-1))){N.select(V-1)
+}if(!L.cycle&&X<=0){A("prev")
+}}else{O("prev");
+if(L.follow&&(N.options.selected<X||N.options.selected>(V-1))){N.select(X)
+}if(!L.cycle&&V>=N.length()){A("next")
+}}}function A(V){$(".ui-tabs-paging-"+V,N.element).addClass("ui-tabs-paging-disabled")
+}function O(V){$(".ui-tabs-paging-"+V,N.element).removeClass("ui-tabs-paging-disabled")
+}function T(){if(C){clearTimeout(C)
+}if(I!=$(window).height()||U!=$(window).width()){C=setTimeout(B,100)
+}}function B(){I=$(window).height();
+U=$(window).width();
+S();
+R()
+}function S(){$(".ui-tabs-paging-next",N.element).remove();
+$(".ui-tabs-paging-prev",N.element).remove();
+N.lis.show();
+F=false;
+$(window).unbind("resize",T)
+}R();
+$.extend($.ui.tabs.prototype,{pagingAdd:function(X,W,V){if(F){S();
+this.add(X,W,V);
+R()
+}else{this.add(X,W,V)
+}},pagingRemove:function(V){if(F){S();
+this.remove(V);
+R()
+}else{this.remove(V)
+}},pagingDestroy:function(){S()
+}})
+}});
 jQuery.autocomplete=function(D,S){var N=this;
 var W=$(D).attr("autocomplete","off");
 if(S.inputClass){W.addClass(S.inputClass)
@@ -2466,6 +2553,7 @@ $(".ui-state-default",A).parent().css("position","relative");
 $(".ui-state-default",A).parent().animate({top:"auto"})
 }})
 }jQuery(document).ready(function(D){D("#content").tabs();
+D("#content").tabs("paging",{cycle:false,follow:false});
 D(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
 makeReplacingAccordion(D(".accordion"));
 keywords=[];
