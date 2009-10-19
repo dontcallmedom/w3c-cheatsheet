@@ -2553,7 +2553,9 @@ $(".ui-state-default",A).parent().css("position","relative");
 $(".ui-state-default",A).parent().animate({top:"auto"})
 }})
 }jQuery(document).ready(function(D){D("#content").tabs();
-D("#content").tabs("paging",{cycle:false,follow:false});
+D("#content").tabs("paging");
+D("#content").bind("tabsshow",function(E,F){window.location.hash=F.tab.hash
+});
 D(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
 makeReplacingAccordion(D(".accordion"));
 keywords=[];

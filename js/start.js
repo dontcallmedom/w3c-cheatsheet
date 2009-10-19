@@ -72,6 +72,10 @@ jQuery(document).ready(function($) {
   //$('#content').css("height","480px");
   $('#content').tabs();
   $('#content').tabs('paging' );
+  $('#content').bind("tabsshow", function(event, ui) { 
+    window.location.hash = ui.tab.hash;
+  })
+
   $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
   makeReplacingAccordion($(".accordion"));
 
