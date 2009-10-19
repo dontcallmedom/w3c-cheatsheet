@@ -71,6 +71,7 @@ jQuery(document).ready(function($) {
   //$('#content').css("overflow","hidden");
   //$('#content').css("height","480px");
   $('#content').tabs();
+  $('#content').tabs('paging' );
   $(".accordion").accordion({header:'div >h3',active:false,autoHeight:false});
   makeReplacingAccordion($(".accordion"));
 
