@@ -1,12 +1,9 @@
-htmlAttributesDetails['lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}]
-//htmlAttributesDetails['xml:lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}]
-htmlAttributesDetails['dir'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}]
-htmlElementsDetails['bdo'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}]
-
-svgAttributesDetails['direction'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/svg-tiny-bidi/","title":"Creating SVG Tiny Pages in Arabic, Hebrew and other Right-to-Left Scripts"}]
-
-cssPropertiesDetails['direction'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-bidi-css-markup","title":"CSS vs. markup for bidi support"}]
-cssPropertiesDetails['unicode-bidi'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-bidi-css-markup","title":"CSS vs. markup for bidi support"}]
-
-cssPropertiesDetails['background'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-resizing-backgrounds","title":"Background images that support localization"}]
-cssPropertiesDetails['background-image'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-resizing-backgrounds","title":"Background images that support localization"}]
+htmlAttributesDetails['lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}];
+//htmlAttributesDetails['xml:lang'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/language-decl/","title":"Declaring Language in XHTML and HTML"}];
+htmlAttributesDetails['dir'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}];
+htmlElementsDetails['bdo'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/bidi-xhtml/","title":"Creating HTML Pages in Arabic, Hebrew and Other Right-to-left Scripts"}];
+svgAttributesDetails['direction'][0]['I18N']=[{"link":"http://www.w3.org/International/tutorials/svg-tiny-bidi/","title":"Creating SVG Tiny Pages in Arabic, Hebrew and other Right-to-Left Scripts"}];
+cssPropertiesDetails['direction'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-bidi-css-markup","title":"CSS vs. markup for bidi support"}];
+cssPropertiesDetails['unicode-bidi'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-bidi-css-markup","title":"CSS vs. markup for bidi support"}];
+cssPropertiesDetails['background'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-resizing-backgrounds","title":"Background images that support localization"}];
+cssPropertiesDetails['background-image'][0]['I18N']=[{"link":"http://www.w3.org/International/questions/qa-resizing-backgrounds","title":"Background images that support localization"}];

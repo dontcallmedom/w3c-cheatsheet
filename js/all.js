@@ -83,7 +83,7 @@ svgAttributesDetails.direction[0]["I18N"]=[{link:"http://www.w3.org/Internationa
 cssPropertiesDetails.direction[0]["I18N"]=[{link:"http://www.w3.org/International/questions/qa-bidi-css-markup",title:"CSS vs. markup for bidi support"}];
 cssPropertiesDetails["unicode-bidi"][0]["I18N"]=[{link:"http://www.w3.org/International/questions/qa-bidi-css-markup",title:"CSS vs. markup for bidi support"}];
 cssPropertiesDetails.background[0]["I18N"]=[{link:"http://www.w3.org/International/questions/qa-resizing-backgrounds",title:"Background images that support localization"}];
-cssPropertiesDetails["background-image"][0]["I18N"]=[{link:"http://www.w3.org/International/questions/qa-resizing-backgrounds",title:"Background images that support localization"}]
+cssPropertiesDetails["background-image"][0]["I18N"]=[{link:"http://www.w3.org/International/questions/qa-resizing-backgrounds",title:"Background images that support localization"}];
 /*
  * jQuery JavaScript Library v1.3.2
  * http://jquery.com/
