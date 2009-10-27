@@ -2559,29 +2559,32 @@ makeReplacingAccordion(D(".accordion"));
 keywords=[];
 for(var B in keywordSources){for(var C in keywordSources[B]){keywords=keywords.concat(keywordSources[B][C]["list"])
 }}keywords=make_unique(keywords);
-function A(P){if(P==null){return 
-}var L=P.selectValue;
-var E=keywordsMatch[L];
+function A(Q){if(Q==null){return 
+}var M=Q.selectValue;
+var E=keywordsMatch[M];
 if(D("#details").accordion){D("#details").accordion("destroy")
 }D("#details").html("");
-var Q=0;
-for(var I in E){Q++;
+var R=0;
+for(var J in E){R++;
 div=D("<div></div>").appendTo(D("#details"));
-div.append("<h2>"+I+" <code>"+L+"</code></h2><div></div>");
+div.append("<h2>"+J+" <code>"+M+"</code></h2><div></div>");
 div2=D("div",div);
-for(var H in E[I]){var J=D("<dl></dl>").appendTo(div2);
-for(var G in E[I][H]){if(G!="source"){var F=D("<dt></dt>").appendTo(J);
-F.text(G);
-var O=D("<dd></dd>").appendTo(J);
-if(E[I][H][G] instanceof Array){var K=D("<ul></ul>").appendTo(O);
-for(l in E[I][H][G]){link=E[I][H][G][l];
-var N=D("<li></li>").appendTo(K);
-var M=D("<a></a>").appendTo(N);
-M.attr("href",link.link);
-M.text(link.title)
-}}else{O.text(E[I][H][G])
-}}else{J.append("<dt><a href='"+E[I][H][G]+"'>source</a></dt>")
-}}}}if(Q==1){D("#details").accordion({header:"div>h2",autoHeight:false})
+for(var I in E[J]){var K=D("<dl></dl>").appendTo(div2);
+for(var H in E[J][I]){if(H!="source"){var G=D("<dt></dt>").appendTo(K);
+var F=G;
+if(H=="Accessibility techniques"){var N=D("<a href='http://www.w3.org/WAI/intro/wcag'></a>").appendTo(G);
+F=N
+}F.text(H);
+var P=D("<dd></dd>").appendTo(K);
+if(E[J][I][H] instanceof Array){var L=D("<ul></ul>").appendTo(P);
+for(l in E[J][I][H]){link=E[J][I][H][l];
+var O=D("<li></li>").appendTo(L);
+var N=D("<a></a>").appendTo(O);
+N.attr("href",link.link);
+N.text(link.title)
+}}else{P.text(E[J][I][H])
+}}else{K.append("<dt><a href='"+E[J][I][H]+"'>source</a></dt>")
+}}}}if(R==1){D("#details").accordion({header:"div>h2",autoHeight:false})
 }else{D("#details").accordion({header:"div>h2",autoHeight:false,active:false})
 }makeReplacingAccordion(D("#details"))
 }D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10})
