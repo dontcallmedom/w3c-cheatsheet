@@ -2549,17 +2549,7 @@ if(!keywordsMatch[keyword]){keywordsMatch[keyword]={}
 }}}}function makeReplacingAccordion(A){A.css("position","relative");
 A.accordion("option","navigation",true);
 A.accordion("option","autoHeight","false");
-A.accordion("option","collapsible",true);
-A.accordion("option","animated",false);
-A.bind("accordionchangestart",function(){if($(".ui-state-active",A).length){$(".ui-state-default",A).parent().css("z-index","-1");
-$(".ui-state-default",A).parent().css("position","relative");
-$(".ui-state-active",A).parent().css("z-index",1);
-$(".ui-state-active",A).parent().css("position","absolute");
-$(".ui-state-active",A).parent().animate({top:0})
-}else{$(".ui-state-default",A).parent().css("z-index","0");
-$(".ui-state-default",A).parent().css("position","relative");
-$(".ui-state-default",A).parent().animate({top:"auto"})
-}})
+A.accordion("option","collapsible",true)
 }jQuery(document).ready(function(D){D("#content").tabs();
 D("#content").tabs("paging");
 D("#content").bind("tabsshow",function(E,F){window.location.hash=F.tab.hash

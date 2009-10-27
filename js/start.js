@@ -50,6 +50,7 @@ function makeReplacingAccordion(accordion) {
   accordion.accordion('option','navigation', true);
   accordion.accordion('option','autoHeight','false');
   accordion.accordion('option','collapsible',true);
+/*
   accordion.accordion('option','animated',false);
   accordion.bind('accordionchangestart', function() {
 if ($(".ui-state-active",accordion).length) {
@@ -63,7 +64,7 @@ if ($(".ui-state-active",accordion).length) {
    $(".ui-state-default",accordion).parent().css("position","relative");
    $(".ui-state-default",accordion).parent().animate({top:"auto"})
  }
-});
+});*/
 }
 
 jQuery(document).ready(function($) {
