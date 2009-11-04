@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /2009/cheatsheet/
+RewriteRule ^$ http://www.w3.org/2009/cheatsheet/ [R=permanent]
+RewriteRule ^index\.html$ http://www.w3.org/2009/cheatsheet/ [R=permanent]
