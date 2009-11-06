@@ -1,9 +1,6 @@
 CACHE MANIFEST
 index.html
-style/thickbox.css
-style/jquery-ui.css
-style/style.css
-style/jquery.autocomplete.css
+style/all.css
 js/all.js
 images/mwbp_flip_cards_icons.png
 style/images/ui-bg_glass_75_e6e6e6_1x400.png
