@@ -49,8 +49,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   "returns":"<xsl:value-of select=".//html:code[@class='return-type']"/>",
 	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#<xsl:value-of select="preceding::html:*[@id][1]/@id"/>"
 	   }
-	],
-         
+	]
+	<xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each>
     };
 

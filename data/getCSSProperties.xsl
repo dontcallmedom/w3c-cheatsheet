@@ -60,7 +60,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:if>
 	"media":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/>",
 	"source":"http://www.w3.org/TR/CSS2/<xsl:value-of select="@href"/>"
-      }],
+      }]
+      <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each>
     };
   </xsl:template>

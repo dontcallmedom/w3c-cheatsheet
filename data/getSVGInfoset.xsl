@@ -62,8 +62,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </xsl:otherwise>
 	</xsl:choose>,
 	  "allowed children":"<xsl:value-of select="html:td[4]"/>",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/<xsl:value-of select="html:td[1]/html:a/@href"/>"}],
-      
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/<xsl:value-of select="html:td[1]/html:a/@href"/>"}]
+        <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each>
     };
     svgAttributesDetails = {
@@ -90,7 +90,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   "inherited":"<xsl:value-of select="normalize-space(html:td[3]/@class)"/>",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/<xsl:value-of select="html:td[1]/html:a/@href"/>"
 	   },
-	   </xsl:for-each>],
+	   </xsl:for-each>]
+           <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each-group>
     <!-- then other attributes -->
     <xsl:for-each-group select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/attributeTable.html')/html:html//html:table[2]/html:tbody/html:tr" group-by="normalize-space(html:td[1])">
@@ -103,7 +104,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   "inherited":"<xsl:value-of select="normalize-space(html:td[3]/@class)"/>",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#<xsl:value-of select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html')/html:html/html:body//html:*[ends-with(@id,concat('-',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id"/>"
 	   },
-	   </xsl:for-each>],
+	   </xsl:for-each>]
+	   <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each-group>
     };
 

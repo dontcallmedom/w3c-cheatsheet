@@ -41,14 +41,15 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
+
     htmlElementsDetails = {
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
       <xsl:variable name="attributes">
 	<xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
       </xsl:variable>
       '<xsl:value-of select="."/>':
-        [{"attributes":"<xsl:value-of select="replace(replace(replace($attributes,', ,',','),',,*',','),',$','')"/>","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/<xsl:value-of select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href"/>"}],
-      
+        [{"attributes":"<xsl:value-of select="replace(replace(replace($attributes,', ,',','),',,*',','),',$','')"/>","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/<xsl:value-of select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href"/>"}]
+      <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each>
     };
     htmlAttributesDetails = {
@@ -60,7 +61,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   "description":"<xsl:value-of select="replace(normalize-space(html:td[7]),'&quot;','\\&quot;')"/>",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/<xsl:value-of select="html:td[1]/html:a/@href"/>"
 	   },
-	   </xsl:for-each>],
+	   </xsl:for-each>]
+	   <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
     </xsl:for-each-group>
     };
 
