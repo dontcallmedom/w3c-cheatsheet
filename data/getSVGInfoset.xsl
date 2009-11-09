@@ -90,8 +90,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   "inherited":"<xsl:value-of select="normalize-space(html:td[3]/@class)"/>",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/<xsl:value-of select="html:td[1]/html:a/@href"/>"
 	   },
-	   </xsl:for-each>]
-           <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
+	   </xsl:for-each>],
     </xsl:for-each-group>
     <!-- then other attributes -->
     <xsl:for-each-group select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/attributeTable.html')/html:html//html:table[2]/html:tbody/html:tr" group-by="normalize-space(html:td[1])">
