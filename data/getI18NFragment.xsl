@@ -34,7 +34,7 @@
 	  </div>
 	</xsl:when>
 	<xsl:otherwise>
-	  <h3><xsl:value-of select="html:span"/></h3>
+	  <h3><span><xsl:value-of select="html:span"/></span></h3>
 	</xsl:otherwise>
       </xsl:choose>
       </div>
