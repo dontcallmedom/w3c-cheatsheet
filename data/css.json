@@ -7,8 +7,8 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-azimuth"
-      }],
-    
+      }]
+      ,
 'background-attachment':[{
         "values":"scroll | fixed | inherit",
 	
@@ -16,24 +16,24 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-attachment"
-      }],
-    'background-color':[{
+      }]
+      ,'background-color':[{
         "values":"<color> | transparent | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-color"
-      }],
-    'background-image':[{
+      }]
+      ,'background-image':[{
         "values":"<uri> | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-image"
-      }],
-    'background-position':[{
+      }]
+      ,'background-position':[{
         "values":"[ [ <percentage> | <length> | left | center | right ] [ <percentage> | <length> | top | center | bottom ]? ] | [ [ left | center | right ] || [ top | center | bottom ] ] | inherit",
 	
 	"inherited":"no",
@@ -42,16 +42,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-position"
-      }],
-    'background-repeat':[{
+      }]
+      ,'background-repeat':[{
         "values":"repeat | repeat-x | repeat-y | no-repeat | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background-repeat"
-      }],
-    'background':[{
+      }]
+      ,'background':[{
         "values":"['background-color' || 'background-image' || 'background-repeat' || 'background-attachment' || 'background-position'] | inherit",
 	
 	"inherited":"no",
@@ -60,8 +60,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-background"
-      }],
-    'border-collapse':[{
+      }]
+      ,'border-collapse':[{
         "values":"collapse | separate | inherit",
 	
 	  "applies":"'table' and 'inline-table' elements",
@@ -70,16 +70,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-border-collapse"
-      }],
-    'border-color':[{
+      }]
+      ,'border-color':[{
         "values":"[ <color> | transparent ]{1,4} | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-color"
-      }],
-    'border-spacing':[{
+      }]
+      ,'border-spacing':[{
         "values":"<length> <length>? | inherit",
 	
 	  "applies":"'table' and 'inline-table' elements ",
@@ -88,160 +88,160 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-border-spacing"
-      }],
-    'border-style':[{
+      }]
+      ,'border-style':[{
         "values":"<border-style>{1,4} | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-style"
-      }],
-    'border-top':[{
+      }]
+      ,'border-top':[{
         "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top"
-      }],
-    'border-right':[{
+      }]
+      ,'border-right':[{
         "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right"
-      }],
-    'border-bottom':[{
+      }]
+      ,'border-bottom':[{
         "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom"
-      }],
-    'border-left':[{
+      }]
+      ,'border-left':[{
         "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left"
-      }],
-    'border-top-color':[{
+      }]
+      ,'border-top-color':[{
         "values":"<color> | transparent | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-color"
-      }],
-    'border-right-color':[{
+      }]
+      ,'border-right-color':[{
         "values":"<color> | transparent | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-color"
-      }],
-    'border-bottom-color':[{
+      }]
+      ,'border-bottom-color':[{
         "values":"<color> | transparent | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-color"
-      }],
-    'border-left-color':[{
+      }]
+      ,'border-left-color':[{
         "values":"<color> | transparent | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-color"
-      }],
-    'border-top-style':[{
+      }]
+      ,'border-top-style':[{
         "values":"<border-style> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-style"
-      }],
-    'border-right-style':[{
+      }]
+      ,'border-right-style':[{
         "values":"<border-style> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-style"
-      }],
-    'border-bottom-style':[{
+      }]
+      ,'border-bottom-style':[{
         "values":"<border-style> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-style"
-      }],
-    'border-left-style':[{
+      }]
+      ,'border-left-style':[{
         "values":"<border-style> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-style"
-      }],
-    'border-top-width':[{
+      }]
+      ,'border-top-width':[{
         "values":"<border-width> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-top-width"
-      }],
-    'border-right-width':[{
+      }]
+      ,'border-right-width':[{
         "values":"<border-width> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-right-width"
-      }],
-    'border-bottom-width':[{
+      }]
+      ,'border-bottom-width':[{
         "values":"<border-width> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-bottom-width"
-      }],
-    'border-left-width':[{
+      }]
+      ,'border-left-width':[{
         "values":"<border-width> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-left-width"
-      }],
-    'border-width':[{
+      }]
+      ,'border-width':[{
         "values":"<border-width>{1,4} | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border-width"
-      }],
-    'border':[{
+      }]
+      ,'border':[{
         "values":"[ <border-width> || <border-style> || 'border-top-color' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-border"
-      }],
-    'bottom':[{
+      }]
+      ,'bottom':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"positioned elements",
@@ -252,8 +252,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-bottom"
-      }],
-    'caption-side':[{
+      }]
+      ,'caption-side':[{
         "values":"top | bottom | inherit",
 	
 	  "applies":"'table-caption' elements",
@@ -262,8 +262,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-caption-side"
-      }],
-    'clear':[{
+      }]
+      ,'clear':[{
         "values":"none | left | right | both | inherit",
 	
 	  "applies":"block-level elements",
@@ -272,8 +272,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-clear"
-      }],
-    'clip':[{
+      }]
+      ,'clip':[{
         "values":"<shape> | auto | inherit",
 	
 	  "applies":"absolutely positioned elements",
@@ -282,16 +282,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-clip"
-      }],
-    'color':[{
+      }]
+      ,'color':[{
         "values":"<color> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/colors.html#propdef-color"
-      }],
-    'content':[{
+      }]
+      ,'content':[{
         "values":"normal | none | [ <string> | <uri> | <counter> | attr(<identifier>) | open-quote | close-quote | no-open-quote | no-close-quote ]+ | inherit",
 	
 	  "applies":":before and :after pseudo-elements",
@@ -300,56 +300,56 @@
 	
 	"media":"all",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-content"
-      }],
-    'counter-increment':[{
+      }]
+      ,'counter-increment':[{
         "values":"[ <identifier> <integer>? ]+ | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"all",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-counter-increment"
-      }],
-    'counter-reset':[{
+      }]
+      ,'counter-reset':[{
         "values":"[ <identifier> <integer>? ]+ | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"all",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-counter-reset"
-      }],
-    'cue-after':[{
+      }]
+      ,'cue-after':[{
         "values":"<uri> | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue-after"
-      }],
-    'cue-before':[{
+      }]
+      ,'cue-before':[{
         "values":"<uri> | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue-before"
-      }],
-    'cue':[{
+      }]
+      ,'cue':[{
         "values":"[ 'cue-before' || 'cue-after' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-cue"
-      }],
-    'cursor':[{
+      }]
+      ,'cursor':[{
         "values":"[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] ] | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual, interactive",
 	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-cursor"
-      }],
-    'direction':[{
+      }]
+      ,'direction':[{
         "values":"ltr | rtl | inherit",
 	
 	  "applies":"all elements, but see prose",
@@ -358,24 +358,24 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-direction"
-      }],
-    'display':[{
+      }]
+      ,'display':[{
         "values":"inline | block | list-item | run-in | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"all",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-display"
-      }],
-    'elevation':[{
+      }]
+      ,'elevation':[{
         "values":"<angle> | below | level | above | higher | lower | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-elevation"
-      }],
-    'empty-cells':[{
+      }]
+      ,'empty-cells':[{
         "values":"show | hide | inherit",
 	
 	  "applies":"'table-cell' elements",
@@ -384,8 +384,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-empty-cells"
-      }],
-    'float':[{
+      }]
+      ,'float':[{
         "values":"left | right | none | inherit",
 	
 	  "applies":"all, but see 9.7",
@@ -394,16 +394,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-float"
-      }],
-    'font-family':[{
+      }]
+      ,'font-family':[{
         "values":"[[ <family-name> | <generic-family> ] [, <family-name>| <generic-family>]* ] | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-family"
-      }],
-    'font-size':[{
+      }]
+      ,'font-size':[{
         "values":"<absolute-size> | <relative-size> | <length> | <percentage> | inherit",
 	
 	"inherited":"yes",
@@ -412,32 +412,32 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-size"
-      }],
-    'font-style':[{
+      }]
+      ,'font-style':[{
         "values":"normal | italic | oblique | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-style"
-      }],
-    'font-variant':[{
+      }]
+      ,'font-variant':[{
         "values":"normal | small-caps | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant"
-      }],
-    'font-weight':[{
+      }]
+      ,'font-weight':[{
         "values":"normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight"
-      }],
-    'font':[{
+      }]
+      ,'font':[{
         "values":"[ [ 'font-style' || 'font-variant' || 'font-weight' ]? 'font-size' [ / 'line-height' ]? 'font-family' ] | caption | icon | menu | message-box | small-caption | status-bar | inherit",
 	
 	"inherited":"yes",
@@ -446,8 +446,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/fonts.html#propdef-font"
-      }],
-    'height':[{
+      }]
+      ,'height':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
@@ -458,8 +458,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-height"
-      }],
-    'left':[{
+      }]
+      ,'left':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"positioned elements",
@@ -470,16 +470,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-left"
-      }],
-    'letter-spacing':[{
+      }]
+      ,'letter-spacing':[{
         "values":"normal | <length> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-letter-spacing"
-      }],
-    'line-height':[{
+      }]
+      ,'line-height':[{
         "values":"normal | <number> | <length> | <percentage> | inherit",
 	
 	"inherited":"yes",
@@ -488,8 +488,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height"
-      }],
-    'list-style-image':[{
+      }]
+      ,'list-style-image':[{
         "values":"<uri> | none | inherit",
 	
 	  "applies":"elements with 'display: list-item'",
@@ -498,8 +498,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image"
-      }],
-    
+      }]
+      ,
 'list-style-position':[{
         "values":"inside | outside | inherit",
 	
@@ -509,8 +509,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position"
-      }],
-    'list-style-type':[{
+      }]
+      ,'list-style-type':[{
         "values":"disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit",
 	
 	  "applies":"elements with 'display: list-item'",
@@ -519,8 +519,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type"
-      }],
-    'list-style':[{
+      }]
+      ,'list-style':[{
         "values":"[ 'list-style-type' || 'list-style-position' || 'list-style-image' ] | inherit",
 	
 	  "applies":"elements with 'display: list-item'",
@@ -529,8 +529,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-list-style"
-      }],
-    'margin-right':[{
+      }]
+      ,'margin-right':[{
         "values":"<margin-width> | inherit",
 	
 	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
@@ -541,8 +541,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-right"
-      }],
-    'margin-left':[{
+      }]
+      ,'margin-left':[{
         "values":"<margin-width> | inherit",
 	
 	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
@@ -553,8 +553,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-left"
-      }],
-    'margin-top':[{
+      }]
+      ,'margin-top':[{
         "values":"<margin-width> | inherit",
 	
 	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
@@ -565,8 +565,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-top"
-      }],
-    'margin-bottom':[{
+      }]
+      ,'margin-bottom':[{
         "values":"<margin-width> | inherit",
 	
 	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
@@ -577,8 +577,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin-bottom"
-      }],
-    'margin':[{
+      }]
+      ,'margin':[{
         "values":"<margin-width>{1,4} | inherit",
 	
 	  "applies":"all elements except elements with table display types other than table-caption, table and inline-table",
@@ -589,8 +589,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-margin"
-      }],
-    'max-height':[{
+      }]
+      ,'max-height':[{
         "values":"<length> | <percentage> | none | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
@@ -601,8 +601,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-max-height"
-      }],
-    'max-width':[{
+      }]
+      ,'max-width':[{
         "values":"<length> | <percentage> | none | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
@@ -613,8 +613,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-max-width"
-      }],
-    'min-height':[{
+      }]
+      ,'min-height':[{
         "values":"<length> | <percentage> | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table columns, and column groups",
@@ -625,8 +625,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-min-height"
-      }],
-    'min-width':[{
+      }]
+      ,'min-width':[{
         "values":"<length> | <percentage> | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
@@ -637,8 +637,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-min-width"
-      }],
-    'orphans':[{
+      }]
+      ,'orphans':[{
         "values":"<integer> | inherit",
 	
 	  "applies":"block-level elements",
@@ -647,40 +647,40 @@
 	
 	"media":"visual, paged",
 	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-orphans"
-      }],
-    'outline-color':[{
+      }]
+      ,'outline-color':[{
         "values":"<color> | invert | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual, interactive",
 	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-color"
-      }],
-    'outline-style':[{
+      }]
+      ,'outline-style':[{
         "values":"<border-style> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual, interactive",
 	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-style"
-      }],
-    'outline-width':[{
+      }]
+      ,'outline-width':[{
         "values":"<border-width> | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual, interactive",
 	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline-width"
-      }],
-    'outline':[{
+      }]
+      ,'outline':[{
         "values":"[ 'outline-color' || 'outline-style' || 'outline-width' ] | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual, interactive",
 	"source":"http://www.w3.org/TR/CSS2/ui.html#propdef-outline"
-      }],
-    'overflow':[{
+      }]
+      ,'overflow':[{
         "values":"visible | hidden | scroll | auto | inherit",
 	
 	  "applies":"non-replaced block-level elements, table cells, and inline-block elements",
@@ -689,8 +689,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-overflow"
-      }],
-    'padding-top':[{
+      }]
+      ,'padding-top':[{
         "values":"<padding-width> | inherit",
 	
 	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
@@ -701,8 +701,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-top"
-      }],
-    'padding-right':[{
+      }]
+      ,'padding-right':[{
         "values":"<padding-width> | inherit",
 	
 	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
@@ -713,8 +713,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-right"
-      }],
-    'padding-bottom':[{
+      }]
+      ,'padding-bottom':[{
         "values":"<padding-width> | inherit",
 	
 	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
@@ -725,8 +725,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-bottom"
-      }],
-    'padding-left':[{
+      }]
+      ,'padding-left':[{
         "values":"<padding-width> | inherit",
 	
 	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
@@ -737,8 +737,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding-left"
-      }],
-    'padding':[{
+      }]
+      ,'padding':[{
         "values":"<padding-width>{1,4} | inherit",
 	
 	  "applies":"all elements except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column",
@@ -749,8 +749,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/box.html#propdef-padding"
-      }],
-    'page-break-after':[{
+      }]
+      ,'page-break-after':[{
         "values":"auto | always | avoid | left | right | inherit",
 	
 	  "applies":"block-level elements (but see text)",
@@ -759,8 +759,8 @@
 	
 	"media":"visual, paged",
 	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-after"
-      }],
-    'page-break-before':[{
+      }]
+      ,'page-break-before':[{
         "values":"auto | always | avoid | left | right | inherit",
 	
 	  "applies":"block-level elements (but see text)",
@@ -769,8 +769,8 @@
 	
 	"media":"visual, paged",
 	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-before"
-      }],
-    'page-break-inside':[{
+      }]
+      ,'page-break-inside':[{
         "values":"avoid | auto | inherit",
 	
 	  "applies":"block-level elements (but see text)",
@@ -779,8 +779,8 @@
 	
 	"media":"visual, paged",
 	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-page-break-inside"
-      }],
-    'pause-after':[{
+      }]
+      ,'pause-after':[{
         "values":"<time> | <percentage> | inherit",
 	
 	"inherited":"no",
@@ -789,8 +789,8 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause-after"
-      }],
-    'pause-before':[{
+      }]
+      ,'pause-before':[{
         "values":"<time> | <percentage> | inherit",
 	
 	"inherited":"no",
@@ -799,8 +799,8 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause-before"
-      }],
-    'pause':[{
+      }]
+      ,'pause':[{
         "values":"[ [<time> | <percentage>]{1,2} ] | inherit",
 	
 	"inherited":"no",
@@ -809,56 +809,56 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pause"
-      }],
-    'pitch-range':[{
+      }]
+      ,'pitch-range':[{
         "values":"<number> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pitch-range"
-      }],
-    'pitch':[{
+      }]
+      ,'pitch':[{
         "values":"<frequency> | x-low | low | medium | high | x-high | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-pitch"
-      }],
-    'play-during':[{
+      }]
+      ,'play-during':[{
         "values":"<uri> [ mix || repeat ]? | auto | none | inherit",
 	
 	"inherited":"no",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-play-during"
-      }],
-    'position':[{
+      }]
+      ,'position':[{
         "values":"static | relative | absolute | fixed | inherit",
 	
 	"inherited":"no",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-position"
-      }],
-    'quotes':[{
+      }]
+      ,'quotes':[{
         "values":"[<string> <string>]+ | none | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/generate.html#propdef-quotes"
-      }],
-    'richness':[{
+      }]
+      ,'richness':[{
         "values":"<number> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-richness"
-      }],
-    'right':[{
+      }]
+      ,'right':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"positioned elements",
@@ -869,8 +869,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-right"
-      }],
-    'speak-header':[{
+      }]
+      ,'speak-header':[{
         "values":"once | always | inherit",
 	
 	  "applies":"elements that have table header information",
@@ -879,48 +879,48 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-header"
-      }],
-    'speak-numeral':[{
+      }]
+      ,'speak-numeral':[{
         "values":"digits | continuous | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-numeral"
-      }],
-    'speak-punctuation':[{
+      }]
+      ,'speak-punctuation':[{
         "values":"code | none | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak-punctuation"
-      }],
-    'speak':[{
+      }]
+      ,'speak':[{
         "values":"normal | none | spell-out | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speak"
-      }],
-    'speech-rate':[{
+      }]
+      ,'speech-rate':[{
         "values":"<number> | x-slow | slow | medium | fast | x-fast | faster | slower | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-speech-rate"
-      }],
-    'stress':[{
+      }]
+      ,'stress':[{
         "values":"<number> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-stress"
-      }],
-    'table-layout':[{
+      }]
+      ,'table-layout':[{
         "values":"auto | fixed | inherit",
 	
 	  "applies":"'table' and 'inline-table' elements",
@@ -929,8 +929,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/tables.html#propdef-table-layout"
-      }],
-    'text-align':[{
+      }]
+      ,'text-align':[{
         "values":"left | right | center | justify | inherit",
 	
 	  "applies":"block-level elements, table cells and inline blocks",
@@ -939,16 +939,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-align"
-      }],
-    'text-decoration':[{
+      }]
+      ,'text-decoration':[{
         "values":"none | [ underline || overline || line-through || blink ] | inherit",
 	
 	"inherited":"no (see prose)",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-decoration"
-      }],
-    'text-indent':[{
+      }]
+      ,'text-indent':[{
         "values":"<length> | <percentage> | inherit",
 	
 	  "applies":"block-level elements, table cells and inline blocks",
@@ -959,16 +959,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-indent"
-      }],
-    'text-transform':[{
+      }]
+      ,'text-transform':[{
         "values":"capitalize | uppercase | lowercase | none | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-text-transform"
-      }],
-    'top':[{
+      }]
+      ,'top':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"positioned elements",
@@ -979,8 +979,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-top"
-      }],
-    'unicode-bidi':[{
+      }]
+      ,'unicode-bidi':[{
         "values":"normal | embed | bidi-override | inherit",
 	
 	  "applies":"all elements, but see prose",
@@ -989,8 +989,8 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-unicode-bidi"
-      }],
-    'vertical-align':[{
+      }]
+      ,'vertical-align':[{
         "values":"baseline | sub | super | top | text-top | middle | bottom | text-bottom | <percentage> | <length> | inherit",
 	
 	  "applies":"inline-level and 'table-cell' elements",
@@ -1001,24 +1001,24 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align"
-      }],
-    'visibility':[{
+      }]
+      ,'visibility':[{
         "values":"visible | hidden | collapse | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visufx.html#propdef-visibility"
-      }],
-    'voice-family':[{
+      }]
+      ,'voice-family':[{
         "values":"[[<specific-voice> | <generic-voice> ],]* [<specific-voice> | <generic-voice> ] | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-voice-family"
-      }],
-    'volume':[{
+      }]
+      ,'volume':[{
         "values":"<number> | <percentage> | silent | x-soft | soft | medium | loud | x-loud | inherit",
 	
 	"inherited":"yes",
@@ -1027,16 +1027,16 @@
 	
 	"media":"aural",
 	"source":"http://www.w3.org/TR/CSS2/aural.html#propdef-volume"
-      }],
-    'white-space':[{
+      }]
+      ,'white-space':[{
         "values":"normal | pre | nowrap | pre-wrap | pre-line | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-white-space"
-      }],
-    'widows':[{
+      }]
+      ,'widows':[{
         "values":"<integer> | inherit",
 	
 	  "applies":"block-level elements",
@@ -1045,8 +1045,8 @@
 	
 	"media":"visual, paged",
 	"source":"http://www.w3.org/TR/CSS2/page.html#propdef-widows"
-      }],
-    'width':[{
+      }]
+      ,'width':[{
         "values":"<length> | <percentage> | auto | inherit",
 	
 	  "applies":"all elements but non-replaced inline elements, table rows, and row groups",
@@ -1057,16 +1057,16 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visudet.html#propdef-width"
-      }],
-    'word-spacing':[{
+      }]
+      ,'word-spacing':[{
         "values":"normal | <length> | inherit",
 	
 	"inherited":"yes",
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/text.html#propdef-word-spacing"
-      }],
-    'z-index':[{
+      }]
+      ,'z-index':[{
         "values":"auto | <integer> | inherit",
 	
 	  "applies":"positioned elements",
@@ -1075,7 +1075,7 @@
 	
 	"media":"visual",
 	"source":"http://www.w3.org/TR/CSS2/visuren.html#propdef-z-index"
-      }],
-    
+      }]
+      
     };
   

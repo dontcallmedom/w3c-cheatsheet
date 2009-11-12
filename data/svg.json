@@ -5,285 +5,238 @@
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, target, transform, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"The 'a' element may contain any element that its parent may contain, except itself.      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/linking.html#AElement"}],
-      
-    'animate':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/linking.html#AElement"}]
+        ,'animate':
         [{"attributes":"about, accumulate, additive, attributeName, attributeType, begin, by, calcMode, class, content, datatype, dur, end, fill, from, id, keySplines, keyTimes, max, min, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, systemLanguage, to, typeof, values, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateElement"}],
-      
-    'animateColor':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateElement"}]
+        ,'animateColor':
         [{"attributes":"about, accumulate, additive, attributeName, attributeType, begin, by, calcMode, class, content, datatype, dur, end, fill, from, id, keySplines, keyTimes, max, min, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, systemLanguage, to, typeof, values, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateColorElement"}],
-      
-    'animateMotion':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateColorElement"}]
+        ,'animateMotion':
         [{"attributes":"about, accumulate, additive, begin, by, calcMode, class, content, datatype, dur, end, fill, from, id, keyPoints, keySplines, keyTimes, max, min, origin, path, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, rotate, systemLanguage, to, typeof, values, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, mpath, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateMotionElement"}],
-      
-    'animateTransform':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateMotionElement"}]
+        ,'animateTransform':
         [{"attributes":"about, accumulate, additive, attributeName, attributeType, begin, by, calcMode, class, content, datatype, dur, end, fill, from, id, keySplines, keyTimes, max, min, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, systemLanguage, to, type, typeof, values, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateTransformElement"}],
-      
-    'animation':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateTransformElement"}]
+        ,'animation':
         [{"attributes":"about, begin, class, content, datatype, dur, end, externalResourcesRequired, fill, focusHighlight, focusable, height, id, initialVisibility, max, min, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, preserveAspectRatio, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, syncBehavior, syncMaster, syncTolerance, systemLanguage, transform, typeof, width, x, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AnimationElement"}],
-      
-    'audio':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AnimationElement"}]
+        ,'audio':
         [{"attributes":"about, begin, class, content, datatype, dur, end, externalResourcesRequired, fill, id, max, min, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, syncBehavior, syncMaster, syncTolerance, systemLanguage, type, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AudioElement"}],
-      
-    'circle':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AudioElement"}]
+        ,'circle':
         [{"attributes":"about, class, content, cx, cy, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, r, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#CircleElement"}],
-      
-    'defs':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#CircleElement"}]
+        ,'defs':
         [{"attributes":"about, class, content, datatype, id, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, foreignObject, g, handler, image, line, linearGradient, listener, metadata, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, switch, text, textArea, title, use, video      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#DefsElement"}],
-      
-    'desc':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#DefsElement"}]
+        ,'desc':
         [{"attributes":"about, class, content, datatype, id, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"<text>      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#TitleAndDescriptionElements"}],
-      
-    'discard':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#TitleAndDescriptionElements"}]
+        ,'discard':
         [{"attributes":"about, begin, class, content, datatype, id, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#DiscardElement"}],
-      
-    'ellipse':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#DiscardElement"}]
+        ,'ellipse':
         [{"attributes":"about, class, content, cx, cy, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, rx, ry, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#EllipseElement"}],
-      
-    'font':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#EllipseElement"}]
+        ,'font':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, horiz-adv-x, horiz-origin-x, id, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, font-face, glyph, hkern, metadata, missing-glyph, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontElement"}],
-      
-    'font-face':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontElement"}]
+        ,'font-face':
         [{"attributes":"about, accent-height, alphabetic, ascent, bbox, cap-height, class, content, datatype, descent, externalResourcesRequired, font-family, font-stretch, font-style, font-variant, font-weight, hanging, id, ideographic, mathematical, overline-position, overline-thickness, panose-1, property, rel, resource, rev, role, slope, stemh, stemv, strikethrough-position, strikethrough-thickness, typeof, underline-position, underline-thickness, unicode-range, units-per-em, widths, x-height, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, font-face-src, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceElement"}],
-      
-    'font-face-src':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceElement"}]
+        ,'font-face-src':
         [{"attributes":"about, class, content, datatype, id, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, font-face-uri, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceSrcElement"}],
-      
-    'font-face-uri':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceSrcElement"}]
+        ,'font-face-uri':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, id, property, rel, resource, rev, role, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceUriElement"}],
-      
-    'foreignObject':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceUriElement"}]
+        ,'foreignObject':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, height, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, width, x, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"all",
 	  "allowed children":"desc, metadata, svg, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/extend.html#ForeignObjectElement"}],
-      
-    'g':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/extend.html#ForeignObjectElement"}]
+        ,'g':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, foreignObject, g, handler, image, line, linearGradient, listener, metadata, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, switch, text, textArea, title, use, video      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#GElement"}],
-      
-    'glyph':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#GElement"}]
+        ,'glyph':
         [{"attributes":"about, arabic-form, class, content, d, datatype, glyph-name, horiz-adv-x, id, lang, property, rel, resource, rev, role, typeof, unicode, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#GlyphElement"}],
-      
-    'handler':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#GlyphElement"}]
+        ,'handler':
         [{"attributes":"about, class, content, datatype, ev:event, externalResourcesRequired, id, property, rel, resource, rev, role, type, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"<text>, desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#HandlerElement"}],
-      
-    'hkern':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#HandlerElement"}]
+        ,'hkern':
         [{"attributes":"about, class, content, datatype, g1, g2, id, k, property, rel, resource, rev, role, typeof, u1, u2, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#KernElements"}],
-      
-    'image':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#KernElements"}]
+        ,'image':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, height, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, opacity, preserveAspectRatio, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, type, typeof, width, x, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#ImageElement"}],
-      
-    'line':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#ImageElement"}]
+        ,'line':
         [{"attributes":"about, class, content, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, x1, x2, xml:base, xml:id, xml:lang, xml:space, y1, y2      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#LineElement"}],
-      
-    'linearGradient':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#LineElement"}]
+        ,'linearGradient':
         [{"attributes":"about, class, content, datatype, gradientUnits, id, property, rel, resource, rev, role, typeof, x1, x2, xml:base, xml:id, xml:lang, xml:space, y1, y2      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, metadata, set, stop, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#LinearGradientElement"}],
-      
-    'listener':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#LinearGradientElement"}]
+        ,'listener':
         [{"attributes":"about, class, content, datatype, defaultAction, event, handler, id, observer, phase, propagate, property, rel, resource, rev, role, target, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#ListenerElement"}],
-      
-    'metadata':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#ListenerElement"}]
+        ,'metadata':
         [{"attributes":"about, class, content, datatype, id, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"<text>      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/metadata.html#MetadataElement"}],
-      
-    'missing-glyph':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/metadata.html#MetadataElement"}]
+        ,'missing-glyph':
         [{"attributes":"about, class, content, d, datatype, horiz-adv-x, id, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#MissingGlyphElement"}],
-      
-    'mpath':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/fonts.html#MissingGlyphElement"}]
+        ,'mpath':
         [{"attributes":"about, class, content, datatype, id, property, rel, resource, rev, role, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#MpathElement"}],
-      
-    'path':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#MpathElement"}]
+        ,'path':
         [{"attributes":"about, class, content, d, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, pathLength, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/paths.html#PathElement"}],
-      
-    'polygon':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/paths.html#PathElement"}]
+        ,'polygon':
         [{"attributes":"about, class, content, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, points, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolygonElement"}],
-      
-    'polyline':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolygonElement"}]
+        ,'polyline':
         [{"attributes":"about, class, content, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, points, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolylineElement"}],
-      
-    'prefetch':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolylineElement"}]
+        ,'prefetch':
         [{"attributes":"about, bandwidth, class, content, datatype, id, mediaCharacterEncoding, mediaContentEncodings, mediaSize, mediaTime, property, rel, resource, rev, role, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#PrefetchElement"}],
-      
-    'radialGradient':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#PrefetchElement"}]
+        ,'radialGradient':
         [{"attributes":"about, class, content, cx, cy, datatype, gradientUnits, id, property, r, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, metadata, set, stop, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#RadialGradientElement"}],
-      
-    'rect':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#RadialGradientElement"}]
+        ,'rect':
         [{"attributes":"about, class, content, datatype, focusHighlight, focusable, height, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, rx, ry, systemLanguage, transform, typeof, width, x, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#RectElement"}],
-      
-    'script':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/shapes.html#RectElement"}]
+        ,'script':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, id, property, rel, resource, rev, role, type, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"<text>, desc, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#ScriptElement"}],
-      
-    'set':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/script.html#ScriptElement"}]
+        ,'set':
         [{"attributes":"about, attributeName, attributeType, begin, class, content, datatype, dur, end, fill, id, max, min, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, systemLanguage, to, typeof, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"desc, handler, metadata, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#SetElement"}],
-      
-    'solidColor':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/animate.html#SetElement"}]
+        ,'solidColor':
         [{"attributes":"about, class, content, datatype, id, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#SolidColorElement"}],
-      
-    'stop':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#SolidColorElement"}]
+        ,'stop':
         [{"attributes":"about, class, content, datatype, id, offset, property, rel, resource, rev, role, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#StopElement"}],
-      
-    'svg':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/painting.html#StopElement"}]
+        ,'svg':
         [{"attributes":"about, baseProfile, class, content, contentScriptType, datatype, externalResourcesRequired, focusHighlight, focusable, height, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, playbackOrder, preserveAspectRatio, property, rel, resource, rev, role, snapshotTime, syncBehaviorDefault, syncToleranceDefault, timelineBegin, typeof, version, viewBox, width, xml:base, xml:id, xml:lang, xml:space, zoomAndPan      ",
 	  "Allowed properties":"all",
 	  "allowed children":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, foreignObject, g, handler, image, line, linearGradient, listener, metadata, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, switch, text, textArea, title, use, video      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#SVGElement"}],
-      
-    'switch':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#SVGElement"}]
+        ,'switch':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"The 'switch' element may contain any element that its parent may contain.      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#SwitchElement"}],
-      
-    'tbreak':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#SwitchElement"}]
+        ,'tbreak':
         [{"attributes":"about, class, content, datatype, id, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"unknown",
 	  "allowed children":"      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#tbreakElement"}],
-      
-    'text':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#tbreakElement"}]
+        ,'text':
         [{"attributes":"about, class, content, datatype, editable, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, rotate, systemLanguage, transform, typeof, x, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"all",
 	  "allowed children":"<text>, a, animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title, tspan      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TextElement"}],
-      
-    'textArea':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TextElement"}]
+        ,'textArea':
         [{"attributes":"about, class, content, datatype, editable, focusHighlight, focusable, height, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, width, x, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"all",
 	  "allowed children":"<text>, a, animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, tbreak, title, tspan      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TextAreaElement"}],
-      
-    'title':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TextAreaElement"}]
+        ,'title':
         [{"attributes":"about, class, content, datatype, id, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"<text>      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#TitleAndDescriptionElements"}],
-      
-    'tspan':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#TitleAndDescriptionElements"}]
+        ,'tspan':
         [{"attributes":"about, class, content, datatype, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, typeof, xml:base, xml:id, xml:lang, xml:space      ",
 	  "Allowed properties":"all",
 	  "allowed children":"The 'tspan' element may contain any element that its parent may contain.      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TSpanElement"}],
-      
-    'use':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/text.html#TSpanElement"}]
+        ,'use':
         [{"attributes":"about, class, content, datatype, externalResourcesRequired, focusHighlight, focusable, id, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, property, rel, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, rev, role, systemLanguage, transform, typeof, x, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"all",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#UseElement"}],
-      
-    'video':
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/struct.html#UseElement"}]
+        ,'video':
         [{"attributes":"about, begin, class, content, datatype, dur, end, externalResourcesRequired, fill, focusHighlight, focusable, height, id, initialVisibility, max, min, nav-down, nav-down-left, nav-down-right, nav-left, nav-next, nav-prev, nav-right, nav-up, nav-up-left, nav-up-right, overlay, preserveAspectRatio, property, rel, repeatCount, repeatDur, requiredExtensions, requiredFeatures, requiredFonts, requiredFormats, resource, restart, rev, role, syncBehavior, syncMaster, syncTolerance, systemLanguage, transform, transformBehavior, type, typeof, width, x, xlink:actuate, xlink:arcrole, xlink:href, xlink:role, xlink:show, xlink:title, xlink:type, xml:base, xml:id, xml:lang, xml:space, y      ",
 	  "Allowed properties":"media properties",
 	  "allowed children":"animate, animateColor, animateMotion, animateTransform, desc, discard, handler, metadata, set, switch, title      ",
-	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#VideoElement"}],
-      
-    
+	  "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/multimedia.html#VideoElement"}]
+        
     };
     svgAttributesDetails = {
     
@@ -696,8 +649,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-AboutAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'accent-height':[
 	   {	  
 	   "elements":"font-face      ",
@@ -706,8 +659,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'accumulate':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -716,8 +669,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-AccumulateAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'additive':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -726,8 +679,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-AdditiveAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'alphabetic':[
 	   {	  
 	   "elements":"font-face      ",
@@ -736,8 +689,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'arabic-form':[
 	   {	  
 	   "elements":"glyph      ",
@@ -746,8 +699,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ascent':[
 	   {	  
 	   "elements":"font-face      ",
@@ -756,8 +709,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'attributeName':[
 	   {	  
 	   "elements":"animate, animateColor, animateTransform, set      ",
@@ -766,8 +719,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-AttributeNameAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'attributeType':[
 	   {	  
 	   "elements":"animate, animateColor, animateTransform, set      ",
@@ -776,8 +729,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-AttributeTypeAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'bandwidth':[
 	   {	  
 	   "elements":"prefetch      ",
@@ -786,8 +739,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'baseProfile':[
 	   {	  
 	   "elements":"svg      ",
@@ -796,8 +749,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'bbox':[
 	   {	  
 	   "elements":"font-face      ",
@@ -806,8 +759,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'begin':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, discard, set, video      ",
@@ -816,8 +769,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-BeginAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'by':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -826,8 +779,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-ByAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'calcMode':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -836,8 +789,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-CalcModeAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cap-height':[
 	   {	  
 	   "elements":"font-face      ",
@@ -846,8 +799,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'class':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -856,8 +809,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-ClassAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'content':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -866,8 +819,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-ContentAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'contentScriptType':[
 	   {	  
 	   "elements":"svg      ",
@@ -876,8 +829,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-ContentScriptTypeAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cx':[
 	   {	  
 	   "elements":"circle, ellipse, radialGradient      ",
@@ -886,8 +839,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cy':[
 	   {	  
 	   "elements":"circle, ellipse, radialGradient      ",
@@ -896,8 +849,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'd':[
 	   {	  
 	   "elements":"glyph, missing-glyph, path      ",
@@ -906,8 +859,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#paths-DAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'datatype':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -916,8 +869,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-DatatypeAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'defaultAction':[
 	   {	  
 	   "elements":"listener      ",
@@ -926,8 +879,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'descent':[
 	   {	  
 	   "elements":"font-face      ",
@@ -936,8 +889,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'dur':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -946,8 +899,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-DurAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'editable':[
 	   {	  
 	   "elements":"text, textArea      ",
@@ -956,8 +909,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'end':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -966,8 +919,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-EndAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ev:event':[
 	   {	  
 	   "elements":"handler      ",
@@ -976,8 +929,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'event':[
 	   {	  
 	   "elements":"listener      ",
@@ -986,8 +939,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'externalResourcesRequired':[
 	   {	  
 	   "elements":"a, animation, audio, font, font-face, font-face-uri, foreignObject, g, handler, image, script, svg, switch, use, video      ",
@@ -996,8 +949,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-ExternalResourcesRequiredAttribute feature-ExternalResourcesRequiredAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'fill':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1006,8 +959,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-FillAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'focusHighlight':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1016,8 +969,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'focusable':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1026,8 +979,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#interact-FocusableAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'font-family':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1036,8 +989,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'font-stretch':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1046,8 +999,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'font-style':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1056,8 +1009,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'font-variant':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1066,8 +1019,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'font-weight':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1076,8 +1029,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'from':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -1086,8 +1039,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-FromAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'g1':[
 	   {	  
 	   "elements":"hkern      ",
@@ -1096,8 +1049,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'g2':[
 	   {	  
 	   "elements":"hkern      ",
@@ -1106,8 +1059,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'glyph-name':[
 	   {	  
 	   "elements":"glyph      ",
@@ -1116,8 +1069,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'gradientUnits':[
 	   {	  
 	   "elements":"linearGradient, radialGradient      ",
@@ -1126,8 +1079,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'handler':[
 	   {	  
 	   "elements":"listener      ",
@@ -1136,8 +1089,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'hanging':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1146,8 +1099,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'height':[
 	   {	  
 	   "elements":"animation, foreignObject, image, rect, svg, video      ",
@@ -1163,8 +1116,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'horiz-adv-x':[
 	   {	  
 	   "elements":"font, glyph, missing-glyph      ",
@@ -1173,8 +1126,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'horiz-origin-x':[
 	   {	  
 	   "elements":"font      ",
@@ -1183,8 +1136,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'id':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1193,8 +1146,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ideographic':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1203,8 +1156,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'initialVisibility':[
 	   {	  
 	   "elements":"animation, video      ",
@@ -1213,8 +1166,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-InitialVisibilityAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'k':[
 	   {	  
 	   "elements":"hkern      ",
@@ -1223,8 +1176,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'keyPoints':[
 	   {	  
 	   "elements":"animateMotion      ",
@@ -1233,8 +1186,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-KeyPointsAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'keySplines':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -1243,8 +1196,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-KeySplinesAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'keyTimes':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -1253,8 +1206,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-KeyTimesAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'lang':[
 	   {	  
 	   "elements":"glyph      ",
@@ -1263,8 +1216,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'mathematical':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1273,8 +1226,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'max':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1283,8 +1236,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-MaxAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'mediaCharacterEncoding':[
 	   {	  
 	   "elements":"prefetch      ",
@@ -1293,8 +1246,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'mediaContentEncodings':[
 	   {	  
 	   "elements":"prefetch      ",
@@ -1303,8 +1256,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'mediaSize':[
 	   {	  
 	   "elements":"prefetch      ",
@@ -1313,8 +1266,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'mediaTime':[
 	   {	  
 	   "elements":"prefetch      ",
@@ -1323,8 +1276,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'min':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1333,8 +1286,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-MinAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-down':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1343,8 +1296,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-down-left':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1353,8 +1306,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-down-right':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1363,8 +1316,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-left':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1373,8 +1326,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-next':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1383,8 +1336,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-prev':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1393,8 +1346,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-right':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1403,8 +1356,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-up':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1413,8 +1366,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-up-left':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1423,8 +1376,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nav-up-right':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, svg, switch, text, textArea, tspan, use, video      ",
@@ -1433,8 +1386,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'observer':[
 	   {	  
 	   "elements":"listener      ",
@@ -1443,8 +1396,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'offset':[
 	   {	  
 	   "elements":"stop      ",
@@ -1453,8 +1406,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'origin':[
 	   {	  
 	   "elements":"animateMotion      ",
@@ -1463,8 +1416,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-OriginAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'overlay':[
 	   {	  
 	   "elements":"video      ",
@@ -1473,8 +1426,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-OverlayAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'overline-position':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1483,8 +1436,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'overline-thickness':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1493,8 +1446,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'panose-1':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1503,8 +1456,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'path':[
 	   {	  
 	   "elements":"animateMotion      ",
@@ -1513,8 +1466,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-PathAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'pathLength':[
 	   {	  
 	   "elements":"path      ",
@@ -1523,8 +1476,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#paths-PathLengthAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'phase':[
 	   {	  
 	   "elements":"listener      ",
@@ -1533,8 +1486,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'playbackOrder':[
 	   {	  
 	   "elements":"svg      ",
@@ -1543,8 +1496,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'points':[
 	   {	  
 	   "elements":"polygon, polyline      ",
@@ -1553,8 +1506,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'preserveAspectRatio':[
 	   {	  
 	   "elements":"animation, image, svg, video      ",
@@ -1563,8 +1516,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#coords-PreserveAspectRatioAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'propagate':[
 	   {	  
 	   "elements":"listener      ",
@@ -1573,8 +1526,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'property':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1583,8 +1536,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-PropertyAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'r':[
 	   {	  
 	   "elements":"circle, radialGradient      ",
@@ -1593,8 +1546,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rel':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1603,8 +1556,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RelAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'repeatCount':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1613,8 +1566,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-RepeatCountAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'repeatDur':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1623,8 +1576,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-RepeatDurAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'requiredExtensions':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, desc, discard, ellipse, foreignObject, g, image, line, metadata, path, polygon, polyline, rect, set, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1633,8 +1586,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RequiredExtensionsAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'requiredFeatures':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, desc, discard, ellipse, foreignObject, g, image, line, metadata, path, polygon, polyline, rect, set, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1643,8 +1596,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RequiredFeaturesAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'requiredFonts':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, desc, discard, ellipse, foreignObject, g, image, line, metadata, path, polygon, polyline, rect, set, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1653,8 +1606,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RequiredFontsAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'requiredFormats':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, desc, discard, ellipse, foreignObject, g, image, line, metadata, path, polygon, polyline, rect, set, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1663,8 +1616,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RequiredFormatsAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'resource':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1673,8 +1626,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-ResourceAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'restart':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, set, video      ",
@@ -1683,8 +1636,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-RestartAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rev':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1693,8 +1646,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RevAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'role':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1703,8 +1656,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-RoleAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rotate':[
 	   {	  
 	   "elements":"animateMotion      ",
@@ -1720,8 +1673,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-RotateAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rx':[
 	   {	  
 	   "elements":"ellipse, rect      ",
@@ -1730,8 +1683,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ry':[
 	   {	  
 	   "elements":"ellipse, rect      ",
@@ -1740,8 +1693,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'slope':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1750,8 +1703,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'snapshotTime':[
 	   {	  
 	   "elements":"svg      ",
@@ -1760,8 +1713,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'stemh':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1770,8 +1723,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'stemv':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1780,8 +1733,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'strikethrough-position':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1790,8 +1743,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'strikethrough-thickness':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1800,8 +1753,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'syncBehavior':[
 	   {	  
 	   "elements":"animation, audio, video      ",
@@ -1810,8 +1763,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-SyncBehaviorAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'syncBehaviorDefault':[
 	   {	  
 	   "elements":"svg      ",
@@ -1820,8 +1773,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-SyncBehaviorDefaultAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'syncMaster':[
 	   {	  
 	   "elements":"animation, audio, video      ",
@@ -1830,8 +1783,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-SyncMasterAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'syncTolerance':[
 	   {	  
 	   "elements":"animation, audio, video      ",
@@ -1840,8 +1793,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-SyncToleranceAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'syncToleranceDefault':[
 	   {	  
 	   "elements":"svg      ",
@@ -1850,8 +1803,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#multimedia-SyncToleranceDefaultAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'systemLanguage':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, desc, discard, ellipse, foreignObject, g, image, line, metadata, path, polygon, polyline, rect, set, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1860,8 +1813,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-SystemLanguageAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'target':[
 	   {	  
 	   "elements":"a      ",
@@ -1877,8 +1830,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'timelineBegin':[
 	   {	  
 	   "elements":"svg      ",
@@ -1887,8 +1840,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'to':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, set      ",
@@ -1897,8 +1850,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-ToAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'transform':[
 	   {	  
 	   "elements":"a, animation, circle, ellipse, foreignObject, g, image, line, path, polygon, polyline, rect, switch, text, textArea, use, video      ",
@@ -1907,8 +1860,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#coords-TransformAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'transformBehavior':[
 	   {	  
 	   "elements":"video      ",
@@ -1917,8 +1870,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'type':[
 	   {	  
 	   "elements":"handler, script      ",
@@ -1941,8 +1894,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#script-TypeAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'typeof':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -1951,8 +1904,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#struct-TypeofAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'u1':[
 	   {	  
 	   "elements":"hkern      ",
@@ -1961,8 +1914,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'u2':[
 	   {	  
 	   "elements":"hkern      ",
@@ -1971,8 +1924,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'underline-position':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1981,8 +1934,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'underline-thickness':[
 	   {	  
 	   "elements":"font-face      ",
@@ -1991,8 +1944,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'unicode':[
 	   {	  
 	   "elements":"glyph      ",
@@ -2001,8 +1954,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'unicode-range':[
 	   {	  
 	   "elements":"font-face      ",
@@ -2011,8 +1964,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'units-per-em':[
 	   {	  
 	   "elements":"font-face      ",
@@ -2021,8 +1974,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'values':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform      ",
@@ -2031,8 +1984,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#animate-ValuesAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'version':[
 	   {	  
 	   "elements":"svg      ",
@@ -2041,8 +1994,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'viewBox':[
 	   {	  
 	   "elements":"svg      ",
@@ -2051,8 +2004,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#coords-ViewBoxAttribute"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'width':[
 	   {	  
 	   "elements":"animation, foreignObject, image, rect, svg, video      ",
@@ -2068,8 +2021,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'widths':[
 	   {	  
 	   "elements":"font-face      ",
@@ -2078,8 +2031,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'x':[
 	   {	  
 	   "elements":"animation, foreignObject, image, rect, textArea, use, video      ",
@@ -2095,8 +2048,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'x-height':[
 	   {	  
 	   "elements":"font-face      ",
@@ -2105,8 +2058,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'x1':[
 	   {	  
 	   "elements":"line, linearGradient      ",
@@ -2115,8 +2068,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'x2':[
 	   {	  
 	   "elements":"line, linearGradient      ",
@@ -2125,8 +2078,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:actuate':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2142,8 +2095,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:arcrole':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2152,8 +2105,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:href':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2162,8 +2115,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:role':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2172,8 +2125,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:show':[
 	   {	  
 	   "elements":"animate, animateColor, animateMotion, animateTransform, discard, font-face-uri, handler, mpath, prefetch, script, set      ",
@@ -2196,8 +2149,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:title':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2206,8 +2159,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xlink:type':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, discard, font-face-uri, foreignObject, handler, image, mpath, prefetch, script, set, use, video      ",
@@ -2216,8 +2169,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xml:base':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -2226,8 +2179,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xml:id':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -2236,8 +2189,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xml:lang':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, handler, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, script, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -2246,8 +2199,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'xml:space':[
 	   {	  
 	   "elements":"a, animate, animateColor, animateMotion, animateTransform, animation, audio, circle, defs, desc, discard, ellipse, font, font-face, font-face-src, font-face-uri, foreignObject, g, glyph, hkern, image, line, linearGradient, listener, metadata, missing-glyph, mpath, path, polygon, polyline, prefetch, radialGradient, rect, set, solidColor, stop, svg, switch, tbreak, text, textArea, title, tspan, use, video      ",
@@ -2263,8 +2216,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'y':[
 	   {	  
 	   "elements":"animation, foreignObject, image, rect, textArea, use, video      ",
@@ -2280,8 +2233,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'y1':[
 	   {	  
 	   "elements":"line, linearGradient      ",
@@ -2290,8 +2243,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'y2':[
 	   {	  
 	   "elements":"line, linearGradient      ",
@@ -2300,8 +2253,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'zoomAndPan':[
 	   {	  
 	   "elements":"svg      ",
@@ -2310,8 +2263,8 @@
 	   "inherited":"false",
 	   "source":"http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#interact-ZoomAndPanAttribute"
 	   },
-	   ],
-    
+	   ]
+	   
     };
 
   

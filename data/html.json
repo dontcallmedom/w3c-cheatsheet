@@ -1,314 +1,238 @@
 
+
     htmlElementsDetails = {
     
       'a':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, charset, coords, href, hreflang, name, onblur, onfocus, rel, rev, shape, tabindex, target, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-A"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, charset, coords, href, hreflang, name, onblur, onfocus, rel, rev, shape, tabindex, target, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-A"}]
+      ,
       'abbr':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ABBR"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ABBR"}]
+      ,
       'acronym':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ACRONYM"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ACRONYM"}]
+      ,
       'address':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-ADDRESS"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-ADDRESS"}]
+      ,
       'area':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, accesskey, alt, coords, href, nohref, onblur, onfocus, shape, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-AREA"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, accesskey, alt, coords, href, nohref, onblur, onfocus, shape, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-AREA"}]
+      ,
       'b':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-B"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-B"}]
+      ,
       'base':
-        [{"attributes":"href, id, target, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-BASE"}],
-      
-    
+        [{"attributes":"href, id, target, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-BASE"}]
+      ,
       'bdo':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/dirlang.html#edef-BDO"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/dirlang.html#edef-BDO"}]
+      ,
       'big':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-BIG"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-BIG"}]
+      ,
       'blockquote':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, cite","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-BLOCKQUOTE"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, cite","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-BLOCKQUOTE"}]
+      ,
       'body':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, onload, onunload","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-BODY"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, onload, onunload","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-BODY"}]
+      ,
       'br':
-        [{"attributes":"xml:space, xmlns, xmlns:xsi, class, id, style, title","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-BR"}],
-      
-    
+        [{"attributes":"xml:space, xmlns, xmlns:xsi, class, id, style, title","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-BR"}]
+      ,
       'button':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, disabled, name, onblur, onfocus, tabindex, type, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-BUTTON"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, disabled, name, onblur, onfocus, tabindex, type, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-BUTTON"}]
+      ,
       'caption':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-CAPTION"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-CAPTION"}]
+      ,
       'cite':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-CITE"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-CITE"}]
+      ,
       'code':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-CODE"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-CODE"}]
+      ,
       'col':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, span, valign, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-COL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, span, valign, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-COL"}]
+      ,
       'colgroup':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, span, valign, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-COLGROUP"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, span, valign, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-COLGROUP"}]
+      ,
       'dd':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DD"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DD"}]
+      ,
       'del':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, cite, datetime","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-del"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, cite, datetime","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-del"}]
+      ,
       'dfn':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-DFN"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-DFN"}]
+      ,
       'div':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-DIV"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-DIV"}]
+      ,
       'dl':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DL"}]
+      ,
       'dt':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-DT"}]
+      ,
       'em':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-EM"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-EM"}]
+      ,
       'fieldset':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-FIELDSET"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-FIELDSET"}]
+      ,
       'form':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accept, accept-charset, action, enctype, method, onreset, onsubmit, target","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-FORM"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accept, accept-charset, action, enctype, method, onreset, onsubmit, target","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-FORM"}]
+      ,
       'h1':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H1"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H1"}]
+      ,
       'h2':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H2"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H2"}]
+      ,
       'h3':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H3"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H3"}]
+      ,
       'h4':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H4"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H4"}]
+      ,
       'h5':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H5"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H5"}]
+      ,
       'h6':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H6"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-H6"}]
+      ,
       'head':
-        [{"attributes":"dir, lang, id, profile, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-HEAD"}],
-      
-    
+        [{"attributes":"dir, lang, id, profile, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-HEAD"}]
+      ,
       'hr':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-HR"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-HR"}]
+      ,
       'html':
-        [{"attributes":"dir, lang, id, version, xml:lang, xmlns, xmlns:xsi, xsi:schemaLocation","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-HTML"}],
-      
-    
+        [{"attributes":"dir, lang, id, version, xml:lang, xmlns, xmlns:xsi, xsi:schemaLocation","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-HTML"}]
+      ,
       'i':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-I"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-I"}]
+      ,
       'img':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, alt, height, ismap, longdesc, src, usemap, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-IMG"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, alt, height, ismap, longdesc, src, usemap, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-IMG"}]
+      ,
       'input':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accept, accesskey, alt, checked, disabled, inputmode, maxlength, name, onblur, onchange, onfocus, onselect, readonly, size, src, tabindex, type, usemap, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-INPUT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accept, accesskey, alt, checked, disabled, inputmode, maxlength, name, onblur, onchange, onfocus, onselect, readonly, size, src, tabindex, type, usemap, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-INPUT"}]
+      ,
       'ins':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, cite, datetime","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ins"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, cite, datetime","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-ins"}]
+      ,
       'kbd':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-KBD"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-KBD"}]
+      ,
       'label':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, for, onblur, onfocus","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-LABEL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, for, onblur, onfocus","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-LABEL"}]
+      ,
       'legend':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-LEGEND"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-LEGEND"}]
+      ,
       'li':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-LI"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-LI"}]
+      ,
       'link':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, charset, href, hreflang, media, rel, rev, target, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-LINK"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, charset, href, hreflang, media, rel, rev, target, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#edef-LINK"}]
+      ,
       'map':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, name","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-MAP"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, name","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-MAP"}]
+      ,
       'meta':
-        [{"attributes":"dir, lang, content, http-equiv, id, name, scheme, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-META"}],
-      
-    
+        [{"attributes":"dir, lang, content, http-equiv, id, name, scheme, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-META"}]
+      ,
       'noscript':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#edef-NOSCRIPT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#edef-NOSCRIPT"}]
+      ,
       'object':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, archive, classid, codebase, codetype, data, declare, height, name, standby, tabindex, type, usemap, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-OBJECT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, archive, classid, codebase, codetype, data, declare, height, name, standby, tabindex, type, usemap, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-OBJECT"}]
+      ,
       'ol':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, start","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-OL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, start","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-OL"}]
+      ,
       'optgroup':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, label","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-OPTGROUP"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, label","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-OPTGROUP"}]
+      ,
       'option':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, label, selected, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-OPTION"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, label, selected, value","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-OPTION"}]
+      ,
       'p':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-P"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-P"}]
+      ,
       'param':
-        [{"attributes":"id, name, type, value, valuetype, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-PARAM"}],
-      
-    
+        [{"attributes":"id, name, type, value, valuetype, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#edef-PARAM"}]
+      ,
       'pre':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-PRE"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-PRE"}]
+      ,
       'q':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, cite","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-Q"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, cite","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-Q"}]
+      ,
       'samp':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SAMP"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SAMP"}]
+      ,
       'script':
-        [{"attributes":"xml:space, xmlns, xmlns:xsi, charset, defer, id, src, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#edef-SCRIPT"}],
-      
-    
+        [{"attributes":"xml:space, xmlns, xmlns:xsi, charset, defer, id, src, type","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#edef-SCRIPT"}]
+      ,
       'select':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, multiple, name, onblur, onchange, onfocus, size, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-SELECT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, disabled, multiple, name, onblur, onchange, onfocus, size, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-SELECT"}]
+      ,
       'small':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-SMALL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-SMALL"}]
+      ,
       'span':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-SPAN"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-SPAN"}]
+      ,
       'strong':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-STRONG"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-STRONG"}]
+      ,
       'style':
-        [{"attributes":"dir, lang, xml:space, xmlns, xmlns:xsi, id, media, title, type, xml:lang","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/styles.html#edef-STYLE"}],
-      
-    
+        [{"attributes":"dir, lang, xml:space, xmlns, xmlns:xsi, id, media, title, type, xml:lang","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/styles.html#edef-STYLE"}]
+      ,
       'sub':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SUB"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SUB"}]
+      ,
       'sup':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SUP"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-SUP"}]
+      ,
       'table':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, border, cellpadding, cellspacing, frame, rules, summary, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TABLE"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, border, cellpadding, cellspacing, frame, rules, summary, width","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TABLE"}]
+      ,
       'tbody':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TBODY"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TBODY"}]
+      ,
       'td':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, abbr, align, axis, char, charoff, colspan, headers, rowspan, scope, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TD"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, abbr, align, axis, char, charoff, colspan, headers, rowspan, scope, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TD"}]
+      ,
       'textarea':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, cols, disabled, inputmode, name, onblur, onchange, onfocus, onselect, readonly, rows, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-TEXTAREA"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, accesskey, cols, disabled, inputmode, name, onblur, onchange, onfocus, onselect, readonly, rows, tabindex","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#edef-TEXTAREA"}]
+      ,
       'tfoot':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TFOOT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TFOOT"}]
+      ,
       'th':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, abbr, align, axis, char, charoff, colspan, headers, rowspan, scope, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TH"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, abbr, align, axis, char, charoff, colspan, headers, rowspan, scope, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TH"}]
+      ,
       'thead':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-THEAD"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-THEAD"}]
+      ,
       'title':
-        [{"attributes":"dir, lang, id, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-TITLE"}],
-      
-    
+        [{"attributes":"dir, lang, id, xml:lang, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#edef-TITLE"}]
+      ,
       'tr':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TR"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi, align, char, charoff, valign","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#edef-TR"}]
+      ,
       'tt':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-TT"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#edef-TT"}]
+      ,
       'ul':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-UL"}],
-      
-    
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#edef-UL"}]
+      ,
       'var':
-        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-VAR"}],
+        [{"attributes":"class, id, style, title, xml:lang, onclick, ondblclick, onkeydown, onkeypress, onkeyup, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, dir, lang, xml:space, xmlns, xmlns:xsi","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#edef-VAR"}]
       
-    
     };
     htmlAttributesDetails = {
     
@@ -319,8 +243,8 @@
 	   "description":"abbreviation for header cell",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-abbr"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'accept-charset':[
 	   {
 	   "elements":"form",
@@ -328,8 +252,8 @@
 	   "description":"list of supported charsets",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-accept-charset"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'accept':[
 	   {
 	   "elements":"form, input",
@@ -337,8 +261,8 @@
 	   "description":"list of MIME types for file upload",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-accept"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'accesskey':[
 	   {
 	   "elements":"a, area, button, input, label, legend, textarea",
@@ -346,8 +270,8 @@
 	   "description":"accessibility key character",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-accesskey"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'action':[
 	   {
 	   "elements":"form",
@@ -355,8 +279,8 @@
 	   "description":"server-side form handler",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-action"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'align':[
 	   {
 	   "elements":"caption",
@@ -400,8 +324,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-align-TD"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'alink':[
 	   {
 	   "elements":"body",
@@ -409,8 +333,8 @@
 	   "description":"color of selected links",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-alink"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'alt':[
 	   {
 	   "elements":"applet",
@@ -430,8 +354,8 @@
 	   "description":"short description",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-alt"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'archive':[
 	   {
 	   "elements":"applet",
@@ -445,8 +369,8 @@
 	   "description":"space-separated list of URIs",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-archive-OBJECT"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'axis':[
 	   {
 	   "elements":"td, th",
@@ -454,8 +378,8 @@
 	   "description":"comma-separated list of related headers",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-axis"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'background':[
 	   {
 	   "elements":"body",
@@ -463,8 +387,8 @@
 	   "description":"texture tile for document background",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-background"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'bgcolor':[
 	   {
 	   "elements":"table",
@@ -490,8 +414,8 @@
 	   "description":"document background color",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#adef-bgcolor"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'border':[
 	   {
 	   "elements":"table",
@@ -505,8 +429,8 @@
 	   "description":"link border width",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-border-IMG"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cellpadding':[
 	   {
 	   "elements":"table",
@@ -514,8 +438,8 @@
 	   "description":"spacing within cells",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-cellpadding"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cellspacing':[
 	   {
 	   "elements":"table",
@@ -523,8 +447,8 @@
 	   "description":"spacing between cells",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-cellspacing"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'char':[
 	   {
 	   "elements":"col, colgroup, tbody, td, tfoot, th, thead, tr",
@@ -532,8 +456,8 @@
 	   "description":"alignment char, e.g. char=':'",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-char"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'charoff':[
 	   {
 	   "elements":"col, colgroup, tbody, td, tfoot, th, thead, tr",
@@ -541,8 +465,8 @@
 	   "description":"offset for alignment char",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-charoff"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'charset':[
 	   {
 	   "elements":"a, link, script",
@@ -550,8 +474,8 @@
 	   "description":"char encoding of linked resource",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#adef-charset"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'checked':[
 	   {
 	   "elements":"input",
@@ -559,8 +483,8 @@
 	   "description":"for radio buttons and check boxes",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-checked"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cite':[
 	   {
 	   "elements":"blockquote, q",
@@ -574,8 +498,8 @@
 	   "description":"info on reason for change",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#adef-cite-INS"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'class':[
 	   {
 	   "elements":"all elements but base, basefont, head, html, meta, param, script, style, title",
@@ -583,8 +507,8 @@
 	   "description":"space-separated list of classes",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-class"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'classid':[
 	   {
 	   "elements":"object",
@@ -592,8 +516,8 @@
 	   "description":"identifies an implementation",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-classid"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'clear':[
 	   {
 	   "elements":"br",
@@ -601,8 +525,8 @@
 	   "description":"control of text flow",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#adef-clear"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'code':[
 	   {
 	   "elements":"applet",
@@ -610,8 +534,8 @@
 	   "description":"applet class file",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-code"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'codebase':[
 	   {
 	   "elements":"object",
@@ -625,8 +549,8 @@
 	   "description":"optional base URI for applet",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-codebase-APPLET"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'codetype':[
 	   {
 	   "elements":"object",
@@ -634,8 +558,8 @@
 	   "description":"content type for code",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-codetype"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'color':[
 	   {
 	   "elements":"basefont, font",
@@ -643,8 +567,8 @@
 	   "description":"text color",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#adef-color-FONT"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'cols':[
 	   {
 	   "elements":"frameset",
@@ -658,8 +582,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-cols-TEXTAREA"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'colspan':[
 	   {
 	   "elements":"td, th",
@@ -667,8 +591,8 @@
 	   "description":"number of cols spanned by cell",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-colspan"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'compact':[
 	   {
 	   "elements":"dir, dl, menu, ol, ul",
@@ -676,8 +600,8 @@
 	   "description":"reduced interitem spacing",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#adef-compact"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'content':[
 	   {
 	   "elements":"meta",
@@ -685,8 +609,8 @@
 	   "description":"associated information",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-content"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'coords':[
 	   {
 	   "elements":"area",
@@ -700,8 +624,8 @@
 	   "description":"for use with client-side image maps",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-coords"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'data':[
 	   {
 	   "elements":"object",
@@ -709,8 +633,8 @@
 	   "description":"reference to object's data",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-data"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'datetime':[
 	   {
 	   "elements":"del, ins",
@@ -718,8 +642,8 @@
 	   "description":"date and time of change",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#adef-datetime"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'declare':[
 	   {
 	   "elements":"object",
@@ -727,8 +651,8 @@
 	   "description":"declare but don't instantiate flag",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-declare"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'defer':[
 	   {
 	   "elements":"script",
@@ -736,8 +660,8 @@
 	   "description":"UA may defer execution of script",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-defer"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'dir':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, frame, frameset, iframe, param, script",
@@ -751,8 +675,8 @@
 	   "description":"directionality",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/dirlang.html#adef-dir-BDO"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'disabled':[
 	   {
 	   "elements":"button, input, optgroup, option, select, textarea",
@@ -760,8 +684,8 @@
 	   "description":"unavailable in this context",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-disabled"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'enctype':[
 	   {
 	   "elements":"form",
@@ -769,8 +693,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-enctype"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'face':[
 	   {
 	   "elements":"basefont, font",
@@ -778,8 +702,8 @@
 	   "description":"comma-separated list of font names",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#adef-face-FONT"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'for':[
 	   {
 	   "elements":"label",
@@ -787,8 +711,8 @@
 	   "description":"matches field ID value",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-for"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'frame':[
 	   {
 	   "elements":"table",
@@ -796,8 +720,8 @@
 	   "description":"which parts of frame to render",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-frame"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'frameborder':[
 	   {
 	   "elements":"frame, iframe",
@@ -805,8 +729,8 @@
 	   "description":"request frame borders?",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-frameborder"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'headers':[
 	   {
 	   "elements":"td, th",
@@ -814,8 +738,8 @@
 	   "description":"list of id's for header cells",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-headers"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'height':[
 	   {
 	   "elements":"iframe",
@@ -841,8 +765,8 @@
 	   "description":"initial height",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-height-APPLET"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'href':[
 	   {
 	   "elements":"a, area, link",
@@ -856,8 +780,8 @@
 	   "description":"URI that acts as base URI",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#adef-href-BASE"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'hreflang':[
 	   {
 	   "elements":"a, link",
@@ -865,8 +789,8 @@
 	   "description":"language code",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#adef-hreflang"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'hspace':[
 	   {
 	   "elements":"applet, img, object",
@@ -874,8 +798,8 @@
 	   "description":"horizontal gutter",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-hspace"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'http-equiv':[
 	   {
 	   "elements":"meta",
@@ -883,8 +807,8 @@
 	   "description":"HTTP response header name",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-http-equiv"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'id':[
 	   {
 	   "elements":"all elements but base, head, html, meta, script, style, title",
@@ -892,8 +816,8 @@
 	   "description":"document-wide unique id",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-id"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ismap':[
 	   {
 	   "elements":"img, input",
@@ -901,8 +825,8 @@
 	   "description":"use server-side image map",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-ismap"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'label':[
 	   {
 	   "elements":"option",
@@ -916,8 +840,8 @@
 	   "description":"for use in hierarchical menus",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-label-OPTGROUP"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'lang':[
 	   {
 	   "elements":"all elements but applet, base, basefont, br, frame, frameset, iframe, param, script",
@@ -925,8 +849,8 @@
 	   "description":"language code",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/dirlang.html#adef-lang"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'language':[
 	   {
 	   "elements":"script",
@@ -934,8 +858,8 @@
 	   "description":"predefined script language name",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-language"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'link':[
 	   {
 	   "elements":"body",
@@ -943,8 +867,8 @@
 	   "description":"color of links",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-link"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'longdesc':[
 	   {
 	   "elements":"img",
@@ -958,8 +882,8 @@
 	   "description":"link to long description (complements title)",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-longdesc-FRAME"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'marginheight':[
 	   {
 	   "elements":"frame, iframe",
@@ -967,8 +891,8 @@
 	   "description":"margin height in pixels",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-marginheight"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'marginwidth':[
 	   {
 	   "elements":"frame, iframe",
@@ -976,8 +900,8 @@
 	   "description":"margin widths in pixels",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-marginwidth"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'maxlength':[
 	   {
 	   "elements":"input",
@@ -985,8 +909,8 @@
 	   "description":"max chars for text fields",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-maxlength"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'media':[
 	   {
 	   "elements":"style",
@@ -1000,8 +924,8 @@
 	   "description":"for rendering on these media",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/styles.html#adef-media"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'method':[
 	   {
 	   "elements":"form",
@@ -1009,8 +933,8 @@
 	   "description":"HTTP method used to submit the form",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-method"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'multiple':[
 	   {
 	   "elements":"select",
@@ -1018,8 +942,8 @@
 	   "description":"default is single selection",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-multiple"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'name':[
 	   {
 	   "elements":"button, textarea",
@@ -1087,8 +1011,8 @@
 	   "description":"metainformation name",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-name-META"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nohref':[
 	   {
 	   "elements":"area",
@@ -1096,8 +1020,8 @@
 	   "description":"this region has no action",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-nohref"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'noresize':[
 	   {
 	   "elements":"frame",
@@ -1105,8 +1029,8 @@
 	   "description":"allow users to resize frames?",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-noresize"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'noshade':[
 	   {
 	   "elements":"hr",
@@ -1114,8 +1038,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/graphics.html#adef-noshade"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'nowrap':[
 	   {
 	   "elements":"td, th",
@@ -1123,8 +1047,8 @@
 	   "description":"suppress word wrap",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-nowrap"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'object':[
 	   {
 	   "elements":"applet",
@@ -1132,8 +1056,8 @@
 	   "description":"serialized applet file",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-object"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onblur':[
 	   {
 	   "elements":"a, area, button, input, label, select, textarea",
@@ -1141,8 +1065,8 @@
 	   "description":"the element lost the focus",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onblur"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onchange':[
 	   {
 	   "elements":"input, select, textarea",
@@ -1150,8 +1074,8 @@
 	   "description":"the element value was changed",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onchange"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onclick':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1159,8 +1083,8 @@
 	   "description":"a pointer button was clicked",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onclick"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'ondblclick':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1168,8 +1092,8 @@
 	   "description":"a pointer button was double clicked",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-ondblclick"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onfocus':[
 	   {
 	   "elements":"a, area, button, input, label, select, textarea",
@@ -1177,8 +1101,8 @@
 	   "description":"the element got the focus",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onfocus"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onkeydown':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1186,8 +1110,8 @@
 	   "description":"a key was pressed down",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onkeydown"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onkeypress':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1195,8 +1119,8 @@
 	   "description":"a key was pressed and released",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onkeypress"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onkeyup':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1204,8 +1128,8 @@
 	   "description":"a key was released",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onkeyup"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onload':[
 	   {
 	   "elements":"frameset",
@@ -1219,8 +1143,8 @@
 	   "description":"the document has been loaded",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onload"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onmousedown':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1228,8 +1152,8 @@
 	   "description":"a pointer button was pressed down",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onmousedown"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onmousemove':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1237,8 +1161,8 @@
 	   "description":"a pointer was moved within",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onmousemove"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onmouseout':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1246,8 +1170,8 @@
 	   "description":"a pointer was moved away",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onmouseout"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onmouseover':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1255,8 +1179,8 @@
 	   "description":"a pointer was moved onto",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onmouseover"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onmouseup':[
 	   {
 	   "elements":"all elements but applet, base, basefont, bdo, br, font, frame, frameset, head, html, iframe, isindex, meta, param, script, style, title",
@@ -1264,8 +1188,8 @@
 	   "description":"a pointer button was released",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onmouseup"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onreset':[
 	   {
 	   "elements":"form",
@@ -1273,8 +1197,8 @@
 	   "description":"the form was reset",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onreset"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onselect':[
 	   {
 	   "elements":"input, textarea",
@@ -1282,8 +1206,8 @@
 	   "description":"some text was selected",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onselect"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onsubmit':[
 	   {
 	   "elements":"form",
@@ -1291,8 +1215,8 @@
 	   "description":"the form was submitted",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onsubmit"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'onunload':[
 	   {
 	   "elements":"frameset",
@@ -1306,8 +1230,8 @@
 	   "description":"the document has been removed",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/scripts.html#adef-onunload"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'profile':[
 	   {
 	   "elements":"head",
@@ -1315,8 +1239,8 @@
 	   "description":"named dictionary of meta info",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-profile"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'prompt':[
 	   {
 	   "elements":"isindex",
@@ -1324,8 +1248,8 @@
 	   "description":"prompt message",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-prompt"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'readonly':[
 	   {
 	   "elements":"textarea",
@@ -1339,8 +1263,8 @@
 	   "description":"for text and passwd",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-readonly"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rel':[
 	   {
 	   "elements":"a, link",
@@ -1348,8 +1272,8 @@
 	   "description":"forward link types",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#adef-rel"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rev':[
 	   {
 	   "elements":"a, link",
@@ -1357,8 +1281,8 @@
 	   "description":"reverse link types",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/links.html#adef-rev"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rows':[
 	   {
 	   "elements":"frameset",
@@ -1372,8 +1296,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-rows-TEXTAREA"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rowspan':[
 	   {
 	   "elements":"td, th",
@@ -1381,8 +1305,8 @@
 	   "description":"number of rows spanned by cell",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-rowspan"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'rules':[
 	   {
 	   "elements":"table",
@@ -1390,8 +1314,8 @@
 	   "description":"rulings between rows and cols",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-rules"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'scheme':[
 	   {
 	   "elements":"meta",
@@ -1399,8 +1323,8 @@
 	   "description":"select form of content",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-scheme"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'scope':[
 	   {
 	   "elements":"td, th",
@@ -1408,8 +1332,8 @@
 	   "description":"scope covered by header cells",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-scope"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'scrolling':[
 	   {
 	   "elements":"frame, iframe",
@@ -1417,8 +1341,8 @@
 	   "description":"scrollbar or none",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-scrolling"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'selected':[
 	   {
 	   "elements":"option",
@@ -1426,8 +1350,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-selected"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'shape':[
 	   {
 	   "elements":"area",
@@ -1441,8 +1365,8 @@
 	   "description":"for use with client-side image maps",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-shape"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'size':[
 	   {
 	   "elements":"hr",
@@ -1474,8 +1398,8 @@
 	   "description":"rows visible",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-size-SELECT"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'span':[
 	   {
 	   "elements":"col",
@@ -1489,8 +1413,8 @@
 	   "description":"default number of columns in group",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-span-COLGROUP"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'src':[
 	   {
 	   "elements":"script",
@@ -1516,8 +1440,8 @@
 	   "description":"URI of image to embed",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-src-IMG"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'standby':[
 	   {
 	   "elements":"object",
@@ -1525,8 +1449,8 @@
 	   "description":"message to show while loading",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-standby"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'start':[
 	   {
 	   "elements":"ol",
@@ -1534,8 +1458,8 @@
 	   "description":"starting sequence number",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#adef-start"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'style':[
 	   {
 	   "elements":"all elements but base, basefont, head, html, meta, param, script, style, title",
@@ -1543,8 +1467,8 @@
 	   "description":"associated style info",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/styles.html#adef-style"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'summary':[
 	   {
 	   "elements":"table",
@@ -1552,8 +1476,8 @@
 	   "description":"purpose/structure for speech output",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-summary"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'tabindex':[
 	   {
 	   "elements":"a, area, button, input, object, select, textarea",
@@ -1561,8 +1485,8 @@
 	   "description":"position in tabbing order",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-tabindex"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'target':[
 	   {
 	   "elements":"a, area, base, form, link",
@@ -1570,8 +1494,8 @@
 	   "description":"render in this frame",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../present/frames.html#adef-target"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'text':[
 	   {
 	   "elements":"body",
@@ -1579,8 +1503,8 @@
 	   "description":"document text color",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-text"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'title':[
 	   {
 	   "elements":"all elements but base, basefont, head, html, meta, param, script, title",
@@ -1588,8 +1512,8 @@
 	   "description":"advisory title",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-title"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'type':[
 	   {
 	   "elements":"a, link",
@@ -1651,8 +1575,8 @@
 	   "description":"for use as form button",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../interact/forms.html#adef-type-BUTTON"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'usemap':[
 	   {
 	   "elements":"img, input, object",
@@ -1660,8 +1584,8 @@
 	   "description":"use client-side image map",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-usemap"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'valign':[
 	   {
 	   "elements":"col, colgroup, tbody, td, tfoot, th, thead, tr",
@@ -1669,8 +1593,8 @@
 	   "description":"vertical alignment in cells",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/tables.html#adef-valign"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'value':[
 	   {
 	   "elements":"input",
@@ -1702,8 +1626,8 @@
 	   "description":"reset sequence number",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/lists.html#adef-value-LI"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'valuetype':[
 	   {
 	   "elements":"param",
@@ -1711,8 +1635,8 @@
 	   "description":"How to interpret value",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-valuetype"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'version':[
 	   {
 	   "elements":"html",
@@ -1720,8 +1644,8 @@
 	   "description":"Constant",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-version"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'vlink':[
 	   {
 	   "elements":"body",
@@ -1729,8 +1653,8 @@
 	   "description":"color of visited links",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/global.html#adef-vlink"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'vspace':[
 	   {
 	   "elements":"applet, img, object",
@@ -1738,8 +1662,8 @@
 	   "description":"vertical gutter",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/objects.html#adef-vspace"
 	   },
-	   ],
-    
+	   ]
+	   ,
            'width':[
 	   {
 	   "elements":"hr",
@@ -1795,8 +1719,8 @@
 	   "description":" ",
 	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/../struct/text.html#adef-width-PRE"
 	   },
-	   ],
-    
+	   ]
+	   
     };
 
   
