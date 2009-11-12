@@ -22,26 +22,27 @@ background-color: #0B5B9D; color: white; padding-bottom: 5px; -moz-border-radius
 
 
 
-.ui-accordion .ui-accordion-header a { padding: 2px; padding-left: 10px;}
+.ui-accordion .ui-accordion-header a, .ui-accordion .ui-accordion-header span.text { padding: 2px; padding-left: 10px;}
 .ui-accordion .ui-accordion-header .ui-icon { left:-5px;}
 .ui-accordion .ui-accordion-content { padding: 2px; padding-left:12px}
 .mwi_logo { text-align: center; }
 .mwi_logo img { border: 0; vertical-align: top; }
 .mwi_logo .w3c>img { border-right: 2px #666 solid; margin-right: 2px }
 .tab h2 { color: lightblue; font-weight: normal; }
-.card a:link, .card a:visited { color: white; text-decoration: none; }
-.card a:hover { text-decoration: underline; }
-.ui-accordion h3.ui-accordion-header { background:url(../images/mwbp_flip_cards_icons.png) no-repeat;}
-#design h3.ui-accordion-header { background-position:right -7px}
-#standards h3.ui-accordion-header { background-position:right -327px;}
-#hazards h3.ui-accordion-header { background-position:right -87px;}
-#limitations h3.ui-accordion-header { background-position:right -167px;}
-#navigation  h3.ui-accordion-header { background-position:right -207px;}
-#graphics  h3.ui-accordion-header { background-position:right -47px;}
-#small  h3.ui-accordion-header { background-position:right -287px;}
-#network h3.ui-accordion-header { background-position:right -247px;}
-#input h3.ui-accordion-header { background-position:right -127px;}
-#users_go h3.ui-accordion-header { background-position:right -367px;}
+.accordion span, .accordion a:link, .accordion a:visited { color: white; text-decoration: none; }
+.accordion a:hover { text-decoration: underline; }
+ .ui-accordion h3.ui-accordion-header { background:none;}
+#mwbp .ui-accordion h3.ui-accordion-header { background:url(../images/mwbp_flip_cards_icons.png) no-repeat;}
+#mwbp #design h3.ui-accordion-header { background-position:right -7px}
+#mwbp #standards h3.ui-accordion-header { background-position:right -327px;}
+#mwbp #hazards  h3.ui-accordion-header { background-position:right -87px;}
+#mwbp #limitations h3.ui-accordion-header { background-position:right -167px;}
+#mwbp #navigation  h3.ui-accordion-header { background-position:right -207px;}
+#mwbp #graphics  h3.ui-accordion-header { background-position:right -47px;}
+#mwbp #small h3.ui-accordion-header { background-position:right -287px;}
+#mwbp #network h3.ui-accordion-header { background-position:right -247px;}
+#mwbp #input  h3.ui-accordion-header { background-position:right -127px;}
+#mwbp #users_go  h3.ui-accordion-header { background-position:right -367px;}
 .ui-tabs, .ui-tabs-panel { background: #0B5B9D; color:white;}
 
 #mwbp .card { width:100%;}
@@ -80,7 +81,7 @@ background-image:url(images/ui-icons_888888_256x240.png);
 .presentation.card h2 { text-align: left; font-size: 120%; }
 
 .cardgroup img { display:none;}
-.cardgroup h3 { min-height:22px;}
+.accordion h3 { min-height:22px;}
 
 ul { padding-left:0.5em;}
 
