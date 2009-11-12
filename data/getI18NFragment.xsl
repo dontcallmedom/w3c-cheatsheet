@@ -23,7 +23,9 @@
 
   <xsl:template match="/">
   <div class='accordion'>
+    <h2>Internationalization Quicktips</h2>
     <xsl:for-each select="/html:html/html:body//html:dt[@class='tipdl']">
+      <div>
       <xsl:choose>
 	<xsl:when test="html:a/@id">
 	  <h3><a href='#{html:a/@id}'><xsl:value-of select="html:span"/></a></h3>
@@ -35,6 +37,7 @@
 	  <h3><xsl:value-of select="html:span"/></h3>
 	</xsl:otherwise>
       </xsl:choose>
+      </div>
     </xsl:for-each>
   </div>
   </xsl:template>
