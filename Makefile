@@ -34,3 +34,6 @@ data/mobile.json: data/getMobile.xsl
 
 data/all.json:  data/cssselectors.json data/html.json data/wcag.json data/mobile.json data/qa.json data/svg.json data/css.json data/xpath.json data/i18n.json
 	cat $^ > $@
+
+data/i18n.frag: data/getI18NFragment.xsl
+	saxon http://www.w3.orgnational/quicktips/ $^ > $@
