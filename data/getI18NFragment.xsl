@@ -28,13 +28,13 @@
       <div>
       <xsl:choose>
 	<xsl:when test="html:a/@id">
-	  <h3><a href='#{html:a/@id}'><xsl:value-of select="html:span"/></a></h3>
+	  <h3><a href='#{html:a/@id}'><xsl:apply-templates select="html:span/*"/></a></h3>
 	  <div id="{html:a/@id}">
 	    <xsl:apply-templates select="following-sibling::html:dd[1]/*" />
 	  </div>
 	</xsl:when>
 	<xsl:otherwise>
-	  <h3><span><xsl:value-of select="html:span"/></span></h3>
+	  <h3><span><xsl:apply-templates select="html:span/*"/></span></h3>
 	</xsl:otherwise>
       </xsl:choose>
       </div>
