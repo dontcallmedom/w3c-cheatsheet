@@ -1,3 +1,4 @@
+var watchId;
 /* Removes redundant elements from an array */
 make_unique = function(b)
  {
@@ -67,6 +68,13 @@ if ($(".ui-state-active",accordion).length) {
 });*/
 }
 
+function clearLookUp() {
+    if ($("#details").accordion) {
+	$("#details").accordion("destroy");
+    }
+    $("#details").html("");    
+}
+
 jQuery(document).ready(function($) {
   // Tabs
   //$('#content').css("overflow","hidden");
@@ -96,10 +104,7 @@ jQuery(document).ready(function($) {
 	}
 	var d = item.selectValue;
 	var details = keywordsMatch[d];
-	if ($("#details").accordion) {
-          $("#details").accordion("destroy");
-        }
-	$("#details").html("");
+	clearLookUp();
 	var detailsLength = 0;
 	for (var i in details) {
 	  detailsLength++;
@@ -112,7 +117,12 @@ jQuery(document).ready(function($) {
 	   for (var k in details[i][j]) {
 	    if (k!="source") {
 	     var dt = $("<dt></dt>").appendTo(dl);
-	     dt.text(k);
+	     var container = dt;
+             if (k=="Accessibility techniques") {
+		var a = $("<a href='http://www.w3.org/WAI/intro/wcag'></a>").appendTo(dt);
+		container = a;
+             }
+	     container.text(k);
 	     var dd = $("<dd></dd>").appendTo(dl);
 	     if (details[i][j][k] instanceof Array) {
 		var ul = $("<ul></ul>").appendTo(dd);
@@ -138,8 +148,20 @@ jQuery(document).ready(function($) {
 		$("#details").accordion({header:'div>h2',autoHeight:false,active:false});
 	}
 	makeReplacingAccordion($("#details"));
- 	
   }
   $("#search").autocompleteArray(keywords,{onItemSelect:show_result,onFindValue:show_result,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10});
+  $("#search").change(function() {
+	  if ($("#search").val()) {
+	      if (!$("#details_clear").length) {
+		  $("#search").after("<a href='#' class='ui-icon ui-icon-close' id='details_clear'></a>");
+		  $("#details_clear").click(function() {
+			  clearLookUp();
+			  $("#search").val("").change();
+		      });
+	      }
+	  } else {
+	      $("#details_clear").replaceWith("");
+	  }
+      });
 
 });
