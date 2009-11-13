@@ -2531,6 +2531,7 @@ A<this.length;
 A++){if(this[A]==B){return A
 }}return -1
 };
+var watchId;
 make_unique=function(A){var B=[],C;
 A.sort();
 for(C=0;
@@ -2550,6 +2551,8 @@ if(!keywordsMatch[keyword]){keywordsMatch[keyword]={}
 A.accordion("option","navigation",true);
 A.accordion("option","autoHeight","false");
 A.accordion("option","collapsible",true)
+}function clearLookUp(){if($("#details").accordion){$("#details").accordion("destroy")
+}$("#details").html("")
 }jQuery(document).ready(function(D){D("#content").tabs();
 D("#content").tabs("paging");
 D("#content").bind("tabsshow",function(E,F){window.location.hash=F.tab.hash
@@ -2562,8 +2565,7 @@ for(var B in keywordSources){for(var C in keywordSources[B]){keywords=keywords.c
 function A(Q){if(Q==null){return 
 }var M=Q.selectValue;
 var E=keywordsMatch[M];
-if(D("#details").accordion){D("#details").accordion("destroy")
-}D("#details").html("");
+clearLookUp();
 var R=0;
 for(var J in E){R++;
 div=D("<div></div>").appendTo(D("#details"));
@@ -2587,5 +2589,11 @@ N.text(link.title)
 }}}}if(R==1){D("#details").accordion({header:"div>h2",autoHeight:false})
 }else{D("#details").accordion({header:"div>h2",autoHeight:false,active:false})
 }makeReplacingAccordion(D("#details"))
-}D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10})
+}D("#search").autocompleteArray(keywords,{onItemSelect:A,onFindValue:A,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10});
+D("#search").change(function(){if(D("#search").val()){if(!D("#details_clear").length){D("#search").after("<a href='#' class='ui-icon ui-icon-close' id='details_clear'></a>");
+D("#details_clear").click(function(){clearLookUp();
+D("#search").val("").change()
+})
+}}else{D("#details_clear").replaceWith("")
+}})
 });
