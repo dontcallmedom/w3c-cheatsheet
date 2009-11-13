@@ -96,3 +96,6 @@ code { font-family:monospace;color:#afa;}
 /* .ui-state-default, .ui-widget-content .ui-state-default {
 background: #000000 url(images/ui-bg_glass_004b8d_1x400.png) repeat-x 50% 50%;
 }*/
+
+#search { float:left;}
+#details { clear:left;}
