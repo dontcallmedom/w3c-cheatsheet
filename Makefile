@@ -36,4 +36,4 @@ data/all.json:  data/cssselectors.json data/html.json data/wcag.json data/mobile
 	cat $^ > $@
 
 data/i18n.frag: data/getI18NFragment.xsl
-	saxon http://www.w3.orgnational/quicktips/ $^ > $@
+	saxon http://www.w3.org/International/quicktips/ $^ > $@
