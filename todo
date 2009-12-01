@@ -7,11 +7,11 @@ Roadmap:
     XHTML 1.1 vs XHTML 1.0 vs HTML 4.01 distinctions?
     mark deprecated features?
     more WCAG2 techniques
-    about tab
+    about tab?
   User interface:
+    Full redesign (Sorin)
     Save past queries?
-    Make results bookmarkable
-    Improve search tab (sorin)
+    Make results bookmarkable    
     Clarify tab titles    
     print style sheet (valentin)
     welcome screen?
