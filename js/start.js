@@ -31,6 +31,7 @@ for (var topic in keywordSources) {
 for (var i in keywordSources[topic]) {
   source = keywordSources[topic][i];
   for (var keyword in source["details"]) {
+      if (source["details"].hasOwnProperty(keyword)) {
 	source["list"].push(keyword);
 	if (!keywordsMatch[keyword]) {
 	   keywordsMatch[keyword]={};
@@ -42,6 +43,7 @@ for (var i in keywordSources[topic]) {
 	for (var k in source["details"][keyword]) {
  	  keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
 	}
+      }
   }
 }
 }
