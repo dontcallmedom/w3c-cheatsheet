@@ -1,22 +1,80 @@
+htmlElementsDetails['a'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H2.html','title':'Combining adjacent image and text links for the same resource'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H30.html','title':'Providing link text that describes the purpose of a link for anchor elements'},];
+htmlElementsDetails['abbr'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H28.html','title':'Providing definitions for abbreviations by using the abbr and acronym elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H86.html','title':'Providing text alternatives for ASCII art, emoticons, and leetspeak'},];
+htmlElementsDetails['acronym'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H28.html','title':'Providing definitions for abbreviations by using the abbr and acronym elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H86.html','title':'Providing text alternatives for ASCII art, emoticons, and leetspeak'},];
 htmlElementsDetails['area'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H24.html','title':'Providing text alternatives for the area elements of image maps'},];
+htmlElementsDetails['b'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['blockquote'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['br'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},];
 htmlElementsDetails['button'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
 htmlElementsDetails['caption'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H39.html','title':'Using caption elements to associate data table captions with data tables'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H73.html','title':'Using the summary attribute of the table element to give an overview of data tables'},];
+htmlElementsDetails['cite'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['code'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['dd'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H40.html','title':'Using definition lists'},];
+htmlElementsDetails['del'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['dfn'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H54.html','title':'Using the dfn element to identify the defining instance of a word'},];
+htmlElementsDetails['dl'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H40.html','title':'Using definition lists'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},];
+htmlElementsDetails['dt'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H40.html','title':'Using definition lists'},];
+htmlElementsDetails['em'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['fieldset'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},];
+htmlElementsDetails['h1'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H42.html','title':'Using h1-h6 to identify headings'},];
+htmlElementsDetails['h2'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H42.html','title':'Using h1-h6 to identify headings'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H69.html','title':'Providing heading elements at the beginning of each section of content'},];
+htmlElementsDetails['head'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H25.html','title':'Providing a title using the title element'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H59.html','title':'Using the link element and navigation tools'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H60.html','title':'Using the link element to link to a glossary'},];
 htmlElementsDetails['html'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H57.html','title':'Using language attributes on the html element'},];
+htmlElementsDetails['i'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['img'][0]['Accessibility techniques']=[
-	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H37.html','title':'Using alt attributes on img elements'},];
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H2.html','title':'Combining adjacent image and text links for the same resource'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H30.html','title':'Providing link text that describes the purpose of a link for anchor elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H37.html','title':'Using alt attributes on img elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H45.html','title':'Using longdesc'},];
 htmlElementsDetails['input'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H36.html','title':'Using alt attributes on images used as submit buttons'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+htmlElementsDetails['ins'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['kbd'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['label'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
 htmlElementsDetails['legend'][0]['Accessibility techniques']=[
@@ -24,51 +82,126 @@ htmlElementsDetails['legend'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
 htmlElementsDetails['li'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H50.html','title':'Using structural elements to group links'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H81.html','title':'Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested'},];
 htmlElementsDetails['link'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H59.html','title':'Using the link element and navigation tools'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H60.html','title':'Using the link element to link to a glossary'},];
+htmlElementsDetails['map'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H50.html','title':'Using structural elements to group links'},];
+htmlElementsDetails['meta'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H76.html','title':'Using meta refresh to create an instant client-side redirect'},];
 htmlElementsDetails['object'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H27.html','title':'Providing text and non-text alternatives for object'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H53.html','title':'Using the body of the object element'},];
 htmlElementsDetails['ol'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H50.html','title':'Using structural elements to group links'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H81.html','title':'Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested'},];
 htmlElementsDetails['optgroup'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},];
 htmlElementsDetails['option'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+htmlElementsDetails['pre'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H51.html','title':'Using table markup to present tabular information'},];
+htmlElementsDetails['q'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['select'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H84.html','title':'Using a button with a select element to perform an action'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+htmlElementsDetails['span'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H56.html','title':'Using the dir attribute on an inline element to resolve problems with nested directional runs'},];
+htmlElementsDetails['strong'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['sub'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
+htmlElementsDetails['sup'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['table'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H39.html','title':'Using caption elements to associate data table captions with data tables'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H51.html','title':'Using table markup to present tabular information'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H73.html','title':'Using the summary attribute of the table element to give an overview of data tables'},];
 htmlElementsDetails['td'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H43.html','title':'Using id and headers attributes to associate data cells with header cells in data tables'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H51.html','title':'Using table markup to present tabular information'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H63.html','title':'Using the scope attribute to associate header cells and data cells in data tables'},];
 htmlElementsDetails['textarea'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
 htmlElementsDetails['th'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H43.html','title':'Using id and headers attributes to associate data cells with header cells in data tables'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H51.html','title':'Using table markup to present tabular information'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H63.html','title':'Using the scope attribute to associate header cells and data cells in data tables'},];
+htmlElementsDetails['title'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H25.html','title':'Providing a title using the title element'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H64.html','title':'Using the title attribute of the frame and iframe elements'},];
+htmlElementsDetails['tr'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H51.html','title':'Using table markup to present tabular information'},];
+htmlElementsDetails['tt'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H49.html','title':'Using semantic markup to mark emphasized or special text'},];
 htmlElementsDetails['ul'][0]['Accessibility techniques']=[
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H50.html','title':'Using structural elements to group links'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H81.html','title':'Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested'},];
+
+           htmlAttributesDetails['action'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H32.html','title':'Providing submit buttons'},];
 
            htmlAttributesDetails['alt'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H24.html','title':'Providing text alternatives for the area elements of image maps'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H30.html','title':'Providing link text that describes the purpose of a link for anchor elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H33.html','title':'Supplementing link text with the title attribute'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H36.html','title':'Using alt attributes on images used as submit buttons'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H37.html','title':'Using alt attributes on img elements'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H67.html','title':'Using null alt text and no title attribute on img elements for images that AT should ignore'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
+
+           htmlAttributesDetails['content'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H76.html','title':'Using meta refresh to create an instant client-side redirect'},];
+
+           htmlAttributesDetails['dir'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H56.html','title':'Using the dir attribute on an inline element to resolve problems with nested directional runs'},];
 
            htmlAttributesDetails['for'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},];
+
+           htmlAttributesDetails['headers'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H43.html','title':'Using id and headers attributes to associate data cells with header cells in data tables'},];
+
+           htmlAttributesDetails['href'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H2.html','title':'Combining adjacent image and text links for the same resource'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H33.html','title':'Supplementing link text with the title attribute'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H59.html','title':'Using the link element and navigation tools'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H60.html','title':'Using the link element to link to a glossary'},];
+
+           htmlAttributesDetails['http-equiv'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H76.html','title':'Using meta refresh to create an instant client-side redirect'},];
 
            htmlAttributesDetails['id'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H43.html','title':'Using id and headers attributes to associate data cells with header cells in data tables'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},];
 
            htmlAttributesDetails['label'][0]['Accessibility techniques']=[
 	
-	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},];
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H85.html','title':'Using OPTGROUP to group OPTION elements inside a SELECT'},];
 
            htmlAttributesDetails['lang'][0]['Accessibility techniques']=[
 	
@@ -82,10 +215,18 @@ htmlElementsDetails['ul'][0]['Accessibility techniques']=[
 
            htmlAttributesDetails['name'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H64.html','title':'Using the title attribute of the frame and iframe elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},];
+
+           htmlAttributesDetails['rel'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H59.html','title':'Using the link element and navigation tools'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H60.html','title':'Using the link element to link to a glossary'},];
 
            htmlAttributesDetails['scope'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H43.html','title':'Using id and headers attributes to associate data cells with header cells in data tables'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H63.html','title':'Using the scope attribute to associate header cells and data cells in data tables'},];
 
            htmlAttributesDetails['summary'][0]['Accessibility techniques']=[
@@ -93,18 +234,38 @@ htmlElementsDetails['ul'][0]['Accessibility techniques']=[
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H39.html','title':'Using caption elements to associate data table captions with data tables'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H73.html','title':'Using the summary attribute of the table element to give an overview of data tables'},];
 
+           htmlAttributesDetails['tabindex'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H4.html','title':'Creating a logical tab order through links, form controls, and objects'},];
+
            htmlAttributesDetails['target'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H33.html','title':'Supplementing link text with the title attribute'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H83.html','title':'Using the target attribute to open a new window on user request and indicating this in link text'},];
 
            htmlAttributesDetails['title'][0]['Accessibility techniques']=[
 	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H24.html','title':'Providing text alternatives for the area elements of image maps'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H25.html','title':'Providing a title using the title element'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H28.html','title':'Providing definitions for abbreviations by using the abbr and acronym elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H33.html','title':'Supplementing link text with the title attribute'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H40.html','title':'Using definition lists'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H50.html','title':'Using structural elements to group links'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H64.html','title':'Using the title attribute of the frame and iframe elements'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H67.html','title':'Using null alt text and no title attribute on img elements for images that AT should ignore'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H86.html','title':'Providing text alternatives for ASCII art, emoticons, and leetspeak'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H89.html','title':'Using the title attribute to provide context-sensitive help'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H90.html','title':'Indicating required form controls'},
 	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H91.html','title':'Using HTML form controls and links'},];
 
            htmlAttributesDetails['type'][0]['Accessibility techniques']=[
 	
-	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},];
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H44.html','title':'Using label elements to associate text labels with form controls'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H48.html','title':'Using ol, ul and dl for lists'},
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H71.html','title':'Providing a description for groups of form controls using fieldset and legend elements'},];
+
+           htmlAttributesDetails['value'][0]['Accessibility techniques']=[
+	
+	  {'link':'http://www.w3.org/TR/WCAG20-TECHS/H65.html','title':'Using the title attribute to identify form controls when the label element cannot be used'},];
