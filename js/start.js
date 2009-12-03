@@ -25,8 +25,8 @@ keywordSources = {
 	{"list":[],"details":svgElementsDetails,"name":"SVG Element"}],
 	"XPath":[{"list":[],"details":xpathFunctionsDetails,"name":"XPath functions"}]
 };
-keywordsMatch = Array();
-keywords = Array();
+keywordsMatch = {};
+keywords = [];
 for (var topic in keywordSources) {
 for (var i in keywordSources[topic]) {
   source = keywordSources[topic][i];
@@ -36,7 +36,7 @@ for (var i in keywordSources[topic]) {
 	   keywordsMatch[keyword]={};
 	}
 	if (!keywordsMatch[keyword][source["name"]]) {
-	   keywordsMatch[keyword][source["name"]] = Array();
+	   keywordsMatch[keyword][source["name"]] = [];
 	}
 
 	for (var k in source["details"][keyword]) {
@@ -109,40 +109,42 @@ jQuery(document).ready(function($) {
 	clearLookUp();
 	var detailsLength = 0;
 	for (var i in details) {
-	  detailsLength++;
-	  div = $("<div></div>").appendTo($("#details"));
-	  div.append("<h2>" + i + " <code>" + d + "</code></h2><div></div>");
-	  div2 = $("div",div);
-  	  for (var j in details[i]) {
-	   var dl = $("<dl></dl>").appendTo(div2);
+	    if (details.hasOwnProperty(i)) {
+		detailsLength++;
+		div = $("<div></div>").appendTo($("#details"));
+		div.append("<h2>" + i + " <code>" + d + "</code></h2><div></div>");
+		div2 = $("div",div);
+		for (var j in details[i]) {
+		    var dl = $("<dl></dl>").appendTo(div2);
 
-	   for (var k in details[i][j]) {
-	    if (k!="source") {
-	     var dt = $("<dt></dt>").appendTo(dl);
-	     var container = dt;
-             if (k=="Accessibility techniques") {
-		var a = $("<a href='http://www.w3.org/WAI/intro/wcag'></a>").appendTo(dt);
-		container = a;
-             }
-	     container.text(k);
-	     var dd = $("<dd></dd>").appendTo(dl);
-	     if (details[i][j][k] instanceof Array) {
-		var ul = $("<ul></ul>").appendTo(dd);
-		for (l in details[i][j][k]) {
-		   link = details[i][j][k][l]
-		   var li = $("<li></li>").appendTo(ul);
-		   var a = $("<a></a>").appendTo(li);
-		   a.attr("href",link.link);
-		   a.text(link.title);
+		    for (var k in details[i][j]) {
+			if (k!="source") {
+			    var dt = $("<dt></dt>").appendTo(dl);
+			    var container = dt;
+			    if (k=="Accessibility techniques") {
+				var a = $("<a href='http://www.w3.org/WAI/intro/wcag'></a>").appendTo(dt);
+				container = a;
+			    }
+			    container.text(k);
+			    var dd = $("<dd></dd>").appendTo(dl);
+			    if (details[i][j][k] instanceof Array) {
+				var ul = $("<ul></ul>").appendTo(dd);
+				for (l in details[i][j][k]) {
+				    link = details[i][j][k][l]
+					var li = $("<li></li>").appendTo(ul);
+				    var a = $("<a></a>").appendTo(li);
+				    a.attr("href",link.link);
+				    a.text(link.title);
+				}
+			    } else {
+				dd.text(details[i][j][k]);
+			    }
+			} else {
+			    dl.append("<dt><a href='" + details[i][j][k] + "'>source</a></dt>");
+			}
+		    }
 		}
-	     } else {
-             	dd.text(details[i][j][k]);
-	     }
-            } else {
-	     dl.append("<dt><a href='" + details[i][j][k] + "'>source</a></dt>");
 	    }
-	   }
-	  }
         }
 	if (detailsLength==1) {
 		$("#details").accordion({header:'div>h2',autoHeight:false});
