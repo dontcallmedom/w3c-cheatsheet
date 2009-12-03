@@ -31,7 +31,6 @@ for (var topic in keywordSources) {
 for (var i in keywordSources[topic]) {
   source = keywordSources[topic][i];
   for (var keyword in source["details"]) {
-      if (source["details"].hasOwnProperty(keyword)) {
 	source["list"].push(keyword);
 	if (!keywordsMatch[keyword]) {
 	   keywordsMatch[keyword]={};
@@ -41,9 +40,10 @@ for (var i in keywordSources[topic]) {
 	}
 
 	for (var k in source["details"][keyword]) {
- 	  keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
+
+   	    keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
 	}
-      }
+      
   }
 }
 }
@@ -153,6 +153,7 @@ jQuery(document).ready(function($) {
   }
   $("#search").autocompleteArray(keywords,{onItemSelect:show_result,onFindValue:show_result,autoFill:false,selectFirst:true,delay:40,maxItemsToShow:10});
   $("#search").change(function() {
+	  clearLookUp();
 	  if ($("#search").val()) {
 	      if (!$("#details_clear").length) {
 		  $("#search").after("<a href='#' class='ui-icon ui-icon-close' id='details_clear'></a>");
