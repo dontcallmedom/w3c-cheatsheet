@@ -33,6 +33,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
     <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
+    <xsl:variable name="qaTips" select="document('qa.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="html">
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
@@ -55,6 +56,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </xsl:for-each>
 	</property>
       </xsl:if>
+      <xsl:if test="$mobileTechniques/html:dd/html:code[@class='element'][normalize-space(.)=current()]">
+	<property type="QA Tip" list="block">
+	  <xsl:for-each select="$qaTips/html:dd[html:code[@class='element'][normalize-space()=current()]]">
+	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	  </xsl:for-each>
+	</property>
+      </xsl:if>
+
       </context></item>
     </xsl:for-each>
     <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1]" group-by="normalize-space(html:td[1])">
@@ -85,6 +94,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
+	      <xsl:if test="$mobileTechniques/html:dd/html:code[@class='attribute'][normalize-space(.)=current()/html:td[1]]">
+		<property type="QA Tip" list="block">
+		  <xsl:for-each select="$qaTips/html:dd[html:code[@class='attribute'][normalize-space()=current()/html:td[1]]]">
+		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+		  </xsl:for-each>
+		</property>
+	      </xsl:if>
+
 	    </xsl:if>
 	    <property type="elements" list="inline" infoset="html">
 	      <xsl:for-each select="html:td[2]/html:a">
