@@ -35,6 +35,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     -->
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
+    <xsl:variable name="cssselectors" select="document('cssselectors.xml')/infosets/infoset"/>
   <infosets>
   <infoset technology="css">
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
@@ -68,8 +69,17 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:if>
       </context></item>
     </xsl:for-each>
+    <xsl:apply-templates select="$cssselectors/*"/>
   </infoset>
   </infosets>
   </xsl:template>
+
+  <!-- Identity Transformation for copy of cssselectors.xml -->
+  <xsl:template match="*|@*|comment()|text()">
+    <xsl:copy>
+      <xsl:apply-templates select="*|@*|comment()|text()"/>
+    </xsl:copy>
+  </xsl:template>
+
 
 </xsl:stylesheet>
