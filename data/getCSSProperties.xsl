@@ -34,6 +34,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     -->
+    <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="css">
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
@@ -58,6 +59,13 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/></content>
 	</property>
 	<property type="source" link="{concat('http://www.w3.org/TR/CSS2/',@href)}"/>
+	<xsl:if test="$i18n/html:dd/html:code[@class='attribute'][normalize-space(.)=current()/html:td[1]]">
+	  <property type="Internationalization" list="block">
+	    <xsl:for-each select="$i18n/html:dd[html:code[@class='css property'][normalize-space()=current()/html:td[1]]]">
+	      <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	    </xsl:for-each>
+	  </property>
+	</xsl:if>
       </context></item>
     </xsl:for-each>
   </infoset>

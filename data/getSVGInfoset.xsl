@@ -32,6 +32,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
   <xsl:variable name='mediaProperties' select="('audio-level', 'buffered-rendering', 'display', 'image-rendering', 'pointer-events', 'shape-rendering', 'text-rendering', 'viewport-fill', 'viewport-fill-opacity', 'visibility')"/>
   <xsl:variable name="svg" select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html')/html:html/html:body"/>
+  <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="svg">
     <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr">
@@ -125,6 +126,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <property type="inherited">
 	      <content><xsl:value-of select="normalize-space(html:td[3]/@class)"/></content>
 	  </property>
+	  <xsl:if test="$i18n/html:dd/html:code[@class='svg attribute'][normalize-space(.)=current()/html:td[1]]">
+	    <property type="Internationalization" list="block">
+	      <xsl:for-each select="$i18n/html:dd[html:code[@class='svg attribute'][normalize-space()=current()/html:td[1]]]">
+		<content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	      </xsl:for-each>
+	    </property>
+	  </xsl:if>
+
 	    <!-- when there is more than one set of elements per attribute
 	    we can't find a unique attribute id per set of elements
 	    (@@@ unless for sets that are singleton which would match
