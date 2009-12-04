@@ -1,0 +1,261 @@
+<!-- Manually extracted from http://www.w3.org/TR/CSS2/selector.html
+ Is there any way to avoid redundancy? -->
+<infosets>
+  <infoset technology="css">
+    <item type="selector" name="selectors">
+      <context>
+	<property type="Pattern"><content>*</content></property>
+	<property type="name"><content>Universal selector</content></property>
+	<property type="meaning"><content>Matches any element</content></property></context>
+<context><property type="Pattern"><CONTENT>E</CONTENT></property>
+<property type="name"><content>Type selector</content></property>
+<property type="meaning"><content>Matches any E element (i.e., an element of type E)</content></property></context>
+<context><property type="Pattern"><CONTENT>E F</CONTENT></property>
+<property type="name"><content>Descendant selector</content></property>
+<property type="meaning"><content>Matches any F element that is a descendant of an E element</content></property></context>
+<context><property type="Pattern"><CONTENT>E > F</CONTENT></property>
+<property type="name"><content>Child selector</content></property>
+<property type="meaning"><content>Matches any F element that is a child of an E element</content></property></context>
+<context><property type="Pattern"><content>E:first-child</content></property>
+<property type="name"><content>first-child pseudo-class</content></property>
+<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property></context>
+<context><property type="Pattern"><content>E:link</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property></context>
+<context><property type="Pattern"><content>E:visited</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property></context>
+<context><property type="Pattern"><content>E:active | E:hover | E:focus</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E during certain user actions</content></property></context>
+<context><property type="Pattern"><content>E:lang(c)</content></property>
+<property type="name"><content>lang() pseudo-class</content></property>
+<property type="meaning"><content>Matches element of type E if it is in (human) language c</content></property></context>
+<context><property type="Pattern"><CONTENT>E + F</CONTENT></property>
+<property type="name"><content>Adjacent selector</content></property>
+<property type="meaning"><content>Matches any F element immediately preceded by a sibling element E</content></property></context>
+<context><property type="Pattern"><content>E[foo]</content></property>
+<property type="name"><content>Attribute selector</content></property>
+<property type="meaning"><content>Matches any E element with the "foo" attribute set (whatever the value)</content></property></context>
+<context><property type="Pattern"><content>E[foo="warning"]</content></property>
+<property type="name"><content>Attribute selector</content></property>
+<property type="meaning"><content>Matches any E element whose "foo" attribute value is exactly equal to "warning"</content></property></context>
+<context><property type="Pattern"><content>E[foo~="warning"]</content></property>
+<property type="name"><content>Attribute selector</content></property>
+<property type="meaning"><content>Matches any E element whose "foo" attribute value is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
+<context><property type="Pattern"><content>E[lang|=en]</content></property>
+<property type="name"><content>Attribute selector</content></property>
+<property type="meaning"><content>Matches any E element whose "lang" attribute has a hyphen-separated list of values beginning (from the left) with "en"</content></property></context>
+<context><property type="Pattern"><content>.warning</content></property>
+<property type="name"><content>Class selector</content></property>
+<property type="meaning"><content>In HTML, matches any element whose class attribute is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
+<context><property type="Pattern"><content>#myid</content></property>
+<property type="name"><content>ID selector</content></property>
+<property type="meaning"><content>Matches any element with ID equal to "myid".</content></property>
+</context>
+</item>
+<item type="selector" name="*">
+<context>
+<property type="name"><content>Universal selector</content></property>
+<property type="description"><content>matches the name of any element type</content></property>
+</context>
+</item>
+<item type="selector" name="lang()">
+<context>
+<property type="Pattern"><content>E:lang(c)</content></property>
+<property type="name"><content>lang() pseudo-class</content></property>
+<property type="description"><content>Matches element E if it is in (human) language c (the document language specifies how language is determined)</content></property>
+<property type="I18N"><content> link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
+</context>
+</item>
+<item type="selector" name="first-child">
+<context>
+<property type="Pattern"><content>E:first-child</content></property>
+<property type="name"><content>first-child pseudo-class</content></property>
+<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property>
+</context>
+</item>
+<item name="link" type="selector">
+<context>
+<property type="Pattern"><content>E:link</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
+</context>
+</item>
+<item name="visited" type="selector">
+<context>
+<property type="Pattern"><content>E:visited</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
+</context>
+</item>
+<item type="selector" name="active">
+<context>
+<property type="Pattern"><content>E:active</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E when E is activated by the user</content></property>
+</context>
+</item>
+<item type="selector" name="hover">
+<context>
+<property type="Pattern"><content>E:hover</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
+</context>
+</item>
+<item type="selector" name="focus">
+<context>
+<property type="Pattern"><content>E:focus</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E while while it has the focus</content></property>
+</context>
+</item>
+<item type="selector" name="lang()">
+<context>
+<property type="Pattern"><content>E:lang(c)</content></property>
+<property type="name"><content>lang() pseudo-class</content></property>
+<property type="description"><content>Matches element E if it is in (human) language c (the document markup language specifies how the human language is determined)</content></property>
+<property type="I18N"><content link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
+</context>
+</item>
+<!-- @@@ duplicates start here; use <synonym> ? -->
+<item type="selector" name=":first-child">
+<context>
+<property type="Pattern"><content>E:first-child</content></property>
+<property type="name"><content>first-child pseudo-class</content></property>
+<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property>
+</context>
+</item>
+<item name=":link" type="selector">
+<context>
+<property type="Pattern"><content>E:link</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
+</context>
+</item>
+<item name=":visited" type="selector">
+<context>
+<property type="Pattern"><content>E:visited</content></property>
+<property type="name"><content>link pseudo-class</content></property>
+<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
+</context>
+</item>
+<item type="selector" name=":active">
+<context>
+<property type="Pattern"><content>E:active</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E when E is activated by the user</content></property>
+</context>
+</item>
+<item type="selector" name=":hover">
+<context>
+<property type="Pattern"><content>E:hover</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
+</context>
+</item>
+<item type="selector" name=":focus">
+<context>
+<property type="Pattern"><content>E:focus</content></property>
+<property type="name"><content>dynamic pseudo-class</content></property>
+<property type="meaning"><content>Matches E while while it has the focus</content></property>
+</context>
+</item>
+<item type="selector" name=":lang()">
+<context>
+<property type="Pattern"><content>E:lang(c)</content></property>
+<property type="name"><content>lang() pseudo-class</content></property>
+<property type="description"><content>Matches element E if it is in (human) language c (the document markup language specifies how the human language is determined)</content></property>
+<property type="I18N"><content link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
+</context>
+</item>
+<!-- end of dup -->
+
+<item type="at-rule" name="at-rules">
+<context>
+<property type="name"><content>@media</content></property>
+<property type="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
+<property type="Recognized media types">all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</property>
+</context>
+<context>
+<property type="name"><content>@import</content></property>
+<property type="description"><content>The "@import" rule allows to import style rules from other style sheets. Any @import rules must precede all other rules (except @charset)</content></property>
+<property type="Syntax"><content>The "@import" keyword must be followed by the URI of the style sheet to include. A string is also allowed; it will be interpreted as if it had url(...) around it. Media-dependent import can be specified with comma-separated media types after the URI.</content></property>
+<property type="Example"><content>@import url("mystyle.css) screen</content></property>
+</context>
+<context>
+<property type="name"><content>@page</content></property>
+<property type="description"><content>An @page rule consists of the keyword @page, followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
+<property type="Example"><content>@page {margin: 3cm;}</content></property>
+</context>
+<context>
+<property type="name"><content>@charset</content></property>
+<property type="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
+<property type="Example"><content>@charset "ISO-8859-1"</content></property>
+<property type="I18N"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
+</context>
+</item>
+<item type="at-rule" name="@import">
+<context>
+<property type="name"><content>@import</content></property>
+<property type="description"><content>The @import rule allows to import style rules from other style sheets. Any @import rules must precede all other rules (except @charset)</content></property>
+<property type="Syntax"><content>The @import keyword must be followed by the URI of the style sheet to include. A string is also allowed; it will be interpreted as if it had url(...) around it. Media-dependent import can be specified with comma-separated media types after the URI.</content></property>
+<property type="Example"><content>@import url("mystyle.css) screen</content></property>
+</context>
+</item>
+<item name="@page" type="at-rule">
+<context>
+<property type="name"><content>@page</content></property>
+<property type="description"><content>An @page rule consists of the keyword "@page", followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
+<property type="Example"><content>@page {margin: 3cm;}</content></property>
+</context>
+</item>
+<item name="@media" type="at-rule">
+<context>
+<property type="name"><content>@media</content></property>
+<property type="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
+<property type="Recognized media types"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
+</context>
+</item>
+<item name="@charset" type="at-rule">
+<context>
+<property type="name"><content>@charset</content></property>
+<property type="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
+<property type="Example"><content>@charset "ISO-8859-1"</content></property>
+<property type="I18N"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
+</context>
+</item>
+
+<!-- duplicates start here @@@ -->
+<item type="at-rule" name="import">
+<context>
+<property type="name"><content>@import</content></property>
+<property type="description"><content>The @import rule allows to import style rules from other style sheets. Any @import rules must precede all other rules (except @charset)</content></property>
+<property type="Syntax"><content>The @import keyword must be followed by the URI of the style sheet to include. A string is also allowed; it will be interpreted as if it had url(...) around it. Media-dependent import can be specified with comma-separated media types after the URI.</content></property>
+<property type="Example"><content>@import url("mystyle.css) screen</content></property>
+</context>
+</item>
+<item name="page" type="at-rule">
+<context>
+<property type="name"><content>@page</content></property>
+<property type="description"><content>An @page rule consists of the keyword "@page", followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
+<property type="Example"><content>@page {margin: 3cm;}</content></property>
+</context>
+</item>
+<item name="media" type="at-rule">
+<context>
+<property type="name"><content>@media</content></property>
+<property type="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
+<property type="Recognized media types"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
+</context>
+</item>
+<item name="charset" type="at-rule">
+<context>
+<property type="name"><content>@charset</content></property>
+<property type="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
+<property type="Example"><content>@charset "ISO-8859-1"</content></property>
+<property type="I18N"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
+</context>
+</item>
+</infoset>
+</infosets>
