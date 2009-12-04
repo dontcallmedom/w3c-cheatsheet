@@ -17,6 +17,7 @@ element infosets {
 	     attribute link { text }?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
+	         attribute xml:lang { text}?,
 	         attribute link { text}?,
 	         text
 	     }*
