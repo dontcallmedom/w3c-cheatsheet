@@ -1,32 +1,21 @@
 <?xml-stylesheet href="http://www.w3.org/StyleSheets/base.css" type="text/css"?><?xml-stylesheet href="http://www.w3.org/2002/02/style-xsl.css" type="text/css"?>
 <xsl:stylesheet version="2.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html">
 
 <!-- Output method XML -->
-<xsl:output method="text" 
+<xsl:output method="xml" indent="yes"
   encoding="utf-8" 
   />
- <!-- update the @@@ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" href="http://www.w3.org/StyleSheets/base"/>
-    <title>@@@</title>
+    <title>CSS Properties extractor</title>
   </head>
   <body>
     <div class='head'><a href="/"><img src="/Icons/w3c_home" alt="W3C"/></a></div>
-    <h1>@@@</h1>
+    <h1>CSS Properties extractor</h1>
 
-    <!-- Useful when used with the XSLT-online servlet -->
-    <!-- Make sure to set the @@@ value to the URI of the published XSLT -->
-    <form action="http://www.w3.org/2002/08/xslt4html" method="get">
-      <!-- use http://www.w3.org/2000/06/webdata/xslt if not for (X)HTML content -->
-      <div>
-        <input type="hidden" name="xslfile" value="@@@" />
-        <p><label>URI of the HTML page: <input type="text" name="xmlfile" value="http://www.w3.org/" /></label></p>
-        <p><input type="submit" value="Process" /><input type="reset" /></p>
-      </div>
-    </form>
-
+    <p>Gathers various data on elements and attributes defined in the CSS specifications.</p>
 
     <p class="copyright">Copyright &#169; 2009 <a href="http://www.w3.org/">World Wide Web Consortium</a>, (<a
 href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of
@@ -39,31 +28,40 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </body>
 </html>
 
-  <!-- default: Identity Transformation -->
-  <xsl:template match="*|@*|comment()|text()">
-    <xsl:copy>
-      <xsl:apply-templates select="*|@*|comment()|text()"/>
-    </xsl:copy>
-  </xsl:template>
 
   <xsl:template match="/">
-    cssPropertiesDetails = {
+    <!-- Worth adding later on
+    <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
+    <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
+    -->
+  <infosets>
+  <infoset technology="css">
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
-      <xsl:value-of select="."/>:[{
-        "values":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/>",
+      <item type="property" name='{translate(.,"&apos;","")}'><context>
+	<property type="values">
+	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/></content>
+	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[4])!='&#xA0;'">
-	  "applies":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[4])"/>",
+	  <property type="applies">
+	    <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[4])"/></content>
+	  </property>
 	</xsl:if>
-	"inherited":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[5])"/>",
+	<property type="inherited">
+	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[5])"/></content>
+	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[6])!='&#xA0;'">
-	  "percentage":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[6])"/>",
+	  <property type="percentage">
+	    <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[6])"/></content>
+	  </property>
 	</xsl:if>
-	"media":"<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/>",
-	"source":"http://www.w3.org/TR/CSS2/<xsl:value-of select="@href"/>"
-      }]
-      <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
+	<property type="media">
+	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/></content>
+	</property>
+	<property type="source" link="{concat('http://www.w3.org/TR/CSS2/',@href)}"/>
+      </context></item>
     </xsl:for-each>
-    };
+  </infoset>
+  </infosets>
   </xsl:template>
 
 </xsl:stylesheet>
