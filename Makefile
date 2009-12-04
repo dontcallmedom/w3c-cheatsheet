@@ -13,14 +13,19 @@ js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.pa
 style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
 
-data/xpath.json: data/getXpathFunctions.xsl
-	saxon $^ $^ > $@
 
 data/css.json: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
 
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
+
+data/xpath.xml: data/getXpathFunctions.xsl
+	saxon $^ $^ > $@
+
+data/css.xml: data/getCSSProperties.xsl
+	saxon $^ $^ > $@
+
 
 data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@

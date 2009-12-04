@@ -13,7 +13,7 @@ element infosets {
              }*
 	  }?,
           element property {
-             attribute type { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "source" | "attributes" },
+             attribute type { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "source" | "attributes" | "percentage" | "applies" },
 	     attribute infoset { text }?,
 	     attribute link { text }?,
 	     attribute list { "inline" | "block" }?,
