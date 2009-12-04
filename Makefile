@@ -19,17 +19,14 @@ data/xpath.json: data/getXpathFunctions.xsl
 data/css.json: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
 
-data/svg.json: data/getSVGInfoset.xsl
+data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
 
-data/html.json: data/getHTMLInfoset.xsl
+data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@
 
-data/wcag.json: data/getWCAGTechniques.xsl
-	saxon $^ $^ > $@
-
-data/mobile.json: data/getMobile.xsl
-	saxon $^ $^ > $@
+data/%.json: data/%.xml
+	SAXON  $^ data/xmltojson.xsl > $@
 
 
 data/all.json:  data/cssselectors.json data/html.json data/wcag.json data/mobile.json data/qa.json data/svg.json data/css.json data/xpath.json data/i18n.json
