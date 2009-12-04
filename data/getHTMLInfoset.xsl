@@ -1,32 +1,22 @@
 <?xml-stylesheet href="http://www.w3.org/StyleSheets/base.css" type="text/css"?><?xml-stylesheet href="http://www.w3.org/2002/02/style-xsl.css" type="text/css"?>
 <xsl:stylesheet version="2.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html">
 
 <!-- Output method XML -->
-<xsl:output method="text" 
+<xsl:output method="xml" indent="yes"
   encoding="utf-8" 
   />
  <!-- update the @@@ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" href="http://www.w3.org/StyleSheets/base"/>
-    <title>@@@</title>
+    <title>HTML Infoset extractor</title>
   </head>
   <body>
     <div class='head'><a href="/"><img src="/Icons/w3c_home" alt="W3C"/></a></div>
-    <h1>@@@</h1>
+    <h1>HTML Infoset extractor</h1>
 
-    <!-- Useful when used with the XSLT-online servlet -->
-    <!-- Make sure to set the @@@ value to the URI of the published XSLT -->
-    <form action="http://www.w3.org/2002/08/xslt4html" method="get">
-      <!-- use http://www.w3.org/2000/06/webdata/xslt if not for (X)HTML content -->
-      <div>
-        <input type="hidden" name="xslfile" value="@@@" />
-        <p><label>URI of the HTML page: <input type="text" name="xmlfile" value="http://www.w3.org/" /></label></p>
-        <p><input type="submit" value="Process" /><input type="reset" /></p>
-      </div>
-    </form>
-
+    <p>Gathers various data on elements and attributes defined in the (X)HTML specifications.</p>
 
     <p class="copyright">Copyright &#169; 2009 <a href="http://www.w3.org/">World Wide Web Consortium</a>, (<a
 href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of
@@ -41,38 +31,91 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-
-    htmlElementsDetails = {
+    <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
+    <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
+  <infosets>
+  <infoset technology="html">
     <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
-      <xsl:variable name="attributes">
-	<xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
-      </xsl:variable>
-      '<xsl:value-of select="."/>':
-        [{"attributes":"<xsl:value-of select="replace(replace(replace($attributes,', ,',','),',,*',','),',$','')"/>","source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/<xsl:value-of select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href"/>"}]
-      <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
+      <item type="element" name="{.}"><context>
+	<property type="attributes" list="inline" infoset="html">
+	  <xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
+	</property>
+	<property type="source" link="{concat('http://www.w3.org/TR/1999/REC-html401-19991224/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
+      <xsl:if test="$wcagTechniques//el[normalize-space(.)=current()]">
+	<property type="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
+	  <xsl:for-each select="$wcagTechniques/self::technique[descendant::el[normalize-space()=current()]]">
+	    <content xml:lang="en" link="{concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+        </xsl:for-each>
+	</property>
+      </xsl:if>
+      <xsl:if test="$mobileTechniques/html:dd/html:code[@class='element'][normalize-space(.)=current()]">
+	<property type="Mobile considerations" list="block">
+	  <xsl:for-each select="$mobileTechniques/html:dd[html:code[@class='element'][normalize-space()=current()]]">
+	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	  </xsl:for-each>
+	</property>
+      </xsl:if>
+      </context></item>
     </xsl:for-each>
-    };
-    htmlAttributesDetails = {
     <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1]" group-by="normalize-space(html:td[1])">
-           '<xsl:value-of select="html:td[1]"/>':[
-	   <xsl:for-each select="current-group()">{
-	   "elements":"<xsl:value-of select="normalize-space(lower-case(html:td[2]))"/>",
-	   "content":"<xsl:value-of select="normalize-space(html:td[3])"/>",
-	   "description":"<xsl:value-of select="replace(normalize-space(html:td[7]),'&quot;','\\&quot;')"/>",
-	   "source":"http://www.w3.org/TR/1999/REC-html401-19991224/index/<xsl:value-of select="html:td[1]/html:a/@href"/>"
-	   },
-	   </xsl:for-each>]
-	   <xsl:if test="position()!=last()"><xsl:text>,</xsl:text></xsl:if>
+      <item type="attribute" name="{html:td[1]}">
+	<xsl:for-each select="current-group()">
+	  <context>
+	    <xsl:if test="count(current-group()) &gt; 1">
+	      <xsl:attribute name="type">element</xsl:attribute>
+	      <items>
+		<xsl:for-each select="html:td[2]/html:a">
+		  <item name="{lower-case(.)}"/>
+		</xsl:for-each>
+	      </items>
+	    </xsl:if>
+	    <xsl:if test="position()=1">
+	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
+	      <xsl:if test="$wcagTechniques//att[normalize-space(.)=current()/html:td[1]]">
+		<property type="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag">
+		  <xsl:for-each select="$wcagTechniques/self::technique[descendant::att[normalize-space()=current()/html:td[1]]]">
+		    <content link="{concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+		  </xsl:for-each>
+		</property>
+	      </xsl:if>
+	      <xsl:if test="$mobileTechniques/html:dd/html:code[@class='attribute'][normalize-space(.)=current()/html:td[1]]">
+		<property type="Mobile considerations" list="block">
+		  <xsl:for-each select="$mobileTechniques/html:dd[html:code[@class='attribute'][normalize-space()=current()/html:td[1]]]">
+		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+		  </xsl:for-each>
+		</property>
+	      </xsl:if>
+	    </xsl:if>
+	    <property type="elements" list="inline" infoset="html">
+	      <xsl:for-each select="html:td[2]/html:a">
+		<content ><xsl:value-of select="lower-case(.)"/></content>
+	      </xsl:for-each>
+	    </property>
+	    <property type="content"><content><xsl:value-of select="normalize-space(html:td[3])"/></content></property>
+	    <property type="description"><content><xsl:value-of select="normalize-space(html:td[7])"/></content></property>
+	    <property type="source" link="{concat('http://www.w3.org/TR/1999/REC-html401-19991224/index/',html:td[1]/html:a/@href)}"/>
+	  </context>
+	</xsl:for-each>
+      </item>
     </xsl:for-each-group>
-    };
-
+  </infoset>
+  </infosets>
   </xsl:template>
 
   <xsl:template match="html:td" mode="dereferenceAttributeGroups">
     <xsl:for-each select="html:a">
-      <xsl:value-of select="normalize-space(/html:html/html:body//html:dl/html:dt[html:a[@id=substring-after(current()/@href,'#')]]/following-sibling::html:dd[1])"/><xsl:text>, </xsl:text>
+      <!-- We ignore XML attributes for now -->
+      <xsl:if test="normalize-space()!='XML'">
+	<xsl:for-each select="tokenize(normalize-space(/html:html/html:body//html:dl/html:dt[html:a[@id=substring-after(current()/@href,'#')]]/following-sibling::html:dd[1]),', ')">
+	  <content><xsl:value-of select="."/></content>
+	</xsl:for-each>
+      </xsl:if>
     </xsl:for-each>
-    <xsl:apply-templates select="text()"/>
+    <xsl:for-each select="tokenize(normalize-space(string-join(text(),'')),', ')">
+      <xsl:if test="normalize-space(.) and normalize-space(.)!=','">
+	<content><xsl:value-of select="."/></content>
+      </xsl:if>
+    </xsl:for-each>
   </xsl:template>
 
   <xsl:template match="text()">
