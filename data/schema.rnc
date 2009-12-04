@@ -1,0 +1,27 @@
+element infosets {
+  element infoset {
+    attribute technology { text },
+    element item {
+       attribute type { "element" | "attribute" | "property" | "selector" | "function" },
+       attribute name { text },
+       element context {
+          attribute type { "element" }?,
+	  element items {
+	     element item  { 
+                attribute name { text },
+		attribute link { text }?
+             }*
+	  }?,
+          element property {
+             attribute type { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "elements" | "content" | "Allowed properties" | "allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "source" | "attributes" },
+	     attribute link { text }?,
+	     attribute list { "inline" | "block" }?,
+	     element content {
+	         attribute link { text}?,
+	         text
+	     }*
+          }+
+       }+
+    }+
+  }
+}
