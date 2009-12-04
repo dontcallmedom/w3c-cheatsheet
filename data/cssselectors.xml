@@ -1,57 +1,57 @@
+<infosets>
 <!-- Manually extracted from http://www.w3.org/TR/CSS2/selector.html
  Is there any way to avoid redundancy? -->
-<infosets>
   <infoset technology="css">
     <item type="selector" name="selectors">
       <context>
 	<property type="Pattern"><content>*</content></property>
 	<property type="name"><content>Universal selector</content></property>
-	<property type="meaning"><content>Matches any element</content></property></context>
+	<property type="Description"><content>Matches any element</content></property></context>
 <context><property type="Pattern"><CONTENT>E</CONTENT></property>
 <property type="name"><content>Type selector</content></property>
-<property type="meaning"><content>Matches any E element (i.e., an element of type E)</content></property></context>
+<property type="Description"><content>Matches any E element (i.e., an element of type E)</content></property></context>
 <context><property type="Pattern"><CONTENT>E F</CONTENT></property>
 <property type="name"><content>Descendant selector</content></property>
-<property type="meaning"><content>Matches any F element that is a descendant of an E element</content></property></context>
+<property type="Description"><content>Matches any F element that is a descendant of an E element</content></property></context>
 <context><property type="Pattern"><CONTENT>E > F</CONTENT></property>
 <property type="name"><content>Child selector</content></property>
-<property type="meaning"><content>Matches any F element that is a child of an E element</content></property></context>
+<property type="Description"><content>Matches any F element that is a child of an E element</content></property></context>
 <context><property type="Pattern"><content>E:first-child</content></property>
 <property type="name"><content>first-child pseudo-class</content></property>
-<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property></context>
+<property type="Description"><content>Matches element E when E is the first child of its parent</content></property></context>
 <context><property type="Pattern"><content>E:link</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property></context>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property></context>
 <context><property type="Pattern"><content>E:visited</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property></context>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property></context>
 <context><property type="Pattern"><content>E:active | E:hover | E:focus</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E during certain user actions</content></property></context>
+<property type="Description"><content>Matches E during certain user actions</content></property></context>
 <context><property type="Pattern"><content>E:lang(c)</content></property>
 <property type="name"><content>lang() pseudo-class</content></property>
-<property type="meaning"><content>Matches element of type E if it is in (human) language c</content></property></context>
+<property type="Description"><content>Matches element of type E if it is in (human) language c</content></property></context>
 <context><property type="Pattern"><CONTENT>E + F</CONTENT></property>
 <property type="name"><content>Adjacent selector</content></property>
-<property type="meaning"><content>Matches any F element immediately preceded by a sibling element E</content></property></context>
+<property type="Description"><content>Matches any F element immediately preceded by a sibling element E</content></property></context>
 <context><property type="Pattern"><content>E[foo]</content></property>
 <property type="name"><content>Attribute selector</content></property>
-<property type="meaning"><content>Matches any E element with the "foo" attribute set (whatever the value)</content></property></context>
+<property type="Description"><content>Matches any E element with the "foo" attribute set (whatever the value)</content></property></context>
 <context><property type="Pattern"><content>E[foo="warning"]</content></property>
 <property type="name"><content>Attribute selector</content></property>
-<property type="meaning"><content>Matches any E element whose "foo" attribute value is exactly equal to "warning"</content></property></context>
+<property type="Description"><content>Matches any E element whose "foo" attribute value is exactly equal to "warning"</content></property></context>
 <context><property type="Pattern"><content>E[foo~="warning"]</content></property>
 <property type="name"><content>Attribute selector</content></property>
-<property type="meaning"><content>Matches any E element whose "foo" attribute value is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
+<property type="Description"><content>Matches any E element whose "foo" attribute value is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
 <context><property type="Pattern"><content>E[lang|=en]</content></property>
 <property type="name"><content>Attribute selector</content></property>
-<property type="meaning"><content>Matches any E element whose "lang" attribute has a hyphen-separated list of values beginning (from the left) with "en"</content></property></context>
+<property type="Description"><content>Matches any E element whose "lang" attribute has a hyphen-separated list of values beginning (from the left) with "en"</content></property></context>
 <context><property type="Pattern"><content>.warning</content></property>
 <property type="name"><content>Class selector</content></property>
-<property type="meaning"><content>In HTML, matches any element whose class attribute is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
+<property type="Description"><content>In HTML, matches any element whose class attribute is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
 <context><property type="Pattern"><content>#myid</content></property>
 <property type="name"><content>ID selector</content></property>
-<property type="meaning"><content>Matches any element with ID equal to "myid".</content></property>
+<property type="Description"><content>Matches any element with ID equal to "myid".</content></property>
 </context>
 </item>
 <item type="selector" name="*">
@@ -72,42 +72,42 @@
 <context>
 <property type="Pattern"><content>E:first-child</content></property>
 <property type="name"><content>first-child pseudo-class</content></property>
-<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property>
+<property type="Description"><content>Matches element E when E is the first child of its parent</content></property>
 </context>
 </item>
 <item name="link" type="selector">
 <context>
 <property type="Pattern"><content>E:link</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
 </context>
 </item>
 <item name="visited" type="selector">
 <context>
 <property type="Pattern"><content>E:visited</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
 </context>
 </item>
 <item type="selector" name="active">
 <context>
 <property type="Pattern"><content>E:active</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E when E is activated by the user</content></property>
+<property type="Description"><content>Matches E when E is activated by the user</content></property>
 </context>
 </item>
 <item type="selector" name="hover">
 <context>
 <property type="Pattern"><content>E:hover</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
+<property type="Description"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
 </context>
 </item>
 <item type="selector" name="focus">
 <context>
 <property type="Pattern"><content>E:focus</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E while while it has the focus</content></property>
+<property type="Description"><content>Matches E while while it has the focus</content></property>
 </context>
 </item>
 <item type="selector" name="lang()">
@@ -123,42 +123,42 @@
 <context>
 <property type="Pattern"><content>E:first-child</content></property>
 <property type="name"><content>first-child pseudo-class</content></property>
-<property type="meaning"><content>Matches element E when E is the first child of its parent</content></property>
+<property type="Description"><content>Matches element E when E is the first child of its parent</content></property>
 </context>
 </item>
 <item name=":link" type="selector">
 <context>
 <property type="Pattern"><content>E:link</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
 </context>
 </item>
 <item name=":visited" type="selector">
 <context>
 <property type="Pattern"><content>E:visited</content></property>
 <property type="name"><content>link pseudo-class</content></property>
-<property type="meaning"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
+<property type="Description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
 </context>
 </item>
 <item type="selector" name=":active">
 <context>
 <property type="Pattern"><content>E:active</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E when E is activated by the user</content></property>
+<property type="Description"><content>Matches E when E is activated by the user</content></property>
 </context>
 </item>
 <item type="selector" name=":hover">
 <context>
 <property type="Pattern"><content>E:hover</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
+<property type="Description"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
 </context>
 </item>
 <item type="selector" name=":focus">
 <context>
 <property type="Pattern"><content>E:focus</content></property>
 <property type="name"><content>dynamic pseudo-class</content></property>
-<property type="meaning"><content>Matches E while while it has the focus</content></property>
+<property type="Description"><content>Matches E while while it has the focus</content></property>
 </context>
 </item>
 <item type="selector" name=":lang()">
