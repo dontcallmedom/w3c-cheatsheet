@@ -2,7 +2,7 @@ element infosets {
   element infoset {
     attribute technology { text },
     element item {
-       attribute type { "element" | "attribute" | "property" | "selector" | "function" },
+       attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" },
        attribute name { text },
        element context {
           attribute type { "element" }?,
