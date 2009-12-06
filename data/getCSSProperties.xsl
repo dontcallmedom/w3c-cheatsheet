@@ -39,7 +39,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <infosets>
   <infoset technology="css">
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
-      <item type="property" name='{translate(.,"&apos;","")}'><context>
+      <item type="property" name='{normalize-space(translate(.,"&apos;",""))}'><context>
 	<property type="values">
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/></content>
 	</property>
