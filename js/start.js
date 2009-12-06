@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
         clearLookUp();
         var detailsLength = 0;
         for (var infosetname in details) {
-            if (details.hasOwnProperty(i)) {
+            if (details.hasOwnProperty(infosetname)) {
                 detailsLength = detailsLength + 1;
                 var div = $("<div></div>").appendTo($("#details"));
                 div.append("<h2>" + infosetname + " <code>" + keyword + "</code></h2><div></div>");
