@@ -31,7 +31,7 @@ data/%.json: data/%.xml
 	$(SAXON)  $^ data/xmltojson.xsl > $@
 
 
-data/all.json:  data/html.json data/svg.json data/css.json data/xpath.json
+data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xpath.json
 	cat $^ > $@
 
 data/i18n.frag: data/getI18NFragment.xsl
