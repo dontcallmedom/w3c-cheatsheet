@@ -2,7 +2,7 @@
 var make_unique = function (b) {
     var a = [];
     b.sort();
-    for (var i = 0; i < b.length; i++) {
+    for (var i in b) {
         if (b[i] !== b[i + 1]) {
             a[a.length] = b[i];
         }
@@ -99,26 +99,28 @@ jQuery(document).ready(function ($) {
                     for (var property in details[infosetname][context]) {
                         var dt = $("<dt></dt>").appendTo(dl);
                         var container = dt;
-                        if (property.link) {
-                            container = $("<a href='" + property.link + "'></a>").appendTo(dt);
+                        if (property.url) {
+                            container = $("<a href='" + property.url + "'></a>").appendTo(dt);
                         }
                         container.text(property);
                         var dd = $("<dd></dd>").appendTo(dl);
-                        if (property["properties"].length > 1) {
+			if (!property["properties"]) {
+			    // Nothing to do, move along
+			} else if (property["properties"].length > 1) {
                             var ul = $("<ul></ul>").appendTo(dd);
                             for (var propcontent in property["properties"]) {
                                 var li = $("<li></li>").appendTo(ul);
                                 var itemcontainer = li;
-                                if (propcontent.link) {
-                                    itemcontainer = $("<a href='" + propcontent.link + "'></a>").appendTo(li);
+                                if (propcontent.url) {
+                                    itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(li);
                                 }
                                 itemcontainer.text(propcontent.title);
                             }
                         } else if (property["properties"].length === 1) {
                             propcontent = property["properties"][0];
                             itemcontainer = dd;
-                            if (propcontent.link) {
-                                itemcontainer = $("<a href='" + propcontent.link + "'></a>").appendTo(dd);
+                            if (propcontent.url) {
+                                itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(dd);
                             }
                             itemcontainer.text(propcontent.title);
                         }
