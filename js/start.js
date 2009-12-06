@@ -94,21 +94,22 @@ jQuery(document).ready(function ($) {
                 var div = $("<div></div>").appendTo($("#details"));
                 div.append("<h2>" + infosetname + " <code>" + keyword + "</code></h2><div></div>");
                 var div2 = $("div", div);
-                for (var context in details[infosetname]) {
+                for (var contextidx in details[infosetname]) {
+		    var context = details[infosetname][contextidx];
                     var dl = $("<dl></dl>").appendTo(div2);
-                    for (var property in details[infosetname][context]) {
+                    for (var property in context) {
                         var dt = $("<dt></dt>").appendTo(dl);
                         var container = dt;
-                        if (property.url) {
-                            container = $("<a href='" + property.url + "'></a>").appendTo(dt);
+                        if (context[property].url) {
+                            container = $("<a href='" + context[property].url + "'></a>").appendTo(dt);
                         }
                         container.text(property);
-                        var dd = $("<dd></dd>").appendTo(dl);
-			if (!property["properties"]) {
+			if (!context[property]["properties"]) {
 			    // Nothing to do, move along
-			} else if (property["properties"].length > 1) {
+			} else if (context[property]["properties"].length > 1) {
+                            var dd = $("<dd></dd>").appendTo(dl);
                             var ul = $("<ul></ul>").appendTo(dd);
-                            for (var propcontent in property["properties"]) {
+                            for (var propcontent in context[property]["properties"]) {
                                 var li = $("<li></li>").appendTo(ul);
                                 var itemcontainer = li;
                                 if (propcontent.url) {
@@ -116,8 +117,9 @@ jQuery(document).ready(function ($) {
                                 }
                                 itemcontainer.text(propcontent.title);
                             }
-                        } else if (property["properties"].length === 1) {
-                            propcontent = property["properties"][0];
+                        } else if (context[property]["properties"].length === 1) {
+                            var dd = $("<dd></dd>").appendTo(dl);
+                            propcontent = context[property]["properties"][0];
                             itemcontainer = dd;
                             if (propcontent.url) {
                                 itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(dd);
