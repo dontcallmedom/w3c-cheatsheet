@@ -109,7 +109,8 @@ jQuery(document).ready(function ($) {
 			} else if (context[property]["properties"].length > 1) {
                             var dd = $("<dd></dd>").appendTo(dl);
                             var ul = $("<ul></ul>").appendTo(dd);
-                            for (var propcontent in context[property]["properties"]) {
+                            for (var propcontentidx in context[property]["properties"]) {
+				var propcontent = context[property]["properties"][propcontentidx];
                                 var li = $("<li></li>").appendTo(ul);
                                 var itemcontainer = li;
                                 if (propcontent.url) {
