@@ -15,15 +15,15 @@ make_unique = function(b)
  }
 
 keywordSources = {
-	"CSS":[{"list":[],"details":cssPropertiesDetails,"name":"CSS Property"},
-	       {"list":[],"details":cssSelectorsDetails,"name":"CSS Selector"},
-	       {"list":[],"details":cssAtrulesDetails,"name":"CSS At-rules"}], 
+	"CSS":[{"list":[],"details":sources["css"]["property"],"name":"CSS Property"},
+	       {"list":[],"details":sources["css"]["selector"],"name":"CSS Selector"},
+	       {"list":[],"details":sources["css"]["at-rule"],"name":"CSS At-rules"}], 
 	"HTML":[
-	{"list":[],"details":htmlElementsDetails,"name":"HTML Element"},
-	{"list":[],"details":htmlAttributesDetails,"name":"HTML attribute"}],
-	"SVG":[{"list":[],"details":svgAttributesDetails,"name":"SVG attribute"},	
-	{"list":[],"details":svgElementsDetails,"name":"SVG Element"}],
-	"XPath":[{"list":[],"details":xpathFunctionsDetails,"name":"XPath functions"}]
+	{"list":[],"details":sources["html"]["element"],"name":"HTML Element"},
+	{"list":[],"details":sources["html"]["attribute"],"name":"HTML attribute"}],
+	"SVG":[{"list":[],"details":sources["svg"]["attribute"],"name":"SVG attribute"},	
+	{"list":[],"details":sources["svg"]["element"],"name":"SVG Element"}],
+	"XPath":[{"list":[],"details":sources["xpath"]["function"],"name":"XPath functions"}]
 };
 keywordsMatch = {};
 keywords = [];
