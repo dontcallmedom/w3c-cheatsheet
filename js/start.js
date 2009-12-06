@@ -95,7 +95,7 @@ jQuery(document).ready(function ($) {
                 div.append("<h2>" + infosetname + " <code>" + keyword + "</code></h2><div></div>");
                 var div2 = $("div", div);
                 for (var contextidx in details[infosetname]) {
-		    var context = details[infosetname][contextidx];
+                    var context = details[infosetname][contextidx];
                     var dl = $("<dl></dl>").appendTo(div2);
                     for (var property in context) {
                         var dt = $("<dt></dt>").appendTo(dl);
@@ -104,28 +104,34 @@ jQuery(document).ready(function ($) {
                             container = $("<a href='" + context[property].url + "'></a>").appendTo(dt);
                         }
                         container.text(property);
-			if (!context[property]["properties"]) {
-			    // Nothing to do, move along
-			} else if (context[property]["properties"].length > 1) {
+                        if (context[property]["properties"] && context[property]["properties"].length > 0) {
+                            var displayAsList = true;
+                            if (context[property]["properties"].length === 1 || context[property].list === "inline") {
+                                displayAsList = false;
+                            }
                             var dd = $("<dd></dd>").appendTo(dl);
-                            var ul = $("<ul></ul>").appendTo(dd);
+                            var listcontainer = dd;
+                            if (displayAsList) {
+                                if (context[property].list === "block") {
+                                    listcontainer = $("<ul></ul>").appendTo(listcontainer);
+                                }
+                            }
                             for (var propcontentidx in context[property]["properties"]) {
-				var propcontent = context[property]["properties"][propcontentidx];
-                                var li = $("<li></li>").appendTo(ul);
-                                var itemcontainer = li;
+                                var itemcontainer = listcontainer;
+                                var propcontent = context[property]["properties"][propcontentidx];
+                                if (displayAsList) {
+                                    itemcontainer = $("<li></li>").appendTo(itemcontainer);
+                                } else {
+                                    itemcontainer = $("<span></span>").appendTo(itemcontainer);
+                                }
                                 if (propcontent.url) {
-                                    itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(li);
+                                    itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(itemcontainer);
                                 }
                                 itemcontainer.text(propcontent.title);
+                                if (!displayAsList && propcontentidx < context[property]["properties"].length - 1) {
+                                    itemcontainer.text(itemcontainer.text() + ", ");
+                                }
                             }
-                        } else if (context[property]["properties"].length === 1) {
-                            var dd = $("<dd></dd>").appendTo(dl);
-                            propcontent = context[property]["properties"][0];
-                            itemcontainer = dd;
-                            if (propcontent.url) {
-                                itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(dd);
-                            }
-                            itemcontainer.text(propcontent.title);
                         }
                     }
                 }
