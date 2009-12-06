@@ -82,7 +82,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	 <xsl:text>&#xA;    }</xsl:text> <!-- end of e.g. html elements: -->
 	 <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
       </xsl:for-each-group>
-      <xsl:text>&#xA;}&#xA;</xsl:text> <!-- end of e.g. html infoset -->
+      <xsl:text>&#xA;};&#xA;</xsl:text> <!-- end of e.g. html infoset -->
     </xsl:for-each>
   </xsl:template>
 
