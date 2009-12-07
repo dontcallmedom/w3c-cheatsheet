@@ -61,7 +61,7 @@
 <property name="description"><content>matches the name of any element type</content></property>
 </context>
 </item>
-<item type="selector" name=":lang()" synonym="lang()">
+<item type="selector" name=":lang()">
 <context>
 <property name="Pattern"><content>E:lang(c)</content></property>
 <property name="name"><content>lang() pseudo-class</content></property>
@@ -69,49 +69,49 @@
 <property name="Internationalization"><content> link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
 </context>
 </item>
-<item type="selector" name=":first-child" synonym="first-child">
+<item type="selector" name=":first-child">
 <context>
 <property name="Pattern"><content>E:first-child</content></property>
 <property name="name"><content>first-child pseudo-class</content></property>
 <property name="description"><content>Matches element E when E is the first child of its parent</content></property>
 </context>
 </item>
-<item name=":link" type="selector" synonym="link">
+<item name=":link" type="selector">
 <context>
 <property name="Pattern"><content>E:link</content></property>
 <property name="name"><content>link pseudo-class</content></property>
 <property name="description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
 </context>
 </item>
-<item name="visited" type="selector" synonym="visited">
+<item name="visited" type="selector">
 <context>
 <property name="Pattern"><content>E:visited</content></property>
 <property name="name"><content>link pseudo-class</content></property>
 <property name="description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property>
 </context>
 </item>
-<item type="selector" name=":active" synonym="active">
+<item type="selector" name=":active">
 <context>
 <property name="Pattern"><content>E:active</content></property>
 <property name="name"><content>dynamic pseudo-class</content></property>
 <property name="description"><content>Matches E when E is activated by the user</content></property>
 </context>
 </item>
-<item type="selector" name=":hover" synonym="hover">
+<item type="selector" name=":hover">
 <context>
 <property name="Pattern"><content>E:hover</content></property>
 <property name="name"><content>dynamic pseudo-class</content></property>
 <property name="description"><content>Matches E while the user designates an element (with some pointing device), but does not activate it</content></property>
 </context>
 </item>
-<item type="selector" name=":focus" synonym="focus">
+<item type="selector" name=":focus">
 <context>
 <property name="Pattern"><content>E:focus</content></property>
 <property name="name"><content>dynamic pseudo-class</content></property>
 <property name="description"><content>Matches E while while it has the focus</content></property>
 </context>
 </item>
-<item type="selector" name=":lang()" synonym="lang()">
+<item type="selector" name=":lang()">
 <context>
 <property name="Pattern"><content>E:lang(c)</content></property>
 <property name="name"><content>lang() pseudo-class</content></property>
@@ -130,7 +130,7 @@
 </property>
 </context>
 </item>
-<item type="at-rule" name="@import" synonym="import">
+<item type="at-rule" name="@import">
 <context>
 <property name="name"><content>@import</content></property>
 <property name="description"><content>The @import rule allows to import style rules from other style sheets. Any @import rules must precede all other rules (except @charset)</content></property>
@@ -138,19 +138,19 @@
 <property name="Example"><content>@import url("mystyle.css) screen</content></property>
 </context>
 </item>
-<item name="@page" type="at-rule" synonym="page">
+<item name="@page" type="at-rule">
 <context>
 <property name="description"><content>An @page rule consists of the keyword "@page", followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
 <property name="Example"><content>@page {margin: 3cm;}</content></property>
 </context>
 </item>
-<item name="@media" type="at-rule" synonym="media">
+<item name="@media" type="at-rule">
 <context>
 <property name="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
 <property name="values"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
 </context>
 </item>
-<item name="@charset" type="at-rule" synonym="charset">
+<item name="@charset" type="at-rule">
 <context>
 <property name="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
 <property name="Example"><content>@charset "ISO-8859-1"</content></property>
