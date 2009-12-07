@@ -31,14 +31,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
 <dictionary xmlns="urn:foo">
-<term><full>Pattern</full><short>p</short></term>
+<term><full>Pattern</full><short>pt</short></term>
 <term><full>name</full><short>n</short></term>
 <term><full>description</full><short>d</short></term>
 <term><full>Internationalization</full><short>i</short></term>
-<term><full>Accessibility techniques</full><short>a</short></term>
+<term><full>Accessibility techniques</full><short>ac</short></term>
 <term><full>QA Tip</full><short>q</short></term>
 <term><full>Mobile considerations</full><short>m</short></term>
-<term><full>Elements</full><short>e</short></term>
+<term><full>Elements</full><short>el</short></term>
 <term><full>content</full><short>c</short></term>
 <term><full>Allowed properties</full><short>pr</short></term>
 <term><full>Allowed children</full><short>k</short></term>
@@ -54,6 +54,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>Attributes</full><short>at</short></term>
 <term><full>percentage</full><short>pe</short></term>
 <term><full>applies</full><short>ap</short></term>
+<term><full>element</full><short>e</short></term>
+<term><full>attribute</full><short>a</short></term>
+<term><full>property</full><short>p</short></term>
+<term><full>selector</full><short>se</short></term>
+<term><full>at-rule</full><short>ar</short></term>
+<term><full>function</full><short>f</short></term>
 </dictionary>
 
 
@@ -64,7 +70,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:text>"] = {</xsl:text>
       <xsl:for-each-group select="item" group-by="@type">
 	<xsl:text>&#xA;    "</xsl:text>
-	<xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/>
+	<xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/>
 	<xsl:text>": {</xsl:text>
 	 <xsl:for-each select="current-group()"> <!-- looping on <item> -->
 	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": [</xsl:text>
