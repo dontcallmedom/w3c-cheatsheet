@@ -113,7 +113,11 @@ jQuery(document).ready(function ($) {
                             itemcontainer = $("<span></span>").appendTo(itemcontainer);
                         }
                         if (propcontent.u) {
-                            itemcontainer = $("<a href='" + propcontent.u + "'></a>").appendTo(itemcontainer);
+			    var url = propcontent.u;
+			    if (propcontent.u.substring(0,1)==="/") {
+				url = "http://www.w3.org" + url;
+			    }
+                            itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
                         } else if (context[property].i && context[property].y) {
                             itemcontainer = $("<a href='#inf," + context[property].i + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
                         }
