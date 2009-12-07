@@ -192,53 +192,18 @@
 </item>
 <item name="@page" type="at-rule">
 <context>
-<property name="name"><content>@page</content></property>
 <property name="description"><content>An @page rule consists of the keyword "@page", followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
 <property name="Example"><content>@page {margin: 3cm;}</content></property>
 </context>
 </item>
 <item name="@media" type="at-rule">
 <context>
-<property name="name"><content>@media</content></property>
 <property name="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
 <property name="values"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
 </context>
 </item>
 <item name="@charset" type="at-rule">
 <context>
-<property name="name"><content>@charset</content></property>
-<property name="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
-<property name="Example"><content>@charset "ISO-8859-1"</content></property>
-<property name="Internationalization"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
-</context>
-</item>
-
-<!-- duplicates start here @@@ -->
-<item type="at-rule" name="import">
-<context>
-<property name="name"><content>@import</content></property>
-<property name="description"><content>The @import rule allows to import style rules from other style sheets. Any @import rules must precede all other rules (except @charset)</content></property>
-<property name="Syntax"><content>The @import keyword must be followed by the URI of the style sheet to include. A string is also allowed; it will be interpreted as if it had url(...) around it. Media-dependent import can be specified with comma-separated media types after the URI.</content></property>
-<property name="Example"><content>@import url("mystyle.css) screen</content></property>
-</context>
-</item>
-<item name="page" type="at-rule">
-<context>
-<property name="name"><content>@page</content></property>
-<property name="description"><content>An @page rule consists of the keyword "@page", followed by an optional page selector, followed by a block of declarations. The declarations in an @page rule are said to be in the page context and are useful to write CSS rules for paged media (e.g. for printing on paper).</content></property>
-<property name="Example"><content>@page {margin: 3cm;}</content></property>
-</context>
-</item>
-<item name="media" type="at-rule">
-<context>
-<property name="name"><content>@media</content></property>
-<property name="description"><content>An @media rule specifies the target media types (separated by commas) of a set of statements (delimited by curly braces)</content></property>
-<property name="values"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
-</context>
-</item>
-<item name="charset" type="at-rule">
-<context>
-<property name="name"><content>@charset</content></property>
 <property name="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
 <property name="Example"><content>@charset "ISO-8859-1"</content></property>
 <property name="Internationalization"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
