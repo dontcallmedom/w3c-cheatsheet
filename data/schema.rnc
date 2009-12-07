@@ -1,20 +1,30 @@
 start = Infosets
+## Root element, encapsulating one or more infoset description
 Infosets = element infosets {
+  ## infoset, i.e. set of known keywords for a given technology
   element infoset {
     attribute technology { text },
+    ## one keyword for said technology (e.g. "title" attribute)
     element item {
        Types,
        attribute name { text },
+       ## A context designates a usage of the said keyword common to a class of items
+       ## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
        element context {
+          ## for now, the only parameters to contexts are elemnts (for attributes)
           attribute type { "element" }?,
+	  ## defines the items that identify a given context
 	  element items {
 	     element item  { 
                 attribute name { text },
 		attribute link { text }?
              }*
 	  }?,
+	  ## The set of information we gather on the items
           element property {
 	     Types?,
+	     # add to xmltojson.xsl dictionary when updating
+	     # TODO: need trimming
              attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" },
 	     attribute infoset { text }?,
 	     attribute link { text }?,
@@ -29,4 +39,5 @@ Infosets = element infosets {
     }+
   }
 }
+## Types of keywords
 Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
