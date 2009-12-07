@@ -174,10 +174,12 @@
 
 <item type="at-rule" name="at-rules">
 <context>
-<property type="at-rule" infoset="css" name="name"><content>@media</content></property>
-<property type="at-rule" infoset="css" name="name"><content>@import</content></property>
-<property type="at-rule" infoset="css" name="name"><content>@page</content></property>
-<property type="at-rule" infoset="css" name="name"><content>@charset</content></property>
+<property type="at-rule" infoset="css" name="Rules" list="block">
+<content>@media</content>
+<content>@import</content>
+<content>@page</content>
+<content>@charset</content>
+</property>
 </context>
 </item>
 <item type="at-rule" name="@import">
