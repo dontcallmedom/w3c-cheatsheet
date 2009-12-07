@@ -1,2 +1,3 @@
 "use strict";
 var sources = {};
+// y: type, i: infoset, u: url, t: title, p: properties
