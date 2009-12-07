@@ -31,9 +31,15 @@ data/svg.xml: data/getSVGInfoset.xsl
 data/%.json: data/%.xml data/xmltojson.xsl
 	$(SAXON)  $^  > $@
 
+data/init.json: data/xmltojson.xsl data/makeInit.xsl
+	$(SAXON) $^> $@
+
 
 data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xpath.json
 	cat $^ > $@
 
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
+
+android: js/all.js style/all.css index.html images/*.png style/images/*.png
+	cp --parents -t android/assets/ $^ 
