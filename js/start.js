@@ -11,34 +11,35 @@ var make_unique = function (b) {
 };
 
 var keywordSources = {
-        "CSS": [{"list": [], "details": sources["css"]["property"], "name": "CSS Property"},
-               {"list": [], "details": sources["css"]["selector"], "name": "CSS Selector"},
-               {"list": [], "details": sources["css"]["at-rule"], "name": "CSS At-rules"}], 
-        "HTML": [
-            {"list": [], "details": sources["html"]["element"], "name": "HTML Element"},
-            {"list": [], "details": sources["html"]["attribute"], "name": "HTML attribute"}
-        ],
-        "SVG": [{"list": [], "details": sources["svg"]["attribute"], "name": "SVG attribute"},  
-                {"list": [], "details": sources["svg"]["element"], "name": "SVG Element"}],
-        "XPath": [{"list": [], "details": sources["xpath"]["function"], "name": "XPath functions"}]
+    "css": {"property": "CSS Property",
+            "selector": "CSS Selector",
+            "at-rule": "CSS At-rules"},
+    "html": {"element": "HTML Element",
+             "attribute": "HTML Attribute"},
+    "svg": {"attribute": "SVG Attribute",
+            "element": "SVG Element"},
+    "xpath": {"function": "XPath function"}
 };
 
 var keywordsMatch = {};
 var keywords = [];
-for (var topic in keywordSources) {
-    for (var i in keywordSources[topic]) {
-        var source = keywordSources[topic][i];
-        for (var keyword in source["details"]) {
-            source["list"].push(keyword);
+for (var infoset in keywordSources) {
+    for (var propertytype in keywordSources[infoset]) {
+        var source = sources[infoset][propertytype];
+        for (var keyword in source) {
             if (!keywordsMatch[keyword]) {
                 keywordsMatch[keyword] = {};
+                keywords.push(keyword);
             }
-            if (!keywordsMatch[keyword][source["name"]]) {
-                keywordsMatch[keyword][source["name"]] = [];
+            if (!keywordsMatch[keyword][infoset]) {
+                keywordsMatch[keyword][infoset] = {};
             }
-            for (var k in source["details"][keyword]) {		
-                keywordsMatch[keyword][source["name"]].push(source["details"][keyword][k]);
-            }	    
+            if (!keywordsMatch[keyword][infoset][propertytype]) {
+                keywordsMatch[keyword][infoset][propertytype] = [];
+            }
+            for (var k in source[keyword]) {            
+                keywordsMatch[keyword][infoset][propertytype].push(source[keyword][k]);
+            }       
         }
     }
 }
@@ -70,71 +71,99 @@ jQuery(document).ready(function ($) {
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
     makeReplacingAccordion($(".accordion"));
 
-    keywords = [];
-
-    for (var topic in keywordSources) {
-        for (var i  in keywordSources[topic]) {
-            keywords = keywords.concat(keywordSources[topic][i]["list"]);
-        }
-    }
     keywords = make_unique(keywords);
     //$("#search").setOptions({"data":keywords});
 
-    function show_result(item) {
+    function show_keyword(keyword, infoset, propertytype) {
+        if (keyword === null) {
+            return false;
+        }
+        var infosetname = keywordSources[infoset][propertytype];
+        var div = $("<div></div>").appendTo($("#details"));
+        div.append("<h2>" + infosetname + " <code>" + keyword + "</code></h2><div></div>");
+        var div2 = $("div", div);
+        for (var contextidx in keywordsMatch[keyword][infoset][propertytype]) {
+            var context = keywordsMatch[keyword][infoset][propertytype][contextidx];
+            var dl = $("<dl></dl>").appendTo(div2);
+            for (var property in context) {
+                var dt = $("<dt></dt>").appendTo(dl);
+                var container = dt;
+                if (context[property].url) {
+                    container = $("<a href='" + context[property].url + "'></a>").appendTo(dt);
+                }
+                container.text(property);
+                if (context[property]["properties"] && context[property]["properties"].length > 0) {
+                    var displayAsList = true;
+                    if (context[property]["properties"].length === 1 || context[property].list === "inline") {
+                        displayAsList = false;
+                    }
+                    var dd = $("<dd></dd>").appendTo(dl);
+                    var listcontainer = dd;
+                    if (displayAsList) {
+                        if (context[property].list === "block") {
+                            listcontainer = $("<ul></ul>").appendTo(listcontainer);
+                        }
+                    }
+                    for (var propcontentidx in context[property]["properties"]) {
+                        var itemcontainer = listcontainer;
+                        var propcontent = context[property]["properties"][propcontentidx];
+                        if (displayAsList) {
+                            itemcontainer = $("<li></li>").appendTo(itemcontainer);
+                        } else {
+                            itemcontainer = $("<span></span>").appendTo(itemcontainer);
+                        }
+                        if (propcontent.url) {
+                            itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(itemcontainer);
+                        } else if (context[property].infoset && context[property].type) {
+                            itemcontainer = $("<a href='#inf," + context[property].infoset + "," + escape(context[property].type) + "," + escape(propcontent.title) + "' class='internal'></a>").appendTo(itemcontainer);
+                        }
+                        itemcontainer.text(propcontent.title);
+                        if (!displayAsList && propcontentidx < context[property]["properties"].length - 1) {
+                            listcontainer.append(", ");
+                        }
+                    }
+                }
+            }
+        }
+        return true;    
+    }
+
+    function load_anchor(anchor) {
+        var infoset = false;
+        var propertytype = false;
+        var keyword = false;
+        // selector is a path à la "html-attributes"
+        if (anchor !== null) {
+            var selector_path = anchor.split(',');
+            infoset = unescape(selector_path[1]);
+            propertytype = unescape(selector_path[2]);
+            keyword = unescape(selector_path.slice(3).join(","));
+            if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
+                ) {
+                clearLookUp();
+                $("#search").val("");
+                if (show_keyword(keyword, infoset, propertytype)) {
+                    $("#details").accordion({header: 'div>h2', autoHeight: false});
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+    function show_result(item, selector) {
         if (item === null) {
             return;
         }
         var keyword = item.selectValue;
-        var details = keywordsMatch[keyword];
         clearLookUp();
         var detailsLength = 0;
-        for (var infosetname in details) {
-            if (details.hasOwnProperty(infosetname)) {
+        for (var infoset in keywordsMatch[keyword]) {
+            for (var propertytype in keywordsMatch[keyword][infoset]) {
                 detailsLength = detailsLength + 1;
-                var div = $("<div></div>").appendTo($("#details"));
-                div.append("<h2>" + infosetname + " <code>" + keyword + "</code></h2><div></div>");
-                var div2 = $("div", div);
-                for (var contextidx in details[infosetname]) {
-                    var context = details[infosetname][contextidx];
-                    var dl = $("<dl></dl>").appendTo(div2);
-                    for (var property in context) {
-                        var dt = $("<dt></dt>").appendTo(dl);
-                        var container = dt;
-                        if (context[property].url) {
-                            container = $("<a href='" + context[property].url + "'></a>").appendTo(dt);
-                        }
-                        container.text(property);
-                        if (context[property]["properties"] && context[property]["properties"].length > 0) {
-                            var displayAsList = true;
-                            if (context[property]["properties"].length === 1 || context[property].list === "inline") {
-                                displayAsList = false;
-                            }
-                            var dd = $("<dd></dd>").appendTo(dl);
-                            var listcontainer = dd;
-                            if (displayAsList) {
-                                if (context[property].list === "block") {
-                                    listcontainer = $("<ul></ul>").appendTo(listcontainer);
-                                }
-                            }
-                            for (var propcontentidx in context[property]["properties"]) {
-                                var itemcontainer = listcontainer;
-                                var propcontent = context[property]["properties"][propcontentidx];
-                                if (displayAsList) {
-                                    itemcontainer = $("<li></li>").appendTo(itemcontainer);
-                                } else {
-                                    itemcontainer = $("<span></span>").appendTo(itemcontainer);
-                                }
-                                if (propcontent.url) {
-                                    itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(itemcontainer);
-                                }
-                                itemcontainer.text(propcontent.title);
-                                if (!displayAsList && propcontentidx < context[property]["properties"].length - 1) {
-                                    itemcontainer.text(itemcontainer.text() + ", ");
-                                }
-                            }
-                        }
-                    }
-                }
+                show_keyword(keyword, infoset, propertytype);
             }
         }
         if (detailsLength === 1) {
@@ -144,6 +173,14 @@ jQuery(document).ready(function ($) {
         }
         makeReplacingAccordion($("#details"));
     }
+
+    $("a.internal").live("click",
+        function () {
+	   return load_anchor($(this).attr("href").split("#")[1]);
+	}
+     );
+
+
     $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10});
     $("#search").change(function () {
         clearLookUp();
@@ -159,4 +196,7 @@ jQuery(document).ready(function ($) {
             $("#details_clear").replaceWith("");
         }
     });
+    if (window.location.hash && window.location.hash.substring(0,5)==='#inf-') {
+	load_anchor(window.location.hash.substring(1));
+    }
 });
