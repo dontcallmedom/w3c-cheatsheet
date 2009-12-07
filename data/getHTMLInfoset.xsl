@@ -42,12 +42,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
 	</property>
-	<property name="Specification" link="{concat('/TR/1999/REC-html401-19991224/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
+	<property name="Specification" link="{concat('/TR/html401/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
       <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()]">
 	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
 	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=current()]]">
 	  <xsl:sort select="count(description//descendant::el[normalize-space()=current()])"/>
-	    <content xml:lang="en" link="{concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+	    <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
         </xsl:for-each>
 	</property>
       </xsl:if>
@@ -93,7 +93,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag">
 		  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::att[normalize-space()=current()/html:td[1]]]">
 		    <xsl:sort select="count(description/descendant::att[normalize-space()=current()/html:td[1]])"/>
-		    <content link="{concat('http://www.w3.org/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+		    <content link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
@@ -136,7 +136,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </property>
 	    <property name="content"><content><xsl:value-of select="normalize-space(html:td[3])"/></content></property>
 	    <property name="description"><content><xsl:value-of select="normalize-space(html:td[7])"/></content></property>
-	    <property name="Specification" link="{concat('/TR/1999/REC-html401-19991224/index/',html:td[1]/html:a/@href)}"/>
+	    <property name="Specification" link="{concat('/TR/html401/index/',html:td[1]/html:a/@href)}"/>
 	  </context>
 	</xsl:for-each>
       </item>
