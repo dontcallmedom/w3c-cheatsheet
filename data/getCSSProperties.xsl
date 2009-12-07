@@ -40,28 +40,28 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <infoset technology="css">
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
       <item type="property" name='{normalize-space(translate(.,"&apos;",""))}'><context>
-	<property type="values">
+	<property name="values">
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/></content>
 	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[4])!='&#xA0;'">
-	  <property type="applies">
+	  <property name="applies">
 	    <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[4])"/></content>
 	  </property>
 	</xsl:if>
-	<property type="inherited">
+	<property name="inherited">
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[5])"/></content>
 	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[6])!='&#xA0;'">
-	  <property type="percentage">
+	  <property name="percentage">
 	    <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[6])"/></content>
 	  </property>
 	</xsl:if>
-	<property type="media">
+	<property name="media">
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/></content>
 	</property>
-	<property type="source" link="{concat('http://www.w3.org/TR/CSS2/',@href)}"/>
+	<property name="Specification" link="{concat('http://www.w3.org/TR/CSS2/',@href)}"/>
 	<xsl:if test="$i18n/html:dd/html:code[@class='css property'][normalize-space(.)=current()/html:td[1]]">
-	  <property type="Internationalization" list="block">
+	  <property name="Internationalization" list="block">
 	    <xsl:for-each select="$i18n/html:dd[html:code[@class='css property'][normalize-space()=current()/html:td[1]]]">
 	      <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
 	    </xsl:for-each>

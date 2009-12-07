@@ -47,12 +47,16 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   <xsl:for-each select="context">
 	     <xsl:text>{</xsl:text>
 	     <xsl:for-each select="property">
-	       <xsl:text>"</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
+	       <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
+	       <xsl:if test="@type">
+		 <xsl:text>"type": "</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+	       </xsl:if>
 	       <xsl:if test="@link">
+		 <xsl:if test="@type"><xsl:text>, </xsl:text></xsl:if>
 		 <xsl:text>"url": "</xsl:text><xsl:value-of select="replace(@link,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="count(content)">
-		 <xsl:if test="@link">
+		 <xsl:if test="@link or @type">
 		   <xsl:text>, </xsl:text>
 		 </xsl:if>
 		 <xsl:if test="@infoset">

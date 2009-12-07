@@ -37,13 +37,13 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <item type="function" name="{substring-after(.//html:code[@class='function'],'fn:')}">
 	<context>
 	  <!-- could link up to XML Schema Datatypes some how, if it was in the cheat sheet ; it isn't though @@@ -->
-	  <property type="parameters">
+	  <property name="parameters">
 	    <content><xsl:value-of select="normalize-space(substring-after(substring-before(.,')&#160;as'),'('))"/></content>
 	  </property>
-	  <property type="returns">
+	  <property name="returns">
 	    <content><xsl:value-of select=".//html:code[@class='return-type']"/></content>
 	  </property>
-	  <property type="source" link="{concat('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#',preceding::html:*[@id][1]/@id)}" />
+	  <property name="Specification" link="{concat('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#',preceding::html:*[@id][1]/@id)}" />
 	</context>
       </item>
     </xsl:for-each>

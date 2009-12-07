@@ -37,12 +37,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <infoset technology="svg">
     <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr">
       <item type="element" name='{translate(html:td[1],"&apos;","")}'><context>
-	<property type="attributes" list="inline" infoset="svg">
+	<property type="attribute" name="Attributes" list="inline" infoset="svg">
 	  <xsl:for-each select="html:td[2]//html:a">
 	    <content><xsl:value-of select="."/></content>
 	  </xsl:for-each>
 	</property>
-	<property type="Allowed properties">
+	<property name="Allowed properties">
 	  <xsl:choose>
 	    <xsl:when test="html:td[3]/@class='true'">
 	      <content>all</content>
@@ -59,12 +59,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:otherwise>
 	  </xsl:choose>
 	</property>
-	<property type="Allowed children" infoset="svg" list="inline">
+	<property name="Allowed children" infoset="svg" list="inline">
 	  <xsl:for-each select="tokenize(html:td[4],',')">
 	    <content><xsl:value-of select="."/></content>
 	  </xsl:for-each>
 	</property>
-	<property type="source" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}" />
+	<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}" />
       </context></item>
     </xsl:for-each>
     <!-- dealing with properties first -->
@@ -82,21 +82,21 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:variable>
 	<context>
 	  <xsl:for-each select="current-group()">
-	    <property type="elements" list="inline" infoset="svg">
+	    <property type="element" name="Elements" list="inline" infoset="svg">
 	      <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr[html:td[3][@class=$elementClass]]">
 		<content><xsl:value-of select='replace(html:td[1],"&apos;","")'/></content>
 	      </xsl:for-each>
 	    </property>
-	    <property type="content">
+	    <property name="content">
 	      <content><xsl:value-of select="normalize-space(html:td[4])"/></content>
 	    </property>
-	    <property type="animatable">
+	    <property name="animatable">
 	      <content><xsl:value-of select="normalize-space(html:td[2]/@class)"/></content>
 	    </property>
-	    <property type="inherited">
+	    <property name="inherited">
 	      <content><xsl:value-of select="normalize-space(html:td[3]/@class)"/></content>
 	    </property>
-	    <property type="source" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}"/>
+	    <property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}"/>
 	  </xsl:for-each>
 	</context>
       </item>
@@ -112,22 +112,22 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<item name="normalize-space(.)"/>
 	      </xsl:for-each>
 	    </items>
-	    <property type="elements" list="inline" infoset="svg">
+	    <property type="element" name="Elements" list="inline" infoset="svg">
 	      <xsl:for-each select="html:td[5]/html:a">
 		<content><xsl:value-of select="."/></content>
 	      </xsl:for-each>
 	    </property>
-	    <property type= "content">
+	    <property name= "content">
 	      <content><xsl:value-of select="html:td[4]"/></content>
 	    </property>
-	    <property type="animatable">
+	    <property name="animatable">
 	      <content><xsl:value-of select="normalize-space(html:td[2]/@class)"/></content>
 	    </property>
-	    <property type="inherited">
+	    <property name="inherited">
 	      <content><xsl:value-of select="normalize-space(html:td[3]/@class)"/></content>
 	  </property>
 	  <xsl:if test="$i18n/html:dd/html:code[@class='svg attribute'][normalize-space(.)=current()/html:td[1]]">
-	    <property type="Internationalization" list="block">
+	    <property name="Internationalization" list="block">
 	      <xsl:for-each select="$i18n/html:dd[html:code[@class='svg attribute'][normalize-space()=current()/html:td[1]]]">
 		<content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
 	      </xsl:for-each>
@@ -140,11 +140,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    -FooElementBarAttribute ? ) -->
 	    <xsl:choose>
 	      <xsl:when test="count(current-group)=1">
-		<property type="source" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
+		<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
 	      </xsl:when>
 	      <xsl:when test="count(html:td[5]/html:a)=1">
 		<xsl:variable name="el" select="html:td[5]/html:a[1]"/>
-		<property type="source" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($el,1,1)),substring($el,2),'Element',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
+		<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($el,1,1)),substring($el,2),'Element',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
 	      </xsl:when>
 	    </xsl:choose>
 		
