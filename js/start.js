@@ -3,7 +3,7 @@ var make_unique = function (b) {
     var a = [];
     b.sort();
     for (var i in b) {
-        if (b[i] !== b[i + 1]) {
+        if (i > 0 && b[i] !== b[i - 1]) {
             a[a.length] = b[i];
         }
     }
