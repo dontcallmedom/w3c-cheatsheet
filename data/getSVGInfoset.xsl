@@ -112,7 +112,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<item name="normalize-space(.)"/>
 	      </xsl:for-each>
 	    </items>
-	    <property type="elements">
+	    <property type="elements" list="inline" infoset="svg">
 	      <xsl:for-each select="html:td[5]/html:a">
 		<content><xsl:value-of select="."/></content>
 	      </xsl:for-each>
