@@ -36,7 +36,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <infosets>
   <infoset technology="svg">
     <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr">
-      <item type="element" name="{html:td[1]}"><context>
+      <item type="element" name='{translate(html:td[1],"&apos;","")}'><context>
 	<property type="attributes" list="inline" infoset="svg">
 	  <xsl:for-each select="html:td[2]">
 	    <content><xsl:value-of select="."/></content>
