@@ -61,7 +61,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:if test="$qaTips/html:dd/html:code[@class='element'][normalize-space(.)=current()]">
 	<property type="QA Tip" list="block">
 	  <xsl:for-each select="$qaTips/html:dd[html:code[@class='element'][normalize-space()=current()]]">
-	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1]//html:a)"/></content>
 	  </xsl:for-each>
 	</property>
       </xsl:if>
@@ -107,7 +107,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <xsl:if test="$qaTips/html:dd/html:code[@class='attribute'][normalize-space(.)=current()/html:td[1]]">
 		<property type="QA Tip" list="block">
 		  <xsl:for-each select="$qaTips/html:dd[html:code[@class='attribute'][normalize-space()=current()/html:td[1]]]">
-		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1]//html:a)"/></content>
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
