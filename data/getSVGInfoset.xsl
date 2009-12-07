@@ -64,7 +64,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <content><xsl:value-of select="."/></content>
 	  </xsl:for-each>
 	</property>
-	<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}" />
+	<property name="Specification" link="{concat('/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}" />
       </context></item>
     </xsl:for-each>
     <!-- dealing with properties first -->
@@ -96,7 +96,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <property name="inherited">
 	      <content><xsl:value-of select="normalize-space(html:td[3]/@class)"/></content>
 	    </property>
-	    <property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}"/>
+	    <property name="Specification" link="{concat('/TR/SVGTiny12/',html:td[1]/html:a/@href)}"/>
 	  </xsl:for-each>
 	</context>
       </item>
@@ -140,11 +140,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    -FooElementBarAttribute ? ) -->
 	    <xsl:choose>
 	      <xsl:when test="count(current-group)=1">
-		<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
+		<property name="Specification" link="{concat('/TR/SVGTiny12/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
 	      </xsl:when>
 	      <xsl:when test="count(html:td[5]/html:a)=1">
 		<xsl:variable name="el" select="html:td[5]/html:a[1]"/>
-		<property name="Specification" link="{concat('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($el,1,1)),substring($el,2),'Element',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
+		<property name="Specification" link="{concat('/TR/SVGTiny12/single-page.html#',$svg//html:*[ends-with(@id,concat('-',upper-case(substring($el,1,1)),substring($el,2),'Element',upper-case(substring($attr,1,1)),substring($attr,2),'Attribute'))]/@id)}"/>
 	      </xsl:when>
 	    </xsl:choose>
 		
