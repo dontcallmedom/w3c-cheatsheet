@@ -201,7 +201,7 @@ jQuery(document).ready(function ($) {
             $("#details_clear").replaceWith("");
         }
     });
-    if (window.location.hash && window.location.hash.substring(0, 5) === '#inf-') {
+    if (window.location.hash && window.location.hash.substring(0, 5) === '#inf,') {
         load_anchor(window.location.hash.substring(1));
     }
 });
