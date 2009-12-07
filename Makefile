@@ -27,8 +27,9 @@ data/css.xml: data/getCSSProperties.xsl
 data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@
 
-data/%.json: data/%.xml
-	$(SAXON)  $^ data/xmltojson.xsl > $@
+
+data/%.json: data/%.xml data/xmltojson.xsl
+	$(SAXON)  $^  > $@
 
 
 data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xpath.json
