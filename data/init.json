@@ -1,3 +1,28 @@
 "use strict";
 var sources = {};
 // y: type, i: infoset, u: url, t: title, p: properties
+var dictionary = {
+    "p": "Pattern",
+    "n": "name",
+    "d": "description",
+    "i": "Internationalization",
+    "a": "Accessibility techniques",
+    "q": "QA Tip",
+    "m": "Mobile considerations",
+    "e": "Elements",
+    "c": "content",
+    "pr": "Allowed properties",
+    "k": "Allowed children",
+    "pa": "parameters",
+    "r": "returns",
+    "ex": "Example",
+    "s": "Syntax",
+    "v": "values",
+    "in": "inherited",
+    "me": "media",
+    "an": "animatable",
+    "sp": "Specification",
+    "at": "Attributes",
+    "pe": "percentage",
+    "ap": "applies"
+};
