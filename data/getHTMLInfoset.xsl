@@ -42,7 +42,6 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
 	</property>
-	<property name="Specification" link="{concat('/TR/html401/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
       <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()]">
 	<xsl:variable name="el" select="normalize-space(.)"/>
 	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
@@ -73,6 +72,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </xsl:for-each>
 	</property>
       </xsl:if>
+	<property name="Specification" link="{concat('/TR/html401/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
 
       </context></item>
     </xsl:for-each>
@@ -88,6 +88,22 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		</xsl:for-each>
 	      </items>
 	    </xsl:if>
+	    <property name="Elements" list="inline">
+	      <xsl:choose>
+		<xsl:when test="not(html:td[2]/html:a[normalize-space()='All elements'])">
+		  <xsl:attribute name="infoset">html</xsl:attribute>
+		  <xsl:attribute name="type">element</xsl:attribute>
+		  <xsl:for-each select="html:td[2]/html:a">
+		    <content><xsl:value-of select="lower-case(.)"/></content>
+		  </xsl:for-each>
+		</xsl:when>
+		<xsl:otherwise>
+		  <content><xsl:value-of select="normalize-space(lower-case(html:td[2]))"/></content>
+		</xsl:otherwise>
+	      </xsl:choose>
+	    </property>
+	    <property name="content"><content><xsl:value-of select="normalize-space(html:td[3])"/></content></property>
+	    <property name="description"><content><xsl:value-of select="normalize-space(html:td[7])"/></content></property>
 	    <xsl:if test="position()=1">
 	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
 	      <xsl:if test="$wcagTechniques/description/descendant::att[normalize-space(.)=current()/html:td[1]]">
@@ -122,22 +138,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      </xsl:if>
 
 	    </xsl:if>
-	    <property name="Elements" list="inline">
-	      <xsl:choose>
-		<xsl:when test="not(html:td[2]/html:a[normalize-space()='All elements'])">
-		  <xsl:attribute name="infoset">html</xsl:attribute>
-		  <xsl:attribute name="type">element</xsl:attribute>
-		  <xsl:for-each select="html:td[2]/html:a">
-		    <content><xsl:value-of select="lower-case(.)"/></content>
-		  </xsl:for-each>
-		</xsl:when>
-		<xsl:otherwise>
-		  <content><xsl:value-of select="normalize-space(lower-case(html:td[2]))"/></content>
-		</xsl:otherwise>
-	      </xsl:choose>
-	    </property>
-	    <property name="content"><content><xsl:value-of select="normalize-space(html:td[3])"/></content></property>
-	    <property name="description"><content><xsl:value-of select="normalize-space(html:td[7])"/></content></property>
+
 	    <property name="Specification" link="{concat('/TR/html401/index/',html:td[1]/html:a/@href)}"/>
 	  </context>
 	</xsl:for-each>
