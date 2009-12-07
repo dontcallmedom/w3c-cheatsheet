@@ -120,10 +120,18 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      </xsl:if>
 
 	    </xsl:if>
-	    <property type="elements" list="inline" infoset="html">
-	      <xsl:for-each select="html:td[2]/html:a">
-		<content ><xsl:value-of select="lower-case(.)"/></content>
-	      </xsl:for-each>
+	    <property type="elements" list="inline">
+	      <xsl:choose>
+		<xsl:when test="not(html:td[2]/html:a[normalize-space()='All elements'])">
+		  <xsl:attribute name="infoset">html</xsl:attribute>
+		  <xsl:for-each select="html:td[2]/html:a">
+		    <content><xsl:value-of select="lower-case(.)"/></content>
+		  </xsl:for-each>
+		</xsl:when>
+		<xsl:otherwise>
+		  <content><xsl:value-of select="normalize-space(lower-case(html:td[2]))"/></content>
+		</xsl:otherwise>
+	      </xsl:choose>
 	    </property>
 	    <property type="content"><content><xsl:value-of select="normalize-space(html:td[3])"/></content></property>
 	    <property type="description"><content><xsl:value-of select="normalize-space(html:td[7])"/></content></property>
