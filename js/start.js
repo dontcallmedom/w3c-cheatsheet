@@ -89,7 +89,11 @@ jQuery(document).ready(function ($) {
                 var dt = $("<dt></dt>").appendTo(dl);
                 var container = dt;
                 if (context[property].u) {
-                    container = $("<a href='" + context[property].u + "'></a>").appendTo(dt);
+		    var url = context[property].u;
+		    if (url.substring(0,1)==="/") {
+			url = "http://www.w3.org" + url;
+		    }
+                    container = $("<a href='" + url + "'></a>").appendTo(dt);
                 }
                 container.text(dictionary[property]);
                 if (context[property]["p"] && context[property]["p"].length > 0) {
@@ -114,7 +118,7 @@ jQuery(document).ready(function ($) {
                         }
                         if (propcontent.u) {
 			    var url = propcontent.u;
-			    if (propcontent.u.substring(0,1)==="/") {
+			    if (url.substring(0,1)==="/") {
 				url = "http://www.w3.org" + url;
 			    }
                             itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
