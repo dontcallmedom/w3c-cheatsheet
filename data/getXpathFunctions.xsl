@@ -43,7 +43,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  <property name="returns">
 	    <content><xsl:value-of select=".//html:code[@class='return-type']"/></content>
 	  </property>
-	  <property name="Specification" link="{concat('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#',preceding::html:*[@id][1]/@id)}" />
+	  <property name="Specification" link="{concat('/TR/xpath-functions/#',preceding::html:*[@id][1]/@id)}" />
 	</context>
       </item>
     </xsl:for-each>
