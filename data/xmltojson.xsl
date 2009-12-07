@@ -49,29 +49,29 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	     <xsl:for-each select="property">
 	       <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
-		 <xsl:text>"type": "</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		 <xsl:text>y: "</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="@link">
 		 <xsl:if test="@type"><xsl:text>, </xsl:text></xsl:if>
-		 <xsl:text>"url": "</xsl:text><xsl:value-of select="replace(@link,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		 <xsl:text>u: "</xsl:text><xsl:value-of select="replace(@link,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="count(content)">
 		 <xsl:if test="@link or @type">
 		   <xsl:text>, </xsl:text>
 		 </xsl:if>
 		 <xsl:if test="@infoset">
-		   <xsl:text>"infoset": "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+		   <xsl:text>i: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
 		 </xsl:if>
 		 <xsl:if test="@list">
-		   <xsl:text>"list": "</xsl:text><xsl:value-of select="replace(@list,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
+		   <xsl:text>l: "</xsl:text><xsl:value-of select="replace(@list,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		 </xsl:if>
-		 <xsl:text>properties: [</xsl:text>
+		 <xsl:text>p: [</xsl:text>
 		 <xsl:for-each select="content">
 		   <xsl:text>{</xsl:text>
 		   <xsl:if test="@link">
-		     <xsl:text>"url": "</xsl:text><xsl:value-of select="replace(@link,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
+		     <xsl:text>u: "</xsl:text><xsl:value-of select="replace(@link,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		   </xsl:if>
-		   <xsl:text>"title": "</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		   <xsl:text>t: "</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 		   <xsl:text>}</xsl:text> <!-- end of {link,title} t-uple -->
 		   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 		 </xsl:for-each>
