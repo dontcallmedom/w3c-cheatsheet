@@ -202,7 +202,7 @@ jQuery(document).ready(function ($) {
     );
 
 
-    $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10});
+    $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10, matchContains: true, matchSubset: true});
     $("#search").change(function () {
         clearLookUp();
         if ($("#search").val()) {
