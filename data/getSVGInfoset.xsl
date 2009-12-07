@@ -48,6 +48,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <content>all</content>
 	    </xsl:when>
 	    <xsl:when test="html:td[3]/@class='media'">
+	      <xsl:attribute name="type">property</xsl:attribute>
 	      <xsl:attribute name="infoset">svg</xsl:attribute>
 	      <xsl:attribute name="list">inline</xsl:attribute>
 	      <xsl:for-each select="$mediaProperties">
