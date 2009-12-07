@@ -27,11 +27,13 @@ for (var infoset in keywordSources) {
     for (var propertytype in keywordSources[infoset]) {
         var source = sources[infoset][propertytype];
         for (var keyword in source) {
+	    var synonym = source[keyword].syn;
             if (!keywordsMatch[keyword]) {
                 keywordsMatch[keyword] = {};
                 keywords.push(keyword);
-                if (source[keyword].synonym) {
-                    keyword.push(source[keyword].synonym);
+                if (synonym) {
+		    keywordsMatch[synonym] = {}
+                    keywords.push(synonym);
                 }
             }
             if (!keywordsMatch[keyword][infoset]) {
@@ -40,10 +42,17 @@ for (var infoset in keywordSources) {
             if (!keywordsMatch[keyword][infoset][propertytype]) {
                 keywordsMatch[keyword][infoset][propertytype] = [];
             }
+            if (synonym && !keywordsMatch[synonym][infoset]) {
+                keywordsMatch[synonym][infoset] = {};
+            }
+            if (synonym && !keywordsMatch[synonym][infoset][propertytype]) {
+                keywordsMatch[synonym][infoset][propertytype] = [];
+            }
+
             for (var k in source[keyword]["d"]) {            
                 keywordsMatch[keyword][infoset][propertytype].push(source[keyword]["d"][k]);
-                if (source[keyword].synonym) {
-                    keywordsMatch[source[keyword].synonym][infoset][propertytype].push(source[keyword]["d"][k]);
+                if (synonym) {
+                    keywordsMatch[synonym][infoset][propertytype].push(source[keyword]["d"][k]);
                 }
             }       
         }
