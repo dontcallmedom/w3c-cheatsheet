@@ -1,870 +1,220 @@
-
-    xpathFunctionsDetails = {
-    
-
-      'node-name':
-        [{"parameters":"$arg as node()?",
-	   "returns":"xs:QName?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-node-name"
-	   }
-	]
-	,
-
-      'nilled':
-        [{"parameters":"$arg as node()?",
-	   "returns":"xs:boolean?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-nilled"
-	   }
-	]
-	,
-
-      'string':
-        [{"parameters":"",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string"
-	   }
-	]
-	,
-
-      'data':
-        [{"parameters":"$arg as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-data"
-	   }
-	]
-	,
-
-      'base-uri':
-        [{"parameters":"",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-base-uri"
-	   }
-	]
-	,
-
-      'document-uri':
-        [{"parameters":"$arg as node()?",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-document-uri"
-	   }
-	]
-	,
-
-      'abs':
-        [{"parameters":"$arg as numeric?",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-abs"
-	   }
-	]
-	,
-
-      'ceiling':
-        [{"parameters":"$arg as numeric?",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-ceiling"
-	   }
-	]
-	,
-
-      'floor':
-        [{"parameters":"$arg as numeric?",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-floor"
-	   }
-	]
-	,
-
-      'round':
-        [{"parameters":"$arg as numeric?",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-round"
-	   }
-	]
-	,
-
-      'round-half-to-even':
-        [{"parameters":"$arg as numeric?",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-round-half-to-even"
-	   }
-	]
-	,
-
-      'codepoints-to-string':
-        [{"parameters":"$arg as xs:integer*",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-codepoints-to-string"
-	   }
-	]
-	,
-
-      'string-to-codepoints':
-        [{"parameters":"$arg as xs:string?",
-	   "returns":"xs:integer*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-to-codepoints"
-	   }
-	]
-	,
-
-      'compare':
-        [{"parameters":"$comparand1 as xs:string?, $comparand2 as xs:string?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-compare"
-	   }
-	]
-	,
-
-      'codepoint-equal':
-        [{"parameters":"$comparand1 as xs:string?,$comparand2 as xs:string?",
-	   "returns":"xs:boolean?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-codepoint-equal"
-	   }
-	]
-	,
-
-      'concat':
-        [{"parameters":"$arg1 as xs:anyAtomicType?,$arg2 as xs:anyAtomicType?,...",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-concat"
-	   }
-	]
-	,
-
-      'string-join':
-        [{"parameters":"$arg1 as xs:string*, $arg2 as xs:string",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-join"
-	   }
-	]
-	,
-
-      'substring':
-        [{"parameters":"$sourceString as xs:string?,$startingLoc as xs:double",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring"
-	   }
-	]
-	,
-
-      'string-length':
-        [{"parameters":"",
-	   "returns":"xs:integer",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-length"
-	   }
-	]
-	,
-
-      'normalize-space':
-        [{"parameters":"",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-normalize-space"
-	   }
-	]
-	,
-
-      'normalize-unicode':
-        [{"parameters":"$arg as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-normalize-unicode"
-	   }
-	]
-	,
-
-      'upper-case':
-        [{"parameters":"$arg as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-upper-case"
-	   }
-	]
-	,
-
-      'lower-case':
-        [{"parameters":"$arg as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-lower-case"
-	   }
-	]
-	,
-
-      'translate':
-        [{"parameters":"$arg as xs:string?,$mapString as xs:string,$transString as xs:string",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-translate"
-	   }
-	]
-	,
-
-      'encode-for-uri':
-        [{"parameters":"$uri-part as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-encode-for-uri"
-	   }
-	]
-	,
-
-      'iri-to-uri':
-        [{"parameters":"$iri as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-iri-to-uri"
-	   }
-	]
-	,
-
-      'escape-html-uri':
-        [{"parameters":"$uri as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-escape-html-uri"
-	   }
-	]
-	,
-
-      'contains':
-        [{"parameters":"$arg1 as xs:string?, $arg2 as xs:string?",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-contains"
-	   }
-	]
-	,
-
-      'starts-with':
-        [{"parameters":"$arg1 as xs:string?, $arg2 as xs:string?",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-starts-with"
-	   }
-	]
-	,
-
-      'ends-with':
-        [{"parameters":"$arg1 as xs:string?, $arg2 as xs:string?",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-ends-with"
-	   }
-	]
-	,
-
-      'substring-before':
-        [{"parameters":"$arg1 as xs:string?, $arg2 as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring-before"
-	   }
-	]
-	,
-
-      'substring-after':
-        [{"parameters":"$arg1 as xs:string?, $arg2 as xs:string?",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring-after"
-	   }
-	]
-	,
-
-      'matches':
-        [{"parameters":"$input as xs:string?, $pattern as xs:string",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-matches"
-	   }
-	]
-	,
-
-      'replace':
-        [{"parameters":"$input as xs:string?,$pattern as xs:string,$replacement as xs:string",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-replace"
-	   }
-	]
-	,
-
-      'tokenize':
-        [{"parameters":"$input as xs:string?, $pattern as xs:string",
-	   "returns":"xs:string*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-tokenize"
-	   }
-	]
-	,
-
-      'resolve-uri':
-        [{"parameters":"$relative as xs:string?",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-resolve-uri"
-	   }
-	]
-	,
-
-      'true':
-        [{"parameters":"",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-true"
-	   }
-	]
-	,
-
-      'false':
-        [{"parameters":"",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-false"
-	   }
-	]
-	,
-
-      'not':
-        [{"parameters":"$arg as item()*",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-not"
-	   }
-	]
-	,
-
-      'years-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-years-from-duration"
-	   }
-	]
-	,
-
-      'months-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-months-from-duration"
-	   }
-	]
-	,
-
-      'days-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-days-from-duration"
-	   }
-	]
-	,
-
-      'hours-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-duration"
-	   }
-	]
-	,
-
-      'minutes-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-duration"
-	   }
-	]
-	,
-
-      'seconds-from-duration':
-        [{"parameters":"$arg as xs:duration?",
-	   "returns":"xs:decimal?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-duration"
-	   }
-	]
-	,
-
-      'year-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-year-from-dateTime"
-	   }
-	]
-	,
-
-      'month-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-month-from-dateTime"
-	   }
-	]
-	,
-
-      'day-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-day-from-dateTime"
-	   }
-	]
-	,
-
-      'hours-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-dateTime"
-	   }
-	]
-	,
-
-      'minutes-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-dateTime"
-	   }
-	]
-	,
-
-      'seconds-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:decimal?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-dateTime"
-	   }
-	]
-	,
-
-      'timezone-from-dateTime':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:dayTimeDuration?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-dateTime"
-	   }
-	]
-	,
-
-      'year-from-date':
-        [{"parameters":"$arg as xs:date?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-year-from-date"
-	   }
-	]
-	,
-
-      'month-from-date':
-        [{"parameters":"$arg as xs:date?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-month-from-date"
-	   }
-	]
-	,
-
-      'day-from-date':
-        [{"parameters":"$arg as xs:date?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-day-from-date"
-	   }
-	]
-	,
-
-      'timezone-from-date':
-        [{"parameters":"$arg as xs:date?",
-	   "returns":"xs:dayTimeDuration?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-date"
-	   }
-	]
-	,
-
-      'hours-from-time':
-        [{"parameters":"$arg as xs:time?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-time"
-	   }
-	]
-	,
-
-      'minutes-from-time':
-        [{"parameters":"$arg as xs:time?",
-	   "returns":"xs:integer?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-time"
-	   }
-	]
-	,
-
-      'seconds-from-time':
-        [{"parameters":"$arg as xs:time?",
-	   "returns":"xs:decimal?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-time"
-	   }
-	]
-	,
-
-      'timezone-from-time':
-        [{"parameters":"$arg as xs:time?",
-	   "returns":"xs:dayTimeDuration?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-time"
-	   }
-	]
-	,
-
-      'adjust-dateTime-to-timezone':
-        [{"parameters":"$arg as xs:dateTime?",
-	   "returns":"xs:dateTime?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-dateTime-to-timezone"
-	   }
-	]
-	,
-
-      'adjust-date-to-timezone':
-        [{"parameters":"$arg as xs:date?",
-	   "returns":"xs:date?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-date-to-timezone"
-	   }
-	]
-	,
-
-      'adjust-time-to-timezone':
-        [{"parameters":"$arg as xs:time?",
-	   "returns":"xs:time?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-time-to-timezone"
-	   }
-	]
-	,
-
-      'resolve-QName':
-        [{"parameters":"$qname as xs:string?, $element as element()",
-	   "returns":"xs:QName?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-resolve-QName"
-	   }
-	]
-	,
-
-      'QName':
-        [{"parameters":"$paramURI as xs:string?, $paramQName as xs:string",
-	   "returns":"xs:QName",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-QName"
-	   }
-	]
-	,
-
-      'prefix-from-QName':
-        [{"parameters":"$arg as xs:QName?",
-	   "returns":"xs:NCName?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-prefix-from-QName"
-	   }
-	]
-	,
-
-      'local-name-from-QName':
-        [{"parameters":"$arg as xs:QName?",
-	   "returns":"xs:NCName?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-local-name-from-QName"
-	   }
-	]
-	,
-
-      'namespace-uri-from-QName':
-        [{"parameters":"$arg as xs:QName?",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri-from-QName"
-	   }
-	]
-	,
-
-      'namespace-uri-for-prefix':
-        [{"parameters":"$prefix as xs:string?,$element as element()",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri-for-prefix"
-	   }
-	]
-	,
-
-      'in-scope-prefixes':
-        [{"parameters":"$element as element()",
-	   "returns":"xs:string*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-in-scope-prefixes"
-	   }
-	]
-	,
-
-      'name':
-        [{"parameters":"",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-name"
-	   }
-	]
-	,
-
-      'local-name':
-        [{"parameters":"",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-local-name"
-	   }
-	]
-	,
-
-      'namespace-uri':
-        [{"parameters":"",
-	   "returns":"xs:anyURI",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri"
-	   }
-	]
-	,
-
-      'number':
-        [{"parameters":"",
-	   "returns":"xs:double",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-number"
-	   }
-	]
-	,
-
-      'lang':
-        [{"parameters":"$testlang as xs:string?",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-lang"
-	   }
-	]
-	,
-
-      'root':
-        [{"parameters":"",
-	   "returns":"node()",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-root"
-	   }
-	]
-	,
-
-      'boolean':
-        [{"parameters":"$arg as item()*",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-boolean"
-	   }
-	]
-	,
-
-      'index-of':
-        [{"parameters":"$seqParam as xs:anyAtomicType*,$srchParam as xs:anyAtomicType",
-	   "returns":"xs:integer*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-index-of"
-	   }
-	]
-	,
-
-      'empty':
-        [{"parameters":"$arg as item()*",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-empty"
-	   }
-	]
-	,
-
-      'exists':
-        [{"parameters":"$arg as item()*",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-exists"
-	   }
-	]
-	,
-
-      'distinct-values':
-        [{"parameters":"$arg as xs:anyAtomicType*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-distinct-values"
-	   }
-	]
-	,
-
-      'insert-before':
-        [{"parameters":"$target as item()*,$position as xs:integer,$inserts as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-insert-before"
-	   }
-	]
-	,
-
-      'remove':
-        [{"parameters":"$target as item()*, $position as xs:integer",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-remove"
-	   }
-	]
-	,
-
-      'reverse':
-        [{"parameters":"$arg as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-reverse"
-	   }
-	]
-	,
-
-      'subsequence':
-        [{"parameters":"$sourceSeq as item()*, $startingLoc as xs:double",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-subsequence"
-	   }
-	]
-	,
-
-      'unordered':
-        [{"parameters":"$sourceSeq as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-unordered"
-	   }
-	]
-	,
-
-      'zero-or-one':
-        [{"parameters":"$arg as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-zero-or-one"
-	   }
-	]
-	,
-
-      'one-or-more':
-        [{"parameters":"$arg as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-one-or-more"
-	   }
-	]
-	,
-
-      'exactly-one':
-        [{"parameters":"$arg as item()*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-exactly-one"
-	   }
-	]
-	,
-
-      'deep-equal':
-        [{"parameters":"$parameter1 as item()*, $parameter2 as item()*",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-deep-equal"
-	   }
-	]
-	,
-
-      'count':
-        [{"parameters":"$arg as item()*",
-	   "returns":"xs:integer",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-count"
-	   }
-	]
-	,
-
-      'avg':
-        [{"parameters":"$arg as xs:anyAtomicType*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-avg"
-	   }
-	]
-	,
-
-      'max':
-        [{"parameters":"$arg as xs:anyAtomicType*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-max"
-	   }
-	]
-	,
-
-      'min':
-        [{"parameters":"$arg as xs:anyAtomicType*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-min"
-	   }
-	]
-	,
-
-      'sum':
-        [{"parameters":"$arg as xs:anyAtomicType*",
-	   "returns":"",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-sum"
-	   }
-	]
-	,
-
-      'id':
-        [{"parameters":"$arg as xs:string*",
-	   "returns":"element()*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-id"
-	   }
-	]
-	,
-
-      'idref':
-        [{"parameters":"$arg as xs:string*",
-	   "returns":"node()*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-idref"
-	   }
-	]
-	,
-
-      'doc':
-        [{"parameters":"$uri as xs:string?",
-	   "returns":"document-node()?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-doc"
-	   }
-	]
-	,
-
-      'doc-available':
-        [{"parameters":"$uri as xs:string?",
-	   "returns":"xs:boolean",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-doc-available"
-	   }
-	]
-	,
-
-      'collection':
-        [{"parameters":"",
-	   "returns":"node()*",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-collection"
-	   }
-	]
-	,
-
-      'position':
-        [{"parameters":"",
-	   "returns":"xs:integer",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-position"
-	   }
-	]
-	,
-
-      'last':
-        [{"parameters":"",
-	   "returns":"xs:integer",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-last"
-	   }
-	]
-	,
-
-      'current-dateTime':
-        [{"parameters":"",
-	   "returns":"xs:dateTime",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-dateTime"
-	   }
-	]
-	,
-
-      'current-date':
-        [{"parameters":"",
-	   "returns":"xs:date",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-date"
-	   }
-	]
-	,
-
-      'current-time':
-        [{"parameters":"",
-	   "returns":"xs:time",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-time"
-	   }
-	]
-	,
-
-      'implicit-timezone':
-        [{"parameters":"",
-	   "returns":"xs:dayTimeDuration",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-implicit-timezone"
-	   }
-	]
-	,
-
-      'default-collation':
-        [{"parameters":"",
-	   "returns":"xs:string",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-default-collation"
-	   }
-	]
-	,
-
-      'static-base-uri':
-        [{"parameters":"",
-	   "returns":"xs:anyURI?",
-	   "source":"http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-static-base-uri"
-	   }
-	]
-	
-    };
-
-  
+sources["xpath"] = {
+    "function": {
+        "node-name": [{"pa": {p: [{t: "$arg as node()?"}]}, "r": {p: [{t: "xs:QName?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-node-name"}}
+        ], 
+        "nilled": [{"pa": {p: [{t: "$arg as node()?"}]}, "r": {p: [{t: "xs:boolean?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-nilled"}}
+        ], 
+        "string": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string"}}
+        ], 
+        "data": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-data"}}
+        ], 
+        "base-uri": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-base-uri"}}
+        ], 
+        "document-uri": [{"pa": {p: [{t: "$arg as node()?"}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-document-uri"}}
+        ], 
+        "abs": [{"pa": {p: [{t: "$arg as numeric?"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-abs"}}
+        ], 
+        "ceiling": [{"pa": {p: [{t: "$arg as numeric?"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-ceiling"}}
+        ], 
+        "floor": [{"pa": {p: [{t: "$arg as numeric?"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-floor"}}
+        ], 
+        "round": [{"pa": {p: [{t: "$arg as numeric?"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-round"}}
+        ], 
+        "round-half-to-even": [{"pa": {p: [{t: "$arg as numeric?"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-round-half-to-even"}}
+        ], 
+        "codepoints-to-string": [{"pa": {p: [{t: "$arg as xs:integer*"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-codepoints-to-string"}}
+        ], 
+        "string-to-codepoints": [{"pa": {p: [{t: "$arg as xs:string?"}]}, "r": {p: [{t: "xs:integer*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-to-codepoints"}}
+        ], 
+        "compare": [{"pa": {p: [{t: "$comparand1 as xs:string?, $comparand2 as xs:string?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-compare"}}
+        ], 
+        "codepoint-equal": [{"pa": {p: [{t: "$comparand1 as xs:string?,$comparand2 as xs:string?"}]}, "r": {p: [{t: "xs:boolean?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-codepoint-equal"}}
+        ], 
+        "concat": [{"pa": {p: [{t: "$arg1 as xs:anyAtomicType?,$arg2 as xs:anyAtomicType?,..."}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-concat"}}
+        ], 
+        "string-join": [{"pa": {p: [{t: "$arg1 as xs:string*, $arg2 as xs:string"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-join"}}
+        ], 
+        "substring": [{"pa": {p: [{t: "$sourceString as xs:string?,$startingLoc as xs:double"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring"}}
+        ], 
+        "string-length": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:integer"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-string-length"}}
+        ], 
+        "normalize-space": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-normalize-space"}}
+        ], 
+        "normalize-unicode": [{"pa": {p: [{t: "$arg as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-normalize-unicode"}}
+        ], 
+        "upper-case": [{"pa": {p: [{t: "$arg as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-upper-case"}}
+        ], 
+        "lower-case": [{"pa": {p: [{t: "$arg as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-lower-case"}}
+        ], 
+        "translate": [{"pa": {p: [{t: "$arg as xs:string?,$mapString as xs:string,$transString as xs:string"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-translate"}}
+        ], 
+        "encode-for-uri": [{"pa": {p: [{t: "$uri-part as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-encode-for-uri"}}
+        ], 
+        "iri-to-uri": [{"pa": {p: [{t: "$iri as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-iri-to-uri"}}
+        ], 
+        "escape-html-uri": [{"pa": {p: [{t: "$uri as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-escape-html-uri"}}
+        ], 
+        "contains": [{"pa": {p: [{t: "$arg1 as xs:string?, $arg2 as xs:string?"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-contains"}}
+        ], 
+        "starts-with": [{"pa": {p: [{t: "$arg1 as xs:string?, $arg2 as xs:string?"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-starts-with"}}
+        ], 
+        "ends-with": [{"pa": {p: [{t: "$arg1 as xs:string?, $arg2 as xs:string?"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-ends-with"}}
+        ], 
+        "substring-before": [{"pa": {p: [{t: "$arg1 as xs:string?, $arg2 as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring-before"}}
+        ], 
+        "substring-after": [{"pa": {p: [{t: "$arg1 as xs:string?, $arg2 as xs:string?"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-substring-after"}}
+        ], 
+        "matches": [{"pa": {p: [{t: "$input as xs:string?, $pattern as xs:string"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-matches"}}
+        ], 
+        "replace": [{"pa": {p: [{t: "$input as xs:string?,$pattern as xs:string,$replacement as xs:string"}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-replace"}}
+        ], 
+        "tokenize": [{"pa": {p: [{t: "$input as xs:string?, $pattern as xs:string"}]}, "r": {p: [{t: "xs:string*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-tokenize"}}
+        ], 
+        "resolve-uri": [{"pa": {p: [{t: "$relative as xs:string?"}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-resolve-uri"}}
+        ], 
+        "true": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-true"}}
+        ], 
+        "false": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-false"}}
+        ], 
+        "not": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-not"}}
+        ], 
+        "years-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-years-from-duration"}}
+        ], 
+        "months-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-months-from-duration"}}
+        ], 
+        "days-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-days-from-duration"}}
+        ], 
+        "hours-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-duration"}}
+        ], 
+        "minutes-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-duration"}}
+        ], 
+        "seconds-from-duration": [{"pa": {p: [{t: "$arg as xs:duration?"}]}, "r": {p: [{t: "xs:decimal?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-duration"}}
+        ], 
+        "year-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-year-from-dateTime"}}
+        ], 
+        "month-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-month-from-dateTime"}}
+        ], 
+        "day-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-day-from-dateTime"}}
+        ], 
+        "hours-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-dateTime"}}
+        ], 
+        "minutes-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-dateTime"}}
+        ], 
+        "seconds-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:decimal?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-dateTime"}}
+        ], 
+        "timezone-from-dateTime": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:dayTimeDuration?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-dateTime"}}
+        ], 
+        "year-from-date": [{"pa": {p: [{t: "$arg as xs:date?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-year-from-date"}}
+        ], 
+        "month-from-date": [{"pa": {p: [{t: "$arg as xs:date?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-month-from-date"}}
+        ], 
+        "day-from-date": [{"pa": {p: [{t: "$arg as xs:date?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-day-from-date"}}
+        ], 
+        "timezone-from-date": [{"pa": {p: [{t: "$arg as xs:date?"}]}, "r": {p: [{t: "xs:dayTimeDuration?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-date"}}
+        ], 
+        "hours-from-time": [{"pa": {p: [{t: "$arg as xs:time?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-hours-from-time"}}
+        ], 
+        "minutes-from-time": [{"pa": {p: [{t: "$arg as xs:time?"}]}, "r": {p: [{t: "xs:integer?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-minutes-from-time"}}
+        ], 
+        "seconds-from-time": [{"pa": {p: [{t: "$arg as xs:time?"}]}, "r": {p: [{t: "xs:decimal?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-seconds-from-time"}}
+        ], 
+        "timezone-from-time": [{"pa": {p: [{t: "$arg as xs:time?"}]}, "r": {p: [{t: "xs:dayTimeDuration?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-timezone-from-time"}}
+        ], 
+        "adjust-dateTime-to-timezone": [{"pa": {p: [{t: "$arg as xs:dateTime?"}]}, "r": {p: [{t: "xs:dateTime?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-dateTime-to-timezone"}}
+        ], 
+        "adjust-date-to-timezone": [{"pa": {p: [{t: "$arg as xs:date?"}]}, "r": {p: [{t: "xs:date?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-date-to-timezone"}}
+        ], 
+        "adjust-time-to-timezone": [{"pa": {p: [{t: "$arg as xs:time?"}]}, "r": {p: [{t: "xs:time?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-adjust-time-to-timezone"}}
+        ], 
+        "resolve-QName": [{"pa": {p: [{t: "$qname as xs:string?, $element as element()"}]}, "r": {p: [{t: "xs:QName?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-resolve-QName"}}
+        ], 
+        "QName": [{"pa": {p: [{t: "$paramURI as xs:string?, $paramQName as xs:string"}]}, "r": {p: [{t: "xs:QName"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-QName"}}
+        ], 
+        "prefix-from-QName": [{"pa": {p: [{t: "$arg as xs:QName?"}]}, "r": {p: [{t: "xs:NCName?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-prefix-from-QName"}}
+        ], 
+        "local-name-from-QName": [{"pa": {p: [{t: "$arg as xs:QName?"}]}, "r": {p: [{t: "xs:NCName?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-local-name-from-QName"}}
+        ], 
+        "namespace-uri-from-QName": [{"pa": {p: [{t: "$arg as xs:QName?"}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri-from-QName"}}
+        ], 
+        "namespace-uri-for-prefix": [{"pa": {p: [{t: "$prefix as xs:string?,$element as element()"}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri-for-prefix"}}
+        ], 
+        "in-scope-prefixes": [{"pa": {p: [{t: "$element as element()"}]}, "r": {p: [{t: "xs:string*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-in-scope-prefixes"}}
+        ], 
+        "name": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-name"}}
+        ], 
+        "local-name": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-local-name"}}
+        ], 
+        "namespace-uri": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:anyURI"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-namespace-uri"}}
+        ], 
+        "number": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:double"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-number"}}
+        ], 
+        "lang": [{"pa": {p: [{t: "$testlang as xs:string?"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-lang"}}
+        ], 
+        "root": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "node()"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-root"}}
+        ], 
+        "boolean": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-boolean"}}
+        ], 
+        "index-of": [{"pa": {p: [{t: "$seqParam as xs:anyAtomicType*,$srchParam as xs:anyAtomicType"}]}, "r": {p: [{t: "xs:integer*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-index-of"}}
+        ], 
+        "empty": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-empty"}}
+        ], 
+        "exists": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-exists"}}
+        ], 
+        "distinct-values": [{"pa": {p: [{t: "$arg as xs:anyAtomicType*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-distinct-values"}}
+        ], 
+        "insert-before": [{"pa": {p: [{t: "$target as item()*,$position as xs:integer,$inserts as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-insert-before"}}
+        ], 
+        "remove": [{"pa": {p: [{t: "$target as item()*, $position as xs:integer"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-remove"}}
+        ], 
+        "reverse": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-reverse"}}
+        ], 
+        "subsequence": [{"pa": {p: [{t: "$sourceSeq as item()*, $startingLoc as xs:double"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-subsequence"}}
+        ], 
+        "unordered": [{"pa": {p: [{t: "$sourceSeq as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-unordered"}}
+        ], 
+        "zero-or-one": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-zero-or-one"}}
+        ], 
+        "one-or-more": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-one-or-more"}}
+        ], 
+        "exactly-one": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-exactly-one"}}
+        ], 
+        "deep-equal": [{"pa": {p: [{t: "$parameter1 as item()*, $parameter2 as item()*"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-deep-equal"}}
+        ], 
+        "count": [{"pa": {p: [{t: "$arg as item()*"}]}, "r": {p: [{t: "xs:integer"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-count"}}
+        ], 
+        "avg": [{"pa": {p: [{t: "$arg as xs:anyAtomicType*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-avg"}}
+        ], 
+        "max": [{"pa": {p: [{t: "$arg as xs:anyAtomicType*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-max"}}
+        ], 
+        "min": [{"pa": {p: [{t: "$arg as xs:anyAtomicType*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-min"}}
+        ], 
+        "sum": [{"pa": {p: [{t: "$arg as xs:anyAtomicType*"}]}, "r": {p: [{t: ""}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-sum"}}
+        ], 
+        "id": [{"pa": {p: [{t: "$arg as xs:string*"}]}, "r": {p: [{t: "element()*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-id"}}
+        ], 
+        "idref": [{"pa": {p: [{t: "$arg as xs:string*"}]}, "r": {p: [{t: "node()*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-idref"}}
+        ], 
+        "doc": [{"pa": {p: [{t: "$uri as xs:string?"}]}, "r": {p: [{t: "document-node()?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-doc"}}
+        ], 
+        "doc-available": [{"pa": {p: [{t: "$uri as xs:string?"}]}, "r": {p: [{t: "xs:boolean"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-doc-available"}}
+        ], 
+        "collection": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "node()*"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-collection"}}
+        ], 
+        "position": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:integer"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-position"}}
+        ], 
+        "last": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:integer"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-last"}}
+        ], 
+        "current-dateTime": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:dateTime"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-dateTime"}}
+        ], 
+        "current-date": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:date"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-date"}}
+        ], 
+        "current-time": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:time"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-current-time"}}
+        ], 
+        "implicit-timezone": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:dayTimeDuration"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-implicit-timezone"}}
+        ], 
+        "default-collation": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:string"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-default-collation"}}
+        ], 
+        "static-base-uri": [{"pa": {p: [{t: ""}]}, "r": {p: [{t: "xs:anyURI?"}]}, "sp": {u: "http://www.w3.org/TR/2007/REC-xpath-functions-20070123/#func-static-base-uri"}}
+        ]
+    }
+};
