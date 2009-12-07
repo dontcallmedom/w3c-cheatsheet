@@ -46,7 +46,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()]">
 	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
 	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=current()]]">
-	  <xsl:sort select="count(description//descendant::el[normalize-space()=current()])"/>
+	  <xsl:sort select="count(description//descendant::el[normalize-space()=current()])" order="descending"/>
 	    <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
         </xsl:for-each>
 	</property>
@@ -92,7 +92,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <xsl:if test="$wcagTechniques/description/descendant::att[normalize-space(.)=current()/html:td[1]]">
 		<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag">
 		  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::att[normalize-space()=current()/html:td[1]]]">
-		    <xsl:sort select="count(description/descendant::att[normalize-space()=current()/html:td[1]])"/>
+		    <xsl:sort select="count(description/descendant::att[normalize-space()=current()/html:td[1]])" order="descending"/>
 		    <content link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
 		  </xsl:for-each>
 		</property>
