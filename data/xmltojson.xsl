@@ -83,7 +83,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	       </xsl:if>
 	       <xsl:if test="@link">
 		 <xsl:if test="@type"><xsl:text>, </xsl:text></xsl:if>
-		 <xsl:text>u: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org','&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		 <xsl:text>u: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org'),'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="count(content)">
 		 <xsl:if test="@link or @type">
