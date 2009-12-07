@@ -61,7 +61,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </xsl:choose>
 	</property>
 	<property type="element" name="Allowed children" infoset="svg" list="inline">
-	  <xsl:for-each select="tokenize(html:td[4],',')">
+	  <xsl:for-each select="tokenize(html:td[4],', ')">
 	    <content><xsl:value-of select="."/></content>
 	  </xsl:for-each>
 	</property>
