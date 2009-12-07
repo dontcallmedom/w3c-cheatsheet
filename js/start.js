@@ -30,6 +30,9 @@ for (var infoset in keywordSources) {
             if (!keywordsMatch[keyword]) {
                 keywordsMatch[keyword] = {};
                 keywords.push(keyword);
+                if (source[keyword].synonym) {
+                    keyword.push(source[keyword].synonym);
+                }
             }
             if (!keywordsMatch[keyword][infoset]) {
                 keywordsMatch[keyword][infoset] = {};
@@ -37,8 +40,11 @@ for (var infoset in keywordSources) {
             if (!keywordsMatch[keyword][infoset][propertytype]) {
                 keywordsMatch[keyword][infoset][propertytype] = [];
             }
-            for (var k in source[keyword]) {            
-                keywordsMatch[keyword][infoset][propertytype].push(source[keyword][k]);
+            for (var k in source[keyword]["d"]) {            
+                keywordsMatch[keyword][infoset][propertytype].push(source[keyword]["d"][k]);
+                if (source[keyword].synonym) {
+                    keywordsMatch[source[keyword].synonym][infoset][propertytype].push(source[keyword]["d"][k]);
+                }
             }       
         }
     }

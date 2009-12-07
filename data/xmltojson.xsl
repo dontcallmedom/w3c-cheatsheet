@@ -74,7 +74,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/>
 	<xsl:text>: {</xsl:text>
 	 <xsl:for-each select="current-group()"> <!-- looping on <item> -->
-	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": [</xsl:text>
+	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
+	   <xsl:if test="@synonym">
+	     <xsl:text>syn: "</xsl:text><xsl:value-of select="@synonym"/><xsl:text>", </xsl:text>
+	   </xsl:if>
+	   <xsl:text>d: [</xsl:text>
 	   <xsl:for-each select="context">
 	     <xsl:text>{</xsl:text>
 	     <xsl:for-each select="property">
@@ -114,7 +118,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	     <xsl:text>}</xsl:text>
 	     <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 	   </xsl:for-each>
-	   <xsl:text>&#xA;        ]</xsl:text> <!-- end of e.g. input: [] -->
+	   <xsl:text>&#xA;        ]}</xsl:text> <!-- end of e.g. input: [] -->
 	   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 	 </xsl:for-each>
 	 <xsl:text>&#xA;    }</xsl:text> <!-- end of e.g. html elements: -->
