@@ -11,14 +11,14 @@ var make_unique = function (b) {
 };
 
 var keywordSources = {
-    "css": {"property": "CSS Property",
-            "selector": "CSS Selector",
-            "at-rule": "CSS At-rules"},
-    "html": {"element": "HTML Element",
-             "attribute": "HTML Attribute"},
-    "svg": {"attribute": "SVG Attribute",
-            "element": "SVG Element"},
-    "xpath": {"function": "XPath function"}
+    "css": {"p": "CSS Property",
+            "se": "CSS Selector",
+            "ar": "CSS At-rules"},
+    "html": {"e": "HTML Element",
+             "a": "HTML Attribute"},
+    "svg": {"a": "SVG Attribute",
+            "e": "SVG Element"},
+    "xpath": {"f": "XPath function"}
 };
 
 var keywordsMatch = {};
