@@ -79,7 +79,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	     <xsl:for-each select="property">
 	       <xsl:text>"</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
-		 <xsl:text>y: "</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		 <xsl:text>y: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="@link">
 		 <xsl:if test="@type"><xsl:text>, </xsl:text></xsl:if>

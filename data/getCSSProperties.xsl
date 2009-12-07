@@ -59,7 +59,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<property name="media">
 	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[7])"/></content>
 	</property>
-	<property name="Specification" link="{concat('http://www.w3.org/TR/CSS2/',@href)}"/>
+	<property name="Specification" link="{concat('/TR/CSS2/',@href)}"/>
 	<xsl:if test="$i18n/html:dd/html:code[@class='css property'][normalize-space(.)=current()/html:td[1]]">
 	  <property name="Internationalization" list="block">
 	    <xsl:for-each select="$i18n/html:dd[html:code[@class='css property'][normalize-space()=current()/html:td[1]]]">
