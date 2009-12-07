@@ -40,4 +40,5 @@ Infosets = element infosets {
   }
 }
 ## Types of keywords
+# add to xmltojson.xsl dictionary when updating
 Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
