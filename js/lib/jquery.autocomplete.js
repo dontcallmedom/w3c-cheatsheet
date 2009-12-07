@@ -268,7 +268,7 @@ jQuery.autocomplete = function(input, options) {
 				// we put a styled iframe behind the calendar so HTML SELECT elements don't show through
 				$results.append(document.createElement('iframe'));
 			}
-			results.appendChild(dataToDom(data));
+			results.appendChild(dataToDom(data,q));
 			// autofill in the complete box w/the first match as long as the user hasn't entered in more data
 			if( options.autoFill && ($input.val().toLowerCase() == q.toLowerCase()) ) autoFill(data[0][0]);
 			showResults();
@@ -290,7 +290,7 @@ jQuery.autocomplete = function(input, options) {
 		return parsed;
 	};
 
-	function dataToDom(data) {
+	function dataToDom(data,q) {
 		var ul = document.createElement("ul");
 		var num = data.length;
 
@@ -305,8 +305,10 @@ jQuery.autocomplete = function(input, options) {
 				li.innerHTML = options.formatItem(row, i, num);
 				li.selectValue = row[0];
 			} else {
-				li.innerHTML = row[0];
-				li.selectValue = row[0];
+			    var line = row[0];
+			    line = line.substring(0, line.indexOf(q)) + "<strong>" + q + "</strong>" + line.substring(line.indexOf(q) + q.length) ;
+			    li.innerHTML = line;
+			    li.selectValue = row[0];
 			}
 			var extra = null;
 			if (row.length > 1) {
