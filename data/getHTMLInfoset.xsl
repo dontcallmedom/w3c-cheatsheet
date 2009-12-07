@@ -44,9 +44,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</property>
 	<property name="Specification" link="{concat('/TR/html401/index/',document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html//html:table/html:tr/html:td[1][normalize-space(.)=upper-case(current())]/html:a/@href)}" />
       <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()]">
+	<xsl:variable name="el" select="normalize-space(.)"/>
 	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
-	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=current()]]">
-	  <xsl:sort select="count(description//descendant::el[normalize-space()=current()])" order="descending"/>
+	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">
+	  <xsl:sort select="count(description//descendant::el[normalize-space()=$el])" order="descending"/>
 	    <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
         </xsl:for-each>
 	</property>
@@ -90,9 +91,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <xsl:if test="position()=1">
 	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
 	      <xsl:if test="$wcagTechniques/description/descendant::att[normalize-space(.)=current()/html:td[1]]">
+	      <xsl:variable name="attr" select="normalize-space(html:td[1])"/>
 		<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag">
-		  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::att[normalize-space()=current()/html:td[1]]]">
-		    <xsl:sort select="count(description/descendant::att[normalize-space()=current()/html:td[1]])" order="descending"/>
+		  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::att[normalize-space()=$attr]]">
+		    <xsl:sort select="count(description/descendant::att[normalize-space()=$attr])" order="descending"/>
 		    <content link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
 		  </xsl:for-each>
 		</property>
