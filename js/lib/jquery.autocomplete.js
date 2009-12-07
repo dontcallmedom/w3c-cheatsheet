@@ -42,7 +42,7 @@ jQuery.autocomplete = function(input, options) {
 
 	// if there is a data array supplied
 	if( options.data != null ){
-		var sFirstChar = "", stMatchSets = {}, row = [];
+	    var sFirstChar = "", stMatchSets = {}, row = [];
 
 		// no url was specified, we need to adjust the cache length to make sure it fits the local data store
 		if( typeof options.url != "string" ) options.cacheLength = 1;
@@ -78,6 +78,7 @@ jQuery.autocomplete = function(input, options) {
 			// add to the cache
 			addToCache(k, stMatchSets[k]);
 		}
+
 	}
 
 	$input
@@ -359,26 +360,36 @@ jQuery.autocomplete = function(input, options) {
 				var qs = q.substr(0, i);
 				var c = cache.data[qs];
 				if (c) {
-					var csub = [];
+					var csub_start = [];
+					var csub_other = [];
 					for (var j = 0; j < c.length; j++) {
 						var x = c[j];
 						var x0 = x[0];
-						if (matchSubset(x0, q)) {
-							csub[csub.length] = x;
+						if (matchStart(x0, q)) {
+						    csub_start[csub_start.length] = x;
+						} else if (options.matchContains && matchSubset(x0, q)) {
+						    csub_other[csub_other.length] = x;
 						}
 					}
-					return csub;
+					return csub_start.concat(csub_other);
 				}
 			}
 		}
 		return null;
 	};
 
-	function matchSubset(s, sub) {
-		if (!options.matchCase) s = s.toLowerCase();
-		var i = s.indexOf(sub);
-		if (i == -1) return false;
-		return i == 0 || options.matchContains;
+	function matchStart(s, sub) {
+	    return matchSubset(s, sub, true);
+	}
+
+	function matchSubset(s, sub, startOnly) {
+	    if (startOnly === null) {
+		startOnly = !options.matchContains;
+	    }
+	    if (!options.matchCase) s = s.toLowerCase();
+	    var i = s.indexOf(sub);
+	    if (i == -1) return false;
+	    return i == 0 || !startOnly;
 	};
 
 	this.flushCache = function() {
