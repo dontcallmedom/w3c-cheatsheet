@@ -47,11 +47,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>Example</full><short>ex</short></term>
 <term><full>Syntax</full><short>s</short></term>
 <term><full>values</full><short>v</short></term>
-<term><full>inherited</full><short>in</short></term>
+<term><full>inherited</full><short>ih</short></term>
 <term><full>media</full><short>me</short></term>
 <term><full>animatable</full><short>an</short></term>
 <term><full>Specification</full><short>sp</short></term>
 <term><full>Attributes</full><short>at</short></term>
+<term><full>Rules</full><short>ru</short></term>
 <term><full>percentage</full><short>pe</short></term>
 <term><full>applies</full><short>ap</short></term>
 <term><full>element</full><short>e</short></term>
@@ -69,15 +70,15 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:value-of select="replace(@technology,'&quot;','\\&quot;')"/>
       <xsl:text>"] = {</xsl:text>
       <xsl:for-each-group select="item" group-by="@type">
-	<xsl:text>&#xA;    "</xsl:text>
+	<xsl:text>&#xA;    </xsl:text>
 	<xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/>
-	<xsl:text>": {</xsl:text>
+	<xsl:text>: {</xsl:text>
 	 <xsl:for-each select="current-group()"> <!-- looping on <item> -->
 	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": [</xsl:text>
 	   <xsl:for-each select="context">
 	     <xsl:text>{</xsl:text>
 	     <xsl:for-each select="property">
-	       <xsl:text>"</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
+	       <xsl:text></xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:text>: {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
 		 <xsl:text>y: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>"</xsl:text>
 	       </xsl:if>
