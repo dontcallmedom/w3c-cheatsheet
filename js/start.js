@@ -164,11 +164,12 @@ jQuery(document).ready(function ($) {
 
 
 
-    function show_result(item, selector) {
+    function show_result(item) {
         if (item === null) {
             return;
         }
         var keyword = item.selectValue;
+	window.location.hash = "#search," + escape(keyword);
         clearLookUp();
         var detailsLength = 0;
         for (var infoset in keywordsMatch[keyword]) {
@@ -207,7 +208,12 @@ jQuery(document).ready(function ($) {
             $("#details_clear").replaceWith("");
         }
     });
-    if (window.location.hash && window.location.hash.substring(0, 5) === '#inf,') {
-        load_anchor(window.location.hash.substring(1));
+    if (window.location.hash) {
+	if (window.location.hash.substring(0, 5) === '#inf,') {
+            load_anchor(window.location.hash.substring(1));
+	} else if (window.location.hash.substring(0, 8) === '#search,') {
+	    $("#search").val(window.location.hash.substring(8));
+	    $("#search").get(0).autocompleter.findValue();
+	}
     }
 });
