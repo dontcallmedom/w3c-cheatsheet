@@ -55,6 +55,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		 <xsl:if test="@link">
 		   <xsl:text>, </xsl:text>
 		 </xsl:if>
+		 <xsl:if test="@infoset">
+		   <xsl:text>"infoset": "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+		 </xsl:if>
 		 <xsl:if test="@list">
 		   <xsl:text>"list": "</xsl:text><xsl:value-of select="replace(@list,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		 </xsl:if>
