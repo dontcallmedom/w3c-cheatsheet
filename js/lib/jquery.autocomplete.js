@@ -54,12 +54,20 @@ jQuery.autocomplete = function(input, options) {
 
 			// if the length is zero, don't add to list
 			if( row[0].length > 0 ){
-				// get the first character
-				sFirstChar = row[0].substring(0, 1).toLowerCase();
+			    // get the first character
+			    // search data - only first char, or whole string
+			    // depending on options.matchContains
+			    var stToIndex = row[0].split("",1);
+			    if (options.matchContains) {
+				stToIndex = row[0].split("");
+			    }
+			    for ( var j in stToIndex ) {
+				sChar = stToIndex[j].toLowerCase();
 				// if no lookup array for this character exists, look it up now
-				if( !stMatchSets[sFirstChar] ) stMatchSets[sFirstChar] = [];
+				if( !stMatchSets[sChar] ) stMatchSets[sChar] = [];
 				// if the match is a string
-				stMatchSets[sFirstChar].push(row);
+				stMatchSets[sChar].push(row);
+			    }
 			}
 		}
 
