@@ -61,7 +61,7 @@
 <property name="description"><content>matches the name of any element type</content></property>
 </context>
 </item>
-<item type="selector" name=":lang()" synomym="lang()">
+<item type="selector" name=":lang()" synonym="lang()">
 <context>
 <property name="Pattern"><content>E:lang(c)</content></property>
 <property name="name"><content>lang() pseudo-class</content></property>
@@ -69,7 +69,7 @@
 <property name="Internationalization"><content> link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
 </context>
 </item>
-<item type="selector" name=":first-child" synomym="first-child">
+<item type="selector" name=":first-child" synonym="first-child">
 <context>
 <property name="Pattern"><content>E:first-child</content></property>
 <property name="name"><content>first-child pseudo-class</content></property>
