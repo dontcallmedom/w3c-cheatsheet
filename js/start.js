@@ -89,11 +89,11 @@ jQuery(document).ready(function ($) {
                 var dt = $("<dt></dt>").appendTo(dl);
                 var container = dt;
                 if (context[property].u) {
-		    var url = context[property].u;
-		    if (url.substring(0,1)==="/") {
-			url = "http://www.w3.org" + url;
-		    }
-                    container = $("<a href='" + url + "'></a>").appendTo(dt);
+                    var propurl = context[property].u;
+                    if (propurl.substring(0, 1) === "/") {
+                        propurl = "http://www.w3.org" + propurl;
+                    }
+                    container = $("<a href='" + propurl + "'></a>").appendTo(dt);
                 }
                 container.text(dictionary[property]);
                 if (context[property]["p"] && context[property]["p"].length > 0) {
@@ -117,10 +117,10 @@ jQuery(document).ready(function ($) {
                             itemcontainer = $("<span></span>").appendTo(itemcontainer);
                         }
                         if (propcontent.u) {
-			    var url = propcontent.u;
-			    if (url.substring(0,1)==="/") {
-				url = "http://www.w3.org" + url;
-			    }
+                            var url = propcontent.u;
+                            if (url.substring(0, 1) === "/") {
+                                url = "http://www.w3.org" + url;
+                            }
                             itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
                         } else if (context[property].i && context[property].y) {
                             itemcontainer = $("<a href='#inf," + context[property].i + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
@@ -137,23 +137,20 @@ jQuery(document).ready(function ($) {
     }
 
     function load_anchor(anchor) {
-        var infoset = false;
-        var propertytype = false;
-        var keyword = false;
-        // selector is a path à la "html-attributes"
-        if (anchor !== null) {
-            var selector_path = anchor.split(',');
-            infoset = unescape(selector_path[1]);
-            propertytype = unescape(selector_path[2]);
-            keyword = unescape(selector_path.slice(3).join(","));
-            if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
-                ) {
-                clearLookUp();
-                $("#search").val("");
-                if (show_keyword(keyword, infoset, propertytype)) {
-                    $("#details").accordion({header: 'div>h2', autoHeight: false});
-                    return true;
-                }
+        if (anchor === null) {
+            return false;
+        }
+        var selector_path = anchor.split(',');
+        var infoset = unescape(selector_path[1]);
+        var propertytype = unescape(selector_path[2]);
+        var keyword = unescape(selector_path.slice(3).join(","));
+        if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
+            ) {
+            clearLookUp();
+            $("#search").val("");
+            if (show_keyword(keyword, infoset, propertytype)) {
+                $("#details").accordion({header: 'div>h2', autoHeight: false});
+                return true;
             }
         }
         return false;
@@ -184,8 +181,9 @@ jQuery(document).ready(function ($) {
 
     $("a.internal").live("click",
         function ()  { 
-	    return load_anchor($(this).attr("href").split("#")[1]); 
-    });
+            return load_anchor($(this).attr("href").split("#")[1]); 
+        }
+    );
 
 
     $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10});
