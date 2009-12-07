@@ -1,8 +1,7 @@
 <?xml-stylesheet href="http://www.w3.org/StyleSheets/base.css" type="text/css"?><?xml-stylesheet href="http://www.w3.org/2002/02/style-xsl.css" type="text/css"?>
 <xsl:stylesheet version="2.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:foo="urn:foo">
 
-<!-- Output method XML -->
 <xsl:output method="text" 
   encoding="utf-8" 
   />
@@ -31,6 +30,31 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 </html>
 
 
+<dictionary xmlns="urn:foo">
+<term><full>Pattern</full><short>p</short></term>
+<term><full>name</full><short>n</short></term>
+<term><full>description</full><short>d</short></term>
+<term><full>Internationalization</full><short>i</short></term>
+<term><full>Accessibility techniques</full><short>a</short></term>
+<term><full>QA Tip</full><short>q</short></term>
+<term><full>Mobile considerations</full><short>m</short></term>
+<term><full>Elements</full><short>e</short></term>
+<term><full>content</full><short>c</short></term>
+<term><full>Allowed properties</full><short>pr</short></term>
+<term><full>Allowed children</full><short>k</short></term>
+<term><full>parameters</full><short>pa</short></term>
+<term><full>returns</full><short>r</short></term>
+<term><full>Example</full><short>ex</short></term>
+<term><full>Syntax</full><short>s</short></term>
+<term><full>values</full><short>v</short></term>
+<term><full>inherited</full><short>in</short></term>
+<term><full>media</full><short>me</short></term>
+<term><full>animatable</full><short>an</short></term>
+<term><full>Specification</full><short>sp</short></term>
+<term><full>Attributes</full><short>at</short></term>
+<term><full>percentage</full><short>pe</short></term>
+<term><full>applies</full><short>ap</short></term>
+</dictionary>
 
 
   <xsl:template match="/">
@@ -47,7 +71,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	   <xsl:for-each select="context">
 	     <xsl:text>{</xsl:text>
 	     <xsl:for-each select="property">
-	       <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
+	       <xsl:text>"</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:text>": {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
 		 <xsl:text>y: "</xsl:text><xsl:value-of select="replace(@type,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>

@@ -88,37 +88,37 @@ jQuery(document).ready(function ($) {
             for (var property in context) {
                 var dt = $("<dt></dt>").appendTo(dl);
                 var container = dt;
-                if (context[property].url) {
-                    container = $("<a href='" + context[property].url + "'></a>").appendTo(dt);
+                if (context[property].u) {
+                    container = $("<a href='" + context[property].u + "'></a>").appendTo(dt);
                 }
-                container.text(property);
-                if (context[property]["properties"] && context[property]["properties"].length > 0) {
+                container.text(dictionary[property]);
+                if (context[property]["p"] && context[property]["p"].length > 0) {
                     var displayAsList = true;
-                    if (context[property]["properties"].length === 1 || context[property].list === "inline") {
+                    if (context[property]["p"].length === 1 || context[property].l === "inline") {
                         displayAsList = false;
                     }
                     var dd = $("<dd></dd>").appendTo(dl);
                     var listcontainer = dd;
                     if (displayAsList) {
-                        if (context[property].list === "block") {
+                        if (context[property].l === "block") {
                             listcontainer = $("<ul></ul>").appendTo(listcontainer);
                         }
                     }
-                    for (var propcontentidx in context[property]["properties"]) {
+                    for (var propcontentidx in context[property]["p"]) {
                         var itemcontainer = listcontainer;
-                        var propcontent = context[property]["properties"][propcontentidx];
+                        var propcontent = context[property]["p"][propcontentidx];
                         if (displayAsList) {
                             itemcontainer = $("<li></li>").appendTo(itemcontainer);
                         } else {
                             itemcontainer = $("<span></span>").appendTo(itemcontainer);
                         }
-                        if (propcontent.url) {
-                            itemcontainer = $("<a href='" + propcontent.url + "'></a>").appendTo(itemcontainer);
-                        } else if (context[property].infoset && context[property].type) {
-                            itemcontainer = $("<a href='#inf," + context[property].infoset + "," + escape(context[property].type) + "," + escape(propcontent.title) + "' class='internal'></a>").appendTo(itemcontainer);
+                        if (propcontent.u) {
+                            itemcontainer = $("<a href='" + propcontent.u + "'></a>").appendTo(itemcontainer);
+                        } else if (context[property].i && context[property].y) {
+                            itemcontainer = $("<a href='#inf," + context[property].i + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
                         }
-                        itemcontainer.text(propcontent.title);
-                        if (!displayAsList && propcontentidx < context[property]["properties"].length - 1) {
+                        itemcontainer.text(propcontent.t);
+                        if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
                             listcontainer.append(", ");
                         }
                     }
@@ -175,10 +175,9 @@ jQuery(document).ready(function ($) {
     }
 
     $("a.internal").live("click",
-        function () {
-	   return load_anchor($(this).attr("href").split("#")[1]);
-	}
-     );
+        function ()  { 
+	    return load_anchor($(this).attr("href").split("#")[1]); 
+    });
 
 
     $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10});
@@ -196,7 +195,7 @@ jQuery(document).ready(function ($) {
             $("#details_clear").replaceWith("");
         }
     });
-    if (window.location.hash && window.location.hash.substring(0,5)==='#inf-') {
-	load_anchor(window.location.hash.substring(1));
+    if (window.location.hash && window.location.hash.substring(0, 5) === '#inf-') {
+        load_anchor(window.location.hash.substring(1));
     }
 });
