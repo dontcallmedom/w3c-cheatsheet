@@ -1,8 +1,9 @@
-element infosets {
+start = Infosets
+Infosets = element infosets {
   element infoset {
     attribute technology { text },
     element item {
-       attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" },
+       Types,
        attribute name { text },
        element context {
           attribute type { "element" }?,
@@ -13,7 +14,8 @@ element infosets {
              }*
 	  }?,
           element property {
-             attribute type { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "source" | "attributes" | "percentage" | "applies" },
+	     Types?,
+             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "attributes" | "percentage" | "applies" },
 	     attribute infoset { text }?,
 	     attribute link { text }?,
 	     attribute list { "inline" | "block" }?,
@@ -27,3 +29,4 @@ element infosets {
     }+
   }
 }
+Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
