@@ -25,7 +25,7 @@ Infosets = element infosets {
 	     Types?,
 	     # add to xmltojson.xsl dictionary when updating
 	     # TODO: need trimming
-             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" },
+             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" },
 	     attribute infoset { text }?,
 	     attribute link { text }?,
 	     attribute list { "inline" | "block" }?,
