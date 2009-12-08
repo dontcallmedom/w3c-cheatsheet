@@ -17,24 +17,17 @@
 <context><property name="Pattern"><content>E > F</content></property>
 <property name="name"><content>Child selector</content></property>
 <property name="description"><content>Matches any F element that is a child of an E element</content></property></context>
-<context><property name="Pattern"><content>E:first-child</content></property>
-<property name="name"><content>first-child pseudo-class</content></property>
-<property name="description"><content>Matches element E when E is the first child of its parent</content></property></context>
-<context><property name="Pattern"><content>E:link</content></property>
-<property name="name"><content>link pseudo-class</content></property>
-<property name="description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property></context>
-<context><property name="Pattern"><content>E:visited</content></property>
-<property name="name"><content>link pseudo-class</content></property>
-<property name="description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is already visited</content></property></context>
-<context><property name="Pattern"><content>E:active | E:hover | E:focus</content></property>
-<property name="name"><content>dynamic pseudo-class</content></property>
-<property name="description"><content>Matches E during certain user actions</content></property></context>
-<context><property name="Pattern"><content>E:lang(c)</content></property>
-<property name="name"><content>lang() pseudo-class</content></property>
-<property name="description"><content>Matches element of type E if it is in (human) language c</content></property></context>
 <context><property name="Pattern"><content>E + F</content></property>
 <property name="name"><content>Adjacent selector</content></property>
 <property name="description"><content>Matches any F element immediately preceded by a sibling element E</content></property></context>
+<context><property name="Pattern"><content>#myid</content></property>
+<property name="name"><content>ID selector</content></property>
+<property name="description"><content>Matches any element with ID equal to "myid".</content></property>
+</context>
+<context><property name="Pattern"><content>.warning</content></property>
+<property name="name"><content>Class selector</content></property>
+<property name="description"><content>In HTML, matches any element whose <span type='attribute' infoset='html'>class</span> attribute is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
+
 <context><property name="Pattern"><content>E[foo]</content></property>
 <property name="name"><content>Attribute selector</content></property>
 <property name="description"><content>Matches any E element with the "foo" attribute set (whatever the value)</content></property></context>
@@ -47,13 +40,11 @@
 <context><property name="Pattern"><content>E[lang|=en]</content></property>
 <property name="name"><content>Attribute selector</content></property>
 <property name="description"><content>Matches any E element whose "lang" attribute has a hyphen-separated list of values beginning (from the left) with "en"</content></property></context>
-<context><property name="Pattern"><content>.warning</content></property>
-<property name="name"><content>Class selector</content></property>
-<property name="description"><content>In HTML, matches any element whose class attribute is a list of space-separated values, one of which is exactly equal to "warning"</content></property></context>
-<context><property name="Pattern"><content>#myid</content></property>
-<property name="name"><content>ID selector</content></property>
-<property name="description"><content>Matches any element with ID equal to "myid".</content></property>
-</context>
+<context><property name="Pattern"><content>E<span type='selector' infoset='css'>:first-child</span></content></property></context>
+<context><property name="Pattern"><content>E<span type='selector' infoset='css'>:link</span></content></property></context>
+<context><property name="Pattern"><content>E<span type='selector' infoset='css'>:visited</span></content></property></context>
+<context><property name="Pattern"><content>E<span type='selector' infoset='css'>:active</span> | E<span type='selector' infoset='css'>:hover</span> | E<span type='selector' infoset='css'>:focus</span></content></property></context>
+<context><property name="Pattern"><content>E<span type='selector' infoset='css'>:lang()</span></content></property></context>
 </item>
 <item type="selector" name="*">
 <context>
