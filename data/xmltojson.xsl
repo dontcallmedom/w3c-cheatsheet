@@ -145,7 +145,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:if>
   </xsl:template>
   <xsl:template match="span" mode="mixedToList">
-    <xsl:text>{y: "</xsl:text><xsl:value-of select="@type"/><xsl:text>", </xsl:text>
+    <xsl:text>{y: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>", </xsl:text>
     <xsl:text>i: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
     <xsl:text>t: "</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"}</xsl:text>
     <xsl:if test="position()!=last()">
