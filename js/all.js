@@ -2494,44 +2494,46 @@ E("#content").bind("tabsshow",function(F,G){window.location.hash=G.tab.hash
 E(".accordion").accordion({header:"div >h3",active:false,autoHeight:false});
 makeReplacingAccordion(E(".accordion"));
 keywords=make_unique(keywords);
-function D(b,O,R){if(b===null){return false
-}var L=keywordSources[O][R];
-var V=E("<div></div>").appendTo(E("#details"));
-V.append("<h2>"+L+" <code>"+b+"</code></h2><div></div>");
-var H=E("div",V);
-for(var U in keywordsMatch[b][O][R]){var I=keywordsMatch[b][O][R][U];
-var Z=E("<dl></dl>").appendTo(H);
-for(var P in I){var W=E("<dt></dt>").appendTo(Z);
-var S=W;
+function D(b,O,S){if(b===null){return false
+}var L=keywordSources[O][S];
+var W=E("<div></div>");
+E("<code></code>").text(b).appendTo(E("<h2></h2>").text(L+" ").appendTo(W));
+var H=E("<div></div>").appendTo(W);
+for(var V in keywordsMatch[b][O][S]){var I=keywordsMatch[b][O][S][V];
+var a=E("<dl></dl>");
+for(var P in I){var X=E("<dt></dt>").appendTo(a);
+var T=X;
 if(I[P].u){var M=I[P].u;
 if(M.substring(0,1)==="/"){M="http://www.w3.org"+M
-}S=E("<a href='"+M+"'></a>").appendTo(W)
-}S.text(dictionary[P]);
+}T=E("<a></a>").attr("href",M).appendTo(X)
+}T.text(dictionary[P]);
 if(I[P]["p"]&&I[P]["p"].length>0){var F=true;
 if(I[P]["p"].length===1||I[P].l==="inline"){F=false
-}var a=E("<dd></dd>").appendTo(Z);
-var X=a;
-if(F){if(I[P].l==="block"){X=E("<ul></ul>").appendTo(X)
+}var Y=E("<dd></dd>");
+if(F){if(I[P].l==="block"){Y=E("<ul></ul>").appendTo(Y)
 }}for(var Q in I[P]["p"]){var J=false;
-var G=X;
+var G=Y;
 var K=I[P]["p"][Q];
 if(F){G=E("<li></li>").appendTo(G)
 }else{G=E("<span></span>").appendTo(G)
 }if(K.u){var N=K.u;
 if(N.substring(0,1)==="/"){N="http://www.w3.org"+N
-}G=E("<a href='"+N+"'></a>").appendTo(G);
+}G=E("<a></a>").attr("href",N).appendTo(G);
 J=true
-}else{if(I[P].i&&I[P].y){G=E("<a href='#inf,"+escape(I[P].i)+","+escape(I[P].y)+","+escape(K.t)+"' class='internal'></a>").appendTo(G);
+}else{if(I[P].i&&I[P].y){G=E("<a class='internal'></a>").attr("href","#inf,"+escape(I[P].i)+","+escape(I[P].y)+","+escape(K.t)).appendTo(G);
 J=true
-}}if(K.t instanceof Array){if(!J){for(var Y in K.t){textOrSpan=K.t[Y];
-if(textOrSpan.y&&textOrSpan.i&&textOrSpan.t){E("<a href='#inf,"+escape(textOrSpan.i)+","+escape(textOrSpan.y)+","+escape(textOrSpan.t)+"' class='internal'></a>").appendTo(G).text(textOrSpan.t)
-}else{var T=document.createTextNode(textOrSpan);
-G.get(0).appendChild(T)
+}}if(K.t instanceof Array){if(!J){for(var Z in K.t){var R=K.t[Z];
+if(R.y&&R.i&&R.t){E("<a class='internal'></a>").attr("href","#inf,"+escape(R.i)+","+escape(R.y)+","+escape(R.t)).text(R.t).appendTo(G)
+}else{var U=document.createTextNode(R);
+G.get(0).appendChild(U)
 }}}else{G.text(K.t.join(""))
 }}else{G.text(K.t)
-}if(!F&&Q<I[P]["p"].length-1){X.append(", ")
-}}}}}return true
-}function B(){if(hashHistory.length>0){E("#details").append("<p><a class='internal back' href='"+hashHistory[hashHistory.length-1]+"' onclick='hashHistory.pop();return true;'>back</a>")
+}if(!F&&Q<I[P]["p"].length-1){Y.append(", ")
+}}Y.appendTo(a)
+}}a.appendTo(H)
+}W.appendTo(E("#details"));
+return true
+}function B(){if(hashHistory.length>0){E("<a class='internal back' onclick='hashHistory.pop();return true;'></a>").attr("href",hashHistory[hashHistory.length-1]).text("back").appendTo(E("<p></p>")).appendTo(E("#details"))
 }}function C(H){if(H===null){return false
 }if(H.substring(0,7)==="search,"){E("#search").val(H.substring(7));
 E("#search").get(0).autocompleter.findValue();
