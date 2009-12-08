@@ -106,7 +106,17 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		   <xsl:if test="@link">
 		     <xsl:text>u: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		   </xsl:if>
-		   <xsl:text>t: "</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		   <xsl:text>t: </xsl:text>
+		   <xsl:choose>
+		     <xsl:when test="not(span)">
+		       <xsl:text>"</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		     </xsl:when>
+		     <xsl:otherwise>
+		       <xsl:text>[</xsl:text>
+		       <xsl:apply-templates select="*|text()" mode="mixedToList" />
+		       <xsl:text>]</xsl:text>
+		     </xsl:otherwise>
+		   </xsl:choose>
 		   <xsl:text>}</xsl:text> <!-- end of {link,title} t-uple -->
 		   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 		 </xsl:for-each>
@@ -126,6 +136,21 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:for-each-group>
       <xsl:text>&#xA;};&#xA;</xsl:text> <!-- end of e.g. html infoset -->
     </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="text()" mode="mixedToList">
+    <xsl:text>"</xsl:text><xsl:value-of select="replace(replace(.,'&#xA;',' '),'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+    <xsl:if test="position()!=last()">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="span" mode="mixedToList">
+    <xsl:text>{y: "</xsl:text><xsl:value-of select="@type"/><xsl:text>", </xsl:text>
+    <xsl:text>i: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+    <xsl:text>t: "</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"}</xsl:text>
+    <xsl:if test="position()!=last()">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
   </xsl:template>
 
 
