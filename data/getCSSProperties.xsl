@@ -62,7 +62,16 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[6])!='&#xA0;'">
 	  <property name="percentage">
-	    <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[6])"/></content>
+	    <content>
+	    <xsl:choose>
+	      <xsl:when test="not(ancestor::html:tr/html:td[2]/descendant::html:span[starts-with(@class,'propinst-')])">
+		<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/>
+	      </xsl:when>
+	      <xsl:otherwise>
+		<xsl:apply-templates select="ancestor::html:tr/html:td[2]/text()|ancestor::html:tr/html:td[2]/*" mode="textOrSpan" />
+	      </xsl:otherwise>
+	    </xsl:choose>
+	    </content>
 	  </property>
 	</xsl:if>
 	<property name="media">
