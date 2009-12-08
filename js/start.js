@@ -10,6 +10,8 @@ var make_unique = function (b) {
     return a;
 };
 
+var hashHistory = [];
+
 var keywordSources = {
     "css": {"p": "CSS Property",
             "se": "CSS Selector",
@@ -27,12 +29,12 @@ for (var infoset in keywordSources) {
     for (var propertytype in keywordSources[infoset]) {
         var source = sources[infoset][propertytype];
         for (var keyword in source) {
-	    var synonym = source[keyword].syn;
+            var synonym = source[keyword].syn;
             if (!keywordsMatch[keyword]) {
                 keywordsMatch[keyword] = {};
                 keywords.push(keyword);
                 if (synonym) {
-		    keywordsMatch[synonym] = {}
+                    keywordsMatch[synonym] = {}
                     keywords.push(synonym);
                 }
             }
@@ -124,7 +126,7 @@ jQuery(document).ready(function ($) {
                         }
                     }
                     for (var propcontentidx in context[property]["p"]) {
-			var hasLink = false;
+                        var hasLink = false;
                         var itemcontainer = listcontainer;
                         var propcontent = context[property]["p"][propcontentidx];
                         if (displayAsList) {
@@ -138,29 +140,29 @@ jQuery(document).ready(function ($) {
                                 url = "http://www.w3.org" + url;
                             }
                             itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
-			    hasLink = true;
+                            hasLink = true;
                         } else if (context[property].i && context[property].y) {
                             itemcontainer = $("<a href='#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
-			    hasLink = true;
+                            hasLink = true;
                         }
-			if (propcontent.t instanceof Array) {
-			    if (!hasLink) {
-				var itemmarkup = "";
-				for (var textOrSpanIdx in propcontent.t) {
-				    textOrSpan = propcontent.t[textOrSpanIdx];
-				    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-					itemmarkup = itemmarkup + "<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'>" + textOrSpan.t + "</a>" ;
-				    } else {
-					itemmarkup = itemmarkup + textOrSpan;
-				    }
-				}
-				itemcontainer.append(itemmarkup);
-			    } else {
-				itemcontainer.text(propcontent.t.join(""));
-			    }
-			} else {
-			    itemcontainer.text(propcontent.t);
-			}
+                        if (propcontent.t instanceof Array) {
+                            if (!hasLink) {
+                                var itemmarkup = "";
+                                for (var textOrSpanIdx in propcontent.t) {
+                                    textOrSpan = propcontent.t[textOrSpanIdx];
+                                    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+                                        itemmarkup = itemmarkup + "<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'>" + textOrSpan.t + "</a>" ;
+                                    } else {
+                                        itemmarkup = itemmarkup + textOrSpan;
+                                    }
+                                }
+                                itemcontainer.append(itemmarkup);
+                            } else {
+                                itemcontainer.text(propcontent.t.join(""));
+                            }
+                        } else {
+                            itemcontainer.text(propcontent.t);
+                        }
                         if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
                             listcontainer.append(", ");
                         }
@@ -171,9 +173,21 @@ jQuery(document).ready(function ($) {
         return true;    
     }
 
+    function addBackLink() {
+        if (hashHistory.length > 0) {
+            $("#details").append("<p><a class='internal back' href='" + hashHistory[hashHistory.length - 1] + "' onclick='hashHistory.pop();return true;'>back</a>");
+        }
+
+    }
+
     function load_anchor(anchor) {
         if (anchor === null) {
             return false;
+        }
+	if (anchor.substring(0, 7) === "search,") {
+            $("#search").val(anchor.substring(7));
+            $("#search").get(0).autocompleter.findValue();
+	    return true;
         }
         var selector_path = anchor.split(',');
         var infoset = unescape(selector_path[1]);
@@ -198,7 +212,7 @@ jQuery(document).ready(function ($) {
             return;
         }
         var keyword = item.selectValue;
-	window.location.hash = "#search," + escape(keyword);
+        window.location.hash = "#search," + escape(keyword);    
         clearLookUp();
         var detailsLength = 0;
         for (var infoset in keywordsMatch[keyword]) {
@@ -217,7 +231,10 @@ jQuery(document).ready(function ($) {
 
     $("a.internal").live("click",
         function ()  { 
-            return load_anchor($(this).attr("href").split("#")[1]); 
+	   if (load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
+	       hashHistory.push(window.location.hash);
+	       addBackLink();
+	   }
         }
     );
 
@@ -238,11 +255,8 @@ jQuery(document).ready(function ($) {
         }
     });
     if (window.location.hash) {
-	if (window.location.hash.substring(0, 5) === '#inf,') {
+        if (window.location.hash.substring(0, 5) === '#inf,'|| window.location.hash.substring(0, 8) === '#search,') {
             load_anchor(window.location.hash.substring(1));
-	} else if (window.location.hash.substring(0, 8) === '#search,') {
-	    $("#search").val(window.location.hash.substring(8));
-	    $("#search").get(0).autocompleter.findValue();
-	}
+        }
     }
 });
