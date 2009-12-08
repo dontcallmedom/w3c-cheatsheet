@@ -124,6 +124,7 @@ jQuery(document).ready(function ($) {
                         }
                     }
                     for (var propcontentidx in context[property]["p"]) {
+			var hasLink = false;
                         var itemcontainer = listcontainer;
                         var propcontent = context[property]["p"][propcontentidx];
                         if (displayAsList) {
@@ -137,10 +138,29 @@ jQuery(document).ready(function ($) {
                                 url = "http://www.w3.org" + url;
                             }
                             itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
+			    hasLink = true;
                         } else if (context[property].i && context[property].y) {
-                            itemcontainer = $("<a href='#inf," + context[property].i + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
+                            itemcontainer = $("<a href='#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
+			    hasLink = true;
                         }
-                        itemcontainer.text(propcontent.t);
+			if (propcontent.t instanceof Array) {
+			    if (!hasLink) {
+				var itemmarkup = "";
+				for (var textOrSpanIdx in propcontent.t) {
+				    textOrSpan = propcontent.t[textOrSpanIdx];
+				    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+					itemmarkup = itemmarkup + "<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'>" + textOrSpan.t + "</a>" ;
+				    } else {
+					itemmarkup = itemmarkup + textOrSpan;
+				    }
+				}
+				itemcontainer.append(itemmarkup);
+			    } else {
+				itemcontainer.text(propcontent.t.join(""));
+			    }
+			} else {
+			    itemcontainer.text(propcontent.t);
+			}
                         if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
                             listcontainer.append(", ");
                         }
