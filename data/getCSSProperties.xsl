@@ -41,7 +41,16 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
       <item type="property" name='{normalize-space(translate(.,"&apos;",""))}'><context>
 	<property name="values">
-	  <content><xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/></content>
+	  <content>
+	    <xsl:choose>
+	      <xsl:when test="not(ancestor::html:tr/html:td[2]/descendant::html:span[starts-with(@class,'propinst-')])">
+		<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/>
+	      </xsl:when>
+	      <xsl:otherwise>
+		<xsl:apply-templates select="ancestor::html:tr/html:td[2]/text()|ancestor::html:tr/html:td[2]/*" mode="textOrSpan" />
+	      </xsl:otherwise>
+	    </xsl:choose>
+	  </content>
 	</property>
 	<xsl:if test="normalize-space(ancestor::html:tr/html:td[4])!='&#xA0;'">
 	  <property name="applies">
@@ -76,10 +85,20 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
   <!-- Identity Transformation for copy of cssselectors.xml -->
   <xsl:template match="*|@*|comment()|text()">
-    <xsl:copy>
-      <xsl:apply-templates select="*|@*|comment()|text()"/>
-    </xsl:copy>
+    <xsl:copy><xsl:apply-templates select="*|@*|comment()|text()"/></xsl:copy>
   </xsl:template>
 
+  <xsl:template match="text()" mode="textOrSpan">
+    <xsl:copy/>
+  </xsl:template>
+
+  <xsl:template match="html:span[starts-with(@class,'propinst-')]" mode="textOrSpan">
+    <span type='property' infoset='css'><xsl:value-of select='normalize-space(replace(.,"&apos;",""))'/></span>
+  </xsl:template>
+
+
+  <xsl:template match="*" mode="textOrSpan">
+    <xsl:apply-templates select="*|text()" mode="textOrSpan"/>
+  </xsl:template>
 
 </xsl:stylesheet>
