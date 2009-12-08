@@ -147,16 +147,16 @@ jQuery(document).ready(function ($) {
                         }
                         if (propcontent.t instanceof Array) {
                             if (!hasLink) {
-                                var itemmarkup = "";
                                 for (var textOrSpanIdx in propcontent.t) {
                                     textOrSpan = propcontent.t[textOrSpanIdx];
                                     if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                        itemmarkup = itemmarkup + "<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'>" + textOrSpan.t + "</a>" ;
+                                        $("<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'></a>").appendTo(itemcontainer).text(textOrSpan.t) ;
                                     } else {
-                                        itemmarkup = itemmarkup + textOrSpan;
+                                        // JQuery seems to lack a method to append pure text; doing manual DOM operations
+                                        var t = document.createTextNode(textOrSpan);
+                                        itemcontainer.get(0).appendChild(t);
                                     }
                                 }
-                                itemcontainer.append(itemmarkup);
                             } else {
                                 itemcontainer.text(propcontent.t.join(""));
                             }
@@ -184,10 +184,10 @@ jQuery(document).ready(function ($) {
         if (anchor === null) {
             return false;
         }
-	if (anchor.substring(0, 7) === "search,") {
+        if (anchor.substring(0, 7) === "search,") {
             $("#search").val(anchor.substring(7));
             $("#search").get(0).autocompleter.findValue();
-	    return true;
+            return true;
         }
         var selector_path = anchor.split(',');
         var infoset = unescape(selector_path[1]);
@@ -231,10 +231,10 @@ jQuery(document).ready(function ($) {
 
     $("a.internal").live("click",
         function ()  { 
-	   if (load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
-	       hashHistory.push(window.location.hash);
-	       addBackLink();
-	   }
+           if (load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
+               hashHistory.push(window.location.hash);
+               addBackLink();
+           }
         }
     );
 
