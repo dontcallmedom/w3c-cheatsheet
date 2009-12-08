@@ -110,7 +110,7 @@ jQuery(document).ready(function ($) {
                     if (propurl.substring(0, 1) === "/") {
                         propurl = "http://www.w3.org" + propurl;
                     }
-                    container = $("<a href='" + propurl + "'></a>").appendTo(dt);
+                    container = $("<a></a>").attr("href",propurl).appendTo(dt);
                 }
                 container.text(dictionary[property]);
                 if (context[property]["p"] && context[property]["p"].length > 0) {
@@ -139,10 +139,11 @@ jQuery(document).ready(function ($) {
                             if (url.substring(0, 1) === "/") {
                                 url = "http://www.w3.org" + url;
                             }
-                            itemcontainer = $("<a href='" + url + "'></a>").appendTo(itemcontainer);
+                            itemcontainer = $("<a></a>").attr("href",url).appendTo(itemcontainer);
                             hasLink = true;
                         } else if (context[property].i && context[property].y) {
-                            itemcontainer = $("<a href='#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t) + "' class='internal'></a>").appendTo(itemcontainer);
+                            itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
+				.appendTo(itemcontainer);
                             hasLink = true;
                         }
                         if (propcontent.t instanceof Array) {
@@ -150,7 +151,7 @@ jQuery(document).ready(function ($) {
                                 for (var textOrSpanIdx in propcontent.t) {
                                     textOrSpan = propcontent.t[textOrSpanIdx];
                                     if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                        $("<a href='#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t) + "' class='internal'></a>").appendTo(itemcontainer).text(textOrSpan.t) ;
+                                        $("<a class='internal'></a>").attr("href","#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer) ;
                                     } else {
                                         // JQuery seems to lack a method to append pure text; doing manual DOM operations
                                         var t = document.createTextNode(textOrSpan);
