@@ -98,7 +98,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		  </xsl:for-each>
 		</xsl:when>
 		<xsl:otherwise>
-		  <content><xsl:value-of select="normalize-space(lower-case(html:td[2]))"/></content>
+		  <content><xsl:apply-templates select="html:td[2]/*|html:td[2]/text()" mode="textOrSpan"/></content>
 		</xsl:otherwise>
 	      </xsl:choose>
 	    </property>
@@ -167,5 +167,19 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="text()">
     <xsl:value-of select="normalize-space(.)"/>
   </xsl:template>
+
+  <xsl:template match="text()" mode="textOrSpan">
+    <xsl:copy/>
+  </xsl:template>
+
+  <xsl:template match="html:a[not(normalize-space()='All elements')]" mode="textOrSpan">
+    <span type='element' infoset='html'><xsl:value-of select='normalize-space(lower-case(.))'/></span>
+  </xsl:template>
+
+
+  <xsl:template match="*" mode="textOrSpan">
+    <xsl:apply-templates select="*|text()" mode="textOrSpan"/>
+  </xsl:template>
+
 
 </xsl:stylesheet>
