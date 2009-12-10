@@ -91,7 +91,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:template match="rng:ref" mode="attributesList">
       <xsl:param name="seen" />
       <xsl:if test="not(@name=$seen)">
-	<xsl:apply-templates select="//rng:define[@name=current()/@name]/(descendant::rng:ref|descendant::rng:attribute[@name])" mode="attributesList"> 
+	<xsl:apply-templates select="//rng:define[@name=current()/@name]/(descendant::rng:ref[not(ancestor::*[local-name()='attribute' or local-name()='element'])]|descendant::rng:attribute[@name])" mode="attributesList"> 
 	  <xsl:with-param name="seen" select="insert-before($seen, 1, @name)"/>
 	</xsl:apply-templates>
       </xsl:if>
