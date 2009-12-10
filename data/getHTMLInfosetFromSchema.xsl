@@ -1,6 +1,6 @@
 <?xml-stylesheet href="http://www.w3.org/StyleSheets/base.css" type="text/css"?><?xml-stylesheet href="http://www.w3.org/2002/02/style-xsl.css" type="text/css"?>
 <xsl:stylesheet version="2.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="html" xmlns:rng="http://relaxng.org/ns/structure/1.0"  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
 
 <!-- Output method XML -->
 <xsl:output method="xml" indent="yes"
@@ -52,6 +52,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <item type="element" name="{@name}"><context>
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select=".//rng:ref|.//rng:attribute" mode="attributesList"/>
+	</property>
+	<property name="description">
+	  <content><xsl:value-of select="a:documentation"/></content>
 	</property>
       <xsl:if test="$wcagTechniques/description//el[normalize-space()=current()/@name]">
 	<xsl:variable name="el" select="normalize-space(@name)"/>
