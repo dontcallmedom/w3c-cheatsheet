@@ -14,6 +14,17 @@ style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.c
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
 
 
+# get the compact RelaxNG html5 schemas from http://syntax.whattf.org/relaxng/
+# and turned into them .rng in data/html5schemas
+data/html5schemas/xhtml5.rnc:
+	wget --no-parent --recursive --level=1 --timestamping --no-directories --directory-prefix=data/html5schemas/ http://syntax.whattf.org/relaxng/ -A "*.rnc" 
+
+data/html5schemas/%.rng: data/html5schemas/%.rnc
+	trang $^ > $@
+
+data/full-html5-schema.rng: data/html5schemas/*.rng data/makeSelfContainedHTMLSchema.xsl
+	saxon data/html5schemas/xhtml5.rng data/makeSelfContainedHTMLSchema.xsl > $@
+
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
 
