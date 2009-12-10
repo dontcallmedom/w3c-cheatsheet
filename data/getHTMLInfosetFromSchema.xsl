@@ -55,7 +55,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</property>
 	<xsl:for-each select="parent::rng:define/a:documentation">
 	  <property name="description">
-	    <content><xsl:value-of select="."/></content>
+	    <content><xsl:value-of select="normalize-space(.)"/></content>
 	  </property>
 	</xsl:for-each>
       <xsl:if test="$wcagTechniques/description//el[normalize-space()=current()/@name]">
