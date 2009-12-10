@@ -19,11 +19,14 @@ style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.c
 data/html5schemas/xhtml5.rnc:
 	wget --no-parent --recursive --level=1 --timestamping --no-directories --directory-prefix=data/html5schemas/ http://syntax.whattf.org/relaxng/ -A "*.rnc" 
 
-data/html5schemas/%.rng: data/html5schemas/%.rnc
-	trang $^ > $@
+HTML5_RELAXNG_XML := $(patsubst data/html5schemas/%.rnc,data/html5schemas/%.rng,$(wildcard data/html5schemas/*.rnc))
 
-data/full-html5-schema.rng: data/html5schemas/*.rng data/makeSelfContainedHTMLSchema.xsl
-	saxon data/html5schemas/xhtml5.rng data/makeSelfContainedHTMLSchema.xsl > $@
+
+data/html5schemas/%.rng: data/html5schemas/%.rnc
+	trang $^ $@
+
+data/full-html5-schema.rng: $(HTML5_RELAXNG_XML) data/makeSelfContainedHTML5Schema.xsl
+	saxon data/html5schemas/xhtml5.rng data/makeSelfContainedHTML5Schema.xsl > $@
 
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
