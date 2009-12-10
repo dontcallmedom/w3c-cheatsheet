@@ -53,9 +53,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select=".//rng:ref|.//rng:attribute" mode="attributesList"/>
 	</property>
-	<property name="description">
-	  <content><xsl:value-of select="a:documentation"/></content>
-	</property>
+	<xsl:for-each select="parent::rng:define/a:documentation">
+	  <property name="description">
+	    <content><xsl:value-of select="."/></content>
+	  </property>
+	</xsl:for-each>
       <xsl:if test="$wcagTechniques/description//el[normalize-space()=current()/@name]">
 	<xsl:variable name="el" select="normalize-space(@name)"/>
 	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
