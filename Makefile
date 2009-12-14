@@ -7,8 +7,12 @@ JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 SAXON=~/bin/saxon
 
-js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/start.js
+js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+
+js/all-free.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
+	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+
 
 style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
@@ -57,3 +61,7 @@ data/i18n.frag: data/getI18NFragment.xsl
 
 android: js/all.js style/all.css index.html images/*.png style/images/*.png
 	cp --parents -t android/assets/ $^ 
+
+android-free: js/all-free.js style/all.css index.html images/*.png style/images/*.png
+	cp --parents -t android/assets/ $^
+	mv android/assets/js/all-free.js android/assets/js/all.js
