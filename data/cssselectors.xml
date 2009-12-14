@@ -74,7 +74,7 @@
 <property name="description"><content>Matches element E if E is the source anchor of a hyperlink of which the target is not yet visited</content></property>
 </context>
 </item>
-<item name="visited" type="selector">
+<item name=":visited" type="selector">
 <context>
 <property name="Pattern"><content>E:visited</content></property>
 <property name="name"><content>link pseudo-class</content></property>
