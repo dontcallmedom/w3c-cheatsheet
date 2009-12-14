@@ -24,7 +24,7 @@
 </noscript>
 <p>Lookup  in HTML, CSS, SVG, XPath:</p>
 
-<p><input id="search" name="query" tabindex="1"/></p>
+<p><input id="search" name="query" tabindex="1" /></p>
 <div id="details">
 
 </div>
@@ -593,6 +593,69 @@ that content is suitable for use in a mobile context.</li>
 </dl>
 </div>
 </div>
+<div id="about">
+<h2>About the W3C Cheat Sheet <a href='#' id='closeabout2'>[close]</a></h2>
+<p>The W3C Cheat Sheet is provided for free by W3C, the leading international Web standards community, to assist Web developers with access to the vast amount of information provided across various W3C specifications and guidelines at the tip of their fingers.</p>
+<p>To support W3C’s mission and its efforts in providing free tools for developers, please consider making a donation.</p>
+<fieldset id="donate-individual" class="tabset_content front">
 
+        <legend class="tabset_label">Donate with PayPal</legend>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <p class="instructions">Even small donations can make a difference.
+          </p>
+          <p id="donation_typeamount">
+            <input type="hidden"  name="cmd" value="_donations" id="cmd_donation"  />
+            <label id="amount_label">Amount:</label>
+            <input type="hidden" name="business" value="&#x76;&#x61;&#x6C;&#x69;&#x64;&#x61;&#x74;&#x6F;&#x72;&#x2D;&#x64;&#x6f;&#x6e;&#x61;&#x74;&#x65;&#x40;w3.org" />
+
+            <input type="hidden" name="item_name" value="W3C Validators Supporter's donation" />
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted" />
+	    <input type="radio" name="amountOption" id="input_amount_1" onclick="this.form.amount.value=5;" value="5" /><label id="amount_1">5 &#8364;</label>
+	    <input type="radio" name="amountOption" id="input_amount_2" onclick="this.form.amount.value=10;" value="10" checked="checked" /><label id="amount_2">10 &#8364;</label>
+	    <input type="radio" name="amountOption" id="input_amount_3" onclick="this.form.amount.value=25;" value="25" /><label id="amount_3">25 &#8364;</label>
+	    <input type="radio" name="amountOption" id="input_amount_other" value="Other" /><label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
+<!-- default is 50 -->
+           <input type="hidden" name="amount" value="10" />
+
+            <select name="currency_code" id="input_currency_code" size="1">
+              <option value="EUR">EUR - €</option>
+              <option value="">- - - </option>
+              <option value="USD">USD - $</option>
+              <option value="GBP">GBP - £</option>
+              <option value="EUR">EUR - €</option>
+
+              <option value="AUD">AUD - $</option>
+              <option value="CAD">CAD - $</option>
+              <option value="CHF">CHF</option>
+              <option value="CZK">CZK - Kč</option>
+              <option value="DKK">DKK - kr</option>
+              <option value="EUR">EUR - €</option>
+
+              <option value="HKD">HKD - HK$</option>
+              <option value="HUF">HUF - Ft</option>
+              <option value="GBP">GBP - £</option>
+              <option value="JPY">JPY - ¥</option>
+              <option value="NZD">NZD - NZ$</option>
+              <option value="NOK">NOK - kr</option>
+
+              <option value="PLN">PLN - zł</option>
+              <option value="SGD">SGD - S$</option>
+              <option value="SEK">SEK - kr</option>
+              <option value="ILS">ILS - ₪</option>
+            </select>
+            <input type="hidden" name="no_shipping" value="1" />
+            <input type="hidden" name="no_note" value="0" />
+
+            <input type="hidden" name="tax" value="0" />
+          </p>
+            <p class="submit_button"><input title="Send your donation now" type="submit" value="Donate Now!" /></p>
+            <p class="instructions" style="border: 0; text-align:center; font-size: x-small; padding: 1em">PayPal recipient will be GEIE ERCIM, which is the W3C host organisation handling the donations.</p>
+<p>Donations to this program will be used exclusively for the maintenance, hosting and development of our free validation tools and other similar open source projects.</p>
+
+          </form>          
+        </fieldset>
+<p><button id='closeabout'>Close</button></p>
+</div>
+<p><a id='openabout' href="#about">About the W3C Cheat Sheet</a></p>
 </body>
 </html>
