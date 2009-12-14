@@ -75,6 +75,26 @@ function clearLookUp() {
     $("#details").html("");    
 }
 
+function setCookie(c_name, value, expiredays) {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate() + expiredays);
+    document.cookie=c_name+ "=" + escape(value) +
+	((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length>0) {
+	c_start = document.cookie.indexOf(c_name + "=");
+	if (c_start!==-1) {
+	    c_start = c_start + c_name.length + 1;
+	    c_end = document.cookie.indexOf(";", c_start);
+	    if (c_end === -1) c_end = document.cookie.length;
+	    return unescape(document.cookie.substring(c_start, c_end));
+	}
+    }
+    return "";
+}
+
 jQuery(document).ready(function ($) {
   // Tabs
   //$('#content').css("overflow","hidden");
@@ -87,9 +107,27 @@ jQuery(document).ready(function ($) {
 
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
     makeReplacingAccordion($(".accordion"));
-
+    $("body").css("display","block");
     keywords = make_unique(keywords);
     //$("#search").setOptions({"data":keywords});
+    if (getCookie("alreadyLaunched") === "" && startWithDonate) {
+	show_about();
+	setCookie("alreadyLaunched","true",2000);
+    }
+    
+    $("#openabout").click(show_about);
+
+    function hide_about() {
+	$("#about").css("display","none");
+	return false;
+    }
+
+    function show_about() {
+	$("#about").css("display","block");
+	$("#closeabout").click(hide_about);
+	$("#closeabout2").click(hide_about);
+	return false;
+    }
 
     function show_keyword(keyword, infoset, propertytype) {
         if (keyword === null) {
