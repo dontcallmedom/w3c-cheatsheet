@@ -619,8 +619,8 @@ free validation tools and similar open source projects.</p>
 	    <input type="radio" name="amountOption" id="input_amount_1" onclick="this.form.amount.value=5;" value="5" /><label id="amount_1">5 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_2" onclick="this.form.amount.value=10;" value="10" checked="checked" /><label id="amount_2">10 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_3" onclick="this.form.amount.value=25;" value="25" /><label id="amount_3">25 &#8364;</label>
-	    <input type="radio" name="amountOption" id="input_amount_other" value="Other" /><label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
-<!-- default is 50 -->
+	    <label><input type="radio" name="amountOption" id="input_amount_other" value="Other" />or a different amount/currency <label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
+<!-- default is 10 Euros -->
            <input type="hidden" name="amount" value="10" />
 
             <select name="currency_code" id="input_currency_code" size="1">
@@ -648,7 +648,7 @@ free validation tools and similar open source projects.</p>
               <option value="SGD">SGD - S$</option>
               <option value="SEK">SEK - kr</option>
               <option value="ILS">ILS - ₪</option>
-            </select>
+            </select></label>
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="0" />
 
