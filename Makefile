@@ -14,7 +14,7 @@ js/all-free.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.ta
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 
-style/all.css: style/jquery.autocomplete.css  style/jquery-ui.css  style/style.css
+style/all.css: style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
 
 
@@ -31,6 +31,10 @@ data/html5schemas/%.rng: data/html5schemas/%.rnc
 
 data/full-html5-schema.rng: $(HTML5_RELAXNG_XML) data/makeSelfContainedHTML5Schema.xsl
 	saxon data/html5schemas/xhtml5.rng data/makeSelfContainedHTML5Schema.xsl > $@
+
+data/full-html5-schema-expanded.rng: data/full-html5-schema.rng data/expandSchemaTree.xsl
+	saxon $^ > $@
+
 
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
