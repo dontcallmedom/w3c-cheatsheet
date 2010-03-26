@@ -123,9 +123,13 @@ jQuery(document).ready(function ($) {
     }
 
     function show_about() {
-	$("#about").css("display","block");
-	$("#closeabout").click(hide_about);
-	$("#closeabout2").click(hide_about);
+	if ($("#about").css("display") === "block") {
+	    hide_about();
+	} else {
+	    $("#about").css("display", "block");
+	    $("#closeabout").click(hide_about);
+	    $("#closeabout2").click(hide_about);
+	}
 	return false;
     }
 
