@@ -1,7 +1,7 @@
 all: js/all.js style/all.css data/all.json
 
-widget-opera.wgt: config-opera.xml index.html js/ style/ data/ images/
-	cp -r $^ build; mv build/config-opera.xml build/config.xml; cd build; zip -R ../$@ "*" ; cd ..
+widget-opera.wgt: config-opera.xml index.html js/ style/ images/
+	cp -r $^ build; mv build/config-opera.xml build/config.xml;  cd build; zip -R ../$@ "*" ; cd ..
 
 JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
