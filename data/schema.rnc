@@ -27,13 +27,18 @@ Infosets = element infosets {
 	     # add to xmltojson.xsl dictionary when updating
 	     # TODO: need trimming
              attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" },
-	     (Types, attribute infoset { text })?,
+	     (Types, Infoset)?,
 	     attribute link { text }?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
 	         attribute xml:lang { text}?,
 	         attribute link { text}?,
-	         text
+	         (text,
+		 element span { 
+		 	 Types, 
+			 Infoset,
+		 	 text }?
+		 )+
 	     }*
           }+
        }+
@@ -43,3 +48,4 @@ Infosets = element infosets {
 ## Types of keywords
 # add to xmltojson.xsl dictionary when updating
 Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
+Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" }
