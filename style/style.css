@@ -1,4 +1,4 @@
-html, body, p, h1 {
+ html, body, p, h1 {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -15,33 +15,45 @@ html, body {
 	background: url('../images/w3c_logo_inside.png') no-repeat top;
 	margin: 0 auto;
 	width: 200px;
-	height: 100px;
 	text-align: center;
 	font-family: Geneva,Arial,Helvetica,sans-serif;
 	color: #B49F67;
 	position: relative;
 	top: 30px;
+	font-size: 70%;
+	padding-bottom: 30px;
 }
+#footer .copyright {padding-top: 35px;}
+#footer .about {padding-top: 5px;}
+#footer a {color: #928155;}
 
-div#about h2{
- 	 color: lightblue;
- 	 }
- 	 
 div#about {
- 	  border:white thin solid;
- 	  margin:10px;
- 	  display:none;
- 	  background-color: #0B5B9D;
- 	  color: white;
- 	  position:absolute;
- 	  top:0;
- 	  left:0;
- 	 }
-#closeabout2:link, #closeabout2:visited {
- 	  color: white;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #E6E1D5;
+  display: block;
+  margin: 5px;
+  border-bottom: 1px solid #BDB6A2;
+  border-top: 1px solid #E1D6BF;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  top:2px;
+  left:2px;
+  z-index:2;
+}
+div#about h2 {margin-top: 20px;}
+div#about p {color: #857046; margin: 0 0 10px;}
+div#about fieldset {background: #F1EDE5; border: 1px solid #fff;}
+div#about legend {color: #4D3405; padding: 3px 6px; border: 1px solid #fff; background: #fff; font-size: 110%;}
+div#about p.donation, div#about fieldset p {color: #4D3405;}
+div#about fieldset p {margin: 20px 0 20px 10px;}
+div#about .instructions {border: 0; font-size: x-small; padding: 1em 0 0;}
+
+#closeabout2: link, #closeabout2: visited {
+  color: white;
 }
 
-#footer .copyright {font-size: 70%; padding-top: 33px;}
 .ac_results {
 	border:0;
 	background-color:Window;
@@ -95,7 +107,7 @@ left:-1000em;
 .ui-helper-reset {
 	border:0;
 	outline:0;
-	line-height: 1.3em;
+	line-height: 1.5em;
 	text-decoration:none;
 	font-size:100%;
 	list-style:none;
@@ -1503,7 +1515,7 @@ dl {
 dl dt {margin: 10px 0 3px 0;}
 #typo dl dt {margin: 20px 0 10px 0;}
 
-.ui-widget-content dl a, #wcag2 a {
+.ui-widget-content dl a, #wcag2 a, a.internal.back {
 	font-weight: normal; 
 	color: #3D321D; 
 	padding: 2px 5px; 
@@ -1567,7 +1579,7 @@ border-right:2px #666 solid;
 margin-right:2px;
 }
 
-.tab h2 {
+.tab h2, #about h2 {
 	color:#4D3405;
 	font-weight:400;
 	text-shadow:1px 1px 0 #D3D2D2;
@@ -1646,7 +1658,6 @@ display:none;
 .ui-helper-clearfix,.ui-accordion .ui-accordion-content-active {
 	display:block;
 	background-color: #E6E1D5;
-	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	margin-top: 5px;
@@ -1682,10 +1693,10 @@ background-image:url(images/ui-icons_454545_256x240.png);
 	width:100%;
 }
 .presentation.card div.card, .ui-tabs-panel #details div, #i18n div:nth-child(n+2) {
-	width:100%;
 	border-bottom: 1px solid #BDB6A2;
 	border-top: 1px solid #E1D6BF;
 	padding-bottom: 4px;
+	overflow: hidden;
 }
 
 
