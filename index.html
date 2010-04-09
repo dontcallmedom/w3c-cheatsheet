@@ -12,7 +12,7 @@
 <body>
 <div id="content">
 <ul>
-<li><a accesskey="1" href="#autocomplete"><span>Search</span></a></li>
+<li><a id="first-tab" accesskey="1" href="#autocomplete"><span>Search</span></a></li>
 <li><a accesskey="2" href="#mwbp"><span>Mobile</span></a></li>
 <li><a accesskey="4" href="#wcag2"><span>Accessibility</span></a></li>
 <li><a accesskey="3" href="#i18n"><span>I18N</span></a></li>
@@ -22,7 +22,7 @@
 <noscript>
 <p><strong>This look-up system only works with Javascript activated</strong>. You can do a manual look up in the <a href="@@@">complete list of keywords (TBD)</a>.</p>
 </noscript>
-<p>Lookup  in HTML, CSS, SVG, XPath:</p>
+<p class="tip">Lookup  in HTML, CSS, SVG, XPath:</p>
 
 <p><input id="search" name="query" tabindex="1" /></p>
 <div id="details">
@@ -327,7 +327,7 @@ that content is suitable for use in a mobile context.</li>
     hear.</li>
 </ul>
 
-<p class="listintro">Operable</strong></p>
+<p class="listintro"><strong>Operable</strong></p>
 <ul class="show_items">
   <li>Make all functionality <a href="http://www.w3.org/WAI/WCAG20/quickref/#keyboard-operation">keyboard accessible</a>.</li>
   <li>Give users <a href="http://www.w3.org/WAI/WCAG20/quickref/#time-limits">enough time</a> to read and use content.</li>
@@ -336,7 +336,7 @@ that content is suitable for use in a mobile context.</li>
   <li>Help users <a href="http://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms">navigate and find</a> content.</li>
 </ul>
 
-<p class="listintro">Understandable</strong></p>
+<p class="listintro"><strong>Understandable</strong></p>
 <ul class="show_items">
   <li>Make text <a href="http://www.w3.org/WAI/WCAG20/quickref/#meaning">readable and understandable</a>.</li>
 
@@ -345,7 +345,7 @@ that content is suitable for use in a mobile context.</li>
   <li>Help users <a href="http://www.w3.org/WAI/WCAG20/quickref/#minimize-error">avoid and correct mistakes</a>.</li>
 </ul>
 
-<p class="listintro">Robust</strong></p>
+<p class="listintro"><strong>Robust</strong></p>
 <ul class="show_items">
 
   <li>Maximize <a href="http://www.w3.org/WAI/WCAG20/quickref/#ensure-compat">compatibility</a> with current and future
@@ -594,21 +594,20 @@ that content is suitable for use in a mobile context.</li>
 </div>
 </div>
 <div id="about">
-<h2>About the W3C Cheat Sheet <a href='#' id='closeabout2'>[close]</a></h2>
+<p><button id='closeabout2'>Close</button></p>
+<h2>About the W3C Cheat Sheet</h2>
 <p>The W3C Cheat Sheet is freely available for Web developers. It provides quick access to useful information from a variety of specifications  
 published by W3C, the leading international Web standards community.</p>
 <p>Please consider making a donation to support the Cheat Sheet and other  
-free tools W3C makes available to the community. Your donation will be  
+free tools W3C makes available to the community.</p>
+<p class="donation">Your donation will be  
 used exclusively for the maintenance, hosting and development of our  
-free validation tools and similar open source projects.</p>
-<p>Thank you!</p>
+free validation tools and similar open source projects. Thank you!</p>
 
 <fieldset id="donate-individual" class="tabset_content front">
 
         <legend class="tabset_label">Donate with PayPal</legend>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-          <p class="instructions">Even small donations can make a difference.
-          </p>
           <p id="donation_typeamount">
             <input type="hidden"  name="cmd" value="_donations" id="cmd_donation"  />
             <label id="amount_label">Amount:</label>
@@ -619,7 +618,7 @@ free validation tools and similar open source projects.</p>
 	    <input type="radio" name="amountOption" id="input_amount_1" onclick="this.form.amount.value=5;" value="5" /><label id="amount_1">5 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_2" onclick="this.form.amount.value=10;" value="10" checked="checked" /><label id="amount_2">10 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_3" onclick="this.form.amount.value=25;" value="25" /><label id="amount_3">25 &#8364;</label>
-	    <label><input type="radio" name="amountOption" id="input_amount_other" value="Other" />or a different amount/currency <label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
+	    <br /><label><input type="radio" name="amountOption" id="input_amount_other" value="Other" />or a different amount/currency <label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
 <!-- default is 10 Euros -->
            <input type="hidden" name="amount" value="10" />
 
@@ -655,17 +654,16 @@ free validation tools and similar open source projects.</p>
             <input type="hidden" name="tax" value="0" />
           </p>
             <p class="submit_button"><input title="Send your donation now" type="submit" value="Donate Now!" /></p>
-            <p class="instructions" style="border: 0; text-align:center; font-size: x-small; padding: 1em">PayPal recipient will be GEIE ERCIM, which is the W3C host organisation handling the donations.</p>
+            <p class="instructions">PayPal recipient will be GEIE ERCIM, which is the W3C host organisation handling the donations.</p>
 
           </form>          
         </fieldset>
 <p><button id='closeabout'>Close</button></p>
 </div>
-<p><a id='openabout' href="#about">About the W3C Cheat Sheet</a></p>
 <div id="footer">
         <h1><a href="" class="offscreen">W3C Cheatsheet</a></h1>
         <p class="copyright">Copyright &copy; 2010 W3C </p>
+<p class="about"><a id='openabout' href="#about">About the W3C Cheat Sheet</a></p>
     </div>
-</div>
 </body>
 </html>
