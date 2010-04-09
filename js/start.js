@@ -289,7 +289,7 @@ jQuery(document).ready(function ($) {
         clearLookUp();
         if ($("#search").val()) {
             if (!$("#details_clear").length) {
-                $("#search").after("<a href='#' class='ui-icon-close' id='details_clear'>x</a>");
+                $("#search").after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
                 $("#details_clear").click(function () {
                     clearLookUp();
                     $("#search").val("").change();
