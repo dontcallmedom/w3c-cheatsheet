@@ -33,18 +33,27 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
   <infosets>
   <infoset technology="xpath">
-    <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]/following::html:div[@class='proto'][1]">
-      <item type="function" name="{substring-after(.//html:code[@class='function'],'fn:')}">
+    <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]/following::html:div[@class='exampleInner'][1]">
+      <item type="function" name="{substring-after(html:div[@class='proto'][1]/html:code[@class='function'],'fn:')}">
+      <xsl:for-each select="html:div[@class='proto']">
 	<context>
 	  <!-- could link up to XML Schema Datatypes some how, if it was in the cheat sheet ; it isn't though @@@ -->
+	  <xsl:if test="position()=1">
+	    <xsl:if test="parent::html:div/following-sibling::html:p[1][starts-with(.,'Summary:')]">
+	      <property name="description">
+		<content><xsl:value-of select="normalize-space(substring-after(parent::html:div/following-sibling::html:p[1][starts-with(.,'Summary:')],'Summary: '))"/></content>
+	      </property>
+	    </xsl:if>
+	    <property name="Specification" link="{concat('/TR/xpath-functions/#',preceding::html:*[@id][1]/@id)}" />
+	  </xsl:if>
 	  <property name="parameters">
 	    <content><xsl:value-of select="normalize-space(substring-after(substring-before(.,')&#160;as'),'('))"/></content>
 	  </property>
 	  <property name="returns">
 	    <content><xsl:value-of select=".//html:code[@class='return-type']"/></content>
 	  </property>
-	  <property name="Specification" link="{concat('/TR/xpath-functions/#',preceding::html:*[@id][1]/@id)}" />
 	</context>
+      </xsl:for-each>
       </item>
     </xsl:for-each>
   </infoset>
