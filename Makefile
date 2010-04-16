@@ -61,6 +61,9 @@ data/init.json: data/xmltojson.xsl data/makeInit.xsl
 data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xpath.json
 	cat $^ > $@
 
+data/keywords.json: data/svg.xml data/css.xml data/xpath.xml data/html.xml data/listKeywords.xsl
+	$(SAXON) data/listKeywords.xsl data/listKeywords.xsl > $@ 
+
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
 
@@ -73,5 +76,5 @@ android-free: js/all-free.js style/all.css index.html images/*.png style/images/
 	mv android/assets/js/all-free.js android/assets/js/all.js
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
 
-www: js/all.js style/all.css index.html images/*.png style/images/*.png icons/*.png cheatsheet.manifest opensearch.xml
+www: js/all.js style/all.css index.html images/*.png style/images/*.png icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/
