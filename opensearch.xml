@@ -12,5 +12,6 @@
         template="http://www.w3.org/2009/cheatsheet/suggest?term={searchTerms}"/>
 
    <Image height="64" width="64" type="image/png">http://www.w3.org/2009/cheatsheet/icons/64x.png</Image>
+   <Image height="16" width="16" type="image/png">http://www.w3.org/2009/cheatsheet/icons/16x.png</Image>
 
  </OpenSearchDescription>
