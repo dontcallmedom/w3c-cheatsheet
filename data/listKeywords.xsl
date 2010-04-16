@@ -43,7 +43,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": </xsl:text><xsl:value-of select="count(current-group())"/>
       <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
     </xsl:for-each-group>
-}    <xsl:text>]</xsl:text>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
