@@ -31,20 +31,34 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
+    <xsl:variable name="html4Descriptions" select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html/html:body/html:table"/>
     <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     <xsl:variable name="qaTips" select="document('qa.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="html">
-    <xsl:for-each select="document('http://www.w3.org/2007/09/dtd-comparison.html')/html:html//html:table/html:tbody/html:tr/html:th[1]">
+    <xsl:for-each select="document('http://www.w3.org/2010/04/xhtml10-strict.html')/html:html//html:table[1]/html:tbody/html:tr/html:th[1]">
       <item type="element" name="{.}"><context>
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
 	</property>
+	<xsl:if test="parent::html:tr/html:td[2]//html:a[not(parent::strong)]">
+	  <property type="element" name="Allowed children" list="inline" infoset="html">
+	    <xsl:for-each select="parent::html:tr/html:td[2]//html:a[not(parent::strong)]">
+	      <xsl:sort select="."/>
+	      <content><xsl:value-of select="."/></content>
+	    </xsl:for-each>
+	  </property>
+	</xsl:if>
+	<xsl:if test="normalize-space($html4Descriptions//html:tr[normalize-space(lower-case(html:td[1]))=current()]/html:td[7])">
+	  <property name="description">
+	    <content><xsl:value-of select="normalize-space($html4Descriptions//html:tr[normalize-space(lower-case(html:td[1]))=current()]/html:td[7])"/></content>
+	  </property>
+	</xsl:if>
       <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()]">
 	<xsl:variable name="el" select="normalize-space(.)"/>
-	<property name="Accessibility techniques" link="http://www.w3.org/WAI/intro/wcag" list="block">
+	<property name="Accessibility techniques" list="block">
 	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">
 	  <xsl:sort select="count(description//descendant::el[normalize-space()=$el])" order="descending"/>
 	    <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
@@ -68,7 +82,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:if test="$i18n/html:dd/html:code[@class='html element'][normalize-space(.)=current()]">
 	<property name="Internationalization" list="block">
 	  <xsl:for-each select="$i18n/html:dd[html:code[@class='html element'][normalize-space()=current()]]">
-	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1])"/></content>
 	  </xsl:for-each>
 	</property>
       </xsl:if>
@@ -150,17 +164,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
   <xsl:template match="html:td" mode="dereferenceAttributeGroups">
     <xsl:for-each select="html:a">
-      <!-- We ignore XML attributes for now -->
-      <xsl:if test="normalize-space()!='XML'">
-	<xsl:for-each select="tokenize(normalize-space(/html:html/html:body//html:dl/html:dt[html:a[@id=substring-after(current()/@href,'#')]]/following-sibling::html:dd[1]),', ')">
-	  <content><xsl:value-of select="."/></content>
-	</xsl:for-each>
-      </xsl:if>
-    </xsl:for-each>
-    <xsl:for-each select="tokenize(normalize-space(string-join(text(),'')),', ')">
-      <xsl:if test="normalize-space(.) and normalize-space(.)!=','">
-	<content><xsl:value-of select="."/></content>
-      </xsl:if>
+      <xsl:sort select="."/>
+      <content><xsl:value-of select="."/></content>
     </xsl:for-each>
   </xsl:template>
 
