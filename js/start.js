@@ -51,15 +51,41 @@ for (var infoset in keywordSources) {
                 keywordsMatch[synonym][infoset][propertytype] = [];
             }
 
-            for (var k in source[keyword]["d"]) {            
+            for (var k in source[keyword]["d"]) {
                 keywordsMatch[keyword][infoset][propertytype].push(source[keyword]["d"][k]);
                 if (synonym) {
                     keywordsMatch[synonym][infoset][propertytype].push(source[keyword]["d"][k]);
                 }
-            }       
+            }
         }
     }
 }
+
+    function load_anchor(anchor) {
+        if (anchor === null) {
+            return false;
+        }
+        if (anchor.substring(0, 7) === "search,") {
+            $("#search").val(anchor.substring(7));
+            $("#search").get(0).autocompleter.findValue();
+            return true;
+        }
+        var selector_path = anchor.split(',');
+        var infoset = unescape(selector_path[1]);
+        var propertytype = unescape(selector_path[2]);
+        var keyword = unescape(selector_path.slice(3).join(","));
+        if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
+            ) {
+            clearLookUp();
+            $("#search").val("");
+            if (show_keyword(keyword, infoset, propertytype)) {
+                $("#details").accordion({header: 'div>h2', autoHeight: false});
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 function makeReplacingAccordion(accordion) {
     accordion.css("position", "relative");
@@ -72,7 +98,7 @@ function clearLookUp() {
     if ($("#details").accordion) {
         $("#details").accordion("destroy");
     }
-    $("#details").html("");    
+    $("#details").html("");
 }
 
 function setCookie(c_name, value, expiredays) {
@@ -101,7 +127,7 @@ jQuery(document).ready(function ($) {
   //$('#content').css("height","480px");
     $('#content').tabs();
     $('#content').tabs('paging');
-    $('#content').bind("tabsshow", function (event, ui) { 
+    $('#content').bind("tabsshow", function (event, ui) {
         window.location.hash = ui.tab.hash;
     });
 
@@ -114,7 +140,7 @@ jQuery(document).ready(function ($) {
 	show_about();
 	setCookie("alreadyLaunched","true",2000);
     }
-    
+
     $("#openabout").click(show_about);
 
     function hide_about() {
@@ -138,7 +164,7 @@ jQuery(document).ready(function ($) {
             return false;
         }
         var infosetname = keywordSources[infoset][propertytype];
-        var div = $("<div></div>");
+        var div = $("<div></div>").addClass("context");
         $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
         var div2 = $("<div></div>").appendTo(div);
         for (var contextidx in keywordsMatch[keyword][infoset][propertytype]) {
@@ -215,7 +241,7 @@ jQuery(document).ready(function ($) {
             dl.appendTo(div2);
         }
         div.appendTo($("#details"));
-        return true;    
+        return true;
     }
 
     function addBackLink() {
@@ -225,30 +251,6 @@ jQuery(document).ready(function ($) {
 
     }
 
-    function load_anchor(anchor) {
-        if (anchor === null) {
-            return false;
-        }
-        if (anchor.substring(0, 7) === "search,") {
-            $("#search").val(anchor.substring(7));
-            $("#search").get(0).autocompleter.findValue();
-            return true;
-        }
-        var selector_path = anchor.split(',');
-        var infoset = unescape(selector_path[1]);
-        var propertytype = unescape(selector_path[2]);
-        var keyword = unescape(selector_path.slice(3).join(","));
-        if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
-            ) {
-            clearLookUp();
-            $("#search").val("");
-            if (show_keyword(keyword, infoset, propertytype)) {
-                $("#details").accordion({header: 'div>h2', autoHeight: false});
-                return true;
-            }
-        }
-        return false;
-    }
 
 
 
@@ -257,7 +259,7 @@ jQuery(document).ready(function ($) {
             return;
         }
         var keyword = item.selectValue;
-        window.location.hash = "#search," + escape(keyword);    
+        window.location.hash = "#search," + escape(keyword);
         clearLookUp();
         var detailsLength = 0;
         for (var infoset in keywordsMatch[keyword]) {
@@ -275,7 +277,7 @@ jQuery(document).ready(function ($) {
     }
 
     $("a.internal").live("click",
-        function ()  { 
+        function ()  {
         if (load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
             hashHistory.push(window.location.hash);
             addBackLink();
