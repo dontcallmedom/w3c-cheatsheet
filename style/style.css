@@ -37,10 +37,6 @@ div#about {
   border-top: 1px solid #E1D6BF;
   padding: 10px;
   display: none;
-  position: absolute;
-  top:2px;
-  left:2px;
-  z-index:2;
 }
 div#about h2 {margin-top: 20px;}
 div#about p {color: #857046; margin: 0 0 10px;}
@@ -1514,7 +1510,8 @@ dl {
 }
 dl dt {margin: 10px 0 3px 0;}
 #typo dl dt {margin: 20px 0 10px 0;}
-
+#details div.context dl { border-top: dashed #3D321D thin;}
+#details div.context dl:first-child { border-top: none;}
 .ui-widget-content dl a, #wcag2 a, a.internal.back {
 	font-weight: normal; 
 	color: #3D321D; 
@@ -1725,4 +1722,4 @@ border-left-width:1px;
 .ui-tabs .ui-tabs-nav li:hover {
 	background: #bab3a0;
 }
-/*.ui-tabs-paging-disabled { display:none;}*/
+.ui-tabs-paging-disabled { display:none;}
