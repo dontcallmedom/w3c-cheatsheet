@@ -29,6 +29,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </body>
 </html>
 
+    <xsl:variable name="xhtmlStrict" select="document('http://www.w3.org/2010/04/xhtml10-strict.html')/html:html/html:body"/>
+
 
   <xsl:template match="/">
     <xsl:variable name="html4Descriptions" select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html/html:body/html:table"/>
@@ -38,7 +40,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="html">
-    <xsl:for-each select="document('http://www.w3.org/2010/04/xhtml10-strict.html')/html:html//html:table[1]/html:tbody/html:tr/html:th[1]">
+    <xsl:for-each select="$xhtmlStrict//html:table[1]/html:tbody/html:tr/html:th[1]">
       <item type="element" name="{.}"><context>
 	<property type="attribute" name="Attributes" list="inline" infoset="html">
 	  <xsl:apply-templates select="ancestor::html:tr/html:td[1]" mode="dereferenceAttributeGroups"/>
@@ -90,7 +92,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
       </context></item>
     </xsl:for-each>
-    <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1]" group-by="normalize-space(html:td[1])">
+    <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1][normalize-space(html:td[6])='&#xA0;']" group-by="normalize-space(html:td[1])">
       <item type="attribute" name="{html:td[1]}">
 	<xsl:for-each select="current-group()">
 	  <context>
@@ -108,7 +110,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		  <xsl:attribute name="infoset">html</xsl:attribute>
 		  <xsl:attribute name="type">element</xsl:attribute>
 		  <xsl:for-each select="html:td[2]/html:a">
-		    <content><xsl:value-of select="lower-case(.)"/></content>
+		    <xsl:if test="$xhtmlStrict//html:table[1]/html:tbody/html:tr/html:th[normalize-space()=lower-case(current())]">
+		      <content><xsl:value-of select="lower-case(.)"/></content>
+		    </xsl:if>
 		  </xsl:for-each>
 		</xsl:when>
 		<xsl:otherwise>
@@ -178,7 +182,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   </xsl:template>
 
   <xsl:template match="html:a[not(normalize-space()='All elements')]" mode="textOrSpan">
-    <span type='element' infoset='html'><xsl:value-of select='normalize-space(lower-case(.))'/></span>
+    <xsl:if test="$xhtmlStrict//html:table[1]/html:tbody/html:tr/html:th[normalize-space()=lower-case(current())]">
+      <span type='element' infoset='html'><xsl:value-of select='normalize-space(lower-case(.))'/></span>
+    </xsl:if>
   </xsl:template>
 
 
