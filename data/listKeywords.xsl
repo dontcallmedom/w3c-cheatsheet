@@ -38,12 +38,12 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-    <xsl:text>[</xsl:text>
+    <xsl:text>{</xsl:text>
     <xsl:for-each-group select="$sources//item" group-by="@name">
-      <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+      <xsl:text>"</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": </xsl:text><xsl:value-of select="count(current-group())"/>
       <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
     </xsl:for-each-group>
-    <xsl:text>]</xsl:text>
+}    <xsl:text>]</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
