@@ -4,7 +4,10 @@
    <Description>Look up information on HTML, CSS, SVG, XPath from the W3C Cheatsheet.</Description>
    <Contact>dom@w3.org</Contact>
    <Url type="text/html" 
-        template="http://www.w3.org/2009/cheatsheet/#search,{searchTerms}"/>
+        template="http://dev.w3.org/2009/cheatsheet/?dev#search,{searchTerms}"/>
+   <Url type="application/opensearchdescription+xml"
+     rel="self"
+        template="http://dev.w3.org/2009/cheatsheet/opensearch.xml"/>
    <Url type="application/x-suggestions+json"
         template="http://www.w3.org/2009/cheatsheet/suggest?term={searchTerms}"/>
 
