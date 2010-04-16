@@ -6,6 +6,7 @@ widget-opera.wgt: config-opera.xml index.html js/ style/ images/
 JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 SAXON=~/bin/saxon
+WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
 js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
@@ -63,9 +64,14 @@ data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xp
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
 
-android: js/all.js style/all.css index.html images/*.png style/images/*.png
+android: js/all.js style/all.css index.html images/*.png style/images/*.png icons/48x.png
 	cp --parents -t android/assets/ $^ 
+	mv android/assets/icons/48x.png android/res/drawable/icon.png
 
-android-free: js/all-free.js style/all.css index.html images/*.png style/images/*.png
+android-free: js/all-free.js style/all.css index.html images/*.png style/images/*.png icons/48x.png
 	cp --parents -t android/assets/ $^
 	mv android/assets/js/all-free.js android/assets/js/all.js
+	mv android/assets/icons/48x.png android/res/drawable/icon.png
+
+www: js/all.js style/all.css index.html images/*.png style/images/*.png icons/*.png cheatsheet.manifest opensearch.xml
+	cp --parent -t $(WWW_ROOT)/
