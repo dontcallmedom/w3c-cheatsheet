@@ -5,4 +5,6 @@
    <Contact>dom@w3.org</Contact>
    <Url type="text/html" 
         template="http://www.w3.org/2009/cheatsheet/#search,{searchTerms}"/>
+   <Image height="64" width="64" type="image/png">http://www.w3.org/2009/cheatsheet/icons/64x.png</Image>
+
  </OpenSearchDescription>
