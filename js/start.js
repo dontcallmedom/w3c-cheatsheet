@@ -61,6 +61,92 @@ for (var infoset in keywordSources) {
     }
 }
 
+    function show_keyword(keyword, infoset, propertytype) {
+        if (keyword === null) {
+            return false;
+        }
+        var infosetname = keywordSources[infoset][propertytype];
+        var div = $("<div></div>").addClass("context");
+        $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
+        var div2 = $("<div></div>").appendTo(div);
+        for (var contextidx in keywordsMatch[keyword][infoset][propertytype]) {
+            var context = keywordsMatch[keyword][infoset][propertytype][contextidx];
+            var dl = $("<dl></dl>");
+            for (var property in context) {
+                var dt = $("<dt></dt>").appendTo(dl);
+                var container = dt;
+                if (context[property].u) {
+                    var propurl = context[property].u;
+                    if (propurl.substring(0, 1) === "/") {
+                        propurl = "http://www.w3.org" + propurl;
+                    }
+                    container = $("<a></a>").attr("href", propurl).appendTo(dt);
+                }
+                container.text(dictionary[property]);
+                if (context[property]["p"] && context[property]["p"].length > 0) {
+                    var displayAsList = true;
+                    if (context[property]["p"].length === 1 || context[property].l === "inline") {
+                        displayAsList = false;
+                    }
+                    var listcontainer = $("<dd></dd>");
+                    if (displayAsList) {
+                        if (context[property].l === "block") {
+                            listcontainer = $("<ul></ul>").appendTo(listcontainer);
+                        }
+                    }
+                    for (var propcontentidx in context[property]["p"]) {
+                        var hasLink = false;
+                        var itemcontainer = listcontainer;
+                        var propcontent = context[property]["p"][propcontentidx];
+                        if (displayAsList) {
+                            itemcontainer = $("<li></li>").appendTo(itemcontainer);
+                        } else {
+                            itemcontainer = $("<span></span>").appendTo(itemcontainer);
+                        }
+                        if (propcontent.u) {
+                            var url = propcontent.u;
+                            if (url.substring(0, 1) === "/") {
+                                url = "http://www.w3.org" + url;
+                            }
+                            itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
+                            hasLink = true;
+                        } else if (context[property].i && context[property].y) {
+                            itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
+                                .appendTo(itemcontainer);
+                            hasLink = true;
+                        }
+                        if (propcontent.t instanceof Array) {
+                            if (!hasLink) {
+                                for (var textOrSpanIdx in propcontent.t) {
+                                    var textOrSpan = propcontent.t[textOrSpanIdx];
+                                    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+                                        $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
+                                    } else {
+                                        // JQuery seems to lack a method to append pure text; doing manual DOM operations
+                                        var t = document.createTextNode(textOrSpan);
+                                        itemcontainer.get(0).appendChild(t);
+                                    }
+                                }
+                            } else {
+                                itemcontainer.text(propcontent.t.join(""));
+                            }
+                        } else {
+                            itemcontainer.text(propcontent.t);
+                        }
+                        if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
+                            listcontainer.append(", ");
+                        }
+                    }
+                    listcontainer.appendTo(dl);
+                }
+            }
+            dl.appendTo(div2);
+        }
+        div.appendTo($("#details"));
+        return true;
+    }
+
+
     function load_anchor(anchor) {
         if (anchor === null) {
             return false;
@@ -159,90 +245,6 @@ jQuery(document).ready(function ($) {
 	return false;
     }
 
-    function show_keyword(keyword, infoset, propertytype) {
-        if (keyword === null) {
-            return false;
-        }
-        var infosetname = keywordSources[infoset][propertytype];
-        var div = $("<div></div>").addClass("context");
-        $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
-        var div2 = $("<div></div>").appendTo(div);
-        for (var contextidx in keywordsMatch[keyword][infoset][propertytype]) {
-            var context = keywordsMatch[keyword][infoset][propertytype][contextidx];
-            var dl = $("<dl></dl>");
-            for (var property in context) {
-                var dt = $("<dt></dt>").appendTo(dl);
-                var container = dt;
-                if (context[property].u) {
-                    var propurl = context[property].u;
-                    if (propurl.substring(0, 1) === "/") {
-                        propurl = "http://www.w3.org" + propurl;
-                    }
-                    container = $("<a></a>").attr("href", propurl).appendTo(dt);
-                }
-                container.text(dictionary[property]);
-                if (context[property]["p"] && context[property]["p"].length > 0) {
-                    var displayAsList = true;
-                    if (context[property]["p"].length === 1 || context[property].l === "inline") {
-                        displayAsList = false;
-                    }
-                    var listcontainer = $("<dd></dd>");
-                    if (displayAsList) {
-                        if (context[property].l === "block") {
-                            listcontainer = $("<ul></ul>").appendTo(listcontainer);
-                        }
-                    }
-                    for (var propcontentidx in context[property]["p"]) {
-                        var hasLink = false;
-                        var itemcontainer = listcontainer;
-                        var propcontent = context[property]["p"][propcontentidx];
-                        if (displayAsList) {
-                            itemcontainer = $("<li></li>").appendTo(itemcontainer);
-                        } else {
-                            itemcontainer = $("<span></span>").appendTo(itemcontainer);
-                        }
-                        if (propcontent.u) {
-                            var url = propcontent.u;
-                            if (url.substring(0, 1) === "/") {
-                                url = "http://www.w3.org" + url;
-                            }
-                            itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
-                            hasLink = true;
-                        } else if (context[property].i && context[property].y) {
-                            itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
-                                .appendTo(itemcontainer);
-                            hasLink = true;
-                        }
-                        if (propcontent.t instanceof Array) {
-                            if (!hasLink) {
-                                for (var textOrSpanIdx in propcontent.t) {
-                                    var textOrSpan = propcontent.t[textOrSpanIdx];
-                                    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                        $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
-                                    } else {
-                                        // JQuery seems to lack a method to append pure text; doing manual DOM operations
-                                        var t = document.createTextNode(textOrSpan);
-                                        itemcontainer.get(0).appendChild(t);
-                                    }
-                                }
-                            } else {
-                                itemcontainer.text(propcontent.t.join(""));
-                            }
-                        } else {
-                            itemcontainer.text(propcontent.t);
-                        }
-                        if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
-                            listcontainer.append(", ");
-                        }
-                    }
-                    listcontainer.appendTo(dl);
-                }
-            }
-            dl.appendTo(div2);
-        }
-        div.appendTo($("#details"));
-        return true;
-    }
 
     function addBackLink() {
         if (hashHistory.length > 0) {
