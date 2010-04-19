@@ -28,49 +28,61 @@ var keywords = [];
 for (var infoset in keywordSources) {
     for (var propertytype in keywordSources[infoset]) {
         var source = sources[infoset][propertytype];
-        for (var keyword in source) {
-            var synonym = source[keyword].syn;
+        for (var i in source) {
+	    var keyword = source[i];
             if (!keywordsMatch[keyword]) {
                 keywordsMatch[keyword] = {};
                 keywords.push(keyword);
-                if (synonym) {
-                    keywordsMatch[synonym] = {}
-                    keywords.push(synonym);
-                }
             }
             if (!keywordsMatch[keyword][infoset]) {
                 keywordsMatch[keyword][infoset] = {};
             }
             if (!keywordsMatch[keyword][infoset][propertytype]) {
-                keywordsMatch[keyword][infoset][propertytype] = [];
-            }
-            if (synonym && !keywordsMatch[synonym][infoset]) {
-                keywordsMatch[synonym][infoset] = {};
-            }
-            if (synonym && !keywordsMatch[synonym][infoset][propertytype]) {
-                keywordsMatch[synonym][infoset][propertytype] = [];
+                keywordsMatch[keyword][infoset][propertytype] = true;
             }
 
-            for (var k in source[keyword]["d"]) {
-                keywordsMatch[keyword][infoset][propertytype].push(source[keyword]["d"][k]);
-                if (synonym) {
-                    keywordsMatch[synonym][infoset][propertytype].push(source[keyword]["d"][k]);
-                }
-            }
         }
     }
 }
 
-    function show_keyword(keyword, infoset, propertytype) {
-        if (keyword === null) {
-            return false;
-        }
-        var infosetname = keywordSources[infoset][propertytype];
+function display_keyword_data(keyword_data) {
+    if (infoset && propertytype) {
+      var restricted_keyword_data = {};
+      restricted_keyword_data[infoset] = {};
+      restricted_keyword_data[infoset][propertytype] = keyword_data[infoset][propertytype];
+      keyword_data = restricted_keyword_data;
+    }
+    var multiple = -1;
+    for (var i in keyword_data) {
+      for (var p in keyword_data[i]) {
+	show_keyword(keyword_data, i, p);
+	multiple = multiple + 1;
+      }
+    }
+    if (multiple < 1) {
+      $("#details").accordion({header: 'div>h2', autoHeight: false});
+    } else {
+      $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
+    }
+
+    makeReplacingAccordion($("#details"));
+}
+
+function load_keyword_data(keyword, infoset, propertytype) {
+  $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", display_keyword_data);
+}
+
+function show_keyword(keyword_data, infoset, propertytype) {
+  if (keyword_data[infoset][propertytype] === null) {
+    return false;
+  }
+  for (var keyword in keyword_data[infoset][propertytype]) {
+	var infosetname = keywordSources[infoset][propertytype];
         var div = $("<div></div>").addClass("context");
         $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
-        var div2 = $("<div></div>").appendTo(div);
-        for (var contextidx in keywordsMatch[keyword][infoset][propertytype]) {
-            var context = keywordsMatch[keyword][infoset][propertytype][contextidx];
+              var div2 = $("<div></div>").appendTo(div);
+        for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) {
+            var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
             var dl = $("<dl></dl>");
             for (var property in context) {
                 var dt = $("<dt></dt>").appendTo(dl);
@@ -143,8 +155,9 @@ for (var infoset in keywordSources) {
             dl.appendTo(div2);
         }
         div.appendTo($("#details"));
-        return true;
     }
+  return true;
+}
 
 
     function load_anchor(anchor) {
@@ -164,8 +177,7 @@ for (var infoset in keywordSources) {
             ) {
             clearLookUp();
             $("#search").val("");
-            if (show_keyword(keyword, infoset, propertytype)) {
-                $("#details").accordion({header: 'div>h2', autoHeight: false});
+            if (load_keyword_data(keyword, infoset, propertytype)) {
                 return true;
             }
         }
@@ -263,19 +275,7 @@ jQuery(document).ready(function ($) {
         var keyword = item.selectValue;
         window.location.hash = "#search," + escape(keyword);
         clearLookUp();
-        var detailsLength = 0;
-        for (var infoset in keywordsMatch[keyword]) {
-            for (var propertytype in keywordsMatch[keyword][infoset]) {
-                detailsLength = detailsLength + 1;
-                show_keyword(keyword, infoset, propertytype);
-            }
-        }
-        if (detailsLength === 1) {
-            $("#details").accordion({header: 'div>h2', autoHeight: false});
-        } else {
-            $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
-        }
-        makeReplacingAccordion($("#details"));
+        load_keyword_data(keyword);
     }
 
     $("a.internal").live("click",

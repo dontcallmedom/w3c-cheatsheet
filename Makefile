@@ -8,8 +8,8 @@ YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 SAXON=~/bin/saxon
 WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
-js/all.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
-	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+js/all.js: data/all.json js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 js/all-free.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
@@ -46,35 +46,34 @@ data/xpath.xml: data/getXpathFunctions.xsl
 data/css.xml: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
 
-
 data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@
 
+XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
-data/%.json: data/%.xml data/xmltojson.xsl
-	$(SAXON)  $^  > $@
-
-data/init.json: data/xmltojson.xsl data/makeInit.xsl
-	$(SAXON) $^> $@
+data/all.json: $(XML_SOURCES) data/xmltojson.xsl
+	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
 
-data/all.json: data/init.json data/html.json data/svg.json data/css.json data/xpath.json
-	cat $^ > $@
-
-data/keywords.json: data/svg.xml data/css.xml data/xpath.xml data/html.xml data/listKeywords.xsl
+data/keywords.json:  $(XML_SOURCES) data/listKeywords.xsl
 	$(SAXON) data/listKeywords.xsl data/listKeywords.xsl > $@ 
+
+generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
+	@-rm data/json/*.js
+	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
 
-android: js/all.js style/all.css index.html images/*.png style/images/*.png icons/48x.png
-	cp --parents -t android/assets/ $^ 
+android: generate-json-keywords android-copy
+
+android-copy: js/all.js style/all.css index.html images/*.png style/images/*.png icons/48x.png data/json/
+	@-rm android/assets/data/json/*.js
+	cp --parents -r -t android/assets/ $^ 
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
 
-android-free: js/all-free.js style/all.css index.html images/*.png style/images/*.png icons/48x.png
-	cp --parents -t android/assets/ $^
-	mv android/assets/js/all-free.js android/assets/js/all.js
-	mv android/assets/icons/48x.png android/res/drawable/icon.png
+android-free: android js/all-free.js
+	cp js/all-free.js android/assets/js/all.js
 
 www: js/all.js style/all.css index.html images/*.png style/images/*.png icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/

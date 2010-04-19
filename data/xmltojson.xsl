@@ -64,56 +64,131 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 </dictionary>
 
 
+<xsl:param name="full" select="0"/>
+<xsl:param name="filenamesSources" />
+<xsl:variable name="xmlSources" select="tokenize($filenamesSources, '\s+')"/>
+<xsl:variable name="sources">
+  <xsl:for-each select="$xmlSources">
+    <xsl:copy-of select="document(substring-after(.,'/'))/infosets"/>
+  </xsl:for-each>
+</xsl:variable>
+
   <xsl:template match="/">
-    <xsl:for-each select="/infosets/infoset">
-      <xsl:text>sources["</xsl:text>
-      <xsl:value-of select="replace(@technology,'&quot;','\\&quot;')"/>
-      <xsl:text>"] = {</xsl:text>
-      <xsl:for-each-group select="item" group-by="@type">
+    <xsl:text>"use strict";
+// y: type, i: infoset, u: url, t: title, p: properties
+var dictionary = {
+</xsl:text>
+<xsl:for-each select="/xsl:stylesheet/foo:dictionary/foo:term">
+  <xsl:text>    "</xsl:text><xsl:value-of select="foo:short"/><xsl:text>": "</xsl:text><xsl:value-of select="foo:full"/><xsl:text>"</xsl:text>
+<xsl:if test="position()!=last()">
+<xsl:text>,</xsl:text>
+</xsl:if>
+<xsl:text>&#xA;</xsl:text>
+</xsl:for-each>
+<xsl:text>};&#xA;</xsl:text>
+<xsl:text>keywordMatch={</xsl:text>
+    <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+      <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
+      <xsl:for-each-group select="current-group()" group-by="ancestor::infoset/@technology">
+	<xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(ancestor::infoset/@technology,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
+	<xsl:for-each-group select="current-group()" group-by="@type">
+	  <xsl:call-template name="itemToJson">
+	    <xsl:with-param name="withContent" select="$full"/>
+	    <xsl:with-param name="jsonFormat" select="false"/>
+	  </xsl:call-template>
+	</xsl:for-each-group>
+	<xsl:text>&#xA;        };&#xA;</xsl:text> 
+      </xsl:for-each-group>
+      <xsl:text>&#xA;    }</xsl:text>
+    </xsl:for-each-group>
+    <xsl:text>&#xA;}</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="itemToJson">
+    <xsl:param name="withContent" select="1"/>
+    <xsl:param name="jsonFormat" select="1"/>
+    <xsl:variable name="q">
+      <xsl:if test="$jsonFormat"><xsl:text>"</xsl:text></xsl:if>
+    </xsl:variable>
 	<xsl:text>&#xA;    </xsl:text>
-	<xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/>
-	<xsl:text>: {</xsl:text>
+	<xsl:value-of select="$q"/><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:value-of select="$q"/>
+	<xsl:choose>
+	  <xsl:when test="$withContent">
+	    <xsl:text>: {</xsl:text>
+	  </xsl:when>
+	  <xsl:otherwise>
+	    <xsl:text>: [</xsl:text>
+	  </xsl:otherwise>
+	</xsl:choose>
 	 <xsl:for-each select="current-group()"> <!-- looping on <item> -->
-	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
-	   <xsl:if test="@synonym">
-	     <xsl:text>syn: "</xsl:text><xsl:value-of select="@synonym"/><xsl:text>", </xsl:text>
+	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+	   <xsl:if test="$withContent">
+	     <xsl:text>: {</xsl:text>
+	     <xsl:value-of select="$q"/><xsl:text>d</xsl:text><xsl:value-of select="$q"/><xsl:text>: [</xsl:text>
+	     <xsl:apply-templates select="context">
+	       <xsl:with-param name="jsonFormat" select="$jsonFormat"/>
+	     </xsl:apply-templates>
+	   <xsl:text>&#xA;        ]</xsl:text>
+	    <!-- end of e.g. input: [] -->
+	     <xsl:text>}</xsl:text>
 	   </xsl:if>
-	   <xsl:text>d: [</xsl:text>
-	   <xsl:for-each select="context">
+
+	   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
+	 </xsl:for-each>
+	 <xsl:text>&#xA;    </xsl:text>
+	 <!-- end of e.g. html elements: -->
+	 <xsl:choose>
+	   <xsl:when test="$withContent">
+	     <xsl:text>}</xsl:text>
+	   </xsl:when>
+	   <xsl:otherwise>
+	     <xsl:text>]</xsl:text>
+	   </xsl:otherwise>
+	 </xsl:choose>
+	 <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
+  </xsl:template>
+
+  <xsl:template match="context">
+    <xsl:param name="jsonFormat" select="1"/>
+    <xsl:variable name="q">
+      <xsl:if test="$jsonFormat"><xsl:text>"</xsl:text></xsl:if>
+    </xsl:variable>
 	     <xsl:text>{</xsl:text>
 	     <xsl:for-each select="property">
-	       <xsl:text></xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:text>: {</xsl:text> <!-- e.g. "attributes": { -->
+	       <xsl:value-of select="$q"/><xsl:text></xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:value-of select="$q"/><xsl:text>: {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
-		 <xsl:text>y: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>"</xsl:text>
+		 <xsl:value-of select="$q"/><xsl:text>y</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="@link">
 		 <xsl:if test="@type"><xsl:text>, </xsl:text></xsl:if>
-		 <xsl:text>u: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		 <xsl:value-of select="$q"/><xsl:text>u</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	       </xsl:if>
 	       <xsl:if test="count(content)">
 		 <xsl:if test="@link or @type">
 		   <xsl:text>, </xsl:text>
 		 </xsl:if>
 		 <xsl:if test="@infoset">
-		   <xsl:text>i: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+		   <xsl:value-of select="$q"/><xsl:text>i</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
 		 </xsl:if>
 		 <xsl:if test="@list">
-		   <xsl:text>l: "</xsl:text><xsl:value-of select="replace(@list,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
+		   <xsl:value-of select="$q"/><xsl:text>l</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(@list,'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		 </xsl:if>
-		 <xsl:text>p: [</xsl:text>
+		 <xsl:value-of select="$q"/><xsl:text>p</xsl:text><xsl:value-of select="$q"/><xsl:text>: [</xsl:text>
 		 <xsl:for-each select="content">
 		   <xsl:text>{</xsl:text>
 		   <xsl:if test="@link">
-		     <xsl:text>u: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
+		     <xsl:value-of select="$q"/><xsl:text>u</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		   </xsl:if>
-		   <xsl:text>t: </xsl:text>
+		   <xsl:value-of select="$q"/><xsl:text>t</xsl:text><xsl:value-of select="$q"/><xsl:text>: </xsl:text>
 		   <xsl:choose>
 		     <xsl:when test="not(span)">
 		       <xsl:text>"</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 		     </xsl:when>
 		     <xsl:otherwise>
 		       <xsl:text>[</xsl:text>
-		       <xsl:apply-templates select="*|text()" mode="mixedToList" />
+		       <xsl:apply-templates select="*|text()" mode="mixedToList">
+			 <xsl:with-param name="jsonFormat" select="$jsonFormat"/>
+		       </xsl:apply-templates>
 		       <xsl:text>]</xsl:text>
 		     </xsl:otherwise>
 		   </xsl:choose>
@@ -127,15 +202,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	     </xsl:for-each>
 	     <xsl:text>}</xsl:text>
 	     <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
-	   </xsl:for-each>
-	   <xsl:text>&#xA;        ]}</xsl:text> <!-- end of e.g. input: [] -->
-	   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
-	 </xsl:for-each>
-	 <xsl:text>&#xA;    }</xsl:text> <!-- end of e.g. html elements: -->
-	 <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
-      </xsl:for-each-group>
-      <xsl:text>&#xA;};&#xA;</xsl:text> <!-- end of e.g. html infoset -->
-    </xsl:for-each>
+
   </xsl:template>
 
   <xsl:template match="text()" mode="mixedToList">
@@ -144,10 +211,15 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <xsl:text>, </xsl:text>
     </xsl:if>
   </xsl:template>
+
   <xsl:template match="span" mode="mixedToList">
-    <xsl:text>{y: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>", </xsl:text>
-    <xsl:text>i: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
-    <xsl:text>t: "</xsl:text><xsl:value-of select="replace(replace(.,'&#xA;',' '),'&quot;','\\&quot;')"/><xsl:text>"}</xsl:text>
+    <xsl:param name="jsonFormat" select="1"/>
+    <xsl:variable name="q">
+      <xsl:if test="$jsonFormat"><xsl:text>"</xsl:text></xsl:if>
+    </xsl:variable>
+    <xsl:text>{</xsl:text><xsl:value-of select="$q"/><xsl:text>y</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>", </xsl:text>
+    <xsl:value-of select="$q"/><xsl:text>i</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+    <xsl:value-of select="$q"/><xsl:text>t</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(replace(.,'&#xA;',' '),'&quot;','\\&quot;')"/><xsl:text>"}</xsl:text>
     <xsl:if test="position()!=last()">
       <xsl:text>, </xsl:text>
     </xsl:if>
