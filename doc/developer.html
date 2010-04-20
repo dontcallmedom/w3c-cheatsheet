@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>W3C Cheat Sheet on the Web — Developer documentation</title>
+<link type="text/css" rel="stylesheet" href="http://www.w3.org/StyleSheets/base" />
+<style type="text/css">
+h2 { clear: right;}
+</style>
+</head>
+<body>
+<p><a href="http://www.w3.org/" title="W3C"><img height="48" width="72" alt="W3C"
+src="http://www.w3.org/Icons/w3c_home" /></a></p>
+
+<h1>Developer documentation of the W3C Cheat Sheet on the Web</h1>
+
+<p>Want to contribute to the cheat sheet’s development? Here are some notes on how the code is organized.</p>
+
+<h2>Main components</h2>
+
+<p>For efficiency reasons, a lot of the components of the cheat sheet are minified, and for maintainability, a number of others are automatically generated.  This can makes it daunting to figure what are the actual pieces of code that one can contribute to.</p>
+
+<dl>
+<dt>HTML frame: <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/index.html"><code>index.html</code></a></dt>
+<dd>This is where the static content (mobile best practices, accessibility guidelines at a glance, internationalization quicktips, typography memento) is manually maintained; this is as well obviously  where the other pieces (style and scripts) get plugged in.</dd>
+<dt>Style sheet: <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/style/style.css"><code>style/style.css</code></a></dt>
+<dd>Takes care of styling the cheat sheet, with tabs effects, sprites, etc; gets minified through YUIcompressor (in <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>style/all.css</code> (the one referred from the HTML frame)</dd>
+<dt>Script: <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/js/script.js"><code>js/script.js</code></a></dt>
+<dd>This scripts handles most of the logic/control of the cheatsheet, in particular for the autocompletion search box; it gets minified through YUIcompressor (in <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>js/all.js</code>, with all the generated data prepended, and the <a href="http://docs.jquery.com/">JQuery framework</a> on which it relies.</dd>
+</dl>
+
+<h2>Cheatsheet Data</h2>
+<p>The data used by the cheat sheet is first extracted from various sources into an custom XML format (that comes with a <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/data/schema.rnc">RelaxNG schema</a>), and then turned into various pieces of JavaScript code that <a href="http://dev.w3.org/2009/cvsweb/cheatsheet/js/script.js"><code>js/script.js</code></a> relies on.</p>
+
+<p>Both the extraction and the transformation into JavaScript are done with XSLT, through a series of transformation style sheets:</p>
+
+
+<hr />
+<address><a href="http://www.w3.org/People/Dom/">Dominique
+Haza&#235;l-Massieux</a> &lt;<a
+href="mailto:dom@w3.org">dom@w3.org</a>&gt;<br />
+Last Modified: $Date$</address>
+</body>
+</html>
+
