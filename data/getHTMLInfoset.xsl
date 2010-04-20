@@ -47,10 +47,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</property>
 	<xsl:if test="parent::html:tr/html:td[2]//html:a[not(parent::strong)]">
 	  <property type="element" name="Allowed children" list="inline" infoset="html">
-	    <xsl:for-each select="parent::html:tr/html:td[2]//html:a[not(parent::strong)]">
+	    <xsl:for-each-group select="parent::html:tr/html:td[2]//html:a[not(parent::strong)]" group-by=".">
 	      <xsl:sort select="."/>
 	      <content><xsl:value-of select="."/></content>
-	    </xsl:for-each>
+	    </xsl:for-each-group>
 	  </property>
 	</xsl:if>
 	<xsl:if test="normalize-space($html4Descriptions//html:tr[normalize-space(lower-case(html:td[1]))=current()]/html:td[7])">
@@ -126,7 +126,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
 	      <xsl:if test="$wcagTechniques/description/descendant::att[normalize-space(.)=current()/html:td[1]]">
 	      <xsl:variable name="attr" select="normalize-space(html:td[1])"/>
-		<property name="Accessibility techniques">
+		<property name="Accessibility techniques" list="block">
 		  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::att[normalize-space()=$attr]]">
 		    <xsl:sort select="count(description/descendant::att[normalize-space()=$attr])" order="descending"/>
 		    <content link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
