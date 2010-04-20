@@ -71,12 +71,12 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
 
-android: generate-json-keywords android-copy
+android: android-copy
 
 android-copy: js/all-split.js style/all.css index.html images/*.png style/images/*.png icons/48x.png data/json/
 	@-rm android/assets/data/json/*.js
 	cp --parents -r -t android/assets/ $^ 
-	mv android/assets/js/all-split.js android/assets/all.js
+	mv android/assets/js/all-split.js android/assets/js/all.js
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
 
 android-free: android js/all-free.js
