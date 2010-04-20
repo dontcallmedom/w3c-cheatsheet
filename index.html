@@ -618,10 +618,10 @@ free validation tools and similar open source projects. Thank you!</p>
 	    <input type="radio" name="amountOption" id="input_amount_1" onclick="this.form.amount.value=5;" value="5" /><label id="amount_1">5 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_2" onclick="this.form.amount.value=10;" value="10" checked="checked" /><label id="amount_2">10 &#8364;</label>
 	    <input type="radio" name="amountOption" id="input_amount_3" onclick="this.form.amount.value=25;" value="25" /><label id="amount_3">25 &#8364;</label>
-	    <br /><label><input type="radio" name="amountOption" id="input_amount_other" value="Other" />or a different amount/currency <label id="amount_other"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
+	    <br /><label><input type="radio" name="amountOption" id="input_amount_other" value="Other" />or a different amount/currency</label> <label id="amount_other" title="Specify amount"><input type="text" name="amountEntered" id="amountGiven" size="8" onfocus="this.form.input_amount_other.checked=true;" onchange="this.form.amount.value=this.form.amountEntered.value;"/></label>
 <!-- default is 10 Euros -->
-           <input type="hidden" name="amount" value="10" />
-
+           <input type="hidden" id="amount" name="amount" value="10" />
+	   <label title="Specify currency">
             <select name="currency_code" id="input_currency_code" size="1">
               <option value="EUR">EUR - €</option>
               <option value="">- - - </option>
