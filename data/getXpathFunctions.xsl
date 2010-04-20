@@ -47,7 +47,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <property name="Specification" link="{concat('/TR/xpath-functions/#',preceding::html:*[@id][1]/@id)}" />
 	  </xsl:if>
 	  <property name="parameters">
-	    <content><xsl:value-of select="normalize-space(substring-after(substring-before(.,')&#160;as'),'('))"/></content>
+	    <content><xsl:value-of select="replace(normalize-space(substring-after(substring-before(.,')&#160;as'),'(')),'&#160;',' ')"/></content>
 	  </property>
 	  <property name="returns">
 	    <content><xsl:value-of select=".//html:code[@class='return-type']"/></content>
