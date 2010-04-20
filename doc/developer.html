@@ -30,7 +30,7 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 <dt>HTML frame: <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/index.html"><code>index.html</code></a></dt>
 <dd>This is where the static content (mobile best practices, accessibility guidelines at a glance, internationalization quicktips, typography memento) is manually maintained; this is as well obviously  where the other pieces (style and scripts) get plugged in.</dd>
 <dt>CSS Style sheet: <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/style/style.css"><code>style/style.css</code></a></dt>
-<dd>Takes care of styling the cheat sheet, with tabs effects, sprites, etc; gets minified through YUIcompressor (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>style/all.css</code> (the one referred from the HTML frame)</dd>
+<dd>Takes care of styling the cheat sheet, with tabs effects, sprites, etc; gets minified through <a href="http://yuilibrary.com/downloads/">YUIcompressor</a> (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>style/all.css</code> (the one referred from the HTML frame)</dd>
 <dt>Script: <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/js/script.js"><code>js/script.js</code></a></dt>
 <dd>This scripts handles most of the logic/control of the cheatsheet, in particular for the autocompletion search box; it gets minified through YUIcompressor (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>js/all.js</code>, with all the generated data prepended, and the <a href="http://docs.jquery.com/">JQuery framework</a> on which it relies.</dd>
 </dl>
@@ -63,6 +63,14 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 </ul>
 
 <p>(the names of the data files and XSLT stylesheets could use both more consistency and less resemblance among themselves — the current names can be relatively confusing)</p>
+
+<h2>Coding conventions</h2>
+<ul>
+<li>all the JavaScript code (both generated and manually written) should be jslint-ed; note that YUIcompressor will refuse to minify JavaScript with syntax errors;</li>
+<li>the generated XML data needs to match the <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/schema.rnc">RelaxNG schema</a>;</li>
+<li>ensure that the HTML file remains <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdev.w3.org%2F2009%2Fcheatsheet%2F%3Fdev">HTM5-valid</a></li>
+</ul>
+
 
 <hr />
 <address><a href="http://www.w3.org/People/Dom/">Dominique
