@@ -5,13 +5,13 @@ YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 SAXON=~/bin/saxon
 WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
-js/all.js: data/all.json js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+js/all.js: data/all.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
-js/all-split.js: data/all-split.json js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+js/all-split.js: data/all-split.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
-js/all-free.js: data/all-split.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
+js/all-free.js: data/all-split.js  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 
@@ -55,10 +55,10 @@ data/svg.xml: data/getSVGInfoset.xsl
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
-data/all.json: $(XML_SOURCES) data/xmltojson.xsl
+data/all.js: $(XML_SOURCES) data/xmltojson.xsl
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
-data/all-split.json: $(XML_SOURCES) data/xmltojson.xsl generate-json-keywords
+data/all-split.js: $(XML_SOURCES) data/xmltojson.xsl generate-json-keywords
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)"  > $@
 
 
@@ -66,13 +66,13 @@ data/keywords.json:  $(XML_SOURCES) data/listKeywords.xsl
 	$(SAXON) data/listKeywords.xsl data/listKeywords.xsl > $@ 
 
 generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
-	@-rm data/json/*.js
+	@-rm data/keywords/*.json
 	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 
-android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
-	@-rm android/assets/data/json/*.js
+android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
+	@-rm android/assets/data/keywords/*.json
 	cp --parents -r -t android/assets/ $^ 
 	mv android/assets/js/all-split.js android/assets/js/all.js
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
@@ -80,8 +80,8 @@ android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
 android-free: android js/all-free.js
 	cp js/all-free.js android/assets/js/all.js
 
-widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
-	@-rm build/data/json/*.js
+widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
+	@-rm build/data/keywords/*.json
 	cp --parents -r -t build/ $^ 
 	mv build/config-opera.xml build/config.xml
 	cd build
