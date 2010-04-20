@@ -11,7 +11,10 @@ WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 js/all.js: data/all.json js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
-js/all-free.js: data/all.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
+js/all-split.js: data/all-split.json js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+
+js/all-free.js: data/all-split.json  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 
@@ -54,6 +57,9 @@ XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 data/all.json: $(XML_SOURCES) data/xmltojson.xsl
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
+data/all-split.json: $(XML_SOURCES) data/xmltojson.xsl generate-json-keywords
+	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)"  > $@
+
 
 data/keywords.json:  $(XML_SOURCES) data/listKeywords.xsl
 	$(SAXON) data/listKeywords.xsl data/listKeywords.xsl > $@ 
@@ -67,9 +73,10 @@ data/i18n.frag: data/getI18NFragment.xsl
 
 android: generate-json-keywords android-copy
 
-android-copy: js/all.js style/all.css index.html images/*.png style/images/*.png icons/48x.png data/json/
+android-copy: js/all-split.js style/all.css index.html images/*.png style/images/*.png icons/48x.png data/json/
 	@-rm android/assets/data/json/*.js
 	cp --parents -r -t android/assets/ $^ 
+	mv android/assets/js/all-split.js android/assets/all.js
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
 
 android-free: android js/all-free.js
