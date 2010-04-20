@@ -1,5 +1,11 @@
+/* to keep track of views the user click through
+ * e.g. when clicking on "href" attribute in element "a"
+ */
 var hashHistory = [];
 
+/* Putting names on the various items we know about
+ * Could/should probably come from data directly
+ */
 var keywordSources = {
     "css": {"p": "CSS Property",
             "se": "CSS Selector",
@@ -11,40 +17,57 @@ var keywordSources = {
     "xpath": {"f": "XPath function"}
 };
 
+/*
+ * Makes a JQuery accordeon with the properties we want
+ */
 function makeReplacingAccordion(accordion) {
     accordion.css("position", "relative");
+    // update the hash when hitting an element with an id
     accordion.accordion('option', 'navigation', true);
+    // take as much/as little vertical space as needed
     accordion.accordion('option', 'autoHeight', 'false');
+    // allows all lines to be closed (by clicking on the open line)
     accordion.accordion('option', 'collapsible', true);
 }
 
-
+/*
+ * Takes the collected data and displays them in an accordion view
+ */
 function show_keyword(keyword_data, infoset, propertytype) {
+    // Make sure we actually have data
     if (keyword_data[infoset][propertytype] === null) {
         return false;
     }
+    // for each matching keyword
     for (var keyword in keyword_data[infoset][propertytype]) {
+        // e.g "HTML element"
         var infosetname = keywordSources[infoset][propertytype];
         var div = $("<div></div>").addClass("context");
+        // e.g. <h2>HTML element <code>a</code></h2>
         $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
         var div2 = $("<div></div>").appendTo(div);
-        for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) {
+        // For each known context of the item
+        // (examples of context: the width attribute in HTML
+        // varies in model/description depending on the containing element
+        for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
             var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
             var dl = $("<dl></dl>");
             for (var property in context) {
                 var dt = $("<dt></dt>").appendTo(dl);
                 var container = dt;
-                if (context[property].u) {
+                if (context[property].u) { // u for URI
                     var propurl = context[property].u;
+                    // On domain-less URIs, we assume www.w3.org as the base
                     if (propurl.substring(0, 1) === "/") {
                         propurl = "http://www.w3.org" + propurl;
                     }
                     container = $("<a></a>").attr("href", propurl).appendTo(dt);
                 }
                 container.text(dictionary[property]);
+                // p for properties (i.e. all the detailed data about the item)
                 if (context[property]["p"] && context[property]["p"].length > 0) {
                     var displayAsList = true;
-                    if (context[property]["p"].length === 1 || context[property].l === "inline") {
+                    if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
                         displayAsList = false;
                     }
                     var listcontainer = $("<dd></dd>");
@@ -74,7 +97,7 @@ function show_keyword(keyword_data, infoset, propertytype) {
                                 .appendTo(itemcontainer);
                             hasLink = true;
                         }
-                        if (propcontent.t instanceof Array) {
+                        if (propcontent.t instanceof Array) { // t for text
                             if (!hasLink) {
                                 for (var textOrSpanIdx in propcontent.t) {
                                     var textOrSpan = propcontent.t[textOrSpanIdx];
@@ -106,7 +129,9 @@ function show_keyword(keyword_data, infoset, propertytype) {
     return true;
 }
 
-
+/*
+ * wraps up the per keyword html and puts it into a proper accordion
+ */
 function display_keyword_data(keyword_data, infoset, propertytype) {
     if (infoset && propertytype) {
         var restricted_keyword_data = {};
@@ -129,17 +154,23 @@ function display_keyword_data(keyword_data, infoset, propertytype) {
     makeReplacingAccordion($("#details"));
 }
 
+/*
+ * Gets the data from memory if available, or through JSON calls otherwise
+ * and get it displayed
+ */
 function load_keyword_data(keyword, infoset, propertytype) {
     if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
         display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
     } else {
         $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
-		    display_keyword_data(keyword_data, infoset, propertytype);
-		}
-	);
+            display_keyword_data(keyword_data, infoset, propertytype);
+        });
     }
 }
 
+/*
+ * Clear the search box and search results
+ */
 function clearLookUp() {
     if ($("#details").accordion) {
         $("#details").accordion("destroy");
@@ -147,7 +178,9 @@ function clearLookUp() {
     $("#details").html("");
 }
 
-
+/*
+ * Loads the view bound to a search anchor
+ */
 function load_anchor(anchor) {
     if (anchor === null) {
         return false;
@@ -157,6 +190,8 @@ function load_anchor(anchor) {
         $("#search").get(0).autocompleter.findValue();
         return true;
     }
+    // Search anchors look like "#search,inf,html,e,area"
+    // (e standing for element in this case)
     var selector_path = anchor.split(',');
     var infoset = unescape(selector_path[1]);
     var propertytype = unescape(selector_path[2]);
@@ -171,9 +206,9 @@ function load_anchor(anchor) {
     return false;
 }
 
-
-
-
+/*
+ * Simple wrapper for setting cookies
+ */
 function setCookie(c_name, value, expiredays) {
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + expiredays);
@@ -181,6 +216,9 @@ function setCookie(c_name, value, expiredays) {
         ((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
 }
 
+/*
+ * Simple wrapper for reading cookies
+ */
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
         var c_start = document.cookie.indexOf(c_name + "=");
@@ -196,28 +234,37 @@ function getCookie(c_name) {
     return "";
 }
 
+/*
+ * This defines what happens when the page has finished loading
+ */
 jQuery(document).ready(function ($) {
-  // Tabs
-  //$('#content').css("overflow","hidden");
-  //$('#content').css("height","480px");
+    // We create the tabs
     $('#content').tabs();
     $('#content').tabs('paging');
     $('#content').bind("tabsshow", function (event, ui) {
         window.location.hash = ui.tab.hash;
     });
 
+    // The elements with class 'accordion' are turned into an accordion
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
     makeReplacingAccordion($(".accordion"));
-    $("body").css("display", "block");
-    //$("#search").setOptions({"data":keywords});
 
+    $("body").css("display", "block");
+
+    // When/if we support external keywords sources
+    // this is where to load them up
+    // $("#search").setOptions({"data":keywords});
+
+    // hide the "about" screen
     function hide_about() {
         $("#about").css("display", "none");
         return false;
     }
 
+    // show the "about" screen
     function show_about() {
         if ($("#about").css("display") === "block") {
+            // when already opened, we hide it
             hide_about();
         } else {
             $("#about").css("display", "block");
@@ -227,27 +274,26 @@ jQuery(document).ready(function ($) {
         return false;
     }
 
+    // for the first launch, we show the about screen, with the donation form
     if (getCookie("alreadyLaunched") === "" && startWithDonate) {
         show_about();
         setCookie("alreadyLaunched", "true", 2000);
     }
     $("#openabout").click(show_about);
 
-
+    // Add a back link when navigating through keyword views
     function addBackLink() {
         if (hashHistory.length > 0) {
             $("<a class='internal back' onclick='hashHistory.pop();return true;'></a>")
-		.attr("href", hashHistory[hashHistory.length - 1])
-		.text("back")
-		.appendTo($("<p></p>"))
-		.appendTo($("#details"));
+                .attr("href", hashHistory[hashHistory.length - 1])
+                .text("back")
+                .appendTo($("<p></p>"))
+                .appendTo($("#details"));
         }
 
     }
 
-
-
-
+    // Function called when an item is seleted in search box/autocompletion list
     function show_result(item) {
         if (item === null) {
             return;
@@ -258,6 +304,7 @@ jQuery(document).ready(function ($) {
         load_keyword_data(keyword);
     }
 
+    // We keep track of internal links for managing back link
     $("a.internal").live("click",
         function ()  {
         if (load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
@@ -267,8 +314,21 @@ jQuery(document).ready(function ($) {
     }
     );
 
+    // Completing the search box with autocompletion
+    $("#search").autocompleteArray(keywords,
+        {onItemSelect: show_result, // what to do when finding a match
+         onFindValue: show_result,
+         autoFill: false, // don't try to auto-fill the box as this fails on mobile with virtual keyboard
+         selectFirst: true, // pre-select first item
+         delay: 40,
+         maxItemsToShow: 10,
+         matchContains: true,
+         matchSubset: true // also matches when matching only a substring
+         }
+    );
 
-    $("#search").autocompleteArray(keywords, {onItemSelect: show_result, onFindValue: show_result, autoFill: false, selectFirst: true, delay: 40, maxItemsToShow: 10, matchContains: true, matchSubset: true});
+    // When a search term is entered/selected
+    // add a "clear" button
     $("#search").change(function () {
         clearLookUp();
         if ($("#search").val()) {
@@ -283,6 +343,8 @@ jQuery(document).ready(function ($) {
             $("#details_clear").replaceWith("");
         }
     });
+
+    // if an anchor is set, loads the relevant view
     if (window.location.hash) {
         if (window.location.hash.substring(0, 5) === '#inf,' || window.location.hash.substring(0, 8) === '#search,') {
             load_anchor(window.location.hash.substring(1));
