@@ -1,7 +1,4 @@
-all: js/all.js style/all.css data/all.json
-
-widget-opera.wgt: config-opera.xml index.html js/ style/ images/
-	cp -r $^ build; mv build/config-opera.xml build/config.xml;  cd build; zip -R ../$@ "*" ; cd ..
+all: js/all.js style/all.css
 
 JAVA=/usr/bin/java
 YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
@@ -71,9 +68,9 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 data/i18n.frag: data/getI18NFragment.xsl
 	saxon http://www.w3.org/International/quicktips/ $^ > $@
 
-android: android-copy
+GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 
-android-copy: js/all-split.js style/all.css index.html images/*.png style/images/*.png icons/48x.png data/json/
+android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
 	@-rm android/assets/data/json/*.js
 	cp --parents -r -t android/assets/ $^ 
 	mv android/assets/js/all-split.js android/assets/js/all.js
@@ -82,5 +79,13 @@ android-copy: js/all-split.js style/all.css index.html images/*.png style/images
 android-free: android js/all-free.js
 	cp js/all-free.js android/assets/js/all.js
 
-www: js/all.js style/all.css index.html images/*.png style/images/*.png icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
+widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
+	@-rm build/data/json/*.js
+	cp --parents -r -t build/ $^ 
+	mv build/config-opera.xml build/config.xml
+	cd build
+	zip -R ../$@ "*" ; cd ..
+
+
+www: js/all.js $(GENERIC_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/
