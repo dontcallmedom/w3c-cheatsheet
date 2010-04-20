@@ -94,10 +94,10 @@ var dictionary = {
 <xsl:text>&#xA;];</xsl:text>
 <xsl:choose>
   <xsl:when test="$full">
-    <xsl:text>var inMemory = true;</xsl:text>
+    <xsl:text>&#xA;var inMemory = true;</xsl:text>
   </xsl:when>
   <xsl:otherwise>
-    <xsl:text>var inMemory = false;</xsl:text>
+    <xsl:text>&#xA;var inMemory = false;</xsl:text>
   </xsl:otherwise>
 </xsl:choose>
 <xsl:text>&#xA;var keywordsMatch = {</xsl:text>
