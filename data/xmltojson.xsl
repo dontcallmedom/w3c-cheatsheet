@@ -86,7 +86,13 @@ var dictionary = {
 <xsl:text>&#xA;</xsl:text>
 </xsl:for-each>
 <xsl:text>};&#xA;</xsl:text>
-<xsl:text>keywordMatch={</xsl:text>
+<xsl:text>var keywords = [</xsl:text>
+    <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+      <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+      <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
+    </xsl:for-each-group>
+<xsl:text>&#xA;];</xsl:text>
+<xsl:text>&#xA;var keywordsMatch = {</xsl:text>
     <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
       <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
       <xsl:for-each-group select="current-group()" group-by="ancestor::infoset/@technology">
@@ -97,11 +103,13 @@ var dictionary = {
 	    <xsl:with-param name="jsonFormat" select="false"/>
 	  </xsl:call-template>
 	</xsl:for-each-group>
-	<xsl:text>&#xA;        };&#xA;</xsl:text> 
+	<xsl:text>&#xA;        }&#xA;</xsl:text> 
+	<xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
       </xsl:for-each-group>
       <xsl:text>&#xA;    }</xsl:text>
+      <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
     </xsl:for-each-group>
-    <xsl:text>&#xA;}</xsl:text>
+    <xsl:text>&#xA;};</xsl:text>
   </xsl:template>
 
   <xsl:template name="itemToJson">
@@ -110,7 +118,7 @@ var dictionary = {
     <xsl:variable name="q">
       <xsl:if test="$jsonFormat"><xsl:text>"</xsl:text></xsl:if>
     </xsl:variable>
-	<xsl:text>&#xA;    </xsl:text>
+	<xsl:text>&#xA;            </xsl:text>
 	<xsl:value-of select="$q"/><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:value-of select="$q"/>
 	<xsl:choose>
 	  <xsl:when test="$withContent">
@@ -121,21 +129,21 @@ var dictionary = {
 	  </xsl:otherwise>
 	</xsl:choose>
 	 <xsl:for-each select="current-group()"> <!-- looping on <item> -->
-	   <xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+	   <xsl:text>&#xA;                "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
 	   <xsl:if test="$withContent">
 	     <xsl:text>: {</xsl:text>
 	     <xsl:value-of select="$q"/><xsl:text>d</xsl:text><xsl:value-of select="$q"/><xsl:text>: [</xsl:text>
 	     <xsl:apply-templates select="context">
 	       <xsl:with-param name="jsonFormat" select="$jsonFormat"/>
 	     </xsl:apply-templates>
-	   <xsl:text>&#xA;        ]</xsl:text>
+	   <xsl:text>&#xA;                ]</xsl:text>
 	    <!-- end of e.g. input: [] -->
 	     <xsl:text>}</xsl:text>
 	   </xsl:if>
 
 	   <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 	 </xsl:for-each>
-	 <xsl:text>&#xA;    </xsl:text>
+	 <xsl:text>&#xA;            </xsl:text>
 	 <!-- end of e.g. html elements: -->
 	 <xsl:choose>
 	   <xsl:when test="$withContent">
