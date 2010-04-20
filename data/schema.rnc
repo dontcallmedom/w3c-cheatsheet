@@ -8,8 +8,6 @@ Infosets = element infosets {
     element item {
        Types,
        attribute name { text },
-       ## so that import can be seen as equivalent to @import
-       attribute synonym { text}?,
        ## A context designates a usage of the said keyword common to a class of items
        ## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
        element context {
