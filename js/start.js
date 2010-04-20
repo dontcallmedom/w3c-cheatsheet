@@ -11,46 +11,23 @@ var keywordSources = {
     "xpath": {"f": "XPath function"}
 };
 
-function display_keyword_data(keyword_data, infoset, propertytype) {
-    if (infoset && propertytype) {
-      var restricted_keyword_data = {};
-      restricted_keyword_data[infoset] = {};
-      restricted_keyword_data[infoset][propertytype] = keyword_data[infoset][propertytype];
-      keyword_data = restricted_keyword_data;
-    }
-    var multiple = -1;
-    for (var i in keyword_data) {
-      for (var p in keyword_data[i]) {
-	show_keyword(keyword_data, i, p);
-	multiple = multiple + 1;
-      }
-    }
-    if (multiple < 1) {
-      $("#details").accordion({header: 'div>h2', autoHeight: false});
-    } else {
-      $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
-    }
-
-    makeReplacingAccordion($("#details"));
+function makeReplacingAccordion(accordion) {
+    accordion.css("position", "relative");
+    accordion.accordion('option', 'navigation', true);
+    accordion.accordion('option', 'autoHeight', 'false');
+    accordion.accordion('option', 'collapsible', true);
 }
 
-function load_keyword_data(keyword, infoset, propertytype) {
-  if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype] && keywordsMatch[keyword][infoset][propertytype]!==1))) {
-    display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
-  } else {
-    $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function(keyword_data) { display_keyword_data(keyword_data,infoset, propertytype); });
-  }
-}
 
 function show_keyword(keyword_data, infoset, propertytype) {
-  if (keyword_data[infoset][propertytype] === null) {
-    return false;
-  }
-  for (var keyword in keyword_data[infoset][propertytype]) {
-	var infosetname = keywordSources[infoset][propertytype];
+    if (keyword_data[infoset][propertytype] === null) {
+        return false;
+    }
+    for (var keyword in keyword_data[infoset][propertytype]) {
+        var infosetname = keywordSources[infoset][propertytype];
         var div = $("<div></div>").addClass("context");
         $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
-              var div2 = $("<div></div>").appendTo(div);
+        var div2 = $("<div></div>").appendTo(div);
         for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) {
             var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
             var dl = $("<dl></dl>");
@@ -126,40 +103,41 @@ function show_keyword(keyword_data, infoset, propertytype) {
         }
         div.appendTo($("#details"));
     }
-  return true;
+    return true;
 }
 
 
-    function load_anchor(anchor) {
-        if (anchor === null) {
-            return false;
-        }
-        if (anchor.substring(0, 7) === "search,") {
-            $("#search").val(anchor.substring(7));
-            $("#search").get(0).autocompleter.findValue();
-            return true;
-        }
-        var selector_path = anchor.split(',');
-        var infoset = unescape(selector_path[1]);
-        var propertytype = unescape(selector_path[2]);
-        var keyword = unescape(selector_path.slice(3).join(","));
-        if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]
-            ) {
-            clearLookUp();
-            $("#search").val("");
-            if (load_keyword_data(keyword, infoset, propertytype)) {
-                return true;
-            }
-        }
-        return false;
+function display_keyword_data(keyword_data, infoset, propertytype) {
+    if (infoset && propertytype) {
+        var restricted_keyword_data = {};
+        restricted_keyword_data[infoset] = {};
+        restricted_keyword_data[infoset][propertytype] = keyword_data[infoset][propertytype];
+        keyword_data = restricted_keyword_data;
     }
+    var multiple = -1;
+    for (var i in keyword_data) {
+        for (var p in keyword_data[i]) {
+            show_keyword(keyword_data, i, p);
+            multiple = multiple + 1;
+        }
+    }
+    if (multiple < 1) {
+        $("#details").accordion({header: 'div>h2', autoHeight: false});
+    } else {
+        $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
+    }
+    makeReplacingAccordion($("#details"));
+}
 
-
-function makeReplacingAccordion(accordion) {
-    accordion.css("position", "relative");
-    accordion.accordion('option', 'navigation', true);
-    accordion.accordion('option', 'autoHeight', 'false');
-    accordion.accordion('option', 'collapsible', true);
+function load_keyword_data(keyword, infoset, propertytype) {
+    if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
+        display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
+    } else {
+        $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
+		    display_keyword_data(keyword_data, infoset, propertytype);
+		}
+	);
+    }
 }
 
 function clearLookUp() {
@@ -169,22 +147,51 @@ function clearLookUp() {
     $("#details").html("");
 }
 
+
+function load_anchor(anchor) {
+    if (anchor === null) {
+        return false;
+    }
+    if (anchor.substring(0, 7) === "search,") {
+        $("#search").val(anchor.substring(7));
+        $("#search").get(0).autocompleter.findValue();
+        return true;
+    }
+    var selector_path = anchor.split(',');
+    var infoset = unescape(selector_path[1]);
+    var propertytype = unescape(selector_path[2]);
+    var keyword = unescape(selector_path.slice(3).join(","));
+    if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
+        clearLookUp();
+        $("#search").val("");
+        if (load_keyword_data(keyword, infoset, propertytype)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
+
 function setCookie(c_name, value, expiredays) {
-    var exdate=new Date();
+    var exdate = new Date();
     exdate.setDate(exdate.getDate() + expiredays);
-    document.cookie=c_name+ "=" + escape(value) +
-	((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
+    document.cookie = c_name + "=" + escape(value) +
+        ((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
 }
 
 function getCookie(c_name) {
-    if (document.cookie.length>0) {
-	c_start = document.cookie.indexOf(c_name + "=");
-	if (c_start!==-1) {
-	    c_start = c_start + c_name.length + 1;
-	    c_end = document.cookie.indexOf(";", c_start);
-	    if (c_end === -1) c_end = document.cookie.length;
-	    return unescape(document.cookie.substring(c_start, c_end));
-	}
+    if (document.cookie.length > 0) {
+        var c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start !== -1) {
+            c_start = c_start + c_name.length + 1;
+            var c_end = document.cookie.indexOf(";", c_start);
+            if (c_end === -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
     }
     return "";
 }
@@ -201,35 +208,39 @@ jQuery(document).ready(function ($) {
 
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
     makeReplacingAccordion($(".accordion"));
-    $("body").css("display","block");
+    $("body").css("display", "block");
     //$("#search").setOptions({"data":keywords});
-    if (getCookie("alreadyLaunched") === "" && startWithDonate) {
-	show_about();
-	setCookie("alreadyLaunched","true",2000);
-    }
-
-    $("#openabout").click(show_about);
 
     function hide_about() {
-	$("#about").css("display","none");
-	return false;
+        $("#about").css("display", "none");
+        return false;
     }
 
     function show_about() {
-	if ($("#about").css("display") === "block") {
-	    hide_about();
-	} else {
-	    $("#about").css("display", "block");
-	    $("#closeabout").click(hide_about);
-	    $("#closeabout2").click(hide_about);
-	}
-	return false;
+        if ($("#about").css("display") === "block") {
+            hide_about();
+        } else {
+            $("#about").css("display", "block");
+            $("#closeabout").click(hide_about);
+            $("#closeabout2").click(hide_about);
+        }
+        return false;
     }
+
+    if (getCookie("alreadyLaunched") === "" && startWithDonate) {
+        show_about();
+        setCookie("alreadyLaunched", "true", 2000);
+    }
+    $("#openabout").click(show_about);
 
 
     function addBackLink() {
         if (hashHistory.length > 0) {
-	    $("<a class='internal back' onclick='hashHistory.pop();return true;'></a>").attr("href",hashHistory[hashHistory.length - 1]).text("back").appendTo($("<p></p>")).appendTo($("#details"));
+            $("<a class='internal back' onclick='hashHistory.pop();return true;'></a>")
+		.attr("href", hashHistory[hashHistory.length - 1])
+		.text("back")
+		.appendTo($("<p></p>"))
+		.appendTo($("#details"));
         }
 
     }
