@@ -1,0 +1,1694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infosets>
+   <infoset technology="xpath">
+      <item type="function" name="node-name">
+         <context>
+            <property name="description">
+               <content>Returns an expanded-QName for node kinds that can have names. For other kinds of nodes it returns the empty sequence. If $arg is the empty sequence, the empty sequence is returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-node-name"/>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:QName?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="nilled">
+         <context>
+            <property name="description">
+               <content>Returns an xs:boolean indicating whether the argument node is "nilled". If the argument is not an element node, returns the empty sequence. If the argument is the empty sequence, returns the empty sequence.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-nilled"/>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="string">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg represented as a xs:string. If no argument is supplied, the context item (.) is used as the default argument. The behavior of the function if the argument is omitted is exactly the same as if the context item had been passed as the argument.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-string"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as item()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="data">
+         <context>
+            <property name="description">
+               <content>fn:data takes a sequence of items and returns a sequence of atomic values.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-data"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="base-uri">
+         <context>
+            <property name="description">
+               <content>Returns the value of the base-uri URI property for $arg as defined by the accessor function dm:base-uri() for that kind of node in Section 5.2 base-uri AccessorDM. If $arg is not specified, the behavior is identical to calling the function with the context item (.) as argument. The following errors may be raised: if the context item is undefined [err:XPDY0002]XP; if the context item is not a node [err:XPTY0004]XP.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-base-uri"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="document-uri">
+         <context>
+            <property name="description">
+               <content>Returns the value of the document-uri property for $arg as defined by the dm:document-uri accessor function defined in Section 6.1.2 AccessorsDM.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-document-uri"/>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="abs">
+         <context>
+            <property name="description">
+               <content>Returns the absolute value of $arg. If $arg is negative returns -$arg otherwise returns $arg. If type of $arg is one of the four numeric types xs:float, xs:double, xs:decimal or xs:integer the type of the result is the same as the type of $arg. If the type of $arg is a type derived from one of the numeric types, the result is an instance of the base numeric type.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-abs"/>
+            <property name="parameters">
+               <content>$arg as numeric?</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="ceiling">
+         <context>
+            <property name="description">
+               <content>Returns the smallest (closest to negative infinity) number with no fractional part that is not less than the value of $arg. If type of $arg is one of the four numeric types xs:float, xs:double, xs:decimal or xs:integer the type of the result is the same as the type of $arg. If the type of $arg is a type derived from one of the numeric types, the result is an instance of the base numeric type.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-ceiling"/>
+            <property name="parameters">
+               <content>$arg as numeric?</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="floor">
+         <context>
+            <property name="description">
+               <content>Returns the largest (closest to positive infinity) number with no fractional part that is not greater than the value of $arg. If type of $arg is one of the four numeric types xs:float, xs:double, xs:decimal or xs:integer the type of the result is the same as the type of $arg. If the type of $arg is a type derived from one of the numeric types, the result is an instance of the base numeric type.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-floor"/>
+            <property name="parameters">
+               <content>$arg as numeric?</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="round">
+         <context>
+            <property name="description">
+               <content>Returns the number with no fractional part that is closest to the argument. If there are two such numbers, then the one that is closest to positive infinity is returned. If type of $arg is one of the four numeric types xs:float, xs:double, xs:decimal or xs:integer the type of the result is the same as the type of $arg. If the type of $arg is a type derived from one of the numeric types, the result is an instance of the base numeric type.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-round"/>
+            <property name="parameters">
+               <content>$arg as numeric?</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="round-half-to-even">
+         <context>
+            <property name="description">
+               <content>The value returned is the nearest (that is, numerically closest) value to $arg that is a multiple of ten to the power of minus $precision. If two such values are equally near (e.g. if the fractional part in $arg is exactly .500...), the function returns the one whose least significant digit is even.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-round-half-to-even"/>
+            <property name="parameters">
+               <content>$arg as numeric?</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="codepoints-to-string">
+         <context>
+            <property name="description">
+               <content>Creates an xs:string from a sequence of [The Unicode Standard] code points. Returns the zero-length string if $arg is the empty sequence. If any of the code points in $arg is not a legal XML character, an error is raised [err:FOCH0001].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-codepoints-to-string"/>
+            <property name="parameters">
+               <content>$arg as xs:integer*</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="string-to-codepoints">
+         <context>
+            <property name="description">
+               <content>Returns the sequence of [The Unicode Standard] code points that constitute an xs:string. If $arg is a zero-length string or the empty sequence, the empty sequence is returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-string-to-codepoints"/>
+            <property name="parameters">
+               <content>$arg as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="compare">
+         <context>
+            <property name="description">
+               <content>Returns -1, 0, or 1, depending on whether the value of the $comparand1 is respectively less than, equal to, or greater than the value of $comparand2, according to the rules of the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-compare"/>
+            <property name="parameters">
+               <content>$comparand1 as xs:string?, $comparand2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$comparand1 as xs:string?,$comparand2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="codepoint-equal">
+         <context>
+            <property name="description">
+               <content>Returns true or false depending on whether the value of $comparand1 is equal to the value of $comparand2, according to the Unicode code point collation (http://www.w3.org/2005/xpath-functions/collation/codepoint).</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-codepoint-equal"/>
+            <property name="parameters">
+               <content>$comparand1 as xs:string?,$comparand2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="concat">
+         <context>
+            <property name="description">
+               <content>Accepts two or more xs:anyAtomicType arguments and casts them to xs:string. Returns the xs:string that is the concatenation of the values of its arguments after conversion. If any of the arguments is the empty sequence, the argument is treated as the zero-length string.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-concat"/>
+            <property name="parameters">
+               <content>$arg1 as xs:anyAtomicType?,$arg2 as xs:anyAtomicType?,...</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="string-join">
+         <context>
+            <property name="description">
+               <content>Returns a xs:string created by concatenating the members of the $arg1 sequence using $arg2 as a separator. If the value of $arg2 is the zero-length string, then the members of $arg1 are concatenated without a separator.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-string-join"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string*, $arg2 as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="substring">
+         <context>
+            <property name="description">
+               <content>Returns the portion of the value of $sourceString beginning at the position indicated by the value of $startingLoc and continuing for the number of characters indicated by the value of $length. The characters returned do not extend beyond $sourceString. If $startingLoc is zero or negative, only those characters in positions greater than zero are returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-substring"/>
+            <property name="parameters">
+               <content>$sourceString as xs:string?,$startingLoc as xs:double</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$sourceString as xs:string?,$startingLoc as xs:double,$length as xs:double</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="string-length">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer equal to the length in characters of the value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-string-length"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:integer</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="normalize-space">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg with whitespace normalized by stripping leading and trailing whitespace and replacing sequences of one or more than one whitespace character with a single space, #x20.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-normalize-space"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="normalize-unicode">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg normalized according to the normalization criteria for a normalization form identified by the value of $normalizationForm. The effective value of the $normalizationForm is computed by removing leading and trailing blanks, if present, and converting to upper case.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-normalize-unicode"/>
+            <property name="parameters">
+               <content>$arg as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as xs:string?,$normalizationForm as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="upper-case">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg after translating every character to its upper-case correspondent as defined in the appropriate case mappings section in the Unicode standard [The Unicode Standard]. For versions of Unicode beginning with the 2.1.8 update, only locale-insensitive case mappings should be applied. Beginning with version 3.2.0 (and likely future versions) of Unicode, precise mappings are described in default case operations, which are full case mappings in the absence of tailoring for particular languages and environments. Every lower-case character that does not have an upper-case correspondent, as well as every upper-case character, is included in the returned value in its original form.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-upper-case"/>
+            <property name="parameters">
+               <content>$arg as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="lower-case">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg after translating every character to its lower-case correspondent as defined in the appropriate case mappings section in the Unicode standard [The Unicode Standard]. For versions of Unicode beginning with the 2.1.8 update, only locale-insensitive case mappings should be applied. Beginning with version 3.2.0 (and likely future versions) of Unicode, precise mappings are described in default case operations, which are full case mappings in the absence of tailoring for particular languages and environments. Every upper-case character that does not have a lower-case correspondent, as well as every lower-case character, is included in the returned value in its original form.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-lower-case"/>
+            <property name="parameters">
+               <content>$arg as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="translate">
+         <context>
+            <property name="description">
+               <content>Returns the value of $arg modified so that every character in the value of $arg that occurs at some position N in the value of $mapString has been replaced by the character that occurs at position N in the value of $transString.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-translate"/>
+            <property name="parameters">
+               <content>$arg as xs:string?,$mapString as xs:string,$transString as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="encode-for-uri">
+         <context>
+            <property name="description">
+               <content>This function encodes reserved characters in an xs:string that is intended to be used in the path segment of a URI. It is invertible but not idempotent. This function applies the URI escaping rules defined in section 2 of [RFC 3986] to the xs:string supplied as $uri-part. The effect of the function is to escape reserved characters. Each such character in the string is replaced with its percent-encoded form as described in [RFC 3986].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-encode-for-uri"/>
+            <property name="parameters">
+               <content>$uri-part as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="iri-to-uri">
+         <context>
+            <property name="description">
+               <content>This function converts an xs:string containing an IRI into a URI according to the rules spelled out in Section 3.1 of [RFC 3987]. It is idempotent but not invertible.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-iri-to-uri"/>
+            <property name="parameters">
+               <content>$iri as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="escape-html-uri">
+         <context>
+            <property name="description">
+               <content>This function escapes all characters except printable characters of the US-ASCII coded character set, specifically the octets ranging from 32 to 126 (decimal). The effect of the function is to escape a URI in the manner html user agents handle attribute values that expect URIs. Each character in $uri to be escaped is replaced by an escape sequence, which is formed by encoding the character as a sequence of octets in UTF-8, and then representing each of these octets in the form %HH, where HH is the hexadecimal representation of the octet. This function must always generate hexadecimal values using the upper-case letters A-F.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-escape-html-uri"/>
+            <property name="parameters">
+               <content>$uri as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="contains">
+         <context>
+            <property name="description">
+               <content>Returns an xs:boolean indicating whether or not the value of $arg1 contains (at the beginning, at the end, or anywhere within) at least one sequence of collation units that provides a minimal match to the collation units in the value of $arg2, according to the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-contains"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string?, $arg2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg1 as xs:string?,$arg2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="starts-with">
+         <context>
+            <property name="description">
+               <content>Returns an xs:boolean indicating whether or not the value of $arg1 starts with a sequence of collation units that provides a minimal match to the collation units of $arg2 according to the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-starts-with"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string?, $arg2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg1 as xs:string?,$arg2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="ends-with">
+         <context>
+            <property name="description">
+               <content>Returns an xs:boolean indicating whether or not the value of $arg1 ends with a sequence of collation units that provides a minimal match to the collation units of $arg2 according to the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-ends-with"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string?, $arg2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg1 as xs:string?,$arg2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="substring-before">
+         <context>
+            <property name="description">
+               <content>Returns the substring of the value of $arg1 that precedes in the value of $arg1 the first occurrence of a sequence of collation units that provides a minimal match to the collation units of $arg2 according to the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-substring-before"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string?, $arg2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg1 as xs:string?,$arg2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="substring-after">
+         <context>
+            <property name="description">
+               <content>Returns the substring of the value of $arg1 that follows in the value of $arg1 the first occurrence of a sequence of collation units that provides a minimal match to the collation units of $arg2 according to the collation that is used.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-substring-after"/>
+            <property name="parameters">
+               <content>$arg1 as xs:string?, $arg2 as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg1 as xs:string?,$arg2 as xs:string?,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="matches">
+         <context>
+            <property name="description">
+               <content>The function returns true if $input matches the regular expression supplied as $pattern as influenced by the value of $flags, if present; otherwise, it returns false.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-matches"/>
+            <property name="parameters">
+               <content>$input as xs:string?, $pattern as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$input as xs:string?,$pattern as xs:string,$flags as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="replace">
+         <context>
+            <property name="description">
+               <content>The function returns the xs:string that is obtained by replacing each non-overlapping substring of $input that matches the given $pattern with an occurrence of the $replacement string.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-replace"/>
+            <property name="parameters">
+               <content>$input as xs:string?,$pattern as xs:string,$replacement as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$input as xs:string?,$pattern as xs:string,$replacement as xs:string,$flags as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="tokenize">
+         <context>
+            <property name="description">
+               <content>This function breaks the $input string into a sequence of strings, treating any substring that matches $pattern as a separator. The separators themselves are not returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-tokenize"/>
+            <property name="parameters">
+               <content>$input as xs:string?, $pattern as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string*</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$input as xs:string?,$pattern as xs:string,$flags as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:string*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="resolve-uri">
+         <context>
+            <property name="description">
+               <content>The purpose of this function is to enable a relative URI to be resolved against an absolute URI.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-resolve-uri"/>
+            <property name="parameters">
+               <content>$relative as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="true">
+         <context>
+            <property name="description">
+               <content>Returns the xs:boolean value true. Equivalent to xs:boolean("1").</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-true"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="false">
+         <context>
+            <property name="description">
+               <content>Returns the xs:boolean value false. Equivalent to xs:boolean("0").</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-false"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="not">
+         <context>
+            <property name="description">
+               <content>$arg is first reduced to an effective boolean value by applying the fn:boolean() function. Returns true if the effective boolean value is false, and false if the effective boolean value is true.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-not"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="years-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the years component in the value of $arg. The result is obtained by casting $arg to an xs:yearMonthDuration (see 17.1.4 Casting to duration types) and then computing the years component as described in 10.3.1.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-years-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="months-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the months component in the value of $arg. The result is obtained by casting $arg to an xs:yearMonthDuration (see 17.1.4 Casting to duration types) and then computing the months component as described in 10.3.1.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-months-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="days-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the days component in the value of $arg. The result is obtained by casting $arg to an xs:dayTimeDuration (see 17.1.4 Casting to duration types) and then computing the days component as described in 10.3.2.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-days-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="hours-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the hours component in the value of $arg. The result is obtained by casting $arg to an xs:dayTimeDuration (see 17.1.4 Casting to duration types) and then computing the hours component as described in 10.3.2.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-hours-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="minutes-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the minutes component in the value of $arg. The result is obtained by casting $arg to an xs:dayTimeDuration (see 17.1.4 Casting to duration types) and then computing the minutes component as described in 10.3.2.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-minutes-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="seconds-from-duration">
+         <context>
+            <property name="description">
+               <content>Returns an xs:decimal representing the seconds component in the value of $arg. The result is obtained by casting $arg to an xs:dayTimeDuration (see 17.1.4 Casting to duration types) and then computing the seconds component as described in 10.3.2.3 Canonical representation.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-seconds-from-duration"/>
+            <property name="parameters">
+               <content>$arg as xs:duration?</content>
+            </property>
+            <property name="returns">
+               <content>xs:decimal?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="year-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the year component in the localized value of $arg. The result may be negative.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-year-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="month-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 1 and 12, both inclusive, representing the month component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-month-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="day-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 1 and 31, both inclusive, representing the day component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-day-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="hours-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 0 and 23, both inclusive, representing the hours component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-hours-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="minutes-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer value between 0 and 59, both inclusive, representing the minute component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-minutes-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="seconds-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns an xs:decimal value greater than or equal to zero and less than 60, representing the seconds and fractional seconds in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-seconds-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:decimal?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="timezone-from-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns the timezone component of $arg if any. If $arg has a timezone component, then the result is an xs:dayTimeDuration that indicates deviation from UTC; its value may range from +14:00 to -14:00 hours, both inclusive. Otherwise, the result is the empty sequence.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-timezone-from-dateTime"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:dayTimeDuration?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="year-from-date">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer representing the year in the localized value of $arg. The value may be negative.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-year-from-date"/>
+            <property name="parameters">
+               <content>$arg as xs:date?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="month-from-date">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 1 and 12, both inclusive, representing the month component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-month-from-date"/>
+            <property name="parameters">
+               <content>$arg as xs:date?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="day-from-date">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 1 and 31, both inclusive, representing the day component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-day-from-date"/>
+            <property name="parameters">
+               <content>$arg as xs:date?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="timezone-from-date">
+         <context>
+            <property name="description">
+               <content>Returns the timezone component of $arg if any. If $arg has a timezone component, then the result is an xs:dayTimeDuration that indicates deviation from UTC; its value may range from +14:00 to -14:00 hours, both inclusive. Otherwise, the result is the empty sequence.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-timezone-from-date"/>
+            <property name="parameters">
+               <content>$arg as xs:date?</content>
+            </property>
+            <property name="returns">
+               <content>xs:dayTimeDuration?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="hours-from-time">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer between 0 and 23, both inclusive, representing the value of the hours component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-hours-from-time"/>
+            <property name="parameters">
+               <content>$arg as xs:time?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="minutes-from-time">
+         <context>
+            <property name="description">
+               <content>Returns an xs:integer value between 0 and 59, both inclusive, representing the value of the minutes component in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-minutes-from-time"/>
+            <property name="parameters">
+               <content>$arg as xs:time?</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="seconds-from-time">
+         <context>
+            <property name="description">
+               <content>Returns an xs:decimal value greater than or equal to zero and less than 60, representing the seconds and fractional seconds in the localized value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-seconds-from-time"/>
+            <property name="parameters">
+               <content>$arg as xs:time?</content>
+            </property>
+            <property name="returns">
+               <content>xs:decimal?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="timezone-from-time">
+         <context>
+            <property name="description">
+               <content>Returns the timezone component of $arg if any. If $arg has a timezone component, then the result is an xs:dayTimeDuration that indicates deviation from UTC; its value may range from +14:00 to -14:00 hours, both inclusive. Otherwise, the result is the empty sequence.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-timezone-from-time"/>
+            <property name="parameters">
+               <content>$arg as xs:time?</content>
+            </property>
+            <property name="returns">
+               <content>xs:dayTimeDuration?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="adjust-dateTime-to-timezone">
+         <context>
+            <property name="description">
+               <content>Adjusts an xs:dateTime value to a specific timezone, or to no timezone at all. If $timezone is the empty sequence, returns an xs:dateTime without a timezone. Otherwise, returns an xs:dateTime with a timezone.</content>
+            </property>
+            <property name="Specification"
+                      link="/TR/xpath-functions/#func-adjust-dateTime-to-timezone"/>
+            <property name="parameters">
+               <content>$arg as xs:dateTime?</content>
+            </property>
+            <property name="returns">
+               <content>xs:dateTime?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="adjust-date-to-timezone">
+         <context>
+            <property name="description">
+               <content>Adjusts an xs:date value to a specific timezone, or to no timezone at all. If $timezone is the empty sequence, returns an xs:date without a timezone. Otherwise, returns an xs:date with a timezone. For purposes of timezone adjustment, an xs:date is treated as an xs:dateTime with time 00:00:00.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-adjust-date-to-timezone"/>
+            <property name="parameters">
+               <content>$arg as xs:date?</content>
+            </property>
+            <property name="returns">
+               <content>xs:date?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="adjust-time-to-timezone">
+         <context>
+            <property name="description">
+               <content>Adjusts an xs:time value to a specific timezone, or to no timezone at all. If $timezone is the empty sequence, returns an xs:time without a timezone. Otherwise, returns an xs:time with a timezone.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-adjust-time-to-timezone"/>
+            <property name="parameters">
+               <content>$arg as xs:time?</content>
+            </property>
+            <property name="returns">
+               <content>xs:time?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="resolve-QName">
+         <context>
+            <property name="description">
+               <content>Returns an xs:QName value (that is, an expanded-QName) by taking an xs:string that has the lexical form of an xs:QName (a string in the form "prefix:local-name" or "local-name") and resolving it using the in-scope namespaces for a given element.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-resolve-QName"/>
+            <property name="parameters">
+               <content>$qname as xs:string?, $element as element()</content>
+            </property>
+            <property name="returns">
+               <content>xs:QName?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="QName">
+         <context>
+            <property name="description">
+               <content>Returns an xs:QName with the namespace URI given in $paramURI. If $paramURI is the zero-length string or the empty sequence, it represents "no namespace"; in this case, if the value of $paramQName contains a colon (:), an error is raised [err:FOCA0002]. The prefix (or absence of a prefix) in $paramQName is retained in the returned xs:QName value. The local name in the result is taken from the local part of $paramQName.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-QName"/>
+            <property name="parameters">
+               <content>$paramURI as xs:string?, $paramQName as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:QName</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="prefix-from-QName">
+         <context>
+            <property name="description">
+               <content>Returns an xs:NCName representing the prefix of $arg. The empty sequence is returned if $arg is the empty sequence or if the value of $arg contains no prefix.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-prefix-from-QName"/>
+            <property name="parameters">
+               <content>$arg as xs:QName?</content>
+            </property>
+            <property name="returns">
+               <content>xs:NCName?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="local-name-from-QName">
+         <context>
+            <property name="description">
+               <content>Returns an xs:NCName representing the local part of $arg. If $arg is the empty sequence, returns the empty sequence.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-local-name-from-QName"/>
+            <property name="parameters">
+               <content>$arg as xs:QName?</content>
+            </property>
+            <property name="returns">
+               <content>xs:NCName?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="namespace-uri-from-QName">
+         <context>
+            <property name="description">
+               <content>Returns the namespace URI for $arg as an xs:string. If $arg is the empty sequence, the empty sequence is returned. If $arg is in no namespace, the zero-length string is returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-namespace-uri-from-QName"/>
+            <property name="parameters">
+               <content>$arg as xs:QName?</content>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="namespace-uri-for-prefix">
+         <context>
+            <property name="description">
+               <content>Returns the namespace URI of one of the in-scope namespaces for $element, identified by its namespace prefix.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-namespace-uri-for-prefix"/>
+            <property name="parameters">
+               <content>$prefix as xs:string?,$element as element()</content>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="in-scope-prefixes">
+         <context>
+            <property name="description">
+               <content>Returns the prefixes of the in-scope namespaces for $element. For namespaces that have a prefix, it returns the prefix as an xs:NCName. For the default namespace, which has no prefix, it returns the zero-length string.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-in-scope-prefixes"/>
+            <property name="parameters">
+               <content>$element as element()</content>
+            </property>
+            <property name="returns">
+               <content>xs:string*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="name">
+         <context>
+            <property name="description">
+               <content>Returns the name of a node, as an xs:string that is either the zero-length string, or has the lexical form of an xs:QName.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-name"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="local-name">
+         <context>
+            <property name="description">
+               <content>Returns the local part of the name of $arg as an xs:string that will either be the zero-length string or will have the lexical form of an xs:NCName.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-local-name"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="namespace-uri">
+         <context>
+            <property name="description">
+               <content>Returns the namespace URI of the xs:QName of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-namespace-uri"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as node()?</content>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="number">
+         <context>
+            <property name="description">
+               <content>Returns the value indicated by $arg or, if $arg is not specified, the context item after atomization, converted to an xs:double</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-number"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:double</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType?</content>
+            </property>
+            <property name="returns">
+               <content>xs:double</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="lang">
+         <context>
+            <property name="description">
+               <content>This function tests whether the language of $node, or the context item if the second argument is omitted, as specified by xml:lang attributes is the same as, or is a sublanguage of, the language specified by $testlang. The behavior of the function if the second argument is omitted is exactly the same as if the context item (.) had been passed as the second argument. The language of the argument node, or the context item if the second argument is omitted, is determined by the value of the xml:lang attribute on the node, or, if the node has no such attribute, by the value of the xml:lang attribute on the nearest ancestor of the node that has an xml:lang attribute. If there is no such ancestor, then the function returns false</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-lang"/>
+            <property name="parameters">
+               <content>$testlang as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="root">
+         <context>
+            <property name="description">
+               <content>Returns the root of the tree to which $arg belongs. This will usually, but not necessarily, be a document node.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-root"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>node()</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="boolean">
+         <context>
+            <property name="description">
+               <content>Computes the effective boolean value of the sequence $arg. See Section 2.4.3 Effective Boolean ValueXP</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-boolean"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="index-of">
+         <context>
+            <property name="description">
+               <content>Returns a sequence of positive integers giving the positions within the sequence $seqParam of items that are equal to $srchParam.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-index-of"/>
+            <property name="parameters">
+               <content>$seqParam as xs:anyAtomicType*,$srchParam as xs:anyAtomicType</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer*</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$seqParam as xs:anyAtomicType*,$srchParam as xs:anyAtomicType,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="empty">
+         <context>
+            <property name="description">
+               <content>If the value of $arg is the empty sequence, the function returns true; otherwise, the function returns false.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-empty"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="exists">
+         <context>
+            <property name="description">
+               <content>If the value of $arg is not the empty sequence, the function returns true; otherwise, the function returns false.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-exists"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="distinct-values">
+         <context>
+            <property name="description">
+               <content>Returns the sequence that results from removing from $arg all but one of a set of values that are eq to one other. Values of type xs:untypedAtomic are compared as if they were of type xs:string. Values that cannot be compared, i.e. the eq operator is not defined for their types, are considered to be distinct. The order in which the sequence of values is returned is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-distinct-values"/>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*,$collation as xs:string</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="insert-before">
+         <context>
+            <property name="description">
+               <content>Returns a new sequence constructed from the value of $target with the value of $inserts inserted at the position specified by the value of $position. (The value of $target is not affected by the sequence construction.)</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-insert-before"/>
+            <property name="parameters">
+               <content>$target as item()*,$position as xs:integer,$inserts as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="remove">
+         <context>
+            <property name="description">
+               <content>Returns a new sequence constructed from the value of $target with the item at the position specified by the value of $position removed.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-remove"/>
+            <property name="parameters">
+               <content>$target as item()*, $position as xs:integer</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="reverse">
+         <context>
+            <property name="description">
+               <content>Reverses the order of items in a sequence. If $arg is the empty sequence, the empty sequence is returned.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-reverse"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="subsequence">
+         <context>
+            <property name="description">
+               <content>Returns the contiguous sequence of items in the value of $sourceSeq beginning at the position indicated by the value of $startingLoc and continuing for the number of items indicated by the value of $length.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-subsequence"/>
+            <property name="parameters">
+               <content>$sourceSeq as item()*, $startingLoc as xs:double</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$sourceSeq as item()*,$startingLoc as xs:double,$length as xs:double</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="unordered">
+         <context>
+            <property name="description">
+               <content>Returns the items of $sourceSeq in an ·implementation dependent· order.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-unordered"/>
+            <property name="parameters">
+               <content>$sourceSeq as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="zero-or-one">
+         <context>
+            <property name="description">
+               <content>Returns $arg if it contains zero or one items. Otherwise, raises an error [err:FORG0003].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-zero-or-one"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="one-or-more">
+         <context>
+            <property name="description">
+               <content>Returns $arg if it contains one or more items. Otherwise, raises an error [err:FORG0004].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-one-or-more"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="exactly-one">
+         <context>
+            <property name="description">
+               <content>Returns $arg if it contains exactly one item. Otherwise, raises an error [err:FORG0005].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-exactly-one"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="deep-equal">
+         <context>
+            <property name="description">
+               <content>This function assesses whether two sequences are deep-equal to each other. To be deep-equal, they must contain items that are pairwise deep-equal; and for two items to be deep-equal, they must either be atomic values that compare equal, or nodes of the same kind, with the same name, whose children are deep-equal. This is defined in more detail below. The $collation argument identifies a collation which is used at all levels of recursion when strings are compared (but not when names are compared), according to the rules in 7.3.1 Collations.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-deep-equal"/>
+            <property name="parameters">
+               <content>$parameter1 as item()*, $parameter2 as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$parameter1 as item()*,$parameter2 as item()*,$collation as string</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="count">
+         <context>
+            <property name="description">
+               <content>Returns the number of items in the value of $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-count"/>
+            <property name="parameters">
+               <content>$arg as item()*</content>
+            </property>
+            <property name="returns">
+               <content>xs:integer</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="avg">
+         <context>
+            <property name="description">
+               <content>Returns the average of the values in the input sequence $arg, that is, the sum of the values divided by the number of values.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-avg"/>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="max">
+         <context>
+            <property name="description">
+               <content>Selects an item from the input sequence $arg whose value is greater than or equal to the value of every other item in the input sequence. If there are two or more such items, then the specific item whose value is returned is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-max"/>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*, $collation as string</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="min">
+         <context>
+            <property name="description">
+               <content>selects an item from the input sequence $arg whose value is less than or equal to the value of every other item in the input sequence. If there are two or more such items, then the specific item whose value is returned is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-min"/>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+         <context>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*, $collation as string</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="sum">
+         <context>
+            <property name="description">
+               <content>Returns a value obtained by adding together the values in $arg. If $zero is not specified, then the value returned for an empty sequence is the xs:integer value 0. If $zero is specified, then the value returned for an empty sequence is $zero.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-sum"/>
+            <property name="parameters">
+               <content>$arg as xs:anyAtomicType*</content>
+            </property>
+            <property name="returns">
+               <content/>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="id">
+         <context>
+            <property name="description">
+               <content>Returns the sequence of element nodes that have an ID value matching the value of one or more of the IDREF values supplied in $arg .</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-id"/>
+            <property name="parameters">
+               <content>$arg as xs:string*</content>
+            </property>
+            <property name="returns">
+               <content>element()*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="idref">
+         <context>
+            <property name="description">
+               <content>Returns the sequence of element or attribute nodes with an IDREF value matching the value of one or more of the ID values supplied in $arg.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-idref"/>
+            <property name="parameters">
+               <content>$arg as xs:string*</content>
+            </property>
+            <property name="returns">
+               <content>node()*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="doc">
+         <context>
+            <property name="description">
+               <content>Retrieves a document using an xs:anyURI, which may include a fragment identifier, supplied as an xs:string. If $uri is not a valid xs:anyURI, an error is raised [err:FODC0005]. If it is a relative URI Reference, it is resolved relative to the value of the base URI property from the static context. The resulting absolute URI Reference is promoted to an xs:string. If the Available documents discussed in Section 2.1.2 Dynamic ContextXP provides a mapping from this string to a document node, the function returns that document node. If the Available documents provides no mapping for the string, an error is raised [err:FODC0005].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-doc"/>
+            <property name="parameters">
+               <content>$uri as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>document-node()?</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="doc-available">
+         <context>
+            <property name="description">
+               <content>If fn:doc($uri) returns a document node, this function returns true. If $uri is not a valid xs:anyURI, an error is raised [err:FODC0005]. Otherwise, this function returns false.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-doc-available"/>
+            <property name="parameters">
+               <content>$uri as xs:string?</content>
+            </property>
+            <property name="returns">
+               <content>xs:boolean</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="collection">
+         <context>
+            <property name="description">
+               <content>This function takes an xs:string as argument and returns a sequence of nodes obtained by interpreting $arg as an xs:anyURI and resolving it according to the mapping specified in Available collections described in Section C.2 Dynamic Context ComponentsXP. If Available collections provides a mapping from this string to a sequence of nodes, the function returns that sequence. If Available collections maps the string to an empty sequence, then the function returns an empty sequence. If Available collections provides no mapping for the string, an error is raised [err:FODC0004]. If $arg is not specified, the function returns the sequence of the nodes in the default collection in the dynamic context. See Section C.2 Dynamic Context ComponentsXP. If the value of the default collection is undefined an error is raised [err:FODC0002].</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-collection"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>node()*</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="position">
+         <context>
+            <property name="description">
+               <content>Returns the context position from the dynamic context. (See Section C.2 Dynamic Context ComponentsXP.) If the context item is undefined, an error is raised: [err:XPDY0002]XP.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-position"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:integer</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="last">
+         <context>
+            <property name="description">
+               <content>Returns the context size from the dynamic context. (See Section C.2 Dynamic Context ComponentsXP.) If the context item is undefined, an error is raised: [err:XPDY0002]XP.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-last"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:integer</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="current-dateTime">
+         <context>
+            <property name="description">
+               <content>Returns the current dateTime (with timezone) from the dynamic context. (See Section C.2 Dynamic Context ComponentsXP.) This is an xs:dateTime that is current at some time during the evaluation of a query or transformation in which fn:current-dateTime() is executed. This function is ·stable·. The precise instant during the query or transformation represented by the value of fn:current-dateTime() is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-current-dateTime"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:dateTime</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="current-date">
+         <context>
+            <property name="description">
+               <content>Returns xs:date(fn:current-dateTime()). This is an xs:date (with timezone) that is current at some time during the evaluation of a query or transformation in which fn:current-date() is executed. This function is ·stable·. The precise instant during the query or transformation represented by the value of fn:current-date() is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-current-date"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:date</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="current-time">
+         <context>
+            <property name="description">
+               <content>Returns xs:time(fn:current-dateTime()). This is an xs:time (with timezone) that is current at some time during the evaluation of a query or transformation in which fn:current-time() is executed. This function is ·stable·. The precise instant during the query or transformation represented by the value of fn:current-time() is ·implementation dependent·.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-current-time"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:time</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="implicit-timezone">
+         <context>
+            <property name="description">
+               <content>Returns the value of the implicit timezone property from the dynamic context. Components of the dynamic context are discussed in Section C.2 Dynamic Context ComponentsXP.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-implicit-timezone"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:dayTimeDuration</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="default-collation">
+         <context>
+            <property name="description">
+               <content>Returns the value of the default collation property from the static context. Components of the static context are discussed in Section C.1 Static Context ComponentsXP.</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-default-collation"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:string</content>
+            </property>
+         </context>
+      </item>
+      <item type="function" name="static-base-uri">
+         <context>
+            <property name="description">
+               <content>Returns the value of the Base URI property from the static context. If the Base URI property is undefined, the empty sequence is returned. Components of the static context are discussed in Section C.1 Static Context ComponentsXP .</content>
+            </property>
+            <property name="Specification" link="/TR/xpath-functions/#func-static-base-uri"/>
+            <property name="parameters">
+               <content/>
+            </property>
+            <property name="returns">
+               <content>xs:anyURI?</content>
+            </property>
+         </context>
+      </item>
+   </infoset>
+</infosets>
