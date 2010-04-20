@@ -35,7 +35,7 @@ function display_keyword_data(keyword_data, infoset, propertytype) {
 }
 
 function load_keyword_data(keyword, infoset, propertytype) {
-  if (keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
+  if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype] && keywordsMatch[keyword][infoset][propertytype]!==1))) {
     display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
   } else {
     $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function(keyword_data) { display_keyword_data(keyword_data,infoset, propertytype); });
