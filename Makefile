@@ -39,15 +39,19 @@ data/full-html5-schema-expanded.rng: data/full-html5-schema.rng data/expandSchem
 
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
+	rnv data/schema.rnc $@
 
 data/xpath.xml: data/getXpathFunctions.xsl
 	saxon $^ $^ > $@
+	rnv data/schema.rnc $@
 
 data/css.xml: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
+	rnv data/schema.rnc $@
 
 data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@
+	rnv data/schema.rnc $@
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
