@@ -35,7 +35,7 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 </dl>
 
 <h2>Cheatsheet Data</h2>
-<p>The data used by the cheat sheet is first extracted from various sources into an custom XML format (that comes with a <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/schema.rnc">RelaxNG schema</a>), and then turned into various pieces of JavaScript code that <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/js/script.js"><code>js/script.js</code></a> relies on.</p>
+<p>The data used by the cheat sheet is first extracted from various sources into an custom XML format (that comes with a <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/schema.rnc">RelaxNG schema</a>), and then turned into various pieces of JavaScript code that <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/js/start.js"><code>js/start.js</code></a> relies on.</p>
 
 <p>This double-step process facilitates maintenance of the data — the source of the data being in HTML, turning them directly into JSON makes it painful to update the underlying schema of the data; also, while we want to be as concise as possible in JavaScript, we can afford to be verbose in the XML data, which helps when debbuging.</p>
 
