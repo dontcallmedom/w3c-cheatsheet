@@ -1,15 +1,3 @@
-/* Removes redundant elements from an array */
-var make_unique = function (b) {
-    var a = [];
-    b.sort();
-    for (var i in b) {
-        if (i > 0 && b[i] !== b[i - 1]) {
-            a[a.length] = b[i];
-        }
-    }
-    return a;
-};
-
 var hashHistory = [];
 
 var keywordSources = {
@@ -23,29 +11,7 @@ var keywordSources = {
     "xpath": {"f": "XPath function"}
 };
 
-var keywordsMatch = {};
-var keywords = [];
-for (var infoset in keywordSources) {
-    for (var propertytype in keywordSources[infoset]) {
-        var source = sources[infoset][propertytype];
-        for (var i in source) {
-	    var keyword = source[i];
-            if (!keywordsMatch[keyword]) {
-                keywordsMatch[keyword] = {};
-                keywords.push(keyword);
-            }
-            if (!keywordsMatch[keyword][infoset]) {
-                keywordsMatch[keyword][infoset] = {};
-            }
-            if (!keywordsMatch[keyword][infoset][propertytype]) {
-                keywordsMatch[keyword][infoset][propertytype] = true;
-            }
-
-        }
-    }
-}
-
-function display_keyword_data(keyword_data) {
+function display_keyword_data(keyword_data, infoset, propertytype) {
     if (infoset && propertytype) {
       var restricted_keyword_data = {};
       restricted_keyword_data[infoset] = {};
@@ -69,7 +35,11 @@ function display_keyword_data(keyword_data) {
 }
 
 function load_keyword_data(keyword, infoset, propertytype) {
-  $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", display_keyword_data);
+  if (keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
+    display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
+  } else {
+    $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function(keyword_data) { display_keyword_data(keyword_data,infoset, propertytype); });
+  }
 }
 
 function show_keyword(keyword_data, infoset, propertytype) {
@@ -232,7 +202,6 @@ jQuery(document).ready(function ($) {
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
     makeReplacingAccordion($(".accordion"));
     $("body").css("display","block");
-    keywords = make_unique(keywords);
     //$("#search").setOptions({"data":keywords});
     if (getCookie("alreadyLaunched") === "" && startWithDonate) {
 	show_about();
