@@ -150,7 +150,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <xsl:if test="$i18n/html:dd/html:code[@class='html attribute'][normalize-space(.)=current()/html:td[1]]">
 		<property name="Internationalization" list="block">
 		  <xsl:for-each select="$i18n/html:dd[html:code[@class='html attribute'][normalize-space()=current()/html:td[1]]]">
-		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+		    <content link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1])"/></content>
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
