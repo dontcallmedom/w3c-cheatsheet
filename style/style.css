@@ -1036,8 +1036,7 @@ padding:.5em .5em .5em 2.2em;
 
 .ui-accordion .ui-accordion-header .ui-icon {
 position:absolute;
-top:50%;
-margin-top:-11px;
+margin-top:-5px;
 left:-5px;
 }
 
