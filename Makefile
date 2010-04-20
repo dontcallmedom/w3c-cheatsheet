@@ -65,9 +65,6 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 	@-rm data/json/*.js
 	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
-data/i18n.frag: data/getI18NFragment.xsl
-	saxon http://www.w3.org/International/quicktips/ $^ > $@
-
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 
 android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
