@@ -20,5 +20,6 @@ var test_keyword_navigate = new function () {
 	{params: {xpath:"//div[@id='details']/div[@class='context'][2]"}, method: "asserts.assertNotNode"},
 	// check that the title is updated
 	{params: {xpath:"//div[@id='details']/div[@class='context']/h2", validator: "HTML Element label"}, method: "asserts.assertText"}
+	// @@@ check back link is added
     ];
 };
