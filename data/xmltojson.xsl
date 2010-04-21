@@ -88,6 +88,7 @@ var dictionary = {
 <xsl:text>};&#xA;</xsl:text>
 <xsl:text>var keywords = [</xsl:text>
     <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+      <xsl:sort select="@name"/>
       <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
       <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
     </xsl:for-each-group>
