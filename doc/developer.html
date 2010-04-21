@@ -32,7 +32,7 @@ src="http://www.w3.org/Icons/w3c_home" /></a><a href="../"><img height="48" widt
 <dt>CSS Style sheet: <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/style/style.css"><code>style/style.css</code></a></dt>
 <dd>Takes care of styling the cheat sheet, with tabs effects, sprites, etc; gets minified through <a href="http://yuilibrary.com/downloads/">YUIcompressor</a> (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>style/all.css</code> (the one referred from the HTML frame)</dd>
 <dt>Script: <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/js/script.js"><code>js/script.js</code></a></dt>
-<dd>This scripts handles most of the logic/control of the cheatsheet, in particular for the autocompletion search box; it gets minified through YUIcompressor (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>js/all.js</code>, with all the generated data prepended, and the <a href="http://docs.jquery.com/">JQuery framework</a> on which it relies.</dd>
+<dd>This scripts handles most of the logic/control of the cheatsheet, in particular for the autocompletion search box; it gets minified through YUIcompressor (in <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/Makefile"><code>Makefile</code></a>) into <code>js/all.js</code>, with all the generated data prepended, and the <a href="#jquery">JQuery framework on which it relies</a>.</dd>
 </dl>
 
 <h2>Cheatsheet Data</h2>
@@ -72,8 +72,8 @@ src="http://www.w3.org/Icons/w3c_home" /></a><a href="../"><img height="48" widt
 <li>@@@ tests</li>
 </ul>
 
-<h2>JQuery</h2>
-<p>The cheat sheet uses JQuery for basic DOM manipulations, as well as for the following UI functionalities:</p>
+<h2 id="jquery">JQuery</h2>
+<p>The cheat sheet uses <a href="http://docs.jquery.com/">JQuery</a> for simplified/cross-browsers DOM and AJAX manipulations, as well as for the following UI functionalities:</p>
 <ul>
 <li><a href="http://docs.jquery.com/UI/Tabs">Tabs</a>, completed with the <a href="http://code.google.com/p/jquery-ui-tabs-paging/">Paging extension for jQuery UI Tabs</a>,</li>
 <li>a <a href="http://www.pengoworks.com/workshop/jquery/autocomplete.htm">JQuery Autocomplete module</a>, modified to fit some of the mobile constraints, maintained at <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/js/lib/jquery.autocomplete.js"><code>js/lib/jquery.autocomplete.js</code></a> (could use merging/comparison with the <a href="http://docs.jquery.com/Plugins/Autocomplete">official (?) JQuery Autocomplete plug-in</a>).</li>
