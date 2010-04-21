@@ -390,19 +390,18 @@ jQuery.autocomplete = function (input, options) {
                 }
                 li.extra = extra;
                 ul.appendChild(li);
-                // @@@ move outside of loop!
-                $(li).hover(function () {
-                    $("li", ul).removeClass("ac_over");
-                    $(this).addClass("ac_over");
-                    active = $("li", ul).indexOf($(this).get(0));
-                }, function () {
-                    $(this).removeClass("ac_over");
-                }).click(function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    selectItem(this);
-                });
             }
+            $(ul).children("li").hover(function () {
+                $("li", ul).removeClass("ac_over");
+                $(this).addClass("ac_over");
+                active = $("li", ul).indexOf($(this).get(0));
+            }, function () {
+                $(this).removeClass("ac_over");
+            }).click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                selectItem(this);
+            });
             return ul;
         }
 
