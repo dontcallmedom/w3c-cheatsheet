@@ -20,7 +20,9 @@ var test_load = new function () {
 	this.test_autocomplete_matches = [{params: {xpath: "//div[@class='ac_results']/ul/li[1]", validator: "title"}, method: "asserts.assertText"}];
 	this.test_select_result = [{params: {xpath: "//div[@class='ac_results']/ul/li[1]"}, method: "click"}];
 	this.test_result_displayed = [{params: {xpath: "//div[@id='details']//h2"}, method: "asserts.assertNode"},
-				      {params: {xpath: "//div[@id='details']//dt"}, method: "asserts.assertNode"}
+				      {params: {xpath: "//div[@id='details']//dt"}, method: "asserts.assertNode"},
+				      // ensure the autocomplete list is hidden
+				      {params: {xpath: "//div[@class='ac_results']", validator: "style.display|none"}, method: "asserts.assertProperty"}
 				     ];
 	// title exists as HTML attribute, element, SVG element
 	// so is displayed as a list of 3 collapsed items
