@@ -1,0 +1,148 @@
+diff -rupN windmill/html/js/controller/asserts.js windmill.new/html/js/controller/asserts.js
+--- windmill/html/js/controller/asserts.js	2010-04-21 11:16:00.000000000 +0200
++++ windmill.new/html/js/controller/asserts.js	2010-04-21 11:15:35.000000000 +0200
+@@ -116,7 +116,7 @@ windmill.controller.asserts.assertRegist
+ windmill.controller.asserts.assertText = function (paramObject) {
+   var n = lookupNode(paramObject, false);
+   var validator = paramObject.validator;
+-    
++  
+   var inner = n.innerHTML;
+   if (n.textContent){
+     inner = n.textContent;
+@@ -139,10 +139,16 @@ windmill.controller.asserts.assertText =
+ };
+ 
+ windmill.controller.asserts.assertTextIn = function (paramObject) {
+-  var n = lookupNode(paramObject, false);
++  try { var n = lookupNode(paramObject, false); }
++	catch(err){ n = false }
++
+   var validator = paramObject.validator;
+-  
+-  var inner = n.innerHTML;
++	
++	//If no lookup was provided, search the whole document
++	if (n == false || n == []){
++		n = windmill.testWin().document.body;	
++	}
++	var inner = n.innerHTML;
+   if (n.textContent){
+     inner = n.textContent;
+   }
+@@ -152,19 +158,18 @@ windmill.controller.asserts.assertTextIn
+   
+   // new lines and spaces break a lot of these, so removing them makes sense
+   var iHTML = inner.replace(/^\s*|\s*$/g,'');
+-  
+   if (iHTML.indexOf(validator) != -1){
+     return true;
+   }
+-  
+-  // var found = n.textContent;
+-  // if (found == undefined)
+-  //   found = n.innerText;
+-  throw "Text '" + validator +
++  else { 
++ 	 // var found = n.textContent;
++ 	 // if (found == undefined)
++  	//   found = n.innerText;
++  	throw "Text '" + validator +
+         "' was not found in the provided node.  Found instead: " + inner;
++	}
+ };
+ 
+-
+ //Assert that a specified node exists
+ windmill.controller.asserts.assertNode = function (paramObject) {
+   var element = lookupNode(paramObject, false);
+@@ -257,7 +262,7 @@ windmill.controller.asserts.assertProper
+   if (value == undefined)
+     throw expected + "No '" + vArray[0] + "' property found.";
+ 
+-  if (String(value).indexOf(vArray[1]) != -1){
++  if (value.indexOf(vArray[1]) != -1){
+     return true;
+   }
+   if (String(value) == String(vArray[1])) {
+@@ -378,30 +383,6 @@ windmill.controller.asserts._AssertFacto
+     };
+   };
+ 
+-// Create the dynamic "not" assert methods on windmill.controller.asserts
+- function getAssertNot(meth) {
+-  return function(paramObject) {
+-   var err = true;
+-  
+-   try {
+-    windmill.controller.asserts[meth](paramObject);
+-   } catch (error) {
+-    err = false;
+-   }
+-   if (err == true) {
+-    throw "Not(" + meth + ") failed with parameters " + String(paramObject);
+-   }
+-   return true;
+-  };
+- };
+-
+- for (var meth in windmill.controller.asserts) {
+-   if ((meth.indexOf('assert') == 0) && (typeof(windmill.controller.asserts[meth]) != 'object')) {
+-     var notmeth = 'assertNot' + meth.substring(6);
+-     windmill.controller.asserts[notmeth] = getAssertNot(meth);
+-   }
+- };
+-
+ // Create all the assert methods on windmill.controller.asserts
+ // Using the items in the assertRegistry
+ for (var meth in windmill.controller.asserts.assertRegistry) {
+@@ -409,7 +390,6 @@ for (var meth in windmill.controller.ass
+   windmill.controller.asserts[meth].jsUnitAssert = true;
+ }
+ 
+-
+ windmill.controller.asserts._WindmillAssertException = function (comment, message) {
+   this.comment = comment;
+   this.message = message;
+diff -rupN windmill/html/js/wm/jstest.js windmill.new/html/js/wm/jstest.js
+--- windmill/html/js/wm/jstest.js	2010-04-21 11:16:32.000000000 +0200
++++ windmill.new/html/js/wm/jstest.js	2010-04-21 11:15:35.000000000 +0200
+@@ -1184,7 +1184,7 @@ windmill.jsTest.TestFailure = function (
+   function getShortMessage() {
+     var msg = '';
+     msg += errObj.comment ? '(' + errObj.comment + ') ' : '';
+-    msg += errObj.message ? errObj.message : errObj;
++    msg += errObj.message;
+     return msg;
+   }
+   this.testName = testName;
+diff -rupN windmill/html/js/wm/windmill.js windmill.new/html/js/wm/windmill.js
+--- windmill/html/js/wm/windmill.js	2010-04-21 11:16:32.000000000 +0200
++++ windmill.new/html/js/wm/windmill.js	2010-04-21 11:15:35.000000000 +0200
+@@ -28,7 +28,7 @@ var windmill = new function() {
+ 
+     this.serviceDelay = 0;
+     this.serviceDelayRunning = 0;
+-    this.serviceDelayDefer = 800;
++    this.serviceDelayDefer = 0;
+ 
+     this.safeWaits = true;
+     
+@@ -228,7 +228,7 @@ var windmill = new function() {
+       
+         //this should be getting called by start.html
+         //windmill.service.setStartURL();
+-        //windmill.service.buildNotAsserts();
++        windmill.service.buildNotAsserts();
+         jQuery("#loadMessage").html("Building UI..");
+         incProgressBar();
+         
+@@ -380,7 +380,7 @@ var windmill = new function() {
+         
+         //Reset the explorer and recorder to what
+         //they were before the new page load
+-        windmill.ui.domexplorer.setExploreState();
++        windmill.ui.dx.setExploreState();
+         windmill.ui.recorder.setRecState();
+ 		    busyOff();
+         // if we're currently running JS tests, we need to know the

@@ -1,0 +1,16 @@
+/****
+ * Unit Tests for the W3C cheat sheet
+ * Designed to run in the Windmill framework
+ * http://getwindmill.com/
+ *
+ * Tests may be run from the command-line:
+ *  windmill firefox http://[cheatsheet address]
+ *    jsdir=[path to this folder]
+ */
+
+
+// Force the order of the tests
+var registeredTests = [
+    'test_load'
+];
+windmill.jsTest.register(registeredTests);
