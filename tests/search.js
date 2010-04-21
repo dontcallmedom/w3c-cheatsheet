@@ -37,6 +37,11 @@ var test_search = new function () {
 	    {params: {xpath: "//div[@id='details']/div[@class='context'][2]/div", validator: "style.display|none"}, method: "asserts.assertProperty"}
 	]; */
 
+	// we enter "p" in the search box
+	this.test_input_p = [{params: {id: "search", text:"p"}, method: "type"}];
+	// The first matching item must be <p>
+	this.test_autocomplete_first_matches = [{params: {xpath: "//div[@class='ac_results']/ul/li[1]", validator: "p"}, method: "asserts.assertText"}];
+
 	// hitting the "clear" button clears everything up
 	this.teardown = [
 	    {params: {id: "details_clear"}, method: "click"},
