@@ -114,6 +114,9 @@ jQuery.autocomplete = function (input, options) {
                     }
                     for (var j in stToIndex) {
                         var sChar = stToIndex[j].toLowerCase();
+                        if (!stMatchSets[sChar]) {
+                            stMatchSets[sChar] = [];
+                        }
                         if (j === "0") {
                             // if no lookup array for this character exists, look it up now
                             if (!stMatchFirstCharSets[sChar]) {
@@ -121,11 +124,9 @@ jQuery.autocomplete = function (input, options) {
                             }
                             // if the match is a string
                             stMatchFirstCharSets[sChar].push(row);
+                        } else {
+                            stMatchSets[sChar].push(row);
                         }
-                        if (!stMatchSets[sChar]) {
-                            stMatchSets[sChar] = [];
-                        }
-                        stMatchSets[sChar].push(row);
                     }
                 }
             }
