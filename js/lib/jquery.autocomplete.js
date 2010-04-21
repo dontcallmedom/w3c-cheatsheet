@@ -114,35 +114,32 @@ jQuery.autocomplete = function (input, options) {
                     }
                     for (var j in stToIndex) {
                         var sChar = stToIndex[j].toLowerCase();
-                        if (j === 0) {
+                        if (j === "0") {
                             // if no lookup array for this character exists, look it up now
                             if (!stMatchFirstCharSets[sChar]) {
                                 stMatchFirstCharSets[sChar] = [];
                             }
                             // if the match is a string
                             stMatchFirstCharSets[sChar].push(row);
-                        } else {
-                            if (!stMatchSets[sChar]) {
-                                stMatchSets[sChar] = [];
-                            }
-                            stMatchSets[sChar].push(row);
                         }
+                        if (!stMatchSets[sChar]) {
+                            stMatchSets[sChar] = [];
+                        }
+                        stMatchSets[sChar].push(row);
                     }
                 }
             }
-
             // add the data items to the cache
-            for (var k in stMatchFirstCharSets) {
+            for (var k in stMatchSets) {
                 // increase the cache size
                 options.cacheLength = options.cacheLength + 1;
                 // add to the cache
-                addToCache(k, stMatchFirstCharSets[k]);
-            }
-            for (var l in stMatchSets) {
-                // increase the cache size
-                options.cacheLength = options.cacheLength + 1;
-                // add to the cache
-                addToCache(l, stMatchSets[l]);
+                var data = stMatchSets[k];
+                // put strings that start with the said character first
+                if (stMatchFirstCharSets[k]) {
+                    data = stMatchFirstCharSets[k].concat(stMatchSets[k]);
+                }
+                addToCache(k, data);
             }
 
         }
@@ -392,7 +389,7 @@ jQuery.autocomplete = function (input, options) {
                 }
                 li.extra = extra;
                 ul.appendChild(li);
-		// @@@ move outside of loop!
+                // @@@ move outside of loop!
                 $(li).hover(function () {
                     $("li", ul).removeClass("ac_over");
                     $(this).addClass("ac_over");
@@ -593,7 +590,7 @@ jQuery.fn.autocomplete = function (url, options, data) {
 
     this.each(function () {
         var input = this;
-	new jQuery.autocomplete(input, options);
+        new jQuery.autocomplete(input, options);
     });
 
     // Don't break the chain
