@@ -28,5 +28,20 @@ var test_search = new function () {
 	    {params: {xpath: "//div[@id='details']/div[@class='context'][2]/h2"}, method: "click"},
 	    {params: {xpath: "//div[@id='details']/div[@class='context'][2]/div", validator: "style.display|block"}, method: "asserts.assertProperty"}
 	];
+
+	// clicking again collapse it
+	// @@@ doesn't work — as if the click was never made
+	// suspects Windmill bug :/
+	/* this.test_collapse_infoset = [
+	    {params: {xpath: "//div[@id='details']/div[@class='context'][2]/h2/span"}, method: "click"},
+	    {params: {xpath: "//div[@id='details']/div[@class='context'][2]/div", validator: "style.display|none"}, method: "asserts.assertProperty"}
+	]; */
+
+	// hitting the "clear" button clears everything up
+	this.teardown = [
+	    {params: {id: "details_clear"}, method: "click"},
+	    {params: {id: "search", validator: ""}, method: "asserts.assertValue"},
+	    {params: {xpath: "//div[@id='details']/div"}, method: "asserts.assertNotNode"}
+	];
     };
 };
