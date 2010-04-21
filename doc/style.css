@@ -1,0 +1,3 @@
+h2 { clear: right;}
+html, body {background: #D4CEBE url(../images/content-bg.png) repeat-x top};
+span[title] { border-bottom: dotted gray thin;}
