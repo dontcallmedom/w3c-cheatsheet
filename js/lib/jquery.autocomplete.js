@@ -376,7 +376,8 @@ jQuery.autocomplete = function (input, options) {
                     li.selectValue = row[0];
                 } else {
                     var line = row[0];
-                    line = line.substring(0, line.indexOf(q)) + "<strong>" + q + "</strong>" + line.substring(line.indexOf(q) + q.length);
+                    var highlightIdx = line.toLowerCase().indexOf(q);
+                    line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
                     li.innerHTML = line;
                     li.selectValue = row[0];
                 }
