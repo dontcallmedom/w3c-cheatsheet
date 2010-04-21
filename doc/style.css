@@ -6,3 +6,6 @@ h2 { clear: right;
 }
 html, body {background: #D4CEBE url(../images/content-bg.png) repeat-x top};
 span[title] { border-bottom: dotted gray thin;}
+
+a:link { color: #9D4415;}
+a:visited { color: #1D0405;}
