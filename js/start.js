@@ -13,6 +13,7 @@ var keywordSources = {
     "html": {"e": "HTML Element",
              "a": "HTML Attribute"},
     "svg": {"a": "SVG Attribute",
+	    "p": "SVG Property",
             "e": "SVG Element"},
     "xpath": {"f": "XPath function"}
 };
