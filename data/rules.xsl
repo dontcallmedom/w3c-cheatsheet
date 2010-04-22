@@ -191,12 +191,12 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
+         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:xs="http://www.w3.org/2001/XMLSchema"
                                 xmlns:schold="http://www.ascc.net/xml/schematron"
                                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
+                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-get-full-path"/>
                </xsl:attribute>
@@ -223,12 +223,12 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
+         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:xs="http://www.w3.org/2001/XMLSchema"
                                 xmlns:schold="http://www.ascc.net/xml/schematron"
                                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
+                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-get-full-path"/>
                </xsl:attribute>
