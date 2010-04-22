@@ -18,6 +18,13 @@ js/all-free.js: data/all-split.js  js/lib/jquery.js js/lib/jquery-ui.js js/lib/u
 style/all.css: style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
 
+# based on ISO schematron implementation in XSLT1
+# http://www.schematron.com/implementation.html
+data/rules.xsl: data/rules.schematron
+	$(SAXON)  $^ ~/data/2010/01/iso_dsdl_include.xsl > data/schematron1.tmp
+	$(SAXON) data/schematron1.tmp ~/data/2010/01/iso_abstract_expand.xsl  > data/schematron2.tmp
+	$(SAXON) data/schematron2.tmp ~/data/2010/01/iso_svrl_for_xslt1.xsl  > $@
+	rm data/schematron1.tmp data/schematron2.tmp
 
 # get the compact RelaxNG html5 schemas from http://syntax.whattf.org/relaxng/
 # and turned into them .rng in data/html5schemas
