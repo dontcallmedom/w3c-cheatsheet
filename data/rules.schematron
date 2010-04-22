@@ -6,5 +6,11 @@
       <let name="type" value="parent::property/@type"/>
       <assert test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"><value-of select="current()" /> is referenced from <value-of select="ancestor::item/@name"/> but is not defined in the infoset.</assert>
     </rule>
+    <rule context="//span[@type and @infoset]">
+      <let name="infoset" value="@infoset"/>
+      <let name="type" value="@type"/>
+      <assert test="/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"><value-of select="current()" /> is referenced from <value-of select="ancestor::item/@name"/> but is not defined in the infoset.</assert>
+    </rule>
+
   </pattern>
 </schema>
