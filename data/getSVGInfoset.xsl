@@ -60,10 +60,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:otherwise>
 	  </xsl:choose>
 	</property>
-	<property type="element" name="Allowed children" infoset="svg" list="inline">
-	  <xsl:for-each select="tokenize(html:td[4],', ')">
-	    <content><xsl:value-of select="."/></content>
-	  </xsl:for-each>
+	<property name="Allowed children" list="inline">
+	  <content><xsl:apply-templates select="html:td[4]" mode="textOrSpan"><xsl:with-param name="self" select="html:td[1]"/></xsl:apply-templates></content>
 	</property>
 	<property name="Specification" link="{concat('/TR/2008/REC-SVGTiny12-20081222/',html:td[1]/html:a/@href)}" />
       </context></item>
@@ -156,5 +154,20 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   </infoset>
   </infosets>
   </xsl:template>
+
+  <xsl:template match="text()" mode="textOrSpan">
+    <xsl:copy/>
+  </xsl:template>
+
+  <xsl:template match="html:a" mode="textOrSpan">
+    <xsl:param name="self"/>
+    <xsl:choose>
+      <xsl:when test="not($self=.)">
+	<span type='element' infoset='svg'><xsl:value-of select='normalize-space(.)'/></span>
+      </xsl:when>
+      <xsl:otherwise><xsl:value-of select="."/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
 
 </xsl:stylesheet>
