@@ -56,7 +56,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      </xsl:for-each>
 	    </xsl:when>
 	    <xsl:otherwise>
-	      <content>unknown</content>
+	      <content>None</content>
 	    </xsl:otherwise>
 	  </xsl:choose>
 	</property>
