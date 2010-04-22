@@ -34,6 +34,15 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
   <xsl:template match="/">
     <xsl:variable name="html4Descriptions" select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html')/html:html/html:body/html:table"/>
+    <!-- we work on attributes based on the HTML4 list of attributes
+    but that doesn't include xml:lang - we add it manually by copying the data for the lang attribute -->
+    <xsl:variable name="attributesTable">
+      <xsl:variable name="specTable" select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table"/>
+      <table xmlns="http://www.w3.org/1999/xhtml">
+	<xsl:copy-of select="$specTable/html:tr"/>
+	<tr><td><a href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#C_7">xml:lang</a></td><xsl:copy-of select="$specTable/html:tr[normalize-space(html:td[1]/html:a)='lang']/html:td[position() &gt; 1]"/></tr>
+      </table>
+    </xsl:variable>
     <xsl:variable name="mobileTechniques" select="document('mobilebp.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     <xsl:variable name="qaTips" select="document('qa.html')/html:html/html:body/html:dl"/>
@@ -92,7 +101,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
       </context></item>
     </xsl:for-each>
-    <xsl:for-each-group select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html')/html:html//html:table/html:tr[position()&gt;1][normalize-space(html:td[6])='&#xA0;']" group-by="normalize-space(html:td[1])">
+    <xsl:for-each-group select="$attributesTable/html:table/html:tr[position()&gt;1][normalize-space(html:td[6])='&#xA0;']" group-by="normalize-space(html:td[1])">
       <item type="attribute" name="{html:td[1]}">
 	<xsl:for-each select="current-group()">
 	  <context>
@@ -157,7 +166,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    </xsl:if>
 
-	    <property name="Specification" link="{concat('/TR/html401/index/',html:td[1]/html:a/@href)}"/>
+	    <property name="Specification">
+	      <xsl:attribute name="link">
+		<xsl:if test="starts-with(html:td[1]/html:a/@href,'../')">
+		  <xsl:text>/TR/html401/index/</xsl:text>
+		</xsl:if>
+		<xsl:value-of select="html:td[1]/html:a/@href"/>
+	      </xsl:attribute>
+	    </property>
 	  </context>
 	</xsl:for-each>
       </item>
