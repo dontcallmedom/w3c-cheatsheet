@@ -1,16 +1,15 @@
-// Wrapping some of the functions into a cheatsheet object
-// Which functions get wrapped is semi-random at the moment :/
-var cheatsheet = function () {
-
+// encapsulates a semi-random set of functions that used to be in global scope
+// @@@ needs cleaning up
+var Cheatsheet = function () {
     /* to keep track of views the user click through
-    * e.g. when clicking on "href" attribute in element "a"
-    */
-    var hashHistory = [];
+     * e.g. when clicking on "href" attribute in element "a"
+     */
+    this.hashHistory = [];
 
     /* Putting names on the various items we know about
      * Could/should probably come from data directly
      */
-    var keywordSources = {
+    this.keywordSources = {
         "css": {"p": "CSS Property",
             "se": "CSS Selector",
             "ar": "CSS At-rules"},
@@ -21,224 +20,227 @@ var cheatsheet = function () {
             "e": "SVG Element"},
         "xpath": {"f": "XPath function"}
     };
+};
 
-    /*
-     * Makes a JQuery accordeon with the properties we want
-     */
-    function makeReplacingAccordion(accordion) {
-        accordion.css("position", "relative");
-        // update the hash when hitting an element with an id
-        accordion.accordion('option', 'navigation', true);
-        // take as much/as little vertical space as needed
-        accordion.accordion('option', 'autoHeight', 'false');
-        // allows all lines to be closed (by clicking on the open line)
-        accordion.accordion('option', 'collapsible', true);
-    }
+/*
+ * Makes a JQuery accordeon with the properties we want
+ */
+Cheatsheet.prototype.makeReplacingAccordion = function (accordion) {
+    accordion.css("position", "relative");
+    // update the hash when hitting an element with an id
+    accordion.accordion('option', 'navigation', true);
+    // take as much/as little vertical space as needed
+    accordion.accordion('option', 'autoHeight', 'false');
+    // allows all lines to be closed (by clicking on the open line)
+    accordion.accordion('option', 'collapsible', true);
+};
 
-    /*
-     * Takes the collected data and displays them in an accordion view
-     */
-    function show_keyword(keyword_data, infoset, propertytype) {
-        // Make sure we actually have data
-        if (keyword_data[infoset][propertytype] === null) {
-            return false;
-        }
-        // for each matching keyword
-        for (var keyword in keyword_data[infoset][propertytype]) {
-            // e.g "HTML element"
-            var infosetname = keywordSources[infoset][propertytype];
-            var div = $("<div></div>").addClass("context");
-            // e.g. <h2>HTML element <code>a</code></h2>
-            $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
-            var div2 = $("<div></div>").appendTo(div);
-            // For each known context of the item
-            // (examples of context: the width attribute in HTML
-            // varies in model/description depending on the containing element
-            for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
-                var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
-                var dl = $("<dl></dl>");
-                for (var property in context) {
-                    var dt = $("<dt></dt>").appendTo(dl);
-                    var container = dt;
-                    if (context[property].u) { // u for URI
-                        var propurl = context[property].u;
-                        // On domain-less URIs, we assume www.w3.org as the base
-                        if (propurl.substring(0, 1) === "/") {
-                            propurl = "http://www.w3.org" + propurl;
-                        }
-                        container = $("<a></a>").attr("href", propurl).appendTo(dt);
-                    }
-                    container.text(dictionary[property]);
-                    // p for properties (i.e. all the detailed data about the item)
-                    if (context[property]["p"] && context[property]["p"].length > 0) {
-                        var displayAsList = true;
-                        if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
-                            displayAsList = false;
-                        }
-                        var listcontainer = $("<dd></dd>");
-                        if (displayAsList) {
-                            if (context[property].l === "block") {
-                                listcontainer = $("<ul></ul>").appendTo(listcontainer);
-                            }
-                        }
-                        for (var propcontentidx in context[property]["p"]) {
-                            var hasLink = false;
-                            var itemcontainer = listcontainer;
-                            var propcontent = context[property]["p"][propcontentidx];
-                            if (displayAsList) {
-                                itemcontainer = $("<li></li>").appendTo(itemcontainer);
-                            } else {
-                                itemcontainer = $("<span></span>").appendTo(itemcontainer);
-                            }
-                            if (propcontent.u) {
-                                var url = propcontent.u;
-                                if (url.substring(0, 1) === "/") {
-                                    url = "http://www.w3.org" + url;
-                                }
-                                itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
-                                hasLink = true;
-                            } else if (context[property].i && context[property].y) {
-                                itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
-                                    .appendTo(itemcontainer);
-                                hasLink = true;
-                            }
-                            if (propcontent.t instanceof Array) { // t for text
-                                if (!hasLink) {
-                                    for (var textOrSpanIdx in propcontent.t) {
-                                        var textOrSpan = propcontent.t[textOrSpanIdx];
-                                        if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                            $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
-                                        } else {
-                                            // JQuery seems to lack a method to append pure text; doing manual DOM operations
-                                            var t = document.createTextNode(textOrSpan);
-                                            itemcontainer.get(0).appendChild(t);
-                                        }
-                                    }
-                                } else {
-                                    itemcontainer.text(propcontent.t.join(""));
-                                }
-                            } else {
-                                itemcontainer.text(propcontent.t);
-                            }
-                            if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
-                                listcontainer.append(", ");
-                            }
-                        }
-                        listcontainer.appendTo(dl);
-                    }
-                }
-                dl.appendTo(div2);
-            }
-            div.appendTo($("#details"));
-        }
-        return true;
-    }
-
-    /*
-     * wraps up the per keyword html and puts it into a proper accordion
-     */
-    function display_keyword_data(keyword_data, infoset, propertytype) {
-        if (infoset && propertytype) {
-            var restricted_keyword_data = {};
-            restricted_keyword_data[infoset] = {};
-            restricted_keyword_data[infoset][propertytype] = keyword_data[infoset][propertytype];
-            keyword_data = restricted_keyword_data;
-        }
-        var multiple = -1;
-        for (var i in keyword_data) {
-            for (var p in keyword_data[i]) {
-                show_keyword(keyword_data, i, p);
-                multiple = multiple + 1;
-            }
-        }
-        if (multiple < 1) {
-            $("#details").accordion({header: 'div>h2', autoHeight: false});
-        } else {
-            $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
-        }
-        makeReplacingAccordion($("#details"));
-    }
-
-    /*
-     * Gets the data from memory if available, or through JSON calls otherwise
-     * and get it displayed
-     */
-    function load_keyword_data(keyword, infoset, propertytype) {
-        if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
-            display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
-        } else {
-            $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
-                display_keyword_data(keyword_data, infoset, propertytype);
-            });
-        }
-    }
-
-    /*
-     * Clear the search box and search results
-     */
-    function clearLookUp() {
-        if ($("#details").accordion) {
-            $("#details").accordion("destroy");
-        }
-        $("#details").html("");
-    }
-
-    /*
-     * Loads the view bound to a search anchor
-     */
-    function load_anchor(anchor) {
-        if (anchor === null) {
-            return false;
-        }
-        if (anchor.substring(0, 7) === "search,") {
-            $("#search").val(anchor.substring(7));
-            $("#search").get(0).autocompleter.findValue();
-            return true;
-        }
-        // Search anchors look like "#search,inf,html,e,area"
-        // (e standing for element in this case)
-        var selector_path = anchor.split(',');
-        var infoset = unescape(selector_path[1]);
-        var propertytype = unescape(selector_path[2]);
-        var keyword = unescape(selector_path.slice(3).join(","));
-        if (keyword && infoset && propertytype && keywordSources[infoset] && keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
-            clearLookUp();
-            $("#search").val("");
-            if (load_keyword_data(keyword, infoset, propertytype)) {
-                return true;
-            }
-        }
+/*
+ * Takes the collected data and displays them in an accordion view
+ */
+Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytype) {
+    // Make sure we actually have data
+    if (keyword_data[infoset][propertytype] === null) {
         return false;
     }
-
-    /*
-     * Simple wrapper for setting cookies
-     */
-    function setCookie(c_name, value, expiredays) {
-        var exdate = new Date();
-        exdate.setDate(exdate.getDate() + expiredays);
-        document.cookie = c_name + "=" + escape(value) +
-        ((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
-    }
-
-    /*
-     * Simple wrapper for reading cookies
-     */
-    function getCookie(c_name) {
-        if (document.cookie.length > 0) {
-            var c_start = document.cookie.indexOf(c_name + "=");
-            if (c_start !== -1) {
-                c_start = c_start + c_name.length + 1;
-                var c_end = document.cookie.indexOf(";", c_start);
-                if (c_end === -1) {
-                    c_end = document.cookie.length;
+    // for each matching keyword
+    for (var keyword in keyword_data[infoset][propertytype]) {
+        // e.g "HTML element"
+        var infosetname = this.keywordSources[infoset][propertytype];
+        var div = $("<div></div>").addClass("context");
+        // e.g. <h2>HTML element <code>a</code></h2>
+        $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
+        var div2 = $("<div></div>").appendTo(div);
+        // For each known context of the item
+        // (examples of context: the width attribute in HTML
+        // varies in model/description depending on the containing element
+        for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
+            var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
+            var dl = $("<dl></dl>");
+            for (var property in context) {
+                var dt = $("<dt></dt>").appendTo(dl);
+                var container = dt;
+                if (context[property].u) { // u for URI
+                    var propurl = context[property].u;
+                    // On domain-less URIs, we assume www.w3.org as the base
+                    if (propurl.substring(0, 1) === "/") {
+                        propurl = "http://www.w3.org" + propurl;
+                    }
+                    container = $("<a></a>").attr("href", propurl).appendTo(dt);
                 }
-                return unescape(document.cookie.substring(c_start, c_end));
+                container.text(dictionary[property]);
+                // p for properties (i.e. all the detailed data about the item)
+                if (context[property]["p"] && context[property]["p"].length > 0) {
+                    var displayAsList = true;
+                    if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
+                        displayAsList = false;
+                    }
+                    var listcontainer = $("<dd></dd>");
+                    if (displayAsList) {
+                        if (context[property].l === "block") {
+                            listcontainer = $("<ul></ul>").appendTo(listcontainer);
+                        }
+                    }
+                    for (var propcontentidx in context[property]["p"]) {
+                        var hasLink = false;
+                        var itemcontainer = listcontainer;
+                        var propcontent = context[property]["p"][propcontentidx];
+                        if (displayAsList) {
+                            itemcontainer = $("<li></li>").appendTo(itemcontainer);
+                        } else {
+                            itemcontainer = $("<span></span>").appendTo(itemcontainer);
+                        }
+                        if (propcontent.u) {
+                            var url = propcontent.u;
+                            if (url.substring(0, 1) === "/") {
+                                url = "http://www.w3.org" + url;
+                            }
+                            itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
+                            hasLink = true;
+                        } else if (context[property].i && context[property].y) {
+                            itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
+                                .appendTo(itemcontainer);
+                            hasLink = true;
+                        }
+                        if (propcontent.t instanceof Array) { // t for text
+                            if (!hasLink) {
+                                for (var textOrSpanIdx in propcontent.t) {
+                                    var textOrSpan = propcontent.t[textOrSpanIdx];
+                                    if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+                                        $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
+                                    } else {
+                                        // JQuery seems to lack a method to append pure text; doing manual DOM operations
+                                        var t = document.createTextNode(textOrSpan);
+                                        itemcontainer.get(0).appendChild(t);
+                                    }
+                                }
+                            } else {
+                                itemcontainer.text(propcontent.t.join(""));
+                            }
+                        } else {
+                            itemcontainer.text(propcontent.t);
+                        }
+                        if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
+                            listcontainer.append(", ");
+                        }
+                    }
+                    listcontainer.appendTo(dl);
+                }
             }
+            dl.appendTo(div2);
         }
-        return "";
+        div.appendTo($("#details"));
+    }
+    return true;
+};
+
+/*
+ * wraps up the per keyword html and puts it into a proper accordion
+ */
+Cheatsheet.prototype.display_keyword_data = function (keyword_data, infoset, propertytype) {
+    if (infoset && propertytype) {
+        var restricted_keyword_data = {};
+        restricted_keyword_data[infoset] = {};
+        restricted_keyword_data[infoset][propertytype] = keyword_data[infoset][propertytype];
+        keyword_data = restricted_keyword_data;
+    }
+    var multiple = -1;
+    for (var i in keyword_data) {
+        for (var p in keyword_data[i]) {
+            this.show_keyword(keyword_data, i, p);
+            multiple = multiple + 1;
+        }
+    }
+    if (multiple < 1) {
+        $("#details").accordion({header: 'div>h2', autoHeight: false});
+    } else {
+        $("#details").accordion({header: 'div>h2', autoHeight: false, active: false});
+    }
+    this.makeReplacingAccordion($("#details"));
+};
+
+/*
+ * Gets the data from memory if available, or through JSON calls otherwise
+ * and get it displayed
+ */
+Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytype) {
+    if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
+        this.display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
+    } else {
+        $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
+            this.display_keyword_data(keyword_data, infoset, propertytype);
+        });
     }
 };
+
+/*
+ * Clear the search box and search results
+ */
+Cheatsheet.prototype.clearLookUp = function () {
+    if ($("#details").accordion) {
+        $("#details").accordion("destroy");
+    }
+    $("#details").html("");
+};
+
+/*
+ * Loads the view bound to a search anchor
+ */
+Cheatsheet.prototype.load_anchor = function (anchor) {
+    if (anchor === null) {
+        return false;
+    }
+    if (anchor.substring(0, 7) === "search,") {
+        $("#search").val(anchor.substring(7));
+        $("#search").get(0).autocompleter.findValue();
+        return true;
+    }
+    // Search anchors look like "#search,inf,html,e,area"
+    // (e standing for element in this case)
+    var selector_path = anchor.split(',');
+    var infoset = unescape(selector_path[1]);
+    var propertytype = unescape(selector_path[2]);
+    var keyword = unescape(selector_path.slice(3).join(","));
+    if (keyword && infoset && propertytype && this.keywordSources[infoset] && this.keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
+        this.clearLookUp();
+        $("#search").val("");
+        if (this.load_keyword_data(keyword, infoset, propertytype)) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/*
+ * Simple wrapper for setting cookies
+ */
+Cheatsheet.prototype.setCookie = function (c_name, value, expiredays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays);
+    document.cookie = c_name + "=" + escape(value) +
+        ((expiredays === null) ? "" : ";expires=" + exdate.toGMTString());
+};
+
+/*
+ * Simple wrapper for reading cookies
+ */
+Cheatsheet.prototype.getCookie = function (c_name) {
+    if (document.cookie.length > 0) {
+        var c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start !== -1) {
+            c_start = c_start + c_name.length + 1;
+            var c_end = document.cookie.indexOf(";", c_start);
+            if (c_end === -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+};
+
+var cheatsheet = new Cheatsheet();
+
 /*
  * This defines what happens when the page has finished loading
  */
@@ -284,7 +286,7 @@ jQuery(document).ready(function ($) {
     // Add a back link when navigating through keyword views
     function addBackLink() {
         if (cheatsheet.hashHistory.length > 0) {
-            $("<a class='internal back' onclick='hashHistory.pop();return true;'></a>")
+            $("<a class='internal back' onclick='cheatsheet.hashHistory.pop();return true;'></a>")
                 .attr("href", cheatsheet.hashHistory[cheatsheet.hashHistory.length - 1])
                 .text("back")
                 .appendTo($("<p></p>"))
@@ -309,15 +311,15 @@ jQuery(document).ready(function ($) {
         function ()  {
         if (cheatsheet.load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
             cheatsheet.hashHistory.push(window.location.hash);
-            cheatsheet.addBackLink();
+            addBackLink();
         }
     }
     );
 
     // Completing the search box with autocompletion
     $("#search").autocompleteArray(keywords,
-        {onItemSelect: cheatsheet.show_result, // what to do when finding a match
-         onFindValue: cheatsheet.show_result,
+        {onItemSelect: show_result, // what to do when finding a match
+         onFindValue: show_result,
          autoFill: false, // don't try to auto-fill the box as this fails on mobile with virtual keyboard
          selectFirst: true, // pre-select first item
          delay: 40,
