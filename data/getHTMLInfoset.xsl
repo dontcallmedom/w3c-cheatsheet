@@ -183,7 +183,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   </xsl:template>
 
   <xsl:template match="html:td" mode="dereferenceAttributeGroups">
-    <xsl:for-each select="html:a">
+    <xsl:for-each select="html:a[not(normalize-space()='xmlns' or normalize-space()='xml:space')]">
       <xsl:sort select="."/>
       <content><xsl:value-of select="."/></content>
     </xsl:for-each>
