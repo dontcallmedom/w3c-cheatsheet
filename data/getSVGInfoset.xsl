@@ -39,7 +39,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <item type="element" name='{translate(html:td[1],"&apos;","")}'><context>
 	<property type="attribute" name="Attributes" list="inline" infoset="svg">
 	  <xsl:for-each select="html:td[2]//html:a">
-	    <content><xsl:value-of select="."/></content>
+	    <content><xsl:value-of select="normalize-space(.)"/></content>
 	  </xsl:for-each>
 	</property>
 	<property name="Allowed properties">
