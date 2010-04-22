@@ -64,7 +64,7 @@ src="http://www.w3.org/Icons/w3c_home" /></a><a href="../"><img height="48" widt
 <h2>Coding conventions</h2>
 <ul>
 <li>all the JavaScript code (both generated and manually written) should be <a href="http://www.jslint.com/">jslint</a>-ed; note that YUIcompressor will refuse to minify JavaScript with syntax errors;</li>
-<li>the generated XML data needs to match the <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/schema.rnc">RelaxNG schema</a>; a simple <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/rules.schematron">schematron</a> allows to find data inconsistencies, but not all of them are corrected at this time, and the schematron validation hasn’t been incorporated in the build workflow yet;</li>
+<li>the generated XML data needs to match the <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/schema.rnc">RelaxNG schema</a>; a simple <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/data/rules.schematron">schematron</a> allows to find data inconsistencies and is run against the data files after they’re generated;</li>
 <li>ensure that the HTML file remains <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdev.w3.org%2F2009%2Fcheatsheet%2F%3Fdev">HTM5-valid</a></li>
 <li>the JavaScript is tested at the user interaction level, using Windmill; see the <a href="http://dev.w3.org/cvsweb/2009/cheatsheet/tests/">tests directory</a> for more details — but please ensure the tests pass before committing/sending any change.</li>
 </ul>
