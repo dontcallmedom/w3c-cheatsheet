@@ -66,22 +66,22 @@ data/full-html5-schema-expanded.rng: data/full-html5-schema.rng data/expandSchem
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
-	$(SAXON) $@ data/rules.xsl|grep svrl:text && echo "Schematron validation failed" && exit 1 # Schematron validation
+	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 data/xpath.xml: data/getXpathFunctions.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|grep svrl:text && echo "Schematron validation failed" && exit 1 # Schematron validation
+	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
 data/css.xml: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|grep svrl:text && echo "Schematron validation failed" && exit 1 # Schematron validation
+	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 data/svg.xml: data/getSVGInfoset.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|grep svrl:text && echo "Schematron validation failed" && exit 1 # Schematron validation
+	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
