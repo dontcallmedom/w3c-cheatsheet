@@ -38,7 +38,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr">
       <item type="element" name='{translate(html:td[1],"&apos;","")}'><context>
 	<property type="attribute" name="Attributes" list="inline" infoset="svg">
-	  <xsl:for-each select="html:td[2]//html:a">
+	  <!-- "opacity" is the only property mixed in with attributes in the elements table (for "image" element" -->
+	  <xsl:for-each select="html:td[2]//html:a[not(.='opacity')]">
 	    <content><xsl:value-of select="normalize-space(.)"/></content>
 	  </xsl:for-each>
 	</property>
@@ -54,6 +55,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <xsl:for-each select="$mediaProperties">
 		<content><xsl:value-of select="."/></content>
 	      </xsl:for-each>
+	      <!-- "opacity" is the only property mixed in with attributes in the elements table (for "image" element" -->
+	      <xsl:if test="html:td[2]//html:a[.='opacity']">
+		<content>opacity</content>
+	      </xsl:if>
 	    </xsl:when>
 	    <xsl:otherwise>
 	      <content>None</content>
