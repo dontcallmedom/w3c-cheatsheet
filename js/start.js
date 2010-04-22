@@ -256,31 +256,26 @@ jQuery(document).ready(function ($) {
     // this is where to load them up
     // $("#search").setOptions({"data":keywords});
 
-    // hide the "about" screen
-    function hide_about() {
-        $("#about").css("display", "none");
-        return false;
-    }
 
-    // show the "about" screen
-    function show_about() {
+    // show/hide the "about" screen
+    function toggle_about() {
         if ($("#about").css("display") === "block") {
             // when already opened, we hide it
-            hide_about();
+	    $("#about").css("display", "none");
         } else {
             $("#about").css("display", "block");
-            $("#closeabout").click(hide_about);
-            $("#closeabout2").click(hide_about);
         }
         return false;
     }
 
     // for the first launch, we show the about screen, with the donation form
     if (getCookie("alreadyLaunched") === "" && startWithDonate) {
-        show_about();
+        toggle_about();
         setCookie("alreadyLaunched", "true", 2000);
     }
-    $("#openabout").click(show_about);
+    $("#openabout").click(toggle_about);
+    $("#closeabout").click(toggle_about);
+    $("#closeabout2").click(toggle_about);
 
     // Add a back link when navigating through keyword views
     function addBackLink() {
