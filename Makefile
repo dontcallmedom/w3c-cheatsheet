@@ -18,7 +18,12 @@ XSLT_SCHEMATRON_BUILDER_PATH=/home/dom/data/2010/01
 
 # concats and minify all the JavaScript used to get the cheat sheet to work
 js/all.js: data/all.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
-	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+	#cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+	cat $^ > $@
+
+# gzipped for serving over the Web
+js/all.js.gz: js/all.js
+	gzip -c $^ > $@
 
 # version where most of the data is split out, and gets loaded through XMLHTTPRequest
 js/all-split.js: data/all-split.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
@@ -31,6 +36,11 @@ js/all-free.js: data/all-split.js  js/lib/jquery.js js/lib/jquery-ui.js js/lib/u
 # minified style sheet
 style/all.css: style/style.css
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type css > $@
+
+# gzipped for serving over the Web
+style/all.css.gz: style/all.css
+	gzip -c $^ > $@
+
 
 # create an XSLT that does the schematron validation
 data/rules.xsl: data/rules.schematron
@@ -103,6 +113,7 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
+GZIPPED_FILES=style/all.css.gz js/all.js.gz
 
 # set up the files in android build space
 android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
@@ -129,6 +140,6 @@ widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.pn
 WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
 # update the resources that needs to be updated for on-line cheatsheet
-www: js/all.js $(GENERIC_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
+www: js/all.js $(GENERIC_FILES) $(GZIPPED_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/
 	gzip $(WWW_ROOT)/js/all.js
