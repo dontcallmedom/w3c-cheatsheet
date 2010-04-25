@@ -10,7 +10,7 @@
 html, body {
 	background: #D4CEBE;
 }
-#content {margin: 10px 0 0 0;}
+#content {margin: 10px 0 0;}
 #footer {
 	background: url('../images/w3c_logo_inside.png') no-repeat top;
 	margin: 0 auto;
@@ -47,7 +47,7 @@ div#about fieldset p {margin: 20px 0 20px 10px;}
 div#about .instructions {border: 0; font-size: x-small; padding: 1em 0 0;}
 
 #closeabout2: link, #closeabout2: visited {
-  color: white;
+  color: #FFF;
 }
 
 .ac_results {
@@ -1043,7 +1043,7 @@ left:-5px;
 .ui-accordion .ui-accordion-content {
 	overflow:auto;
 	display:none;
-	padding: 0 14px 10px 14px;
+	padding: 0 14px 10px;
 }
 
 .ui-datepicker {
@@ -1507,8 +1507,8 @@ dl {
 	margin:0;
 	padding-bottom:0.5em;
 }
-dl dt {margin: 10px 0 3px 0;}
-#typo dl dt {margin: 20px 0 10px 0;}
+dl dt {margin: 10px 0 3px;}
+#typo dl dt {margin: 20px 0 10px;}
 #details div.context dl { border-top: dashed #3D321D thin;}
 #details div.context dl:first-child { border-top: none;}
 .ui-widget-content dl a, #wcag2 a, a.internal.back {
