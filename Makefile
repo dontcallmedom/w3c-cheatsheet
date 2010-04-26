@@ -142,4 +142,3 @@ WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 # update the resources that needs to be updated for on-line cheatsheet
 www: js/all.js $(GENERIC_FILES) $(GZIPPED_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/ $^
-	gzip $(WWW_ROOT)/js/all.js
