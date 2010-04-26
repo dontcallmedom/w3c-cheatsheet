@@ -18,8 +18,8 @@ XSLT_SCHEMATRON_BUILDER_PATH=/home/dom/data/2010/01
 
 # concats and minify all the JavaScript used to get the cheat sheet to work
 js/all.js: data/all.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
-	#cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
-	cat $^ > $@
+	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
+	#cat $^ > $@
 
 # gzipped for serving over the Web
 js/all.js.gz: js/all.js
@@ -141,5 +141,5 @@ WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
 # update the resources that needs to be updated for on-line cheatsheet
 www: js/all.js $(GENERIC_FILES) $(GZIPPED_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
-	cp --parent -t $(WWW_ROOT)/
+	cp --parent -t $(WWW_ROOT)/ $^
 	gzip $(WWW_ROOT)/js/all.js
