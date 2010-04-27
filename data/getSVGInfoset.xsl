@@ -32,6 +32,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
   <xsl:variable name='mediaProperties' select="('audio-level', 'buffered-rendering', 'display', 'image-rendering', 'pointer-events', 'shape-rendering', 'text-rendering', 'viewport-fill', 'viewport-fill-opacity', 'visibility')"/>
   <xsl:variable name="svg" select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html')/html:html/html:body"/>
+  <xsl:variable name="svgDesc" select="document('svg-descriptions.html')/html:html/html:body"/>
   <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="svg">
@@ -43,6 +44,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <content><xsl:value-of select="normalize-space(.)"/></content>
 	  </xsl:for-each>
 	</property>
+	<xsl:if test="$svgDesc//html:dl[1]/html:dt[normalize-space()=current()/html:td[1]]">
+	  <property name="description">
+	    <content><xsl:value-of select="normalize-space($svgDesc//html:dl[1]/html:dt[normalize-space()=current()/html:td[1]]/following-sibling::html:dd[1])"/></content>
+	  </property>
+	</xsl:if>
 	<property name="Allowed properties">
 	  <xsl:choose>
 	    <xsl:when test="html:td[3]/@class='true'">
@@ -85,6 +91,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </xsl:choose>
 	</xsl:variable>
 	<context>
+	  <xsl:if test="$svgDesc//html:dl[2]/html:dt[normalize-space()=current()/html:td[1]]">
+	    <property name="description">
+	      <content><xsl:value-of select="normalize-space($svgDesc//html:dl[2]/html:dt[normalize-space()=current()/html:td[1]]/following-sibling::html:dd[1])"/></content>
+	    </property>
+	  </xsl:if>
 	  <xsl:for-each select="current-group()">
 	    <property type="element" name="Elements" list="inline" infoset="svg">
 	      <xsl:for-each select="document('http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/elementTable.html')/html:html//html:table/html:tbody/html:tr[html:td[3][@class=$elementClass]]">
@@ -113,7 +124,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  <context type="element">
 	    <items>
 	      <xsl:for-each select="html:td[5]/html:a">
-		<item name="normalize-space(.)"/>
+		<item name="{normalize-space(.)}"/>
 	      </xsl:for-each>
 	    </items>
 	    <property type="element" name="Elements" list="inline" infoset="svg">
