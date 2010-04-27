@@ -31,12 +31,15 @@ Infosets = element infosets {
 	     element content {
 	         attribute xml:lang { xsd:string { minLength = "1"  } }?,
 	         attribute link { xsd:string { minLength = "1"  }}?,
-	         (text,
-		 element span { 
+	         (xsd:string { minLength = "1"  } 
+		 | ( text,
+  		     element span { 
 		 	 Types, 
 			 Infoset,
-		 	 xsd:string { minLength = "1"  } }?
-		 )+
+		 	 xsd:string { minLength = "1"  } }+,
+	             text
+		   )+
+		  )
 	     }*
           }+
        }+
