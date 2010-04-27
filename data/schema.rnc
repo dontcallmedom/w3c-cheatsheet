@@ -31,6 +31,8 @@ Infosets = element infosets {
 	     element content {
 	         attribute xml:lang { xsd:string { minLength = "1"  } }?,
 	         attribute link { xsd:string { minLength = "1"  }}?,
+		 # a content element must either contain non-empty text
+		 # or contain span elements
 	         (xsd:string { minLength = "1"  } 
 		 | ( text,
   		     element span { 
