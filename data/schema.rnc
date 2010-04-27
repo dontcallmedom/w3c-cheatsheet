@@ -3,11 +3,11 @@ start = Infosets
 Infosets = element infosets {
   ## infoset, i.e. set of known keywords for a given technology
   element infoset {
-    attribute technology { text },
+    attribute technology { "html" | "css" | "xpath" | "svg" },
     ## one keyword for said technology (e.g. "title" attribute)
     element item {
        Types,
-       attribute name { text },
+       attribute name { xsd:string { minLength = "1"  } },
        ## A context designates a usage of the said keyword common to a class of items
        ## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
        element context {
@@ -16,8 +16,8 @@ Infosets = element infosets {
 	  ## defines the items that identify a given context
 	  element items {
 	     element item  { 
-                attribute name { text },
-		attribute link { text }?
+                attribute name { xsd:string { minLength = "1"  } },
+		attribute link { xsd:string { minLength = "1"  } }?
              }*
 	  }?,
 	  ## The set of information we gather on the items
@@ -26,16 +26,16 @@ Infosets = element infosets {
 	     # TODO: need trimming
              attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" },
 	     (Types, Infoset)?,
-	     attribute link { text }?,
+	     attribute link { xsd:string { minLength = "1"  } }?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
-	         attribute xml:lang { text}?,
-	         attribute link { text}?,
+	         attribute xml:lang { xsd:string { minLength = "1"  } }?,
+	         attribute link { xsd:string { minLength = "1"  }}?,
 	         (text,
 		 element span { 
 		 	 Types, 
 			 Infoset,
-		 	 text }?
+		 	 xsd:string { minLength = "1"  } }?
 		 )+
 	     }*
           }+
