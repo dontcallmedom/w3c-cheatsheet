@@ -12,6 +12,7 @@
 // Force the order of the tests
 var registeredTests = [
     'test_load',
-    'test_search'
+    'test_search',
+    'test_keyword_navigate'
 ];
 windmill.jsTest.register(registeredTests);

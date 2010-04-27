@@ -50,9 +50,8 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>The 'a' element may contain any element that its parent may contain</content>
-               <content>except itself.      </content>
+            <property name="Allowed children" list="inline">
+               <content>The 'a' element may contain any element that its parent may contain, except itself.      </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/linking.html#AElement"/>
@@ -110,14 +109,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateElement"/>
@@ -175,14 +172,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateColorElement"/>
@@ -242,15 +237,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>mpath</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">mpath</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateMotionElement"/>
@@ -309,14 +301,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#AnimateTransformElement"/>
@@ -397,18 +387,10 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AnimationElement"/>
@@ -471,18 +453,10 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/multimedia.html#AudioElement"/>
@@ -531,18 +505,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#CircleElement"/>
@@ -570,44 +536,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>a</content>
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>animation</content>
-               <content>audio</content>
-               <content>circle</content>
-               <content>defs</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>ellipse</content>
-               <content>font</content>
-               <content>font-face</content>
-               <content>foreignObject</content>
-               <content>g</content>
-               <content>handler</content>
-               <content>image</content>
-               <content>line</content>
-               <content>linearGradient</content>
-               <content>listener</content>
-               <content>metadata</content>
-               <content>path</content>
-               <content>polygon</content>
-               <content>polyline</content>
-               <content>prefetch</content>
-               <content>radialGradient</content>
-               <content>rect</content>
-               <content>script</content>
-               <content>set</content>
-               <content>solidColor</content>
-               <content>switch</content>
-               <content>text</content>
-               <content>textArea</content>
-               <content>title</content>
-               <content>use</content>
-               <content>video      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">a</span>, <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">animation</span>, <span type="element" infoset="svg">audio</span>, <span type="element" infoset="svg">circle</span>, <span type="element" infoset="svg">defs</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">ellipse</span>, <span type="element" infoset="svg">font</span>, <span type="element" infoset="svg">font-face</span>, <span type="element" infoset="svg">foreignObject</span>, <span type="element" infoset="svg">g</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">image</span>, <span type="element" infoset="svg">line</span>, <span type="element" infoset="svg">linearGradient</span>, <span type="element" infoset="svg">listener</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">path</span>, <span type="element" infoset="svg">polygon</span>, <span type="element" infoset="svg">polyline</span>, <span type="element" infoset="svg">prefetch</span>, <span type="element" infoset="svg">radialGradient</span>, <span type="element" infoset="svg">rect</span>, <span type="element" infoset="svg">script</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">solidColor</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">text</span>, <span type="element" infoset="svg">textArea</span>, <span type="element" infoset="svg">title</span>, <span type="element" infoset="svg">use</span>, <span type="element" infoset="svg">video</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#DefsElement"/>
@@ -649,7 +581,7 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>&lt;text&gt;      </content>
             </property>
             <property name="Specification"
@@ -689,14 +621,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#DiscardElement"/>
@@ -746,18 +676,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#EllipseElement"/>
@@ -786,17 +708,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>font-face</content>
-               <content>glyph</content>
-               <content>hkern</content>
-               <content>metadata</content>
-               <content>missing-glyph</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">font-face</span>, <span type="element" infoset="svg">glyph</span>, <span type="element" infoset="svg">hkern</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">missing-glyph</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontElement"/>
@@ -851,14 +768,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>font-face-src</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">font-face-src</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceElement"/>
@@ -884,14 +799,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>font-face-uri</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">font-face-uri</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceSrcElement"/>
@@ -925,13 +838,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#FontFaceUriElement"/>
@@ -989,12 +901,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>svg</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">svg</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/extend.html#ForeignObjectElement"/>
@@ -1041,44 +951,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>a</content>
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>animation</content>
-               <content>audio</content>
-               <content>circle</content>
-               <content>defs</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>ellipse</content>
-               <content>font</content>
-               <content>font-face</content>
-               <content>foreignObject</content>
-               <content>g</content>
-               <content>handler</content>
-               <content>image</content>
-               <content>line</content>
-               <content>linearGradient</content>
-               <content>listener</content>
-               <content>metadata</content>
-               <content>path</content>
-               <content>polygon</content>
-               <content>polyline</content>
-               <content>prefetch</content>
-               <content>radialGradient</content>
-               <content>rect</content>
-               <content>script</content>
-               <content>set</content>
-               <content>solidColor</content>
-               <content>switch</content>
-               <content>text</content>
-               <content>textArea</content>
-               <content>title</content>
-               <content>use</content>
-               <content>video      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">a</span>, <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">animation</span>, <span type="element" infoset="svg">audio</span>, <span type="element" infoset="svg">circle</span>, <span type="element" infoset="svg">defs</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">ellipse</span>, <span type="element" infoset="svg">font</span>, <span type="element" infoset="svg">font-face</span>, <span type="element" infoset="svg">foreignObject</span>, <span type="element" infoset="svg">g</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">image</span>, <span type="element" infoset="svg">line</span>, <span type="element" infoset="svg">linearGradient</span>, <span type="element" infoset="svg">listener</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">path</span>, <span type="element" infoset="svg">polygon</span>, <span type="element" infoset="svg">polyline</span>, <span type="element" infoset="svg">prefetch</span>, <span type="element" infoset="svg">radialGradient</span>, <span type="element" infoset="svg">rect</span>, <span type="element" infoset="svg">script</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">solidColor</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">text</span>, <span type="element" infoset="svg">textArea</span>, <span type="element" infoset="svg">title</span>, <span type="element" infoset="svg">use</span>, <span type="element" infoset="svg">video</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#GElement"/>
@@ -1110,13 +986,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#GlyphElement"/>
@@ -1152,14 +1027,11 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>&lt;text&gt;</content>
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>&lt;text&gt;, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/script.html#HandlerElement"/>
@@ -1190,13 +1062,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#KernElements"/>
@@ -1224,7 +1095,6 @@
                <content>nav-up</content>
                <content>nav-up-left</content>
                <content>nav-up-right</content>
-               <content>opacity</content>
                <content>preserveAspectRatio</content>
                <content>property</content>
                <content>rel</content>
@@ -1265,19 +1135,12 @@
                <content>viewport-fill</content>
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
+               <content>opacity</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#ImageElement"/>
@@ -1327,18 +1190,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#LineElement"/>
@@ -1371,18 +1226,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>stop</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">stop</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/painting.html#LinearGradientElement"/>
@@ -1415,9 +1262,9 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>      </content>
             </property>
             <property name="Specification"
@@ -1460,7 +1307,7 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>&lt;text&gt;      </content>
             </property>
             <property name="Specification"
@@ -1489,13 +1336,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/fonts.html#MissingGlyphElement"/>
@@ -1528,13 +1374,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#MpathElement"/>
@@ -1582,18 +1427,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/paths.html#PathElement"/>
@@ -1640,18 +1477,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolygonElement"/>
@@ -1698,18 +1527,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#PolylineElement"/>
@@ -1747,13 +1568,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#PrefetchElement"/>
@@ -1785,18 +1605,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>stop</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">stop</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/painting.html#RadialGradientElement"/>
@@ -1848,18 +1660,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/shapes.html#RectElement"/>
@@ -1894,14 +1698,11 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>&lt;text&gt;</content>
-               <content>desc</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>&lt;text&gt;, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/script.html#ScriptElement"/>
@@ -1951,14 +1752,12 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>desc</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/animate.html#SetElement"/>
@@ -1986,18 +1785,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/painting.html#SolidColorElement"/>
@@ -2026,17 +1817,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/painting.html#StopElement"/>
@@ -2090,44 +1874,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>a</content>
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>animation</content>
-               <content>audio</content>
-               <content>circle</content>
-               <content>defs</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>ellipse</content>
-               <content>font</content>
-               <content>font-face</content>
-               <content>foreignObject</content>
-               <content>g</content>
-               <content>handler</content>
-               <content>image</content>
-               <content>line</content>
-               <content>linearGradient</content>
-               <content>listener</content>
-               <content>metadata</content>
-               <content>path</content>
-               <content>polygon</content>
-               <content>polyline</content>
-               <content>prefetch</content>
-               <content>radialGradient</content>
-               <content>rect</content>
-               <content>script</content>
-               <content>set</content>
-               <content>solidColor</content>
-               <content>switch</content>
-               <content>text</content>
-               <content>textArea</content>
-               <content>title</content>
-               <content>use</content>
-               <content>video      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">a</span>, <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">animation</span>, <span type="element" infoset="svg">audio</span>, <span type="element" infoset="svg">circle</span>, <span type="element" infoset="svg">defs</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">ellipse</span>, <span type="element" infoset="svg">font</span>, <span type="element" infoset="svg">font-face</span>, <span type="element" infoset="svg">foreignObject</span>, <span type="element" infoset="svg">g</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">image</span>, <span type="element" infoset="svg">line</span>, <span type="element" infoset="svg">linearGradient</span>, <span type="element" infoset="svg">listener</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">path</span>, <span type="element" infoset="svg">polygon</span>, <span type="element" infoset="svg">polyline</span>, <span type="element" infoset="svg">prefetch</span>, <span type="element" infoset="svg">radialGradient</span>, <span type="element" infoset="svg">rect</span>, <span type="element" infoset="svg">script</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">solidColor</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">text</span>, <span type="element" infoset="svg">textArea</span>, <span type="element" infoset="svg">title</span>, <span type="element" infoset="svg">use</span>, <span type="element" infoset="svg">video</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#SVGElement"/>
@@ -2174,7 +1924,7 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>The 'switch' element may contain any element that its parent may contain.      </content>
             </property>
             <property name="Specification"
@@ -2206,9 +1956,9 @@
                <content>xml:space</content>
             </property>
             <property name="Allowed properties">
-               <content>unknown</content>
+               <content>None</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>      </content>
             </property>
             <property name="Specification"
@@ -2259,21 +2009,9 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>&lt;text&gt;</content>
-               <content>a</content>
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title</content>
-               <content>tspan      </content>
+            <property name="Allowed children" list="inline">
+               <content>&lt;text&gt;, <span type="element" infoset="svg">a</span>, <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>, <span type="element" infoset="svg">tspan</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/text.html#TextElement"/>
@@ -2324,22 +2062,9 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>&lt;text&gt;</content>
-               <content>a</content>
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>tbreak</content>
-               <content>title</content>
-               <content>tspan      </content>
+            <property name="Allowed children" list="inline">
+               <content>&lt;text&gt;, <span type="element" infoset="svg">a</span>, <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">tbreak</span>, <span type="element" infoset="svg">title</span>, <span type="element" infoset="svg">tspan</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/text.html#TextAreaElement"/>
@@ -2381,7 +2106,7 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>&lt;text&gt;      </content>
             </property>
             <property name="Specification"
@@ -2427,7 +2152,7 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
+            <property name="Allowed children" list="inline">
                <content>The 'tspan' element may contain any element that its parent may contain.      </content>
             </property>
             <property name="Specification"
@@ -2484,18 +2209,10 @@
             <property name="Allowed properties">
                <content>all</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/struct.html#UseElement"/>
@@ -2579,18 +2296,10 @@
                <content>viewport-fill-opacity</content>
                <content>visibility</content>
             </property>
-            <property type="element" name="Allowed children" infoset="svg" list="inline">
-               <content>animate</content>
-               <content>animateColor</content>
-               <content>animateMotion</content>
-               <content>animateTransform</content>
-               <content>desc</content>
-               <content>discard</content>
-               <content>handler</content>
-               <content>metadata</content>
-               <content>set</content>
-               <content>switch</content>
-               <content>title      </content>
+            <property name="Allowed children" list="inline">
+               <content>
+                  <span type="element" infoset="svg">animate</span>, <span type="element" infoset="svg">animateColor</span>, <span type="element" infoset="svg">animateMotion</span>, <span type="element" infoset="svg">animateTransform</span>, <span type="element" infoset="svg">desc</span>, <span type="element" infoset="svg">discard</span>, <span type="element" infoset="svg">handler</span>, <span type="element" infoset="svg">metadata</span>, <span type="element" infoset="svg">set</span>, <span type="element" infoset="svg">switch</span>, <span type="element" infoset="svg">title</span>      
+               </content>
             </property>
             <property name="Specification"
                       link="/TR/2008/REC-SVGTiny12-20081222/multimedia.html#VideoElement"/>

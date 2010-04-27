@@ -2066,7 +2066,6 @@
                <content>id</content>
                <content>lang</content>
                <content>xml:lang</content>
-               <content>xmlns</content>
             </property>
             <property type="element" name="Allowed children" list="inline" infoset="html">
                <content>body</content>
@@ -3099,7 +3098,6 @@
                <content>style</content>
                <content>title</content>
                <content>xml:lang</content>
-               <content>xml:space</content>
             </property>
             <property type="element" name="Allowed children" list="inline" infoset="html">
                <content>a</content>
@@ -3278,7 +3276,6 @@
                <content>id</content>
                <content>src</content>
                <content>type</content>
-               <content>xml:space</content>
             </property>
             <property name="description">
                <content>script statements</content>
@@ -3536,7 +3533,6 @@
                <content>title</content>
                <content>type</content>
                <content>xml:lang</content>
-               <content>xml:space</content>
             </property>
             <property name="description">
                <content>style info</content>
@@ -6510,6 +6506,30 @@
             </property>
             <property name="Specification"
                       link="/TR/html401/index/../struct/tables.html#adef-width-COLGROUP"/>
+         </context>
+      </item>
+      <item type="attribute" name="xml:lang">
+         <context>
+            <property name="Elements" list="inline">
+               <content>All elements but
+, <span type="element" infoset="html">base</span>, , <span type="element" infoset="html">br</span>, , , ,
+<span type="element" infoset="html">param</span>, <span type="element" infoset="html">script</span>
+               </content>
+            </property>
+            <property name="content">
+               <content>%LanguageCode;</content>
+            </property>
+            <property name="description">
+               <content>language code</content>
+            </property>
+            <property name="Accessibility techniques" list="block">
+               <content link="/TR/WCAG20-TECHS/H57.html">Using language attributes on the html element</content>
+               <content link="/TR/WCAG20-TECHS/H58.html">Using language attributes to identify changes in the human language</content>
+            </property>
+            <property name="Internationalization" list="block">
+               <content link="http://www.w3.org/International/tutorials/language-decl/">Declaring Language in XHTML and HTML</content>
+            </property>
+            <property name="Specification" link="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#C_7"/>
          </context>
       </item>
    </infoset>

@@ -2074,7 +2074,7 @@ inherit</content>
             </property>
          </context>
       </item>
-      <item name="visited" type="selector">
+      <item name=":visited" type="selector">
          <context>
             <property name="Pattern">
                <content>E:visited</content>
