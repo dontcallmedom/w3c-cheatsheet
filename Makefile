@@ -113,7 +113,7 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
-GZIPPED_FILES=style/all.css.gz js/all.js.gz index.html.gz
+GZIPPED_FILES=style/all.css.gz js/all.js.gz
 
 # set up the files in android build space
 android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
@@ -139,9 +139,9 @@ widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.pn
 # only useful for W3C staff
 WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
-index.html.gz: index.html
-	gzip -c $^ > $@
-
 # update the resources that needs to be updated for on-line cheatsheet
 www: js/all.js $(GENERIC_FILES) $(GZIPPED_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
 	cp --parent -t $(WWW_ROOT)/ $^
+	perl -pi -e "s/style\/all.css/style\/all/" $(WWW_ROOT)/index.html
+	perl -pi -e "s/js\/all.js/js\/all/" $(WWW_ROOT)/index.html
+	gzip -c $(WWW_ROOT)/index.html > $(WWW_ROOT)/index.html.gz
