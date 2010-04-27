@@ -119,15 +119,6 @@ diff -rupN windmill/html/js/wm/jstest.js windmill.new/html/js/wm/jstest.js
 diff -rupN windmill/html/js/wm/windmill.js windmill.new/html/js/wm/windmill.js
 --- windmill/html/js/wm/windmill.js	2010-04-21 11:16:32.000000000 +0200
 +++ windmill.new/html/js/wm/windmill.js	2010-04-21 11:15:35.000000000 +0200
-@@ -28,7 +28,7 @@ var windmill = new function() {
- 
-     this.serviceDelay = 0;
-     this.serviceDelayRunning = 0;
--    this.serviceDelayDefer = 800;
-+    this.serviceDelayDefer = 0;
- 
-     this.safeWaits = true;
-     
 @@ -228,7 +228,7 @@ var windmill = new function() {
        
          //this should be getting called by start.html
