@@ -103,6 +103,7 @@ var dictionary = {
 </xsl:choose>
 <xsl:text>&#xA;var keywordsMatch = {</xsl:text>
     <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+      <xsl:sort select="@name"/>
       <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
       <xsl:for-each-group select="current-group()" group-by="ancestor::infoset/@technology">
 	<xsl:text>&#xA;        "</xsl:text><xsl:value-of select="replace(ancestor::infoset/@technology,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
