@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Descriptions of SVG elements and attributes</title>
+      <link type="text/css" rel="stylesheet" href="/StyleSheets/base"/>
+   </head>
+   <body>
+      <p>
+         <a href="/" title="W3C">
+            <img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home"/>
+         </a>
+      </p>
+      <h1>Descriptions of SVG elements and attributes</h1>
+      <p>Partially automatically extracted from <a href="http://www.w3.org/TR/2008/REC-SVGTiny12-20081222/single-page.html">the SVG Tiny 1.2 specification</a>.</p>
+      <h2>Elements</h2>
+      <dl>
+         <dt>
+            <code>'a'</code>
+         </dt>
+         <dd>SVG provides an 'a' element, analogous to HTML's 'a' element, to indicate links (also known as hyperlinks or Web links).</dd>
+         <dt>
+            <code>'animate'</code>
+         </dt>
+         <dd>The 'animate' element is used to animate a single attribute or property over time.</dd>
+         <dt>
+            <code>'animateColor'</code>
+         </dt>
+         <dd>The 'animateColor' element specifies a color transition over time.</dd>
+         <dt>
+            <code>'animateMotion'</code>
+         </dt>
+         <dd>The 'animateMotion' element causes its target element to move along a motion path.</dd>
+         <dt>
+            <code>'animateTransform'</code>
+         </dt>
+         <dd>The 'animateTransform' element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing.</dd>
+         <dt>
+            <code>'animation'</code>
+         </dt>
+         <dd>The 'animation' elements specifies an SVG document providing synchronized animated vector graphics.</dd>
+         <dt>
+            <code>'audio'</code>
+         </dt>
+         <dd>The 'audio' element specifies an audio file which is to be rendered to provide synchronized audio.</dd>
+         <dt>
+            <code>'circle'</code>
+         </dt>
+         <dd>The 'circle' element defines a circle based on a center point and a radius.</dd>
+         <dt>
+            <code>'defs'</code>
+         </dt>
+         <dd>The 'defs' element is a container element for referenced elements.</dd>
+         <dt>
+            <code>'desc'</code>
+         </dt>
+         <dd>Each container element or graphics element in an SVG document may contain one or more of each of the 'title' and 'desc' descriptive elements, which together comprise a sort of heading and summary of the containing element.</dd>
+         <dt>
+            <code>'discard'</code>
+         </dt>
+         <dd>The 'discard' element allows authors to specify the time at which particular elements are to be discarded, thereby reducing the resources required by an SVG user agent.</dd>
+         <dt>
+            <code>'ellipse'</code>
+         </dt>
+         <dd>The 'ellipse' element defines an ellipse which is axis-aligned with the current user coordinate system based on a center point and two radii.</dd>
+         <dt>
+            <code>'font'</code>
+         </dt>
+         <dd>The 'font' element defines an SVG font.</dd>
+         <dt>
+            <code>'font-face'</code>
+         </dt>
+         <dd>The 'font-face' element is an XML structure which corresponds directly to the @font-face facility in CSS2.</dd>
+         <dt>
+            <code>'font-face-src'</code>
+         </dt>
+         <dd>The 'font-face-src' element, together with the 'font-face-uri' elements described further down correspond to the 'src' descriptor within an @font-face rule.</dd>
+         <dt>
+            <code>'font-face-uri'</code>
+         </dt>
+         <dd>The 'font-face-uri' element is used within a 'font-face-src' element to reference a font defined inside or outside of the current SVG document.</dd>
+         <dt>
+            <code>'foreignObject'</code>
+         </dt>
+         <dd>The 'foreignObject' element is an extensibility point which allows user agents to offer graphical rendering features beyond those which are defined within this specification.</dd>
+         <dt>
+            <code>'g'</code>
+         </dt>
+         <dd>The 'g' element is a container element for grouping together related graphics elements.</dd>
+         <dt>
+            <code>'glyph'</code>
+         </dt>
+         <dd>The 'glyph' element defines the graphics for a given glyph.</dd>
+         <dt>
+            <code>'handler'</code>
+         </dt>
+         <dd>The 'handler' element is similar to the 'script' element: its contents, either included inline or referenced, is code that is to be executed by a scripting engine used by user agent.</dd>
+         <dt>
+            <code>'hkern'</code>
+         </dt>
+         <dd>The 'hkern' element defines kerning pairs for horizontally-oriented pairs of glyphs.</dd>
+         <dt>
+            <code>'image'</code>
+         </dt>
+         <dd>The 'image' element indicates that the contents of an image are to be rendered into a given rectangle within the current user coordinate system.</dd>
+         <dt>
+            <code>'line'</code>
+         </dt>
+         <dd>The 'line' element defines a line segment that starts at one point and ends at another.</dd>
+         <dt>
+            <code>'linearGradient'</code>
+         </dt>
+         <dd>Linear gradients are defined by a 'linearGradient' element.</dd>
+         <dt>
+            <code>'listener'</code>
+         </dt>
+         <dd>The 'listener' element is used to declare event listeners and register them with specific nodes in the DOM.</dd>
+         <dt>
+            <code>'metadata'</code>
+         </dt>
+         <dd>Metadata which is included with SVG content should be specified within 'metadata' elements.</dd>
+         <dt>
+            <code>'missing-glyph'</code>
+         </dt>
+         <dd>The 'missing-glyph' element defines a graphic to use if there is an attempt to draw a glyph from a given font and the given glyph has not been defined.</dd>
+         <dt>
+            <code>'mpath'</code>
+         </dt>
+         <dd>The 'mpath' element is used to reference an existing 'path' element for use as a motion animation path.</dd>
+         <dt>
+            <code>'path'</code>
+         </dt>
+         <dd>Paths represent the outline of a shape which can be filled or stroked. A path is defined in SVG using the 'path' element.</dd>
+         <dt>
+            <code>'polygon'</code>
+         </dt>
+         <dd>The 'polygon' element defines a closed shape consisting of a set of connected straight line segments.</dd>
+         <dt>
+            <code>'polyline'</code>
+         </dt>
+         <dd>The 'polyline' element defines a set of connected straight line segments.</dd>
+         <dt>
+            <code>'prefetch'</code>
+         </dt>
+         <dd>The 'prefetch'  element provides a hint to the SVG user agent  that media will be used in the future and the author would like part or all of it fetched ahead of time to make document playback smoother.</dd>
+         <dt>
+            <code>'radialGradient'</code>
+         </dt>
+         <dd>Radial gradients are defined by a 'radialGradient' element.</dd>
+         <dt>
+            <code>'rect'</code>
+         </dt>
+         <dd>The 'rect' element defines a rectangle which is axis-aligned with the current user coordinate system.</dd>
+         <dt>
+            <code>'script'</code>
+         </dt>
+         <dd>A 'script' element may either contain or point to executable content (e.g., ECMAScript or Java JAR file).</dd>
+         <dt>
+            <code>'set'</code>
+         </dt>
+         <dd>The 'set' element provides a simple means of just setting the value of an attribute for a specified duration.</dd>
+         <dt>
+            <code>'solidColor'</code>
+         </dt>
+         <dd>The 'solidColor' element is a paint server that provides a single color with opacity.</dd>
+         <dt>
+            <code>'stop'</code>
+         </dt>
+         <dd>The ramp of colors to use on a gradient is defined by the 'stop' elements that are child elements to either the 'linearGradient' element or the 'radialGradient' element.</dd>
+         <dt>
+            <code>'svg'</code>
+         </dt>
+         <dd>An SVG document fragment consists of any number of SVG elements contained within an 'svg' element, including the 'svg' element.</dd>
+         <dt>
+            <code>'switch'</code>
+         </dt>
+         <dd>The 'switch' element is a container element that can be used to select one of its child elements to process based on their conditional processing attributes.</dd>
+         <dt>
+            <code>'tbreak'</code>
+         </dt>
+         <dd>The 'tbreak' element is an empty element that forcibly breaks the current line of text, even if the current line of text is empty (i.e. multiple consecutive 'tbreak' elements each cause a line break.) </dd>
+         <dt>
+            <code>'text'</code>
+         </dt>
+         <dd>The 'text' element defines a graphics element consisting of text.</dd>
+         <dt>
+            <code>'textArea'</code>
+         </dt>
+         <dd>The 'textArea' element allows simplistic wrapping of text content within a given region.</dd>
+         <dt>
+            <code>'title'</code>
+         </dt>
+         <dd>Each container element or graphics element in an SVG document may contain one or more of each of the 'title' and 'desc' descriptive elements, which together comprise a sort of heading and summary of the containing element.</dd>
+         <dt>
+            <code>'tspan'</code>
+         </dt>
+         <dd>Within a text content block element, graphic and font properties can be adjusted by including a 'tspan' element.</dd>
+         <dt>
+            <code>'use'</code>
+         </dt>
+         <dd>The 'use' element references another element and indicates that the graphical contents of that element is to be included and drawn at that given point in the document.</dd>
+         <dt>
+            <code>'video'</code>
+         </dt>
+         <dd>The 'video' element specifies a video file which is to be rendered to provide synchronized video.</dd>
+      </dl>
+      <h2>Properties</h2>
+      <dl>
+         <dt>'audio-level'</dt>
+         <dd>The 'audio-level' property specifies a value that is used to calculate the volume of a particular element. Values below 1.0 decrease it and a value of zero silences it.</dd>
+         <dt>'buffered-rendering'</dt>
+         <dd>The creator of SVG content might want to provide a hint to the implementation about how often an element is modified to make speed vs. memory tradeoffs as it performs rendering. The 'buffered-rendering' property provides a hint to the SVG user agent about how to buffer the rendering of elements:</dd>
+         <dt>'color'</dt>
+         <dd>The 'color' property, which is defined in CSS2 as the color of text, does not directly apply to SVG elements. The value of the SVG color property may however be used to provide an indirect value for those properties which allow the currentColor keyword: the 'fill', 'stroke', 'solid-color' and 'stop-color' properties.</dd>
+         <dt>'color-rendering'</dt>
+         <dd>The creator of SVG content might want to provide a hint to the implementation about how to make speed versus quality tradeoffs as it performs color interpolation and compositing. The 'color-rendering' property provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.</dd>
+         <dt>'direction'</dt>
+         <dd>This property specifies the base writing direction of text and the direction of embeddings and overrides (see 'unicode-bidi') for the Unicode bidirectional algorithm. For the 'direction' property to have any effect on an element that does not by itself establish a new text chunk (such as the 'tspan' element in SVG 1.2 Tiny), the 'unicode-bidi' property's value must be embed or bidi-override.</dd>
+         <dt>'display'</dt>
+         <dd>A value of display="none" indicates that the given element and its children shall not be rendered directly or made audible (i.e., those elements are not present in the rendering tree). Any computed value other than none indicates that the given element shall be rendered or made audible by the SVG user agent.</dd>
+         <dt>'display-align'</dt>
+         <dd>The 'display-align' property specifies the alignment, in the block-progression-direction, of the text content of the 'textArea' element.</dd>
+         <dt>'fill'</dt>
+         <dd>The 'fill' property specifies that the interior of the given graphical element must be painted. The area to be painted shall consist of any areas inside the outline of the shape. To determine the inside of the shape, all subpaths must be considered, and the interior shall be determined according to the rules associated with the current value of the 'fill-rule' property. The zero-width geometric outline of a shape must be included in the area to be painted.</dd>
+         <dt>'fill-opacity'</dt>
+         <dd>'fill-opacity' specifies the opacity of the painting operation which shall be used to paint the interior the current object. (See Painting shapes and text.)</dd>
+         <dt>'fill-rule'</dt>
+         <dd>The 'fill-rule' property indicates the algorithm which must be used to determine what parts of the canvas are included inside the shape. For a simple, non-intersecting path, it is intuitively clear what region lies "inside"; however, for a more complex path, such as a path that intersects itself or where one subpath encloses another, the interpretation of "inside" is not so obvious.</dd>
+         <dt>'font-family'</dt>
+         <dd>This property indicates which font family is to be used to render the text, specified as a prioritized list of font family names and/or generic family names. Except for any additional information provided in this specification, the normative definition of the property is in XSL 1.1 ([XSL], section 7.9.2).</dd>
+         <dt>'font-size'</dt>
+         <dd>This property refers to the size of the font from baseline to baseline when multiple lines of text are set solid in a multiline layout environment. The SVG user agent processes the &lt;length&gt; as a height value in the current user coordinate system. Percentage values are not supported.</dd>
+         <dt>'font-style'</dt>
+         <dd>This property specifies whether the text is to be rendered using a normal, italic or oblique face. The font-style value "backslant" defined in XSL 1.1 is not supported. Except for any additional information provided in this specification, the normative definition of the property is in XSL 1.1 ([XSL], section 7.9.7).</dd>
+         <dt>'font-variant'</dt>
+         <dd>This property indicates whether the text is to be rendered using the normal glyphs for lowercase characters or using small-caps glyphs for lowercase characters. Except for any additional information provided in this specification, the normative definition of the property is in XSL 1.1 ([XSL], section 7.9.8).</dd>
+         <dt>'font-weight'</dt>
+         <dd>This property refers to the boldness or lightness of the glyphs used to render the text, relative to other fonts in the same font family. Except for any additional information provided in this specification, the normative definition of the property is in XSL 1.1 ([XSL], section 7.9.9).</dd>
+         <dt>'image-rendering'</dt>
+         <dd>The creator of SVG content might want to provide a hint to the implementation about how to make speed vs. quality tradeoffs as it performs image processing. The 'image-rendering' property provides a hint to the SVG user agent about how to optimize its image rendering.</dd>
+         <dt>'line-increment'</dt>
+         <dd>The 'line-increment' property provides limited control over the size of each line in the block-progression-direction. This property applies to the 'textArea' element, and to child elements of the 'textArea' element. The 'line-increment' property must not have any effect when used on an element which is not, or does not have as an ancestor, a 'textArea' element.</dd>
+         <dt>'opacity'</dt>
+         <dd>Uniform opacity setting that must applied across an entire object.</dd>
+         <dt>'pointer-events'</dt>
+         <dd>The 'pointer-events' property specifies under what circumstances a given graphics element can be the target element for a pointer event.</dd>
+         <dt>'shape-rendering'</dt>
+         <dd>The creator of SVG content might want to provide a hint to the implementation about what tradeoffs to make as it renders vector graphics elements such as 'path' elements and basic shapes such as circles and rectangles. The 'shape-rendering' property provides these hints.</dd>
+         <dt>'solid-color'</dt>
+         <dd>The 'solid-color' property specifies the color that shall be used for this 'solidColor' element. The keyword currentColor can be specified in the same manner as within a &lt;paint&gt; specification for the 'fill' and 'stroke' properties.</dd>
+         <dt>'solid-opacity'</dt>
+         <dd>The 'solid-opacity' property defines the opacity of the 'solidColor'.</dd>
+         <dt>'stop-color'</dt>
+         <dd>The 'stop-color' property specifies the color that shall be used at the gradient stop. The keyword currentColor can be specified in the same manner as within a &lt;paint&gt; specification for the 'fill' and 'stroke' properties.</dd>
+         <dt>'stop-opacity'</dt>
+         <dd>The gradient paint server applies paint of the specified gradient using the opacities defined by 'stop-opacity' values. The values of 'stop-opacity' are independent of the opacity used to render the paint via 'fill' or 'stroke' (see alpha compositing).</dd>
+         <dt>'stroke'</dt>
+         <dd>The 'stroke' property shall paint along the outline of the given graphics element.</dd>
+         <dt>'stroke-dasharray'</dt>
+         <dd>'stroke-dasharray' specifies the pattern of dashes and gaps that shall be used to stroke paths. The &lt;list-of-lengths&gt; contains the list of &lt;length&gt;s that specify the lengths of alternating dashes and gaps that must be used. If an odd number of values is provided, then the list of values shall be repeated to yield an even number of values. Thus, stroke-dasharray="5,3,2" is equivalent to stroke-dasharray="5,3,2,5,3,2". The computed value of the attribute 'stroke-linecap' is applied to both sides of each dash. If a dash has zero length, linecaps are still added if the stroke-linecap values round and square are used.</dd>
+         <dt>'stroke-dashoffset'</dt>
+         <dd>'stroke-dashoffset' specifies the distance into the dash pattern that must be used to start the dash. When rendering a 'path' element with multiple subpaths, the value of 'stroke-dashoffset' should start from scratch with the original value of 'stroke-dashoffset' for each subpath. SVG 1.2 Full may be stricter and also add an additional attribute to change this behavior.</dd>
+         <dt>'stroke-linecap'</dt>
+         <dd>'stroke-linecap' specifies the shape which shall be used at the end of open subpaths when they are stroked.</dd>
+         <dt>'stroke-linejoin'</dt>
+         <dd>'stroke-linejoin' specifies the shape which shall be used at the corners of shapes when they are stroked.</dd>
+         <dt>'stroke-miterlimit'</dt>
+         <dd>When two line segments meet at a sharp angle and miter joins have been specified for 'stroke-linejoin', it is possible for the miter to extend far beyond the thickness of the line stroking the path. The 'stroke-miterlimit' imposes a limit on the ratio of the miter length to the 'stroke-width'. When the limit is exceeded, the join must be converted from a miter to a bevel.</dd>
+         <dt>'stroke-opacity'</dt>
+         <dd>'stroke-opacity' specifies the opacity of the painting operation used to stroke the current object. (See Painting shapes and text.)</dd>
+         <dt>'stroke-width'</dt>
+         <dd>The width of the stroke which shall be used on the current object.</dd>
+         <dt>'text-align'</dt>
+         <dd>Alignment in the inline progression direction in flowing text is provided by the text-align property.</dd>
+         <dt>'text-anchor'</dt>
+         <dd>The 'text-anchor' property is used to align a string of text relative to a given point, along a given axis.</dd>
+         <dt>'text-rendering'</dt>
+         <dd>The creator of SVG content might want to provide a hint to the implementation about what tradeoffs to make as it renders text. The 'text-rendering' property provides these hints.</dd>
+         <dt>'unicode-bidi'</dt>
+         <dd>The 'unicode-bidi' property describes the level of embedding with respect to the bidirectional algorithm.</dd>
+         <dt>'vector-effect'</dt>
+         <dd>The 'vector-effect' property allows to let the outline of an object keep its original width no matter which transforms are applied to it. For example, in a map with a 2px wide line representing roads it is of interest to keep the roads 2px wide even when the user zooms into the map.</dd>
+         <dt>'viewport-fill'</dt>
+         <dd>The 'viewport-fill' property specifies the color which shall be used to fill the viewport created by a particular element.</dd>
+         <dt>'viewport-fill-opacity'</dt>
+         <dd>The 'viewport-fill-opacity' property specifies the opacity of the 'viewport-fill' that shall be used for a particular element.</dd>
+         <dt>'visibility'</dt>
+         <dd>The 'visibility' property specifies whether the boxes generated by an element are rendered. Invisible boxes still affect layout (set the 'display' property to 'none' to suppress box generation altogether).</dd>
+      </dl>
+
+   </body>
+</html>
