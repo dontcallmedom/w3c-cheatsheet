@@ -1,23 +1,16 @@
 Roadmap:
-1.1:
+2.0:
   Content:
     SVG 1.1 keywords
     HTML5 - mark as non-standard?
     CSS Candidate Recs - mark as non-standard?
-    XHTML 1.1 vs XHTML 1.0 vs HTML 4.01 distinctions?
     mark deprecated features?
-    more WCAG2 techniques
-    about tab?
+  Allow to add dynamically new data set / new content tabs
+  allow searching in tabs, browsing data sets
+  integrate UniView?
+
   User interface:
-    Full redesign (Sorin)
     Save past queries?
-    Make results bookmarkable    
     Clarify tab titles    
     print style sheet (valentin)
     welcome screen?
-
-
-2.0:
-  Allow to add dynamically new data set / new content tabs
-  allow searching in tabs, browsing data sets
-
