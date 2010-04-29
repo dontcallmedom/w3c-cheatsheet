@@ -22,4 +22,11 @@ var test_keyword_navigate = new function () {
 	{params: {xpath:"//div[@id='details']/div[@class='context']/h2", validator: "HTML Element label"}, method: "asserts.assertText"}
 	// @@@ check back link is added
     ];
+
+    this.teardown = new function () {
+	this.test_empty_search = [
+	    {params: {id: "details_clear"}, method: "click"},
+	    {params: {id: "search", validator: ""}, method: "asserts.assertText"}
+	];
+    };
 };
