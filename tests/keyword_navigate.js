@@ -26,7 +26,7 @@ var test_keyword_navigate = new function () {
     this.teardown = new function () {
 	this.test_empty_search = [
 	    {params: {id: "details_clear"}, method: "click"},
-	    {params: {id: "search", validator: ""}, method: "asserts.assertText"}
+	    {params: {id: "search", validator: ""}, method: "asserts.assertValue"}
 	];
     };
 };
