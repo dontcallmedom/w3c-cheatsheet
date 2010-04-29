@@ -13,6 +13,7 @@
 var registeredTests = [
     'test_load',
     'test_search',
-    'test_keyword_navigate'
+    'test_keyword_navigate',
+    'test_tabs_navigation'
 ];
 windmill.jsTest.register(registeredTests);
