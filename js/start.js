@@ -181,6 +181,7 @@ Cheatsheet.prototype.clearLookUp = function () {
         $("#details").accordion("destroy");
     }
     $("#details").html("");
+    $(".ac_results").hide();
 };
 
 /*
@@ -248,6 +249,9 @@ jQuery(document).ready(function ($) {
     // We create the tabs
     $('#content').tabs();
     $('#content').tabs('paging');
+    $('#content').bind("tabsselect", function () {
+        $(".ac_results").hide();
+    });
     $('#content').bind("tabsshow", function (event, ui) {
         window.location.hash = ui.tab.hash;
     });
