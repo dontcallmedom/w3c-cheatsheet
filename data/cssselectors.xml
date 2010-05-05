@@ -102,14 +102,6 @@
 <property name="description"><content>Matches E while while it has the focus</content></property>
 </context>
 </item>
-<item type="selector" name=":lang()">
-<context>
-<property name="Pattern"><content>E:lang(c)</content></property>
-<property name="name"><content>lang() pseudo-class</content></property>
-<property name="description"><content>Matches element E if it is in (human) language c (the document markup language specifies how the human language is determined)</content></property>
-<property name="Internationalization"><content link="http://www.w3.org/International/questions/qa-css-lang">Styling using the lang attribute</content></property>
-</context>
-</item>
 
 <item type="at-rule" name="at-rules">
 <context>
