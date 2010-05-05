@@ -398,10 +398,12 @@ jQuery.autocomplete = function (input, options) {
                 active = $("li", ul).indexOf($(this).get(0));
             }, function () {
                 $(this).removeClass("ac_over");
-            }).click(function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                selectItem(this);
+            }).each(function () { 
+                $(this).click(function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectItem(e.target);
+                })
             });
             return ul;
         }
