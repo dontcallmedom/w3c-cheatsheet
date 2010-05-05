@@ -73,6 +73,7 @@ data/full-html5-schema-expanded.rng: data/full-html5-schema.rng data/expandSchem
 ####################
 
 # HTML Infoset data
+# @@@ should also depend on mobilebp.html, i18n.html, qa.html
 data/html.xml: data/getHTMLInfoset.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
@@ -83,6 +84,7 @@ data/xpath.xml: data/getXpathFunctions.xsl
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
+# @@@ should also depend on cssselectors.xml
 data/css.xml: data/getCSSProperties.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
