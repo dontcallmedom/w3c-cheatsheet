@@ -2105,20 +2105,20 @@ if(B.callback){B.callback.apply(this,arguments)
 }
 })(jQuery);
 var initialized=false;
-$.extend($.ui.tabs.prototype,{paging:function(D){var L={tabsPerPage:0,nextButton:"&#187;",prevButton:"&#171;",follow:false,cycle:false};
+$.extend($.ui.tabs.prototype,{paging:function(D){var L={tabsPerPage:0,nextButton:"",prevButton:"",follow:false,cycle:false};
 L=jQuery.extend(L,D);
 var N=this,F=false,Q,P,J,E,H,M,K,C=null,I=$(window).height(),U=$(window).width();
 function R(){E=0,Q=0,M=0,P=0,K=new Array(),H=new Array(),selectedTabWidths=new Array();
 J=$(N.element).width();
 $li=$("<li></li>").addClass("ui-tabs-paging-next");
-$a=$('<a href="#"></a>').click(function(){G("next");
+$a=$('<a href="#" class="page-button"></a>').click(function(){G("next");
 return false
 }).html(L.nextButton);
 $li.append($a);
 N.lis.eq(N.length()-1).after($li);
 P=$li.outerWidth({margin:true});
 $li=$("<li></li>").addClass("ui-tabs-paging-prev");
-$a=$('<a href="#"></a>').click(function(){G("prev");
+$a=$('<a href="#" class="page-button"></a>').click(function(){G("prev");
 return false
 }).html(L.prevButton);
 $li.append($a);
@@ -2149,8 +2149,6 @@ if(X==N.options.selected){Q=V
 }N.lis.hide().slice(K[Q].start,K[Q].end).show();
 if(Q==(K.length-1)&&!L.cycle){A("next")
 }if(Q==0&&!L.cycle){A("prev")
-}buttonPadding=J-M-P-($.browser.msie?8:0)-10;
-if(buttonPadding>0){$(".ui-tabs-paging-next",N.element).css({paddingRight:buttonPadding+"px"})
 }F=true
 }else{S()
 }$(window).bind("resize",T)

@@ -113,12 +113,7 @@ $.extend($.ui.tabs.prototype, {
 				if (currentPage == (pages.length - 1) && !opts.cycle) 
 					disableButton('next');			
 				if (currentPage == 0 && !opts.cycle) 
-					disableButton('prev');
-				
-				// calculate the right padding for the next button
-				buttonPadding = containerWidth - maxPageWidth - buttonWidth - ($.browser.msie?8:0) -10;
-				if (buttonPadding > 0) 
-					$('.ui-tabs-paging-next', self.element).css({ paddingRight: buttonPadding + 'px' });
+					disableButton('prev');								
 				
 				initialized = true;
 			} else {
