@@ -181,7 +181,6 @@ Cheatsheet.prototype.clearLookUp = function () {
         $("#details").accordion("destroy");
     }
     $("#details").html("");
-    $(".ac_results").hide();
 };
 
 /*
@@ -204,6 +203,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
     var keyword = unescape(selector_path.slice(3).join(","));
     if (keyword && infoset && propertytype && this.keywordSources[infoset] && this.keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
         this.clearLookUp();
+	$(".ac_results").hide();
         $("#search").val("");
         if (this.load_keyword_data(keyword, infoset, propertytype)) {
             return true;
