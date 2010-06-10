@@ -167,8 +167,9 @@ Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytyp
     if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
         this.display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
     } else {
+	var cheatsheet = this;
         $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
-            this.display_keyword_data(keyword_data, infoset, propertytype);
+            cheatsheet.display_keyword_data(keyword_data, infoset, propertytype);
         });
     }
 };
