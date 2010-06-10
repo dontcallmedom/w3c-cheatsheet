@@ -111,15 +111,15 @@ data/keywords.json:  $(XML_SOURCES) data/listKeywords.xsl
 
 # one file per keyword, to be loaded through XMLHTTPRequest (in -split mode)
 generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
-	@-rm data/keywords/*.json
+	@-rm data/json/*.js
 	$(SAXON) -ext:on data/generateJSONKeywords.xsl data/generateJSONKeywords.xsl
 
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 GZIPPED_FILES=style/all.css.gz js/all.js.gz
 
 # set up the files in android build space
-android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
-	@-rm android/assets/data/keywords/*.json
+android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
+	@-rm android/assets/data/json/*.js
 	cp --parents -r -t android/assets/ $^ 
 	mv android/assets/js/all-split.js android/assets/js/all.js
 	mv android/assets/icons/48x.png android/res/drawable/icon.png
@@ -129,8 +129,8 @@ android-free: android js/all-free.js
 	cp js/all-free.js android/assets/js/all.js
 
 # builds opera widget
-widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/keywords/
-	@-rm build/data/keywords/*.json
+widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
+	@-rm build/data/json/*.js
 	cp --parents -r -t build/ $^ 
 	mv build/config-opera.xml build/config.xml
 	cd build
