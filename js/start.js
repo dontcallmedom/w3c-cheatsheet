@@ -249,7 +249,7 @@ var cheatsheet = new Cheatsheet();
 jQuery(document).ready(function ($) {
     // We create the tabs
     $('#content').tabs();
-    $('#content').tabs('paging', {'nextButton':'', 'previousButton':''});
+    $('#content').tabs('paging', {'nextButton':'', 'prevButton':''});
     $('#content').bind("tabsselect", function () {
         $(".ac_results").hide();
     });
