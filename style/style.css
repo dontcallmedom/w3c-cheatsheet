@@ -1722,6 +1722,7 @@ border-left-width:1px;
 	background: #bab3a0;
 }
 .ui-tabs-paging-disabled { display:none;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-paging-next,.ui-tabs .ui-tabs-nav li.ui-tabs-paging-prev {border:none;background:none;}
 .ui-tabs .ui-tabs-nav li.ui-tabs-paging-next a, .ui-tabs .ui-tabs-nav li.ui-tabs-paging-prev a {background:url(../images/next-prev.png);width:14px;height:19px;padding:0;margin:6px 9px 0;overflow:hidden;}
 .ui-tabs .ui-tabs-nav li.ui-tabs-paging-next a {background-position:-14px 0;}
 .ui-tabs .ui-tabs-nav li.ui-tabs-paging-prev a {background-position:0 0;}
