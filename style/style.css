@@ -10,7 +10,7 @@
 html, body {
 	background: #D4CEBE;
 }
-#content {margin: 10px 0 0;}
+#content {margin: 10px 0 0; letter-spacing: 0.02em;}
 #footer {
 	background: url('../images/w3c_logo_inside.png') no-repeat top;
 	margin: 0 auto;
@@ -1580,6 +1580,7 @@ margin-right:2px;
 	font-weight:400;
 	text-shadow:1px 1px 0 #D3D2D2;
 	margin-top: 10px;
+	line-height: 1.1em;
 }
 
 .accordion span,.accordion a:link,.accordion a:visited {
