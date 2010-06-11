@@ -1,10 +1,11 @@
 CACHE MANIFEST
-# checksum 0709d6cf41818a38adb7faa2342a3b5b  -
+# checksum 691199927a2a87cd3651ed9f29a69a9c  -
 index.html
 style/all
 js/all
 images/content-bg.png
 images/first-tab-bg.png
+images/next-prev.png
 images/tabs-bg.png
 images/w3c_logo_inside.png
 style/images/ui-icons_454545_256x240.png
