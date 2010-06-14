@@ -9,3 +9,5 @@ span[title] { border-bottom: dotted gray thin;}
 
 a:link { color: #9D4415;}
 a:visited { color: #1D0405;}
+
+img { border: 1px solid black; }
