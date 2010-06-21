@@ -16,8 +16,10 @@ SAXON=/home/dom/bin/saxon
 # http://www.schematron.com/implementation.html
 XSLT_SCHEMATRON_BUILDER_PATH=/home/dom/data/2010/01
 
+JQUERY=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js
+
 # concats and minify all the JavaScript used to get the cheat sheet to work
-js/all.js: data/all.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+js/all.js: data/all.js $(JQUERY) js/donate.js js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 	#cat $^ > $@
 
@@ -26,11 +28,11 @@ js/all.js.gz: js/all.js
 	gzip -c $^ > $@
 
 # version where most of the data is split out, and gets loaded through XMLHTTPRequest
-js/all-split.js: data/all-split.js js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/donate.js js/start.js
+js/all-split.js: data/all-split.js $(JQUERY) js/donate.js js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 # version where about/donate screen starts open by default
-js/all-free.js: data/all-split.js  js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/free.js js/start.js
+js/all-free.js: data/all-split.js $(JQUERY) js/free.js js/start.js
 	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 # minified style sheet
