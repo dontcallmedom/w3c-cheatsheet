@@ -117,8 +117,14 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 GZIPPED_FILES=style/all.css.gz js/all.js.gz
 
+android: android-assets android-code
+
+android-code: android/src/org/w3c/mwi/cheatsheet/*.java
+	cp  $^ android-pay/src/org/w3c/mwi/cheatsheet2/
+	perl -pi -e "s/org.w3c.mwi.cheatsheet/org.w3c.mwi.cheatsheet2/g" android-pay/src/org/w3c/mwi/cheatsheet2/*.java
+
 # set up the files in android build space
-android: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
+android-assets: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/*.js
 	@-rm android/assets/data/json/*.js
 	cp --parents -r -t android/assets/ $^ 
 	mv android/assets/js/all-split.js android/assets/js/all.js
