@@ -102,15 +102,26 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</item>
     </xsl:for-each-group>
 
-    <xsl:for-each-group select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']|$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']" group-by="normalize-space(.)">	    <!-- @@@ needs adaptation for form attributes -->
+    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
+    <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name']" group-by="normalize-space(.)">	    <!-- @@@ needs adaptation for form attributes -->
       <item type="attribute" name="{normalize-space(.)}">
-	<xsl:for-each select="current-group()">
+	<xsl:variable name="contextsNumber" select="count(current-group())"/>
+	<xsl:for-each-group select="current-group()" group-by="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')">
 	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
 	  <context>
-	    <xsl:if test="count(current-group()) &gt; 1">
+	    <xsl:if test="$contextsNumber &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
 	      <items>
-		<item name="{$el}"/>	    <!-- @@@ needs adaptation for form attributes -->
+		<xsl:choose>
+		  <xsl:when test="$el">
+		    <item name="{$el}"/>
+		  </xsl:when>
+		  <xsl:otherwise>
+		    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[@class='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
+		      <item name="{substring-before(concat(@id,'.'),'.')}"/>
+		    </xsl:for-each-group>
+		  </xsl:otherwise>
+		</xsl:choose>
 	      </items>
 	    </xsl:if>
 	    <property name="Elements" list="inline">
@@ -121,7 +132,16 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<xsl:otherwise>
 		  <xsl:attribute name="infoset">html</xsl:attribute>
 		  <xsl:attribute name="type">element</xsl:attribute>
-		  <content><xsl:value-of select="$el"/></content>	    <!-- @@@ needs adaptation for form attributes -->
+		  <xsl:choose>
+		    <xsl:when test="$el">
+		      <content><xsl:value-of select="$el"/></content>
+		    </xsl:when>
+		    <xsl:otherwise>
+		      <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[@class='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
+			<content><xsl:value-of select="substring-before(concat(@id,'.'),'.')"/></content>
+		      </xsl:for-each-group>
+		    </xsl:otherwise>
+		  </xsl:choose>
 		</xsl:otherwise>
 	      </xsl:choose>
 	    </property>
@@ -169,12 +189,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    </xsl:if>
 
-	    <!-- @@@ needs adaptation for form attributes -->
 	    <property name="Specification">
 	      <xsl:attribute name="link">
 		<xsl:choose>
 		  <xsl:when test="ancestor::html:div[@id='common-attributes']">
 		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/common-attributes.html#',current()/@id)"/>
+		  </xsl:when>
+		  <xsl:when test="ancestor::html:div[@id='forms-attributes']">
+		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/forms-attributes.html#',current()/@id)"/>
 		  </xsl:when>
 		  <xsl:otherwise>
 		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/',$el,'.html#',$el,'.attrs.',normalize-space(.))"/>
@@ -183,7 +205,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      </xsl:attribute>
 	    </property>
 	  </context>
-	</xsl:for-each>
+	</xsl:for-each-group>
       </item>
     </xsl:for-each-group>
   </infoset>
