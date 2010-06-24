@@ -38,61 +38,74 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="html">
-    <xsl:for-each select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head']]">
-      <item type="element" name="{@id}"><context>
-	<property type="attribute" name="Attributes" list="inline" infoset="html">
-	  <xsl:for-each select=".//html:dl[@class='attr-defs']/html:dt">
-	    <!-- @@@ mark obsolete/new/changed status -->
-	    <content><xsl:value-of select="html:a"/></content>
-	  </xsl:for-each>
-	  <!-- @@@ add common attributes -->
-	</property>
-	<property type="element" name="content" list="inline" infoset="html">
-	  <xsl:apply-templates select=".//html:p[@class='elem-mdl']" mode="textOrSpan"/>
-	</property>
-	<property name="description">
-	  <content><xsl:value-of select="normalize-space(.//html:div[@class='longdesc']/html:p[1])"/></content>
-	</property>
+    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head'] and html:div[@class='longdesc']]" group-by="substring-before(concat(@id,'.'),'.')">
+      <xsl:variable name="el" select="substring-before(concat(@id,'.'),'.')"/>
+      <item type="element" name="{$el}">
+	<xsl:for-each select="current-group()">
+	  <context>
+	    <xsl:if test="count(current-group()) &gt; 1">
+	      <xsl:attribute name="type">attribute</xsl:attribute>
+	      <items>
+		<item name="{html:h2[@class='element-head']/html:span[@class='elem-qualifier']}"/>
+	      </items>
+	    </xsl:if>
 
-      <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=current()/@id]">
-	<xsl:variable name="el" select="normalize-space(@id)"/>
-	<property name="Accessibility techniques" list="block">
-	  <xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">
-	  <xsl:sort select="count(description//descendant::el[normalize-space()=$el])" order="descending"/>
-	    <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
-        </xsl:for-each>
-	</property>
-      </xsl:if>
-      <xsl:if test="$mobileTechniques/html:dd/html:code[@class='element'][normalize-space(.)=current()/@id]">
-	<property name="Mobile considerations" list="block">
-	  <xsl:for-each select="$mobileTechniques/html:dd[html:code[@class='element'][normalize-space()=current()/@id]]">
-	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
-	  </xsl:for-each>
-	</property>
-      </xsl:if>
-      <xsl:if test="$qaTips/html:dd/html:code[@class='element'][normalize-space(.)=current()/@id]">
-	<property name="QA Tip" list="block">
-	  <xsl:for-each select="$qaTips/html:dd[html:code[@class='element'][normalize-space()=current()/@id]]">
-	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1]//html:a)"/></content>
-	  </xsl:for-each>
-	</property>
-      </xsl:if>
-      <xsl:if test="$i18n/html:dd/html:code[@class='html element'][normalize-space(.)=current()/@id]">
-	<property name="Internationalization" list="block">
-	  <xsl:for-each select="$i18n/html:dd[html:code[@class='html element'][normalize-space()=current()/@id]]">
-	    <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1])"/></content>
-	  </xsl:for-each>
-	</property>
-      </xsl:if>
-	<property name="Specification" link="{concat('http://dev.w3.org/html5/markup/',@id,'.html')}" />
+	    <property type="attribute" name="Attributes" list="inline" infoset="html">
+	      <xsl:for-each-group select=".//html:dl[@class='attr-defs']/html:dt/html:a" group-by=".">
+		<!-- @@@ mark obsolete/new/changed status -->
+		<content><xsl:value-of select="."/></content>
+	      </xsl:for-each-group>
+	      <!-- @@@ add common attributes -->
+	    </property>
+	    <property name="content" list="inline">
+	      <xsl:for-each select=".//html:p[@class='elem-mdl']">
+		<content xml:lang="en"><xsl:apply-templates select="." mode="textOrSpan"/></content>
+	      </xsl:for-each>
+	    </property>
+	    <property name="description">
+	      <content xml:lang="en"><xsl:value-of select="normalize-space(.//html:div[@class='longdesc']/html:p[1])"/></content>
+	    </property>
+	    
+	    <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=$el]">
+	      <property name="Accessibility techniques" list="block">
+		<xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">
+		  <xsl:sort select="count(description//descendant::el[normalize-space()=$el])" order="descending"/>
+		  <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',$el,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+		</xsl:for-each>
+	      </property>
+	    </xsl:if>
+	    <xsl:if test="$mobileTechniques/html:dd/html:code[@class='element'][normalize-space(.)=$el]">
+	      <property name="Mobile considerations" list="block">
+		<xsl:for-each select="$mobileTechniques/html:dd[html:code[@class='element'][normalize-space()=$el]]">
+		  <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(substring-after(preceding::html:dt[1],']'))"/></content>
+		</xsl:for-each>
+	      </property>
+	    </xsl:if>
+	    <xsl:if test="$qaTips/html:dd/html:code[@class='element'][normalize-space(.)=$el]">
+	      <property name="QA Tip" list="block">
+		<xsl:for-each select="$qaTips/html:dd[html:code[@class='element'][normalize-space()=$el]]">
+		  <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1]//html:a)"/></content>
+		</xsl:for-each>
+	      </property>
+	    </xsl:if>
+	    <xsl:if test="$i18n/html:dd/html:code[@class='html element'][normalize-space(.)=$el]">
+	      <property name="Internationalization" list="block">
+		<xsl:for-each select="$i18n/html:dd[html:code[@class='html element'][normalize-space()=$el]]">
+		  <content xml:lang="en" link="{preceding::html:dt[1]//html:a/@href}"><xsl:value-of select="normalize-space(preceding::html:dt[1])"/></content>
+		</xsl:for-each>
+	      </property>
+	    </xsl:if>
+	    <property name="Specification" link="{concat('http://dev.w3.org/html5/markup/',@id,'.html')}" />
 
-      </context></item>
-    </xsl:for-each>
+	  </context>
+	</xsl:for-each>
+	</item>
+    </xsl:for-each-group>
 
     <xsl:for-each-group select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']" group-by="normalize-space(.)"><!-- @@@ doesn't deal with common attributes -->
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:for-each select="current-group()">
-	  <xsl:variable name="el" select="current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id"/>
+	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
 	  <context>
 	    <xsl:if test="count(current-group()) &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
@@ -104,8 +117,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <!-- @@@ need adaptation for common attributes -->
 	      <content><xsl:value-of select="$el"/></content>
 	    </property>
-	    <property name="content"><content><xsl:value-of select="normalize-space(following-sibling::html:a[@class='attr-values'])"/></content></property>
-	    <property name="description"><content><xsl:value-of select="normalize-space(parent::html:dt/following-sibling::html:dd[1])"/></content></property>
+	    <property name="content" list="inline">
+	      <xsl:for-each select="following-sibling::html:span[@class='attr-values']">
+		<content><xsl:value-of select="normalize-space(.)"/></content>
+	      </xsl:for-each>
+	      </property>
+	      <xsl:if test="local-name(parent::html:dt/following-sibling::html:*[1])='dd'">
+		<property name="description"><content><xsl:value-of select="normalize-space(parent::html:dt/following-sibling::html:dd[1])"/></content></property>
+	      </xsl:if>
 	    <!-- @@@ standardization status -->
 	    <xsl:if test="position()=1">
 	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
@@ -158,11 +177,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   </xsl:template>
 
   <xsl:template match="text()" mode="textOrSpan">
-    <xsl:copy/>
+    <xsl:value-of select="replace(.,'&#x0A;',' ')"/>
   </xsl:template>
 
   <xsl:template match="html:a[@class='ref']" mode="textOrSpan">
-    <span type='element' infoset='html'><xsl:value-of select='normalize-space(lower-case(.))'/></span>
+    <span type='element' infoset='html'><xsl:value-of select="substring-before(concat(normalize-space(lower-case(.)),' '),' ')"/></span>
   </xsl:template>
 
 
