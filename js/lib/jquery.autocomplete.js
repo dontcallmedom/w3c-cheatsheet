@@ -398,7 +398,7 @@ jQuery.autocomplete = function (input, options) {
                 active = $("li", ul).indexOf($(this).get(0));
             }, function () {
                 $(this).removeClass("ac_over");
-            }).each(function () { 
+            }).each(function () {
                 $(this).click(function (e) {
                     e.preventDefault();
                     e.stopPropagation();
