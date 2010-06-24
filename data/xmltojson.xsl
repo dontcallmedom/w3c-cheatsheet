@@ -61,6 +61,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>selector</full><short>se</short></term>
 <term><full>at-rule</full><short>ar</short></term>
 <term><full>function</full><short>f</short></term>
+<term><full>context</full><short>ct</short></term>
 </dictionary>
 
 
@@ -161,7 +162,19 @@ var dictionary = {
     <xsl:variable name="q">
       <xsl:if test="$jsonFormat"><xsl:text>"</xsl:text></xsl:if>
     </xsl:variable>
-	     <xsl:text>{</xsl:text>
+    <xsl:text>{</xsl:text>
+    <xsl:if test="@type and items">
+      <xsl:value-of select="$q"/><xsl:text>ct</xsl:text><xsl:value-of select="$q"/><xsl:text>: {</xsl:text>
+      <xsl:value-of select="$q"/><xsl:text>y</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>", </xsl:text>
+      <xsl:value-of select="$q"/><xsl:text>d</xsl:text><xsl:value-of select="$q"/><xsl:text>: [</xsl:text>
+      <xsl:for-each select="items/item">
+	<xsl:text>"</xsl:text><xsl:value-of select="@name"/><xsl:text>"</xsl:text>
+	<xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
+      </xsl:for-each>
+      <xsl:text>]</xsl:text>
+      <xsl:text>}, </xsl:text>
+      
+    </xsl:if>
 	     <xsl:for-each select="property">
 	       <xsl:value-of select="$q"/><xsl:text></xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@name]/foo:short"/><xsl:value-of select="$q"/><xsl:text>: {</xsl:text> <!-- e.g. "attributes": { -->
 	       <xsl:if test="@type">
