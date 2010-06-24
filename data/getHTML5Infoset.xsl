@@ -119,8 +119,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		  <content>All HTML elements</content><!-- @@@ link to element list? -->
 		</xsl:when>
 		<xsl:otherwise>
-		  <xsl:attribute name="infoset"><xsl:value-of select="html"/></xsl:attribute>
-		  <xsl:attribute name="type"><xsl:value-of select="element"/></xsl:attribute>
+		  <xsl:attribute name="infoset">html</xsl:attribute>
+		  <xsl:attribute name="type">element</xsl:attribute>
 		  <content><xsl:value-of select="$el"/></content>	    <!-- @@@ needs adaptation for form attributes -->
 		</xsl:otherwise>
 	      </xsl:choose>
