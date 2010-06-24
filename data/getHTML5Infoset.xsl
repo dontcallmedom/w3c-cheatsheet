@@ -51,7 +51,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:if>
 
 	    <property type="attribute" name="Attributes" list="inline" infoset="html">
-	      <xsl:for-each-group select=".//html:dl[@class='attr-defs']/html:dt/html:a" group-by=".">
+	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref']" group-by=".">
 		<!-- @@@ mark obsolete/new/changed status -->
 		<content><xsl:value-of select="."/></content>
 	      </xsl:for-each-group>
@@ -102,7 +102,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</item>
     </xsl:for-each-group>
 
-    <xsl:for-each-group select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']" group-by="normalize-space(.)"><!-- @@@ doesn't deal with common attributes -->
+    <xsl:for-each-group select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']|$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']/html:dt/html:a[@class='attribute-name']" group-by="normalize-space(.)">	    <!-- @@@ needs adaptation for form attributes -->
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:for-each select="current-group()">
 	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
@@ -110,12 +110,20 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <xsl:if test="count(current-group()) &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
 	      <items>
-		<item name="{$el}"/>
+		<item name="{$el}"/>	    <!-- @@@ needs adaptation for form attributes -->
 	      </items>
 	    </xsl:if>
-	    <property name="Elements" list="inline" infoset="html" type="element">
-	      <!-- @@@ need adaptation for common attributes -->
-	      <content><xsl:value-of select="$el"/></content>
+	    <property name="Elements" list="inline">
+	      <xsl:choose>
+		<xsl:when test="ancestor::html:div[@id='common-attributes']">
+		  <content>All HTML elements</content><!-- @@@ link to element list? -->
+		</xsl:when>
+		<xsl:otherwise>
+		  <xsl:attribute name="infoset"><xsl:value-of select="html"/></xsl:attribute>
+		  <xsl:attribute name="type"><xsl:value-of select="element"/></xsl:attribute>
+		  <content><xsl:value-of select="$el"/></content>	    <!-- @@@ needs adaptation for form attributes -->
+		</xsl:otherwise>
+	      </xsl:choose>
 	    </property>
 	    <property name="content" list="inline">
 	      <xsl:for-each select="following-sibling::html:span[@class='attr-values']">
@@ -161,8 +169,19 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    </xsl:if>
 
-	    <!-- @@@ needs adaptation for common attributes -->
-	    <property name="Specification" link="{concat('http://dev.w3.org/html5/markup/',$el,'.html#',$el,'.attrs.',normalize-space(.))}"/>
+	    <!-- @@@ needs adaptation for form attributes -->
+	    <property name="Specification">
+	      <xsl:attribute name="link">
+		<xsl:choose>
+		  <xsl:when test="ancestor::html:div[@id='common-attributes']">
+		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/common-attributes.html#',current()/@id)"/>
+		  </xsl:when>
+		  <xsl:otherwise>
+		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/',$el,'.html#',$el,'.attrs.',normalize-space(.))"/>
+		  </xsl:otherwise>
+		  </xsl:choose>
+	      </xsl:attribute>
+	    </property>
 	  </context>
 	</xsl:for-each>
       </item>
