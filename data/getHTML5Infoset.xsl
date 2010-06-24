@@ -160,11 +160,19 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<property name="description"><content><xsl:value-of select="normalize-space(parent::html:dt/following-sibling::html:dd[1])"/></content></property>
 	      </xsl:if>
 	    <!-- status in html5 -->
-	      <xsl:if test="following-sibling::html:span[@class=('new-feature','obsoleted-feature','changed-feature')]">
+	    <xsl:choose>
+	      <xsl:when test="following-sibling::html:span[@class=('new-feature','obsoleted-feature','changed-feature')]">
 		<property name="html5">
 		  <content><xsl:value-of select="substring-before(following-sibling::html:span[@class=('new-feature','obsoleted-feature','changed-feature')]/@class,'-')"/></content>
 		</property>
-	      </xsl:if>
+	      </xsl:when>
+	      <!-- if the element is new, the existing of the attribute on that element is new as well -->
+	      <xsl:when test="$el and ancestor::html:div[@class='section' and html:h2[@class='element-head']]/html:h2[@class='element-head']/html:span[@class='new-feature']">
+		<property name="html5">
+		  <content>new</content>
+		</property>
+	      </xsl:when>
+	    </xsl:choose>
 	    <xsl:if test="position()=1">
 	      <!-- attributing the accessibility/mobility component to first attribute is purely conventional until I manage to make the distinction -->
 	      <xsl:if test="$wcagTechniques/description/descendant::att[normalize-space(.)=current()]">
