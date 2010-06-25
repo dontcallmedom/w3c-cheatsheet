@@ -8,8 +8,9 @@
       android:id="@+id/loadingView"
       android:src="@drawable/loading"
       android:layout_width="fill_parent"
-      android:layout_height="460px"
-      android:layout_gravity="center" />    
+      android:layout_height="fill_parent"
+      android:layout_gravity="center"
+      android:scaleType="fitCenter" />    
             <WebView android:id="@+id/appView"
       android:layout_height="fill_parent"
       android:layout_width="fill_parent"
