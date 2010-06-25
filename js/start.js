@@ -333,10 +333,11 @@ jQuery(document).ready(function ($) {
     // We keep track of internal links for managing back link
     $("a.internal").live("click",
         function ()  {
-        if (cheatsheet.load_anchor($(this).attr("href").split("#")[1]) && !$(this).hasClass('back')) {
+        cheatsheet.load_anchor($(this).attr("href").split("#")[1]);
+	if (!$(this).hasClass('back')) {
             cheatsheet.hashHistory.push(window.location.hash);
-            addBackLink();
-        }
+	}
+        addBackLink();
     }
     );
 
