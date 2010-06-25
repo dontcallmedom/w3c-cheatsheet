@@ -5,14 +5,24 @@ Infosets = element infosets {
   element infoset {
     attribute technology { "html" | "css" | "xpath" | "svg" },
     ## one keyword for said technology (e.g. "title" attribute)
-    element item {
-       Types,
+    element item {        Types,
        attribute name { xsd:string { minLength = "1"  } },
-       ## A context designates a usage of the said keyword common to a class of items
-       ## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
-       element context {
+       context+ }+,
+    element list {        Types,
+       attribute name { xsd:string { minLength = "1"  } },
+       context }*
+  }
+}
+## Types of keywords
+# add to xmltojson.xsl dictionary when updating
+Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
+Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" }
+
+## A context designates a usage of the said keyword common to a class of items
+## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
+context =  element context {
           ## for now, the only parameters to contexts are elemnts (for attributes)
-          attribute type { "element" }?,
+          attribute type { "element" | "attribute" }?,
 	  ## defines the items that identify a given context
 	  element items {
 	     element item  { 
@@ -20,11 +30,13 @@ Infosets = element infosets {
 		attribute link { xsd:string { minLength = "1"  } }?
              }*
 	  }?,
-	  ## The set of information we gather on the items
-          element property {
+	  description+ }
+
+## The set of information we gather on the items
+description = element property {
 	     # add to xmltojson.xsl dictionary when updating
 	     # TODO: need trimming
-             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" },
+             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" },
 	     (Types, Infoset)?,
 	     attribute link { xsd:string { minLength = "1"  } }?,
 	     attribute list { "inline" | "block" }?,
@@ -44,11 +56,3 @@ Infosets = element infosets {
 		  )
 	     }*
           }+
-       }+
-    }+
-  }
-}
-## Types of keywords
-# add to xmltojson.xsl dictionary when updating
-Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
-Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" }

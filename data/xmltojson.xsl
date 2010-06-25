@@ -62,6 +62,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>at-rule</full><short>ar</short></term>
 <term><full>function</full><short>f</short></term>
 <term><full>context</full><short>ct</short></term>
+<term><full>html5</full><short>h</short></term>
 </dictionary>
 
 
@@ -103,7 +104,7 @@ var dictionary = {
   </xsl:otherwise>
 </xsl:choose>
 <xsl:text>&#xA;var keywordsMatch = {</xsl:text>
-    <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+    <xsl:for-each-group select="$sources//infoset/item|$sources//infoset/list" group-by="@name">
       <xsl:sort select="@name"/>
       <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": {</xsl:text>
       <xsl:for-each-group select="current-group()" group-by="ancestor::infoset/@technology">

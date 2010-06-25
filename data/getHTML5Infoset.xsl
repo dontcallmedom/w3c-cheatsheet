@@ -51,11 +51,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:if>
 
 	    <property type="attribute" name="Attributes" list="inline" infoset="html">
+	      <content>Common HTML attributes</content>
 	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref']" group-by=".">
 		<!-- @@@ mark obsolete/new/changed status -->
 		<content><xsl:value-of select="."/></content>
 	      </xsl:for-each-group>
-	      <!-- @@@ add common attributes -->
 	    </property>
 	    <property name="content" list="inline">
 	      <xsl:for-each select=".//html:p[@class='elem-mdl']">
@@ -227,6 +227,18 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:for-each-group>
       </item>
     </xsl:for-each-group>
+  <list type="attribute" name="Common HTML attributes">
+    <context>
+    <property name="description">
+      <content>Attributes that are common to all elements in the HTML language.</content>
+    </property>
+    <property type="attribute" name="Attributes" list="inline" infoset="html">
+      <xsl:for-each select="$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']/html:dt/html:*[@class='attribute-name']">
+	<content><xsl:value-of select="normalize-space(.)"/></content>
+      </xsl:for-each>
+    </property>
+    </context>
+  </list>
   </infoset>
   </infosets>
   </xsl:template>
