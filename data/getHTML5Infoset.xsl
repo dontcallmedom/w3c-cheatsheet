@@ -107,6 +107,22 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:for-each>
 	</item>
     </xsl:for-each-group>
+    <xsl:comment>elements that were in HTML4 but have been removed from HTML5</xsl:comment>
+    <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='element']">
+      <xsl:if test="not($html5//html:div[@id='elements']/html:div[@id=current()/@name and html:h2[@class='element-head'] and html:div[@class='longdesc']])">
+	<xsl:copy>
+	  <xsl:copy-of select="@*" />
+	  <xsl:for-each select="context">
+	    <xsl:copy>
+	      <xsl:apply-templates select="@*|*"/>
+	      <property name="html5">
+		<content>removed</content>
+	      </property>
+	    </xsl:copy>
+	  </xsl:for-each>
+	</xsl:copy>
+      </xsl:if>
+    </xsl:for-each>
 
     <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
     <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name']" group-by="normalize-space(.)">	    
@@ -227,6 +243,25 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:for-each-group>
       </item>
     </xsl:for-each-group>
+    <xsl:comment>attributes that were in HTML4 but have been removed from HTML5</xsl:comment>
+    <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='attribute']">
+      <xsl:if test="not($attributesLists/html:dt/html:*[@class='attribute-name'][normalize-space(.)=current()/@name])">
+
+	<xsl:copy>
+	  <xsl:copy-of select="@*" />
+	  <xsl:for-each select="context">
+	    <xsl:copy>
+	      <xsl:apply-templates select="@*|*"/>
+	      <property name="html5">
+		<content>removed</content>
+	      </property>
+	    </xsl:copy>
+	  </xsl:for-each>
+	</xsl:copy>
+      </xsl:if>
+    </xsl:for-each>
+
+
   <list type="attribute" name="Common HTML attributes">
     <context>
     <property name="description">
@@ -247,6 +282,13 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="text()">
     <xsl:value-of select="normalize-space(.)"/>
   </xsl:template>
+
+  <xsl:template match="*|@*">
+    <xsl:copy>
+      <xsl:apply-templates select="*|@*|text()"/>
+    </xsl:copy>
+  </xsl:template>
+
 
   <xsl:template match="text()" mode="textOrSpan">
     <xsl:value-of select="replace(.,'&#x0A;',' ')"/>
