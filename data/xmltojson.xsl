@@ -160,7 +160,17 @@ var dictionary = {
 	    <xsl:text>}</xsl:text>
 	  </xsl:when>
 	  <xsl:otherwise>
-	    <xsl:text>: 1</xsl:text>
+	    <xsl:text>: </xsl:text>
+	    <!-- giving new-ness status when available, 1 otherwise -->
+	    <xsl:choose>
+	      <!-- @@@ specific to HTML5 for now -->
+	      <xsl:when test="context/property[@name='html5']">
+		<xsl:text>"</xsl:text><xsl:value-of select="normalize-space((context/property[@name='html5'])[1])"/><xsl:text>"</xsl:text>
+	      </xsl:when>
+	      <xsl:otherwise>
+		<xsl:text>1</xsl:text>
+	      </xsl:otherwise>
+	    </xsl:choose>
 	  </xsl:otherwise>
 	</xsl:choose>
 	 <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
