@@ -2485,8 +2485,8 @@ D.attr("title",B)
 }};
 Cheatsheet.prototype.show_keyword=function(S,M,U){if(S[M][U]===null){return false
 }var b=this;
-function B(j,k,i){if(keywordsMatch[i][j]&&keywordsMatch[i][j][k]&&keywordsMatch[i][j][k][i]&&keywordsMatch[i][j][k][i]["d"]&&keywordsMatch[i][j][k][i]["d"][0]&&keywordsMatch[i][j][k][i]["d"][0]["h"]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]["t"]){return keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]["t"]
-}else{if(keywordsMatch[i][j]&&keywordsMatch[i][j][k]&&keywordsMatch[i][j][k]!==1){return keywordsMatch[i][j][k]
+function B(j,k,i){if(inMemory&&keywordsMatch[i][j]&&keywordsMatch[i][j][k]&&keywordsMatch[i][j][k][i]&&keywordsMatch[i][j][k][i]["d"]&&keywordsMatch[i][j][k][i]["d"][0]&&keywordsMatch[i][j][k][i]["d"][0]["h"]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]&&keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]["t"]){return keywordsMatch[i][j][k][i]["d"][0]["h"]["p"][0]["t"]
+}else{if(!inMemory&&keywordsMatch[i][j]&&keywordsMatch[i][j][k]&&keywordsMatch[i][j][k]!==1){return keywordsMatch[i][j][k]
 }else{return false
 }}}function f(k,j,l,i,m){b.addChangeMarker(k,B(j,l,i),m)
 }function Q(j,k,i){var l=$("<a class='internal'></a>").attr("href","#inf,"+escape(j)+","+escape(k)+","+escape(i));
