@@ -35,6 +35,26 @@ Cheatsheet.prototype.makeReplacingAccordion = function (accordion) {
     accordion.accordion('option', 'collapsible', true);
 };
 
+
+// sets the changed/new/obsolete marker to a given element based
+Cheatsheet.prototype.addChangeMarker = function (element, marker, mode) {
+    if (marker){
+        element.append(" ");
+        var span = $("<span></span>").addClass("attribute").addClass(marker);
+        var fullDesc = "proposed as " + marker + " in HTML5 (not yet a standard)";
+        if (mode === "full") {
+            span.text(fullDesc);
+        } else if (mode === "medium") {
+            span.text(marker + " in draft of HTML5");
+            span.attr("title",fullDesc);
+        } else {
+            span.text(marker);
+            span.attr("title",fullDesc);
+        }
+        span.appendTo(element);
+    }
+};
+
 /*
  * Takes the collected data and displays them in an accordion view
  */
@@ -44,10 +64,28 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         return false;
     }
 
+
+    var self = this;
+    // whether a given item has a change marker
+    function keywordChangeMarker(infoset, type, keyword) {
+        if (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type][keyword] && keywordsMatch[keyword][infoset][type][keyword]["d"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]) {
+            return keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"];
+        } else {
+            return false;
+        }
+    }
+
     // sets the changed/new/obsolete marker to a given element based on a given infoset/type/keyword
-    function addChangeMarker(element, infoset, type, keyword) {
-	if (keyword_data[infoset] && keyword_data[infoset][type] && keyword_data[infoset][type][keyword] && keyword_data[infoset][type][keyword]["d"] && keyword_data[infoset][type][keyword]["d"][0] && keyword_data[infoset][type][keyword]["d"][0]["h"] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"])
-	    $("<span></span>").addClass("attribute").addClass(keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]).text(" " + keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]).appendTo(element);
+    function addKeywordChangeMarker (element, infoset, type, keyword, mode) {
+        self.addChangeMarker(element, keywordChangeMarker(infoset, type, keyword), mode);
+    }
+
+
+    function addInternalLink(infoset, type, keyword) {
+        var link = $("<a class='internal'></a>").attr("href", "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword));
+        link.text(keyword);
+        addKeywordChangeMarker(link, infoset, type, keyword, "short");
+        return link;
     }
 
     // for each matching keyword
@@ -56,109 +94,110 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         var infosetname = this.keywordSources[infoset][propertytype];
         var div = $("<div></div>").addClass("context");
         // e.g. <h2>HTML element <code>a</code></h2>
-	var keywordtitle = $("<h2></h2>").text(infosetname + " ");
+        var keywordtitle = $("<h2></h2>").text(infosetname + " ");
         $("<code></code>").text(keyword).appendTo(keywordtitle);
-	keywordtitle.appendTo(div);
+        keywordtitle.appendTo(div);
         var div2 = $("<div></div>").appendTo(div);
         // For each known context of the item
         // (examples of context: the width attribute in HTML
         // varies in model/description depending on the containing element
         for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
             var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
-	    var contextdiv = $("<div></div>");
-	    if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context["ct"]["y"]) {
-		var contexttitle = $("<h3></h3>");
-		if (context["ct"]["y"] === "a") {
-		    contexttitle.text("With attribute ");
-		} else if (context["ct"]["y"] === "e") {
-		    contexttitle.text("In element ");
-		}
-		for (var contextitem in context["ct"]["d"]) {
-		    $("<code></code>").text(context["ct"]["d"][contextitem]).appendTo(contexttitle);
-		    if (contextitem < context["ct"]["d"].length - 1) {
-			contexttitle.append(", ");
-		    }
-		}
-		addChangeMarker(contexttitle, infoset, propertytype, keyword);
-		contexttitle.appendTo(contextdiv);
-	    } else {
-		addChangeMarker(keywordtitle, infoset, propertytype, keyword);
-	    }
+            var contextdiv = $("<div></div>");
+            if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context["ct"] && context["ct"]["y"]) {
+                var contexttitle = $("<h3></h3>");
+                if (context["ct"]["y"] === "a") {
+                    contexttitle.text("With attribute ");
+                } else if (context["ct"]["y"] === "e") {
+                    contexttitle.text("In element ");
+                }
+                for (var contextitem in context["ct"]["d"]) {
+                    $("<code></code>").text(context["ct"]["d"][contextitem]).appendTo(contexttitle);
+                    if (contextitem < context["ct"]["d"].length - 1) {
+                        contexttitle.append(", ");
+                    }
+                }
+                addKeywordChangeMarker(contexttitle, infoset, propertytype, keyword, "full");
+                contexttitle.appendTo(contextdiv);
+            } else {
+                addKeywordChangeMarker(keywordtitle, infoset, propertytype, keyword, "full");
+            }
             var dl = $("<dl></dl>");
             for (var property in context) {
-		if (property !== "ct") {
-		    var dt = $("<dt></dt>").appendTo(dl);
+                if (property !== "ct") {
+                    var dt = $("<dt></dt>").appendTo(dl);
                     var container = dt;
                     if (context[property].u) { // u for URI
-			var propurl = context[property].u;
-			// On domain-less URIs, we assume www.w3.org as the base
-			if (propurl.substring(0, 1) === "/") {
-			    propurl = "http://www.w3.org" + propurl;
-			}
-			container = $("<a></a>").attr("href", propurl).appendTo(dt);
+                        var propurl = context[property].u;
+                        // On domain-less URIs, we assume www.w3.org as the base
+                        if (propurl.substring(0, 1) === "/") {
+                            propurl = "http://www.w3.org" + propurl;
+                        }
+                        container = $("<a></a>").attr("href", propurl).appendTo(dt);
                     }
                     container.text(dictionary[property]);
                     // p for properties (i.e. all the detailed data about the item)
-		    if (context[property]["p"] && context[property]["p"].length > 0) {
-			var displayAsList = true;
-			if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
-			    displayAsList = false;
-			}
-			var listcontainer = $("<dd></dd>");
-			if (displayAsList) {
-			    if (context[property].l === "block") {
-				listcontainer = $("<ul></ul>").appendTo(listcontainer);
+                    if (context[property]["p"] && context[property]["p"].length > 0) {
+                        var displayAsList = true;
+                        if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
+                            displayAsList = false;
+                        }
+                        var listcontainer = $("<dd></dd>");
+                        if (displayAsList) {
+                            if (context[property].l === "block") {
+                                listcontainer = $("<ul></ul>").appendTo(listcontainer);
                             }
-			}
-			for (var propcontentidx in context[property]["p"]) {
-			    var hasLink = false;
+                        }
+                        for (var propcontentidx in context[property]["p"]) {
+                            var hasLink = false;
                             var itemcontainer = listcontainer;
                             var propcontent = context[property]["p"][propcontentidx];
                             if (displayAsList) {
-				itemcontainer = $("<li></li>").appendTo(itemcontainer);
+                                itemcontainer = $("<li></li>").appendTo(itemcontainer);
                             } else {
-				itemcontainer = $("<span></span>").appendTo(itemcontainer);
+                                itemcontainer = $("<span></span>").appendTo(itemcontainer);
                             }
                             if (propcontent.u) {
-				var url = propcontent.u;
-				if (url.substring(0, 1) === "/") {
-				    url = "http://www.w3.org" + url;
-				}
-				itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
-				hasLink = true;
+                                var url = propcontent.u;
+                                if (url.substring(0, 1) === "/") {
+                                    url = "http://www.w3.org" + url;
+                                }
+                                itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
+                                itemcontainer.text(propcontent.t);
+                                hasLink = true;
                             } else if (context[property].i && context[property].y) {
-				itemcontainer = $("<a class='internal'></a>").attr("href", "#inf," + escape(context[property].i) + "," + escape(context[property].y) + "," + escape(propcontent.t))
-				    .appendTo(itemcontainer);
-				hasLink = true;
+                                var internalProperty = addInternalLink(context[property].i, context[property].y, propcontent.t);
+                                itemcontainer = internalProperty.appendTo(itemcontainer);
+                                hasLink = true;
                             }
                             if (propcontent.t instanceof Array) { // t for text
-				if (!hasLink) {
-				    for (var textOrSpanIdx in propcontent.t) {
-					var textOrSpan = propcontent.t[textOrSpanIdx];
-					if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-					    var internalLink = $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
-					    addChangeMarker(internalLink, textOrSpan.i, textOrSpan.y, textOrSpan.t);
-					} else {
-					    // JQuery seems to lack a method to append pure text; doing manual DOM operations
-					    var t = document.createTextNode(textOrSpan);
+                                if (!hasLink) {
+                                    for (var textOrSpanIdx in propcontent.t) {
+                                        var textOrSpan = propcontent.t[textOrSpanIdx];
+                                        if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+                                            var internalLink = addInternalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t);
+                                            internalLink.appendTo(itemcontainer);
+                                        } else {
+                                            // JQuery seems to lack a method to append pure text; doing manual DOM operations
+                                            var t = document.createTextNode(textOrSpan);
                                             itemcontainer.get(0).appendChild(t);
-					}
+                                        }
                                     }
-				} else {
-				    itemcontainer.text(propcontent.t.join(""));
-				}
-                            } else {
-				itemcontainer.text(propcontent.t);
-                            }
+                                } else {
+                                    itemcontainer.text(propcontent.t.join(""));
+                                }
+                            } else if (!hasLink) {
+                                itemcontainer.text(propcontent.t);
+			    }
                             if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
-				listcontainer.append(", ");
+                                listcontainer.append(", ");
                             }
-			}
-			listcontainer.appendTo(dl);
+                        }
+                        listcontainer.appendTo(dl);
                     }
-		}
+                }
             }
-	    dl.appendTo(contextdiv);
+            dl.appendTo(contextdiv);
             contextdiv.appendTo(div2);
         }
         div.appendTo($("#details"));
@@ -199,7 +238,7 @@ Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytyp
     if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
         this.display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
     } else {
-	var cheatsheet = this;
+        var cheatsheet = this;
         $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
             cheatsheet.display_keyword_data(keyword_data, infoset, propertytype);
         });
@@ -236,7 +275,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
     var keyword = unescape(selector_path.slice(3).join(","));
     if (keyword && infoset && propertytype && this.keywordSources[infoset] && this.keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
         this.clearLookUp();
-	$(".ac_results").hide();
+        $(".ac_results").hide();
         $("#search").val("");
         if (this.load_keyword_data(keyword, infoset, propertytype)) {
             return true;
@@ -272,6 +311,7 @@ Cheatsheet.prototype.getCookie = function (c_name) {
     }
     return "";
 };
+
 
 var cheatsheet = new Cheatsheet();
 
@@ -347,12 +387,24 @@ jQuery(document).ready(function ($) {
     $("a.internal").live("click",
         function ()  {
         cheatsheet.load_anchor($(this).attr("href").split("#")[1]);
-	if (!$(this).hasClass('back')) {
+        if (!$(this).hasClass('back')) {
             cheatsheet.hashHistory.push(window.location.hash);
-	}
+        }
         addBackLink();
     }
     );
+
+    function formatItem(row, i, num, q) {
+        var line = row[0];
+        var highlightIdx = line.toLowerCase().indexOf(q);
+        line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
+        if (keywordsTags[row[0]]) {
+            var jLine = $("<span></span>").html(line);
+            cheatsheet.addChangeMarker(jLine, keywordsTags[row[0]], "medium");
+            line = jLine.html();
+        }
+        return line;
+    }
 
     // Completing the search box with autocompletion
     $("#search").autocompleteArray(keywords,
@@ -363,7 +415,8 @@ jQuery(document).ready(function ($) {
          delay: 40,
          maxItemsToShow: 10,
          matchContains: true,
-         matchSubset: true // also matches when matching only a substring
+         matchSubset: true, // also matches when matching only a substring
+         formatItem: formatItem
          }
     );
 
