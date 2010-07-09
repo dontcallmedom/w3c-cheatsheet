@@ -95,6 +95,14 @@ var dictionary = {
       <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
     </xsl:for-each-group>
 <xsl:text>&#xA;];</xsl:text>
+<xsl:text>var keywordsTags = {</xsl:text>
+    <xsl:for-each-group select="$sources//infoset/item" group-by="@name">
+      <xsl:sort select="@name"/>
+      <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": "</xsl:text><xsl:value-of select="(current-group()//property[@name='html5']/content)[1]"/><xsl:text>"</xsl:text>
+      <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
+    </xsl:for-each-group>
+<xsl:text>&#xA;};</xsl:text>
+
 <xsl:choose>
   <xsl:when test="$full">
     <xsl:text>&#xA;var inMemory = true;</xsl:text>
