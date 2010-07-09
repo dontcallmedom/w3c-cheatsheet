@@ -169,6 +169,11 @@
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M0"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="name">Ensure that a given triple (infoset,type,item) only appears once</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M1"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -191,19 +196,18 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
+         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:xs="http://www.w3.org/2001/XMLSchema"
                                 xmlns:schold="http://www.ascc.net/xml/schematron"
                                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
+                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-get-full-path"/>
                </xsl:attribute>
-               <svrl:text>
-                  <xsl:text/>
+               <svrl:text>“<xsl:text/>
                   <xsl:value-of select="current()"/>
-                  <xsl:text/> is referenced from <xsl:text/>
+                  <xsl:text/>” is referenced from <xsl:text/>
                   <xsl:value-of select="ancestor::item/@name"/>
                   <xsl:text/> but is not defined in the infoset.</svrl:text>
             </svrl:failed-assert>
@@ -223,12 +227,12 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]"/>
+         <xsl:when test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:xs="http://www.w3.org/2001/XMLSchema"
                                 xmlns:schold="http://www.ascc.net/xml/schematron"
                                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/item[@type=$type and @name=current()]">
+                                test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-get-full-path"/>
                </xsl:attribute>
@@ -246,5 +250,42 @@
    <xsl:template match="text()" priority="-1" mode="M0"/>
    <xsl:template match="@*|node()" priority="-2" mode="M0">
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M0"/>
+   </xsl:template>
+
+   <!--PATTERN Ensure that a given triple (infoset,type,item) only appears once-->
+<svrl:text xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:schold="http://www.ascc.net/xml/schematron"
+              xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Ensure that a given triple (infoset,type,item) only appears once</svrl:text>
+
+	  <!--RULE -->
+<xsl:template match="//infoset/item" priority="1000" mode="M1">
+      <svrl:fired-rule xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                       xmlns:schold="http://www.ascc.net/xml/schematron"
+                       xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="//infoset/item"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="not(preceding-sibling::item[@technology=current()/@infoset and @type=current()/@type and @name=current()/@name])"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                xmlns:schold="http://www.ascc.net/xml/schematron"
+                                xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="not(preceding-sibling::item[@technology=current()/@infoset and @type=current()/@type and @name=current()/@name])">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                  <xsl:text/>
+                  <xsl:value-of select="concat(@infoset,'/',@type,'/',@name)"/>
+                  <xsl:text/> is defined more than once.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M1"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M1"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M1">
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M1"/>
    </xsl:template>
 </xsl:stylesheet>

@@ -36,7 +36,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-string"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:string</content>
@@ -61,7 +61,7 @@
                <content>$arg as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType*</content>
             </property>
          </context>
       </item>
@@ -72,7 +72,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-base-uri"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:anyURI?</content>
@@ -103,7 +103,7 @@
                <content>$arg as numeric?</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>numeric?</content>
             </property>
          </context>
       </item>
@@ -117,7 +117,7 @@
                <content>$arg as numeric?</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>numeric?</content>
             </property>
          </context>
       </item>
@@ -131,7 +131,7 @@
                <content>$arg as numeric?</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>numeric?</content>
             </property>
          </context>
       </item>
@@ -145,7 +145,7 @@
                <content>$arg as numeric?</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>numeric?</content>
             </property>
          </context>
       </item>
@@ -159,7 +159,7 @@
                <content>$arg as numeric?</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>numeric?</content>
             </property>
          </context>
       </item>
@@ -284,7 +284,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-string-length"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:integer</content>
@@ -298,7 +298,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-normalize-space"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:string</content>
@@ -608,7 +608,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-true"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:boolean</content>
@@ -622,7 +622,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-false"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:boolean</content>
@@ -1085,7 +1085,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-name"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:string</content>
@@ -1107,7 +1107,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-local-name"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:string</content>
@@ -1129,7 +1129,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-namespace-uri"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:anyURI</content>
@@ -1151,7 +1151,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-number"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:double</content>
@@ -1187,7 +1187,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-root"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>node()</content>
@@ -1268,7 +1268,7 @@
                <content>$arg as xs:anyAtomicType*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType*</content>
             </property>
          </context>
          <context>
@@ -1276,7 +1276,7 @@
                <content>$arg as xs:anyAtomicType*,$collation as xs:string</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType*</content>
             </property>
          </context>
       </item>
@@ -1290,7 +1290,7 @@
                <content>$target as item()*,$position as xs:integer,$inserts as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
       </item>
@@ -1304,7 +1304,7 @@
                <content>$target as item()*, $position as xs:integer</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
       </item>
@@ -1318,7 +1318,7 @@
                <content>$arg as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
       </item>
@@ -1332,7 +1332,7 @@
                <content>$sourceSeq as item()*, $startingLoc as xs:double</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
          <context>
@@ -1340,7 +1340,7 @@
                <content>$sourceSeq as item()*,$startingLoc as xs:double,$length as xs:double</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
       </item>
@@ -1354,7 +1354,7 @@
                <content>$sourceSeq as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()*</content>
             </property>
          </context>
       </item>
@@ -1368,7 +1368,7 @@
                <content>$arg as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()?</content>
             </property>
          </context>
       </item>
@@ -1382,7 +1382,7 @@
                <content>$arg as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()+</content>
             </property>
          </context>
       </item>
@@ -1396,7 +1396,7 @@
                <content>$arg as item()*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>item()</content>
             </property>
          </context>
       </item>
@@ -1446,7 +1446,7 @@
                <content>$arg as xs:anyAtomicType*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType?</content>
             </property>
          </context>
       </item>
@@ -1460,7 +1460,7 @@
                <content>$arg as xs:anyAtomicType*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType?</content>
             </property>
          </context>
          <context>
@@ -1468,7 +1468,7 @@
                <content>$arg as xs:anyAtomicType*, $collation as string</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType?</content>
             </property>
          </context>
       </item>
@@ -1482,7 +1482,7 @@
                <content>$arg as xs:anyAtomicType*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType?</content>
             </property>
          </context>
          <context>
@@ -1490,7 +1490,7 @@
                <content>$arg as xs:anyAtomicType*, $collation as string</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType?</content>
             </property>
          </context>
       </item>
@@ -1504,7 +1504,7 @@
                <content>$arg as xs:anyAtomicType*</content>
             </property>
             <property name="returns">
-               <content/>
+               <content>xs:anyAtomicType</content>
             </property>
          </context>
       </item>
@@ -1571,7 +1571,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-collection"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>node()*</content>
@@ -1585,7 +1585,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-position"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:integer</content>
@@ -1599,7 +1599,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-last"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:integer</content>
@@ -1613,7 +1613,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-current-dateTime"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:dateTime</content>
@@ -1627,7 +1627,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-current-date"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:date</content>
@@ -1641,7 +1641,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-current-time"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:time</content>
@@ -1655,7 +1655,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-implicit-timezone"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:dayTimeDuration</content>
@@ -1669,7 +1669,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-default-collation"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:string</content>
@@ -1683,7 +1683,7 @@
             </property>
             <property name="Specification" link="/TR/xpath-functions/#func-static-base-uri"/>
             <property name="parameters">
-               <content/>
+               <content>(None)</content>
             </property>
             <property name="returns">
                <content>xs:anyURI?</content>
