@@ -109,7 +109,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:for-each-group>
     <xsl:comment>elements that were in HTML4 but have been removed from HTML5</xsl:comment>
     <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='element']">
-      <xsl:if test="not($html5//html:div[@id='elements']/html:div[@id=current()/@name and html:h2[@class='element-head'] and html:div[@class='longdesc']])">
+      <xsl:if test="not($html5//html:div[@id='elements']/html:div[substring-before(concat(@id,'.'),'.')=current()/@name and html:h2[@class='element-head'] and html:div[@class='longdesc']])">
 	<xsl:copy>
 	  <xsl:copy-of select="@*" />
 	  <xsl:for-each select="context">
