@@ -1749,3 +1749,5 @@ border-left-width:1px;
 .attribute.obsolete {color:#737373;}
 .attribute.changed {color:#2644EA;}
 .attribute.removed {color:#333333;}
+
+.internal .attribute { font-size: 0.7em;}
