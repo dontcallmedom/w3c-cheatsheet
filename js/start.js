@@ -68,9 +68,9 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
     var self = this;
     // whether a given item has a change marker
     function keywordChangeMarker(infoset, type, keyword) {
-        if (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type][keyword] && keywordsMatch[keyword][infoset][type][keyword]["d"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]) {
+        if (inMemory && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type][keyword] && keywordsMatch[keyword][infoset][type][keyword]["d"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]) {
             return keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"];
-        } else if (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type] !== 1) {
+        } else if (!inMemory && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type] !== 1) {
             return keywordsMatch[keyword][infoset][type];
         } else {
             return false;
