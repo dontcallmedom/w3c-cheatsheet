@@ -70,6 +70,8 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
     function keywordChangeMarker(infoset, type, keyword) {
         if (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type][keyword] && keywordsMatch[keyword][infoset][type][keyword]["d"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]) {
             return keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"];
+        } else if (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type] !== 1) {
+            return keywordsMatch[keyword][infoset][type];
         } else {
             return false;
         }
@@ -117,10 +119,10 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                         contexttitle.append(", ");
                     }
                 }
-                addKeywordChangeMarker(contexttitle, infoset, propertytype, keyword, "full");
+                addKeywordChangeMarker(contexttitle, infoset, propertytype, keyword, "medium");
                 contexttitle.appendTo(contextdiv);
             } else {
-                addKeywordChangeMarker(keywordtitle, infoset, propertytype, keyword, "full");
+                addKeywordChangeMarker(keywordtitle, infoset, propertytype, keyword, "medium");
             }
             var dl = $("<dl></dl>");
             for (var property in context) {
@@ -186,9 +188,14 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                                 } else {
                                     itemcontainer.text(propcontent.t.join(""));
                                 }
+                            } else if (property === "h") {
+                                // special casing HTML5
+                                // @@@ probably need to be generalized for others techs
+                                self.addChangeMarker(itemcontainer, propcontent.t, "full");
+
                             } else if (!hasLink) {
                                 itemcontainer.text(propcontent.t);
-			    }
+                            }
                             if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
                                 listcontainer.append(", ");
                             }
