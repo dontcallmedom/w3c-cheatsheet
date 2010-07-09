@@ -373,14 +373,14 @@ jQuery.autocomplete = function (input, options) {
                 }
                 var li = document.createElement("li");
                 if (options.formatItem) {
-                    li.innerHTML = options.formatItem(row, i, num);
+                    li.innerHTML = options.formatItem(row, i, num, q);
+                    $(li).children().each(function () {
+                        this.selectValue = row[0];
+                    });
                     li.selectValue = row[0];
                 } else {
-                    var line = row[0];
-                    var highlightIdx = line.toLowerCase().indexOf(q);
-                    line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
-                    li.innerHTML = line;
-                    li.selectValue = row[0];
+		    li.innerHTML = row[0];
+		    li.selectValue = row[0];
                 }
                 var extra = null;
                 if (row.length > 1) {
@@ -528,7 +528,10 @@ jQuery.autocomplete = function (input, options) {
                 if (row[0].toLowerCase() === q.toLowerCase()) {
                     li = document.createElement("li");
                     if (options.formatItem) {
-                        li.innerHTML = options.formatItem(row, i, num);
+                        li.innerHTML = options.formatItem(row, i, num, q);
+			$(li).find().each(function () {
+			    this.selectValue = row[0];
+			});
                         li.selectValue = row[0];
                     } else {
                         li.innerHTML = row[0];
