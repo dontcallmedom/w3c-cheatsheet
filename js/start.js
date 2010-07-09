@@ -43,13 +43,22 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
     if (keyword_data[infoset][propertytype] === null) {
         return false;
     }
+
+    // sets the changed/new/obsolete marker to a given element based on a given infoset/type/keyword
+    function addChangeMarker(element, infoset, type, keyword) {
+	if (keyword_data[infoset] && keyword_data[infoset][type] && keyword_data[infoset][type][keyword] && keyword_data[infoset][type][keyword]["d"] && keyword_data[infoset][type][keyword]["d"][0] && keyword_data[infoset][type][keyword]["d"][0]["h"] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0] && keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"])
+	    $("<span></span>").addClass("attribute").addClass(keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]).text(" " + keyword_data[infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]).appendTo(element);
+    }
+
     // for each matching keyword
     for (var keyword in keyword_data[infoset][propertytype]) {
         // e.g "HTML element"
         var infosetname = this.keywordSources[infoset][propertytype];
         var div = $("<div></div>").addClass("context");
         // e.g. <h2>HTML element <code>a</code></h2>
-        $("<code></code>").text(keyword).appendTo($("<h2></h2>").text(infosetname + " ").appendTo(div));
+	var keywordtitle = $("<h2></h2>").text(infosetname + " ");
+        $("<code></code>").text(keyword).appendTo(keywordtitle);
+	keywordtitle.appendTo(div);
         var div2 = $("<div></div>").appendTo(div);
         // For each known context of the item
         // (examples of context: the width attribute in HTML
@@ -70,7 +79,10 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 			contexttitle.append(", ");
 		    }
 		}
+		addChangeMarker(contexttitle, infoset, propertytype, keyword);
 		contexttitle.appendTo(contextdiv);
+	    } else {
+		addChangeMarker(keywordtitle, infoset, propertytype, keyword);
 	    }
             var dl = $("<dl></dl>");
             for (var property in context) {
@@ -124,7 +136,8 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 				    for (var textOrSpanIdx in propcontent.t) {
 					var textOrSpan = propcontent.t[textOrSpanIdx];
 					if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-					    $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
+					    var internalLink = $("<a class='internal'></a>").attr("href", "#inf," + escape(textOrSpan.i) + "," + escape(textOrSpan.y) + "," + escape(textOrSpan.t)).text(textOrSpan.t).appendTo(itemcontainer);
+					    addChangeMarker(internalLink, textOrSpan.i, textOrSpan.y, textOrSpan.t);
 					} else {
 					    // JQuery seems to lack a method to append pure text; doing manual DOM operations
 					    var t = document.createTextNode(textOrSpan);
