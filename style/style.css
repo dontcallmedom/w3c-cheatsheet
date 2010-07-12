@@ -83,7 +83,7 @@ div#about .instructions {border: 0; font-size: x-small; padding: 1em 0 0;}
 	font:menu;
 	overflow:hidden;
 	margin:0;
-	padding:2px 0;
+	padding:2px;
 }
 
 .ac_loading {
@@ -1507,7 +1507,7 @@ dl {
 	margin:0;
 	padding-bottom:0.5em;
 }
-dl dt {margin: 10px 0 3px;}
+dl dt {margin: 10px 0 5px;}
 #typo dl dt {margin: 20px 0 10px;}
 #details div.context dl { border-top: dashed #3D321D thin;}
 #details div.context dl:first-child { border-top: none;}
@@ -1741,7 +1741,8 @@ border-left-width:1px;
 	color:#EA0000;
 	font-size: 0.88em;
 	padding:1px 6px 2px;
-	text-shadow: 1px 1px 0 #fff;
+	text-shadow: none;
+	font-weight: normal;
 }
 .ac_results .attribute {float: right;}
 
@@ -1751,4 +1752,4 @@ border-left-width:1px;
 .attribute.removed {color:#333333;}
 
 dd .attribute { font-size: 1em;}
-a.internal .attribute { font-size: 0.7em;}
+a.internal .attribute { font-size: 0.8em;}
