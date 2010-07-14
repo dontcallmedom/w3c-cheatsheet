@@ -1515,7 +1515,7 @@ dl dt {margin: 10px 0 5px;}
 	font-weight: normal; 
 	color: #3D321D; 
 	padding: 4px 6px 6px; 
-	background: #fff; 
+	background: #FCF9F4; 
 	text-decoration: none; 
 	border-radius: 4px; 
 	-moz-border-radius: 4px; 
@@ -1524,6 +1524,7 @@ dl dt {margin: 10px 0 5px;}
 	box-shadow: 1px 1px 0 #BEBCBC;
 	-moz-box-shadow: 1px 1px 0 #BEBCBC;
 	-webkit-box-shadow: 1px 1px 0 #BEBCBC;
+	line-height: 30px;
 }
 
 h1 {
@@ -1732,12 +1733,12 @@ border-left-width:1px;
 .ui-tabs .ui-tabs-nav li.ui-tabs-paging-prev a {background-position:0 0;}
 
 
-/* New, Obsolete, Changed states */
+/* New, Obsoleted, Changed states */
 
 .attribute {
 	-moz-border-radius:3px 3px 3px 3px;
 	-webkit-border-radius:3px 3px 3px 3px;
-	background:none repeat scroll 0 0 #EDECEB;
+	background:none repeat scroll 0 0 #EAE7E5;
 	color:#EA0000;
 	font-size: 0.88em;
 	padding:1px 6px 2px;
@@ -1747,7 +1748,7 @@ border-left-width:1px;
 .ac_results .attribute {float: right;}
 
 .attribute.new {color:#EA0000;}
-.attribute.obsolete {color:#737373;}
+.attribute.obsoleted {color:#737373;}
 .attribute.changed {color:#2644EA;}
 .attribute.removed {color:#333333;}
 

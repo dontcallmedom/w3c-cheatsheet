@@ -196,8 +196,8 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                             } else if (!hasLink) {
                                 itemcontainer.text(propcontent.t);
                             }
-                            if (!displayAsList && propcontentidx < context[property]["p"].length - 1) {
-                                listcontainer.append(", ");
+                            if (!displayAsList && propcontentidx < context[property]["p"].length - 1) { //white space between dd span list
+                                listcontainer.append(" ");
                             }
                         }
                         listcontainer.appendTo(dl);
