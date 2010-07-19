@@ -2541,7 +2541,7 @@ E.get(0).appendChild(V)
 }}}else{E.text(I.t.join(""))
 }}else{if(O==="h"){b.addChangeMarker(E,I.t,"full")
 }else{if(!H){E.text(I.t)
-}}}if(!A&&P<G[O]["p"].length-1){c.append(", ")
+}}}if(!A&&P<G[O]["p"].length-1){c.append(" ")
 }}c.appendTo(e)
 }}}e.appendTo(W);
 W.appendTo(F)
