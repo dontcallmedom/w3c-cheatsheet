@@ -246,7 +246,7 @@ Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytyp
         this.display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
     } else {
         var cheatsheet = this;
-        $.getJSON("data/json/" + escape(keyword).toLowerCase() + ".js", function (keyword_data) {
+        $.getJSON("data/json/" + escape(keyword.replace(/ /g,"%20")).toLowerCase() + ".js", function (keyword_data) {
             cheatsheet.display_keyword_data(keyword_data, infoset, propertytype);
         });
     }
