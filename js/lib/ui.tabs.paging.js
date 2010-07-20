@@ -34,7 +34,7 @@ $.extend($.ui.tabs.prototype, {
 		opts = jQuery.extend(opts, options);
 
 		var self = this, initialized = false, currentPage,
-			buttonWidth, containerWidth, allTabsWidth, tabWidths,
+			buttonWidth, containerWidth, allTabsWidth, tabWidths, selectedTabWidths,
 			maxPageWidth, pages, resizeTimer = null,
 			windowHeight = $(window).height(), windowWidth = $(window).width();
 
