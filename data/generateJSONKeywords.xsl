@@ -39,7 +39,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 
   <xsl:template match="/">
-    <xsl:for-each-group select="$sources//infoset/item" group-by="lower-case(@name)">
+    <xsl:for-each-group select="$sources//infoset/item|$sources//infoset/list" group-by="lower-case(@name)">
       <xsl:choose>
 	<xsl:when test="@name">
 	  <xsl:variable name="filename" select="lower-case(encode-for-uri(encode-for-uri(@name)))"/>
