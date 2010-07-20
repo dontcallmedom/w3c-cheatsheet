@@ -45,9 +45,9 @@ $.extend($.ui.tabs.prototype, {
 			containerWidth = $(self.element).width();
 
 			// create next button
-			$li = $('<li></li>')
+			var $li = $('<li></li>')
 				.addClass('ui-tabs-paging-next');
-			$a = $('<a href="#"></a>')
+			var $a = $('<a href="#"></a>')
 				.click(function() { page('next'); return false; })
 				.html(opts.nextButton);
 			$li.append($a);
