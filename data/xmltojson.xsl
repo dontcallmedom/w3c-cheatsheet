@@ -169,7 +169,7 @@ var dictionary = {
 	    <!-- giving new-ness status when available, 1 otherwise -->
 	    <xsl:choose>
 	      <!-- @@@ specific to HTML5 for now -->
-	      <xsl:when test="context/property[@name='html5']">
+	      <xsl:when test="count(distinct-values(context/property[@name='html5']/content))=1">
 		<xsl:text>"</xsl:text><xsl:value-of select="normalize-space((context/property[@name='html5'])[1])"/><xsl:text>"</xsl:text>
 	      </xsl:when>
 	      <xsl:otherwise>
@@ -224,6 +224,13 @@ var dictionary = {
 		   <xsl:if test="@link">
 		     <xsl:value-of select="$q"/><xsl:text>u</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(replace(@link,'http://www.w3.org',''),'&quot;','\\&quot;')"/><xsl:text>", </xsl:text>
 		   </xsl:if>
+		   <xsl:call-template name="changeMarker">
+		     <xsl:with-param name="infoset" select="parent::property/@infoset"/>
+		     <xsl:with-param name="type" select="parent::property/@type"/>
+		     <xsl:with-param name="name" select="normalize-space(.)"/>
+		     <xsl:with-param name="contextname" select="ancestor::item/@name"/>
+		     <xsl:with-param name="q" select="$q"/>
+		   </xsl:call-template>
 		   <xsl:value-of select="$q"/><xsl:text>t</xsl:text><xsl:value-of select="$q"/><xsl:text>: </xsl:text>
 		   <xsl:choose>
 		     <xsl:when test="not(span)">
@@ -264,11 +271,43 @@ var dictionary = {
     </xsl:variable>
     <xsl:text>{</xsl:text><xsl:value-of select="$q"/><xsl:text>y</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="document('')/xsl:stylesheet/foo:dictionary/foo:term[foo:full=current()/@type]/foo:short"/><xsl:text>", </xsl:text>
     <xsl:value-of select="$q"/><xsl:text>i</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="@infoset"/><xsl:text>", </xsl:text>
+    <xsl:call-template name="changeMarker">
+      <xsl:with-param name="infoset" select="@infoset"/>
+      <xsl:with-param name="type" select="@type"/>
+      <xsl:with-param name="name" select="normalize-space(.)"/>
+      <xsl:with-param name="contextname" select="ancestor::item/@name"/>
+      <xsl:with-param name="q" select="$q"/>
+    </xsl:call-template>
     <xsl:value-of select="$q"/><xsl:text>t</xsl:text><xsl:value-of select="$q"/><xsl:text>: "</xsl:text><xsl:value-of select="replace(replace(.,'&#xA;',' '),'&quot;','\\&quot;')"/><xsl:text>"}</xsl:text>
     <xsl:if test="position()!=last()">
       <xsl:text>, </xsl:text>
     </xsl:if>
   </xsl:template>
-
+  
+  <!-- giving new-ness status when available -->
+  <xsl:template name="changeMarker">
+    <xsl:param name="infoset"/>
+    <xsl:param name="type"/>
+    <xsl:param name="name"/>
+    <xsl:param name="contextname"/>
+    <xsl:param name="q"/>
+    <!-- @@@ specific to HTML5 for now -->
+    <xsl:if test="$infoset='html'">
+      <xsl:if test="//infoset[@technology=$infoset]/item[@name=$name and @type=$type]/context/property[@name='html5']">
+	<xsl:choose>
+	  <xsl:when test="count(//infoset[@technology=$infoset]/item[@name=$name and @type=$type]/context)=1">
+	    <xsl:value-of select="$q"/><xsl:text>h</xsl:text><xsl:value-of select="$q"/><xsl:text>: </xsl:text>
+	    <xsl:text>"</xsl:text><xsl:value-of select="//infoset[@technology=$infoset]/item[@name=$name and @type=$type]/context/property[@name='html5']/content"/><xsl:text>", </xsl:text><!-- @@@ escape? -->
+	  </xsl:when>
+	  <xsl:otherwise>
+	    <xsl:if test="//infoset[@technology=$infoset]/item[@name=$name and @type=$type]/context[items/item[@name=$contextname]]/property[@name='html5']">
+	      <xsl:value-of select="$q"/><xsl:text>h</xsl:text><xsl:value-of select="$q"/><xsl:text>: </xsl:text>
+	      <xsl:text>"</xsl:text><xsl:value-of select="//infoset[@technology=$infoset]/item[@name=$name and @type=$type]/context[items/item[@name=$contextname]]/property[@name='html5']/content"/><xsl:text>", </xsl:text><!-- @@@ escape? -->
+	    </xsl:if>
+	  </xsl:otherwise>
+	</xsl:choose>
+      </xsl:if>	
+    </xsl:if>
+  </xsl:template>
 
 </xsl:stylesheet>
