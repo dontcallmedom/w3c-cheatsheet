@@ -66,27 +66,14 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 
 
     var self = this;
-    // whether a given item has a change marker
-    function keywordChangeMarker(infoset, type, keyword) {
-        if (inMemory && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type][keyword] && keywordsMatch[keyword][infoset][type][keyword]["d"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0] && keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"]) {
-            return keywordsMatch[keyword][infoset][type][keyword]["d"][0]["h"]["p"][0]["t"];
-        } else if (!inMemory && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][type] && keywordsMatch[keyword][infoset][type] !== 1) {
-            return keywordsMatch[keyword][infoset][type];
-        } else {
-            return false;
-        }
-    }
-
-    // sets the changed/new/obsolete marker to a given element based on a given infoset/type/keyword
-    function addKeywordChangeMarker (element, infoset, type, keyword, mode) {
-        self.addChangeMarker(element, keywordChangeMarker(infoset, type, keyword), mode);
-    }
 
 
-    function addInternalLink(infoset, type, keyword) {
+    function addInternalLink(infoset, type, keyword, marker) {
         var link = $("<a class='internal'></a>").attr("href", "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword));
         link.text(keyword);
-        addKeywordChangeMarker(link, infoset, type, keyword, "short");
+	if (marker) {
+	    self.addChangeMarker(link, marker, "short");
+	}
         return link;
     }
 
@@ -119,10 +106,14 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                         contexttitle.append(", ");
                     }
                 }
-                addKeywordChangeMarker(contexttitle, infoset, propertytype, keyword, "medium");
+		if (context.h) {
+		    self.addChangeMarker(contexttitle, context.h.p[0].t, "medium");
+		}
                 contexttitle.appendTo(contextdiv);
             } else {
-                addKeywordChangeMarker(keywordtitle, infoset, propertytype, keyword, "medium");
+		if (context.h) {
+		    self.addChangeMarker(keywordtitle, context.h.p[0].t, "medium");
+		}
             }
             var dl = $("<dl></dl>");
             for (var property in context) {
@@ -168,7 +159,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                                 itemcontainer.text(propcontent.t);
                                 hasLink = true;
                             } else if (context[property].i && context[property].y) {
-                                var internalProperty = addInternalLink(context[property].i, context[property].y, propcontent.t);
+                                var internalProperty = addInternalLink(context[property].i, context[property].y, propcontent.t, propcontent.h);
                                 itemcontainer = internalProperty.appendTo(itemcontainer);
                                 hasLink = true;
                             }
@@ -177,7 +168,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                                     for (var textOrSpanIdx in propcontent.t) {
                                         var textOrSpan = propcontent.t[textOrSpanIdx];
                                         if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                            var internalLink = addInternalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t);
+                                            var internalLink = addInternalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t, textOrSpan.h);
                                             internalLink.appendTo(itemcontainer);
                                         } else {
                                             // JQuery seems to lack a method to append pure text; doing manual DOM operations
