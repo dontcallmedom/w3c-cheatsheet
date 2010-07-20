@@ -100,7 +100,8 @@ var dictionary = {
       <xsl:sort select="@name"/>
       <xsl:text>&#xA;    "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>": "</xsl:text>
       <!-- @@@ specific to HTML5, might need to be generalized/extended -->
-      <xsl:if test="count(distinct-values(current-group()//property[@name='html5']/content))=1">
+
+      <xsl:if test="count(current-group()//property[@name='html5']) and count(current-group()[parent::infoset/@technology='html']/context[property[@name='html5']])=count(current-group()[parent::infoset/@technology='html']/context) and count(distinct-values(current-group()[parent::infoset/@technology='html']/context/property[@name='html5']/content))=1">
 	<xsl:value-of select="(current-group()//property[@name='html5']/content)[1]"/>
       </xsl:if>
       <xsl:text>"</xsl:text>
