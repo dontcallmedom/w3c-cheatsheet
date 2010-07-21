@@ -318,12 +318,13 @@ var cheatsheet = new Cheatsheet();
  */
 jQuery(document).ready(function ($) {
     // We create the tabs
-    $('#content').tabs();
-    $('#content').tabs('paging', {'nextButton':'', 'prevButton':''});
-    $('#content').bind("tabsselect", function () {
+    var content = $('#content');
+    content.tabs();
+    content.tabs('paging', {'nextButton':'', 'prevButton':''});
+    content.bind("tabsselect", function () {
         $(".ac_results").hide();
     });
-    $('#content').bind("tabsshow", function (event, ui) {
+    content.bind("tabsshow", function (event, ui) {
         window.location.hash = ui.tab.hash;
     });
 
@@ -436,9 +437,10 @@ jQuery(document).ready(function ($) {
     });
 
     // if an anchor is set, loads the relevant view
-    if (window.location.hash) {
-        if (window.location.hash.substring(0, 5) === '#inf,' || window.location.hash.substring(0, 8) === '#search,') {
-            cheatsheet.load_anchor(window.location.hash.substring(1));
+    var hash = window.location.hash;
+    if (hash) {
+        if (hash.substring(0, 5) === '#inf,' || hash.substring(0, 8) === '#search,') {
+            cheatsheet.load_anchor(hash.substring(1));
         }
     }
 });
