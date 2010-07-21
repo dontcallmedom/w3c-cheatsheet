@@ -76,7 +76,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	      <property name="Accessibility techniques" list="block">
 		<xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">
 		  <xsl:sort select="count(description//descendant::el[normalize-space()=$el])" order="descending"/>
-		  <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',$el,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
+		  <content xml:lang="en" link="{concat('/TR/WCAG20-TECHS/',@id,'.html')}"><xsl:value-of select="normalize-space(short-name)"/></content>
 		</xsl:for-each>
 	      </property>
 	    </xsl:if>
@@ -124,7 +124,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:if>
     </xsl:for-each>
 
-    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
+    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
     <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name']" group-by="normalize-space(.)">	    
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:variable name="contextsNumber" select="count(current-group())"/>
@@ -148,7 +148,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:if>
 	    <property name="Elements" list="inline">
 	      <xsl:choose>
-		<xsl:when test="ancestor::html:div[@id='common-attributes']">
+		<xsl:when test="ancestor::html:div[@id='global-attributes']">
 		  <content>All HTML elements</content><!-- @@@ link to element list? -->
 		</xsl:when>
 		<xsl:otherwise>
@@ -227,8 +227,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <property name="Specification">
 	      <xsl:attribute name="link">
 		<xsl:choose>
-		  <xsl:when test="ancestor::html:div[@id='common-attributes']">
-		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/common-attributes.html#',current()/@id)"/>
+		  <xsl:when test="ancestor::html:div[@id='global-attributes']">
+		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/global-attributes.html#',current()/@id)"/>
 		  </xsl:when>
 		  <xsl:when test="ancestor::html:div[@id='forms-attributes']">
 		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/forms-attributes.html#',current()/@id)"/>
@@ -268,7 +268,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <content>Attributes that are common to all elements in the HTML language.</content>
     </property>
     <property type="attribute" name="Attributes" list="inline" infoset="html">
-      <xsl:for-each select="$html5//html:div[@id='common-attributes']//html:dl[@class='attr-defs']/html:dt/html:*[@class='attribute-name']">
+      <xsl:for-each select="$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']/html:dt/html:*[@class='attribute-name']">
 	<content><xsl:value-of select="normalize-space(.)"/></content>
       </xsl:for-each>
     </property>
