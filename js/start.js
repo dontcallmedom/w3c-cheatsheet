@@ -71,9 +71,9 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
     function addInternalLink(infoset, type, keyword, marker) {
         var link = $("<a class='internal'></a>").attr("href", "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword));
         link.text(keyword);
-	if (marker) {
-	    self.addChangeMarker(link, marker, "short");
-	}
+        if (marker) {
+            self.addChangeMarker(link, marker, "short");
+        }
         return link;
     }
 
@@ -106,14 +106,14 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                         contexttitle.append(", ");
                     }
                 }
-		if (context.h) {
-		    self.addChangeMarker(contexttitle, context.h.p[0].t, "medium");
-		}
+                if (context.h) {
+                    self.addChangeMarker(contexttitle, context.h.p[0].t, "medium");
+                }
                 contexttitle.appendTo(contextdiv);
             } else {
-		if (context.h) {
-		    self.addChangeMarker(keywordtitle, context.h.p[0].t, "medium");
-		}
+                if (context.h) {
+                    self.addChangeMarker(keywordtitle, context.h.p[0].t, "medium");
+                }
             }
             var dl = $("<dl></dl>");
             for (var property in context) {
@@ -341,20 +341,16 @@ jQuery(document).ready(function ($) {
 
     // show/hide the "about" screen
     function toggle_about() {
-        if ($("#about").css("display") === "block") {
+        var about = $("#about");
+        if (about.css("display") === "block") {
             // when already opened, we hide it
-            $("#about").css("display", "none");
+            about.css("display", "none");
         } else {
-            $("#about").css("display", "block");
+            about.css("display", "block");
         }
         return false;
     }
 
-    // for the first launch, we show the about screen, with the donation form
-    if (cheatsheet.getCookie("alreadyLaunched") === "" && startWithDonate) {
-        toggle_about();
-        cheatsheet.setCookie("alreadyLaunched", "true", 2000);
-    }
     $("#openabout, #closeabout, #closeabout2").click(toggle_about);
 
     // Add a back link when navigating through keyword views
@@ -375,7 +371,7 @@ jQuery(document).ready(function ($) {
             return;
         }
         var keyword = item.selectValue;
-        window.location.hash = "#search," + escape(keyword);
+        hash = "#search," + escape(keyword);
         cheatsheet.clearLookUp();
         cheatsheet.load_keyword_data(keyword);
     }
@@ -392,12 +388,13 @@ jQuery(document).ready(function ($) {
     );
 
     function formatItem(row, i, num, q) {
-        var line = row[0];
-        var highlightIdx = line.toLowerCase().indexOf(q);
+        var line = row[0],
+            highlightIdx = line.toLowerCase().indexOf(q),
+            tag = keywordsTags[row[0]];
         line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
-        if (keywordsTags[row[0]]) {
+        if (tag) {
             var jLine = $("<span></span>").html(line);
-            cheatsheet.addChangeMarker(jLine, keywordsTags[row[0]], "medium");
+            cheatsheet.addChangeMarker(jLine, tag, "medium");
             line = jLine.html();
         }
         return line;
@@ -419,18 +416,21 @@ jQuery(document).ready(function ($) {
 
     // When a search term is entered/selected
     // add a "clear" button
-    $("#search").change(function () {
+    var search = $("#search"),
+	clear_button = $("#details_clear");
+    search.change(function () {
         cheatsheet.clearLookUp();
-        if ($("#search").val()) {
-            if (!$("#details_clear").length) {
-                $("#search").after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
-                $("#details_clear").click(function () {
+
+        if (search.val()) {
+            if (!clear_button.length) {
+                search.after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
+                clear_button.click(function () {
                     cheatsheet.clearLookUp();
-                    $("#search").val("").change();
+                    search.val("").change();
                 });
             }
         } else {
-            $("#details_clear").replaceWith("");
+            clear_button.replaceWith("");
         }
     });
 
