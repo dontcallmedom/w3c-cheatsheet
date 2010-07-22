@@ -259,12 +259,13 @@ Cheatsheet.prototype.clearLookUp = function () {
  * Loads the view bound to a search anchor
  */
 Cheatsheet.prototype.load_anchor = function (anchor) {
+    var search = $("#search");
     if (anchor === null) {
         return false;
     }
     if (anchor.substring(0, 7) === "search,") {
-        $("#search").val(anchor.substring(7));
-        $("#search").get(0).autocompleter.findValue();
+        search.val(anchor.substring(7));
+        search.get(0).autocompleter.findValue();
         return true;
     }
     // Search anchors look like "#search,inf,html,e,area"
@@ -276,7 +277,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
     if (keyword && infoset && propertytype && this.keywordSources[infoset] && this.keywordSources[infoset][propertytype] && keywordsMatch[keyword] && keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]) {
         this.clearLookUp();
         $(".ac_results").hide();
-        $("#search").val("");
+        search.val("");
         if (this.load_keyword_data(keyword, infoset, propertytype)) {
             return true;
         }
