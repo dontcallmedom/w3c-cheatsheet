@@ -235,8 +235,9 @@ Cheatsheet.prototype.display_keyword_data = function (keyword_data, infoset, pro
  * and get it displayed
  */
 Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytype) {
-    if (inMemory && keywordsMatch[keyword] && (!infoset || (keywordsMatch[keyword][infoset] && keywordsMatch[keyword][infoset][propertytype]))) {
-        this.display_keyword_data(keywordsMatch[keyword], infoset, propertytype);
+    var keyword_match = keywordsMatch[keyword];
+    if (inMemory && keyword_match && (!infoset || (keyword_match[infoset] && keyword_match[infoset][propertytype]))) {
+        this.display_keyword_data(keyword_match, infoset, propertytype);
     } else {
         var cheatsheet = this;
         $.getJSON("data/json/" + escape(keyword.replace(/ /g,"%20")).toLowerCase() + ".js", function (keyword_data) {
