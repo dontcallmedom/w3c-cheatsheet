@@ -318,14 +318,14 @@ var cheatsheet = new Cheatsheet();
  */
 jQuery(document).ready(function ($) {
     // We create the tabs
-    var content = $('#content');
+    var cheatsheet = cheatsheet, content = $('#content'), hash = window.location.hash;
     content.tabs();
     content.tabs('paging', {'nextButton':'', 'prevButton':''});
     content.bind("tabsselect", function () {
         $(".ac_results").hide();
     });
     content.bind("tabsshow", function (event, ui) {
-        window.location.hash = ui.tab.hash;
+        hash = ui.tab.hash;
     });
 
     // The elements with class 'accordion' are turned into an accordion
@@ -355,9 +355,7 @@ jQuery(document).ready(function ($) {
         toggle_about();
         cheatsheet.setCookie("alreadyLaunched", "true", 2000);
     }
-    $("#openabout").click(toggle_about);
-    $("#closeabout").click(toggle_about);
-    $("#closeabout2").click(toggle_about);
+    $("#openabout, #closeabout, #closeabout2").click(toggle_about);
 
     // Add a back link when navigating through keyword views
     function addBackLink() {
@@ -437,7 +435,6 @@ jQuery(document).ready(function ($) {
     });
 
     // if an anchor is set, loads the relevant view
-    var hash = window.location.hash;
     if (hash) {
         if (hash.substring(0, 5) === '#inf,' || hash.substring(0, 8) === '#search,') {
             cheatsheet.load_anchor(hash.substring(1));
