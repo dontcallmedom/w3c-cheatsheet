@@ -59,13 +59,14 @@ Cheatsheet.prototype.addChangeMarker = function (element, marker, mode) {
  * Takes the collected data and displays them in an accordion view
  */
 Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytype) {
+    var self = this,
+        baseUrl = "http://www.w3.org";
+
+
     // Make sure we actually have data
     if (keyword_data[infoset][propertytype] === null) {
         return false;
     }
-
-
-    var self = this;
 
 
     function addInternalLink(infoset, type, keyword, marker) {
@@ -93,16 +94,16 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
             var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
             var contextdiv = $("<div></div>");
-            if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context["ct"] && context["ct"]["y"]) {
+            if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context.ct && context.ct.y) {
                 var contexttitle = $("<h3></h3>");
-                if (context["ct"]["y"] === "a") {
+                if (context.ct.y === "a") {
                     contexttitle.text("With attribute ");
-                } else if (context["ct"]["y"] === "e") {
+                } else if (context.ct.y === "e") {
                     contexttitle.text("In element ");
                 }
-                for (var contextitem in context["ct"]["d"]) {
-                    $("<code></code>").text(context["ct"]["d"][contextitem]).appendTo(contexttitle);
-                    if (contextitem < context["ct"]["d"].length - 1) {
+                for (var contextitem in context.ct.d) {
+                    $("<code></code>").text(context.ct.d[contextitem]).appendTo(contexttitle);
+                    if (contextitem < context.ct.d.length - 1) {
                         contexttitle.append(", ");
                     }
                 }
@@ -117,34 +118,36 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
             }
             var dl = $("<dl></dl>");
             for (var property in context) {
+		var property_container = context[property];
                 if (property !== "ct") {
-                    var dt = $("<dt></dt>").appendTo(dl);
-                    var container = dt;
-                    if (context[property].u) { // u for URI
-                        var propurl = context[property].u;
+                    var dt = $("<dt></dt>").appendTo(dl),
+                        container = dt,
+			property_data = property_container["p"];
+                    if (property_container.u) { // u for URI
+                        var propurl = property_container.u;
                         // On domain-less URIs, we assume www.w3.org as the base
                         if (propurl.substring(0, 1) === "/") {
-                            propurl = "http://www.w3.org" + propurl;
+                            propurl = baseUrl + propurl;
                         }
                         container = $("<a></a>").attr("href", propurl).appendTo(dt);
                     }
                     container.text(dictionary[property]);
                     // p for properties (i.e. all the detailed data about the item)
-                    if (context[property]["p"] && context[property]["p"].length > 0) {
+                    if (property_data && property_data.length > 0) {
                         var displayAsList = true;
-                        if (context[property]["p"].length === 1 || context[property].l === "inline") { // l for list, i.e. list mode
+                        if (property_data.length === 1 || property_container.l === "inline") { // l for list, i.e. list mode
                             displayAsList = false;
                         }
                         var listcontainer = $("<dd></dd>");
                         if (displayAsList) {
-                            if (context[property].l === "block") {
+                            if (property_container.l === "block") {
                                 listcontainer = $("<ul></ul>").appendTo(listcontainer);
                             }
                         }
-                        for (var propcontentidx in context[property]["p"]) {
-                            var hasLink = false;
-                            var itemcontainer = listcontainer;
-                            var propcontent = context[property]["p"][propcontentidx];
+                        for (var propcontentidx in property_data) {
+                            var hasLink = false,
+                                itemcontainer = listcontainer,
+                                propcontent = property_data[propcontentidx];
                             if (displayAsList) {
                                 itemcontainer = $("<li></li>").appendTo(itemcontainer);
                             } else {
@@ -153,13 +156,13 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                             if (propcontent.u) {
                                 var url = propcontent.u;
                                 if (url.substring(0, 1) === "/") {
-                                    url = "http://www.w3.org" + url;
+                                    url = baseUrl + url;
                                 }
                                 itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
                                 itemcontainer.text(propcontent.t);
                                 hasLink = true;
-                            } else if (context[property].i && context[property].y) {
-                                var internalProperty = addInternalLink(context[property].i, context[property].y, propcontent.t, propcontent.h);
+                            } else if (property_container.i && property_container.y) {
+                                var internalProperty = addInternalLink(property_container.i, property_container.y, propcontent.t, propcontent.h);
                                 itemcontainer = internalProperty.appendTo(itemcontainer);
                                 hasLink = true;
                             }
@@ -187,7 +190,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                             } else if (!hasLink) {
                                 itemcontainer.text(propcontent.t);
                             }
-                            if (!displayAsList && propcontentidx < context[property]["p"].length - 1) { //white space between dd span list
+                            if (!displayAsList && propcontentidx < property_data.length - 1) { //white space between dd span list
                                 listcontainer.append(" ");
                             }
                         }
@@ -200,7 +203,6 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         }
         div.appendTo($("#details"));
     }
-    return true;
 };
 
 /*
@@ -417,7 +419,7 @@ jQuery(document).ready(function ($) {
     // When a search term is entered/selected
     // add a "clear" button
     var search = $("#search"),
-	clear_button = $("#details_clear");
+        clear_button = $("#details_clear");
     search.change(function () {
         sheet.clearLookUp();
 
