@@ -249,10 +249,11 @@ Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytyp
  * Clear the search box and search results
  */
 Cheatsheet.prototype.clearLookUp = function () {
-    if ($("#details").accordion) {
-        $("#details").accordion("destroy");
+    var details = $("#details");
+    if (details.accordion) {
+        details.accordion("destroy");
     }
-    $("#details").html("");
+    details.html("");
 };
 
 /*
