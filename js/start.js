@@ -327,7 +327,7 @@ jQuery(document).ready(function ($) {
         $(".ac_results").hide();
     });
     content.bind("tabsshow", function (event, ui) {
-        hash = ui.tab.hash;
+        window.location.hash = ui.tab.hash;
     });
 
     // The elements with class 'accordion' are turned into an accordion
@@ -373,7 +373,7 @@ jQuery(document).ready(function ($) {
             return;
         }
         var keyword = item.selectValue;
-        hash = "#search," + escape(keyword);
+        window.location.hash = "#search," + escape(keyword);
         sheet.clearLookUp();
         sheet.load_keyword_data(keyword);
     }
