@@ -318,7 +318,7 @@ var cheatsheet = new Cheatsheet();
  */
 jQuery(document).ready(function ($) {
     // We create the tabs
-    var cheatsheet = cheatsheet, content = $('#content'), hash = window.location.hash;
+    var sheet = cheatsheet, content = $('#content'), hash = window.location.hash;
     content.tabs();
     content.tabs('paging', {'nextButton':'', 'prevButton':''});
     content.bind("tabsselect", function () {
@@ -330,7 +330,7 @@ jQuery(document).ready(function ($) {
 
     // The elements with class 'accordion' are turned into an accordion
     $(".accordion").accordion({header: 'div >h3', active: false, autoHeight: false});
-    cheatsheet.makeReplacingAccordion($(".accordion"));
+    sheet.makeReplacingAccordion($(".accordion"));
 
     $("body").css("display", "block");
 
@@ -355,9 +355,9 @@ jQuery(document).ready(function ($) {
 
     // Add a back link when navigating through keyword views
     function addBackLink() {
-        if (cheatsheet.hashHistory.length > 0) {
+        if (sheet.hashHistory.length > 0) {
             $("<a class='internal back' onclick='cheatsheet.hashHistory.pop();return true;'></a>")
-                .attr("href", cheatsheet.hashHistory[cheatsheet.hashHistory.length - 1])
+                .attr("href", sheet.hashHistory[sheet.hashHistory.length - 1])
                 .text("back")
                 .appendTo($("<p></p>"))
                 .appendTo($("#details"));
@@ -372,16 +372,16 @@ jQuery(document).ready(function ($) {
         }
         var keyword = item.selectValue;
         hash = "#search," + escape(keyword);
-        cheatsheet.clearLookUp();
-        cheatsheet.load_keyword_data(keyword);
+        sheet.clearLookUp();
+        sheet.load_keyword_data(keyword);
     }
 
     // We keep track of internal links for managing back link
     $("a.internal").live("click",
         function ()  {
-        cheatsheet.load_anchor($(this).attr("href").split("#")[1]);
+        sheet.load_anchor($(this).attr("href").split("#")[1]);
         if (!$(this).hasClass('back')) {
-            cheatsheet.hashHistory.push(window.location.hash);
+            sheet.hashHistory.push(window.location.hash);
         }
         addBackLink();
     }
@@ -394,7 +394,7 @@ jQuery(document).ready(function ($) {
         line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
         if (tag) {
             var jLine = $("<span></span>").html(line);
-            cheatsheet.addChangeMarker(jLine, tag, "medium");
+            sheet.addChangeMarker(jLine, tag, "medium");
             line = jLine.html();
         }
         return line;
@@ -419,13 +419,13 @@ jQuery(document).ready(function ($) {
     var search = $("#search"),
 	clear_button = $("#details_clear");
     search.change(function () {
-        cheatsheet.clearLookUp();
+        sheet.clearLookUp();
 
         if (search.val()) {
             if (!clear_button.length) {
                 search.after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
                 clear_button.click(function () {
-                    cheatsheet.clearLookUp();
+                    sheet.clearLookUp();
                     search.val("").change();
                 });
             }
@@ -437,7 +437,7 @@ jQuery(document).ready(function ($) {
     // if an anchor is set, loads the relevant view
     if (hash) {
         if (hash.substring(0, 5) === '#inf,' || hash.substring(0, 8) === '#search,') {
-            cheatsheet.load_anchor(hash.substring(1));
+            sheet.load_anchor(hash.substring(1));
         }
     }
 });
