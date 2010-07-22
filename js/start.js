@@ -393,6 +393,8 @@ jQuery(document).ready(function ($) {
         var line = row[0],
             highlightIdx = line.toLowerCase().indexOf(q),
             tag = keywordsTags[row[0]];
+	// @@@ this is probably unsafe if the list of keywords is not
+	// strictly controlled
         line = line.substring(0, highlightIdx) + "<strong>" + line.substring(highlightIdx, highlightIdx + q.length) + "</strong>" + line.substring(highlightIdx + q.length);
         if (tag) {
             var jLine = $("<span></span>").html(line);
