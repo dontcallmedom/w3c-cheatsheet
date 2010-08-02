@@ -38,7 +38,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
   <infosets>
   <infoset technology="html">
-    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head'] and html:div[@class='longdesc']]" group-by="substring-before(concat(@id,'.'),'.')">
+    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head'] and html:div[@class='longdesc'] and not(html:div[@class='toc'])]" group-by="substring-before(concat(@id,'.'),'.')">
       <xsl:variable name="el" select="substring-before(concat(@id,'.'),'.')"/>
       <item type="element" name="{$el}">
 	<xsl:for-each select="current-group()">
@@ -124,7 +124,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:if>
     </xsl:for-each>
 
-    <xsl:if test="not($html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']) or not($html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs'])">
+    <xsl:if test="not($html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs'])">
       <xsl:message terminate="yes">
 	Structure of HTML Markup spec document has changed, XSLT needs an update.
       </xsl:message>
