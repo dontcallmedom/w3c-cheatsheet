@@ -124,6 +124,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:if>
     </xsl:for-each>
 
+    <xsl:if test="not($html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']) or not($html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs'])">
+      <xsl:message terminate="yes">
+	Structure of HTML Markup spec document has changed, XSLT needs an update.
+      </xsl:message>
+    </xsl:if>
     <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
     <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name']" group-by="normalize-space(.)">	    
       <item type="attribute" name="{normalize-space(.)}">
