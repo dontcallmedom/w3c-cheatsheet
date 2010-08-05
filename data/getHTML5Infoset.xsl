@@ -52,7 +52,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    <property type="attribute" name="Attributes" list="inline" infoset="html">
 	      <content>global HTML attributes</content>
-	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref' and not(href='#global-attributes')]" group-by=".">
+	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref' and not(@href='#global-attributes')]" group-by=".">
 		<!-- @@@ mark obsolete/new/changed status -->
 		<content><xsl:value-of select="normalize-space(.)"/></content>
 	      </xsl:for-each-group>
