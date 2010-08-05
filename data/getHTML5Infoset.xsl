@@ -51,10 +51,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </xsl:if>
 
 	    <property type="attribute" name="Attributes" list="inline" infoset="html">
-	      <content>Common HTML attributes</content>
-	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref']" group-by=".">
+	      <content>global HTML attributes</content>
+	      <xsl:for-each-group select=".//html:div[@class='attr-content-models']//html:a[@class='ref' and not(href='#global-attributes')]" group-by=".">
 		<!-- @@@ mark obsolete/new/changed status -->
-		<content><xsl:value-of select="."/></content>
+		<content><xsl:value-of select="normalize-space(.)"/></content>
 	      </xsl:for-each-group>
 	    </property>
 	    <property name="content" list="inline">
@@ -129,8 +129,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	Structure of HTML Markup spec document has changed, XSLT needs an update.
       </xsl:message>
     </xsl:if>
-    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']|$html5//html:div[@id='forms-attributes']//html:dl[@class='attr-defs']"/>
-    <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name']" group-by="normalize-space(.)">	    
+    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']"/>
+    <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name' and not(@href='#global-attributes')]" group-by="normalize-space(.)">	    
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:variable name="contextsNumber" select="count(current-group())"/>
 	<xsl:for-each-group select="current-group()" group-by="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')">
@@ -267,10 +267,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:for-each>
 
 
-  <list type="attribute" name="Common HTML attributes">
+  <list type="attribute" name="global HTML attributes">
     <context>
     <property name="description">
-      <content>Attributes that are common to all elements in the HTML language.</content>
+      <content>Attributes permitted globally in the HTML language.</content>
     </property>
     <property type="attribute" name="Attributes" list="inline" infoset="html">
       <xsl:for-each select="$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']/html:dt/html:*[@class='attribute-name']">
