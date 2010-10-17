@@ -400,8 +400,7 @@ jQuery(document).ready(function ($) {
         sheet.clearLookUp();
         if (search.val()) {
             if (clear_button.length === 0) {
-                search.after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
-                clear_button.click(function () {
+		$("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>").insertAfter(search).click(function () {
                     sheet.clearLookUp();
                     search.val("").change();
                 });
