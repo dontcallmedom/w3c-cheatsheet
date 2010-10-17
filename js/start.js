@@ -265,7 +265,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
     if (anchor === null) {
         return false;
     }
-    if (anchor.substring(0, 7) === "search,") {
+    if (/^search,/.test(anchor) ) {
         search.val(anchor.substring(7));
         search.get(0).autocompleter.findValue();
         return true;
@@ -412,7 +412,7 @@ jQuery(document).ready(function ($) {
 
     // if an anchor is set, loads the relevant view
     if (hash) {
-        if (hash.substring(0, 5) === '#inf,' || hash.substring(0, 8) === '#search,') {
+        if (/^#inf,/.test(hash) || /^#search,/.test(hash) ) {
             sheet.load_anchor(hash.substring(1));
         }
     }
