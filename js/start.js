@@ -30,7 +30,7 @@ Cheatsheet.prototype.makeReplacingAccordion = function (accordion) {
     // update the hash when hitting an element with an id
     accordion.accordion('option', 'navigation', true);
     // take as much/as little vertical space as needed
-    accordion.accordion('option', 'autoHeight', 'false');
+    accordion.accordion('option', 'autoHeight', false);
     // allows all lines to be closed (by clicking on the open line)
     accordion.accordion('option', 'collapsible', true);
 };
@@ -251,7 +251,7 @@ Cheatsheet.prototype.load_keyword_data = function (keyword, infoset, propertytyp
  */
 Cheatsheet.prototype.clearLookUp = function () {
     var details = $("#details");
-    if (details.accordion) {
+    if (details.data("accordion") && details.data("accordion").element) {
         details.accordion("destroy");
     }
     details.html("");
