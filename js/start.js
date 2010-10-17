@@ -254,7 +254,7 @@ Cheatsheet.prototype.clearLookUp = function () {
     if (details.data("accordion") && details.data("accordion").element) {
         details.accordion("destroy");
     }
-    details.html("");
+    details.empty();
 };
 
 /*
@@ -394,13 +394,12 @@ jQuery(document).ready(function ($) {
 
     // When a search term is entered/selected
     // add a "clear" button
-    var search = $("#search"),
-        clear_button = $("#details_clear");
+    var search = $("#search");
     search.change(function () {
+        var clear_button = $("#details_clear");
         sheet.clearLookUp();
-
         if (search.val()) {
-            if (!clear_button.length) {
+            if (clear_button.length === 0) {
                 search.after("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>");
                 clear_button.click(function () {
                     sheet.clearLookUp();
@@ -408,7 +407,7 @@ jQuery(document).ready(function ($) {
                 });
             }
         } else {
-            clear_button.replaceWith("");
+            clear_button.remove();
         }
     });
 
