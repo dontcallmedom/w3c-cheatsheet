@@ -36,9 +36,11 @@ context =  element context {
 description = element property {
 	     # add to xmltojson.xsl dictionary when updating
 	     # TODO: need trimming
-             attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Specification" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" },
-	     (Types, Infoset)?,
-	     attribute link { xsd:string { minLength = "1"  } }?,
+	     linkProperty | contentProperty
+          }+
+linkProperty = attribute name { "Specification"}, attribute link { xsd:string { minLength = "1"  } }
+contentProperty = attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" },
+	       (Types, Infoset)?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
 	         attribute xml:lang { xsd:string { minLength = "1"  } }?,
@@ -54,5 +56,4 @@ description = element property {
 	             text
 		   )+
 		  )
-	     }*
-          }+
+	     }+
