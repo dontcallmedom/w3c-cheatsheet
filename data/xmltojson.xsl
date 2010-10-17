@@ -76,7 +76,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 </xsl:variable>
 
   <xsl:template match="/">
-    <xsl:text>"use strict";
+    <xsl:text>
 // y: type, i: infoset, u: url, t: title, p: properties
 var dictionary = {
 </xsl:text>
