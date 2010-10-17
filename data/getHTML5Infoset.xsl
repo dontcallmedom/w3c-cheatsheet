@@ -132,8 +132,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name' and not(@href='#global-attributes')]" group-by="normalize-space(.)">	    
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:variable name="contextsNumber" select="count(current-group())"/>
-	<xsl:for-each-group select="current-group()" group-by="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')">
-	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[@class='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
+	<xsl:for-each-group select="current-group()" group-by="substring-before(concat(current()/ancestor::html:div[tokenize(@class,' ')='section'][html:h2[@class='element-head']]/@id,'.'),'.')">
+	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[tokenize(@class,' ')='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
 	  <context>
 	    <xsl:if test="$contextsNumber &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
@@ -143,7 +143,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		    <item name="{$el}"/>
 		  </xsl:when>
 		  <xsl:otherwise>
-		    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[@class='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
+		    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[tokenize(@class,' ')='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
 		      <item name="{substring-before(concat(@id,'.'),'.')}"/>
 		    </xsl:for-each-group>
 		  </xsl:otherwise>
@@ -163,7 +163,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		      <content><xsl:value-of select="$el"/></content>
 		    </xsl:when>
 		    <xsl:otherwise>
-		      <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[@class='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
+		      <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[tokenize(@class,' ')='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
 			<content><xsl:value-of select="substring-before(concat(@id,'.'),'.')"/></content>
 		      </xsl:for-each-group>
 		    </xsl:otherwise>
@@ -187,7 +187,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		</property>
 	      </xsl:when>
 	      <!-- if the element is new, the existing of the attribute on that element is new as well -->
-	      <xsl:when test="$el and ancestor::html:div[@class='section' and html:h2[@class='element-head']]/html:h2[@class='element-head']/html:span[@class='new-feature']">
+	      <xsl:when test="$el and ancestor::html:div[tokenize(@class,' ')='section' and html:h2[@class='element-head']]/html:h2[@class='element-head']/html:span[@class='new-feature']">
 		<property name="html5">
 		  <content>new</content>
 		</property>
