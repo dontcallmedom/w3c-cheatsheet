@@ -33,9 +33,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <xsl:template match="/">
   <infosets>
   <infoset technology="xpath">
-    <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]/following::html:div[@class='exampleInner'][1]">
-      <item type="function" name="{substring-after(html:div[@class='proto'][1]//html:code[@class='function'],'fn:')}">
-      <xsl:for-each select="html:div[@class='proto']">
+    <xsl:for-each select="document('http://www.w3.org/TR/2007/REC-xpath-functions-20070123/')/html:html/html:body//html:*[contains(.,'fn:') and html:a[starts-with(@id,'func-')]]/parent::html:div">
+      <item type="function" name="{substring-after((.//html:div[@class='proto'])[1]//html:code[@class='function'],'fn:')}">
+      <xsl:for-each select=".//html:div[@class='proto']">
 	<context>
 	  <!-- could link up to XML Schema Datatypes some how, if it was in the cheat sheet ; it isn't though @@@ -->
 	  <xsl:if test="position()=1">
