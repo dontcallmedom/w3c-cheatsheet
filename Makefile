@@ -51,27 +51,7 @@ data/rules.xsl: data/rules.schematron
 	$(SAXON) data/schematron2.tmp $(XSLT_SCHEMATRON_BUILDER_PATH)/iso_svrl_for_xslt1.xsl  > $@
 	rm data/schematron1.tmp data/schematron2.tmp
 
-#####################
-# HTML5 data
-# not ready for production yet
 
-# get the compact RelaxNG html5 schemas from http://syntax.whattf.org/relaxng/
-# and turned into them .rng in data/html5schemas
-data/html5schemas/xhtml5.rnc:
-	wget --no-parent --recursive --level=1 --timestamping --no-directories --directory-prefix=data/html5schemas/ http://syntax.whattf.org/relaxng/ -A "*.rnc" 
-
-HTML5_RELAXNG_XML := $(patsubst data/html5schemas/%.rnc,data/html5schemas/%.rng,$(wildcard data/html5schemas/*.rnc))
-
-data/html5schemas/%.rng: data/html5schemas/%.rnc
-	trang $^ $@
-
-data/full-html5-schema.rng: $(HTML5_RELAXNG_XML) data/makeSelfContainedHTML5Schema.xsl
-	saxon data/html5schemas/xhtml5.rng data/makeSelfContainedHTML5Schema.xsl > $@
-
-data/full-html5-schema-expanded.rng: data/full-html5-schema.rng data/expandSchemaTree.xsl
-	saxon $^ > $@
-
-                   #
 ####################
 
 # HTML Infoset data
