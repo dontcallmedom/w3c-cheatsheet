@@ -74,7 +74,7 @@ public class CheatSheet extends Activity {
         	
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            	if (url.contains(":")) {
+            	if (url.contains(":") &&  !url.startsWith("file:")) {
             		Intent intent = new Intent();
             		intent.setData(Uri.parse(url));
             		intent.setAction("android.intent.action.VIEW");
