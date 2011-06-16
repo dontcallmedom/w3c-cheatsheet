@@ -27,7 +27,9 @@ import java.lang.reflect.Field;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -69,6 +71,22 @@ public class CheatSheet extends Activity {
         			stopLoading();
         		}
         	}
+        	
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            	if (url.contains(":")) {
+            		Intent intent = new Intent();
+            		intent.setData(Uri.parse(url));
+            		intent.setAction("android.intent.action.VIEW");
+            		intent.setClassName("com.android.browser",
+            		"com.android.browser.BrowserActivity");
+            		startActivity(intent);
+            	} else {
+            		view.loadUrl(url);
+            	}
+        		return true;
+            }
+        	
         });
         appView.getSettings().setJavaScriptEnabled(true);
         appView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);        
@@ -116,11 +134,18 @@ public class CheatSheet extends Activity {
         this.starting = false;
     }
 
-   public boolean onSearchRequested() {
+    @Override
+    public boolean onSearchRequested() {
 	   appView.loadUrl("javascript:cheatsheet.load_anchor('search')");
 	   return true;
    }
     
+    /* only available starting API level 5
+   @Override
+   public void onBackPressed() {
+	   
+   } */
+   
     /**
      * Provides a hook for calling "alert" from javascript. Useful for
      * debugging your javascript.
@@ -132,6 +157,8 @@ public class CheatSheet extends Activity {
     	{
     		mCtx = ctx;
     	}
+
+
     	
     	@Override
         public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
