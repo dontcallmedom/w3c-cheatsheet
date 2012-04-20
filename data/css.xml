@@ -647,7 +647,7 @@ inherit</content>
       <item type="property" name="display">
          <context>
             <property name="values">
-               <content>inline | block | list-item | run-in | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit</content>
+               <content>inline | block | list-item | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit</content>
             </property>
             <property name="inherited">
                <content>no</content>
@@ -729,7 +729,7 @@ inherit</content>
                <content>yes</content>
             </property>
             <property name="percentage">
-               <content>refer to parent element's font size</content>
+               <content>refer to inherited font size</content>
             </property>
             <property name="media">
                <content>visual</content>
@@ -1125,7 +1125,7 @@ inherit</content>
                <content>&lt;integer&gt; | inherit</content>
             </property>
             <property name="applies">
-               <content>block-level elements</content>
+               <content>block container elements</content>
             </property>
             <property name="inherited">
                <content>yes</content>
@@ -1198,7 +1198,7 @@ inherit</content>
                <content>visible | hidden | scroll | auto | inherit</content>
             </property>
             <property name="applies">
-               <content>non-replaced block-level elements, table cells, and inline-block elements</content>
+               <content>block containers</content>
             </property>
             <property name="inherited">
                <content>no</content>
@@ -1625,7 +1625,7 @@ inherit</content>
                <content>left | right | center | justify | inherit</content>
             </property>
             <property name="applies">
-               <content>block-level elements, table cells and inline blocks</content>
+               <content>block containers</content>
             </property>
             <property name="inherited">
                <content>yes</content>
@@ -1656,7 +1656,7 @@ inherit</content>
                <content>&lt;length&gt; | &lt;percentage&gt; | inherit</content>
             </property>
             <property name="applies">
-               <content>block-level elements, table cells and inline blocks</content>
+               <content>block containers</content>
             </property>
             <property name="inherited">
                <content>yes</content>
@@ -1806,7 +1806,7 @@ inherit</content>
                <content>&lt;integer&gt; | inherit</content>
             </property>
             <property name="applies">
-               <content>block-level elements</content>
+               <content>block container elements</content>
             </property>
             <property name="inherited">
                <content>yes</content>

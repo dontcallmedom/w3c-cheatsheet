@@ -5,7 +5,6 @@
          <context>
             <property type="attribute" name="Attributes" list="inline" infoset="html">
                <content>global HTML attributes</content>
-               <content>name</content>
                <content>href</content>
                <content>target</content>
                <content>rel</content>
@@ -134,11 +133,12 @@
                <content>controls</content>
                <content>loop</content>
                <content>mediagroup</content>
+               <content>muted</content>
                <content>src</content>
             </property>
             <property name="content" list="inline">
-               <content xml:lang="en">a src attribute, or one or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by flow content</content>
-               <content xml:lang="en">a src attribute, or one or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by phrasing content</content>
+               <content xml:lang="en">a src attribute, or zero or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by flow content</content>
+               <content xml:lang="en">a src attribute, or zero or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by phrasing content</content>
             </property>
             <property name="description">
                <content xml:lang="en">An audio element represents an audio stream.</content>
@@ -247,10 +247,8 @@
                <content>onoffline</content>
                <content>ononline</content>
                <content>onpopstate</content>
-               <content>onredo</content>
                <content>onresize</content>
                <content>onstorage</content>
-               <content>onundo</content>
                <content>onunload</content>
             </property>
             <property name="content" list="inline">
@@ -553,7 +551,6 @@
             <property type="attribute" name="Attributes" list="inline" infoset="html">
                <content>global HTML attributes</content>
                <content>cite</content>
-               <content>datetime</content>
             </property>
             <property name="content" list="inline">
                <content xml:lang="en">transparent (either phrasing content or flow content)</content>
@@ -571,7 +568,7 @@
                <content>open</content>
             </property>
             <property name="content" list="inline">
-               <content xml:lang="en">an optional <span type="element" infoset="html">summary</span> element, followed by flow content</content>
+               <content xml:lang="en">one <span type="element" infoset="html">summary</span> element, followed by flow content</content>
             </property>
             <property name="description">
                <content xml:lang="en">The details element represents a control from which the user can obtain additional information or controls on-demand.</content>
@@ -637,7 +634,7 @@
                <content>global HTML attributes</content>
             </property>
             <property name="content" list="inline">
-               <content xml:lang="en">phrasing content</content>
+               <content xml:lang="en">flow content</content>
             </property>
             <property name="description">
                <content xml:lang="en">The dt element represents a term or name.</content>
@@ -699,7 +696,7 @@
             </property>
             <property name="Accessibility techniques" list="block">
                <content xml:lang="en" link="/TR/WCAG20-TECHS/H71.html">Providing a description for groups of form controls using fieldset and legend elements</content>
-               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls</content>
+               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls using label or legend</content>
             </property>
             <property name="Mobile considerations" list="block">
                <content xml:lang="en" link="http://www.w3.org/TR/mobile-bp/#CONTROL_LABELLING">Label all form controls appropriately and explicitly associate labels with form controls.</content>
@@ -765,6 +762,7 @@
                <content>action</content>
                <content>method</content>
                <content>enctype</content>
+               <content>name</content>
                <content>accept-charset</content>
                <content>novalidate</content>
                <content>target</content>
@@ -994,6 +992,7 @@
             <property type="attribute" name="Attributes" list="inline" infoset="html">
                <content>global HTML attributes</content>
                <content>src</content>
+               <content>srcdoc</content>
                <content>name</content>
                <content>width</content>
                <content>height</content>
@@ -1735,7 +1734,6 @@
             <property type="attribute" name="Attributes" list="inline" infoset="html">
                <content>global HTML attributes</content>
                <content>cite</content>
-               <content>datetime</content>
             </property>
             <property name="content" list="inline">
                <content xml:lang="en">transparent (either phrasing content or flow content)</content>
@@ -1793,7 +1791,7 @@
             </property>
             <property name="Accessibility techniques" list="block">
                <content xml:lang="en" link="/TR/WCAG20-TECHS/H44.html">Using label elements to associate text labels with form controls</content>
-               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls</content>
+               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls using label or legend</content>
                <content xml:lang="en" link="/TR/WCAG20-TECHS/H91.html">Using HTML form controls and links</content>
             </property>
             <property name="Mobile considerations" list="block">
@@ -1815,7 +1813,7 @@
             </property>
             <property name="Accessibility techniques" list="block">
                <content xml:lang="en" link="/TR/WCAG20-TECHS/H71.html">Providing a description for groups of form controls using fieldset and legend elements</content>
-               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls</content>
+               <content xml:lang="en" link="/TR/WCAG20-TECHS/H90.html">Indicating required form controls using label or legend</content>
             </property>
             <property name="Mobile considerations" list="block">
                <content xml:lang="en" link="http://www.w3.org/TR/mobile-bp/#CONTROL_LABELLING">Label all form controls appropriately and explicitly associate labels with form controls.</content>
@@ -2685,7 +2683,7 @@
                <content>headers</content>
             </property>
             <property name="content" list="inline">
-               <content xml:lang="en">phrasing content</content>
+               <content xml:lang="en">flow content</content>
             </property>
             <property name="description">
                <content xml:lang="en">The th element represents a header cell in a table.</content>
@@ -2716,8 +2714,6 @@
          <context>
             <property type="attribute" name="Attributes" list="inline" infoset="html">
                <content>global HTML attributes</content>
-               <content>datetime</content>
-               <content>pubdate</content>
             </property>
             <property name="content" list="inline">
                <content xml:lang="en">phrasing content</content>
@@ -2856,13 +2852,13 @@
                <content>poster</content>
                <content>height</content>
                <content>width</content>
-               <content>muted</content>
                <content>mediagroup</content>
+               <content>muted</content>
                <content>src</content>
             </property>
             <property name="content" list="inline">
-               <content xml:lang="en">a src attribute, or one or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by flow content</content>
-               <content xml:lang="en">a src attribute, or one or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by phrasing content</content>
+               <content xml:lang="en">a src attribute, or zero or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by flow content</content>
+               <content xml:lang="en">a src attribute, or zero or more <span type="element" infoset="html">source</span> elements followed by zero or more <span type="element" infoset="html">track</span> elements, followed by phrasing content</content>
             </property>
             <property name="description">
                <content xml:lang="en">The video element represents a video or movie.</content>
@@ -2888,6 +2884,17 @@
                <content>new</content>
             </property>
             <property name="Specification" link="http://dev.w3.org/html5/markup/wbr.html"/>
+         </context>
+      </item>
+      <item name="sarcasm" type="element">
+         <context>
+            <property name="description">
+               <content>A mark of sarcasm</content>
+            </property>
+            <property name="html5">
+               <content>not yet</content>
+            </property>
+            <property name="Specification" link="https://twitter.com/#!/w3c/statuses/2027402192"/>
          </context>
       </item>
       <!--elements that were in HTML4 but have been removed from HTML5--><item type="element" name="acronym">
@@ -3088,244 +3095,6 @@
             </property>
          </context>
       </item>
-      <item type="attribute" name="name">
-         <context type="element">
-            <items>
-               <item name="a"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>a</content>
-            </property>
-            <property name="content" list="inline">
-               <content>ID</content>
-            </property>
-            <property name="description">
-               <content>Specifies that its a element is a named hyperlink, with the name given by the value of this attribute.</content>
-            </property>
-            <property name="html5">
-               <content>obsoleted</content>
-            </property>
-            <property name="Accessibility techniques" list="block">
-               <content link="/TR/WCAG20-TECHS/H64.html">Using the title attribute of the frame and iframe elements</content>
-               <content link="/TR/WCAG20-TECHS/H44.html">Using label elements to associate text labels with form controls</content>
-            </property>
-            <property name="Specification" link="http://dev.w3.org/html5/markup/a.html#a.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="button"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>button</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/button.html#button.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="fieldset"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>fieldset</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/fieldset.html#fieldset.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="form"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>form</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/form.html#form.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="iframe"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>iframe</content>
-            </property>
-            <property name="content" list="inline">
-               <content>browsing-context name</content>
-            </property>
-            <property name="description">
-               <content>A valid browsing context name.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/iframe.html#iframe.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="input"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>input</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/input.html#input.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="keygen"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>keygen</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/keygen.html#keygen.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="map"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>map</content>
-            </property>
-            <property name="content" list="inline">
-               <content>name</content>
-            </property>
-            <property name="description">
-               <content>A name by which the map can be referenced.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/map.html#map.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="meta"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>meta</content>
-            </property>
-            <property name="content" list="inline">
-               <content>d:meta-name</content>
-            </property>
-            <property name="description">
-               <content>Specifies the name part of a name/value pair.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/meta.html#meta.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="object"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>object</content>
-            </property>
-            <property name="content" list="inline">
-               <content>browsing-context name</content>
-            </property>
-            <property name="description">
-               <content>A valid browsing context name.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/object.html#object.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="output"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>output</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/output.html#output.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="param"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>param</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name of the parameter.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/param.html#param.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="select"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>select</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/select.html#select.attrs.name"/>
-         </context>
-         <context type="element">
-            <items>
-               <item name="textarea"/>
-            </items>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>textarea</content>
-            </property>
-            <property name="content" list="inline">
-               <content>string</content>
-            </property>
-            <property name="description">
-               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/textarea.html#textarea.attrs.name"/>
-         </context>
-      </item>
       <item type="attribute" name="href">
          <context type="element">
             <items>
@@ -3386,7 +3155,7 @@
                <content>link</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>A URL that provides the destination of the link.</content>
@@ -3520,10 +3289,10 @@
                <content>link</content>
             </property>
             <property name="content" list="inline">
-               <content>d:link-rel</content>
+               <content>set of space-separated tokens</content>
             </property>
             <property name="description">
-               <content>A list of tokens that specify the relationship between the document containing the link and the destination indicated by the link.</content>
+               <content>A set of tokens that specify the relationship between the document containing the link and the destination indicated by the link.</content>
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/link.html#link.attrs.rel"/>
@@ -3953,7 +3722,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>d:non-empty-string</content>
+               <content>non-empty string</content>
             </property>
             <property name="description">
                <content>Provides a textual label for an alternative button for users and UAs who cannot use the image specified by the src attribute.</content>
@@ -4180,6 +3949,46 @@
                       link="http://dev.w3.org/html5/markup/video.html#video.attrs.mediagroup"/>
          </context>
       </item>
+      <item type="attribute" name="muted">
+         <context type="element">
+            <items>
+               <item name="audio"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>audio</content>
+            </property>
+            <property name="content" list="inline">
+               <content>"muted" or "" (empty string) or empty</content>
+            </property>
+            <property name="description">
+               <content>Represents the default state of the audio stream, potentially overriding user preferences.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/audio.html#audio.attrs.muted"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="video"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>video</content>
+            </property>
+            <property name="content" list="inline">
+               <content>"muted" or "" (empty string) or empty</content>
+            </property>
+            <property name="description">
+               <content>Represents the default state of the audio channel of the video, potentially overriding user preferences.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/video.html#video.attrs.muted"/>
+         </context>
+      </item>
       <item type="attribute" name="src">
          <context type="element">
             <items>
@@ -4189,7 +3998,7 @@
                <content>audio</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The URL for the audio stream.</content>
@@ -4208,7 +4017,7 @@
                <content>embed</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the content being embedded.</content>
@@ -4227,10 +4036,10 @@
                <content>iframe</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
-               <content>The address of a page that the nested browsing context is to contain.</content>
+               <content>The address of a document for the nested browsing context to contain.</content>
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/iframe.html#iframe.attrs.src"/>
@@ -4243,7 +4052,7 @@
                <content>img</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>A URL referencing a non-interactive, optionally animated, image that is neither paged nor scripted.</content>
@@ -4259,7 +4068,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>Specifies the location of an image.</content>
@@ -4275,7 +4084,7 @@
                <content>script</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the external script to use.</content>
@@ -4291,7 +4100,7 @@
                <content>source</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the media source.</content>
@@ -4310,7 +4119,7 @@
                <content>track</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the timed track.</content>
@@ -4329,7 +4138,7 @@
                <content>video</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The URL for the video.</content>
@@ -4684,24 +4493,6 @@
                       link="http://dev.w3.org/html5/markup/body.html#body.attrs.onpopstate"/>
          </context>
       </item>
-      <item type="attribute" name="onredo">
-         <context>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>body</content>
-            </property>
-            <property name="content" list="inline">
-               <content>functionbody</content>
-            </property>
-            <property name="description">
-               <content>User went forward in undo transaction history.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/body.html#body.attrs.onredo"/>
-         </context>
-      </item>
       <item type="attribute" name="onresize">
          <context>
             <property name="Elements" list="inline" infoset="html" type="element">
@@ -4738,24 +4529,6 @@
                       link="http://dev.w3.org/html5/markup/body.html#body.attrs.onstorage"/>
          </context>
       </item>
-      <item type="attribute" name="onundo">
-         <context>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>body</content>
-            </property>
-            <property name="content" list="inline">
-               <content>functionbody</content>
-            </property>
-            <property name="description">
-               <content>User went backward in undo transaction history.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/body.html#body.attrs.onundo"/>
-         </context>
-      </item>
       <item type="attribute" name="onunload">
          <context>
             <property name="Elements" list="inline" infoset="html" type="element">
@@ -4769,6 +4542,226 @@
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/body.html#body.attrs.onunload"/>
+         </context>
+      </item>
+      <item type="attribute" name="name">
+         <context type="element">
+            <items>
+               <item name="button"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>button</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="Accessibility techniques" list="block">
+               <content link="/TR/WCAG20-TECHS/H64.html">Using the title attribute of the frame and iframe elements</content>
+               <content link="/TR/WCAG20-TECHS/H44.html">Using label elements to associate text labels with form controls</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/button.html#button.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="fieldset"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>fieldset</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/fieldset.html#fieldset.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="form"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>form</content>
+            </property>
+            <property name="content" list="inline">
+               <content>non-empty string</content>
+            </property>
+            <property name="description">
+               <content>The name of the form.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/form.html#form.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="iframe"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>iframe</content>
+            </property>
+            <property name="content" list="inline">
+               <content>browsing-context name</content>
+            </property>
+            <property name="description">
+               <content>A valid browsing context name.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/iframe.html#iframe.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="input"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>input</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/input.html#input.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="keygen"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>keygen</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/keygen.html#keygen.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="map"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>map</content>
+            </property>
+            <property name="content" list="inline">
+               <content>name</content>
+            </property>
+            <property name="description">
+               <content>A name by which the map can be referenced.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/map.html#map.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="meta"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>meta</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>Specifies the name part of a name/value pair.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/meta.html#meta.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="object"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>object</content>
+            </property>
+            <property name="content" list="inline">
+               <content>browsing-context name</content>
+            </property>
+            <property name="description">
+               <content>A valid browsing context name.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/object.html#object.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="output"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>output</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/output.html#output.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="param"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>param</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name of the parameter.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/param.html#param.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="select"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>select</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/select.html#select.attrs.name"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="textarea"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>textarea</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The name part of the name/value pair associated with this element for the purposes of form submission.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/textarea.html#textarea.attrs.name"/>
          </context>
       </item>
       <item type="attribute" name="disabled">
@@ -5121,7 +5114,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>string</content>
+               <content>string without line breaks</content>
             </property>
             <property name="description">
                <content>Specifies a value for this input element.</content>
@@ -5228,7 +5221,7 @@
                <content>button</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The form-submission action for the element.</content>
@@ -5247,7 +5240,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The form-submission action for the element.</content>
@@ -6051,7 +6044,7 @@
                <content>form</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The submission action for the form.</content>
@@ -6169,7 +6162,7 @@
                <content>html</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the document’s application cache manifest (which controls caching of content for offline use).</content>
@@ -6179,6 +6172,21 @@
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/html.html#html.attrs.manifest"/>
+         </context>
+      </item>
+      <item type="attribute" name="srcdoc">
+         <context>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>iframe</content>
+            </property>
+            <property name="content" list="inline">
+               <content>string</content>
+            </property>
+            <property name="description">
+               <content>The content of a document for the nested browsing context to contain.</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/iframe.html#iframe.attrs.srcdoc"/>
          </context>
       </item>
       <item type="attribute" name="sandbox">
@@ -6312,7 +6320,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>positive integer</content>
+               <content>non-negative integer</content>
             </property>
             <property name="description">
                <content>The maximum allowed value length of the element.</content>
@@ -6328,7 +6336,7 @@
                <content>textarea</content>
             </property>
             <property name="content" list="inline">
-               <content>positive integer</content>
+               <content>non-negative integer</content>
             </property>
             <property name="description">
                <content>The maximum allowed value length of the element.</content>
@@ -6515,7 +6523,7 @@
                <content>input</content>
             </property>
             <property name="content" list="inline">
-               <content>string</content>
+               <content>string without line breaks</content>
             </property>
             <property name="description">
                <content>A short hint (one word or a short phrase) intended to aid the user when entering data into the control represented by its element.</content>
@@ -6534,7 +6542,7 @@
                <content>textarea</content>
             </property>
             <property name="content" list="inline">
-               <content>string</content>
+               <content>string without line breaks</content>
             </property>
             <property name="description">
                <content>A short hint (one word or a short phrase) intended to aid the user when entering data into the control represented by its element.</content>
@@ -6544,6 +6552,46 @@
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/textarea.html#textarea.attrs.placeholder"/>
+         </context>
+      </item>
+      <item type="attribute" name="dirname">
+         <context type="element">
+            <items>
+               <item name="input"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>input</content>
+            </property>
+            <property name="content" list="inline">
+               <content>non-empty string</content>
+            </property>
+            <property name="description">
+               <content>Enables submission of a value for the directionality of the element, and gives the name of the field that contains that value.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/input.html#input.attrs.dirname"/>
+         </context>
+         <context type="element">
+            <items>
+               <item name="textarea"/>
+            </items>
+            <property name="Elements" list="inline" infoset="html" type="element">
+               <content>textarea</content>
+            </property>
+            <property name="content" list="inline">
+               <content>non-empty string</content>
+            </property>
+            <property name="description">
+               <content>Enables submission of a value for the directionality of the element, and gives the name of the field that contains that value.</content>
+            </property>
+            <property name="html5">
+               <content>new</content>
+            </property>
+            <property name="Specification"
+                      link="http://dev.w3.org/html5/markup/textarea.html#textarea.attrs.dirname"/>
          </context>
       </item>
       <item type="attribute" name="accept">
@@ -6961,7 +7009,7 @@
                <content>object</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of the content.</content>
@@ -7265,24 +7313,6 @@
                       link="http://dev.w3.org/html5/markup/th.html#th.attrs.scope"/>
          </context>
       </item>
-      <item type="attribute" name="pubdate">
-         <context>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>time</content>
-            </property>
-            <property name="content" list="inline">
-               <content>"pubdate" or "" (empty string) or empty</content>
-            </property>
-            <property name="description">
-               <content>Indicates that the date and time given by the element is the publication date and time of the nearest ancestor article element — or, if the element has no ancestor article element, of the document as a whole.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/time.html#time.attrs.pubdate"/>
-         </context>
-      </item>
       <item type="attribute" name="kind">
          <context>
             <property name="Elements" list="inline" infoset="html" type="element">
@@ -7343,7 +7373,7 @@
                <content>video</content>
             </property>
             <property name="content" list="inline">
-               <content>Non-empty URL potentially surrounded by spaces</content>
+               <content>non-empty URL potentially surrounded by spaces</content>
             </property>
             <property name="description">
                <content>The address of an image file for the UA to show while no video data is available.</content>
@@ -7353,24 +7383,6 @@
             </property>
             <property name="Specification"
                       link="http://dev.w3.org/html5/markup/video.html#video.attrs.poster"/>
-         </context>
-      </item>
-      <item type="attribute" name="muted">
-         <context>
-            <property name="Elements" list="inline" infoset="html" type="element">
-               <content>video</content>
-            </property>
-            <property name="content" list="inline">
-               <content>"muted" or "" (empty string) or empty</content>
-            </property>
-            <property name="description">
-               <content>Represents the default state of the audio channel of the video, potentially overriding user preferences.</content>
-            </property>
-            <property name="html5">
-               <content>new</content>
-            </property>
-            <property name="Specification"
-                      link="http://dev.w3.org/html5/markup/video.html#video.attrs.muted"/>
          </context>
       </item>
       <item type="attribute" name="accesskey">

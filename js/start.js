@@ -403,6 +403,7 @@ jQuery(document).ready(function ($) {
 		$("<a href='#' class='ui-icon-close' id='details_clear' title='Clear search'>x</a>").insertAfter(search).click(function () {
                     sheet.clearLookUp();
                     search.val("").change();
+                    return false;
                 });
             }
         } else {
