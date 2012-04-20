@@ -106,6 +106,17 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	</xsl:for-each>
 	</item>
     </xsl:for-each-group>
+	<item name="sarcasm" type="element">
+	  <context>
+	    <property name="description">
+	      <content>A mark of sarcasm</content>
+	    </property>
+	    <property name="html5">
+	      <content>not yet</content>
+	    </property>
+	    <property name="Specification" link="https://twitter.com/#!/w3c/statuses/2027402192"/>
+	  </context>
+	</item>	
     <xsl:comment>elements that were in HTML4 but have been removed from HTML5</xsl:comment>
     <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='element']">
       <xsl:if test="not($html5//html:div[@id='elements']/html:div[substring-before(concat(@id,'.'),'.')=current()/@name and html:h2[@class='element-head'] and html:div[@class='longdesc']])">
