@@ -57,6 +57,10 @@ data/html.xml: data/getHTML5Infoset.xsl data/validation/rules.xsl data/html4.xml
 data/xpath.xml: data/getXpathFunctions.xsl data/validation/rules.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
+<<<<<<< HEAD
+=======
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
+>>>>>>> 420f2555c49f88d406445c7d6851faa1a37c118c
 
 data/css.xml: data/getCSSProperties.xsl data/validation/rules.xsl data/cssselectors.xml
 	saxon $< $< > $@
