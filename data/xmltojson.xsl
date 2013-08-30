@@ -61,8 +61,13 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>selector</full><short>se</short></term>
 <term><full>at-rule</full><short>ar</short></term>
 <term><full>function</full><short>f</short></term>
+<term><full>interface</full><short>it</short></term>
 <term><full>context</full><short>ct</short></term>
 <term><full>html5</full><short>h</short></term>
+<term><full>operations</full><short>o</short></term>
+<term><full>inherit</full><short>ie</short></term>
+<term><full>implements</full><short>im</short></term>
+<term><full>specialoperations</full><short>so</short></term>
 </dictionary>
 
 

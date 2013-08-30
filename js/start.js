@@ -18,7 +18,8 @@ var Cheatsheet = function () {
         "svg": {"a": "SVG Attribute",
             "p": "SVG Property",
             "e": "SVG Element"},
-        "xpath": {"f": "XPath function"}
+        "xpath": {"f": "XPath function"},
+        "js": {"it": "JavaScript Interface"}
     };
 };
 
