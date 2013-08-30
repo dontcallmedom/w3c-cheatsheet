@@ -19,7 +19,7 @@ XSLT_SCHEMATRON_BUILDER_PATH=/home/dom/data/2010/01
 JQUERY=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js
 
 # concats and minify all the JavaScript used to get the cheat sheet to work
-js/all.js: data/all.js $(JQUERY) js/donate.js js/start.js
+js/all.js: data/all.js $(JQUERY) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 	#cat $^ > $@
 
@@ -56,30 +56,30 @@ data/rules.xsl: data/rules.schematron
 
 # HTML Infoset data
 # @@@ should also depend on mobilebp.html, i18n.html, qa.html
-data/html4.xml: data/getHTMLInfoset.xsl
+data/html4.xml: data/getHTMLInfoset.xsl data/rules.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 # @@@ should also depend on mobilebp.html, i18n.html, qa.html, html4.xml
-data/html.xml: data/getHTML5Infoset.xsl
+data/html.xml: data/getHTML5Infoset.xsl data/rules.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 
-data/xpath.xml: data/getXpathFunctions.xsl
+data/xpath.xml: data/getXpathFunctions.xsl data/rules.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
 # @@@ should also depend on cssselectors.xml
-data/css.xml: data/getCSSProperties.xsl
+data/css.xml: data/getCSSProperties.xsl data/rules.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
-data/svg.xml: data/getSVGInfoset.xsl
+data/svg.xml: data/getSVGInfoset.xsl data/rules.xsl
 	saxon $^ $^ > $@
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
