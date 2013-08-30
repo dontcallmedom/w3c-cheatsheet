@@ -69,6 +69,10 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
     }
 
 
+    function internalLink(infoset, type, keyword) {
+	return "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword);
+    }
+
     function addInternalLink(infoset, type, keyword, marker) {
         var link = $("<a class='internal'></a>").attr("href", "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword));
         link.text(keyword);
@@ -77,132 +81,136 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         }
         return link;
     }
+    function addCommaExceptToLast(arg) {
+	return (arg.pos === arg.items.length - 1 ? "" : ", ");
+    }
 
+    var keywords = [];
     // for each matching keyword
     for (var keyword in keyword_data[infoset][propertytype]) {
+	var keywordData = {contexts:[]};
         // e.g "HTML element"
-        var infosetname = this.keywordSources[infoset][propertytype];
-        var div = $("<div></div>").addClass("context");
-        // e.g. <h2>HTML element <code>a</code></h2>
-        var keywordtitle = $("<h2></h2>").text(infosetname + " ");
-        $("<code></code>").text(keyword).appendTo(keywordtitle);
-        keywordtitle.appendTo(div);
-        var div2 = $("<div></div>").appendTo(div);
+	keywordData.infoset = this.keywordSources[infoset][propertytype];
+	keywordData.keyword = keyword;
         // For each known context of the item
         // (examples of context: the width attribute in HTML
         // varies in model/description depending on the containing element
         for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
-            var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];
-            var contextdiv = $("<div></div>");
+            var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];	    
+	    var contextData = {properties:[]};
             if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context.ct && context.ct.y) {
-                var contexttitle = $("<h3></h3>");
+		contextData.severalMatches = true;
+		var title = {};
                 if (context.ct.y === "a") {
-                    contexttitle.text("With attribute ");
+                    title.infoset = "With attribute ";
                 } else if (context.ct.y === "e") {
-                    contexttitle.text("In element ");
+                    title.infoset = "In element ";
                 }
-                for (var contextitem in context.ct.d) {
-                    $("<code></code>").text(context.ct.d[contextitem]).appendTo(contexttitle);
-                    if (contextitem < context.ct.d.length - 1) {
-                        contexttitle.append(", ");
-                    }
+		title.kw = [];
+                for (var contextitem = 0; contextitem < context.ct.d.length; contextitem++) {
+		    var kw = {name:context.ct.d[contextitem]};
+		    if (contextitem === context.ct.d.length -1) {
+			kw.last = true;
+		    }
+		    title.kw.push(kw);
                 }
                 if (context.h) {
-                    self.addChangeMarker(contexttitle, context.h.p[0].t, "medium");
+		    title.marker = context.h.p[0].t;
                 }
-                contexttitle.appendTo(contextdiv);
+		contextData.title = title;
             } else {
                 if (context.h) {
-                    self.addChangeMarker(keywordtitle, context.h.p[0].t, "medium");
+		    keywordData.marker = context.h.p[0].t;
                 }
             }
             var dl = $("<dl></dl>");
             for (var property in context) {
+		var propertyData = {};
+		propertyData.values = [];
+
 		var property_container = context[property];
                 if (property !== "ct") {
-                    var dt = $("<dt></dt>").appendTo(dl),
-                        container = dt,
-			property_data = property_container["p"];
+                    var property_values = property_container["p"];
                     if (property_container.u) { // u for URI
                         var propurl = property_container.u;
                         // On domain-less URIs, we assume www.w3.org as the base
                         if (propurl.substring(0, 1) === "/") {
                             propurl = baseUrl + propurl;
                         }
-                        container = $("<a></a>").attr("href", propurl).appendTo(dt);
+			propertyData.link = propurl;
                     }
-                    container.text(dictionary[property]);
-                    // p for properties (i.e. all the detailed data about the item)
-                    if (property_data && property_data.length > 0) {
-                        var displayAsList = true;
-                        if (property_data.length === 1 || property_container.l === "inline") { // l for list, i.e. list mode
-                            displayAsList = false;
-                        }
-                        var listcontainer = $("<dd></dd>");
-                        if (displayAsList) {
-                            if (property_container.l === "block") {
-                                listcontainer = $("<ul></ul>").appendTo(listcontainer);
-                            }
-                        }
-                        for (var propcontentidx in property_data) {
-                            var hasLink = false,
-                                itemcontainer = listcontainer,
-                                propcontent = property_data[propcontentidx];
-                            if (displayAsList) {
-                                itemcontainer = $("<li></li>").appendTo(itemcontainer);
-                            } else {
-                                itemcontainer = $("<span></span>").appendTo(itemcontainer);
-                            }
+		    propertyData.name = dictionary[property];
+                    if (property_values && property_values.length > 0) {
+			propertyData.inlineDisplay = property_values.length === 1 || property_container.l === "inline";
+
+                        for (var propcontentidx in property_values) {
+			    var value = {};
+                            var propcontent = property_values[propcontentidx];			    
+			    var hasLink = false;
+			    var subvalue = {};
                             if (propcontent.u) {
+				hasLink = true;
                                 var url = propcontent.u;
                                 if (url.substring(0, 1) === "/") {
                                     url = baseUrl + url;
                                 }
-                                itemcontainer = $("<a></a>").attr("href", url).appendTo(itemcontainer);
-                                itemcontainer.text(propcontent.t);
-                                hasLink = true;
+				subvalue.link = url;
+				subvalue.name = propcontent.t;
+				value.subvalues = [subvalue];
                             } else if (property_container.i && property_container.y) {
-                                var internalProperty = addInternalLink(property_container.i, property_container.y, propcontent.t, propcontent.h);
-                                itemcontainer = internalProperty.appendTo(itemcontainer);
-                                hasLink = true;
+				hasLink = true;
+				subvalue.internal = true;
+				subvalue.link = internalLink(property_container.i, property_container.y, propcontent.t);
+				subvalue.name = propcontent.t;
+				if (propcontent.h) {
+				    subvalue.marker = propcontent.h;
+				}
+				value.subvalues = [subvalue];
                             }
                             if (propcontent.t instanceof Array) { // t for text
                                 if (!hasLink) {
+				    value.subvalues = [];
                                     for (var textOrSpanIdx in propcontent.t) {
+					var subvalue = {};
                                         var textOrSpan = propcontent.t[textOrSpanIdx];
                                         if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
-                                            var internalLink = addInternalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t, textOrSpan.h);
-                                            internalLink.appendTo(itemcontainer);
+					    subvalue.link = internalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t);
+					    subvalue.name = textOrSpan.t;
+					    if (textOrSpan.h) {
+						subvalue.marker = textOrSpan.h;
+					    }
                                         } else {
-                                            // JQuery seems to lack a method to append pure text; doing manual DOM operations
-                                            var t = document.createTextNode(textOrSpan);
-                                            itemcontainer.get(0).appendChild(t);
+					    subvalue.name = textOrSpan;
                                         }
+					value.subvalues.push(subvalue);
                                     }
                                 } else {
-                                    itemcontainer.text(propcontent.t.join(""));
+				    value.subvalues.push({name:propcontent.t.join("")});
                                 }
                             } else if (property === "h") {
-                                // special casing HTML5
-                                // @@@ probably need to be generalized for others techs
-                                self.addChangeMarker(itemcontainer, propcontent.t, "full");
-
+				subvalue = {};
+				subvalue.name = "Proposed as " + propcontent.t + " in HTML5 (not yet a standard)";
+				subvalue["class"] = propcontent.t;
+				value.subvalues = [subvalue];
                             } else if (!hasLink) {
-                                itemcontainer.text(propcontent.t);
+				value.subvalues = [{name:propcontent.t}];
                             }
-                            if (!displayAsList && propcontentidx < property_data.length - 1) { //white space between dd span list
-                                listcontainer.append(" ");
-                            }
-                        }
-                        listcontainer.appendTo(dl);
+			    propertyData.values.push(value);
+                        }			
                     }
+
+
                 }
+		contextData.properties.push(propertyData);
+
             }
-            dl.appendTo(contextdiv);
-            contextdiv.appendTo(div2);
+	    keywordData.contexts.push(contextData);
         }
-        div.appendTo($("#details"));
+	keywords.push(keywordData);
     }
+    var data = {keywords:keywords};
+    var view = $('#details-template').text();
+    $("#details").append(Mustache.render(view,data));
 };
 
 /*

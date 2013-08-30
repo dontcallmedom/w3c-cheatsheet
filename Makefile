@@ -10,10 +10,10 @@ YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 # can use wrapper from debian/ubuntu libsaxon-java
 SAXON=saxon
 
-JQUERY=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js
+JS_LIBS=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/lib/mustache.js
 
 # concats and minify all the JavaScript used to get the cheat sheet to work
-js/all.js: data/all.js $(JQUERY) js/start.js
+js/all.js: data/all.js $(JS_LIBS) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 	#cat $^ > $@
 
@@ -22,7 +22,7 @@ js/all.js.gz: js/all.js
 	gzip -c $^ > $@
 
 # version where most of the data is split out, and gets loaded through XMLHTTPRequest
-js/all-split.js: data/all-split.js $(JQUERY) js/start.js
+js/all-split.js: data/all-split.js $(JS_LIBS) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 # minified style sheet
@@ -80,7 +80,7 @@ check-data: $(XML_SOURCES)
 
 
 # data as big Javascript associative array
-data/all.js: $(XML_SOURCES) data/xmltojson.xsl check-data
+data/all.js: $(XML_SOURCES) data/xmltojson.xsl
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
 # data as small array, with ref for XMLHTTPRequest loading
