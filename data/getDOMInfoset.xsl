@@ -68,6 +68,7 @@ href="http://www.keio.ac.jp/">Keio University</a>, <a href="http://ev.buaa.edu.c
 	      <xsl:if test="Attribute">
 		<property name="Attributes" infoset="js" type="property">
 		  <xsl:for-each select="Attribute">
+		    <xsl:sort select="@name"/>
 		    <content>
 		      <xsl:value-of select="concat(ancestor::Interface/@name,'.',@name)"/>
 		    </content>
