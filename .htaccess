@@ -1,5 +1,0 @@
-RewriteEngine On
-RewriteBase /2009/cheatsheet/
-RewriteCond %{QUERY_STRING} !^dev$
-RewriteRule ^$ http://www.w3.org/2009/cheatsheet/ [R=permanent]
-RewriteRule ^index\.html$ http://www.w3.org/2009/cheatsheet/ [R=permanent]
