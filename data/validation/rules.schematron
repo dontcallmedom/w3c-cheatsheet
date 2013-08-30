@@ -1,0 +1,21 @@
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" >
+  <pattern>
+    <title>Ensure that each internal link has a matching keyword</title>
+    <rule context="//property[@type and @infoset]/content">
+      <let name="infoset" value="parent::property/@infoset"/>
+      <let name="type" value="parent::property/@type"/>
+      <assert test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]">“<value-of select="current()" />” is referenced from <value-of select="ancestor::item/@name"/> but is not defined in the infoset.</assert>
+    </rule>
+    <rule context="//span[@type and @infoset]">
+      <let name="infoset" value="@infoset"/>
+      <let name="type" value="@type"/>
+      <assert test="document(concat($infoset,'.xml'))/infosets/infoset[@technology=$infoset]/*[@type=$type and @name=current()]"><value-of select="current()" /> is referenced from <value-of select="ancestor::item/@name"/> but is not defined in the infoset.</assert>
+    </rule>
+  </pattern>
+  <pattern>
+    <title>Ensure that a given triple (infoset,type,item) only appears once</title>
+    <rule context="//infoset/item">
+      <assert test="not(preceding-sibling::item[@technology=current()/@infoset and @type=current()/@type and @name=current()/@name])"><value-of select="concat(@infoset,'/',@type,'/',@name)"/> is defined more than once.</assert>
+    </rule>
+  </pattern>
+</schema>

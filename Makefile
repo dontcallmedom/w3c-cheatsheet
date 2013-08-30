@@ -8,13 +8,7 @@ YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 
 # wrapper script around SAXON
 # can use wrapper from debian/ubuntu libsaxon-java
-SAXON=/home/dom/bin/saxon
-
-
-# directory where the schematron implementation in XSLT1
-# is available
-# http://www.schematron.com/implementation.html
-XSLT_SCHEMATRON_BUILDER_PATH=/home/dom/data/2010/01
+SAXON=saxon
 
 JQUERY=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js
 
@@ -28,12 +22,8 @@ js/all.js.gz: js/all.js
 	gzip -c $^ > $@
 
 # version where most of the data is split out, and gets loaded through XMLHTTPRequest
-js/all-split.js: data/all-split.js $(JQUERY) js/donate.js js/start.js
+js/all-split.js: data/all-split.js $(JQUERY) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
-
-# version where about/donate screen starts open by default
-js/all-free.js: data/all-split.js $(JQUERY) js/free.js js/start.js
-	 cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
 
 # minified style sheet
 style/all.css: style/style.css
@@ -45,41 +35,41 @@ style/all.css.gz: style/all.css
 
 
 # create an XSLT that does the schematron validation
-data/rules.xsl: data/rules.schematron
-	$(SAXON)  $^ $(XSLT_SCHEMATRON_BUILDER_PATH)/iso_dsdl_include.xsl > data/schematron1.tmp
-	$(SAXON) data/schematron1.tmp $(XSLT_SCHEMATRON_BUILDER_PATH)/iso_abstract_expand.xsl  > data/schematron2.tmp
-	$(SAXON) data/schematron2.tmp $(XSLT_SCHEMATRON_BUILDER_PATH)/iso_svrl_for_xslt1.xsl  > $@
-	rm data/schematron1.tmp data/schematron2.tmp
+data/validation/rules.xsl: data/validation/rules.schematron
+	$(SAXON)  $^ data/validation/iso_dsdl_include.xsl > data/validation/schematron1.tmp
+	$(SAXON) data/validation/schematron1.tmp data/validation/iso_abstract_expand.xsl  > data/validation/schematron2.tmp
+	$(SAXON) data/validation/schematron2.tmp data/validation/iso_svrl_for_xslt1.xsl  > $@
+	rm data/validation/schematron1.tmp data/validation/schematron2.tmp
 
 
 ####################
 
 # HTML Infoset data
-data/html4.xml: data/getHTMLInfoset.xsl data/rules.xsl data/mobilebp.html data/i18n.html data/qa.html
+data/html4.xml: data/getHTMLInfoset.xsl data/validation/rules.xsl data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
-	rnv data/schema.rnc $@ # RelaxNG validation
-	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	rnv data/validation/schema.rnc $@ # RelaxNG validation
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
-data/html.xml: data/getHTML5Infoset.xsl data/rules.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
+data/html.xml: data/getHTML5Infoset.xsl data/validation/rules.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
-	rnv data/schema.rnc $@ # RelaxNG validation
-	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	rnv data/validation/schema.rnc $@ # RelaxNG validation
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 
-data/xpath.xml: data/getXpathFunctions.xsl data/rules.xsl
+data/xpath.xml: data/getXpathFunctions.xsl data/validation/rules.xsl
 	saxon $< $< > $@
-	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
+	rnv data/validation/schema.rnc $@
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
-data/css.xml: data/getCSSProperties.xsl data/rules.xsl data/cssselectors.xml
+data/css.xml: data/getCSSProperties.xsl data/validation/rules.xsl data/cssselectors.xml
 	saxon $< $< > $@
-	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	rnv data/validation/schema.rnc $@
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
-data/svg.xml: data/getSVGInfoset.xsl data/rules.xsl
+data/svg.xml: data/getSVGInfoset.xsl data/validation/rules.xsl
 	saxon $< $< > $@
-	rnv data/schema.rnc $@
-	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	rnv data/validation/schema.rnc $@
+	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
