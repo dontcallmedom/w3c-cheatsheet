@@ -106,32 +106,6 @@ generate-json-keywords: $(XML_SOURCES) data/generateJSONKeywords.xsl
 GENERIC_FILES=style/all.css index.html images/*.png style/images/*.png 
 GZIPPED_FILES=style/all.css.gz js/all.js.gz
 
-android: android-assets android-code
-
-android-code: android/src/org/w3c/mwi/cheatsheet/*.java
-	cp  $^ android-pay/src/org/w3c/mwi/cheatsheet2/
-	perl -pi -e "s/org.w3c.mwi.cheatsheet/org.w3c.mwi.cheatsheet2/g" android-pay/src/org/w3c/mwi/cheatsheet2/*.java
-
-# set up the files in android build space
-android-assets: js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/*.js
-	@-rm android/assets/data/json/*.js
-	cp --parents -r -t android/assets/ $^ 
-	mv android/assets/js/all-split.js android/assets/js/all.js
-	mv android/assets/icons/48x.png android/res/drawable/icon.png
-
-# set up the files in android build space (for free app)
-android-free: android js/all-free.js
-	cp js/all-free.js android/assets/js/all.js
-
-# builds opera widget
-widget-opera.wgt: config-opera.xml js/all-split.js $(GENERIC_FILES) icons/48x.png data/json/
-	@-rm build/data/json/*.js
-	cp --parents -r -t build/ $^ 
-	mv build/config-opera.xml build/config.xml
-	cd build
-	zip -R ../$@ "*" ; cd ..
-
-
 # place where the on-line cheatsheet is checked out
 # only useful for W3C staff
 WWW_ROOT=/home/dom/WWW/2009/cheatsheet
