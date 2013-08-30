@@ -3,7 +3,7 @@ start = Infosets
 Infosets = element infosets {
   ## infoset, i.e. set of known keywords for a given technology
   element infoset {
-    attribute technology { "html" | "css" | "xpath" | "svg" },
+    attribute technology { "html" | "css" | "xpath" | "svg" | "js"},
     ## one keyword for said technology (e.g. "title" attribute)
     element item {        Types,
        attribute name { xsd:string { minLength = "1"  } },
@@ -15,8 +15,8 @@ Infosets = element infosets {
 }
 ## Types of keywords
 # add to xmltojson.xsl dictionary when updating
-Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" }
-Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" }
+Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" | "interface"}
+Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" | "js" }
 
 ## A context designates a usage of the said keyword common to a class of items
 ## For instance, the width attribute in HTML has different content models depending on the element it applies to, and would have thus different contexts
@@ -39,7 +39,7 @@ description = element property {
 	     linkProperty | contentProperty
           }+
 linkProperty = attribute name { "Specification"}, attribute link { xsd:string { minLength = "1"  } }
-contentProperty = attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" },
+contentProperty = attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" | "operations" | "inherit" | "implements" | "specialoperations" },
 	       (Types, Infoset)?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
