@@ -83,6 +83,9 @@ data/svg.xml: data/getSVGInfoset.xsl data/rules.xsl
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
+clean-data: 
+	rm $(XML_SOURCES) data/html4.xml
+
 # data as big Javascript associative array
 data/all.js: $(XML_SOURCES) data/xmltojson.xsl
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
