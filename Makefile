@@ -58,6 +58,7 @@ data/xpath.xml: data/getXpathFunctions.xsl data/validation/rules.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
+
 data/css.xml: data/getCSSProperties.xsl data/validation/rules.xsl data/cssselectors.xml
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
@@ -81,7 +82,7 @@ check-data: $(XML_SOURCES)
 
 # data as big Javascript associative array
 data/all.js: $(XML_SOURCES) data/xmltojson.xsl
-	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
+	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES) data/dom.xml" full=1 > $@
 
 # data as small array, with ref for XMLHTTPRequest loading
 data/all-split.js: $(XML_SOURCES) data/xmltojson.xsl generate-json-keywords
