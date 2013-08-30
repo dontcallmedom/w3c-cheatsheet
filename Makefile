@@ -48,36 +48,39 @@ data/validation/rules.xsl: data/validation/rules.schematron
 data/html4.xml: data/getHTMLInfoset.xsl data/validation/rules.xsl data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
-	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 data/html.xml: data/getHTML5Infoset.xsl data/validation/rules.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
-	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 
 data/xpath.xml: data/getXpathFunctions.xsl data/validation/rules.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
-	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
 data/css.xml: data/getCSSProperties.xsl data/validation/rules.xsl data/cssselectors.xml
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
-	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 data/svg.xml: data/getSVGInfoset.xsl data/validation/rules.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
-	$(SAXON) $@ data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
 XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
 
 clean-data: 
 	rm $(XML_SOURCES) data/html4.xml
 
+check-data: $(XML_SOURCES)
+	$(SAXON) data/svg.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	$(SAXON) data/xpath.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	$(SAXON) data/html.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	$(SAXON) data/css.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
+	$(SAXON) data/svg.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
+
+
 # data as big Javascript associative array
-data/all.js: $(XML_SOURCES) data/xmltojson.xsl
+data/all.js: $(XML_SOURCES) data/xmltojson.xsl check-data
 	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
 # data as small array, with ref for XMLHTTPRequest loading
