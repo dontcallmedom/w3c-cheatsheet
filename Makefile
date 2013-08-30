@@ -55,14 +55,12 @@ data/rules.xsl: data/rules.schematron
 ####################
 
 # HTML Infoset data
-# @@@ should also depend on mobilebp.html, i18n.html, qa.html
-data/html4.xml: data/getHTMLInfoset.xsl data/rules.xsl
+data/html4.xml: data/getHTMLInfoset.xsl data/rules.xsl data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 
-# @@@ should also depend on mobilebp.html, i18n.html, qa.html, html4.xml
-data/html.xml: data/getHTML5Infoset.xsl data/rules.xsl
+data/html.xml: data/getHTML5Infoset.xsl data/rules.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/schema.rnc $@ # RelaxNG validation
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
@@ -73,8 +71,7 @@ data/xpath.xml: data/getXpathFunctions.xsl data/rules.xsl
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0)# Schematron validation
 
-# @@@ should also depend on cssselectors.xml
-data/css.xml: data/getCSSProperties.xsl data/rules.xsl
+data/css.xml: data/getCSSProperties.xsl data/rules.xsl data/cssselectors.xml
 	saxon $< $< > $@
 	rnv data/schema.rnc $@
 	$(SAXON) $@ data/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
