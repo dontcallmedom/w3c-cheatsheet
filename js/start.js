@@ -74,14 +74,6 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 	return "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword);
     }
 
-    function addInternalLink(infoset, type, keyword, marker) {
-        var link = $("<a class='internal'></a>").attr("href", "#inf," + escape(infoset) + "," + escape(type) + "," + escape(keyword));
-        link.text(keyword);
-        if (marker) {
-            self.addChangeMarker(link, marker, "short");
-        }
-        return link;
-    }
     function addCommaExceptToLast(arg) {
 	return (arg.pos === arg.items.length - 1 ? "" : ", ");
     }
