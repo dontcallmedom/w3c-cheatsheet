@@ -40,11 +40,11 @@ href="http://www.keio.ac.jp/">Keio University</a>, <a href="http://ev.buaa.edu.c
 	      <xsl:if test="InterfaceInheritance">
 		<property name="inherit" infoset="js" type="interface"><content><xsl:value-of select="InterfaceInheritance/Name/@name"/></content></property>
 	      </xsl:if>
-	      <xsl:if test="Operation[@name]">
-		<property name="operations" infoset="js" type="function">
-		  <xsl:for-each-group select="Operation[@name]" group-by="@name">
+	      <xsl:if test="Operation[@name] or //Interface[Operation[@name]][@name=(//Implements[@name1=current()/@name]/@name2)]">
+		<property name="operations" infoset="js" type="function" list="inline">
+		  <xsl:for-each-group select="Operation[@name] | //Interface[@name=(//Implements[@name1=current()/@name]/@name2)]/Operation[@name]" group-by="@name">
 		    <content>
-		      <xsl:value-of select="concat(ancestor::Interface/@name,'.',@name,'()')"/>
+		      <xsl:value-of select="concat(@name,'()')"/>
 		    </content>
 		  </xsl:for-each-group>
 		</property>
@@ -65,19 +65,19 @@ href="http://www.keio.ac.jp/">Keio University</a>, <a href="http://ev.buaa.edu.c
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
-	      <xsl:if test="Attribute">
-		<property name="Attributes" infoset="js" type="property">
-		  <xsl:for-each select="Attribute">
+	      <xsl:if test="Attribute or  //Interface[Attribute][@name=(//Implements[@name1=current()/@name]/@name2)]">
+		<property name="Attributes" infoset="js" type="property" list="inline">
+		  <xsl:for-each select="Attribute | //Interface[@name=(//Implements[@name1=current()/@name]/@name2)]/Attribute">
 		    <xsl:sort select="@name"/>
 		    <content>
-		      <xsl:value-of select="concat(ancestor::Interface/@name,'.',@name)"/>
+		      <xsl:value-of select="@name"/>
 		    </content>
 		  </xsl:for-each>
 		</property>
 	      </xsl:if>
-	      <xsl:if test="//Implements[@name1=current()/@name]">
+	      <xsl:if test="//Implements[@name1=current()/@name] and //Interface[@name=//Implements[@name1=current()/@name]/@name2][not(.//ExtendedAttribute/@name='NoInterfaceObject')]">
 		<property name="implements" infoset="js" type="interface">
-		  <xsl:for-each select="//Implements[@name1=current()/@name]">
+		  <xsl:for-each select="//Implements[@name1=current()/@name][//Interface[@name=//Implements[@name1=current()/@name]/@name2][not(.//ExtendedAttribute/@name='NoInterfaceObject')]]">
 		    <content><xsl:value-of select="@name2"/></content>
 		  </xsl:for-each>
 		</property>
