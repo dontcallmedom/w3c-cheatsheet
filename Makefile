@@ -9,13 +9,14 @@ YUICOMPRESSOR=/usr/local/yuicompressor/build/yuicompressor.jar
 # wrapper script around SAXON
 # can use wrapper from debian/ubuntu libsaxon-java
 SAXON=saxon
+# require html5parser in the classpath
+SAXON_HTML5=/usr/bin/java net.sf.saxon.Transform  -x nu.validator.htmlparser.sax.HtmlParser
 
 JS_LIBS=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/lib/mustache.js
 
 # concats and minify all the JavaScript used to get the cheat sheet to work
 js/all.js: data/all.js $(JS_LIBS) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
-	#cat $^ > $@
 
 # gzipped for serving over the Web
 js/all.js.gz: js/all.js
@@ -45,34 +46,43 @@ data/validation/rules.xsl: data/validation/rules.schematron
 ####################
 
 # HTML Infoset data
-data/html4.xml: data/getHTMLInfoset.xsl data/validation/rules.xsl data/mobilebp.html data/i18n.html data/qa.html
+data/html4.xml: data/getHTMLInfoset.xsl data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
 
-data/html.xml: data/getHTML5Infoset.xsl data/validation/rules.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
+data/html.xml: data/getHTML5Infoset.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
 
 
-data/xpath.xml: data/getXpathFunctions.xsl data/validation/rules.xsl
+data/xpath.xml: data/getXpathFunctions.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
 
-data/css.xml: data/getCSSProperties.xsl data/validation/rules.xsl data/cssselectors.xml
+data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
-data/svg.xml: data/getSVGInfoset.xsl data/validation/rules.xsl
+data/svg.xml: data/getSVGInfoset.xsl 
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
-XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml
+data/js.idl: data/idl-sources data/extractIdl.xsl
+	for i in `cat $<` ; do $(SAXON_HTML5) $$i data/extractIdl.xsl ; done > $@
+
+data/js.widlprocxml: data/js.idl
+	widlproc $< > $@
+
+data/js.xml: data/js.widlprocxml data/getDOMInfoset.xsl
+	saxon $^ > $@
+
+XML_SOURCES= data/svg.xml data/css.xml data/xpath.xml data/html.xml data/js.xml
 
 clean-data: 
 	rm $(XML_SOURCES) data/html4.xml
 
-check-data: $(XML_SOURCES)
+check-data: $(XML_SOURCES) data/validation/rules.xsl
 	$(SAXON) data/svg.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 	$(SAXON) data/xpath.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
 	$(SAXON) data/html.xml data/validation/rules.xsl|(grep svrl:text && echo "Schematron validation failed" && exit 1 || exit 0) # Schematron validation
@@ -82,7 +92,7 @@ check-data: $(XML_SOURCES)
 
 # data as big Javascript associative array
 data/all.js: $(XML_SOURCES) data/xmltojson.xsl
-	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES) data/dom.xml" full=1 > $@
+	$(SAXON) data/xmltojson.xsl data/xmltojson.xsl filenamesSources="$(XML_SOURCES)" full=1 > $@
 
 # data as small array, with ref for XMLHTTPRequest loading
 data/all-split.js: $(XML_SOURCES) data/xmltojson.xsl generate-json-keywords
