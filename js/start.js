@@ -124,7 +124,6 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 		    keywordData.marker = context.h.p[0].t;
                 }
             }
-            var dl = $("<dl></dl>");
             for (var property in context) {
 		var propertyData = {};
 		propertyData.values = [];
