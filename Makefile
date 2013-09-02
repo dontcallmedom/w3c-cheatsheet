@@ -14,6 +14,9 @@ SAXON_HTML5=/usr/bin/java net.sf.saxon.Transform  -x nu.validator.htmlparser.sax
 
 JS_LIBS=js/lib/jquery.js js/lib/jquery-ui.js js/lib/ui.tabs.paging.js js/lib/jquery.autocomplete.js js/lib/mustache.js
 
+# HTML5 Markup spec; no longer maintain, so ideally update it from dev.w3.org/cvsweb/html5/markup
+HTML5_MARKUP_SPEC=http://www.w3.org/services/tidy?docAddr=http://dev.w3.org/html5/markup/spec.html
+
 # concats and minify all the JavaScript used to get the cheat sheet to work
 js/all.js: data/all.js $(JS_LIBS) js/start.js
 	cat $^ | $(JAVA) -jar $(YUICOMPRESSOR)  --type js --line-break 0 > $@
@@ -51,7 +54,7 @@ data/html4.xml: data/getHTMLInfoset.xsl data/mobilebp.html data/i18n.html data/q
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
 
 data/html.xml: data/getHTML5Infoset.xsl data/html4.xml data/mobilebp.html data/i18n.html data/qa.html
-	saxon $< $< > $@
+	saxon $< $< spec=$(HTML5_MARKUP_SPEC) > $@
 	rnv data/validation/schema.rnc $@ # RelaxNG validation
 
 

@@ -28,7 +28,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </body>
 </html>
 
-    <xsl:variable name="html5" select="document('http://www.w3.org/services/tidy?docAddr=http://dev.w3.org/html5/markup/spec.html')/html:html/html:body"/>
+<xsl:param name="spec" select="'http://www.w3.org/services/tidy?docAddr=http://dev.w3.org/html5/markup/spec.html'"/>
+    <xsl:variable name="html5" select="document($spec)/html:html/html:body"/>
 
 
   <xsl:template match="/">
