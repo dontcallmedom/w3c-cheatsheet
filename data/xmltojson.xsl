@@ -70,6 +70,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>specialoperations</full><short>so</short></term>
 <term><full>HTML element</full><short>he</short></term>
 <term><full>DOM interface</full><short>di</short></term>
+<term><full>Type</full><short>ty</short></term>
+<term><full>Usage</full><short>us</short></term>
+<term><full>Member of</full><short>mo</short></term>
+<term><full>Read/Write</full><short>rw</short></term>
 </dictionary>
 
 

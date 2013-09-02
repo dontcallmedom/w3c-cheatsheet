@@ -19,7 +19,7 @@ var Cheatsheet = function () {
             "p": "SVG Property",
             "e": "SVG Element"},
         "xpath": {"f": "XPath function"},
-        "js": {"it": "JavaScript Interface"}
+        "js": {"it": "JavaScript Interface", "a": "JavaScript Interface attribute", "f": "JavaScript Interface operation"}
     };
 };
 
@@ -92,6 +92,8 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                     title.infoset = "With attribute ";
                 } else if (context.ct.y === "e") {
                     title.infoset = "In element ";
+                } else if (context.ct.y === "it") {
+                    title.infoset = "On interface ";
                 }
 		title.kw = [];
                 for (var contextitem = 0; contextitem < context.ct.d.length; contextitem++) {
