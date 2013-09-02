@@ -64,13 +64,22 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <property name="description">
 	      <content xml:lang="en"><xsl:value-of select="normalize-space(.//html:div[@class='longdesc']/html:p[1])"/></content>
 	    </property>
+	    <property name="DOM interface" infoset="js" type="interface">
+	      <xsl:choose>
+		<xsl:when test=".//html:p[@class='dom-interface']">
+		  <content><xsl:value-of select=".//html:p[@class='dom-interface']/html:a"/></content>
+		</xsl:when>
+		<xsl:otherwise>
+		  <content><xsl:value-of select=".//html:pre[@class='idl']/html:b[1]"/></content>
+		</xsl:otherwise>
+	      </xsl:choose>
+	    </property>
 	    <!-- status in html5 -->
 	      <xsl:if test="html:h2[@class='element-head']/html:span[@class=('new-feature','obsoleted-feature','changed-feature')]">
 		<property name="html5">
 		  <content><xsl:value-of select="substring-before(html:h2[@class='element-head']/html:span[@class=('new-feature','obsoleted-feature','changed-feature')]/@class,'-')"/></content>
 		</property>
 	      </xsl:if>
-	    
 	    <xsl:if test="$wcagTechniques/description//el[normalize-space(.)=$el]">
 	      <property name="Accessibility techniques" list="block">
 		<xsl:for-each select="$wcagTechniques/self::technique[description/descendant::el[normalize-space()=$el]]">

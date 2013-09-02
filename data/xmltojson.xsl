@@ -68,6 +68,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>inherit</full><short>ie</short></term>
 <term><full>implements</full><short>im</short></term>
 <term><full>specialoperations</full><short>so</short></term>
+<term><full>HTML element</full><short>he</short></term>
+<term><full>DOM interface</full><short>di</short></term>
 </dictionary>
 
 

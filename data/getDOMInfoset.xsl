@@ -40,6 +40,13 @@ href="http://www.keio.ac.jp/">Keio University</a>, <a href="http://ev.buaa.edu.c
 	      <xsl:if test="InterfaceInheritance">
 		<property name="inherit" infoset="js" type="interface"><content><xsl:value-of select="InterfaceInheritance/Name/@name"/></content></property>
 	      </xsl:if>
+	      <xsl:if test="matches(@name,'HTML(.*)Element') and document('html.xml')//item[@type='element'][.//property[@name='DOM interface']/content=current()/@name]">
+		<property name="HTML element" infoset="html" type="element" list="inline">
+		  <xsl:for-each  select="document('html.xml')//item[@type='element'][.//property[@name='DOM interface']/content=current()/@name]">
+		    <content><xsl:value-of select="@name"/></content>
+		  </xsl:for-each>
+		</property>
+	      </xsl:if>
 	      <xsl:if test="Operation[@name] or //Interface[Operation[@name]][@name=(//Implements[@name1=current()/@name]/@name2)]">
 		<property name="operations" infoset="js" type="function" list="inline">
 		  <xsl:for-each-group select="Operation[@name] | //Interface[@name=(//Implements[@name1=current()/@name]/@name2)]/Operation[@name]" group-by="@name">

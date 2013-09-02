@@ -39,7 +39,7 @@ description = element property {
 	     linkProperty | contentProperty
           }+
 linkProperty = attribute name { "Specification"}, attribute link { xsd:string { minLength = "1"  } }
-contentProperty = attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" | "operations" | "inherit" | "implements" | "specialoperations" },
+contentProperty = attribute name { "Pattern" | "name" | "description" | "Internationalization" | "Accessibility techniques" | "QA Tip" | "Mobile considerations" | "Elements" | "content" | "Allowed properties" | "Allowed children" | "parameters" | "returns" | "Example" | "Syntax" | "values" | "inherited" | "media" | "animatable" | "Attributes" | "percentage" | "applies" | "Rules" | "html5" | "operations" | "inherit" | "implements" | "specialoperations" | "HTML Element" | "DOM interface" },
 	       (Types, Infoset)?,
 	     attribute list { "inline" | "block" }?,
 	     element content {
