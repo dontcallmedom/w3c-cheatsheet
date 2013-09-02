@@ -158,14 +158,12 @@ var dictionary = {
 	    <xsl:text>: {</xsl:text>
 	    <xsl:for-each select="current-group()"> <!-- looping on <item> -->
 	      <xsl:text>&#xA;                "</xsl:text><xsl:value-of select="replace(@name,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
-	      <xsl:text>: {</xsl:text>
-	      <xsl:value-of select="$q"/><xsl:text>d</xsl:text><xsl:value-of select="$q"/><xsl:text>: [</xsl:text>
+	      <xsl:text>: [</xsl:text>
 	      <xsl:apply-templates select="context">
 		<xsl:with-param name="jsonFormat" select="$jsonFormat"/>
 	      </xsl:apply-templates>
 	      <xsl:text>&#xA;                ]</xsl:text>
 	      <!-- end of e.g. input: [] -->
-	      <xsl:text>}</xsl:text>
 	      <xsl:if test="position()!=last()"><xsl:text>, </xsl:text></xsl:if>
 	    </xsl:for-each>
 	    <xsl:text>&#xA;            </xsl:text>

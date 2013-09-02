@@ -88,10 +88,10 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         // For each known context of the item
         // (examples of context: the width attribute in HTML
         // varies in model/description depending on the containing element
-        for (var contextidx in keyword_data[infoset][propertytype][keyword]["d"]) { // I think the ["d"] part can be get ridden of, provided xmltojson.xsl is updated
-            var context = keyword_data[infoset][propertytype][keyword]["d"][contextidx];	    
+        for (var contextidx in keyword_data[infoset][propertytype][keyword]) { 
+            var context = keyword_data[infoset][propertytype][keyword][contextidx];	    
 	    var contextData = {properties:[]};
-            if (keyword_data[infoset][propertytype][keyword]["d"].length > 1 && context.ct && context.ct.y) {
+            if (keyword_data[infoset][propertytype][keyword].length > 1 && context.ct && context.ct.y) {
 		contextData.severalMatches = true;
 		var title = {};
                 if (context.ct.y === "a") {
