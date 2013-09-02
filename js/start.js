@@ -60,12 +60,11 @@ Cheatsheet.prototype.addChangeMarker = function (element, marker, mode) {
  * Takes the collected data and displays them in an accordion view
  */
 Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytype) {
-    var self = this,
-        baseUrl = "http://www.w3.org";
+    var baseUrl = "http://www.w3.org";
 
 
     // Make sure we actually have data
-    if (keyword_data[infoset][propertytype] === null) {
+    if (keyword_data === null) {
         return false;
     }
 
@@ -76,7 +75,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 
     var keywords = [];
     // for each matching keyword
-    for (var keyword in keyword_data[infoset][propertytype]) {
+    for (var keyword in keyword_data) {
 	var keywordData = {contexts:[]};
         // e.g "HTML element"
 	keywordData.infoset = this.keywordSources[infoset][propertytype];
@@ -84,10 +83,10 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
         // For each known context of the item
         // (examples of context: the width attribute in HTML
         // varies in model/description depending on the containing element
-        for (var contextidx in keyword_data[infoset][propertytype][keyword]) { 
-            var context = keyword_data[infoset][propertytype][keyword][contextidx];	    
+        for (var contextidx in keyword_data[keyword]) { 
+            var context = keyword_data[keyword][contextidx];	    
 	    var contextData = {properties:[]};
-            if (keyword_data[infoset][propertytype][keyword].length > 1 && context.ct && context.ct.y) {
+            if (keyword_data[keyword].length > 1 && context.ct && context.ct.y) {
 		var title = {};
                 if (context.ct.y === "a") {
                     title.infoset = "With attribute ";
@@ -213,7 +212,7 @@ Cheatsheet.prototype.display_keyword_data = function (keyword_data, infoset, pro
     var multiple = -1;
     for (var i in keyword_data) {
         for (var p in keyword_data[i]) {
-            this.show_keyword(keyword_data, i, p);
+            this.show_keyword(keyword_data[i][p], i, p);
             multiple = multiple + 1;
         }
     }
