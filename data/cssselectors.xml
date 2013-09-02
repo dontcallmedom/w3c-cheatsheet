@@ -137,7 +137,7 @@
 <context>
 <property name="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
 <property name="Example"><content>@charset "ISO-8859-1"</content></property>
-<property name="Internationalization"><content link="http://www.w3.org/International/questions/qa-css-charset">CSS character encoding declarations</content></property>
+<property name="Internationalization"><content link="http://www.w3.org/International/techniques/authoring-html#css">Declaring the character encoding for a CSS style sheet</content></property>
 </context>
 </item>
 </infoset>
