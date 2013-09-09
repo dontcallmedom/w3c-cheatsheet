@@ -20,15 +20,6 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 <dt><a href="http://www.w3.org/International/questions/qa-bidi-css-markup">CSS vs. markup for bidi support</a></dt>
 <dd><code class="css property">direction</code>, <code class="css property">unicode-bidi</code></dd>
 
-<dt><a href="http://www.w3.org/International/techniques/authoring-html#linkloc">Linking to localized content</a></dt>
-<dd><code class="html attribute">select</code></dd>
-
-<dt><a href="http://www.w3.org/International/techniques/authoring-html#sortingdata">Sorting data</a></dt>
-<dd><code class="html attribute">select</code></dd>
-
-
-<dt><a href="http://www.w3.org/International/questions/qa-resizing-backgrounds">Background images that support localization</a></dt>
-<dd><code class="css property">background</code>, <code class="css property">background-image</code></dd>
 
 
 
@@ -44,10 +35,12 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#css">Declaring the character encoding for a CSS style sheet</a></dt>
 <dd><code class="css atrules">@charset</code></dd>
 
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#formencoding">Handling encoding issues in forms</a></dt>
+<dd><code class="html element">form</code></dd>
 
 
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#textprocessing">Declaring the overall language of a page</a></dt>
-<dd><code class="html attribute">lang</code>, <code class="html attribute">xml:lang</code></dd>
+<dd><code class="html attribute">lang</code>, <code class="html attribute">xml:lang</code>, <code class="html element">html</code></dd>
 
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#indoclang">Identifying in-document language changes</a></dt>
 <dd><code class="html attribute">lang</code>, <code class="html attribute">xml:lang</code></dd>
@@ -67,15 +60,21 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#bandi">Using b and i tags</a></dt>
 <dd><code class="html element">b</code>, <code class="html element">i</code></dd>
 
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#formcontrols">Working with form controls</a></dt>
+<dd><code class="html element">form</code>, <code class="html element">select</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#translate">Indicating what should and should not be translated</a></dt>
+<dd><code class="html attribute">translate</code></dd>
+
 
 
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#using">Setting up a right-to-left page</a></dt>
 <dd><code class="html element">html</code>, <code class="html attribute">dir</code></dd>
 
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#blocks">Setting direction on block elements</a></dt>
-<dd><code class="html element">table</code>, <code class="html attribute">dir</code></dd>
+<dd><code class="html element">table</code>, <code class="html element">pre</code>, <code class="html element">textarea</code>, <code class="html attribute">dir</code></dd>
 
-<dt><a href="http://www.w3.org/International/techniques/authoring-html#form-dir">Managing text direction in form controls</a></dt>
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#formdir">Managing text direction in form controls</a></dt>
 <dd><code class="html element">form</code>, <code class="html element">input</code>, <code class="html element">textarea</code>, <code class="html attribute">dir</code>, <code class="html attribute">dirname</code></dd>
 
 <dt><a href="http://www.w3.org/International/techniques/authoring-html#inline">Mixing text direction inline</a></dt>
@@ -87,7 +86,38 @@ src="http://www.w3.org/Icons/w3c_home" /></a></p>
 
 
 
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#textexpansion">Preparing for text expansion </a></dt>
+<dd><code class="css property">background</code>, <code class="css property">background-image</code></dd>
 
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#langstyle">Styling by language</a></dt>
+<dd><code class="css property">:lang()</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#liststyle">Styling lists</a></dt>
+<dd><code class="css property">list-style-type</code>, <code class="css property">list-style</code>, <code class="html element">ol</code>, <code class="css property">@counter-style</code>, <code class="css property">system</code>, <code class="css property">symbols</code>, <code class="css property">range</code>, <code class="css property">additive-symbols</code>, <code class="css property">suffix</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#verticaltext">Creating vertical text</a></dt>
+<dd><code class="css property">text-orientation</code>, <code class="css property">writing-mode</code>,   <code class="css property">text-combine-horizontal</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#linebreaks">Managing line breaks</a></dt>
+<dd><code class="css property">line-break</code>, <code class="css property">word-break</code>,   <code class="css property">hyphens</code>,   <code class="css property">word-wrap</code>,   <code class="css property">overflow-wrap</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#justification">Justifying and aligning text</a></dt>
+<dd><code class="css property">text-align</code>, <code class="css property">text-align-last</code>,   <code class="css property">text-justify</code>,   <code class="css property">word-spacing</code>,   <code class="css property">letter-spacing</code>,   <code class="css property">hanging-punctuation</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#rubystyle">Styling ruby text</a></dt>
+<dd><code class="css property">ruby-align</code>, <code class="css property">ruby-overhang</code>,   <code class="css property">ruby-position</code>,   <code class="css property">ruby-span</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#localdata">Working with date formats</a></dt>
+<dd><code class="html element">form</code>, <code class="html element">input</code></dd>
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#localnames">Working with personal names</a></dt>
+<dd><code class="html element">form</code>, <code class="html element">input</code></dd>
+
+
+
+
+<dt><a href="http://www.w3.org/International/techniques/authoring-html#linkloc">Linking to localized content</a></dt>
+<dd><code class="html element">select</code>, <code class="html element">input</code></dd>
 
 
 
