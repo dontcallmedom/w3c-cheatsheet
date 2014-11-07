@@ -42,11 +42,11 @@ Cheatsheet.prototype.addChangeMarker = function (element, marker, mode) {
     if (marker){
         element.append(" ");
         var span = $("<span></span>").addClass("attribute").addClass(marker);
-        var fullDesc = "proposed as " + marker + " in HTML5 (not yet a standard)";
+        var fullDesc =  marker + " in HTML5";
         if (mode === "full") {
             span.text(fullDesc);
         } else if (mode === "medium") {
-            span.text(marker + " in draft of HTML5");
+            span.text(marker + " in HTML5");
             span.attr("title",fullDesc);
         } else {
             span.text(marker);
@@ -177,7 +177,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
                                 }
                             } else if (property === "h") {
 				subvalue = {};
-				subvalue.name = "Proposed as " + propcontent.t + " in HTML5 (not yet a standard)";
+				subvalue.name = propcontent.t + " in HTML5";
 				subvalue["class"] = propcontent.t;
 				value.subvalues = [subvalue];
                             } else if (!hasLink) {
