@@ -42,7 +42,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
   <infosets>
   <infoset technology="html">
     <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head'] and html:div[@class='longdesc'] and not(html:div[@class='toc'])]" group-by="substring-before(concat(@id,'.'),'.')">
+      <!-- only take elements in HTML5 Rec -->
       <xsl:variable name="el" select="substring-before(concat(@id,'.'),'.')"/>
+      <xsl:if test="$htmlIndex//html:table[1]/html:tbody/html:tr/html:th/html:code[normalize-space()=$el]">
       <item type="element" name="{$el}">
 	<xsl:for-each select="current-group()">
 	  <context>
@@ -59,23 +61,18 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		<content><xsl:value-of select="normalize-space(.)"/></content>
 	      </xsl:for-each-group>
 	    </property>
-	    <property name="content" list="inline">
-	      <xsl:for-each select=".//html:p[@class='elem-mdl']">
-		<content xml:lang="en"><xsl:apply-templates select="." mode="textOrSpan"/></content>
-	      </xsl:for-each>
-	    </property>
+            <xsl:if test=".//html:p[@class='elem-mdl']">
+              <property name="content" list="inline">
+                <xsl:for-each select=".//html:p[@class='elem-mdl']">
+                  <content xml:lang="en"><xsl:apply-templates select="." mode="textOrSpan"/></content>
+                </xsl:for-each>
+              </property>
+            </xsl:if>
 	    <property name="description">
 	      <content xml:lang="en"><xsl:value-of select="normalize-space(.//html:div[@class='longdesc']/html:p[1])"/></content>
 	    </property>
 	    <property name="DOM interface" infoset="js" type="interface">
-	      <xsl:choose>
-		<xsl:when test=".//html:p[@class='dom-interface']">
-		  <content><xsl:value-of select=".//html:p[@class='dom-interface']/html:a"/></content>
-		</xsl:when>
-		<xsl:otherwise>
-		  <content><xsl:value-of select=".//html:pre[@class='idl']/html:b[1]"/></content>
-		</xsl:otherwise>
-	      </xsl:choose>
+              <content><xsl:value-of select="$htmlIndex//html:h3[@id='element-interfaces']/following-sibling::html:table[1]/html:tbody/html:tr/html:td[1][normalize-space(.)=$el]/following-sibling::html:td[1]/html:code[1]"/></content>
 	    </property>
 	    <!-- status in html5 -->
 	      <xsl:if test="html:h2[@class='element-head']/html:span[@class=('new-feature','obsoleted-feature','changed-feature')]">
@@ -117,6 +114,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	  </context>
 	</xsl:for-each>
 	</item>
+      </xsl:if>
     </xsl:for-each-group>
 	<item name="sarcasm" type="element">
 	  <context>
@@ -146,7 +144,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:if>
     </xsl:for-each>
 
-    <xsl:variable name="attributesLists" select="$htmlIndex//html:h3[@id='attributes-1']/following-sibling::html:table"/>
+    <xsl:variable name="attributesLists" select="$htmlIndex//html:h3[@id='attributes-1']/following-sibling::html:table[position() &lt; 3]/html:tbody"/>
     <xsl:for-each-group select="$attributesLists//html:th" group-by="normalize-space(.)">
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:variable name="contextsNumber" select="count(current-group())"/>
@@ -155,7 +153,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    <xsl:if test="$contextsNumber &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
 	      <items>
-                <xsl:for-each select="current()/following-sibling::html:td[1]//html:a">
+                <xsl:for-each select="current()/following-sibling::html:td[1]//html:code">
                   <item name="{.}"/>
                 </xsl:for-each>
 	      </items>
@@ -169,7 +167,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
                   <xsl:attribute name="infoset">html</xsl:attribute>
                   <xsl:attribute name="type">element</xsl:attribute>
                   <xsl:attribute name="list">inline</xsl:attribute>
-                  <xsl:for-each select="current()/following-sibling::html:td[1]//html:a">
+                  <xsl:for-each select="current()/following-sibling::html:td[1]/html:code">
                     <content><xsl:value-of select="."/></content>
                   </xsl:for-each>
                 </xsl:otherwise>
@@ -221,7 +219,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    <property name="Specification">
 	      <xsl:attribute name="link">
-                <xsl:value-of select="concat('TR/html5/', (current()/following-sibling::html:td[1]//html:a)[1]/@href)"/>
+                <xsl:value-of select="concat('/TR/html5/', (current()/following-sibling::html:td[1]//html:a)[1]/@href)"/>
 	      </xsl:attribute>
 	    </property>
 	  </context>
@@ -230,7 +228,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:for-each-group>
     <xsl:comment>attributes that were in HTML4 but have been removed from HTML5</xsl:comment>
     <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='attribute']">
-      <xsl:if test="not($attributesLists[normalize-space(.)=current()/@name])">
+      <xsl:if test="not($attributesLists/html:th[normalize-space(.)=current()/@name])">
 
 	<xsl:copy>
 	  <xsl:copy-of select="@*" />
