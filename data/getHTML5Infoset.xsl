@@ -37,6 +37,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="wcagTechniques" select="document('http://www.w3.org/WAI/GL/WCAG20/sources/html-tech-src.xml')/spec/body//technique"/>
     <xsl:variable name="qaTips" select="document('qa.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
+    <xsl:variable name="htmlRec" select="document('http://www.w3.org/services/tidy?forceXML=on&amp;docAddr=http://www.w3.org/TR/html5/')/html:html/html:body"/>
+    <xsl:variable name="htmlIndex" select="document('http://www.w3.org/services/tidy?forceXML=on&amp;docAddr=http://www.w3.org/TR/html5/index.html')/html:html/html:body"/>
   <infosets>
   <infoset technology="html">
     <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[html:h2[@class='element-head'] and html:div[@class='longdesc'] and not(html:div[@class='toc'])]" group-by="substring-before(concat(@id,'.'),'.')">
@@ -110,7 +112,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 		</xsl:for-each>
 	      </property>
 	    </xsl:if>
-	    <property name="Specification" link="{concat('http://dev.w3.org/html5/markup/',@id,'.html')}" />
+	    <property name="Specification" link="/TR/html5/{$htmlRec//html:li[html:a/@href='semantics.html#semantics']//html:a[matches(., concat('The ', $el, ' element$'))]/@href}" />
 
 	  </context>
 	</xsl:for-each>
@@ -144,74 +146,42 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </xsl:if>
     </xsl:for-each>
 
-    <xsl:if test="not($html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs'])">
-      <xsl:message terminate="yes">
-	Structure of HTML Markup spec document has changed, XSLT needs an update.
-      </xsl:message>
-    </xsl:if>
-    <xsl:variable name="attributesLists" select="$html5//html:div[@id='elements']//html:dl[@class='attr-defs']|$html5//html:div[@id='global-attributes']//html:dl[@class='attr-defs']"/>
-    <xsl:for-each-group select="$attributesLists/html:dt/html:*[@class='attribute-name' and not(@href='#global-attributes')]" group-by="normalize-space(.)">	    
+    <xsl:variable name="attributesLists" select="$htmlIndex//html:h3[@id='attributes-1']/following-sibling::html:table"/>
+    <xsl:for-each-group select="$attributesLists//html:th" group-by="normalize-space(.)">
       <item type="attribute" name="{normalize-space(.)}">
 	<xsl:variable name="contextsNumber" select="count(current-group())"/>
-	<xsl:for-each-group select="current-group()" group-by="substring-before(concat(current()/ancestor::html:div[tokenize(@class,' ')='section'][html:h2[@class='element-head']]/@id,'.'),'.')">
-	  <xsl:variable name="el" select="substring-before(concat(current()/ancestor::html:div[tokenize(@class,' ')='section'][html:h2[@class='element-head']]/@id,'.'),'.')"/>
+	<xsl:for-each select="current-group()">
 	  <context>
 	    <xsl:if test="$contextsNumber &gt; 1">
 	      <xsl:attribute name="type">element</xsl:attribute>
 	      <items>
-		<xsl:choose>
-		  <xsl:when test="$el">
-		    <item name="{$el}"/>
-		  </xsl:when>
-		  <xsl:otherwise>
-		    <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[tokenize(@class,' ')='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
-		      <item name="{substring-before(concat(@id,'.'),'.')}"/>
-		    </xsl:for-each-group>
-		  </xsl:otherwise>
-		</xsl:choose>
+                <xsl:for-each select="current()/following-sibling::html:td[1]//html:a">
+                  <item name="{.}"/>
+                </xsl:for-each>
 	      </items>
 	    </xsl:if>
-	    <property name="Elements" list="inline">
-	      <xsl:choose>
-		<xsl:when test="ancestor::html:div[@id='global-attributes']">
-		  <content>All HTML elements</content><!-- @@@ link to element list? -->
-		</xsl:when>
-		<xsl:otherwise>
-		  <xsl:attribute name="infoset">html</xsl:attribute>
-		  <xsl:attribute name="type">element</xsl:attribute>
-		  <xsl:choose>
-		    <xsl:when test="$el">
-		      <content><xsl:value-of select="$el"/></content>
-		    </xsl:when>
-		    <xsl:otherwise>
-		      <xsl:for-each-group select="$html5//html:div[@id='elements']/html:div[tokenize(@class,' ')='section'][.//html:div[@class='attr-content-models']//html:a[substring-after(@href,'#')=current()/@id]]" group-by="substring-before(concat(@id,'.'),'.')">
-			<content><xsl:value-of select="substring-before(concat(@id,'.'),'.')"/></content>
-		      </xsl:for-each-group>
-		    </xsl:otherwise>
-		  </xsl:choose>
-		</xsl:otherwise>
-	      </xsl:choose>
+	    <property name="Elements">
+              <xsl:choose>
+                <xsl:when test="current()/following-sibling::html:td[1]//html:a='HTML elements'">
+                  <content>All HTML elements</content>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:attribute name="infoset">html</xsl:attribute>
+                  <xsl:attribute name="type">element</xsl:attribute>
+                  <xsl:attribute name="list">inline</xsl:attribute>
+                  <xsl:for-each select="current()/following-sibling::html:td[1]//html:a">
+                    <content><xsl:value-of select="."/></content>
+                  </xsl:for-each>
+                </xsl:otherwise>
+              </xsl:choose>
 	    </property>
-	    <property name="content" list="inline">
-	      <xsl:for-each select="following-sibling::html:span[@class='attr-values']">
-		<content><xsl:value-of select="normalize-space(.)"/></content>
-	      </xsl:for-each>
-	      </property>
-	      <xsl:if test="local-name(parent::html:dt/following-sibling::html:*[1])='dd'">
-		<property name="description"><content><xsl:value-of select="normalize-space(parent::html:dt/following-sibling::html:dd[1])"/></content></property>
-	      </xsl:if>
+	    <property name="content">
+              <content><xsl:value-of select="current()/following-sibling::html:td[3]"/></content>
+            </property>
+            <property name="description"><content><xsl:value-of select="current()/following-sibling::html:td[2]"/></content></property>
 	    <!-- status in html5 -->
 	    <xsl:choose>
 	      <xsl:when test="following-sibling::html:span[@class=('new-feature','obsoleted-feature','changed-feature')]">
-		<property name="html5">
-		  <content><xsl:value-of select="substring-before(following-sibling::html:span[@class=('new-feature','obsoleted-feature','changed-feature')]/@class,'-')"/></content>
-		</property>
-	      </xsl:when>
-	      <!-- if the element is new, the existing of the attribute on that element is new as well -->
-	      <xsl:when test="$el and ancestor::html:div[tokenize(@class,' ')='section' and html:h2[@class='element-head']]/html:h2[@class='element-head']/html:span[@class='new-feature']">
-		<property name="html5">
-		  <content>new</content>
-		</property>
 	      </xsl:when>
 	    </xsl:choose>
 	    <xsl:if test="position()=1">
@@ -251,21 +221,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
 	    <property name="Specification">
 	      <xsl:attribute name="link">
-		<xsl:choose>
-		  <xsl:when test="ancestor::html:div[@id='global-attributes']">
-		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/global-attributes.html#',current()/@id)"/>
-		  </xsl:when>
-		  <xsl:when test="ancestor::html:div[@id='forms-attributes']">
-		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/forms-attributes.html#',current()/@id)"/>
-		  </xsl:when>
-		  <xsl:otherwise>
-		    <xsl:value-of select="concat('http://dev.w3.org/html5/markup/',$el,'.html#',$el,'.attrs.',normalize-space(.))"/>
-		  </xsl:otherwise>
-		  </xsl:choose>
+                <xsl:value-of select="concat('TR/html5/', (current()/following-sibling::html:td[1]//html:a)[1]/@href)"/>
 	      </xsl:attribute>
 	    </property>
 	  </context>
-	</xsl:for-each-group>
+	</xsl:for-each>
       </item>
     </xsl:for-each-group>
     <xsl:comment>attributes that were in HTML4 but have been removed from HTML5</xsl:comment>
