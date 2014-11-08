@@ -39,20 +39,20 @@
 <script type="text/mustache" id="details-template">
 {{#keywords}}
 <div class="context">
- <h2><span class="infoset">{{infoset}}</span> <code>{{keyword}}</code>{{#marker}} <span class="attribute {{.}}" title="{{.}} in HTML5 (not yet a standard)"> {{marker}} in draft of HTML5</span>{{/marker}}</h2>
+ <h2><span class="infoset">{{infoset}}</span> <code>{{keyword}}</code>{{#marker}} <span class="attribute {{.}}" title="{{.}} in HTML"> {{marker}} in HTML5</span>{{/marker}}</h2>
  <div>
  {{#contexts}}
    <div>
-     {{#title}}<h3><span class='infoset'>{{infoset}}</span> {{#kw}}<code>{{name}}</code>{{^last}}, {{/last}}{{/kw}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5 (not yet a standard)"> {{marker}} in draft of HTML5</span>{{/marker}}</h3>{{/title}}
+     {{#title}}<h3><span class='infoset'>{{infoset}}</span> {{#kw}}<code>{{name}}</code>{{^last}}, {{/last}}{{/kw}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5"> {{marker}} in HTML5</span>{{/marker}}</h3>{{/title}}
      <dl>
       {{#properties}}
        <dt>{{#link}}<a href="{{link}}" {{#internal}}class="internal"{{/internal}}>{{/link}}{{name}}{{#link}}</a>{{/link}}</dt>
        {{#inlineDisplay}}
-       <dd>{{#values}}{{#subvalues}}{{#class}}<span class="{{class}}">{{/class}}{{#link}}<a href="{{link}}" {{#internal}}class="internal"{{/internal}}>{{/link}}{{name}}{{#link}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5 (not yet a standard)"> {{marker}}</span>{{/marker}}</a>{{/link}}{{#class}}</span>{{/class}}{{/subvalues}} {{/values}}</dd>
+       <dd>{{#values}}{{#subvalues}}{{#class}}<span class="{{class}}">{{/class}}{{#link}}<a href="{{link}}" {{#internal}}class="internal"{{/internal}}>{{/link}}{{name}}{{#link}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5"> {{marker}}</span>{{/marker}}</a>{{/link}}{{#class}}</span>{{/class}}{{/subvalues}} {{/values}}</dd>
        {{/inlineDisplay}}
        {{^inlineDisplay}}
-       <dd><ul>{{#values}}<li>{{#subvalues}}{{#link}}<a href="{{link}}" {{#internal}}class="internal"{{/internal}}>{{/link}}{{name}}{{#link}}</a>{{/link}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5 (not yet a standard)"> {{marker}} in draft of HTML5</span>{{/marker}}{{/subvalues}}</li>{{/values}}</dd>
-<!--       <dd><ul><li><a>for</a><span class="attribute"> new in draft of HTML5</span></a></li></ul></dd>-->
+       <dd><ul>{{#values}}<li>{{#subvalues}}{{#link}}<a href="{{link}}" {{#internal}}class="internal"{{/internal}}>{{/link}}{{name}}{{#link}}</a>{{/link}}{{#marker}} <span class="attribute {{marker}}" title="{{marker}} in HTML5"> {{marker}} in HTML5</span>{{/marker}}{{/subvalues}}</li>{{/values}}</dd>
+<!--       <dd><ul><li><a>for</a><span class="attribute"> new in HTML5</span></a></li></ul></dd>-->
        {{/inlineDisplay}}
       {{/properties}}
      </dl>
