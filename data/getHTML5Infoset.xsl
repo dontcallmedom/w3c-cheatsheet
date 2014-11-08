@@ -228,7 +228,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:for-each-group>
     <xsl:comment>attributes that were in HTML4 but have been removed from HTML5</xsl:comment>
     <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='attribute']">
-      <xsl:if test="not($attributesLists/html:th[normalize-space(.)=current()/@name])">
+      <xsl:if test="not($attributesLists//html:th[normalize-space(.)=current()/@name])">
 
 	<xsl:copy>
 	  <xsl:copy-of select="@*" />
