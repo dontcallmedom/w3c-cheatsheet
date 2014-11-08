@@ -119,8 +119,8 @@ WWW_ROOT=/home/dom/WWW/2009/cheatsheet
 
 # we update the checksum in the manifest each time one of the referenced
 # resources change
-cheatsheet.manifest: js/all.js $(GENERIC_FILES) icons/16x.png
-	perl -pi -e "s/^# checksum .*$$/# checksum `cat $^|md5sum`/" $@
+cheatsheet.manifest: js/all.js $(GENERIC_FILES) icons/16x.png cheatsheet.manifest.dist
+	perl -p -e "s/^# checksum .*$$/# checksum `cat $^|md5sum`/" cheatsheet.manifest.dist > $@
 
 # update the resources that needs to be updated for on-line cheatsheet
 www: js/all.js $(GENERIC_FILES) $(GZIPPED_FILES) icons/*.png cheatsheet.manifest opensearch.xml data/keywords.json
