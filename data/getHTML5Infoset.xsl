@@ -45,6 +45,8 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       <!-- only take elements in HTML5 Rec -->
       <xsl:variable name="el" select="substring-before(concat(@id,'.'),'.')"/>
       <xsl:if test="$htmlIndex//html:table[1]/html:tbody/html:tr/html:th/html:code[normalize-space()=$el]">
+        <xsl:variable name="link" select="concat('http://www.w3.org/services/tidy?forceXML=on&amp;docAddr=http://www.w3.org/TR/html5/',$htmlIndex//html:table[1]/html:tbody/html:tr/html:th/html:code[normalize-space()=$el]/html:a/@href)"/>
+        <xsl:variable name="fragment" select="substring-after($link, '#')"/>
       <item type="element" name="{$el}">
 	<xsl:for-each select="current-group()">
 	  <context>
@@ -69,7 +71,11 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
               </property>
             </xsl:if>
 	    <property name="description">
-	      <content xml:lang="en"><xsl:value-of select="normalize-space(.//html:div[@class='longdesc']/html:p[1])"/></content>
+	      <content xml:lang="en">
+          <xsl:for-each select="document(substring-before($link, '#'))//*[@id=$fragment]/following-sibling::html:p[not(@class) or @class='rep'][preceding-sibling::html:*[starts-with(local-name(),'h')][1][@id=$fragment]]">
+            <xsl:value-of select="normalize-space(.)"/>
+          </xsl:for-each>
+          </content>
 	    </property>
 	    <property name="DOM interface" infoset="js" type="interface">
               <content><xsl:value-of select="$htmlIndex//html:h3[@id='element-interfaces']/following-sibling::html:table[1]/html:tbody/html:tr/html:td[1][normalize-space(.)=$el]/following-sibling::html:td[1]/html:code[1]"/></content>
