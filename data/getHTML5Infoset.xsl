@@ -4,7 +4,7 @@
 
 <!-- Output method XML -->
 <xsl:output method="xml" indent="yes"
-  encoding="utf-8" 
+  encoding="utf-8"
   />
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -28,7 +28,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </body>
 </html>
 
-<xsl:param name="spec" select="'http://www.w3.org/services/tidy?docAddr=http://dev.w3.org/html5/markup/spec.html'"/>
+<xsl:param name="spec" select="'http://www.w3.org/services/tidy?docAddr=http://dev.w3.org/cvsweb/~checkout~/html5/markup/spec.html?rev=1.339'"/>
     <xsl:variable name="html5" select="document($spec)/html:html/html:body"/>
 
 
@@ -126,7 +126,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	    </property>
 	    <property name="Specification" link="https://twitter.com/#!/w3c/statuses/2027402192"/>
 	  </context>
-	</item>	
+	</item>
     <xsl:comment>elements that were in HTML4 but have been removed from HTML5</xsl:comment>
     <xsl:for-each select="document('html4.xml')/infosets/infoset/item[@type='element']">
       <xsl:if test="not($html5//html:div[@id='elements']/html:div[substring-before(concat(@id,'.'),'.')=current()/@name and html:h2[@class='element-head'] and html:div[@class='longdesc']])">
