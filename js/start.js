@@ -162,6 +162,7 @@ Cheatsheet.prototype.show_keyword = function (keyword_data, infoset, propertytyp
 					var subvalue = {};
                                         var textOrSpan = propcontent.t[textOrSpanIdx];
                                         if (textOrSpan.y && textOrSpan.i && textOrSpan.t) { // span
+                                            subvalue.internal = true;
 					    subvalue.link = internalLink(textOrSpan.i, textOrSpan.y, textOrSpan.t);
 					    subvalue.name = textOrSpan.t;
 					    if (textOrSpan.h) {
@@ -266,7 +267,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
         search.get(0).autocompleter.findValue();
         return true;
     }
-    // Search anchors look like "#search,inf,html,e,area"
+    // Search anchors look like "#inf,html,e,area"
     // (e standing for element in this case)
     var selector_path = anchor.split(',');
     var infoset = unescape(selector_path[1]);
@@ -276,9 +277,8 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
         this.clearLookUp();
         $(".ac_results").hide();
         search.val("");
-        if (this.load_keyword_data(keyword, infoset, propertytype)) {
-            return true;
-        }
+        this.load_keyword_data(keyword, infoset, propertytype);
+        return true;
     }
     return false;
 };
