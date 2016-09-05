@@ -36,9 +36,10 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     -->
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="cssselectors" select="document('cssselectors.xml')/infosets/infoset"/>
+    <xsl:variable name="cssflexbox" select="document('css-flexbox.xml')/infosets/infoset"/>
   <infosets>
   <infoset technology="css">
-    <xsl:for-each select="document('http://cgi.w3.org/cgi-bin/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
+    <xsl:for-each select="document('https://services.w3.org/tidy/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
       <item type="property" name='{normalize-space(translate(.,"&apos;",""))}'><context>
 	<property name="values">
 	  <content>
@@ -79,6 +80,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
       </context></item>
     </xsl:for-each>
     <xsl:apply-templates select="$cssselectors/*"/>
+    <xsl:apply-templates select="$cssflexbox/*"/>
   </infoset>
   </infosets>
   </xsl:template>

@@ -1,0 +1,58 @@
+<infosets><infoset technology='css'>
+<item type='property' name='display'><context>
+<property name="values"><content>flex | inline-flex</content></property>
+<property name="inherited"><content>undefined</content></property><property name="media"><content>undefined</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-display"/>
+</context></item>
+<item type='property' name='min-width, min-height'><context>
+<property name="values"><content>auto</content></property>
+<property name="inherited"><content>undefined</content></property><property name="media"><content>undefined</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-min-width, min-height"/>
+</context></item>
+<item type='property' name='flex-direction'><context>
+<property name="values"><content>row | row-reverse | column | column-reverse</content></property>
+<property name="applies"><content>flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-direction"/>
+</context></item>
+<item type='property' name='flex-wrap'><context>
+<property name="values"><content>nowrap | wrap | wrap-reverse</content></property>
+<property name="applies"><content>flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-wrap"/>
+</context></item>
+<item type='property' name='flex-flow'><context>
+<property name="values"><content><span type="property" infoset="css">flex-direction</span> || <span type="property" infoset="css">flex-wrap</span></content></property>
+<property name="inherited"><content>undefined</content></property><property name="media"><content>undefined</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-flow"/>
+</context></item>
+<item type='property' name='order'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="applies"><content>flex items and absolutely-positioned children of flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-order"/>
+</context></item>
+<item type='property' name='flex'><context>
+<property name="values"><content>none | [ <span type="property" infoset="css">flex-grow</span> <span type="property" infoset="css">flex-shrink</span>? || <span type="property" infoset="css">flex-basis</span> ]</content></property>
+<property name="inherited"><content>undefined</content></property><property name="media"><content>undefined</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex"/>
+</context></item>
+<item type='property' name='flex-grow'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-grow"/>
+</context></item>
+<item type='property' name='flex-shrink'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-shrink"/>
+</context></item>
+<item type='property' name='flex-basis'><context>
+<property name="values"><content>content | <span type="property" infoset="css">width</span></content></property>
+<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-flex-basis"/>
+</context></item>
+<item type='property' name='justify-content'><context>
+<property name="values"><content>flex-start | flex-end | center | space-between | space-around</content></property>
+<property name="applies"><content>flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-justify-content"/>
+</context></item>
+<item type='property' name='align-items'><context>
+<property name="values"><content>flex-start | flex-end | center | baseline | stretch</content></property>
+<property name="applies"><content>flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-align-items"/>
+</context></item>
+<item type='property' name='align-self'><context>
+<property name="values"><content>auto | flex-start | flex-end | center | baseline | stretch</content></property>
+<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-align-self"/>
+</context></item>
+<item type='property' name='align-content'><context>
+<property name="values"><content>flex-start | flex-end | center | space-between | space-around | stretch</content></property>
+<property name="applies"><content>multi-line flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property> <property name="Specification" link="/TR/css-flexbox-1/ #propdef-align-content"/>
+</context></item>
+</infoset></infosets>

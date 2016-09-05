@@ -63,8 +63,12 @@ data/xpath.xml: data/getXpathFunctions.xsl
 	rnv data/validation/schema.rnc $@
 
 
-data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml
+data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml data/css-flexbox.xml
 	saxon $< $< > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-flexbox.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-flexbox/Overview.bs > $@
 	rnv data/validation/schema.rnc $@
 
 data/svg.xml: data/getSVGInfoset.xsl 
