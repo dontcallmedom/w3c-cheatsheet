@@ -1,14 +1,14 @@
 <infosets><infoset technology='css'>
 <item type='property' name='shape-outside'><context>
-<property name="values"><content>none | [ &lt;&lt;basic-shape&gt;&gt;</content></property>
+<property name="values"><content>none | [ <span type="value space" infoset="css">basic-shape</span></content></property>
 <property name="Specification" link="/TR/css-shapes/#propdef-shape-outside"/>
 </context></item>
 <item type='property' name='shape-image-threshold'><context>
-<property name="values"><content>&lt;&lt;number&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">number</span></content></property>
 <property name="Specification" link="/TR/css-shapes/#propdef-shape-image-threshold"/>
 </context></item>
 <item type='property' name='shape-margin'><context>
-<property name="values"><content>&lt;&lt;length&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">length</span></content></property>
 <property name="Specification" link="/TR/css-shapes/#propdef-shape-margin"/>
 </context></item>
 </infoset></infosets>

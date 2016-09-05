@@ -24,7 +24,7 @@
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-flow"/>
 </context></item>
 <item type='property' name='order'><context>
-<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">integer</span></content></property>
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-order"/>
 </context></item>
 <item type='property' name='flex'><context>
@@ -32,11 +32,11 @@
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex"/>
 </context></item>
 <item type='property' name='flex-grow'><context>
-<property name="values"><content>&lt;&lt;number&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">number</span></content></property>
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-grow"/>
 </context></item>
 <item type='property' name='flex-shrink'><context>
-<property name="values"><content>&lt;&lt;number&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">number</span></content></property>
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-shrink"/>
 </context></item>
 <item type='property' name='flex-basis'><context>

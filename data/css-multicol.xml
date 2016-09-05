@@ -1,10 +1,10 @@
 <infosets><infoset technology='css'>
 <item type='property' name='column-width'><context>
-<property name="values"><content>auto | &lt;&lt;length&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">length</span></content></property>
 <property name="Specification" link="/TR/css3-multicol/#propdef-column-width"/>
 </context></item>
 <item type='property' name='column-count'><context>
-<property name="values"><content>auto | &lt;&lt;integer&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">integer</span></content></property>
 <property name="Specification" link="/TR/css3-multicol/#propdef-column-count"/>
 </context></item>
 <item type='property' name='columns'><context>
@@ -12,11 +12,11 @@
 <property name="applies"><content>see individual properties</content></property><property name="inherited"><content>see individual properties</content></property><property name="media"><content>see individual properties</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-columns"/>
 </context></item>
 <item type='property' name='column-gap'><context>
-<property name="values"><content>&lt;&lt;length&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">length</span></content></property>
 <property name="Specification" link="/TR/css3-multicol/#propdef-column-gap"/>
 </context></item>
 <item type='property' name='column-rule-color'><context>
-<property name="values"><content>&lt;&lt;color&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
 <property name="Specification" link="/TR/css3-multicol/#propdef-column-rule-color"/>
 </context></item>
 <item type='property' name='column-rule-style'><context>

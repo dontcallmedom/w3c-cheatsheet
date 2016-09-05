@@ -12,11 +12,11 @@
 <property name="applies"><content>elements in the normal flow that establish formatting contexts,</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-inside"/>
 </context></item>
 <item type='property' name='orphans'><context>
-<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">integer</span></content></property>
 <property name="Specification" link="/TR/css-break-3/#propdef-orphans"/>
 </context></item>
 <item type='property' name='widows'><context>
-<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">integer</span></content></property>
 <property name="Specification" link="/TR/css-break-3/#propdef-widows"/>
 </context></item>
 <item type='property' name='box-decoration-break'><context>

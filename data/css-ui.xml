@@ -16,11 +16,11 @@
 <property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-outline-style"/>
 </context></item>
 <item type='property' name='outline-color'><context>
-<property name="values"><content>&lt;&lt;color&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-outline-color"/>
 </context></item>
 <item type='property' name='outline-offset'><context>
-<property name="values"><content>&lt;&lt;length&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">length</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-outline-offset"/>
 </context></item>
 <item type='property' name='resize'><context>
@@ -28,31 +28,31 @@
 <property name="applies"><content>elements with 'overflow' other than visible,</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-resize"/>
 </context></item>
 <item type='property' name='text-overflow'><context>
-<property name="values"><content>[ clip | ellipsis | &lt;&lt;string&gt;&gt;</content></property>
+<property name="values"><content>[ clip | ellipsis | <span type="value space" infoset="css">string</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-text-overflow"/>
 </context></item>
 <item type='property' name='cursor'><context>
-<property name="values"><content>[ [&lt;&lt;url&gt;&gt;</content></property>
+<property name="values"><content>[ [<span type="value space" infoset="css">url</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-cursor"/>
 </context></item>
 <item type='property' name='caret-color'><context>
-<property name="values"><content>auto | &lt;&lt;color&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">color</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-caret-color"/>
 </context></item>
 <item type='property' name='nav-up'><context>
-<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">id</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-nav-up"/>
 </context></item>
 <item type='property' name='nav-right'><context>
-<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">id</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-nav-right"/>
 </context></item>
 <item type='property' name='nav-down'><context>
-<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">id</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-nav-down"/>
 </context></item>
 <item type='property' name='nav-left'><context>
-<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="values"><content>auto | <span type="value space" infoset="css">id</span></content></property>
 <property name="Specification" link="/TR/css3-ui/#propdef-nav-left"/>
 </context></item>
 </infoset></infosets>

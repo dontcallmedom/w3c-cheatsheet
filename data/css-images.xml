@@ -4,15 +4,15 @@
 <property name="applies"><content>replaced elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-images/#propdef-object-fit"/>
 </context></item>
 <item type='property' name='object-position'><context>
-<property name="values"><content>&lt;&lt;position&gt;&gt;</content></property>
+<property name="values"><content><span type="value space" infoset="css">position</span></content></property>
 <property name="Specification" link="/TR/css3-images/#propdef-object-position"/>
 </context></item>
 <item type='property' name='image-resolution'><context>
-<property name="values"><content>[ from-image || &lt;&lt;resolution&gt;&gt;</content></property>
+<property name="values"><content>[ from-image || <span type="value space" infoset="css">resolution</span></content></property>
 <property name="Specification" link="/TR/css3-images/#propdef-image-resolution"/>
 </context></item>
 <item type='property' name='image-orientation'><context>
-<property name="values"><content>from-image | &lt;&lt;angle&gt;&gt;</content></property>
+<property name="values"><content>from-image | <span type="value space" infoset="css">angle</span></content></property>
 <property name="Specification" link="/TR/css3-images/#propdef-image-orientation"/>
 </context></item>
 <item type='property' name='image-rendering'><context>

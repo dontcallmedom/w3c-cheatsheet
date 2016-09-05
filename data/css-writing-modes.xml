@@ -20,7 +20,7 @@
 <property name="applies"><content>n/a</content></property><property name="inherited"><content>na/</content></property><property name="media"><content>n/a</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-glyph-orientation-vertical"/>
 </context></item>
 <item type='property' name='text-combine-upright'><context>
-<property name="values"><content>none | all | [ digits &lt;integer&gt;? ]</content></property>
+<property name="values"><content>none | all | [ digits <span type="value space" infoset="css">integer</span>? ]</content></property>
 <property name="applies"><content>non-replaced inline elements</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-text-combine-upright"/>
 </context></item>
 </infoset></infosets>
