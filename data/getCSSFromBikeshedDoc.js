@@ -34,6 +34,14 @@ function valueToReferences(value) {
     }
 }
 
+function propContent(name, value) {
+    if (value) {
+        return '<property name="' + name + '"><content>'
+            + value + '</content></property>'
+    }
+    return '';
+}
+
 loadSpecification(process.argv[2])
     .then(function(w) {
         var metadata = definitionlistToObject(w.document.querySelector('pre.metadata'));
@@ -46,13 +54,10 @@ loadSpecification(process.argv[2])
             console.log("<item type='property' name='" + defs.name + "'><context>");
             console.log('<property name="values"><content>'
                         + valueToReferences(defs.value || defs['new values']) + '</content></property>')
-            console.log((defs['applies to'] ? '<property name="applies"><content>'
-                         + defs['applies to'] + '</content></property>' : '')
-                        + '<property name="inherited"><content>'
-                        + defs.inherited + '</content></property>'
-                        + '<property name="media"><content>'
-                        + defs.media + '</content></property>'
-                        +' <property name="Specification" link="' + relativeTR + ' #propdef-' + defs.name + '"/>');
+            console.log(propContent('applies', defs['applies to'])
+                        + propContent('inherited', defs.inherited)
+                        + propContent('media', defs.media)
+                        + '<property name="Specification" link="' + relativeTR + ' #propdef-' + defs.name + '"/>');
             console.log("</context></item>");
         }
         console.log("</infoset></infosets>");
