@@ -288,6 +288,15 @@
     <property name="Specification" link="https://drafts.csswg.org/css-images-3/#cross-fade-function" />
   </context>
 </item>
+<item name="gradient" type="value space">
+  <context>
+  <property name="description"><content>A gradient is an image that smoothly fades from one color to another. </content></property>
+  <property name="Syntax">
+    <content>&lt;gradient> =  &lt;<span type="value space" infoset="css">linear-gradient()</span>> | &lt;<span type="value space" infoset="css">repeating-linear-gradient()</span>> |  &lt;<span type="value space" infoset="css">radial-gradient()</span>> | &lt;<span type="value space" infoset="css">repeating-radial-gradient()</span>></content>
+  </property>
+  <property name="Specification" link="https://drafts.csswg.org/css-images-3/#typedef-gradient" />
+  </context>
+</item>
 <item name="linear-gradient()" type="value space">
   <context>
     <property name="description"><content>A linear gradient produces a smooth fade from each color to the next, progressing in the specified direction.</content></property>
