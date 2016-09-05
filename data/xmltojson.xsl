@@ -58,6 +58,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>element</full><short>e</short></term>
 <term><full>attribute</full><short>a</short></term>
 <term><full>property</full><short>p</short></term>
+<term><full>partialproperty</full><short>pp</short></term>
 <term><full>selector</full><short>se</short></term>
 <term><full>at-rule</full><short>ar</short></term>
 <term><full>function</full><short>f</short></term>

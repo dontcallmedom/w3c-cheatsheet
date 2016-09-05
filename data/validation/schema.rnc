@@ -15,7 +15,7 @@ Infosets = element infosets {
 }
 ## Types of keywords
 # add to xmltojson.xsl dictionary when updating
-Types = attribute type { "element" | "attribute" | "property" | "selector" | "at-rule" | "function" | "interface"}
+Types = attribute type { "element" | "attribute" | "property" | "partialproperty" | "selector" | "at-rule" | "function" | "interface"}
 Infoset = attribute infoset { "html" | "css" | "xpath" | "svg" | "js" }
 
 ## A context designates a usage of the said keyword common to a class of items

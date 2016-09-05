@@ -30,7 +30,7 @@ function valueToReferences(value) {
     if (value.match(/<<?'/)) {
         return value.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>')}
     else {
-        return value.replace(/<([^>]*)>/g, '&lt;$1&gt;');
+        return value.replace(/&/g, '&amp;').replace(/<([^>]*)>/g, '&lt;$1&gt;');
     }
 }
 
@@ -51,14 +51,20 @@ loadSpecification(process.argv[2])
         var propdefs = w.document.querySelectorAll('pre.propdef')
         for (var i = 0 ; i < propdefs.length; i++) {
             defs = definitionlistToObject(propdefs[i]);
-            console.log("<item type='property' name='" + defs.name + "'><context>");
-            console.log('<property name="values"><content>'
+            var type = 'property';
+            if (propdefs[i].classList.contains('partial')) {
+                type = 'partialproperty';
+            }
+            defs.name.split(',').map(n => n.trim()).forEach(n => {
+                console.log("<item type='" + type + "' name='" + n + "'><context>");
+                console.log('<property name="values"><content>'
                         + valueToReferences(defs.value || defs['new values']) + '</content></property>')
-            console.log(propContent('applies', defs['applies to'])
-                        + propContent('inherited', defs.inherited)
-                        + propContent('media', defs.media)
-                        + '<property name="Specification" link="' + relativeTR + ' #propdef-' + defs.name + '"/>');
-            console.log("</context></item>");
+                console.log(propContent('applies', defs['applies to'])
+                            + propContent('inherited', defs.inherited)
+                            + propContent('media', defs.media)
+                            + '<property name="Specification" link="' + relativeTR + '#propdef-' + n + '"/>');
+                console.log("</context></item>");
+            });
         }
         console.log("</infoset></infosets>");
     }).catch(console.error.bind(console));
