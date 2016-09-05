@@ -1,0 +1,14 @@
+<infosets><infoset technology='css'>
+<item type='property' name='shape-outside'><context>
+<property name="values"><content>none | [ &lt;&gt; || &lt;&gt; ] | &lt;&gt;</content></property>
+<property name="applies"><content>floats</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-shapes/#propdef-shape-outside"/>
+</context></item>
+<item type='property' name='shape-image-threshold'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="applies"><content>floats</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-shapes/#propdef-shape-image-threshold"/>
+</context></item>
+<item type='property' name='shape-margin'><context>
+<property name="values"><content>&lt;&gt; | &lt;&gt;</content></property>
+<property name="applies"><content>floats</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-shapes/#propdef-shape-margin"/>
+</context></item>
+</infoset></infosets>

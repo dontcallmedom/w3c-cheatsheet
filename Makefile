@@ -63,13 +63,46 @@ data/xpath.xml: data/getXpathFunctions.xsl
 	rnv data/validation/schema.rnc $@
 
 
-data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml data/css-flexbox.xml
+data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml data/css-flexbox.xml data/css-writing-modes.xml data/css-break.xml data/css-ui.xml data/css-compositing.xml data/css-shapes.xml data/css-text-decor.xml data/css-multicol.xml data/css-images.xml
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
 data/css-flexbox.xml: data/getCSSFromBikeshedDoc.js
 	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-flexbox/Overview.bs > $@
 	rnv data/validation/schema.rnc $@
+
+data/css-writing-modes.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-writing-modes-3/Overview.bs  > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-multicol.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js  https://drafts.csswg.org/css-multicol/Overview.bs  > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-break.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js  https://drafts.csswg.org/css-break/Overview.bs  > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-ui.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js  https://drafts.csswg.org/css-ui/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-compositing.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.fxtf.org/compositing-1/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-shapes.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-shapes/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-text-decor.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-text-decor-3/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-images.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-images-3/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
 
 data/svg.xml: data/getSVGInfoset.xsl 
 	saxon $< $< > $@

@@ -1,0 +1,46 @@
+<infosets><infoset technology='css'>
+<item type='property' name='text-decoration-line'><context>
+<property name="values"><content>none | [ underline || overline || line-through || blink ]</content></property>
+<property name="inherited"><content>no (but see prose)</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-decoration-line"/>
+</context></item>
+<item type='property' name='text-decoration-color'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-decoration-color"/>
+</context></item>
+<item type='property' name='text-decoration-style'><context>
+<property name="values"><content>solid | double | dotted | dashed | wavy</content></property>
+<property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-decoration-style"/>
+</context></item>
+<item type='property' name='text-decoration'><context>
+<property name="values"><content><span type="property" infoset="css">text-decoration-line</span> || <span type="property" infoset="css">text-decoration-style</span> || <span type="property" infoset="css">text-decoration-color</span></content></property>
+<property name="Specification" link="/TR/css-text-decor-3/#propdef-text-decoration"/>
+</context></item>
+<item type='property' name='text-decoration-skip'><context>
+<property name="values"><content>none | [ objects || spaces || ink || edges || box-decoration ]</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-decoration-skip"/>
+</context></item>
+<item type='property' name='text-underline-position'><context>
+<property name="values"><content>auto | [ under || [ left | right ] ]</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-underline-position"/>
+</context></item>
+<item type='property' name='text-emphasis-style'><context>
+<property name="values"><content>none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | &lt;&gt;</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-emphasis-style"/>
+</context></item>
+<item type='property' name='text-emphasis-color'><context>
+<property name="values"><content>&lt;&gt;</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-emphasis-color"/>
+</context></item>
+<item type='property' name='text-emphasis'><context>
+<property name="values"><content><span type="property" infoset="css">text-emphasis-style</span> || <span type="property" infoset="css">text-emphasis-color</span></content></property>
+<property name="Specification" link="/TR/css-text-decor-3/#propdef-text-emphasis"/>
+</context></item>
+<item type='property' name='text-emphasis-position'><context>
+<property name="values"><content>[ over | under ] &amp;&amp; [ right | left ]</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-emphasis-position"/>
+</context></item>
+<item type='property' name='text-shadow'><context>
+<property name="values"><content>none | [ &lt;&gt;{2,3} &amp;&amp; &lt;&gt;? ]#</content></property>
+<property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-text-decor-3/#propdef-text-shadow"/>
+</context></item>
+</infoset></infosets>

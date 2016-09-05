@@ -1,0 +1,26 @@
+<infosets><infoset technology='css'>
+<item type='property' name='direction'><context>
+<property name="values"><content>ltr | rtl</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-direction"/>
+</context></item>
+<item type='property' name='unicode-bidi'><context>
+<property name="values"><content>normal | embed | isolate | bidi-override | isolate-override | plaintext</content></property>
+<property name="applies"><content>all elements, but see prose</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-unicode-bidi"/>
+</context></item>
+<item type='property' name='writing-mode'><context>
+<property name="values"><content>horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr</content></property>
+<property name="applies"><content>All elements except table row groups, table column groups, table rows, table columns, ruby base container, ruby annotation container</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-writing-mode"/>
+</context></item>
+<item type='property' name='text-orientation'><context>
+<property name="values"><content>mixed | upright | sideways</content></property>
+<property name="applies"><content>all elements except table row groups, rows, column groups, and columns</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-text-orientation"/>
+</context></item>
+<item type='property' name='glyph-orientation-vertical'><context>
+<property name="values"><content>auto | 0deg | 90deg | 0 | 90</content></property>
+<property name="applies"><content>n/a</content></property><property name="inherited"><content>na/</content></property><property name="media"><content>n/a</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-glyph-orientation-vertical"/>
+</context></item>
+<item type='property' name='text-combine-upright'><context>
+<property name="values"><content>none | all | [ digits &lt;integer&gt;? ]</content></property>
+<property name="applies"><content>non-replaced inline elements</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-writing-modes-3/#propdef-text-combine-upright"/>
+</context></item>
+</infoset></infosets>

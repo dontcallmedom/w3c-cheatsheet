@@ -37,6 +37,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="i18n" select="document('i18n.html')/html:html/html:body/html:dl"/>
     <xsl:variable name="cssselectors" select="document('cssselectors.xml')/infosets/infoset"/>
     <xsl:variable name="cssflexbox" select="document('css-flexbox.xml')/infosets/infoset"/>
+    <xsl:variable name="csswritingmodes" select="document('css-writing-modes.xml')/infosets/infoset"/>
+    <xsl:variable name="cssmulticol" select="document('css-multicol.xml')/infosets/infoset"/>
+    <xsl:variable name="cssbreak" select="document('css-break.xml')/infosets/infoset"/>
+    <xsl:variable name="cssui" select="document('css-ui.xml')/infosets/infoset"/>
+    <xsl:variable name="csscompositing" select="document('css-compositing.xml')/infosets/infoset"/>
+    <xsl:variable name="cssshapes" select="document('css-shapes.xml')/infosets/infoset"/>
+    <xsl:variable name="csstextdecor" select="document('css-text-decor.xml')/infosets/infoset"/>
+    <xsl:variable name="cssimages" select="document('css-images.xml')/infosets/infoset"/>
   <infosets>
   <infoset technology="css">
     <xsl:for-each select="document('https://services.w3.org/tidy/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
@@ -81,6 +89,14 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     </xsl:for-each>
     <xsl:apply-templates select="$cssselectors/*"/>
     <xsl:apply-templates select="$cssflexbox/*"/>
+    <xsl:apply-templates select="$csswritingmodes/*"/>
+    <xsl:apply-templates select="$cssmulticol/*"/>
+    <xsl:apply-templates select="$cssbreak/*"/>
+    <xsl:apply-templates select="$cssui/*"/>
+    <xsl:apply-templates select="$csscompositing/*"/>
+    <xsl:apply-templates select="$cssshapes/*"/>
+    <xsl:apply-templates select="$csstextdecor/*"/>
+    <xsl:apply-templates select="$cssimages/*"/>
   </infoset>
   </infosets>
   </xsl:template>
