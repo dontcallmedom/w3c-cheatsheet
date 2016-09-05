@@ -110,6 +110,7 @@
 <content>@import</content>
 <content>@page</content>
 <content>@charset</content>
+<content>@supports</content>
 </property>
 </context>
 </item>
@@ -133,12 +134,12 @@
 <property name="values"><content>all, braille, embossed, handheld, print, projection, screen, speech, tty, tv</content></property>
 </context>
 </item>
-<item name="@charset" type="at-rule">
+<item name="@supports" type="at-rule">
 <context>
-<property name="description"><content>The @charset rule defines the encoding used in a linked style sheet. An @charset rule must be placed at the very beginning of the style sheet, preceded by no characters, and the name of the encoding should follow in quotes.</content></property>
-<property name="Example"><content>@charset "ISO-8859-1"</content></property>
-<property name="Internationalization"><content link="http://www.w3.org/International/techniques/authoring-html#css">Declaring the character encoding for a CSS style sheet</content></property>
+<property name="description"><content>The ‘@supports’ rule is a conditional group rule whose condition tests whether the user agent supports CSS property:value pairs.</content></property>
+<property name="Example"><content>@supports ( display: flexbox ) {  body, #navigation, #content { display: flexbox; }  #navigation { background: blue; color: white; }  #article { background: white; color: black; } }</content></property>
 </context>
 </item>
+
 </infoset>
 </infosets>
