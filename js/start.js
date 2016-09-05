@@ -11,7 +11,9 @@ var Cheatsheet = function () {
      */
     this.keywordSources = {
         "css": {"p": "CSS Property",
-            "se": "CSS Selector",
+                "se": "CSS Selector",
+                "vs": "CSS Values",
+                "u": "CSS Unit",
             "ar": "CSS At-rules"},
         "html": {"e": "HTML Element",
              "a": "HTML Attribute"},

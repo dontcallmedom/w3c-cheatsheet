@@ -27,11 +27,13 @@ function definitionlistToObject(pre) {
 }
 
 function valueToReferences(value) {
+    var replace = value.replace(/&/g, '&amp;');
     if (value.match(/<<?'/)) {
-        return value.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>')}
-    else {
-        return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        replace = value.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>');
+    } else if (value.match(/<[^']/)) {
+        replace = value.replace(/<([^>]*)>/g, '<span type="value space" infoset="css">$1</span>');
     }
+    return replace;
 }
 
 function propContent(name, value) {
@@ -56,7 +58,7 @@ loadSpecification(process.argv[2])
             for (var j = 0 ; j < pre.children.length; j++) {
                 var el = pre.children[j];
                 if (el.tagName !== 'A') {
-                    pre.replaceChild(w.document.createTextNode('<' + el.tagName.toLowerCase() +'>>'), el);
+                    pre.replaceChild(w.document.createTextNode(el.tagName.toLowerCase() +'>'), el);
                 }
             }
             defs = definitionlistToObject(propdefs[i]);

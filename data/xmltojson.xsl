@@ -61,6 +61,9 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 <term><full>partialproperty</full><short>pp</short></term>
 <term><full>selector</full><short>se</short></term>
 <term><full>at-rule</full><short>ar</short></term>
+<term><full>value space</full><short>vs</short></term>
+<term><full>units</full><short>un</short></term>
+<term><full>unit</full><short>u</short></term>
 <term><full>function</full><short>f</short></term>
 <term><full>interface</full><short>it</short></term>
 <term><full>context</full><short>ct</short></term>
@@ -245,7 +248,7 @@ var dictionary = {
 		   <xsl:value-of select="$q"/><xsl:text>t</xsl:text><xsl:value-of select="$q"/><xsl:text>: </xsl:text>
 		   <xsl:choose>
 		     <xsl:when test="not(span)">
-		       <xsl:text>"</xsl:text><xsl:value-of select="replace(.,'&quot;','\\&quot;')"/><xsl:text>"</xsl:text>
+		       <xsl:text>"</xsl:text><xsl:value-of select="normalize-space(replace(.,'&quot;','\\&quot;'))"/><xsl:text>"</xsl:text>
 		     </xsl:when>
 		     <xsl:otherwise>
 		       <xsl:text>[</xsl:text>

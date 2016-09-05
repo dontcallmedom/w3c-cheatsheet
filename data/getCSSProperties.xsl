@@ -52,7 +52,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 	<property name="values">
 	  <content>
 	    <xsl:choose>
-	      <xsl:when test="not(ancestor::html:tr/html:td[2]/descendant::html:span[starts-with(@class,'propinst-')])">
+	      <xsl:when test="not(ancestor::html:tr/html:td[2]/descendant::html:span[starts-with(@class,'propinst-') or starts-with(@class,'value-inst-')])">
 		<xsl:value-of select="normalize-space(ancestor::html:tr/html:td[2])"/>
 	      </xsl:when>
 	      <xsl:otherwise>
@@ -112,6 +112,17 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
 
   <xsl:template match="html:span[starts-with(@class,'propinst-')]" mode="textOrSpan">
     <span type='property' infoset='css'><xsl:value-of select='normalize-space(replace(.,"&apos;",""))'/></span>
+  </xsl:template>
+
+  <xsl:template match="html:span[starts-with(@class,'value-inst-')]" mode="textOrSpan">
+    <xsl:choose>
+      <xsl:when test="contains(.,'&lt;')">
+        &lt;<span type='value space' infoset='css'><xsl:value-of select='normalize-space(replace(replace(replace(.,"uri","url"),"&lt;",""), "&gt;", ""))'/></span>&gt;
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select='normalize-space(.)'/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
 
