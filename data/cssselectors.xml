@@ -140,6 +140,376 @@
 <property name="Example"><content>@supports ( display: flexbox ) {  body, #navigation, #content { display: flexbox; }  #navigation { background: blue; color: white; }  #article { background: white; color: black; } }</content></property>
 </context>
 </item>
-
+<item name="string" type="value space">
+  <context>
+    <property name="description"><content>CSS Strings consist of a sequence of characters delimited by double quotes or single quotes.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#strings" />
+  </context>
+</item>
+<item name="url" type="value space">
+  <context>
+    <property name="description"><content>A URL is a pointer to a resource with the following syntax:  url( &lt;<span type="value space" infoset="css">string</span>&gt; &lt;url-modifier&gt;* )</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#url" />
+  </context>
+</item>
+<item name="integer" type="value space">
+  <context>
+    <property name="description"><content>&lt;integer&gt; denotes integer values. When written literally, an integer is one or more decimal digits 0 through 9. The first digit of an integer may be immediately preceded by - or + to indicate the integer’s sign.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#integers" />
+  </context>
+</item>
+<item name="number" type="value space">
+  <context>
+    <property name="description"><content>The &lt;number&gt; type  represents real numbers, possibly with a fractional component. When written literally, a number is either an <span type="value space" infoset="css">integer</span>, or zero or more decimal digits followed by a dot (.) followed by one or more decimal digits and optionally an exponent composed of "e" or "E" and an <span type="value space" infoset="css">integer</span>. As with integers, the first character of a number may be immediately preceded by - or + to indicate the number’s sign.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#numbers" />
+  </context>
+</item>
+<item name="percentage" type="value space">
+  <context>
+    <property name="description"><content>The &lt;percentage&gt; type  represents percentage values, indicating a value that is some fraction of another reference value. When written literally, a percentage consists of a <span type="value space" infoset="css">number</span> immediately followed by a percent sign %.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#percentages" />
+  </context>
+</item>
+<item name="dimension" type="value space">
+  <context>
+    <property name="description"><content>The &lt;dimension&gt; type refers to a <span type="value space" infoset="css">number</span> with a unit attached to it. When written literally, a dimension is a number immediately followed by a unit identifier.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#dimensions" />
+  </context>
+</item>
+<item name="length" type="value space">
+  <context>
+    <property name="description"><content>The &lt;length&gt; type refers to distance measurements. A length is a <span type="value space" infoset="css">dimension</span>. However, for zero lengths the unit identifier is optional i.e. can be syntactically represented as 0.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#lengths" />
+    <property name="units" list="inline" type="unit" infoset="css">
+      <content>em</content>
+      <content>ex</content>
+      <content>ch</content>
+      <content>ic</content>
+      <content>rem</content>
+      <content>vw</content>
+      <content>vh</content>
+      <content>vi</content>
+      <content>vb</content>
+      <content>vmin</content>
+      <content>vmax</content>
+      <content>cm</content>
+      <content>mm</content>
+      <content>q</content>
+      <content>in</content>
+      <content>pt</content>
+      <content>pc</content>
+      <content>px</content>
+    </property>
+  </context>
+</item>
+<item name="angle" type="value space">
+  <context>
+    <property name="description"><content>The &lt;angle&gt; type refers to angle values. An angle is a <span type="value space" infoset="css">dimension</span>. However, for zero angles the unit identifier is optional i.e. can be syntactically represented as 0.</content></property>
+    <property name="units" list="inline" type="unit" infoset="css">
+      <content>deg</content>
+      <content>grad</content>
+      <content>rad</content>
+      <content>turn</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#angles" />
+  </context>
+</item>
+<item name="time" type="value space">
+  <context>
+    <property name="description"><content>The &lt;time&gt; type refers to time values.</content></property>
+    <property name="units" list="inline" type="unit" infoset="css">
+      <content>s</content>
+      <content>ms</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#time" />
+  </context>
+</item>
+<item name="frequency" type="value space">
+  <context>
+    <property name="description"><content>The &lt;frequency&gt; type refers to frequency values.</content></property>
+    <property name="units" list="inline" type="unit" infoset="css">
+      <content>Hz</content>
+      <content>kHz</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#frequency" />
+  </context>
+</item>
+<item name="resolution" type="value space">
+  <context>
+    <property name="description"><content>The &lt;resolution&gt; type refers to resolution values.</content></property>
+    <property name="units" list="inline" type="unit" infoset="css">
+      <content>dpi</content>
+      <content>dpcm</content>
+      <content>dppx</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#resolution" />
+  </context>
+</item>
+<item name="color" type="value space">
+  <context>
+    <property name="description"><content>A &lt;color&gt; is either a keyword or a numerical specification.</content></property>
+    <!-- @@@ list color keywords and numerical specification syntaxes -->
+    <property name="Specification" link="https://drafts.csswg.org/css-color-3/#valuea-def-color" />
+  </context>
+</item>
+<item name="image" type="value space">
+  <context>
+    <property name="description"><content>A &lt;color&gt; is either a keyword or a numerical specification.</content></property>
+    <property name="Syntax"><content>&lt;<span type="value space" infoset="css">url</span>&gt; | &lt;<span type="value space" infoset="css">image()</span>&gt; | &lt;<span type="value space" infoset="css">image-set()</span>&gt; | &lt;<span type="value space" infoset="css">element()</span>&gt; | &lt;<span type="value space" infoset="css">cross-fade()</span>&gt; | &lt;<span type="value space" infoset="css">gradient</span>&gt;</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#typedef-image" />
+  </context>
+</item>
+<item name="image()" type="value space">
+  <context>
+    <property name="description"><content>The image() function allows an author to use media fragments to clip out a portion of an image, use a solid color as an image, fallback to a solid-color image, when the image at the specified url can’t be downloaded or decoded, automatically respect the image orientation specified in the image’s metadata.</content></property>
+    <property name="Syntax"><content>image() = image( [ [ &lt;<span type="value space" infoset="css">image</span>> | &lt;<span type="value space" infoset="css">string</span>> ]? , &lt;<span type="value space" infoset="css">color</span>>? ]! )</content></property>
+    <!-- @@@ list color keywords and numerical specification syntaxes -->
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#image-notation" />
+  </context>
+</item>
+<item name="image-set()" type="value space">
+  <context>
+    <property name="description"><content>The image-set() function allows an author to provide multiple resolutions of an image and let the UA decide which is most appropriate in a given situation.</content></property>
+    <property name="Syntax">
+      <content>image-set() = image-set( &lt;image-set-option># )</content>
+      <content>&lt;image-set-option&gt; = [ &lt;<span type="value space" infoset="css">image</span>> | &lt;<span type="value space" infoset="css">string</span>> ] &lt;<span type="value space" infoset="css">resolution</span>></content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#image-set-notation" />
+  </context>
+</item>
+<item name="cross-fade()" type="value space">
+  <context>
+    <property name="description"><content>The cross-fade() function  indicates the two images to be combined and how far along in the transition the combination is when transitioning between images.</content></property>
+    <property name="Syntax">
+      <content>cross-fade() = cross-fade( &lt;cf-mixing-image> , &lt;cf-final-image>? )</content>
+      <content>&lt;cf-mixing-image> = &lt;<span type="value space" infoset="css">percentage</span>>? &amp;&amp; &lt;<span type="value space" infoset="css">image</span>></content>
+      <content>&lt;cf-final-image> = &lt;<span type="value space" infoset="css">image</span>> | &lt;<span type="value space" infoset="css">color</span>></content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#cross-fade-function" />
+  </context>
+</item>
+<item name="linear-gradient()" type="value space">
+  <context>
+    <property name="description"><content>A linear gradient produces a smooth fade from each color to the next, progressing in the specified direction.</content></property>
+    <property name="Syntax">
+      <content>linear-gradient() = linear-gradient(  [ &lt;<span type="value space" infoset="css">angle</span>> | to &lt;side-or-corner> ]? ,  &lt;<span type="value space" infoset="css">color-stop-list</span>>)</content>
+      <content>&lt;side-or-corner> = [left | right] || [top | bottom]</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#linear-gradients" />
+  </context>
+</item>
+<item name="repeating-linear-gradient()" type="value space">
+  <context>
+    <property name="description"><content>A repeating linear gradient produces an indefinitely repeating smooth fade from each color to the next, in both directions, shifted by multiples of the difference between the last specified color-stop’s position and the first specified color-stop’s position.</content></property>
+    <property name="Syntax">
+      <content>repeating-linear-gradient() = repeating-linear-gradient(  [ &lt;<span type="value space" infoset="css">angle</span>> | to &lt;side-or-corner> ]? ,  &lt;<span type="value space" infoset="css">color-stop-list</span>>)</content>
+      <content>&lt;side-or-corner> = [left | right] || [top | bottom]</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#repeating-gradients" />
+  </context>
+</item>
+<item name="radial-gradient()" type="value space">
+  <context>
+    <property name="description"><content>A radial gradient produces a smooth fade from a single point spreading outward in a circular or elliptical shape, in both directions, shifted by multiples of the difference between the last specified color-stop’s position and the first specified color-stop’s position.</content></property>
+    <property name="Syntax">
+      <content>radial-gradient() = radial-gradient(  [ &lt;ending-shape> || &lt;size&gt; ]? [ at &lt;<span type="value space" infoset="css">position</span>> ]?, &lt;<span type="value space" infoset="css">color-stop-list</span>>)</content>
+      <content>&lt;ending-shape> = circle | ellipse</content>
+      <content>&lt;size> = &lt;<span type="value space" infoset="css">length</span>> || &lt;<span type="value space" infoset="css">length-percentage</span>>{2} || &lt;extent-keyword></content>
+      <content>&lt;extent-keyword> = closest-corner | closest-side | farthest-corner | farthest-side</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#radial-gradients" />
+  </context>
+</item>
+<item name="repeating-radial-gradient()" type="value space">
+  <context>
+    <property name="description"><content>A repeating radial gradient produces an indefinitely repeating smooth fade from a single poit spreading outward in a circular or elliptical shape.</content></property>
+    <property name="Syntax">
+      <content>radial-gradient() = radial-gradient(  [ &lt;ending-shape> || &lt;size&gt; ]? [ at &lt;<span type="value space" infoset="css">position</span>> ]?, &lt;<span type="value space" infoset="css">color-stop-list</span>>)</content>
+      <content>&lt;ending-shape> = circle | ellipse</content>
+      <content>&lt;size> = &lt;<span type="value space" infoset="css">length</span>> || &lt;<span type="value space" infoset="css">length-percentage</span>>{2} || &lt;extent-keyword></content>
+      <content>&lt;extent-keyword> = closest-corner | closest-side | farthest-corner | farthest-side</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-images-3/#radial-gradients" />
+  </context>
+</item>
+<item name="color-stop-list" type="value space">
+  <context>
+    <property name="description"><content>The colors in gradients are specified using color stops. A color stop is a combination of a color and a position. Color stops are organized into a color stop listcolor stop list, which is a list of one or more color stops.</content></property>
+    <property name="Syntax">
+      <content>&lt;color-stop-list> = &lt;color-stop>{2,}</content>
+      <content>&lt;color-stop> = &lt;<span type="value space" infoset="css">color</span>> &lt;<span type="value space" infoset="css">length-percentage</span>>?</content>
+    </property>
+  </context>
+</item>
+<item name="em" type="unit">
+  <context>
+    <property name="description"><content>Equal to the computed value of the <span type="property" infoset="css">font-size</span> property of the element on which it is used. </content></property>
+  </context>
+</item>
+<item name="ex" type="unit">
+  <context>
+    <property name="description"><content>Equal to the used x-height of the first available font. </content></property>
+  </context>
+</item>
+<item name="ch" type="unit">
+  <context>
+    <property name="description"><content>Equal to the used advance measure of the “0” glyph in the font used to render it. The advance measure of a glyph is its advance width or height, whichever is in the inline axis of the element.</content></property>
+  </context>
+</item>
+<item name="ic" type="unit">
+  <context>
+    <property name="description"><content>Equal to the used advance measure of the “水” (CJK water ideograph, U+6C34) glyph found in the font used to render it.</content></property>
+  </context>
+</item>
+<item name="em" type="unit">
+  <context>
+    <property name="description"><content>Equal to the computed value of the <span type="property" infoset="css">font-size</span> on the root element. When specified on the font-size property of the root element, the rem units refer to the property’s initial value. </content></property>
+  </context>
+</item>
+<item name="vw" type="unit">
+  <context>
+    <property name="description"><content> Equal to 1% of the width of the initial containing block. </content></property>
+  </context>
+</item>
+<item name="vh" type="unit">
+  <context>
+    <property name="description"><content> Equal to 1% of the height of the initial containing block. </content></property>
+  </context>
+</item>
+<item name="vi" type="unit">
+  <context>
+    <property name="description"><content>Equal to 1% of the size of the initial containing block in the direction of the root element’s inline axis. </content></property>
+  </context>
+</item>
+<item name="vb" type="unit">
+  <context>
+    <property name="description"><content>Equal to 1% of the size of the initial containing block in the direction of the root element’s block axis. </content></property>
+  </context>
+</item>
+<item name="vmin" type="unit">
+  <context>
+    <property name="description"><content>     Equal to the smaller of <span type="unit" infoset="css">vw</span> or <span type="unit" infoset="css">vh</span>.  </content></property>
+  </context>
+</item>
+<item name="vmax" type="unit">
+  <context>
+    <property name="description"><content>     Equal to the larger of <span type="unit" infoset="css">vw</span> or <span type="unit" infoset="css">vh</span>.  </content></property>
+  </context>
+</item>
+<item name="cm" type="unit">
+  <context>
+    <property name="description"><content>1cm = 96px/2.54 </content></property>
+  </context>
+</item>
+<item name="mm" type="unit">
+  <context>
+    <property name="description"><content>1mm = 1/10th of 1<span type="unit" infoset="css">cm</span> </content></property>
+  </context>
+</item>
+<item name="q" type="unit">
+  <context>
+    <property name="description"><content>1q = 1/40th of 1<span type="unit" infoset="css">cm</span> </content></property>
+  </context>
+</item>
+<item name="in" type="unit">
+  <context>
+    <property name="description"><content>1in = 2.54<span type="unit" infoset="css">cm</span> = 96<span type="unit" infoset="css">px</span> </content></property>
+  </context>
+</item>
+<item name="pc" type="unit">
+  <context>
+    <property name="description"><content>1pc = 1/6th of 1<span type="unit" infoset="css">in</span> </content></property>
+  </context>
+</item>
+<item name="pt" type="unit">
+  <context>
+    <property name="description"><content>1pt = 1/72th of 1<span type="unit" infoset="css">in</span> </content></property>
+  </context>
+</item>
+<item name="px" type="unit">
+  <context>
+    <property name="description">
+      <content>1pt = 1/96th of 1<span type="unit" infoset="css">in</span> </content>
+      <content>The reference pixel is the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm’s length.</content>
+    </property>
+  </context>
+</item>
+<item name="deg" type="unit">
+  <context>
+    <property name="description">
+      <content>     Degrees. There are 360 degrees in a full circle. </content>
+    </property>
+  </context>
+</item>
+<item name="grad" type="unit">
+  <context>
+    <property name="description">
+      <content>     Gradians, also known as "gons" or "grades". There are 400 gradians in a full circle.  </content>
+    </property>
+  </context>
+</item>
+<item name="rad" type="unit">
+  <context>
+    <property name="description">
+      <content>     Radians. There are 2π radians in a full circle.  </content>
+    </property>
+  </context>
+</item>
+<item name="turn" type="unit">
+  <context>
+    <property name="description">
+      <content>     Turns. There is 1 turn in a full circle. </content>
+    </property>
+  </context>
+</item>
+<item name="s" type="unit">
+  <context>
+    <property name="description">
+      <content> Seconds</content>
+    </property>
+  </context>
+</item>
+<item name="ms" type="unit">
+  <context>
+    <property name="description">
+      <content>    Milliseconds. There are 1000 milliseconds in a second. </content>
+    </property>
+  </context>
+</item>
+<item name="Hz" type="unit">
+  <context>
+    <property name="description">
+      <content>    Hertz. It represents the number of occurrences per second. </content>
+    </property>
+  </context>
+</item>
+<item name="kHz" type="unit">
+  <context>
+    <property name="description">
+      <content>    KiloHertz. A kiloHertz is 1000 <span type="unit" infoset="css">Hz</span>. </content>
+    </property>
+  </context>
+</item>
+<item name="dpi" type="unit">
+  <context>
+    <property name="description">
+      <content>    Dots per inch. </content>
+    </property>
+  </context>
+</item>
+<item name="dpcm" type="unit">
+  <context>
+    <property name="description">
+      <content>    Dots per centimeter. </content>
+    </property>
+  </context>
+</item>
+<item name="dppx" type="unit">
+  <context>
+    <property name="description">
+      <content>    Dots per <span type="unit" infoset="css">px</span> unit. </content>
+    </property>
+  </context>
+</item>
 </infoset>
 </infosets>
