@@ -1,14 +1,14 @@
 <infosets><infoset technology='css'>
 <item type='property' name='mix-blend-mode'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>All elements. In SVG, it applies to container elements, graphics elements and graphics referencing elements. [[SVG11]]</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/compositing-1/#propdef-mix-blend-mode"/>
+<property name="values"><content>&lt;&lt;blend-mode&gt;&gt;</content></property>
+<property name="Specification" link="/TR/compositing-1/#propdef-mix-blend-mode"/>
 </context></item>
 <item type='property' name='isolation'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>All elements. In SVG, it applies to container elements, graphics elements and graphics referencing elements. [[SVG11]]</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/compositing-1/#propdef-isolation"/>
+<property name="values"><content>&lt;&lt;isolation-mode&gt;&gt;</content></property>
+<property name="Specification" link="/TR/compositing-1/#propdef-isolation"/>
 </context></item>
 <item type='property' name='background-blend-mode'><context>
-<property name="values"><content>&lt;&gt;#</content></property>
-<property name="applies"><content>All HTML elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/compositing-1/#propdef-background-blend-mode"/>
+<property name="values"><content>&lt;&lt;blend-mode&gt;&gt;</content></property>
+<property name="Specification" link="/TR/compositing-1/#propdef-background-blend-mode"/>
 </context></item>
 </infoset></infosets>

@@ -1,23 +1,23 @@
 <infosets><infoset technology='css'>
 <item type='property' name='column-width'><context>
-<property name="values"><content>auto | &lt;&gt;</content></property>
-<property name="applies"><content>non-replaced block-level elements (except table elements), table cells, and inline-block elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-column-width"/>
+<property name="values"><content>auto | &lt;&lt;length&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-multicol/#propdef-column-width"/>
 </context></item>
 <item type='property' name='column-count'><context>
-<property name="values"><content>auto | &lt;&gt;</content></property>
-<property name="applies"><content>non-replaced block-level elements (except table elements), table cells, and inline-block elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-column-count"/>
+<property name="values"><content>auto | &lt;&lt;integer&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-multicol/#propdef-column-count"/>
 </context></item>
 <item type='property' name='columns'><context>
 <property name="values"><content><span type="property" infoset="css">column-width</span> || <span type="property" infoset="css">column-count</span></content></property>
 <property name="applies"><content>see individual properties</content></property><property name="inherited"><content>see individual properties</content></property><property name="media"><content>see individual properties</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-columns"/>
 </context></item>
 <item type='property' name='column-gap'><context>
-<property name="values"><content>&lt;&gt; | normal</content></property>
-<property name="applies"><content>multicol elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-column-gap"/>
+<property name="values"><content>&lt;&lt;length&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-multicol/#propdef-column-gap"/>
 </context></item>
 <item type='property' name='column-rule-color'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>multicol elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-multicol/#propdef-column-rule-color"/>
+<property name="values"><content>&lt;&lt;color&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-multicol/#propdef-column-rule-color"/>
 </context></item>
 <item type='property' name='column-rule-style'><context>
 <property name="values"><content><span type="property" infoset="css">border-style</span></content></property>

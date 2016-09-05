@@ -5,11 +5,11 @@
 </context></item>
 <item type='partialproperty' name='min-width'><context>
 <property name="values"><content>auto</content></property>
-<property name="Specification" link="/TR/css-flexbox-1/#propdef-min-width, min-height"/>
+<property name="Specification" link="/TR/css-flexbox-1/#propdef-min-width"/>
 </context></item>
 <item type='partialproperty' name='min-height'><context>
 <property name="values"><content>auto</content></property>
-<property name="Specification" link="/TR/css-flexbox-1/#propdef-min-width, min-height"/>
+<property name="Specification" link="/TR/css-flexbox-1/#propdef-min-height"/>
 </context></item>
 <item type='property' name='flex-direction'><context>
 <property name="values"><content>row | row-reverse | column | column-reverse</content></property>
@@ -24,20 +24,20 @@
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-flow"/>
 </context></item>
 <item type='property' name='order'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>flex items and absolutely-positioned children of flex containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-flexbox-1/#propdef-order"/>
+<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css-flexbox-1/#propdef-order"/>
 </context></item>
 <item type='property' name='flex'><context>
 <property name="values"><content>none | [ <span type="property" infoset="css">flex-grow</span> <span type="property" infoset="css">flex-shrink</span>? || <span type="property" infoset="css">flex-basis</span> ]</content></property>
 <property name="Specification" link="/TR/css-flexbox-1/#propdef-flex"/>
 </context></item>
 <item type='property' name='flex-grow'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-grow"/>
+<property name="values"><content>&lt;&lt;number&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-grow"/>
 </context></item>
 <item type='property' name='flex-shrink'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>flex items</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-shrink"/>
+<property name="values"><content>&lt;&lt;number&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css-flexbox-1/#propdef-flex-shrink"/>
 </context></item>
 <item type='property' name='flex-basis'><context>
 <property name="values"><content>content | <span type="property" infoset="css">width</span></content></property>

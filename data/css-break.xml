@@ -1,23 +1,23 @@
 <infosets><infoset technology='css'>
 <item type='property' name='break-before'><context>
 <property name="values"><content>auto | avoid | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region</content></property>
-<property name="applies"><content>block-level elements, table row groups, table rows (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-before, break-after"/>
+<property name="applies"><content>block-level elements, table row groups, table rows (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-before"/>
 </context></item>
 <item type='property' name='break-after'><context>
 <property name="values"><content>auto | avoid | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region</content></property>
-<property name="applies"><content>block-level elements, table row groups, table rows (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-before, break-after"/>
+<property name="applies"><content>block-level elements, table row groups, table rows (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-after"/>
 </context></item>
 <item type='property' name='break-inside'><context>
 <property name="values"><content>auto | avoid | avoid-page | avoid-column | avoid-region</content></property>
 <property name="applies"><content>elements in the normal flow that establish formatting contexts,</content></property><property name="inherited"><content>no</content></property><property name="Specification" link="/TR/css-break-3/#propdef-break-inside"/>
 </context></item>
 <item type='property' name='orphans'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>block containers</content></property><property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-break-3/#propdef-orphans, widows"/>
+<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css-break-3/#propdef-orphans"/>
 </context></item>
 <item type='property' name='widows'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>block containers</content></property><property name="inherited"><content>yes</content></property><property name="Specification" link="/TR/css-break-3/#propdef-orphans, widows"/>
+<property name="values"><content>&lt;&lt;integer&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css-break-3/#propdef-widows"/>
 </context></item>
 <item type='property' name='box-decoration-break'><context>
 <property name="values"><content>slice | clone</content></property>

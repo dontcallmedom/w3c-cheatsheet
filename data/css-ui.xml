@@ -16,43 +16,43 @@
 <property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-outline-style"/>
 </context></item>
 <item type='property' name='outline-color'><context>
-<property name="values"><content>&lt;&gt; | invert</content></property>
-<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-outline-color"/>
+<property name="values"><content>&lt;&lt;color&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-outline-color"/>
 </context></item>
 <item type='property' name='outline-offset'><context>
-<property name="values"><content>&lt;&gt;</content></property>
-<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-outline-offset"/>
+<property name="values"><content>&lt;&lt;length&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-outline-offset"/>
 </context></item>
 <item type='property' name='resize'><context>
 <property name="values"><content>none | both | horizontal | vertical</content></property>
 <property name="applies"><content>elements with 'overflow' other than visible,</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-resize"/>
 </context></item>
 <item type='property' name='text-overflow'><context>
-<property name="values"><content>[ clip | ellipsis | &lt;&gt; ]{1,2}</content></property>
-<property name="applies"><content>block containers</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="/TR/css3-ui/#propdef-text-overflow"/>
+<property name="values"><content>[ clip | ellipsis | &lt;&lt;string&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-text-overflow"/>
 </context></item>
 <item type='property' name='cursor'><context>
-<property name="values"><content>[ [&lt;&gt; [&lt;x&gt; &lt;y&gt;]?,]*</content></property>
-<property name="applies"><content>all elements</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>visual, interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-cursor"/>
+<property name="values"><content>[ [&lt;&lt;url&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-cursor"/>
 </context></item>
 <item type='property' name='caret-color'><context>
-<property name="values"><content>auto | &lt;&gt;</content></property>
-<property name="applies"><content>elements that accept input</content></property><property name="inherited"><content>yes</content></property><property name="media"><content>interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-caret-color"/>
+<property name="values"><content>auto | &lt;&lt;color&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-caret-color"/>
 </context></item>
 <item type='property' name='nav-up'><context>
-<property name="values"><content>auto | &lt;&gt; [ current | root | &lt;&gt; ]?</content></property>
-<property name="applies"><content>all enabled elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-nav-up , nav-right , nav-down , nav-left"/>
+<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-nav-up"/>
 </context></item>
 <item type='property' name='nav-right'><context>
-<property name="values"><content>auto | &lt;&gt; [ current | root | &lt;&gt; ]?</content></property>
-<property name="applies"><content>all enabled elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-nav-up , nav-right , nav-down , nav-left"/>
+<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-nav-right"/>
 </context></item>
 <item type='property' name='nav-down'><context>
-<property name="values"><content>auto | &lt;&gt; [ current | root | &lt;&gt; ]?</content></property>
-<property name="applies"><content>all enabled elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-nav-up , nav-right , nav-down , nav-left"/>
+<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-nav-down"/>
 </context></item>
 <item type='property' name='nav-left'><context>
-<property name="values"><content>auto | &lt;&gt; [ current | root | &lt;&gt; ]?</content></property>
-<property name="applies"><content>all enabled elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>interactive</content></property><property name="Specification" link="/TR/css3-ui/#propdef-nav-up , nav-right , nav-down , nav-left"/>
+<property name="values"><content>auto | &lt;&lt;id&gt;&gt;</content></property>
+<property name="Specification" link="/TR/css3-ui/#propdef-nav-left"/>
 </context></item>
 </infoset></infosets>
