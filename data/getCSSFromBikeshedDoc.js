@@ -30,7 +30,7 @@ function valueToReferences(value) {
     if (value.match(/<<?'/)) {
         return value.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>')}
     else {
-        return value.replace(/&/g, '&amp;').replace(/<([^>]*)>/g, '&lt;$1&gt;');
+        return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 }
 
@@ -50,6 +50,15 @@ loadSpecification(process.argv[2])
 
         var propdefs = w.document.querySelectorAll('pre.propdef')
         for (var i = 0 ; i < propdefs.length; i++) {
+            var pre = propdefs[i];
+            // Bikeshed doesn't escape '<' & '>' in the propdefs
+            // so getting back the values from the HTML parsing algo
+            for (var j = 0 ; j < pre.children.length; j++) {
+                var el = pre.children[j];
+                if (el.tagName !== 'A') {
+                    pre.replaceChild(w.document.createTextNode('<' + el.tagName.toLowerCase() +'>>'), el);
+                }
+            }
             defs = definitionlistToObject(propdefs[i]);
             var type = 'property';
             if (propdefs[i].classList.contains('partial')) {
