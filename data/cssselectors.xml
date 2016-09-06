@@ -357,6 +357,90 @@
     </property>
   </context>
 </item>
+<item name="absolute-size" type="value space">
+  <context>
+    <property name="description"><content>&lt;absolute-size&gt; refers to one of 6 font sizes computed and kept by the browser.</content></property>
+    <property name="Syntax">
+      <content>&lt;absolute-size> = xx-small | x-small | small | medium | large | x-large | xx-large</content>
+    </property>
+  </context>
+</item>
+<item name="relative-size" type="value space">
+  <context>
+    <property name="description"><content>A &lt;relative-size&gt; is interpreted relative to the table of font sizes and the font size of the parent element.</content></property>
+    <property name="Syntax">
+      <content>&lt;relative-size> = larger | smaller</content>
+    </property>
+  </context>
+</item>
+<item name="box" type="value space">
+  <context>
+    <property name="description"><content>&lt;box&gt; determines what serves as  boundaries to the box.</content></property>
+    <property name="Syntax">
+      <content>&lt;box> = border-box | padding-box | content-box</content>
+    </property>
+    <property name="Specification" link="/TR/css3-background/#ltboxgt"/>
+  </context>
+</item>
+<item name="shape-box" type="value space">
+  <context>
+    <property name="description"><content>&lt;shape-box&gt; defines which boundaries are used to define the shape of the box.</content></property>
+    <property name="Syntax">
+      <content>&lt;shape-box> = &lt;<span type="value space" infoset="css">box</span>&gt; | margin-box</content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#typedef-shape-box"/>
+  </context>
+</item>
+<item name="basic-shape" type="value space">
+  <context>
+    <property name="description"><content>&lt;basic-shape&gt; defines which the geometric shape of the box.</content></property>
+    <property name="Syntax">
+      <content>&lt;basic-shape> = &lt;<span type="value space" infoset="css">inset()</span>&gt; | &lt;<span type="value space" infoset="css">circle()</span>&gt; | &lt;<span type="value space" infoset="css">ellipse()</span>&gt; | &lt;<span type="value space" infoset="css">polygon()</span>&gt; </content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#typedef-basic-shape"/>
+  </context>
+</item>
+<item name="inset()" type="value space">
+  <context>
+    <property name="description"><content>Defines an inset rectangle: the first four arguments represent the top, right, bottom and left offsets, following the syntax of the <span type="property" infoset="css">margin</span> shorthand with one, two or four values. The optional border-radius argument defines rounded corners.</content></property>
+    <property name="Syntax">
+      <content>inset() = inset( &lt;shape-arg>{1,4} [round &lt;<span type="property" infoset="css">border-radius</span>>]? )</content>
+      <content>&lt;shape-arg> = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>></content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#funcdef-inset"/>
+  </context>
+</item>
+<item name="circle()" type="value space">
+  <context>
+    <property name="description"><content>Defines a circle</content></property>
+    <property name="Syntax">
+      <content>circle() = circle( &lt;shape-radius>? [at &lt;<span type="value space" infoset="css">position</span>>]? )</content>
+      <content>&lt;shape-radius> = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> | closest-side | farthest-side </content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#funcdef-circle"/>
+  </context>
+</item>
+<item name="ellipse()" type="value space">
+  <context>
+    <property name="description"><content>Defines an ellipse, with the radius defined in the order of rx, ry.</content></property>
+    <property name="Syntax">
+      <content>ellipse() = ellipse( [&lt;shape-radius>{2}]? [at &lt;<span type="value space" infoset="css">position</span>>]? )</content>
+      <content>&lt;shape-radius> = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> | closest-side | farthest-side </content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#funcdef-ellipse"/>
+  </context>
+</item>
+<item name="polygon()" type="value space">
+  <context>
+    <property name="description"><content>Defines a polygonal shape, with each pair argument in the list represents xi and yi - the x and y axis coordinates of the i-th vertex of the polygon</content></property>
+    <property name="Syntax">
+      <content>polygon() = polygon( [&lt;fill-rule,>]? [&lt;shape-arg> &lt;shape-arg>]# )</content>
+      <content>&lt;shape-arg> = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>></content>
+    </property>
+    <property name="Specification" link="/TR/css-shapes-1/#funcdef-ellipse"/>
+  </context>
+</item>
+
 <item name="em" type="unit">
   <context>
     <property name="description"><content>Equal to the computed value of the <span type="property" infoset="css">font-size</span> property of the element on which it is used. </content></property>
