@@ -377,7 +377,7 @@
     <property name="description"><content>Equal to the used advance measure of the “水” (CJK water ideograph, U+6C34) glyph found in the font used to render it.</content></property>
   </context>
 </item>
-<item name="em" type="unit">
+<item name="rem" type="unit">
   <context>
     <property name="description"><content>Equal to the computed value of the <span type="property" infoset="css">font-size</span> on the root element. When specified on the font-size property of the root element, the rem units refer to the property’s initial value. </content></property>
   </context>
