@@ -209,7 +209,12 @@
     </property>
   </context>
 </item>
-<item name="angle" type="value space">
+<item name="length-percentage" type="value space">
+  <context>
+    <property name="description"><content>Equivalent to [ &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> ], where the &lt;<span type="value space" infoset="css">percentage</span>> will resolve to a &lt;<span type="value space" infoset="css">length</span>>.</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-values/#typedef-length-percentage" />  </context>
+</item>
+  <item name="angle" type="value space">
   <context>
     <property name="description"><content>The &lt;angle&gt; type refers to angle values. An angle is a <span type="value space" infoset="css">dimension</span>. However, for zero angles the unit identifier is optional i.e. can be syntactically represented as 0.</content></property>
     <property name="units" list="inline" type="unit" infoset="css">
@@ -440,10 +445,240 @@
     <property name="Specification" link="/TR/css-shapes-1/#funcdef-ellipse"/>
   </context>
 </item>
+<item name="bg-image" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;bg-image> = &lt;<span type="value space" infoset="css">image</span>> | none</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-image" />  </context>
+</item>
+<item name="attachment" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;attachment> = scroll | fixed | local</content></property>
+    <property name="description">
+      <content>fixed: The background is fixed with regard to the viewport. In paged media where there is no viewport, a ‘fixed’ background is fixed with respect to the page box and therefore replicated on every page.</content>
+      <content>local: The background is fixed with regard to the element's contents: if the element has a scrolling mechanism, the background scrolls with the element's content.</content>
+      <content>scroll: The background is fixed with regard to the element itself and does not scroll with its contents.</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#attachment" />  </context>
+</item>
+<item name="bg-size" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;bg-size> = [ &lt;<span type="value space" infoset="css">length-percentage</span>> | auto ]{1,2} | cover | contain</content></property>
+    <property name="description">
+      <content>contain: Scale the image, while preserving its intrinsic aspect ratio (if any), to the largest size such that both its width and its height can fit inside the background positioning area.</content>
+      <content>cover: Scale the image, while preserving its intrinsic aspect ratio (if any), to the smallest size such that both its width and its height can completely cover the background positioning area</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-size" />
+  </context>
+</item>
+<item name="bg-layer" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;bg-layer> = &lt;<span type="value space" infoset="css">bg-image</span>> || &lt;<span type="value space" infoset="css">position</span>> [ / &lt;<span type="value space" infoset="css">bg-size</span>> ]? || &lt;<span type="value space" infoset="css">repeat-style</span>> || &lt;<span type="value space" infoset="css">attachment</span>> || &lt;<span type="value space" infoset="css">box</span>> || &lt;<span type="value space" infoset="css">box</span>></content></property>
+    <property name="description">
+      <content>contain: Scale the image, while preserving its intrinsic aspect ratio (if any), to the largest size such that both its width and its height can fit inside the background positioning area.</content>
+      <content>cover: Scale the image, while preserving its intrinsic aspect ratio (if any), to the smallest size such that both its width and its height can completely cover the background positioning area</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-layer" />
+  </context>
+</item>
+<item name="final-bg-layer" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;bg-layer> = &lt;<span type="value space" infoset="css">bg-image</span>> || &lt;<span type="value space" infoset="css">position</span>> [ / &lt;<span type="value space" infoset="css">bg-size</span>> ]? || &lt;<span type="value space" infoset="css">repeat-style</span>> || &lt;<span type="value space" infoset="css">attachment</span>> || &lt;<span type="value space" infoset="css">box</span>> || &lt;<span type="value space" infoset="css">box</span>> | &lt;<span type="property" infoset="css">background-color</span>></content></property>
+    <property name="description">
+      <content>contain: Scale the image, while preserving its intrinsic aspect ratio (if any), to the largest size such that both its width and its height can fit inside the background positioning area.</content>
+      <content>cover: Scale the image, while preserving its intrinsic aspect ratio (if any), to the smallest size such that both its width and its height can completely cover the background positioning area</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-layer" />
+  </context>
+</item>
+<item name="position" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;position> = [  [ left | center | right | top | bottom | &lt;<span type="value space" infoset="css">length-percentage</span>> ] |  [ left | center | right | &lt;<span type="value space" infoset="css">length-percentage</span>> ]  [ top | center | bottom | &lt;<span type="value space" infoset="css">length-percentage</span>> ] |  [ center | [ left | right ] &lt;<span type="value space" infoset="css">length-percentage</span>>? ] &amp;&amp;  [ center | [ top | bottom ] &lt;<span type="value space" infoset="css">length-percentage</span>>? ] ]</content></property>
+    <property name="description"><content>If only one value is specified, the second value is assumed to be ‘center’. If two values are given, a length or percentage as the first value represents the horizontal position (or offset) and a length or percentage as the second value represents the vertical position (or offset). &lt;percentage> and &lt;length> values here represent an offset of the top left corner of the background image from the top left corner of the background positioning area.</content> </property>
+  </context>
+</item>
+<item name="box" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;box> = border-box | padding-box | content-box</content></property>
+    <property name="description">
+      <content>border-box: The background is painted within the border box.</content>
+      <content>padding-box: The background is painted within the padding box.</content>
+      <content>content-box: The background is painted within the content box. </content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#box" />
+  </context>
+</item>
+<item name="repeat-style" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;repeat-style> = repeat-x | repeat-y | [repeat | space | round | no-repeat]{1,2}</content></property>
+    <property name="description">
+      <content>repeat: The image is repeated in this direction as often as needed to cover the background painting area.</content>
+      <content>space: The image is repeated as often as will fit within the background positioning area without being clipped and then the images are spaced out to fill the area. The first and last images touch the edges of the area.</content>
+      <content>round: The image is repeated as often as will fit within the background positioning area. If it doesn't fit a whole number of times, it is rescaled so that it does.</content>
+      <content>no-repeat: The image is placed once and not repeated in this direction.</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#repeat-style" />
+  </context>
+</item>
+<item name="blend-mode" type="value space">
+  <context>
+    <property name="description"><content>The blend mode defines the formula that must be used to mix the colors with the backdrop.</content></property>
+    <property name="Syntax"><content>&lt;blend-mode> = normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity</content></property>
+    <property name="Specification" link="https://drafts.fxtf.org/compositing-1/#ltblendmodegt" />
+  </context>
+</item>
+<item name="isolation-mode" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;isolation-mode> = auto | isolate</content></property>
+    <property name="Specification" link="https://drafts.fxtf.org/compositing-1/#isolated-propid" />
+  </context>
+</item>
 
-<item name="em" type="unit">
+<item name="id" type="value space">
+  <context>
+    <property name="description"><content>The &lt;id> value is an ID selector</content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-ui/#typedef-id" />
+  </context>
+</item>
+
+<item name="shadow" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;shadow> = inset? &amp;&amp; &lt;<span type="value space" infoset="css">length</span>>{2,4} &amp;&amp; &lt;<span type="value space" infoset="css">color</span>>?</content></property>
+    <property name="description">
+      <content>1st length: horizontal offset of the shadow </content>
+      <content>2nd length: vertical offset of the shadow</content>
+      <content>3rd length: blur radius</content>
+      <content>4th length: spread distance</content>
+      <content>color: color of the shadow</content>
+      <content>inset: if present, changes the drop shadow from an outer box-shadow to an inner box-shadow (as if the box were cut out of the canvas and shifted behind it)</content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#shadow" />
+  </context>
+</item>
+<item name="family-name" type="value space">
+  <context>
+    <property name="description"><content>The name of a font family of choice.</content></property>
+    <property name="Specification" link="https://www.w3.org/TR/CSS2/fonts.html#value-def-family-name" />
+  </context>
+</item>
+<item name="generic-family" type="value space">
+  <context>
+    <property name="description"><content>The name of a generic font family, one of 'serif', 'sans-serif', 'cursive', 'fantasy', 'monospace'.</content></property>
+    <property name="Specification" link="https://www.w3.org/TR/CSS2/fonts.html#value-def-family-name" />
+  </context>
+</item>
+  
+<!-- this is a dup of line-width ; @@@ TODO: remove once merging versions is solved -->
+ <item name="border-width" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;border-width> = thin | medium | thick | &lt;<span type="value space" infoset="css">length</span>></content></property>
+    <property name="Specification" link="/TR/CSS2/box.html#value-def-border-width"/>
+  </context>
+ </item>
+ <item name="line-width" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;line-width> = thin | medium | thick | &lt;<span type="value space" infoset="css">length</span>></content></property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#line-width"/>
+  </context>
+ </item>
+
+ <!-- this is a dup of line-style ; @@@ TODO: remove once merging versions is solved -->
+ <item name="border-style" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;border-style> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</content></property>
+    <property name="description">
+      <content>none:     No border</content>
+      <content>hidden: Same as 'none', except in terms of border conflict resolution for table elements</content>
+      <content>dotted:     The border is a series of dots. </content>
+      <content>dashed:     The border is a series of short line segments. </content>
+      <content>solid:     The border is a single line segment. </content>
+      <content>double:     The border is two solid lines. The sum of the two lines and the space between them equals the value of <span type="property" infoset="css">border-width</span>. </content>
+      <content>groove:     The border looks as though it were carved into the canvas. </content>
+      <content>ridge:     The opposite of 'groove': the border looks as though it were coming out of the canvas. </content>
+      <content>inset:     The border makes the box look as though it were embedded in the canvas. </content>
+      <content>outset:     The opposite of 'inset': the border makes the box look as though it were coming out of the canvas. </content>
+    </property>
+    <property name="Specification" link="/TR/CSS2/box.html#value-def-border-style"/>
+  </context>
+ </item>
+ <item name="line-style" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;border-style> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</content></property>
+    <property name="description">
+      <content>none:     No border</content>
+      <content>hidden: Same as 'none', except in terms of border conflict resolution for table elements</content>
+      <content>dotted:     The border is a series of dots. </content>
+      <content>dashed:     The border is a series of short line segments. </content>
+      <content>solid:     The border is a single line segment. </content>
+      <content>double:     The border is two solid lines. The sum of the two lines and the space between them equals the value of <span type="property" infoset="css">border-width</span>. </content>
+      <content>groove:     The border looks as though it were carved into the canvas. </content>
+      <content>ridge:     The opposite of 'groove': the border looks as though it were coming out of the canvas. </content>
+      <content>inset:     The border makes the box look as though it were embedded in the canvas. </content>
+      <content>outset:     The opposite of 'inset': the border makes the box look as though it were coming out of the canvas. </content>
+    </property>
+    <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#line-style"/>
+  </context>
+ </item>
+
+
+ <item name="margin-width" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;margin-width&gt; = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> | auto</content></property>
+    <property name="Specification" link="/TR/CSS2/box.html#value-def-margin-width"/>
+  </context>
+ </item>
+ <item name="padding-width" type="value space">
+  <context>
+    <property name="Syntax"><content>&lt;padding-width&gt; = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>></content></property>
+    <property name="Specification" link="/TR/CSS2/box.html#value-def-padding-width"/>
+  </context>
+ </item>
+ <item name="shape" type="value space">
+  <context>
+    <property name="Syntax">
+      <content>&lt;shape&gt; = rect(&lt;top>, &lt;right>, &lt;bottom>, &lt;left>)</content>
+      <content>&lt;top> = &lt;<span type="value space" infoset="css">length</span>> | auto</content>
+      <content>&lt;right> = &lt;<span type="value space" infoset="css">length</span>> | auto</content>
+      <content>&lt;bottom> = &lt;<span type="value space" infoset="css">length</span>> | auto</content>
+      <content>&lt;left> = &lt;<span type="value space" infoset="css">length</span>> | auto</content>
+    </property>
+    <property name="description">
+      <content>top and bottom:     offsets from the top border edge of the box. Negative lengths are permitted.</content>
+      <content>right and left:     offsets from the left border edge of the box. Negative lengths are permitted.</content>
+    </property>
+    <property name="Specification" link="/TR/CSS2/box.html#value-def-shape"/>
+  </context>
+  </item>
+  <item name="identifier" type="value space">
+  <context>
+    <property name="Syntax"><content>characters [a-zA-Z0-9] and ISO 10646 characters U+00A0 and higher, plus the hyphen (-) and the underscore (_)</content></property>
+    <property name="Specification" link="/TR/CSS2/syndata.html#value-def-identifier"/>
+  </context>
+  </item>
+  <item name="counter" type="value space">
+    <context>
+      <property name="Syntax"><content>&lt;counter> =  &lt;<span type="value space" infoset="css">counter()</span>> | &lt;<span type="value space" infoset="css">counters()</span>></content></property>
+      <property name="Specification" link="/TR/CSS2/syndata.html#value-def-counter"/>
+  </context>
+  </item>
+  <item name="counter()" type="value space">
+    <context>
+      <property name="description"><content>Refers to the value of the identified counter in the optional list-style-type.</content></property>
+      <property name="Syntax"><content>&lt;counter()> = counter(&lt;<span type="value space" infoset="css">identifier</span>> [, &lt;<span type="property" infoset="css">list-style-type</span>>]?)</content></property>
+      <property name="Specification" link="/TR/CSS2/syndata.html#value-def-counter"/>
+  </context>
+  </item>
+  <item name="counters()" type="value space">
+    <context>
+      <property name="description"><content>Refers to the nested value of the identified counter, with &lt;string> as a separators of levels, in the optional list-style-type.</content></property>
+      <property name="Syntax"><content>&lt;counters()> = counters(&lt;<span type="value space" infoset="css">identifier</span>>, &lt;<span type="value space" infoset="css">string</span>> [, &lt;<span type="property" infoset="css">list-style-type</span>>]?)</content></property>
+      <property name="Specification" link="/TR/CSS2/syndata.html#value-def-counter"/>
+  </context>
+  </item>
+
+ <item name="em" type="unit">
   <context>
     <property name="description"><content>Equal to the computed value of the <span type="property" infoset="css">font-size</span> property of the element on which it is used. </content></property>
+
   </context>
 </item>
 <item name="ex" type="unit">
