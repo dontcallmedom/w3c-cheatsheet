@@ -45,6 +45,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:variable name="cssshapes" select="document('css-shapes.xml')/infosets/infoset"/>
     <xsl:variable name="csstextdecor" select="document('css-text-decor.xml')/infosets/infoset"/>
     <xsl:variable name="cssimages" select="document('css-images.xml')/infosets/infoset"/>
+    <xsl:variable name="cssbackgrounds" select="document('css-backgrounds.xml')/infosets/infoset"/>
   <infosets>
   <infoset technology="css">
     <xsl:for-each select="document('https://services.w3.org/tidy/tidy?docAddr=http://www.w3.org/TR/CSS2/propidx.html')/html:html//html:table/html:tr/html:td[1]/html:a">
@@ -97,6 +98,7 @@ href="http://www.keio.ac.jp/">Keio University</a>). All Rights
     <xsl:apply-templates select="$cssshapes/*"/>
     <xsl:apply-templates select="$csstextdecor/*"/>
     <xsl:apply-templates select="$cssimages/*"/>
+    <xsl:apply-templates select="$cssbackgrounds/*"/>
   </infoset>
   </infosets>
   </xsl:template>

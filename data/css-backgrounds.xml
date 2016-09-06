@@ -1,0 +1,166 @@
+<infosets><infoset technology='css'>
+<item type='property' name='background-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-color"/>
+</context></item>
+<item type='property' name='background-image'><context>
+<property name="values"><content><span type="value space" infoset="css">bg-image</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-image"/>
+</context></item>
+<item type='property' name='background-repeat'><context>
+<property name="values"><content><span type="value space" infoset="css">repeat-style</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-repeat"/>
+</context></item>
+<item type='property' name='background-attachment'><context>
+<property name="values"><content><span type="value space" infoset="css">attachment</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-attachment"/>
+</context></item>
+<item type='property' name='background-position'><context>
+<property name="values"><content><span type="value space" infoset="css">position</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-position"/>
+</context></item>
+<item type='property' name='background-clip'><context>
+<property name="values"><content><span type="value space" infoset="css">box</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-clip"/>
+</context></item>
+<item type='property' name='background-origin'><context>
+<property name="values"><content><span type="value space" infoset="css">box</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-origin"/>
+</context></item>
+<item type='property' name='background-size'><context>
+<property name="values"><content><span type="value space" infoset="css">bg-size</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background-size"/>
+</context></item>
+<item type='property' name='background'><context>
+<property name="values"><content><span type="value space" infoset="css">bg-layer</span># , <span type="value space" infoset="css">final-bg-layer</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-background"/>
+</context></item>
+<item type='property' name='border-top-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top-color"/>
+</context></item>
+<item type='property' name='border-right-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-right-color"/>
+</context></item>
+<item type='property' name='border-bottom-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom-color"/>
+</context></item>
+<item type='property' name='border-left-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-left-color"/>
+</context></item>
+<item type='property' name='border-color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span>{1,4}</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-color"/>
+</context></item>
+<item type='property' name='border-top-style'><context>
+<property name="values"><content><span type="value space" infoset="css">line-style</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top-style"/>
+</context></item>
+<item type='property' name='border-right-style'><context>
+<property name="values"><content><span type="value space" infoset="css">line-style</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-right-style"/>
+</context></item>
+<item type='property' name='border-bottom-style'><context>
+<property name="values"><content><span type="value space" infoset="css">line-style</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom-style"/>
+</context></item>
+<item type='property' name='border-left-style'><context>
+<property name="values"><content><span type="value space" infoset="css">line-style</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-left-style"/>
+</context></item>
+<item type='property' name='border-style'><context>
+<property name="values"><content><span type="value space" infoset="css">line-style</span>{1,4}</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-style"/>
+</context></item>
+<item type='property' name='border-top-width'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span></content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top-width"/>
+</context></item>
+<item type='property' name='border-right-width'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span></content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-right-width"/>
+</context></item>
+<item type='property' name='border-bottom-width'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span></content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom-width"/>
+</context></item>
+<item type='property' name='border-left-width'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span></content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-left-width"/>
+</context></item>
+<item type='property' name='border-width'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span>{1,4}</content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-width"/>
+</context></item>
+<item type='property' name='border-top'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span> ||        <span type="value space" infoset="css">line-style</span> ||        <span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top"/>
+</context></item>
+<item type='property' name='border-right'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span> ||        <span type="value space" infoset="css">line-style</span> ||        <span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-right"/>
+</context></item>
+<item type='property' name='border-bottom'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span> ||        <span type="value space" infoset="css">line-style</span> ||        <span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom"/>
+</context></item>
+<item type='property' name='border-left'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span> ||        <span type="value space" infoset="css">line-style</span> ||        <span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-left"/>
+</context></item>
+<item type='property' name='border'><context>
+<property name="values"><content><span type="value space" infoset="css">line-width</span> ||        <span type="value space" infoset="css">line-style</span> ||        <span type="value space" infoset="css">color</span></content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border"/>
+</context></item>
+<item type='property' name='border-top-left-radius'><context>
+<property name="values"><content><span type="value space" infoset="css">length-percentage</span>{1,2}</content></property>
+<property name="applies"><content>all elements (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top-left-radius"/>
+</context></item>
+<item type='property' name='border-top-right-radius'><context>
+<property name="values"><content><span type="value space" infoset="css">length-percentage</span>{1,2}</content></property>
+<property name="applies"><content>all elements (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-top-right-radius"/>
+</context></item>
+<item type='property' name='border-bottom-right-radius'><context>
+<property name="values"><content><span type="value space" infoset="css">length-percentage</span>{1,2}</content></property>
+<property name="applies"><content>all elements (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom-right-radius"/>
+</context></item>
+<item type='property' name='border-bottom-left-radius'><context>
+<property name="values"><content><span type="value space" infoset="css">length-percentage</span>{1,2}</content></property>
+<property name="applies"><content>all elements (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-bottom-left-radius"/>
+</context></item>
+<item type='property' name='border-radius'><context>
+<property name="values"><content><span type="value space" infoset="css">length-percentage</span>{1,4} [ / <span type="value space" infoset="css">length-percentage</span>{1,4} ]?</content></property>
+<property name="applies"><content>all elements (but see prose)</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-radius"/>
+</context></item>
+<item type='property' name='border-image-source'><context>
+<property name="values"><content>none | <span type="value space" infoset="css">image</span></content></property>
+<property name="applies"><content>All elements, except internal table elements when 'border-collapse' is    ''collapse''</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image-source"/>
+</context></item>
+<item type='property' name='border-image-slice'><context>
+<property name="values"><content>[<span type="value space" infoset="css">number</span> | <span type="value space" infoset="css">percentage</span>]{1,4} &amp;&amp; fill?</content></property>
+<property name="applies"><content>All elements, except internal table elements when 'border-collapse' is    ''collapse''</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image-slice"/>
+</context></item>
+<item type='property' name='border-image-width'><context>
+<property name="values"><content>[ <span type="value space" infoset="css">length-percentage</span> | <span type="value space" infoset="css">number</span> | auto ]{1,4}</content></property>
+<property name="applies"><content>All elements, except table elements when 'border-collapse' is    ''collapse''</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image-width"/>
+</context></item>
+<item type='property' name='border-image-outset'><context>
+<property name="values"><content>[ <span type="value space" infoset="css">length</span> | <span type="value space" infoset="css">number</span> ]{1,4}</content></property>
+<property name="applies"><content>All elements, except internal table elements when 'border-collapse' is    ''collapse''</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image-outset"/>
+</context></item>
+<item type='property' name='border-image-repeat'><context>
+<property name="values"><content>[ stretch | repeat | round | space ]{1,2}</content></property>
+<property name="applies"><content>All elements, except internal table elements when 'border-collapse' is    ''collapse''</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image-repeat"/>
+</context></item>
+<item type='property' name='border-image'><context>
+<property name="values"><content><span type="property" infoset="css">border-image-source</span>        || <span type="property" infoset="css">border-image-slice</span>           [ / <span type="property" infoset="css">border-image-width</span> |             / <span type="property" infoset="css">border-image-width</span>? / <span type="property" infoset="css">border-image-outset</span> ]?        || <span type="property" infoset="css">border-image-repeat</span></content></property>
+<property name="applies"><content>See individual properties</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-border-image"/>
+</context></item>
+<item type='property' name='box-shadow'><context>
+<property name="values"><content>none | <span type="value space" infoset="css">shadow</span>#</content></property>
+<property name="applies"><content>all elements</content></property><property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/Overview.src.html#propdef-box-shadow"/>
+</context></item>
+</infoset></infosets>
