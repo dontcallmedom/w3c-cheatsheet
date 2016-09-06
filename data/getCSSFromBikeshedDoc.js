@@ -19,7 +19,7 @@ function loadSpecification(url) {
 }
 
 function definitionlistToObject(pre) {
-    var lines = pre.textContent.split("\n");
+    var lines = pre.split("\n");
     var defs = lines.map(l => l.split(':').map(c => c.trim()))
         .reduce((prev, cur) => {prev[cur[0].toLowerCase()] = cur.slice(1).join(':'); return prev;} , {});
     return defs;
@@ -29,9 +29,9 @@ function definitionlistToObject(pre) {
 function valueToReferences(value) {
     var replace = value.replace(/&/g, '&amp;');
     if (value.match(/<<?'/)) {
-        replace = value.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>');
+        replace = replace.replace(/<<?'([^']*)'>>?/g, '<span type="property" infoset="css">$1<\/span>');
     } else if (value.match(/<[^']/)) {
-        replace = value.replace(/<([^>]*)>/g, '<span type="value space" infoset="css">$1</span>');
+        replace = replace.replace(/<([^>]*)>/g, '<span type="value space" infoset="css">$1</span>');
     }
     return replace;
 }
@@ -46,22 +46,32 @@ function propContent(name, value) {
 
 loadSpecification(process.argv[2])
     .then(function(w) {
-        var metadata = definitionlistToObject(w.document.querySelector('pre.metadata'));
-        var relativeTR =  '/' + metadata.tr.split('/').slice(3).join('/');
+        var metadata = definitionlistToObject(w.document.querySelector('pre.metadata,div.head dl').textContent);
+        if (metadata && metadata.tr) {
+            var relativeTR =  '/' + metadata.tr.split('/').slice(3).join('/');
+        } else {
+            relativeTR = process.argv[2];
+        }
         console.log("<infosets><infoset technology='css'>");
 
-        var propdefs = w.document.querySelectorAll('pre.propdef')
+        var propdefs = w.document.querySelectorAll('pre.propdef,table.propdef')
         for (var i = 0 ; i < propdefs.length; i++) {
             var pre = propdefs[i];
+            var defText;
             // Bikeshed doesn't escape '<' & '>' in the propdefs
             // so getting back the values from the HTML parsing algo
-            for (var j = 0 ; j < pre.children.length; j++) {
-                var el = pre.children[j];
-                if (el.tagName !== 'A') {
-                    pre.replaceChild(w.document.createTextNode(el.tagName.toLowerCase() +'>'), el);
+            if (pre.tagName === "PRE") {
+                for (var j = 0 ; j < pre.children.length; j++) {
+                    var el = pre.children[j];
+                    if (el.tagName !== 'A') {
+                        pre.replaceChild(w.document.createTextNode(el.tagName.toLowerCase() +'>'), el);
+                    }
                 }
+                defText = pre.textContent;
+            } else {
+                defText = [].map.call(pre.querySelectorAll("tr"), tr => tr.textContent.replace(/\n/g, "")).join("\n");
             }
-            defs = definitionlistToObject(propdefs[i]);
+            defs = definitionlistToObject(defText);
             var type = 'property';
             if (propdefs[i].classList.contains('partial')) {
                 type = 'partialproperty';
