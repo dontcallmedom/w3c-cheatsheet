@@ -147,43 +147,43 @@
 <property name="Example"><content>@supports ( display: flexbox ) {  body, #navigation, #content { display: flexbox; }  #navigation { background: blue; color: white; }  #article { background: white; color: black; } }</content></property>
 </context>
 </item>
-<item name="string" type="value space">
+<item name="string" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>CSS Strings consist of a sequence of characters delimited by double quotes or single quotes.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#strings" />
   </context>
 </item>
-<item name="url" type="value space">
+<item name="url" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>A URL is a pointer to a resource with the following syntax:  url( &lt;<span type="value space" infoset="css">string</span>&gt; &lt;url-modifier&gt;* )</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#url" />
   </context>
 </item>
-<item name="integer" type="value space">
+<item name="integer" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>&lt;integer&gt; denotes integer values. When written literally, an integer is one or more decimal digits 0 through 9. The first digit of an integer may be immediately preceded by - or + to indicate the integer’s sign.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#integers" />
   </context>
 </item>
-<item name="number" type="value space">
+<item name="number" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;number&gt; type  represents real numbers, possibly with a fractional component. When written literally, a number is either an <span type="value space" infoset="css">integer</span>, or zero or more decimal digits followed by a dot (.) followed by one or more decimal digits and optionally an exponent composed of "e" or "E" and an <span type="value space" infoset="css">integer</span>. As with integers, the first character of a number may be immediately preceded by - or + to indicate the number’s sign.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#numbers" />
   </context>
 </item>
-<item name="percentage" type="value space">
+<item name="percentage" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;percentage&gt; type  represents percentage values, indicating a value that is some fraction of another reference value. When written literally, a percentage consists of a <span type="value space" infoset="css">number</span> immediately followed by a percent sign %.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#percentages" />
   </context>
 </item>
-<item name="dimension" type="value space">
+<item name="dimension" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;dimension&gt; type refers to a <span type="value space" infoset="css">number</span> with a unit attached to it. When written literally, a dimension is a number immediately followed by a unit identifier.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#dimensions" />
   </context>
 </item>
-<item name="length" type="value space">
+<item name="length" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;length&gt; type refers to distance measurements. A length is a <span type="value space" infoset="css">dimension</span>. However, for zero lengths the unit identifier is optional i.e. can be syntactically represented as 0.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#lengths" />
@@ -209,12 +209,12 @@
     </property>
   </context>
 </item>
-<item name="length-percentage" type="value space">
+<item name="length-percentage" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>Equivalent to [ &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> ], where the &lt;<span type="value space" infoset="css">percentage</span>> will resolve to a &lt;<span type="value space" infoset="css">length</span>>.</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-values/#typedef-length-percentage" />  </context>
 </item>
-  <item name="angle" type="value space">
+  <item name="angle" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;angle&gt; type refers to angle values. An angle is a <span type="value space" infoset="css">dimension</span>. However, for zero angles the unit identifier is optional i.e. can be syntactically represented as 0.</content></property>
     <property name="units" list="inline" type="unit" infoset="css">
@@ -226,7 +226,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-values/#angles" />
   </context>
 </item>
-<item name="time" type="value space">
+<item name="time" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;time&gt; type refers to time values.</content></property>
     <property name="units" list="inline" type="unit" infoset="css">
@@ -236,7 +236,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-values/#time" />
   </context>
 </item>
-<item name="frequency" type="value space">
+<item name="frequency" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;frequency&gt; type refers to frequency values.</content></property>
     <property name="units" list="inline" type="unit" infoset="css">
@@ -246,7 +246,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-values/#frequency" />
   </context>
 </item>
-<item name="resolution" type="value space">
+<item name="resolution" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;resolution&gt; type refers to resolution values.</content></property>
     <property name="units" list="inline" type="unit" infoset="css">
@@ -257,16 +257,15 @@
     <property name="Specification" link="https://drafts.csswg.org/css-values/#resolution" />
   </context>
 </item>
-<item name="color" type="value space">
+<item name="color" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>A &lt;color&gt; is either a keyword or a numerical specification.</content></property>
     <!-- @@@ list color keywords and numerical specification syntaxes -->
     <property name="Specification" link="https://drafts.csswg.org/css-color-3/#valuea-def-color" />
   </context>
 </item>
-<item name="image" type="value space">
+<item name="image" type="value space" noindex="noindex">
   <context>
-    <property name="description"><content>A &lt;color&gt; is either a keyword or a numerical specification.</content></property>
     <property name="Syntax"><content>&lt;<span type="value space" infoset="css">url</span>&gt; | &lt;<span type="value space" infoset="css">image()</span>&gt; | &lt;<span type="value space" infoset="css">image-set()</span>&gt; | &lt;<span type="value space" infoset="css">element()</span>&gt; | &lt;<span type="value space" infoset="css">cross-fade()</span>&gt; | &lt;<span type="value space" infoset="css">gradient</span>&gt;</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-images-3/#typedef-image" />
   </context>
@@ -300,7 +299,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-images-3/#cross-fade-function" />
   </context>
 </item>
-<item name="gradient" type="value space">
+<item name="gradient" type="value space" noindex="noindex">
   <context>
   <property name="description"><content>A gradient is an image that smoothly fades from one color to another. </content></property>
   <property name="Syntax">
@@ -353,7 +352,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-images-3/#radial-gradients" />
   </context>
 </item>
-<item name="color-stop-list" type="value space">
+<item name="color-stop-list" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The colors in gradients are specified using color stops. A color stop is a combination of a color and a position. Color stops are organized into a color stop listcolor stop list, which is a list of one or more color stops.</content></property>
     <property name="Syntax">
@@ -362,7 +361,7 @@
     </property>
   </context>
 </item>
-<item name="absolute-size" type="value space">
+<item name="absolute-size" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>&lt;absolute-size&gt; refers to one of 6 font sizes computed and kept by the browser.</content></property>
     <property name="Syntax">
@@ -370,7 +369,7 @@
     </property>
   </context>
 </item>
-<item name="relative-size" type="value space">
+<item name="relative-size" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>A &lt;relative-size&gt; is interpreted relative to the table of font sizes and the font size of the parent element.</content></property>
     <property name="Syntax">
@@ -378,7 +377,7 @@
     </property>
   </context>
 </item>
-<item name="box" type="value space">
+<item name="box" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>&lt;box&gt; determines what serves as  boundaries to the box.</content></property>
     <property name="Syntax">
@@ -387,7 +386,7 @@
     <property name="Specification" link="/TR/css3-background/#ltboxgt"/>
   </context>
 </item>
-<item name="shape-box" type="value space">
+<item name="shape-box" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>&lt;shape-box&gt; defines which boundaries are used to define the shape of the box.</content></property>
     <property name="Syntax">
@@ -396,7 +395,7 @@
     <property name="Specification" link="/TR/css-shapes-1/#typedef-shape-box"/>
   </context>
 </item>
-<item name="basic-shape" type="value space">
+<item name="basic-shape" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>&lt;basic-shape&gt; defines which the geometric shape of the box.</content></property>
     <property name="Syntax">
@@ -445,12 +444,12 @@
     <property name="Specification" link="/TR/css-shapes-1/#funcdef-ellipse"/>
   </context>
 </item>
-<item name="bg-image" type="value space">
+<item name="bg-image" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;bg-image> = &lt;<span type="value space" infoset="css">image</span>> | none</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-image" />  </context>
 </item>
-<item name="attachment" type="value space">
+<item name="attachment" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;attachment> = scroll | fixed | local</content></property>
     <property name="description">
@@ -460,7 +459,7 @@
     </property>
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#attachment" />  </context>
 </item>
-<item name="bg-size" type="value space">
+<item name="bg-size" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;bg-size> = [ &lt;<span type="value space" infoset="css">length-percentage</span>> | auto ]{1,2} | cover | contain</content></property>
     <property name="description">
@@ -470,7 +469,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-size" />
   </context>
 </item>
-<item name="bg-layer" type="value space">
+<item name="bg-layer" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;bg-layer> = &lt;<span type="value space" infoset="css">bg-image</span>> || &lt;<span type="value space" infoset="css">position</span>> [ / &lt;<span type="value space" infoset="css">bg-size</span>> ]? || &lt;<span type="value space" infoset="css">repeat-style</span>> || &lt;<span type="value space" infoset="css">attachment</span>> || &lt;<span type="value space" infoset="css">box</span>> || &lt;<span type="value space" infoset="css">box</span>></content></property>
     <property name="description">
@@ -480,7 +479,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-layer" />
   </context>
 </item>
-<item name="final-bg-layer" type="value space">
+<item name="final-bg-layer" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;bg-layer> = &lt;<span type="value space" infoset="css">bg-image</span>> || &lt;<span type="value space" infoset="css">position</span>> [ / &lt;<span type="value space" infoset="css">bg-size</span>> ]? || &lt;<span type="value space" infoset="css">repeat-style</span>> || &lt;<span type="value space" infoset="css">attachment</span>> || &lt;<span type="value space" infoset="css">box</span>> || &lt;<span type="value space" infoset="css">box</span>> | &lt;<span type="property" infoset="css">background-color</span>></content></property>
     <property name="description">
@@ -490,13 +489,13 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#bg-layer" />
   </context>
 </item>
-<item name="position" type="value space">
+<item name="position" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;position> = [  [ left | center | right | top | bottom | &lt;<span type="value space" infoset="css">length-percentage</span>> ] |  [ left | center | right | &lt;<span type="value space" infoset="css">length-percentage</span>> ]  [ top | center | bottom | &lt;<span type="value space" infoset="css">length-percentage</span>> ] |  [ center | [ left | right ] &lt;<span type="value space" infoset="css">length-percentage</span>>? ] &amp;&amp;  [ center | [ top | bottom ] &lt;<span type="value space" infoset="css">length-percentage</span>>? ] ]</content></property>
     <property name="description"><content>If only one value is specified, the second value is assumed to be ‘center’. If two values are given, a length or percentage as the first value represents the horizontal position (or offset) and a length or percentage as the second value represents the vertical position (or offset). &lt;percentage> and &lt;length> values here represent an offset of the top left corner of the background image from the top left corner of the background positioning area.</content> </property>
   </context>
 </item>
-<item name="box" type="value space">
+<item name="box" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;box> = border-box | padding-box | content-box</content></property>
     <property name="description">
@@ -507,7 +506,7 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#box" />
   </context>
 </item>
-<item name="repeat-style" type="value space">
+<item name="repeat-style" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;repeat-style> = repeat-x | repeat-y | [repeat | space | round | no-repeat]{1,2}</content></property>
     <property name="description">
@@ -519,28 +518,28 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#repeat-style" />
   </context>
 </item>
-<item name="blend-mode" type="value space">
+<item name="blend-mode" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The blend mode defines the formula that must be used to mix the colors with the backdrop.</content></property>
     <property name="Syntax"><content>&lt;blend-mode> = normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity</content></property>
     <property name="Specification" link="https://drafts.fxtf.org/compositing-1/#ltblendmodegt" />
   </context>
 </item>
-<item name="isolation-mode" type="value space">
+<item name="isolation-mode" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;isolation-mode> = auto | isolate</content></property>
     <property name="Specification" link="https://drafts.fxtf.org/compositing-1/#isolated-propid" />
   </context>
 </item>
 
-<item name="id" type="value space">
+<item name="id" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The &lt;id> value is an ID selector</content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-ui/#typedef-id" />
   </context>
 </item>
 
-<item name="shadow" type="value space">
+<item name="shadow" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;shadow> = inset? &amp;&amp; &lt;<span type="value space" infoset="css">length</span>>{2,4} &amp;&amp; &lt;<span type="value space" infoset="css">color</span>>?</content></property>
     <property name="description">
@@ -554,13 +553,13 @@
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#shadow" />
   </context>
 </item>
-<item name="family-name" type="value space">
+<item name="family-name" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The name of a font family of choice.</content></property>
     <property name="Specification" link="https://www.w3.org/TR/CSS2/fonts.html#value-def-family-name" />
   </context>
 </item>
-<item name="generic-family" type="value space">
+<item name="generic-family" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>The name of a generic font family, one of 'serif', 'sans-serif', 'cursive', 'fantasy', 'monospace'.</content></property>
     <property name="Specification" link="https://www.w3.org/TR/CSS2/fonts.html#value-def-family-name" />
@@ -568,13 +567,13 @@
 </item>
   
 <!-- this is a dup of line-width ; @@@ TODO: remove once merging versions is solved -->
- <item name="border-width" type="value space">
+ <item name="border-width" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;border-width> = thin | medium | thick | &lt;<span type="value space" infoset="css">length</span>></content></property>
     <property name="Specification" link="/TR/CSS2/box.html#value-def-border-width"/>
   </context>
  </item>
- <item name="line-width" type="value space">
+ <item name="line-width" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;line-width> = thin | medium | thick | &lt;<span type="value space" infoset="css">length</span>></content></property>
     <property name="Specification" link="https://drafts.csswg.org/css-backgrounds-3/#line-width"/>
@@ -582,7 +581,7 @@
  </item>
 
  <!-- this is a dup of line-style ; @@@ TODO: remove once merging versions is solved -->
- <item name="border-style" type="value space">
+ <item name="border-style" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;border-style> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</content></property>
     <property name="description">
@@ -600,7 +599,7 @@
     <property name="Specification" link="/TR/CSS2/box.html#value-def-border-style"/>
   </context>
  </item>
- <item name="line-style" type="value space">
+ <item name="line-style" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;border-style> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</content></property>
     <property name="description">
@@ -620,19 +619,19 @@
  </item>
 
 
- <item name="margin-width" type="value space">
+ <item name="margin-width" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;margin-width&gt; = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>> | auto</content></property>
     <property name="Specification" link="/TR/CSS2/box.html#value-def-margin-width"/>
   </context>
  </item>
- <item name="padding-width" type="value space">
+ <item name="padding-width" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>&lt;padding-width&gt; = &lt;<span type="value space" infoset="css">length</span>> | &lt;<span type="value space" infoset="css">percentage</span>></content></property>
     <property name="Specification" link="/TR/CSS2/box.html#value-def-padding-width"/>
   </context>
  </item>
- <item name="shape" type="value space">
+ <item name="shape" type="value space" noindex="noindex">
   <context>
     <property name="Syntax">
       <content>&lt;shape&gt; = rect(&lt;top>, &lt;right>, &lt;bottom>, &lt;left>)</content>
@@ -648,13 +647,13 @@
     <property name="Specification" link="/TR/CSS2/box.html#value-def-shape"/>
   </context>
   </item>
-  <item name="identifier" type="value space">
+  <item name="identifier" type="value space" noindex="noindex">
   <context>
     <property name="Syntax"><content>characters [a-zA-Z0-9] and ISO 10646 characters U+00A0 and higher, plus the hyphen (-) and the underscore (_)</content></property>
     <property name="Specification" link="/TR/CSS2/syndata.html#value-def-identifier"/>
   </context>
   </item>
-  <item name="counter" type="value space">
+  <item name="counter" type="value space" noindex="noindex">
     <context>
       <property name="Syntax"><content>&lt;counter> =  &lt;<span type="value space" infoset="css">counter()</span>> | &lt;<span type="value space" infoset="css">counters()</span>></content></property>
       <property name="Specification" link="/TR/CSS2/syndata.html#value-def-counter"/>
