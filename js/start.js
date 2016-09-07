@@ -265,7 +265,7 @@ Cheatsheet.prototype.load_anchor = function (anchor) {
         return false;
     }
     if (/^search,/.test(anchor) ) {
-        search.val(anchor.substring(7));
+        search.val(unescape(anchor.substring(7)));
         search.get(0).autocompleter.findValue();
         return true;
     }
