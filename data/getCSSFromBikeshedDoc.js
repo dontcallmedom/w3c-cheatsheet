@@ -1,22 +1,4 @@
-const jsdom = require('jsdom');
-const baseFetch = require('node-fetch');
-
-function loadSpecification(url) {
-    return baseFetch(url).then(response => response.text())
-        .then(html => new Promise((resolve, reject) => {
-            jsdom.env({
-                html: html,
-                done: (err, window) => {
-                    if (err) {
-                        return reject(err);
-                    }
-                    resolve(window);
-                }
-                ,virtualConsole: jsdom.createVirtualConsole().sendTo(console)
-            })
-        })
-             );
-}
+const util = require('./util.js');
 
 function definitionlistToObject(pre) {
     var lines = pre.split("\n");
@@ -44,7 +26,7 @@ function propContent(name, value) {
     return '';
 }
 
-loadSpecification(process.argv[2])
+util.loadSpecification(process.argv[2])
     .then(function(w) {
         var metadata = definitionlistToObject(w.document.querySelector('pre.metadata,div.head dl').textContent);
         if (metadata && metadata.tr) {

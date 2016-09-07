@@ -111,8 +111,8 @@ data/svg.xml: data/getSVGInfoset.xsl
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
-data/js.idl: data/idl-sources data/extractIdl.xsl
-	for i in `cat $<` ; do $(SAXON_HTML5) $$i data/extractIdl.xsl ; done > $@
+data/js.idl: data/idl-sources data/extractIdl.js
+	for i in `cat $<` ; do node data/extractIdl.js $$i ; done > $@
 
 data/js.widlprocxml: data/js.idl
 	widlproc $< > $@
