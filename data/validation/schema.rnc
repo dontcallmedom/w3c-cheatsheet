@@ -7,6 +7,7 @@ Infosets = element infosets {
     ## one keyword for said technology (e.g. "title" attribute)
     element item {        Types,
        attribute name { xsd:string { minLength = "1"  } },
+       attribute noindex { "noindex"}?,
        context+ }+,
     element list {        Types,
        attribute name { xsd:string { minLength = "1"  } },
