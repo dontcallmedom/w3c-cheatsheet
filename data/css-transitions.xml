@@ -1,0 +1,22 @@
+<infosets><infoset technology='css'>
+<item type='property' name='transition-property'><context>
+<property name="values"><content>''transition-property/none'' | <span type="value space" infoset="css">single-transition-property</span></content></property>
+<property name="Specification" link="/TR/css3-transitions/#propdef-transition-property"/>
+</context></item>
+<item type='property' name='transition-duration'><context>
+<property name="values"><content><span type="value space" infoset="css">time</span></content></property>
+<property name="Specification" link="/TR/css3-transitions/#propdef-transition-duration"/>
+</context></item>
+<item type='property' name='transition-timing-function'><context>
+<property name="values"><content><span type="value space" infoset="css">single-transition-timing-function</span></content></property>
+<property name="Specification" link="/TR/css3-transitions/#propdef-transition-timing-function"/>
+</context></item>
+<item type='property' name='transition-delay'><context>
+<property name="values"><content><span type="value space" infoset="css">time</span></content></property>
+<property name="Specification" link="/TR/css3-transitions/#propdef-transition-delay"/>
+</context></item>
+<item type='property' name='transition'><context>
+<property name="values"><content><span type="value space" infoset="css">single-transition</span></content></property>
+<property name="Specification" link="/TR/css3-transitions/#propdef-transition"/>
+</context></item>
+</infoset></infosets>

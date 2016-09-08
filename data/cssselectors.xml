@@ -111,6 +111,7 @@
 <content>@page</content>
 <content>@charset</content>
 <content>@supports</content>
+<content>@keyframes</content>
 </property>
 </context>
 </item>
@@ -147,6 +148,17 @@
 <property name="Example"><content>@supports ( display: flexbox ) {  body, #navigation, #content { display: flexbox; }  #navigation { background: blue; color: white; }  #article { background: white; color: black; } }</content></property>
 </context>
 </item>
+<item name="@keyframes" type="at-rule">
+<context>
+  <property name="description"><content>Keyframes are used to specify the values for the animating properties at various points during the animation. The keyframes specify the behavior of one cycle of the animation; the animation may iterate zero or more times.</content></property>
+  <property name="Syntax">
+    <content>@keyframes = @keyframes &lt;<span type="value space" infoset="css">keyframes-name</span>> { &lt;rule-list> }</content>
+    <content>The &lt;rule-list> inside of @keyframes can only contain &lt;<span type="value space" infoset="css">keyframe-block</span>> rules.</content>
+  </property>
+
+</context>
+</item>
+
 <item name="string" type="value space" noindex="noindex">
   <context>
     <property name="description"><content>CSS Strings consist of a sequence of characters delimited by double quotes or single quotes.</content></property>
@@ -673,6 +685,129 @@
       <property name="Specification" link="/TR/CSS2/syndata.html#value-def-counter"/>
   </context>
   </item>
+
+  <item name="alphavalue" type="value space" noindex="noindex">
+    <context>
+      <property name="description"><content>Syntactically a &lt;<span type="value space" infoset="css">number</span>>. The uniform opacity setting to be applied across an entire object. Any values outside the range 0.0 (fully transparent) to 1.0 (fully opaque) will be clamped to this range</content></property>
+      <property name="Specification" link="/TR/css3-color/#alphavalue-def"/>
+  </context>
+  </item>
+  <item name="keyframes-name" type="value space" noindex="noindex">
+    <context>
+      <property name="Syntax"><content>&lt;keyframes-name> = &lt;<span type="value space" infoset="css">custom-ident</span>> | &lt;<span type="value space" infoset="css">string</span>></content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-keyframes-name"/>
+  </context>
+  </item>
+  <item name="custom-ident" type="value space" noindex="noindex">
+    <context>
+      <property name="description"><content>Any valid CSS identifier that would not be misinterpreted as a pre-defined keyword in that property’s value definition.</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-values-4/#identifier-value"/>
+  </context>
+  </item>
+  <item name="keyframe-block" type="value space" noindex="noindex">
+    <context>
+      <property name="Syntax"><content>&lt;keyframes-block> = &lt;<span type="value space" infoset="css">keyframe-selector</span>># { &lt;declaration-list&gt; }</content></property>
+      <property name="description"><content>The &lt;declaration-list> inside of &lt;keyframe-block> accepts any CSS property except those defined in CSS Animations. None of the properties interact with the cascade so using !important on them is invalid and will cause the property to be ignored.</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-keyframes-name"/>
+  </context>
+  </item>
+  <item name="single-animation" type="value space" noindex="noindex">
+    <context>
+      <property name="Syntax"><content>&lt;single-animation> = &lt;<span type="value space" infoset="css">time</span>> || &lt;<span type="value space" infoset="css">single-timing-function</span>> || &lt;<span type="value space" infoset="css">time</span>> || &lt;<span type="value space" infoset="css">single-animation-iteration-count</span>> || &lt;<span type="value space" infoset="css">single-animation-direction</span>> || &lt;<span type="value space" infoset="css">single-animation-fill-mode</span>> || &lt;<span type="value space" infoset="css">single-animation-play-state</span>> || [ none | &lt;<span type="value space" infoset="css">keyframes-name</span>> ]</content></property>
+      <property name="description"><content>The first value in each &lt;single-animation> that can be parsed as a &lt;time> is assigned to the animation-duration, and the second value in each &lt;single-animation> that can be parsed as a &lt;time> is assigned to animation-delay.</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-animation"/>
+  </context>
+  </item>
+  <item name="keyframe-selector" type="value space" noindex="noindex">
+    <context>
+      <property name="Syntax"><content>&lt;keyframe-selector> = from | to | &lt;<span type="value space" infoset="css">percentage</span>></content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-keyframes-name"/>
+  </context>
+  </item>
+<item name="single-timing-function" type="value space" noindex="noindex">
+    <context>
+      <property name="description"><content>The values and meaning of &lt;single-timing-function> are identical to those of lt;<span type="value space" infoset="css">single-transition-timing-function</span>>. The timing function specified applies to each iteration of the animation, not the entire animation in full..</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-timing-function"/>
+  </context>
+</item>
+
+<item name="single-animation-iteration-count" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-animation-iteration-count> = infinite | &lt;<span type="value space" infoset="css">number</span>></content></property>
+    <property name="description">
+      <content>infinite: the animation will repeat forever.</content>
+      <content>&lt;number&gt;: The animation will repeat the specified number of times. If the number is not an integer, the animation will end partway through its last cycle. Negative numbers are invalid.</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-animation-iteration-count"/>
+  </context>
+  </item>
+<item name="single-animation-direction" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-animation-direction> = normal | reverse | alternate | alternate-reverse </content></property>
+    <property name="description">
+      <content>normal: All iterations of the animation are played as specified.</content> 
+      <content>reverse: All iterations of the animation are played in the reverse direction from the way they were specified. </content>
+      <content>alternate: The animation cycle iterations that are odd counts are played in the normal direction, and the animation cycle iterations that are even counts are played in a reverse direction.</content>
+      <content>alternate-reverse: The animation cycle iterations that are odd counts are played in the reverse direction, and the animation cycle iterations that are even counts are played in a normal direction.</content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-animation-direction"/>
+  </context>
+</item>
+<item name="single-animation-fill-mode" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-animation-fill-mode> = none | forwards | backwards | both </content></property>
+    <property name="description">
+      <content>none:      The animation has no effect when it is applied but not executing. .</content> 
+      <content>forwards: After the animation ends, the animation will apply the property values for the time the animation ended</content>
+      <content>backwards: During the period defined by animation-delay, the animation will apply the property values defined in the keyframe that will start the first iteration of the animation.</content>
+      <content>both: The effects of both forwards and backwards fill apply. </content></property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-animation-fill-mode"/>
+  </context>
+  </item>
+<item name="single-animation-play-state" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-animation-play-state> = running | paused </content></property>
+    <property name="description">
+      <content>running:      While this property is set to running, the animation proceeds as normal. </content> 
+      <content>paused: While this property is set to paused, the animation is paused. </content>
+    </property>
+      <property name="Specification" link="https://drafts.csswg.org/css-animations-1/#typedef-single-animation-play-state"/>
+  </context>
+</item>
+<item name="single-transition" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-transition> =  [ none | &lt;<span type="value space" infoset="css">single-transition-property</span>> ] || &lt;<span type="value space" infoset="css">time</span>> || &lt;<span type="value space" infoset="css">single-transition-timing-function</span>> || &lt;<span type="value space" infoset="css">time</span>></content></property>
+    <property name="description">
+      <content>Note that order is important within the items in this property: the first value that can be parsed as a time is assigned to the transition-duration, and the second value that can be parsed as a time is assigned to transition-delay.</content>
+    </property>
+      <property name="Specification" link="https://drafts.csswg.org/css-transitions-1/#single-transition"/>
+  </context>
+</item>
+<item name="single-transition-property" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-transition-property> = all | &lt;<span type="value space" infoset="css">custom-ident</span>>;</content></property>
+    <property name="description">
+      <content>the keyword all indicates that all properties are to be transitioned.</content>
+    </property>
+      <property name="Specification" link="https://drafts.csswg.org/css-transitions-1/#single-transition-property"/>
+  </context>
+</item>
+<item name="single-transition-timing-function" type="value space" noindex="noindex">
+  <context>
+    <property name="Syntax"><content>&lt;single-transition-timing-function> = ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(&lt;<span type="value space" infoset="css">integer</span>>[, [ start | end ] ]?) | cubic-bezier(&lt;<span type="value space" infoset="css">number</span>>, &lt;<span type="value space" infoset="css">number</span>>, &lt;<span type="value space" infoset="css">number</span>>, &lt;<span type="value space" infoset="css">number</span>>)</content></property>
+    <property name="description">
+      <content>ease: The ease function is equivalent to cubic-bezier(0.25, 0.1, 0.25, 1). </content>
+      <content>linear: The linear function is equivalent to cubic-bezier(0, 0, 1, 1).</content>
+      <content>ease-in: The ease-in function is equivalent to cubic-bezier(0.42, 0, 1, 1).</content>
+      <content>ease-out:  The ease-out function is equivalent to cubic-bezier(0, 0, 0.58, 1).</content>
+      <content>ease-in-out: The ease-in-out function is equivalent to cubic-bezier(0.42, 0, 0.58, 1). </content>
+      <content>step-start:  The step-start function is equivalent to steps(1, start). </content>
+      <content>step-end: The step-end function is equivalent to steps(1, end). </content>
+      <content>steps(&lt;integer>[, [ start | end ] ]?): Specifies a stepping function. The first parameter specifies the number of intervals in the function. The second parameter, which is optional, is either the value start or end, and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value end.</content>
+      <content>cubic-bezier(&lt;number>, &lt;number>, &lt;number>, &lt;number>): Specifies a cubic-bezier curve. The four values specify points P1 and P2 of the curve as (x1, y1, x2, y2). Both x values must be in the range [0, 1] or the definition is invalid. The y values can exceed this range.</content>
+    </property>
+      <property name="Specification" link="https://drafts.csswg.org/css-transitions-1/#single-transition-timing-function"/>
+  </context>
+</item>
+
 
  <item name="em" type="unit">
   <context>

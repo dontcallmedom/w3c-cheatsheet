@@ -1,0 +1,10 @@
+<infosets><infoset technology='css'>
+<item type='property' name='color'><context>
+<property name="values"><content><span type="value space" infoset="css">color</span> | inherit</content></property>
+<property name="inherited"><content>yes</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-color-3/Overview.src.html#propdef-color"/>
+</context></item>
+<item type='property' name='opacity'><context>
+<property name="values"><content><span type="value space" infoset="css">alphavalue</span> | inherit</content></property>
+<property name="inherited"><content>no</content></property><property name="media"><content>visual</content></property><property name="Specification" link="https://drafts.csswg.org/css-color-3/Overview.src.html#propdef-opacity"/>
+</context></item>
+</infoset></infosets>

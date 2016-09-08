@@ -1,0 +1,38 @@
+<infosets><infoset technology='css'>
+<item type='property' name='animation-name'><context>
+<property name="values"><content>[ none | <span type="value space" infoset="css">keyframes-name</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-name"/>
+</context></item>
+<item type='property' name='animation-duration'><context>
+<property name="values"><content><span type="value space" infoset="css">time</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-duration"/>
+</context></item>
+<item type='property' name='animation-timing-function'><context>
+<property name="values"><content><span type="value space" infoset="css">single-timing-function</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-timing-function"/>
+</context></item>
+<item type='property' name='animation-iteration-count'><context>
+<property name="values"><content><span type="value space" infoset="css">single-animation-iteration-count</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-iteration-count"/>
+</context></item>
+<item type='property' name='animation-direction'><context>
+<property name="values"><content><span type="value space" infoset="css">single-animation-direction</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-direction"/>
+</context></item>
+<item type='property' name='animation-play-state'><context>
+<property name="values"><content><span type="value space" infoset="css">single-animation-play-state</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-play-state"/>
+</context></item>
+<item type='property' name='animation-delay'><context>
+<property name="values"><content><span type="value space" infoset="css">time</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-delay"/>
+</context></item>
+<item type='property' name='animation-fill-mode'><context>
+<property name="values"><content><span type="value space" infoset="css">single-animation-fill-mode</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation-fill-mode"/>
+</context></item>
+<item type='property' name='animation'><context>
+<property name="values"><content><span type="value space" infoset="css">single-animation</span></content></property>
+<property name="Specification" link="/TR/css3-animations/#propdef-animation"/>
+</context></item>
+</infoset></infosets>

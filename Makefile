@@ -63,7 +63,7 @@ data/xpath.xml: data/getXpathFunctions.xsl
 	rnv data/validation/schema.rnc $@
 
 
-data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml data/css-flexbox.xml data/css-writing-modes.xml data/css-break.xml data/css-ui.xml data/css-compositing.xml data/css-shapes.xml data/css-text-decor.xml data/css-multicol.xml data/css-images.xml data/css-backgrounds.xml
+data/css.xml: data/getCSSProperties.xsl data/cssselectors.xml data/css-flexbox.xml data/css-writing-modes.xml data/css-break.xml data/css-ui.xml data/css-compositing.xml data/css-shapes.xml data/css-text-decor.xml data/css-multicol.xml data/css-images.xml data/css-backgrounds.xml data/css-animations.xml data/css-color.xml data/css-transitions.xml
 	saxon $< $< > $@
 	rnv data/validation/schema.rnc $@
 
@@ -105,6 +105,19 @@ data/css-images.xml: data/getCSSFromBikeshedDoc.js
 
 data/css-backgrounds.xml: data/getCSSFromBikeshedDoc.js
 	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-backgrounds-3/Overview.src.html > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-animations.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-animations-1/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+data/css-transitions.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-transitions-1/Overview.bs > $@
+	rnv data/validation/schema.rnc $@
+
+
+data/css-color.xml: data/getCSSFromBikeshedDoc.js
+	node data/getCSSFromBikeshedDoc.js https://drafts.csswg.org/css-color-3/Overview.src.html > $@
 	rnv data/validation/schema.rnc $@
 
 data/svg.xml: data/getSVGInfoset.xsl 
